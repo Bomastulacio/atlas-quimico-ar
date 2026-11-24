@@ -13,6 +13,8 @@ service-account*.json
 
 # Python / LangGraph pipeline (etapas 4-5)
 pipeline/.venv/
+pipeline/.cache/
+pipeline/.state/
 pipeline/__pycache__/
 **/__pycache__/
 *.pyc
