@@ -1,0 +1,140 @@
+---
+import BaseLayout from '@/layouts/BaseLayout.astro';
+import { ProcessDeckPreview } from '@/components/ProcessDeckPreview';
+import {
+  getManifest,
+  getProceso,
+  getProductos,
+  getResumenCobertura,
+  isExampleDataset,
+} from '@/data';
+
+const manifest = getManifest();
+const esEjemplo = isExampleDataset();
+const productos = getProductos();
+const cobertura = getResumenCobertura();
+const procesoEjemplo = getProceso('aluminio-hall-heroult');
+---
+
+<BaseLayout title="Atlas Químico y Productivo de Argentina — Etapa 1">
+  <div class="mx-auto max-w-6xl px-4 py-6 sm:px-6 lg:px-8">
+    {/* Franja superior de honestidad de datos */}
+    {esEjemplo && (
+      <div
+        role="status"
+        class="mb-6 flex flex-wrap items-center justify-between gap-2 border border-amber-warn/50 bg-amber-warn/10 px-4 py-2.5 font-mono text-xs text-ink"
+      >
+        <span class="font-semibold text-amber-warn">
+          [!] MODO EJEMPLO (ETAPA 1) — DATOS FICTICIOS PARA VALIDAR EL ESQUEMA
+        </span>
+        <span class="text-ink-muted">
+          Sin datos reales hasta aprobar <code class="text-ink">docs/datos.md</code>
+        </span>
+      </div>
+    )}
+
+    {/* Cabecera editorial técnica */}
+    <header class="grid gap-8 border-b border-rule pb-8 lg:grid-cols-12 lg:items-end">
+      <div class="lg:col-span-8">
+        <p class="font-mono text-xs uppercase tracking-[0.16em] text-copper">
+          ARGENTINA // INGENIERÍA DE PROCESOS · COMERCIO EXTERIOR · TRAZABILIDAD
+        </p>
+        <h1 class="mt-3 font-display text-5xl leading-[0.98] tracking-tight text-ink sm:text-6xl">
+          Atlas Químico y Productivo de Argentina
+        </h1>
+        <p class="mt-4 max-w-2xl text-base leading-relaxed text-ink-muted">
+          Qué se fabrica en el país, mediante qué transformaciones químicas e industriales, qué
+          energía e insumos requiere y cuánto se exporta e importa — respaldado por fuentes
+          oficiales verificables en cada cifra.
+        </p>
+      </div>
+
+      <div class="lg:col-span-4">
+        <div class="border border-rule bg-paper-elevated p-3.5 font-mono text-xs">
+          <div class="flex items-center justify-between border-b border-rule pb-2 text-[11px] text-ink-muted">
+            <span>ESTADO DEL REPOSITORIO</span>
+            <span class="text-forest">ESQUEMA v{manifest.version_esquema}</span>
+          </div>
+          <dl class="mt-2.5 grid grid-cols-2 gap-3 tabular-nums">
+            <div>
+              <dt class="text-[10px] uppercase text-ink-muted">Jurisdicciones Georef</dt>
+              <dd class="mt-0.5 text-lg font-semibold text-ink">{cobertura.totalProvincias}</dd>
+            </div>
+            <div>
+              <dt class="text-[10px] uppercase text-ink-muted">Cadenas MVP</dt>
+              <dd class="mt-0.5 text-lg font-semibold text-ink">{productos.length}</dd>
+            </div>
+            <div>
+              <dt class="text-[10px] uppercase text-ink-muted">Tablas relacionales</dt>
+              <dd class="mt-0.5 text-lg font-semibold text-ink">
+                {Object.keys(manifest.tablas).length}
+              </dd>
+            </div>
+            <div>
+              <dt class="text-[10px] uppercase text-ink-muted">Deptos. con datos</dt>
+              <dd class="mt-0.5 text-lg font-semibold text-ink">
+                {cobertura.departamentosConDatos}
+              </dd>
+            </div>
+          </dl>
+        </div>
+      </div>
+    </header>
+
+    {/* Consola interactiva Etapa 1 */}
+    <main class="mt-8 space-y-8">
+      <ProcessDeckPreview
+        client:load
+        productos={productos}
+        procesoEjemplo={procesoEjemplo?.proceso ?? null}
+        pasosEjemplo={procesoEjemplo?.pasos ?? []}
+        esEjemplo={esEjemplo}
+      />
+
+      {/* Hoja de ruta técnica en ASCII */}
+      <section class="grid gap-6 lg:grid-cols-12">
+        <div class="border border-rule bg-paper-elevated p-5 lg:col-span-7">
+          <p class="font-mono text-xs uppercase tracking-wider text-ink-muted">
+            [02] Flujo de integridad de datos
+          </p>
+          <pre class="ascii-frame mt-3 overflow-x-auto bg-paper p-3.5 text-xs text-ink">
+{`Google Sheets (12 pestañas relacionales)
+      │
+      ▼  npm run data:sync  [SHA-256 + Zod + FKs]
+data/raw/  ──▶  data/staging/  ──▶  data/validated/*.json
+                                            │
+                                            ▼
+                                     src/data/index.ts
+                                            │
+                                            ▼
+                               Astro Static + Islas React`}
+          </pre>
+        </div>
+
+        <div class="border border-rule bg-paper-elevated p-5 lg:col-span-5">
+          <p class="font-mono text-xs uppercase tracking-wider text-ink-muted">
+            [03] Siguientes etapas planificadas
+          </p>
+          <ol class="mt-3 space-y-2 font-mono text-xs text-ink">
+            <li class="flex items-baseline justify-between border-b border-rule pb-1.5">
+              <span>01. Estructura, docs/datos.md y capa de datos</span>
+              <span class="text-forest">[HECHO]</span>
+            </li>
+            <li class="flex items-baseline justify-between border-b border-rule pb-1.5 text-ink-muted">
+              <span>02. Mapa bicontinental IGN + tooltip + panel</span>
+              <span>[SIGUIENTE]</span>
+            </li>
+            <li class="flex items-baseline justify-between border-b border-rule pb-1.5 text-ink-muted">
+              <span>03. Aluminio (Chubut) a mano — Set de oro</span>
+              <span>[PENDIENTE]</span>
+            </li>
+            <li class="flex items-baseline justify-between text-ink-muted">
+              <span>04–05. Pipeline LangGraph + verificación química</span>
+              <span>[PENDIENTE]</span>
+            </li>
+          </ol>
+        </div>
+      </section>
+    </main>
+  </div>
+</BaseLayout>
