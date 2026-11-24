@@ -363,9 +363,17 @@ export function ArgentinaMapExplorer({
 
   const handleStageDoubleClick = (e: React.MouseEvent<HTMLDivElement>) => {
     if ((e.target as HTMLElement).closest('button')) return;
+
+    // Si el mapa está en relieve 3D, con provincia seleccionada o con zoom,
+    // doble click vuelve suavemente a la vista normal 2D completa.
+    if (is3D || selectedId !== null || view.zoom > 1.15) {
+      resetView();
+      return;
+    }
+
     const [svgX, svgY] = clientToSvgCoords(e.clientX, e.clientY);
     setView((prev) => {
-      const nextZoom = Math.min(MAX_ZOOM, prev.zoom * 1.55);
+      const nextZoom = Math.min(MAX_ZOOM, prev.zoom * 1.6);
       const mapX = (svgX - prev.x) / prev.zoom;
       const mapY = (svgY - prev.y) / prev.zoom;
       return clampTransform({
@@ -379,7 +387,8 @@ export function ArgentinaMapExplorer({
   const handleSelectProvincia = (provinciaId: string | null) => {
     if (dragRef.current.moved) return;
 
-    if (provinciaId === null) {
+    // Volver a hacer click en la provincia ya seleccionada (o pasar null) vuelve a 2D normal
+    if (provinciaId === null || provinciaId === selectedId) {
       setSelectedId(null);
       setIs3D(false);
       setView({ zoom: 1, x: 0, y: 0 });
@@ -540,7 +549,7 @@ export function ArgentinaMapExplorer({
 
           <p className="hidden items-center gap-1.5 text-[13px] text-ink-muted xl:flex">
             <Move className="h-3.5 w-3.5" />
-            <span>Arrastrá para mover, usá la rueda para acercar y hacé click para elevar en 3D</span>
+            <span>Arrastrá para mover, rueda para zoom y doble click para volver a 2D</span>
           </p>
         </div>
 
@@ -632,8 +641,8 @@ export function ArgentinaMapExplorer({
               <span className="tabular-nums">{view.zoom.toFixed(1)}×</span>
             </div>
 
-            {/* Escena con perspectiva 3D suave al hacer click en una provincia */}
-            <div className="map-stage-3d flex h-[540px] items-center justify-center sm:h-[640px] lg:h-[720px]">
+            {/* Escena con perspectiva 3D suave y recorte limpio sobre la leyenda inferior */}
+            <div className="map-stage-3d relative flex h-[540px] items-center justify-center overflow-hidden sm:h-[640px] lg:h-[720px]">
               <div className={`map-plane h-full w-full ${is3D ? 'map-plane-tilted' : ''}`}>
                 <svg
                   ref={svgRef}
@@ -985,12 +994,18 @@ export function ArgentinaMapExplorer({
                     })}
                   </g>
 
-                  {/* Recuadro fijo Bicontinental IGN: Antártida e Islas del Atlántico Sur */}
+                  {/* Recuadro Bicontinental IGN: se oculta automáticamente al acercar (zoom > 1.3×) para no tapar provincias */}
                   {(() => {
                     const tdfVis = getProvinceVisual('94');
+                    const showFullInset = view.zoom <= 1.3 && !is3D;
                     return (
                       <g
                         transform={`translate(${INSET_X}, ${INSET_Y})`}
+                        style={{
+                          opacity: showFullInset ? 1 : 0,
+                          pointerEvents: showFullInset ? 'auto' : 'none',
+                          transition: 'opacity 180ms cubic-bezier(0.22, 1, 0.36, 1)',
+                        }}
                         className="cursor-pointer"
                         onPointerMove={(e) => handleProvincePointerMove(e, '94')}
                         onPointerLeave={clearHover}
@@ -1040,6 +1055,17 @@ export function ArgentinaMapExplorer({
                   })()}
                 </svg>
               </div>
+
+              {/* Acceso discreto en esquina cuando el recuadro bicontinental está replegado por zoom/3D */}
+              {(view.zoom > 1.3 || is3D) && (
+                <button
+                  type="button"
+                  onClick={resetView}
+                  className="absolute bottom-3.5 right-3.5 z-20 cursor-pointer border border-rule bg-stone-surface/95 px-3 py-1.5 text-[13px] font-medium text-ink shadow-xs backdrop-blur-xs transition-colors duration-150 hover:bg-ink hover:text-white"
+                >
+                  Volver a vista 2D completa
+                </button>
+              )}
             </div>
 
             {/* Tooltip flotante al hover (desktop) */}
