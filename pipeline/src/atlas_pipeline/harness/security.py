@@ -18,6 +18,7 @@ AGENT_TOOL_ALLOWLIST: dict[str, frozenset[str]] = {
             "fetch_source",
             "parse_source",
             "validate_staging",
+            "verify_chemistry",
             "export_staging_supabase",
             "human_interrupt",
         }

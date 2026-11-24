@@ -17,7 +17,7 @@ Inspirado en prácticas de ingeniería de loops en producción (Uber Engineering
 4. **Trazabilidad completa (`harness/telemetry.py`):**
    - Cada nodo emite un `AuditEvent` en `pipeline/.state/audit_trail.jsonl` (atribución de actor, hashes de salida, latencia, tokens y cache hits).
 5. **Orquestador cíclico + checkpointer SQLite (`graph.py`):**
-   - `fetch_sources` → `parse_sources` → `agent1_extract` (con fast-path determinista de 0 tokens para CSV INDEC y JSON UN Comtrade) → `validate_gate` (esquema Pydantic, coincidencia de SHA-256, citas obligatorias y control físico capacidad vs. producción) → ciclo de reintento con feedback quirúrgico (máx. 2 reintentos) → `export_staging` (`data/staging/<producto>/upsert_supabase.sql` + `reporte_revision.md`) → `human_review` (`interrupt()`).
+   - `fetch_sources` → `parse_sources` → `agent1_extract` ⇄ `validate_data_gate` → `agent2_draft_process` ⇄ `chemical_verify_gate` (6 verificadores deterministas de Sección 6.2 en `chem/verifiers.py`) → `agent3_verify` (Verificador independiente con contexto limpio y barrera anti falsos-aprobados) → `export_staging` (`data/staging/<producto>/upsert_supabase.sql` con tablas de datos + `procesos`, `pasos_proceso` y `conexiones_proceso`, más `reporte_revision.md`) → `human_review` (`interrupt()`).
 
 ## Comandos
 

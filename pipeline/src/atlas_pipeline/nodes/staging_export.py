@@ -9,7 +9,7 @@ from pathlib import Path
 from typing import Any
 
 from atlas_pipeline.nodes.validator import ValidationReport
-from atlas_pipeline.schemas import StagingDataBundle
+from atlas_pipeline.schemas import ProcessDraftBundle, StagingDataBundle, VerifierAuditReport
 
 
 @dataclass(frozen=True)
@@ -45,8 +45,21 @@ def _upsert_sql(table: str, pk: str, columns: list[str], rows: list[list[str]]) 
     )
 
 
-def render_supabase_upsert_sql(bundle: StagingDataBundle) -> str:
+def _sql_jsonb(value: Any) -> str:
+    raw = json.dumps(value, ensure_ascii=False).replace("'", "''")
+    return f"'{raw}'::jsonb"
+
+
+def render_supabase_upsert_sql(
+    bundle: StagingDataBundle,
+    process_draft: ProcessDraftBundle | None = None,
+) -> str:
     """Genera SQL idempotente listo para ejecutar en Supabase tras aprobación humana."""
+    merged_fuentes = {f.fuente_id: f for f in bundle.fuentes}
+    if process_draft is not None:
+        for f in process_draft.fuentes:
+            merged_fuentes[f.fuente_id] = f
+
     parts: list[str] = [
         "-- =============================================================================",
         f"-- Atlas Químico Argentino — Upsert staging a Supabase ({bundle.producto_id})",
@@ -73,7 +86,7 @@ def render_supabase_upsert_sql(bundle: StagingDataBundle) -> str:
                     _sql_val(f.archivo_raw),
                     _sql_val(f.notas),
                 ]
-                for f in bundle.fuentes
+                for f in merged_fuentes.values()
             ],
         )
     )
@@ -236,6 +249,143 @@ def render_supabase_upsert_sql(bundle: StagingDataBundle) -> str:
         )
     )
 
+    if process_draft is not None:
+        proc = process_draft.proceso
+        parts.append(
+            _upsert_sql(
+                "procesos",
+                "proceso_id",
+                [
+                    "proceso_id",
+                    "producto_id",
+                    "nombre",
+                    "ruta_tecnologica",
+                    "reaccion_global",
+                    "energia_especifica_valor",
+                    "energia_especifica_estado",
+                    "energia_especifica_unidad",
+                    "descripcion",
+                    "anio",
+                    "fuente_id",
+                    "cita_ubicacion",
+                    "confianza",
+                ],
+                [
+                    [
+                        _sql_val(proc.proceso_id),
+                        _sql_val(proc.producto_id),
+                        _sql_val(proc.nombre),
+                        _sql_val(proc.ruta_tecnologica),
+                        _sql_val(proc.reaccion_global),
+                        _sql_val(proc.energia_especifica.valor),
+                        _sql_val(proc.energia_especifica.estado),
+                        _sql_val(proc.energia_especifica.unidad),
+                        _sql_val(proc.descripcion),
+                        _sql_val(proc.procedencia.anio),
+                        _sql_val(proc.procedencia.fuente_id),
+                        _sql_val(proc.procedencia.cita_ubicacion),
+                        _sql_val(proc.procedencia.confianza),
+                    ]
+                ],
+            )
+        )
+        parts.append(
+            _upsert_sql(
+                "pasos_proceso",
+                "paso_id",
+                [
+                    "paso_id",
+                    "proceso_id",
+                    "orden",
+                    "nombre",
+                    "tipo_paso",
+                    "reaccion_balanceada",
+                    "temperatura_c",
+                    "presion_bar",
+                    "reactivos",
+                    "productos",
+                    "insumos",
+                    "subproductos",
+                    "energia_valor",
+                    "energia_estado",
+                    "energia_unidad",
+                    "descripcion",
+                    "pos_x",
+                    "pos_y",
+                    "anio",
+                    "fuente_id",
+                    "cita_ubicacion",
+                    "confianza",
+                ],
+                [
+                    [
+                        _sql_val(s.paso_id),
+                        _sql_val(s.proceso_id),
+                        _sql_val(s.orden),
+                        _sql_val(s.nombre),
+                        _sql_val(s.tipo_paso),
+                        _sql_val(s.reaccion_balanceada),
+                        _sql_val(s.temperatura_c),
+                        _sql_val(s.presion_bar),
+                        _sql_jsonb([r.model_dump(mode="json") for r in s.reactivos]),
+                        _sql_jsonb([p.model_dump(mode="json") for p in s.productos]),
+                        _sql_jsonb([i.model_dump(mode="json") for i in s.insumos]),
+                        _sql_jsonb([sb.model_dump(mode="json") for sb in s.subproductos]),
+                        _sql_val(s.energia.valor),
+                        _sql_val(s.energia.estado),
+                        _sql_val(s.energia.unidad),
+                        _sql_val(s.descripcion),
+                        _sql_val(s.pos_x),
+                        _sql_val(s.pos_y),
+                        _sql_val(s.procedencia.anio),
+                        _sql_val(s.procedencia.fuente_id),
+                        _sql_val(s.procedencia.cita_ubicacion),
+                        _sql_val(s.procedencia.confianza),
+                    ]
+                    for s in process_draft.pasos
+                ],
+            )
+        )
+        parts.append(
+            _upsert_sql(
+                "conexiones_proceso",
+                "conexion_id",
+                [
+                    "conexion_id",
+                    "proceso_id",
+                    "origen_paso_id",
+                    "destino_paso_id",
+                    "corriente_nombre",
+                    "tipo_corriente",
+                    "flujo_valor",
+                    "flujo_estado",
+                    "flujo_unidad",
+                    "anio",
+                    "fuente_id",
+                    "cita_ubicacion",
+                    "confianza",
+                ],
+                [
+                    [
+                        _sql_val(c.conexion_id),
+                        _sql_val(c.proceso_id),
+                        _sql_val(c.origen_paso_id),
+                        _sql_val(c.destino_paso_id),
+                        _sql_val(c.corriente_nombre),
+                        _sql_val(c.tipo_corriente),
+                        _sql_val(c.flujo.valor),
+                        _sql_val(c.flujo.estado),
+                        _sql_val(c.flujo.unidad),
+                        _sql_val(c.procedencia.anio),
+                        _sql_val(c.procedencia.fuente_id),
+                        _sql_val(c.procedencia.cita_ubicacion),
+                        _sql_val(c.procedencia.confianza),
+                    ]
+                    for c in process_draft.conexiones
+                ],
+            )
+        )
+
     parts.append("COMMIT;\n")
     return "".join(parts)
 
@@ -318,6 +468,8 @@ def export_staging_artifacts(
     run_id: str,
     budget_summary: dict[str, int | float],
     injection_alerts: list[str] | None = None,
+    process_draft: ProcessDraftBundle | None = None,
+    verifier_report: VerifierAuditReport | None = None,
 ) -> StagingArtifacts:
     target_dir = staging_root / bundle.producto_id
     target_dir.mkdir(parents=True, exist_ok=True)
@@ -326,21 +478,38 @@ def export_staging_artifacts(
     sql_path = target_dir / "upsert_supabase.sql"
     report_path = target_dir / "reporte_revision.md"
 
+    payload: dict[str, Any] = bundle.model_dump(mode="json")
+    if process_draft is not None:
+        payload["proceso_draft"] = process_draft.model_dump(mode="json")
+    if verifier_report is not None:
+        payload["verificador_independiente"] = verifier_report.model_dump(mode="json")
+
     bundle_path.write_text(
-        json.dumps(bundle.model_dump(mode="json"), ensure_ascii=False, indent=2) + "\n",
+        json.dumps(payload, ensure_ascii=False, indent=2) + "\n",
         encoding="utf-8",
     )
-    sql_path.write_text(render_supabase_upsert_sql(bundle), encoding="utf-8")
-    report_path.write_text(
-        render_review_report_md(
-            bundle,
-            validation,
-            run_id=run_id,
-            budget_summary=budget_summary,
-            injection_alerts=injection_alerts or [],
-        ),
+    sql_path.write_text(
+        render_supabase_upsert_sql(bundle, process_draft=process_draft),
         encoding="utf-8",
     )
+    report_md = render_review_report_md(
+        bundle,
+        validation,
+        run_id=run_id,
+        budget_summary=budget_summary,
+        injection_alerts=injection_alerts or [],
+    )
+    if verifier_report is not None:
+        extra = [
+            "## Dictamen del Verificador Independiente (Agente 3)",
+            f"- **Veredicto global:** `{verifier_report.veredicto_global}`",
+            f"- **Resumen:** {verifier_report.resumen}",
+        ]
+        for item in verifier_report.items:
+            extra.append(f"- `{item.item_id}` ({item.categoria}): **{item.veredicto}** — {item.motivo}")
+        report_md = report_md + "\n" + "\n".join(extra) + "\n"
+
+    report_path.write_text(report_md, encoding="utf-8")
 
     return StagingArtifacts(
         staging_dir=target_dir,

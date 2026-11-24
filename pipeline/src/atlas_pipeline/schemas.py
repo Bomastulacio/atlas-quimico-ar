@@ -336,3 +336,41 @@ class StagingDataBundle(BaseModel):
     comercio_exterior: list[ComercioExteriorRegistro] = Field(default_factory=list)
     notas_auditoria: list[str] = Field(default_factory=list)
     fuentes_descartadas: list[str] = Field(default_factory=list)
+
+
+class ProcessDraftBundle(BaseModel):
+    """Borrador de cadena de proceso químico redactado por el Agente 2."""
+
+    model_config = ConfigDict(extra="forbid")
+
+    producto_id: str
+    fuentes: list[Fuente] = Field(default_factory=list)
+    proceso: Proceso
+    pasos: list[PasoProceso] = Field(min_length=1)
+    conexiones: list[ConexionProceso] = Field(default_factory=list)
+    notas_tecnicas: list[str] = Field(default_factory=list)
+
+
+VeredictoItem = Literal["APROBADO", "RECHAZADO", "REQUIERE_REVISION_HUMANA"]
+
+
+class VerificationVerdict(BaseModel):
+    """Dictamen por ítem emitido por el Agente 3 (Verificador independiente)."""
+
+    model_config = ConfigDict(extra="forbid")
+
+    item_id: str = Field(min_length=1)
+    categoria: Literal["datos", "proceso", "empresa_planta", "comercio_exterior"]
+    veredicto: VeredictoItem
+    motivo: str = Field(min_length=5)
+    citas_verificadas: bool
+
+
+class VerifierAuditReport(BaseModel):
+    """Salida estructurada del Agente 3 (no corrige, solo audita y dictamina)."""
+
+    model_config = ConfigDict(extra="forbid")
+
+    veredicto_global: VeredictoItem
+    items: list[VerificationVerdict] = Field(min_length=1)
+    resumen: str = Field(min_length=10)

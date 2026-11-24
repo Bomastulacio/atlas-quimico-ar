@@ -28,9 +28,9 @@ class PipelineSettings(BaseSettings):
     supabase_publishable_key: str | None = Field(default=None, alias="SUPABASE_PUBLISHABLE_KEY")
 
     # Modelos por rol (vía .env, nunca hardcodeados en agentes)
-    agent1_model: str = Field(default="gemini-2.5-flash", alias="AGENT1_MODEL")
-    agent2_model: str = Field(default="gemini-2.5-pro", alias="AGENT2_MODEL")
-    agent3_model: str = Field(default="gemini-2.5-pro", alias="AGENT3_MODEL")
+    agent1_model: str = Field(default="gemini-3.8-flash", alias="AGENT1_MODEL")
+    agent2_model: str = Field(default="gemini-4-hydrogen", alias="AGENT2_MODEL")
+    agent3_model: str = Field(default="gemini-4-neon", alias="AGENT3_MODEL")
 
     # Control Plane: límites estrictos de recursos para cuota gratuita
     max_retries_per_step: int = Field(default=2, ge=0, le=5, alias="PIPELINE_MAX_RETRIES_PER_STEP")

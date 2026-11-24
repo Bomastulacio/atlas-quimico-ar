@@ -159,10 +159,16 @@ def retry_with_backoff[T](
             sleep_fn(delay)
             attempt += 1
         except Exception as exc:
-            # Detectar errores 429 / ResourceExhausted del SDK de Gemini sin acoplar a una versión fija
+            # Detectar errores 429/503 transitorios del SDK de Gemini sin acoplar a una versión fija
             msg = f"{type(exc).__name__}: {exc}".lower()
-            is_rate_limit = "429" in msg or "resourceexhausted" in msg or "quota" in msg
-            if not is_rate_limit or attempt >= max_retries:
+            is_transient = (
+                "429" in msg
+                or "503" in msg
+                or "resourceexhausted" in msg
+                or "unavailable" in msg
+                or "quota" in msg
+            )
+            if not is_transient or attempt >= max_retries:
                 raise
             delay = base_delay * (2 ** (attempt + 1)) + random.uniform(0.2, 1.0)
             sleep_fn(delay)
