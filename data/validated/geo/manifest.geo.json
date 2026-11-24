@@ -1,0 +1,24 @@
+{
+  "fuente": "API Georef — División político-territorial de Provincias (IGN / datos.gob.ar)",
+  "organismo": "IGN / Secretaría de Innovación, Ciencia y Tecnología",
+  "url": "https://apis.datos.gob.ar/georef/api/v2.0/provincias.geojson",
+  "fecha_descarga": "2026-11-24",
+  "archivo_raw": "data/raw/georef_provincias.geojson",
+  "hash_raw": "sha256:b086852064c26813d9f607c82c91b4e74e18ea83fd21993ddedd473cf8495af5",
+  "proyeccion_recomendada": {
+    "continental_malvinas": "Transverse Mercator centrada en 64°O (familia Gauss-Krüger IGN)",
+    "antartida_islas": "Stereographic Polar centrada en Polo Sur / 50°O (recuadro bicontinental IGN)"
+  },
+  "archivos_validados": {
+    "provincias_continental.geojson": {
+      "jurisdicciones": 24,
+      "bytes": 83408,
+      "hash": "sha256:5c9f75321078462ceb3a7f4b66817fea3d45b652e7d0f9ed201a587b95b8155e"
+    },
+    "antartida_islas.geojson": {
+      "features": 1,
+      "bytes": 25508,
+      "hash": "sha256:b489e42e275f223267c555b31a91ba5c5d6ba6f4b1cf5cf85358161c8cfad57c"
+    }
+  }
+}
