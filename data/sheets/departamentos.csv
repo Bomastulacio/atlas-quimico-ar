@@ -1,0 +1,4 @@
+departamento_id,provincia_id,nombre,tipo_zona,tiene_datos_confiables,cobertura_datos,nota_cobertura
+26007,26,Biedma,polo_industrial,true,completa,Puerto Madryn: sede del único complejo productor de aluminio primario del país (Parque Industrial Pesado y Muelle Almirante Storni).
+06056,06,Bahía Blanca,polo_industrial,true,baja,Polo petroquímico y fertilizantes nitrogenados (carga oficial prevista en Etapa 6 y zoom departamental en Etapa 7).
+82084,82,Rosario,agro,true,baja,Complejo oleaginoso y biodiésel del Gran Rosario (carga oficial prevista en Etapa 6 y zoom departamental en Etapa 7).

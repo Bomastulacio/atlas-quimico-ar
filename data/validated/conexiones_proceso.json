@@ -1,0 +1,233 @@
+[
+  {
+    "conexion_id": "al-c1-bayer-a-puerto",
+    "proceso_id": "aluminio-hall-heroult",
+    "origen_paso_id": "al-p1-bayer-origen",
+    "destino_paso_id": "al-p2-recepcion-storni",
+    "corriente_nombre": "Alúmina calcinada importada (HS 2818.20)",
+    "tipo_corriente": "insumo",
+    "flujo": {
+      "estado": "dato",
+      "valor": 1.96,
+      "unidad": "t/t Al",
+      "procedencia": {
+        "anio": 2024,
+        "fuente_id": "uncomtrade-ar-alumina-2024",
+        "fuente": "UN Comtrade: importaciones de Argentina HS 281820 (Alúmina) y HS 7601 (Aluminio en bruto) 2024",
+        "url": "https://comtradeapi.un.org/public/v1/preview/C/A/HS?reporterCode=32&period=2024&partnerCode=0&partner2Code=0&customsCode=C00&motCode=0&cmdCode=7601,281820",
+        "fecha_descarga": "2026-11-24",
+        "hash": "sha256:db1674273b3b721a1421315ff8b7f301851654f7b2431b578d65e80bd35b19d8",
+        "cita_ubicacion": "871.523 t Al2O3 importada / 445.327 t Al producido (UN Comtrade 2024 + Memoria Aluar 2025)",
+        "confianza": "alta"
+      }
+    },
+    "procedencia": {
+      "anio": 2024,
+      "fuente_id": "uncomtrade-ar-alumina-2024",
+      "fuente": "UN Comtrade: importaciones de Argentina HS 281820 (Alúmina) y HS 7601 (Aluminio en bruto) 2024",
+      "url": "https://comtradeapi.un.org/public/v1/preview/C/A/HS?reporterCode=32&period=2024&partnerCode=0&partner2Code=0&customsCode=C00&motCode=0&cmdCode=7601,281820",
+      "fecha_descarga": "2026-11-24",
+      "hash": "sha256:db1674273b3b721a1421315ff8b7f301851654f7b2431b578d65e80bd35b19d8",
+      "cita_ubicacion": "871.523 t Al2O3 importada / 445.327 t Al producido (UN Comtrade 2024 + Memoria Aluar 2025)",
+      "confianza": "alta"
+    }
+  },
+  {
+    "conexion_id": "al-c2-puerto-a-anodos",
+    "proceso_id": "aluminio-hall-heroult",
+    "origen_paso_id": "al-p2-recepcion-storni",
+    "destino_paso_id": "al-p3-planta-anodos",
+    "corriente_nombre": "Coque de petróleo calcinado y brea",
+    "tipo_corriente": "insumo",
+    "flujo": {
+      "estado": "dato",
+      "valor": 0.45,
+      "unidad": "t/t Al",
+      "procedencia": {
+        "anio": 2025,
+        "fuente_id": "aluar-como-producimos",
+        "fuente": "Etapas del proceso de aluminio primario y elaborado (Aluar)",
+        "url": "https://www.aluar.com.ar/aluminio/como-producimos",
+        "fecha_descarga": "2026-11-24",
+        "hash": "sha256:d0194264776114c118767e9f54fd7567d491b3d041357dbc2254231c0269cf58",
+        "cita_ubicacion": "aluar.com.ar/aluminio/como-producimos pasos 1-2 e IPCC 2006 Vol. 3 pág. 4.47",
+        "confianza": "media"
+      }
+    },
+    "procedencia": {
+      "anio": 2025,
+      "fuente_id": "aluar-como-producimos",
+      "fuente": "Etapas del proceso de aluminio primario y elaborado (Aluar)",
+      "url": "https://www.aluar.com.ar/aluminio/como-producimos",
+      "fecha_descarga": "2026-11-24",
+      "hash": "sha256:d0194264776114c118767e9f54fd7567d491b3d041357dbc2254231c0269cf58",
+      "cita_ubicacion": "aluar.com.ar/aluminio/como-producimos pasos 1-2 e IPCC 2006 Vol. 3 pág. 4.47",
+      "confianza": "media"
+    }
+  },
+  {
+    "conexion_id": "al-c3-puerto-a-celdas",
+    "proceso_id": "aluminio-hall-heroult",
+    "origen_paso_id": "al-p2-recepcion-storni",
+    "destino_paso_id": "al-p4-electrolisis-hall-heroult",
+    "corriente_nombre": "Alúmina calcinada (Al2O3)",
+    "tipo_corriente": "principal",
+    "flujo": {
+      "estado": "dato",
+      "valor": 1.96,
+      "unidad": "t/t Al",
+      "procedencia": {
+        "anio": 2024,
+        "fuente_id": "uncomtrade-ar-alumina-2024",
+        "fuente": "UN Comtrade: importaciones de Argentina HS 281820 (Alúmina) y HS 7601 (Aluminio en bruto) 2024",
+        "url": "https://comtradeapi.un.org/public/v1/preview/C/A/HS?reporterCode=32&period=2024&partnerCode=0&partner2Code=0&customsCode=C00&motCode=0&cmdCode=7601,281820",
+        "fecha_descarga": "2026-11-24",
+        "hash": "sha256:db1674273b3b721a1421315ff8b7f301851654f7b2431b578d65e80bd35b19d8",
+        "cita_ubicacion": "UN Comtrade HS 281820 (2024) y Memoria Aluar 2025 pág. 3",
+        "confianza": "alta"
+      }
+    },
+    "procedencia": {
+      "anio": 2024,
+      "fuente_id": "uncomtrade-ar-alumina-2024",
+      "fuente": "UN Comtrade: importaciones de Argentina HS 281820 (Alúmina) y HS 7601 (Aluminio en bruto) 2024",
+      "url": "https://comtradeapi.un.org/public/v1/preview/C/A/HS?reporterCode=32&period=2024&partnerCode=0&partner2Code=0&customsCode=C00&motCode=0&cmdCode=7601,281820",
+      "fecha_descarga": "2026-11-24",
+      "hash": "sha256:db1674273b3b721a1421315ff8b7f301851654f7b2431b578d65e80bd35b19d8",
+      "cita_ubicacion": "UN Comtrade HS 281820 (2024) y Memoria Aluar 2025 pág. 3",
+      "confianza": "alta"
+    }
+  },
+  {
+    "conexion_id": "al-c4-anodos-a-celdas",
+    "proceso_id": "aluminio-hall-heroult",
+    "origen_paso_id": "al-p3-planta-anodos",
+    "destino_paso_id": "al-p4-electrolisis-hall-heroult",
+    "corriente_nombre": "Ánodos precocidos de carbono (C)",
+    "tipo_corriente": "insumo",
+    "flujo": {
+      "estado": "dato",
+      "valor": 0.43,
+      "unidad": "t/t Al",
+      "procedencia": {
+        "anio": 2006,
+        "fuente_id": "ipcc-2006-v3-ch4-aluminio",
+        "fuente": "2006 IPCC Guidelines for National Greenhouse Gas Inventories (Vol. 3, Cap. 4.4 Primary Aluminium Production)",
+        "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/pdf/3_Volume3/V3_4_Ch4_Metal_Industry.pdf",
+        "fecha_descarga": "2026-11-24",
+        "hash": "sha256:d340e9a8c425cf441429db10a83ccd821988881faf1e0be26dd5eacac56fe6fe",
+        "cita_ubicacion": "IPCC 2006 Vol. 3 pág. 4.45-4.48 (NAC típico celdas Prebake)",
+        "confianza": "alta"
+      }
+    },
+    "procedencia": {
+      "anio": 2006,
+      "fuente_id": "ipcc-2006-v3-ch4-aluminio",
+      "fuente": "2006 IPCC Guidelines for National Greenhouse Gas Inventories (Vol. 3, Cap. 4.4 Primary Aluminium Production)",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/pdf/3_Volume3/V3_4_Ch4_Metal_Industry.pdf",
+      "fecha_descarga": "2026-11-24",
+      "hash": "sha256:d340e9a8c425cf441429db10a83ccd821988881faf1e0be26dd5eacac56fe6fe",
+      "cita_ubicacion": "IPCC 2006 Vol. 3 pág. 4.45-4.48 (NAC típico celdas Prebake)",
+      "confianza": "alta"
+    }
+  },
+  {
+    "conexion_id": "al-c5-celdas-a-gases",
+    "proceso_id": "aluminio-hall-heroult",
+    "origen_paso_id": "al-p4-electrolisis-hall-heroult",
+    "destino_paso_id": "al-p5-tratamiento-gases",
+    "corriente_nombre": "Gases de cuba (CO2 + fluoruros + PFCs)",
+    "tipo_corriente": "emision",
+    "flujo": {
+      "estado": "dato",
+      "valor": 1.6,
+      "unidad": "t CO2/t Al",
+      "procedencia": {
+        "anio": 2006,
+        "fuente_id": "ipcc-2006-v3-ch4-aluminio",
+        "fuente": "2006 IPCC Guidelines for National Greenhouse Gas Inventories (Vol. 3, Cap. 4.4 Primary Aluminium Production)",
+        "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/pdf/3_Volume3/V3_4_Ch4_Metal_Industry.pdf",
+        "fecha_descarga": "2026-11-24",
+        "hash": "sha256:d340e9a8c425cf441429db10a83ccd821988881faf1e0be26dd5eacac56fe6fe",
+        "cita_ubicacion": "IPCC 2006 Vol. 3 Table 4.10 pág. 4.47 (1,6 t CO2/t Al Prebake)",
+        "confianza": "alta"
+      }
+    },
+    "procedencia": {
+      "anio": 2006,
+      "fuente_id": "ipcc-2006-v3-ch4-aluminio",
+      "fuente": "2006 IPCC Guidelines for National Greenhouse Gas Inventories (Vol. 3, Cap. 4.4 Primary Aluminium Production)",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/pdf/3_Volume3/V3_4_Ch4_Metal_Industry.pdf",
+      "fecha_descarga": "2026-11-24",
+      "hash": "sha256:d340e9a8c425cf441429db10a83ccd821988881faf1e0be26dd5eacac56fe6fe",
+      "cita_ubicacion": "IPCC 2006 Vol. 3 Table 4.10 pág. 4.47 (1,6 t CO2/t Al Prebake)",
+      "confianza": "alta"
+    }
+  },
+  {
+    "conexion_id": "al-c6-gases-a-celdas",
+    "proceso_id": "aluminio-hall-heroult",
+    "origen_paso_id": "al-p5-tratamiento-gases",
+    "destino_paso_id": "al-p4-electrolisis-hall-heroult",
+    "corriente_nombre": "Alúmina fluorada recuperada",
+    "tipo_corriente": "reciclo",
+    "flujo": {
+      "estado": "sin_datos",
+      "valor": null,
+      "unidad": "t/t Al",
+      "procedencia": {
+        "anio": 2006,
+        "fuente_id": "ipcc-2006-v3-ch4-aluminio",
+        "fuente": "2006 IPCC Guidelines for National Greenhouse Gas Inventories (Vol. 3, Cap. 4.4 Primary Aluminium Production)",
+        "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/pdf/3_Volume3/V3_4_Ch4_Metal_Industry.pdf",
+        "fecha_descarga": "2026-11-24",
+        "hash": "sha256:d340e9a8c425cf441429db10a83ccd821988881faf1e0be26dd5eacac56fe6fe",
+        "cita_ubicacion": "IPCC 2006 Vol. 3 pág. 4.54 nota c (captura de fluoruros en celdas CWPB)",
+        "confianza": "media"
+      }
+    },
+    "procedencia": {
+      "anio": 2006,
+      "fuente_id": "ipcc-2006-v3-ch4-aluminio",
+      "fuente": "2006 IPCC Guidelines for National Greenhouse Gas Inventories (Vol. 3, Cap. 4.4 Primary Aluminium Production)",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/pdf/3_Volume3/V3_4_Ch4_Metal_Industry.pdf",
+      "fecha_descarga": "2026-11-24",
+      "hash": "sha256:d340e9a8c425cf441429db10a83ccd821988881faf1e0be26dd5eacac56fe6fe",
+      "cita_ubicacion": "IPCC 2006 Vol. 3 pág. 4.54 nota c (captura de fluoruros en celdas CWPB)",
+      "confianza": "media"
+    }
+  },
+  {
+    "conexion_id": "al-c7-celdas-a-fundicion",
+    "proceso_id": "aluminio-hall-heroult",
+    "origen_paso_id": "al-p4-electrolisis-hall-heroult",
+    "destino_paso_id": "al-p6-fundicion-colada",
+    "corriente_nombre": "Aluminio primario líquido (Al)",
+    "tipo_corriente": "principal",
+    "flujo": {
+      "estado": "dato",
+      "valor": 1,
+      "unidad": "t/t Al",
+      "procedencia": {
+        "anio": 2025,
+        "fuente_id": "aluar-eeff-2025",
+        "fuente": "Memoria y Estados Financieros: 56° Ejercicio Económico (al 30/06/2025 y 30/06/2024)",
+        "url": "https://cdn.aluar.com.ar/assets/uploads/EEFF_Aluar_Ejercicio_2024_2025_4_T_7869bb3511.pdf",
+        "fecha_descarga": "2026-11-24",
+        "hash": "sha256:3ee6b54bf52a0a4e543e8be2d0c23d7399425b274971ae097867aee312233901",
+        "cita_ubicacion": "Memoria 2025 pág. 3 (445.327 t aluminio líquido a fundición)",
+        "confianza": "alta"
+      }
+    },
+    "procedencia": {
+      "anio": 2025,
+      "fuente_id": "aluar-eeff-2025",
+      "fuente": "Memoria y Estados Financieros: 56° Ejercicio Económico (al 30/06/2025 y 30/06/2024)",
+      "url": "https://cdn.aluar.com.ar/assets/uploads/EEFF_Aluar_Ejercicio_2024_2025_4_T_7869bb3511.pdf",
+      "fecha_descarga": "2026-11-24",
+      "hash": "sha256:3ee6b54bf52a0a4e543e8be2d0c23d7399425b274971ae097867aee312233901",
+      "cita_ubicacion": "Memoria 2025 pág. 3 (445.327 t aluminio líquido a fundición)",
+      "confianza": "alta"
+    }
+  }
+]

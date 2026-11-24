@@ -1,0 +1,2 @@
+planta_id,empresa_id,producto_id,provincia_id,departamento_id,nombre,localidad,lat,lon,estado_operativo,capacidad_valor,capacidad_estado,capacidad_unidad,anio,fuente_id,cita_ubicacion,confianza
+ejemplo-planta-madryn,ejemplo-empresa-aluminio,aluminio,26,26007,[EJEMPLO] Planta Electrolítica Puerto Madryn,Puerto Madryn,-42.735,-65.039,operativa,,sin_datos,,2024,ejemplo-fuente-01,fixture:plantas.csv fila 2,ejemplo

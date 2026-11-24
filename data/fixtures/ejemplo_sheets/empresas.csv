@@ -1,0 +1,2 @@
+empresa_id,razon_social,tipo_capital,sitio_web_oficial,hechos_verificables,anio,fuente_id,cita_ubicacion,confianza
+ejemplo-empresa-aluminio,Productora de Aluminio Demo S.A. [EJEMPLO],nacional,https://example.org/empresa-demo,[EJEMPLO] Entidad ficticia para probar la relación empresa-planta en Etapa 1; sin facturación ni cuota estimada.,2024,ejemplo-fuente-01,fixture:empresas.csv fila 2,ejemplo

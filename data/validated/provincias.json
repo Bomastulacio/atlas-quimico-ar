@@ -1,0 +1,194 @@
+[
+  {
+    "provincia_id": "02",
+    "nombre": "Ciudad Autónoma de Buenos Aires",
+    "iso_3166_2": "AR-C",
+    "region": "Pampeana",
+    "cobertura_datos": "sin_datos",
+    "nota_cobertura": "Sin cadenas productivas químicas primarias relevadas todavía."
+  },
+  {
+    "provincia_id": "06",
+    "nombre": "Buenos Aires",
+    "iso_3166_2": "AR-B",
+    "region": "Pampeana",
+    "cobertura_datos": "baja",
+    "nota_cobertura": "Polo petroquímico y fertilizantes de Bahía Blanca previsto para Etapa 6 (sin cifras oficiales cargadas aún)."
+  },
+  {
+    "provincia_id": "10",
+    "nombre": "Catamarca",
+    "iso_3166_2": "AR-K",
+    "region": "NOA",
+    "cobertura_datos": "baja",
+    "nota_cobertura": "Cadena de litio prevista para Etapa 6 (pendiente de carga oficial)."
+  },
+  {
+    "provincia_id": "14",
+    "nombre": "Córdoba",
+    "iso_3166_2": "AR-X",
+    "region": "Centro",
+    "cobertura_datos": "sin_datos",
+    "nota_cobertura": "Sin cadenas productivas cargadas todavía."
+  },
+  {
+    "provincia_id": "18",
+    "nombre": "Corrientes",
+    "iso_3166_2": "AR-W",
+    "region": "NEA",
+    "cobertura_datos": "sin_datos",
+    "nota_cobertura": "Sin cadenas productivas cargadas todavía."
+  },
+  {
+    "provincia_id": "22",
+    "nombre": "Chaco",
+    "iso_3166_2": "AR-H",
+    "region": "NEA",
+    "cobertura_datos": "baja",
+    "nota_cobertura": "Cadena de algodón prevista para Etapa 6 (pendiente de carga oficial)."
+  },
+  {
+    "provincia_id": "26",
+    "nombre": "Chubut",
+    "iso_3166_2": "AR-U",
+    "region": "Patagonia",
+    "cobertura_datos": "completa",
+    "nota_cobertura": "Caso modelo de aluminio primario completo y verificado con Memoria Aluar 2025 (CNV), INDEC, UN Comtrade, IPCC y USGS."
+  },
+  {
+    "provincia_id": "30",
+    "nombre": "Entre Ríos",
+    "iso_3166_2": "AR-E",
+    "region": "Centro",
+    "cobertura_datos": "sin_datos",
+    "nota_cobertura": "Sin cadenas productivas cargadas todavía."
+  },
+  {
+    "provincia_id": "34",
+    "nombre": "Formosa",
+    "iso_3166_2": "AR-P",
+    "region": "NEA",
+    "cobertura_datos": "sin_datos",
+    "nota_cobertura": "Sin cadenas productivas cargadas todavía."
+  },
+  {
+    "provincia_id": "38",
+    "nombre": "Jujuy",
+    "iso_3166_2": "AR-Y",
+    "region": "NOA",
+    "cobertura_datos": "baja",
+    "nota_cobertura": "Cadena de litio prevista para Etapa 6 (pendiente de carga oficial)."
+  },
+  {
+    "provincia_id": "42",
+    "nombre": "La Pampa",
+    "iso_3166_2": "AR-L",
+    "region": "Pampeana",
+    "cobertura_datos": "sin_datos",
+    "nota_cobertura": "Sin cadenas productivas cargadas todavía."
+  },
+  {
+    "provincia_id": "46",
+    "nombre": "La Rioja",
+    "iso_3166_2": "AR-F",
+    "region": "NOA",
+    "cobertura_datos": "sin_datos",
+    "nota_cobertura": "Sin cadenas productivas cargadas todavía."
+  },
+  {
+    "provincia_id": "50",
+    "nombre": "Mendoza",
+    "iso_3166_2": "AR-M",
+    "region": "Cuyo",
+    "cobertura_datos": "sin_datos",
+    "nota_cobertura": "Sin cadenas productivas cargadas todavía."
+  },
+  {
+    "provincia_id": "54",
+    "nombre": "Misiones",
+    "iso_3166_2": "AR-N",
+    "region": "NEA",
+    "cobertura_datos": "sin_datos",
+    "nota_cobertura": "Sin cadenas productivas cargadas todavía."
+  },
+  {
+    "provincia_id": "58",
+    "nombre": "Neuquén",
+    "iso_3166_2": "AR-Q",
+    "region": "Patagonia",
+    "cobertura_datos": "sin_datos",
+    "nota_cobertura": "Sin cadenas productivas cargadas todavía."
+  },
+  {
+    "provincia_id": "62",
+    "nombre": "Río Negro",
+    "iso_3166_2": "AR-R",
+    "region": "Patagonia",
+    "cobertura_datos": "sin_datos",
+    "nota_cobertura": "Sin cadenas productivas cargadas todavía."
+  },
+  {
+    "provincia_id": "66",
+    "nombre": "Salta",
+    "iso_3166_2": "AR-A",
+    "region": "NOA",
+    "cobertura_datos": "baja",
+    "nota_cobertura": "Cadena de litio prevista para Etapa 6 (pendiente de carga oficial)."
+  },
+  {
+    "provincia_id": "70",
+    "nombre": "San Juan",
+    "iso_3166_2": "AR-J",
+    "region": "Cuyo",
+    "cobertura_datos": "sin_datos",
+    "nota_cobertura": "Sin cadenas productivas cargadas todavía."
+  },
+  {
+    "provincia_id": "74",
+    "nombre": "San Luis",
+    "iso_3166_2": "AR-D",
+    "region": "Cuyo",
+    "cobertura_datos": "sin_datos",
+    "nota_cobertura": "Sin cadenas productivas cargadas todavía."
+  },
+  {
+    "provincia_id": "78",
+    "nombre": "Santa Cruz",
+    "iso_3166_2": "AR-Z",
+    "region": "Patagonia",
+    "cobertura_datos": "sin_datos",
+    "nota_cobertura": "Sin cadenas productivas cargadas todavía."
+  },
+  {
+    "provincia_id": "82",
+    "nombre": "Santa Fe",
+    "iso_3166_2": "AR-S",
+    "region": "Centro",
+    "cobertura_datos": "baja",
+    "nota_cobertura": "Polo sojero y biodiésel del Gran Rosario previsto para Etapa 6 (pendiente de carga oficial)."
+  },
+  {
+    "provincia_id": "86",
+    "nombre": "Santiago del Estero",
+    "iso_3166_2": "AR-G",
+    "region": "NOA",
+    "cobertura_datos": "sin_datos",
+    "nota_cobertura": "Sin cadenas productivas cargadas todavía."
+  },
+  {
+    "provincia_id": "90",
+    "nombre": "Tucumán",
+    "iso_3166_2": "AR-T",
+    "region": "NOA",
+    "cobertura_datos": "sin_datos",
+    "nota_cobertura": "Sin cadenas productivas cargadas todavía."
+  },
+  {
+    "provincia_id": "94",
+    "nombre": "Tierra del Fuego, Antártida e Islas del Atlántico Sur",
+    "iso_3166_2": "AR-V",
+    "region": "Patagonia",
+    "cobertura_datos": "sin_datos",
+    "nota_cobertura": "Jurisdicción bicontinental IGN; sin cadenas productivas cargadas todavía."
+  }
+]

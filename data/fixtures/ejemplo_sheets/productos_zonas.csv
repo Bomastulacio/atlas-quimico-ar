@@ -1,0 +1,10 @@
+relacion_id,producto_id,provincia_id,departamento_id,es_dominante,rol_en_cadena,anio,fuente_id,cita_ubicacion,confianza
+aluminio-26-26007,aluminio,26,26007,true,refinacion,2024,ejemplo-fuente-01,fixture:productos_zonas.csv fila 2,ejemplo
+litio-38,litio,38,,true,extraccion,2024,ejemplo-fuente-01,fixture:productos_zonas.csv fila 3,ejemplo
+litio-66,litio,66,,true,extraccion,2024,ejemplo-fuente-01,fixture:productos_zonas.csv fila 4,ejemplo
+litio-10,litio,10,,true,extraccion,2024,ejemplo-fuente-01,fixture:productos_zonas.csv fila 5,ejemplo
+urea-06-06056,urea,06,06056,true,sintesis,2024,ejemplo-fuente-01,fixture:productos_zonas.csv fila 6,ejemplo
+petroquimica-06-06056,petroquimica,06,06056,false,procesamiento,2024,ejemplo-fuente-01,fixture:productos_zonas.csv fila 7,ejemplo
+algodon-22,algodon,22,,true,procesamiento,2024,ejemplo-fuente-01,fixture:productos_zonas.csv fila 8,ejemplo
+soja-82-82084,soja,82,82084,true,procesamiento,2024,ejemplo-fuente-01,fixture:productos_zonas.csv fila 9,ejemplo
+biodiesel-82-82084,biodiesel,82,82084,false,sintesis,2024,ejemplo-fuente-01,fixture:productos_zonas.csv fila 10,ejemplo

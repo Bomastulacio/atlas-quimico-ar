@@ -1,0 +1,39 @@
+[
+  {
+    "planta_id": "aluar-puerto-madryn",
+    "empresa_id": "aluar-saic",
+    "producto_id": "aluminio",
+    "provincia_id": "26",
+    "departamento_id": "26007",
+    "nombre": "Planta Aluar (División Aluminio Primario)",
+    "localidad": "Puerto Madryn",
+    "lat": -42.735,
+    "lon": -65.039,
+    "estado_operativo": "operativa",
+    "capacidad": {
+      "estado": "dato",
+      "valor": 460000,
+      "unidad": "t/año",
+      "procedencia": {
+        "anio": 2025,
+        "fuente_id": "aluar-web-institucional",
+        "fuente": "Portal institucional y cifras operativas (Aluar)",
+        "url": "https://www.aluar.com.ar/",
+        "fecha_descarga": "2026-11-24",
+        "hash": "sha256:a48420cd0884320a8a077268515d54811636d964ef983048fd8e231e56362496",
+        "cita_ubicacion": "aluar.com.ar sección Aluar en cifras (460.000 t/año) y Memoria 2025 Nota 35 pág. 50 (Ruta Prov. A010 Parque Industrial Pesado)",
+        "confianza": "alta"
+      }
+    },
+    "procedencia": {
+      "anio": 2025,
+      "fuente_id": "aluar-web-institucional",
+      "fuente": "Portal institucional y cifras operativas (Aluar)",
+      "url": "https://www.aluar.com.ar/",
+      "fecha_descarga": "2026-11-24",
+      "hash": "sha256:a48420cd0884320a8a077268515d54811636d964ef983048fd8e231e56362496",
+      "cita_ubicacion": "aluar.com.ar sección Aluar en cifras (460.000 t/año) y Memoria 2025 Nota 35 pág. 50 (Ruta Prov. A010 Parque Industrial Pesado)",
+      "confianza": "alta"
+    }
+  }
+]

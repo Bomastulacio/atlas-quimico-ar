@@ -1,0 +1,19 @@
+[
+  {
+    "empresa_id": "aluar-saic",
+    "razon_social": "Aluar Aluminio Argentino S.A.I.C.",
+    "tipo_capital": "nacional",
+    "sitio_web_oficial": "https://www.aluar.com.ar/",
+    "hechos_verificables": "Único productor de aluminio primario en Argentina (CUIT 30-52278060-6). Creada en 1970, cotiza en la Bolsa de Comercio de Buenos Aires bajo fiscalización de CNV desde 1980. Controla el 60,20% de Hidroeléctrica Futaleufú S.A. y opera un Parque Eólico propio en Puerto Madryn (ampliación en curso hacia 582 MW). Dotación al 30/06/2025: 2.330 personas (1.582 en División Aluminio Primario).",
+    "procedencia": {
+      "anio": 2025,
+      "fuente_id": "aluar-eeff-2025",
+      "fuente": "Memoria y Estados Financieros: 56° Ejercicio Económico (al 30/06/2025 y 30/06/2024)",
+      "url": "https://cdn.aluar.com.ar/assets/uploads/EEFF_Aluar_Ejercicio_2024_2025_4_T_7869bb3511.pdf",
+      "fecha_descarga": "2026-11-24",
+      "hash": "sha256:3ee6b54bf52a0a4e543e8be2d0c23d7399425b274971ae097867aee312233901",
+      "cita_ubicacion": "Memoria 2025 pág. 2 y 10; Estados Financieros Nota 1 pág. 8 y Nota 2.3.1 pág. 11",
+      "confianza": "alta"
+    }
+  }
+]

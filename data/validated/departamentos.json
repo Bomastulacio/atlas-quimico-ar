@@ -1,0 +1,29 @@
+[
+  {
+    "departamento_id": "26007",
+    "provincia_id": "26",
+    "nombre": "Biedma",
+    "tipo_zona": "polo_industrial",
+    "tiene_datos_confiables": true,
+    "cobertura_datos": "completa",
+    "nota_cobertura": "Puerto Madryn: sede del único complejo productor de aluminio primario del país (Parque Industrial Pesado y Muelle Almirante Storni)."
+  },
+  {
+    "departamento_id": "06056",
+    "provincia_id": "06",
+    "nombre": "Bahía Blanca",
+    "tipo_zona": "polo_industrial",
+    "tiene_datos_confiables": true,
+    "cobertura_datos": "baja",
+    "nota_cobertura": "Polo petroquímico y fertilizantes nitrogenados (carga oficial prevista en Etapa 6 y zoom departamental en Etapa 7)."
+  },
+  {
+    "departamento_id": "82084",
+    "provincia_id": "82",
+    "nombre": "Rosario",
+    "tipo_zona": "agro",
+    "tiene_datos_confiables": true,
+    "cobertura_datos": "baja",
+    "nota_cobertura": "Complejo oleaginoso y biodiésel del Gran Rosario (carga oficial prevista en Etapa 6 y zoom departamental en Etapa 7)."
+  }
+]

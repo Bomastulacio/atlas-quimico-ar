@@ -1,0 +1,48 @@
+{
+  "name": "atlas-quimico-ar",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "Atlas productivo e industrial de Argentina con foco en procesos químicos, comercio exterior y trazabilidad de fuentes oficiales.",
+  "scripts": {
+    "dev": "astro dev",
+    "prebuild": "npm run data:validate",
+    "build": "astro build",
+    "preview": "astro preview",
+    "check": "astro check",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "data:sync": "tsx scripts/sheets-to-json.ts",
+    "data:sync:local": "tsx scripts/sheets-to-json.ts --from-local",
+    "data:sync:example": "tsx scripts/sheets-to-json.ts --from-fixtures",
+    "data:golden": "tsx scripts/export-golden-aluminio.ts",
+    "data:validate": "tsx scripts/validate-data.ts",
+    "data:validate:strict": "tsx scripts/validate-data.ts --strict-real",
+    "geo:prepare": "tsx scripts/prepare-geo.ts"
+  },
+  "dependencies": {
+    "@astrojs/mdx": "^4.2.5",
+    "@astrojs/react": "^4.2.4",
+    "@tailwindcss/vite": "^4.1.4",
+    "@types/d3-geo": "^3.1.1",
+    "@xyflow/react": "^13.0.3",
+    "astro": "^5.7.0",
+    "csv-parse": "^5.6.0",
+    "d3-geo": "^3.1.2",
+    "lucide-react": "^0.488.0",
+    "motion": "^12.7.4",
+    "react": "^19.1.0",
+    "react-dom": "^19.1.0",
+    "tailwindcss": "^4.1.4",
+    "zod": "^3.24.3"
+  },
+  "devDependencies": {
+    "@astrojs/check": "^0.9.4",
+    "@types/node": "^22.14.0",
+    "@types/react": "^19.1.0",
+    "@types/react-dom": "^19.1.0",
+    "tsx": "^4.19.3",
+    "typescript": "^5.8.3",
+    "vitest": "^3.1.1"
+  }
+}

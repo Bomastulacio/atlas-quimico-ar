@@ -1,0 +1,164 @@
+[
+  {
+    "relacion_id": "aluminio-26-26007",
+    "producto_id": "aluminio",
+    "provincia_id": "26",
+    "departamento_id": "26007",
+    "es_dominante": true,
+    "rol_en_cadena": "refinacion",
+    "procedencia": {
+      "anio": 2025,
+      "fuente_id": "aluar-eeff-2025",
+      "fuente": "Memoria y Estados Financieros: 56° Ejercicio Económico (al 30/06/2025 y 30/06/2024)",
+      "url": "https://cdn.aluar.com.ar/assets/uploads/EEFF_Aluar_Ejercicio_2024_2025_4_T_7869bb3511.pdf",
+      "fecha_descarga": "2026-11-24",
+      "hash": "sha256:3ee6b54bf52a0a4e543e8be2d0c23d7399425b274971ae097867aee312233901",
+      "cita_ubicacion": "Memoria 2025 pág. 3 y Nota 35 pág. 50 (Planta Puerto Madryn Chubut)",
+      "confianza": "alta"
+    }
+  },
+  {
+    "relacion_id": "litio-38",
+    "producto_id": "litio",
+    "provincia_id": "38",
+    "departamento_id": null,
+    "es_dominante": true,
+    "rol_en_cadena": "extraccion",
+    "procedencia": {
+      "anio": 2024,
+      "fuente_id": "ejemplo-fuente-01",
+      "fuente": "[EJEMPLO] Marcador territorial demostrativo para cadenas MVP pendientes de Etapa 6",
+      "url": "https://example.org/atlas-quimico-ar/mvp-pendiente",
+      "fecha_descarga": "2026-11-24",
+      "hash": "sha256:e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "cita_ubicacion": "plan-mvp:pendiente-etapa-6",
+      "confianza": "ejemplo"
+    }
+  },
+  {
+    "relacion_id": "litio-66",
+    "producto_id": "litio",
+    "provincia_id": "66",
+    "departamento_id": null,
+    "es_dominante": true,
+    "rol_en_cadena": "extraccion",
+    "procedencia": {
+      "anio": 2024,
+      "fuente_id": "ejemplo-fuente-01",
+      "fuente": "[EJEMPLO] Marcador territorial demostrativo para cadenas MVP pendientes de Etapa 6",
+      "url": "https://example.org/atlas-quimico-ar/mvp-pendiente",
+      "fecha_descarga": "2026-11-24",
+      "hash": "sha256:e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "cita_ubicacion": "plan-mvp:pendiente-etapa-6",
+      "confianza": "ejemplo"
+    }
+  },
+  {
+    "relacion_id": "litio-10",
+    "producto_id": "litio",
+    "provincia_id": "10",
+    "departamento_id": null,
+    "es_dominante": true,
+    "rol_en_cadena": "extraccion",
+    "procedencia": {
+      "anio": 2024,
+      "fuente_id": "ejemplo-fuente-01",
+      "fuente": "[EJEMPLO] Marcador territorial demostrativo para cadenas MVP pendientes de Etapa 6",
+      "url": "https://example.org/atlas-quimico-ar/mvp-pendiente",
+      "fecha_descarga": "2026-11-24",
+      "hash": "sha256:e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "cita_ubicacion": "plan-mvp:pendiente-etapa-6",
+      "confianza": "ejemplo"
+    }
+  },
+  {
+    "relacion_id": "urea-06-06056",
+    "producto_id": "urea",
+    "provincia_id": "06",
+    "departamento_id": "06056",
+    "es_dominante": true,
+    "rol_en_cadena": "sintesis",
+    "procedencia": {
+      "anio": 2024,
+      "fuente_id": "ejemplo-fuente-01",
+      "fuente": "[EJEMPLO] Marcador territorial demostrativo para cadenas MVP pendientes de Etapa 6",
+      "url": "https://example.org/atlas-quimico-ar/mvp-pendiente",
+      "fecha_descarga": "2026-11-24",
+      "hash": "sha256:e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "cita_ubicacion": "plan-mvp:pendiente-etapa-6",
+      "confianza": "ejemplo"
+    }
+  },
+  {
+    "relacion_id": "petroquimica-06-06056",
+    "producto_id": "petroquimica",
+    "provincia_id": "06",
+    "departamento_id": "06056",
+    "es_dominante": false,
+    "rol_en_cadena": "procesamiento",
+    "procedencia": {
+      "anio": 2024,
+      "fuente_id": "ejemplo-fuente-01",
+      "fuente": "[EJEMPLO] Marcador territorial demostrativo para cadenas MVP pendientes de Etapa 6",
+      "url": "https://example.org/atlas-quimico-ar/mvp-pendiente",
+      "fecha_descarga": "2026-11-24",
+      "hash": "sha256:e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "cita_ubicacion": "plan-mvp:pendiente-etapa-6",
+      "confianza": "ejemplo"
+    }
+  },
+  {
+    "relacion_id": "algodon-22",
+    "producto_id": "algodon",
+    "provincia_id": "22",
+    "departamento_id": null,
+    "es_dominante": true,
+    "rol_en_cadena": "procesamiento",
+    "procedencia": {
+      "anio": 2024,
+      "fuente_id": "ejemplo-fuente-01",
+      "fuente": "[EJEMPLO] Marcador territorial demostrativo para cadenas MVP pendientes de Etapa 6",
+      "url": "https://example.org/atlas-quimico-ar/mvp-pendiente",
+      "fecha_descarga": "2026-11-24",
+      "hash": "sha256:e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "cita_ubicacion": "plan-mvp:pendiente-etapa-6",
+      "confianza": "ejemplo"
+    }
+  },
+  {
+    "relacion_id": "soja-82-82084",
+    "producto_id": "soja",
+    "provincia_id": "82",
+    "departamento_id": "82084",
+    "es_dominante": true,
+    "rol_en_cadena": "procesamiento",
+    "procedencia": {
+      "anio": 2024,
+      "fuente_id": "ejemplo-fuente-01",
+      "fuente": "[EJEMPLO] Marcador territorial demostrativo para cadenas MVP pendientes de Etapa 6",
+      "url": "https://example.org/atlas-quimico-ar/mvp-pendiente",
+      "fecha_descarga": "2026-11-24",
+      "hash": "sha256:e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "cita_ubicacion": "plan-mvp:pendiente-etapa-6",
+      "confianza": "ejemplo"
+    }
+  },
+  {
+    "relacion_id": "biodiesel-82-82084",
+    "producto_id": "biodiesel",
+    "provincia_id": "82",
+    "departamento_id": "82084",
+    "es_dominante": false,
+    "rol_en_cadena": "sintesis",
+    "procedencia": {
+      "anio": 2024,
+      "fuente_id": "ejemplo-fuente-01",
+      "fuente": "[EJEMPLO] Marcador territorial demostrativo para cadenas MVP pendientes de Etapa 6",
+      "url": "https://example.org/atlas-quimico-ar/mvp-pendiente",
+      "fecha_descarga": "2026-11-24",
+      "hash": "sha256:e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "cita_ubicacion": "plan-mvp:pendiente-etapa-6",
+      "confianza": "ejemplo"
+    }
+  }
+]

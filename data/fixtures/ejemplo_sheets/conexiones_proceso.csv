@@ -1,0 +1,3 @@
+conexion_id,proceso_id,origen_paso_id,destino_paso_id,corriente_nombre,tipo_corriente,flujo_valor,flujo_estado,flujo_unidad,anio,fuente_id,cita_ubicacion,confianza
+al-c1-alumina-a-celda,aluminio-hall-heroult,al-p1-recepcion-alumina,al-p2-celda-electrolitica,Alúmina calcinada (Al2O3),principal,1.93,dato,t/t Al,2024,ejemplo-fuente-01,fixture:conexiones_proceso.csv fila 2,ejemplo
+al-c2-celda-a-colada,aluminio-hall-heroult,al-p2-celda-electrolitica,al-p3-colada-lingotes,Aluminio líquido (Al),principal,1.0,dato,t/t Al,2024,ejemplo-fuente-01,fixture:conexiones_proceso.csv fila 3,ejemplo

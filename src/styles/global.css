@@ -1,0 +1,170 @@
+@import "tailwindcss";
+
+@theme {
+  /* Disciplina tipográfica estricta: 2 familias (Space Grotesk + Inter con tabular-nums) */
+  --font-display: "Space Grotesk", "Inter", system-ui, -apple-system, sans-serif;
+  --font-sans: "Inter", system-ui, -apple-system, sans-serif;
+
+  /* Paleta moderna-clásica: piedra arquitectónica y tinta carbón (sin blanco clínico) */
+  --color-stone-bg: #ecece9;
+  --color-stone-surface: #f7f7f5;
+  --color-stone-subtle: #e2e2dd;
+  --color-sea-basin: #dfe4ea;
+  --color-ink: #111214;
+  --color-ink-muted: #52555e;
+  --color-rule: #d2d4d8;
+  --color-rule-strong: #1c1e22;
+
+  /* Rupturas cromáticas semánticas (solo en territorio activo, cadenas y procesos) */
+  --color-cobalt: #0a42e0;
+  --color-emerald-react: #0b7a53;
+  --color-ochre-metal: #c86a11;
+  --color-signal-red: #d93025;
+
+  /* Escala controlada de 3 tamaños de cuerpo */
+  --text-heading: 1.5rem;
+  --text-body: 0.9375rem;
+  --text-sm: 0.8125rem;
+}
+
+@layer base {
+  html {
+    background-color: var(--color-stone-bg);
+    color: var(--color-ink);
+    font-family: var(--font-sans);
+    font-size: 16px;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+  }
+
+  body {
+    min-height: 100vh;
+    background-color: var(--color-stone-bg);
+    font-size: var(--text-body);
+    line-height: 1.55;
+  }
+}
+
+.tabular-nums {
+  font-variant-numeric: tabular-nums;
+}
+
+/* Perspectiva 3D suave para el relieve cartográfico al seleccionar provincia */
+.map-stage-3d {
+  perspective: 1400px;
+  perspective-origin: 50% 45%;
+}
+
+.map-plane {
+  transform-style: preserve-3d;
+  transition: transform 420ms cubic-bezier(0.22, 1, 0.36, 1);
+  will-change: transform;
+}
+
+.map-plane-tilted {
+  transform: rotateX(21deg) rotateZ(-3deg) scale(1.02);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .map-plane,
+  .map-plane-tilted {
+    transform: none;
+    transition: none;
+  }
+}
+
+/* Integración sobria de React Flow con la paleta piedra arquitectónica y tinta */
+.atlas-flow .react-flow__controls {
+  box-shadow: none;
+  border: 1px solid var(--color-rule);
+  border-radius: 0;
+  background: var(--color-stone-surface);
+}
+
+.atlas-flow .react-flow__controls-button {
+  background: var(--color-stone-surface);
+  border-bottom: 1px solid var(--color-rule);
+  color: var(--color-ink);
+  border-radius: 0;
+}
+
+.atlas-flow .react-flow__controls-button:hover {
+  background: var(--color-ink);
+  color: #ffffff;
+}
+
+.atlas-flow .react-flow__controls-button:hover svg {
+  fill: #ffffff;
+}
+
+.atlas-flow .react-flow__minimap {
+  border: 1px solid var(--color-rule);
+  border-radius: 0;
+  background: var(--color-stone-surface);
+}
+
+.atlas-flow .react-flow__attribution {
+  background: rgba(247, 247, 245, 0.85);
+  font-size: 11px;
+  color: var(--color-ink-muted);
+}
+
+/* Tipografía editorial limpia para ensayos técnicos en MDX */
+.atlas-prose h2 {
+  font-family: var(--font-display);
+  font-size: 1.5rem;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  line-height: 1.2;
+  color: var(--color-ink);
+  margin-top: 2.25rem;
+  margin-bottom: 0.75rem;
+}
+
+.atlas-prose h2:first-child {
+  margin-top: 0;
+}
+
+.atlas-prose h3 {
+  font-family: var(--font-display);
+  font-size: 1.125rem;
+  font-weight: 600;
+  color: var(--color-ink);
+  margin-top: 1.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.atlas-prose p {
+  font-size: 0.9375rem;
+  line-height: 1.65;
+  color: var(--color-ink-muted);
+  margin-bottom: 1rem;
+}
+
+.atlas-prose strong {
+  color: var(--color-ink);
+  font-weight: 600;
+}
+
+.atlas-prose ul {
+  list-style-type: square;
+  padding-left: 1.25rem;
+  margin-bottom: 1.1rem;
+  color: var(--color-ink-muted);
+}
+
+.atlas-prose li {
+  margin-bottom: 0.45rem;
+  line-height: 1.6;
+}
+
+.atlas-prose code {
+  font-family: var(--font-sans);
+  font-variant-numeric: tabular-nums;
+  font-weight: 600;
+  font-size: 0.875em;
+  color: var(--color-ink);
+  background: var(--color-stone-subtle);
+  padding: 0.1rem 0.35rem;
+}

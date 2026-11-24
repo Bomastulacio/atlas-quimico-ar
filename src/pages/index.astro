@@ -1,0 +1,109 @@
+---
+import BaseLayout from '@/layouts/BaseLayout.astro';
+import { ArgentinaMapExplorer } from '@/components/ArgentinaMapExplorer';
+import { ProcessDeckPreview } from '@/components/ProcessDeckPreview';
+import {
+  getGeoAntartidaIslas,
+  getGeoContinental,
+  getGeoManifest,
+  getMapaProvinciasData,
+  getProceso,
+  getProductos,
+  isExampleDataset,
+} from '@/data';
+
+const esEjemplo = isExampleDataset();
+const productos = getProductos();
+const procesoEjemplo = getProceso('aluminio-hall-heroult');
+
+const continentalGeo = getGeoContinental();
+const antartidaIslasGeo = getGeoAntartidaIslas();
+const geoManifest = getGeoManifest();
+const provinciasData = getMapaProvinciasData();
+---
+
+<BaseLayout title="Atlas Químico Argentino">
+  {/* Encabezado limpio en una sola línea, sin bordes innecesarios hasta hacer scroll */}
+  <header class="sticky top-0 z-30 border-b border-rule/80 bg-stone-bg/95 backdrop-blur-xs">
+    <div class="mx-auto flex max-w-[1600px] items-center justify-between gap-6 px-5 py-3.5 sm:px-8 lg:px-10">
+      <a
+        href="#mapa"
+        class="flex items-center gap-2.5 font-display text-[19px] font-bold tracking-[-0.02em] text-ink"
+      >
+        <span class="inline-block h-2.5 w-2.5 bg-cobalt" aria-hidden="true" />
+        <span>Atlas Químico Argentino</span>
+      </a>
+
+      <nav aria-label="Navegación principal" class="flex items-center gap-6 text-[15px]">
+        <a href="#mapa" class="text-ink-muted transition-colors duration-150 hover:text-ink">
+          Mapa territorial
+        </a>
+        <a href="#procesos" class="text-ink-muted transition-colors duration-150 hover:text-ink">
+          Procesos químicos
+        </a>
+        <a
+          href="/productos/aluminio"
+          class="font-medium text-cobalt transition-colors duration-150 hover:text-ink"
+        >
+          Aluminio (verificado)
+        </a>
+      </nav>
+    </div>
+  </header>
+
+  {/* Apertura directa al atlas interactivo a ancho completo (sin hero de relleno ni KPIs genéricos) */}
+  <main class="mx-auto max-w-[1600px] px-5 pb-16 pt-7 sm:px-8 lg:px-10">
+    <section id="mapa" class="scroll-mt-20 space-y-5">
+      <div class="flex flex-wrap items-end justify-between gap-4">
+        <div class="max-w-3xl">
+          <h1 class="font-display text-[clamp(2rem,3.4vw,3rem)] font-bold leading-[1.06] tracking-[-0.03em] text-ink">
+            Mapa productivo e industrial de Argentina
+          </h1>
+          <p class="mt-2 max-w-[65ch] text-[15px] text-ink-muted">
+            Qué fabrica el país, qué procesos químicos transforman cada insumo y cuánto comercio
+            exterior genera, con fuentes oficiales verificables en cada cifra.
+          </p>
+        </div>
+
+        <p role="status" class="max-w-sm text-[13px] text-ink-muted">
+          Caso modelo <a href="/productos/aluminio" class="font-medium text-cobalt hover:underline">Aluminio (Chubut)</a>{' '}
+          verificado con fuentes oficiales; las otras 6 cadenas siguen pendientes hasta Etapa 6.
+        </p>
+      </div>
+
+      <ArgentinaMapExplorer
+        client:load
+        continentalGeo={continentalGeo}
+        antartidaIslasGeo={antartidaIslasGeo}
+        provinciasData={provinciasData}
+        productos={productos}
+        geoManifest={geoManifest}
+        esEjemplo={esEjemplo}
+      />
+    </section>
+
+    {/* Sección inferior sostenida con la misma sobriedad editorial */}
+    <section id="procesos" class="mt-16 scroll-mt-20">
+      <ProcessDeckPreview
+        client:load
+        productos={productos}
+        procesoEjemplo={procesoEjemplo?.proceso ?? null}
+        pasosEjemplo={procesoEjemplo?.pasos ?? []}
+        conexionesEjemplo={procesoEjemplo?.conexiones ?? []}
+        esEjemplo={esEjemplo}
+      />
+    </section>
+  </main>
+
+  <footer class="border-t border-rule bg-stone-surface">
+    <div class="mx-auto flex max-w-[1600px] flex-wrap items-center justify-between gap-4 px-5 py-6 text-[13px] text-ink-muted sm:px-8 lg:px-10">
+      <p>
+        Atlas Químico Argentino. Toda cifra exige año, organismo, URL y verificación de archivo; los
+        faltantes se declaran sin datos.
+      </p>
+      <p class="tabular-nums">
+        Límites provinciales: {geoManifest.organismo} ({geoManifest.fecha_descarga})
+      </p>
+    </div>
+  </footer>
+</BaseLayout>

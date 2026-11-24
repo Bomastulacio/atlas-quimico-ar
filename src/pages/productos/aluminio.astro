@@ -1,0 +1,599 @@
+---
+import BaseLayout from '@/layouts/BaseLayout.astro';
+import { ProcessFlowDiagram } from '@/components/ProcessFlowDiagram';
+import { ProductIcon } from '@/components/ProductIcon';
+import AluminioEssay from '@/content/productos/aluminio.mdx';
+import { getFichaProducto, getFuentes } from '@/data';
+
+const ficha = getFichaProducto('aluminio');
+if (!ficha) {
+  throw new Error('No se encontró la ficha del producto "aluminio" en la capa de datos.');
+}
+
+const procesoPrincipal = ficha.procesos[0];
+if (!procesoPrincipal) {
+  throw new Error('No se encontró el proceso principal de aluminio en la capa de datos.');
+}
+
+// Separar comercio exterior de producto (Cap. 76 INDEC) y de insumo crítico importado (Alúmina HS 2818.20)
+const comexCap76 = ficha.comercioExterior
+  .filter((r) => r.ncm_codigo === '76')
+  .sort((a, b) => b.anio - a.anio);
+
+const comexAluminaVol = ficha.comercioExterior
+  .filter((r) => r.ncm_codigo === '2818.20' && r.metrica === 'volumen_t')
+  .sort((a, b) => b.anio - a.anio);
+
+const comexAluminaUsd = ficha.comercioExterior
+  .filter((r) => r.ncm_codigo === '2818.20' && r.metrica === 'valor_usd')
+  .sort((a, b) => b.anio - a.anio);
+
+const produccionDesc = [...ficha.produccion].sort((a, b) => b.anio - a.anio);
+const maxProduccion = Math.max(
+  ...produccionDesc.map((r) => (r.medicion.estado === 'dato' ? r.medicion.valor : 0)),
+  1
+);
+
+const ultimaProduccion = produccionDesc[0];
+const ultimoComex = comexCap76[0];
+const ultimaAluminaVol = comexAluminaVol[0];
+const ultimaAluminaUsd = comexAluminaUsd[0];
+const plantaPrincipal = ficha.plantas[0];
+const empresaPrincipal = plantaPrincipal?.empresa ?? null;
+
+// Recolectar únicamente las fuentes efectivamente citadas en la ficha de aluminio
+const citedFuenteIds = new Set<string>([
+  ...ficha.zonas.map((z) => z.procedencia.fuente_id),
+  ...ficha.procesos.map((p) => p.proceso.procedencia.fuente_id),
+  ...ficha.procesos.flatMap((p) => p.pasos.map((s) => s.procedencia.fuente_id)),
+  ...ficha.procesos.flatMap((p) => p.conexiones.map((c) => c.procedencia.fuente_id)),
+  ...ficha.plantas.map((pl) => pl.procedencia.fuente_id),
+  ...ficha.plantas
+    .map((pl) => pl.empresa?.procedencia.fuente_id)
+    .filter((id): id is string => Boolean(id)),
+  ...ficha.produccion.map((pr) => pr.procedencia.fuente_id),
+  ...ficha.comercioExterior.map((ce) => ce.procedencia.fuente_id),
+]);
+
+const fuentesCitadas = getFuentes().filter((f) => citedFuenteIds.has(f.fuente_id));
+
+// Relación estequiométrica verificada desde datos reales (2024 alúmina / FY 2024-25 Al líquido)
+const ratioAluminaAl =
+  ultimaAluminaVol?.importacion.estado === 'dato' && ultimaProduccion?.medicion.estado === 'dato'
+    ? ultimaAluminaVol.importacion.valor / ultimaProduccion.medicion.valor
+    : null;
+
+const desgloseFy2025 = [
+  { producto: 'Lingotes puros (aleaciones base)', toneladas: 140997 },
+  { producto: 'Barrotes de extrusión (billets)', toneladas: 122857 },
+  { producto: 'Lingotes T de refusión', toneladas: 103457 },
+  { producto: 'Alambrón eléctrico y mecánico', toneladas: 40287 },
+  { producto: 'Despacho en estado líquido', toneladas: 17028 },
+  { producto: 'Lingotes aleados', toneladas: 6901 },
+  { producto: 'Placas de laminación', toneladas: 6400 },
+  { producto: 'Zincalum', toneladas: 4510 },
+];
+
+const matrizElectricaFy2025 = [
+  { origen: 'Autogeneración térmica a gas (planta Puerto Madryn)', mwh: 3198634, pct: 47.7 },
+  { origen: 'Hidroeléctrica Futaleufú S.A.', mwh: 2716304, pct: 40.5 },
+  { origen: 'Parque Eólico Aluar (Puerto Madryn)', mwh: 791586, pct: 11.8 },
+];
+
+const TIPO_FUENTE_LABEL: Record<string, string> = {
+  oficial: 'Oficial',
+  tecnica: 'Técnica internacional',
+  empresa: 'Empresa (CNV / oficial)',
+  ejemplo: 'Ejemplo',
+};
+---
+
+<BaseLayout
+  title="Aluminio primario (Chubut) | Atlas Químico Argentino"
+  description="Ficha completa y verificada de aluminio primario en Argentina: proceso electrolítico Hall-Héroult interactivo, producción real en Puerto Madryn, comercio exterior INDEC y UN Comtrade."
+>
+  {/* Encabezado consistente con la portada */}
+  <header class="sticky top-0 z-30 border-b border-rule/80 bg-stone-bg/95 backdrop-blur-xs">
+    <div class="mx-auto flex max-w-[1600px] items-center justify-between gap-6 px-5 py-3.5 sm:px-8 lg:px-10">
+      <a
+        href="/"
+        class="flex items-center gap-2.5 font-display text-[19px] font-bold tracking-[-0.02em] text-ink"
+      >
+        <span class="inline-block h-2.5 w-2.5 bg-cobalt" aria-hidden="true" />
+        <span>Atlas Químico Argentino</span>
+      </a>
+
+      <nav aria-label="Navegación de ficha" class="flex items-center gap-5 text-[15px]">
+        <a href="/" class="text-ink-muted transition-colors duration-150 hover:text-ink">
+          ← Mapa territorial
+        </a>
+        <a href="#diagrama" class="hidden text-ink-muted transition-colors duration-150 hover:text-ink sm:inline">
+          Diagrama
+        </a>
+        <a href="#datos" class="hidden text-ink-muted transition-colors duration-150 hover:text-ink sm:inline">
+          Producción y comercio
+        </a>
+        <a href="#empresas" class="hidden text-ink-muted transition-colors duration-150 hover:text-ink md:inline">
+          Planta
+        </a>
+        <a href="#fuentes" class="text-ink-muted transition-colors duration-150 hover:text-ink">
+          Fuentes ({fuentesCitadas.length})
+        </a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="mx-auto max-w-[1600px] px-5 pb-20 pt-8 sm:px-8 lg:px-10">
+    {/* Cabecera de ficha de producto */}
+    <section class="border-b border-rule pb-8">
+      <div class="flex flex-wrap items-start justify-between gap-6">
+        <div class="flex items-start gap-4">
+          <span class="mt-1 flex h-12 w-12 shrink-0 items-center justify-center bg-cobalt text-white">
+            <ProductIcon iconId={ficha.producto.icono_id} size={24} />
+          </span>
+          <div>
+            <div class="flex flex-wrap items-baseline gap-3">
+              <h1 class="font-display text-[clamp(2rem,3.4vw,3rem)] font-bold leading-[1.06] tracking-[-0.03em] text-ink">
+                {ficha.producto.nombre}
+              </h1>
+              {ficha.producto.formula_quimica && (
+                <span class="font-display text-[22px] font-semibold text-cobalt tabular-nums">
+                  {ficha.producto.formula_quimica}
+                </span>
+              )}
+            </div>
+            <p class="mt-2 max-w-[68ch] text-[15px] text-ink-muted">
+              {ficha.producto.descripcion_corta}
+            </p>
+            <p class="mt-2 text-[13px] text-ink-muted tabular-nums">
+              Jurisdicción: Chubut (Georef 26) · Departamento Biedma (Georef 26007) · Puerto Madryn
+            </p>
+          </div>
+        </div>
+
+        <div class="flex items-center gap-2 text-[13px] font-medium text-ink">
+          <span class="h-2.5 w-2.5 rounded-full bg-emerald-react" />
+          <span>Caso modelo verificado · Cobertura completa</span>
+        </div>
+      </div>
+
+      {/* 4 magnitudes verificadas en fila tipográfica limpia (cada cifra con año y fuente) */}
+      <dl class="mt-8 grid gap-6 border-t border-rule pt-6 sm:grid-cols-2 lg:grid-cols-4 tabular-nums">
+        <div>
+          <dt class="text-[13px] text-ink-muted">Producción en electrólisis (FY 2024-25)</dt>
+          <dd class="mt-1 font-display text-[28px] font-bold leading-tight text-ink">
+            {ultimaProduccion?.medicion.estado === 'dato'
+              ? `${ultimaProduccion.medicion.valor.toLocaleString('es-AR')} t`
+              : 'Sin datos'}
+          </dd>
+          <p class="mt-1 text-[13px] text-ink-muted">
+            96,8% de capacidad · Memoria Aluar / CNV ({ultimaProduccion?.anio})
+          </p>
+        </div>
+
+        <div>
+          <dt class="text-[13px] text-ink-muted">Energía eléctrica en cubas</dt>
+          <dd class="mt-1 font-display text-[28px] font-bold leading-tight text-cobalt">
+            {procesoPrincipal.proceso.energia_especifica.estado === 'dato'
+              ? `${procesoPrincipal.proceso.energia_especifica.valor.toLocaleString('es-AR', { minimumFractionDigits: 2 })} ${procesoPrincipal.proceso.energia_especifica.unidad}`
+              : 'Sin datos'}
+          </dd>
+          <p class="mt-1 text-[13px] text-ink-muted">
+            6.324.443 MWh medidos · Memoria Aluar ({procesoPrincipal.proceso.procedencia.anio})
+          </p>
+        </div>
+
+        <div>
+          <dt class="text-[13px] text-ink-muted">Saldo comercial Cap. 76 NCM ({ultimoComex?.anio})</dt>
+          <dd class="mt-1 font-display text-[28px] font-bold leading-tight text-emerald-react">
+            {ultimoComex?.saldo_comercial.estado === 'dato'
+              ? `+USD ${ultimoComex.saldo_comercial.valor.toLocaleString('es-AR', { minimumFractionDigits: 2 })} M`
+              : 'Sin datos'}
+          </dd>
+          <p class="mt-1 text-[13px] text-ink-muted">
+            Exp. {ultimoComex?.exportacion.estado === 'dato' ? ultimoComex.exportacion.valor.toLocaleString('es-AR', { minimumFractionDigits: 2 }) : 's/d'} / Imp.{' '}
+            {ultimoComex?.importacion.estado === 'dato' ? ultimoComex.importacion.valor.toLocaleString('es-AR', { minimumFractionDigits: 2 }) : 's/d'} M · INDEC
+          </p>
+        </div>
+
+        <div>
+          <dt class="text-[13px] text-ink-muted">Alúmina importada HS 2818.20 ({ultimaAluminaVol?.anio})</dt>
+          <dd class="mt-1 font-display text-[28px] font-bold leading-tight text-ochre-metal">
+            {ultimaAluminaVol?.importacion.estado === 'dato'
+              ? `${Math.round(ultimaAluminaVol.importacion.valor).toLocaleString('es-AR')} t`
+              : 'Sin datos'}
+          </dd>
+          <p class="mt-1 text-[13px] text-ink-muted">
+            {ultimaAluminaUsd?.importacion.estado === 'dato'
+              ? `USD ${ultimaAluminaUsd.importacion.valor.toLocaleString('es-AR', { minimumFractionDigits: 2 })} M`
+              : 'Sin datos'}{' '}
+            · UN Comtrade ({ultimaAluminaVol?.anio})
+          </p>
+        </div>
+      </dl>
+    </section>
+
+    {/* Sección 1: Diagrama de proceso químico interactivo (React Flow desde JSON) */}
+    <section id="diagrama" class="scroll-mt-20 pt-12">
+      <div class="mb-5 flex flex-wrap items-end justify-between gap-4">
+        <div class="max-w-3xl">
+          <h2 class="font-display text-[24px] font-bold tracking-tight text-ink">
+            Diagrama interactivo del proceso Hall-Héroult
+          </h2>
+          <p class="mt-1.5 text-[15px] text-ink-muted">
+            Generado desde las tablas JSON validadas del proceso. Seleccioná cada etapa para ver la
+            reacción balanceada, temperatura, presión, consumo energético, emisiones y fuente citada.
+          </p>
+        </div>
+        {ratioAluminaAl !== null && (
+          <p class="text-[13px] text-ink-muted tabular-nums">
+            Cruce estequiométrico real:{' '}
+            <strong class="font-semibold text-ink">
+              {ratioAluminaAl.toLocaleString('es-AR', { minimumFractionDigits: 2, maximumFractionDigits: 2 })} t Al2O3/t Al
+            </strong>{' '}
+            (mínimo teórico: 1,89 t/t)
+          </p>
+        )}
+      </div>
+
+      <ProcessFlowDiagram client:load procesoCompleto={procesoPrincipal} />
+    </section>
+
+    {/* Sección 2: Series históricas de Producción y Comercio Exterior */}
+    <section id="datos" class="scroll-mt-20 pt-16">
+      <div class="border-b border-rule pb-4">
+        <h2 class="font-display text-[24px] font-bold tracking-tight text-ink">
+          Producción física y comercio exterior verificados
+        </h2>
+        <p class="mt-1.5 max-w-[70ch] text-[15px] text-ink-muted">
+          Todas las series provienen de registros primarios descargados y verificados con hash
+          SHA-256. Donde no existe reporte oficial público para un componente (por ejemplo,
+          exportaciones de alúmina), se declara explícitamente sin datos.
+        </p>
+      </div>
+
+      <div class="mt-8 grid gap-8 lg:grid-cols-12">
+        {/* Producción 5 ejercicios */}
+        <div class="border border-rule bg-stone-surface p-6 lg:col-span-5">
+          <div class="flex items-baseline justify-between gap-2">
+            <h3 class="font-display text-[20px] font-semibold text-ink">
+              Producción de aluminio líquido
+            </h3>
+            <span class="text-[13px] text-ink-muted">Ejercicios jul-jun</span>
+          </div>
+          <p class="mt-1 text-[13px] text-ink-muted">
+            Fuente: Aluar Aluminio Argentino S.A.I.C. / CNV (Memoria 2025, Reseña Informativa pág. 3).
+          </p>
+
+          <div class="mt-5 space-y-3.5 tabular-nums">
+            {produccionDesc.map((reg) => {
+              const val = reg.medicion.estado === 'dato' ? reg.medicion.valor : 0;
+              const widthPct = (val / maxProduccion) * 100;
+              return (
+                <div>
+                  <div class="flex items-baseline justify-between text-[14px]">
+                    <span class="font-medium text-ink">
+                      Ej. {reg.anio - 1}-{String(reg.anio).slice(-2)}
+                    </span>
+                    <span class="font-semibold text-ink">
+                      {reg.medicion.estado === 'dato'
+                        ? `${reg.medicion.valor.toLocaleString('es-AR')} t`
+                        : 'Sin datos'}
+                    </span>
+                  </div>
+                  <div class="mt-1.5 h-2 w-full bg-stone-subtle">
+                    <div
+                      class="h-full bg-cobalt"
+                      style={{ width: `${widthPct.toFixed(1)}%` }}
+                    />
+                  </div>
+                </div>
+              );
+            })}
+          </div>
+
+          {/* Desglose de productos solidificados + despacho líquido FY 2024-25 */}
+          <div class="mt-6 border-t border-rule pt-5">
+            <h4 class="text-[13px] font-semibold text-ink">
+              Desglose de producción solidificada y líquida (FY 2024-25: 442.437 t)
+            </h4>
+            <ul class="mt-2.5 divide-y divide-rule text-[13px] tabular-nums">
+              {desgloseFy2025.map((item) => (
+                <li class="flex justify-between gap-3 py-1.5">
+                  <span class="text-ink-muted">{item.producto}</span>
+                  <span class="font-medium text-ink">{item.toneladas.toLocaleString('es-AR')} t</span>
+                </li>
+              ))}
+            </ul>
+          </div>
+        </div>
+
+        {/* Comercio Exterior Cap. 76 + Insumo crítico Alúmina HS 2818.20 */}
+        <div class="space-y-6 lg:col-span-7">
+          <div class="border border-rule bg-stone-surface p-6">
+            <div class="flex flex-wrap items-baseline justify-between gap-2">
+              <h3 class="font-display text-[20px] font-semibold text-ink">
+                Comercio exterior de aluminio y manufacturas (Cap. 76 NCM)
+              </h3>
+              <span class="text-[13px] text-ink-muted">Millones de USD · INDEC</span>
+            </div>
+
+            <div class="mt-4 overflow-x-auto">
+              <table class="w-full border-collapse text-left text-[14px] tabular-nums">
+                <thead>
+                  <tr class="border-b border-rule-strong/30 text-[13px] text-ink-muted">
+                    <th class="py-2.5 pr-4 font-medium">Año</th>
+                    <th class="px-4 py-2.5 text-right font-medium">Exportaciones</th>
+                    <th class="px-4 py-2.5 text-right font-medium">Importaciones</th>
+                    <th class="py-2.5 pl-4 text-right font-medium">Saldo comercial</th>
+                  </tr>
+                </thead>
+                <tbody class="divide-y divide-rule">
+                  {comexCap76.map((row) => (
+                    <tr>
+                      <td class="py-2.5 pr-4 font-semibold text-ink">{row.anio}</td>
+                      <td class="px-4 py-2.5 text-right text-ink">
+                        {row.exportacion.estado === 'dato'
+                          ? `USD ${row.exportacion.valor.toLocaleString('es-AR', { minimumFractionDigits: 2 })} M`
+                          : 'Sin datos'}
+                      </td>
+                      <td class="px-4 py-2.5 text-right text-ink-muted">
+                        {row.importacion.estado === 'dato'
+                          ? `USD ${row.importacion.valor.toLocaleString('es-AR', { minimumFractionDigits: 2 })} M`
+                          : 'Sin datos'}
+                      </td>
+                      <td class="py-2.5 pl-4 text-right font-semibold text-emerald-react">
+                        {row.saldo_comercial.estado === 'dato'
+                          ? `+USD ${row.saldo_comercial.valor.toLocaleString('es-AR', { minimumFractionDigits: 2 })} M`
+                          : 'Sin datos'}
+                      </td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
+
+            <p class="mt-3 text-[13px] text-ink-muted">
+              Series oficiales INDEC vía datos.gob.ar (
+              <code class="bg-stone-subtle px-1 py-0.5 text-ink">162.1_XUMINIORAS_0_0_23</code>,{' '}
+              <code class="bg-stone-subtle px-1 py-0.5 text-ink">163.1_MUMINIORAS_0_0_23</code>,{' '}
+              <code class="bg-stone-subtle px-1 py-0.5 text-ink">164.1_SLUMINIRAS_0_0_24</code>).
+            </p>
+          </div>
+
+          {/* Bloque de insumo crítico importado: Alúmina HS 2818.20 */}
+          <div class="border border-rule bg-stone-surface p-6">
+            <div class="flex flex-wrap items-baseline justify-between gap-2">
+              <h3 class="font-display text-[20px] font-semibold text-ink">
+                Insumo crítico importado: alúmina calcinada (HS 2818.20)
+              </h3>
+              <span class="text-[13px] text-ink-muted">UN Comtrade (Argentina, reporterCode 32)</span>
+            </div>
+            <p class="mt-1.5 text-[14px] text-ink-muted">
+              A diferencia del Capítulo 76 (metal y manufacturas), la alúmina se clasifica en el
+              Capítulo 28 como óxido químico inorgánico. Su importación valida físicamente el balance
+              de masa de la planta chubutense.
+            </p>
+
+            <div class="mt-4 overflow-x-auto">
+              <table class="w-full border-collapse text-left text-[14px] tabular-nums">
+                <thead>
+                  <tr class="border-b border-rule-strong/30 text-[13px] text-ink-muted">
+                    <th class="py-2 pr-4 font-medium">Año</th>
+                    <th class="px-4 py-2 text-right font-medium">Volumen importado</th>
+                    <th class="px-4 py-2 text-right font-medium">Valor importado</th>
+                    <th class="py-2 pl-4 text-right font-medium">Exportación</th>
+                  </tr>
+                </thead>
+                <tbody class="divide-y divide-rule">
+                  {comexAluminaVol.map((volRow) => {
+                    const usdRow = comexAluminaUsd.find((u) => u.anio === volRow.anio);
+                    return (
+                      <tr>
+                        <td class="py-2.5 pr-4 font-semibold text-ink">{volRow.anio}</td>
+                        <td class="px-4 py-2.5 text-right font-medium text-ochre-metal">
+                          {volRow.importacion.estado === 'dato'
+                            ? `${Math.round(volRow.importacion.valor).toLocaleString('es-AR')} t`
+                            : 'Sin datos'}
+                        </td>
+                        <td class="px-4 py-2.5 text-right text-ink">
+                          {usdRow?.importacion.estado === 'dato'
+                            ? `USD ${usdRow.importacion.valor.toLocaleString('es-AR', { minimumFractionDigits: 2 })} M`
+                            : 'Sin datos'}
+                        </td>
+                        <td class="py-2.5 pl-4 text-right text-ink-muted">Sin datos</td>
+                      </tr>
+                    );
+                  })}
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    {/* Sección 3: Empresa y planta verificables + Matriz eléctrica */}
+    <section id="empresas" class="scroll-mt-20 pt-16">
+      <div class="border-b border-rule pb-4">
+        <h2 class="font-display text-[24px] font-bold tracking-tight text-ink">
+          Empresa predominante, planta e infraestructura eléctrica
+        </h2>
+        <p class="mt-1.5 max-w-[70ch] text-[15px] text-ink-muted">
+          Solo hechos verificables (ubicación, capacidad, energía y dotación con fuente pública). No
+          se publican estimaciones de facturación ni cuotas de mercado inventadas.
+        </p>
+      </div>
+
+      <div class="mt-8 grid gap-8 lg:grid-cols-12">
+        {empresaPrincipal && plantaPrincipal && (
+          <div class="border border-rule bg-stone-surface p-6 lg:col-span-7">
+            <div class="flex flex-wrap items-baseline justify-between gap-2">
+              <h3 class="font-display text-[20px] font-semibold text-ink">
+                {empresaPrincipal.razon_social}
+              </h3>
+              <span class="text-[13px] text-ink-muted">
+                Capital {empresaPrincipal.tipo_capital}
+              </span>
+            </div>
+            <p class="mt-2.5 text-[15px] text-ink-muted">
+              {empresaPrincipal.hechos_verificables}
+            </p>
+
+            <dl class="mt-6 grid gap-4 border-t border-rule pt-5 sm:grid-cols-2 tabular-nums">
+              <div>
+                <dt class="text-[13px] text-ink-muted">Planta registrada</dt>
+                <dd class="mt-0.5 text-[15px] font-semibold text-ink">{plantaPrincipal.nombre}</dd>
+              </div>
+              <div>
+                <dt class="text-[13px] text-ink-muted">Localidad y coordenadas</dt>
+                <dd class="mt-0.5 text-[15px] font-medium text-ink">
+                  {plantaPrincipal.localidad}, Chubut ({plantaPrincipal.lat.toFixed(3)}, {plantaPrincipal.lon.toFixed(3)})
+                </dd>
+              </div>
+              <div>
+                <dt class="text-[13px] text-ink-muted">Capacidad instalada declarada</dt>
+                <dd class="mt-0.5 text-[15px] font-semibold text-cobalt">
+                  {plantaPrincipal.capacidad.estado === 'dato'
+                    ? `${plantaPrincipal.capacidad.valor.toLocaleString('es-AR')} ${plantaPrincipal.capacidad.unidad}`
+                    : 'Sin datos'}
+                </dd>
+              </div>
+              <div>
+                <dt class="text-[13px] text-ink-muted">Dirección industrial</dt>
+                <dd class="mt-0.5 text-[15px] text-ink">
+                  Ruta Prov. A010, Parque Industrial Pesado (Depto. Biedma)
+                </dd>
+              </div>
+            </dl>
+
+            <p class="mt-5 border-t border-rule pt-4 text-[13px] text-ink-muted">
+              Cita ({empresaPrincipal.procedencia.anio}): {empresaPrincipal.procedencia.cita_ubicacion}.{' '}
+              {empresaPrincipal.sitio_web_oficial && (
+                <a
+                  href={empresaPrincipal.sitio_web_oficial}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="font-medium text-cobalt hover:underline"
+                >
+                  Sitio oficial ↗
+                </a>
+              )}
+            </p>
+          </div>
+        )}
+
+        {/* Matriz eléctrica real FY 2024-25 */}
+        <div class="border border-rule bg-stone-surface p-6 lg:col-span-5">
+          <h3 class="font-display text-[20px] font-semibold text-ink">
+            Suministro eléctrico real (FY 2024-25)
+          </h3>
+          <p class="mt-1 text-[13px] text-ink-muted tabular-nums">
+            Total planta: 6.706.909 MWh (6.324.443 MWh electrólisis + 382.466 MWh resto de planta).
+          </p>
+
+          <div class="mt-5 space-y-4 tabular-nums">
+            {matrizElectricaFy2025.map((fuente, i) => {
+              const barColor = i === 0 ? '#52555E' : i === 1 ? '#0A42E0' : '#0B7A53';
+              return (
+                <div>
+                  <div class="flex items-baseline justify-between gap-3 text-[14px]">
+                    <span class="text-ink">{fuente.origen}</span>
+                    <span class="shrink-0 font-semibold text-ink">{fuente.pct.toLocaleString('es-AR')}%</span>
+                  </div>
+                  <div class="mt-1.5 h-2 w-full bg-stone-subtle">
+                    <div
+                      class="h-full"
+                      style={{ width: `${fuente.pct}%`, backgroundColor: barColor }}
+                    />
+                  </div>
+                  <p class="mt-1 text-[12px] text-ink-muted">
+                    {fuente.mwh.toLocaleString('es-AR')} MWh
+                  </p>
+                </div>
+              );
+            })}
+          </div>
+
+          <p class="mt-5 border-t border-rule pt-4 text-[13px] text-ink-muted">
+            Fuente: Aluar Aluminio Argentino S.A.I.C., Memoria 56° Ejercicio Económico (al 30/06/2025), pág. 3.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    {/* Sección 4: Ensayo de ingeniería química (MDX) */}
+    <section class="pt-16">
+      <div class="border border-rule bg-stone-surface p-6 sm:p-8 lg:p-10">
+        <div class="atlas-prose max-w-[74ch]">
+          <AluminioEssay />
+        </div>
+      </div>
+    </section>
+
+    {/* Sección 5: Registro auditable de fuentes y hashes SHA-256 */}
+    <section id="fuentes" class="scroll-mt-20 pt-16">
+      <div class="border-b border-rule pb-4">
+        <h2 class="font-display text-[24px] font-bold tracking-tight text-ink">
+          Registro de fuentes oficiales y verificación SHA-256
+        </h2>
+        <p class="mt-1.5 text-[15px] text-ink-muted">
+          Cada cifra de esta ficha y del Set de Oro (
+          <code class="bg-stone-subtle px-1.5 py-0.5 text-[13px] font-medium text-ink">
+            data/golden/aluminio.golden.json
+          </code>
+          ) remite a uno de estos {fuentesCitadas.length} archivos descargados y verificados.
+        </p>
+      </div>
+
+      <div class="mt-6 overflow-x-auto border border-rule bg-stone-surface">
+        <table class="w-full border-collapse text-left text-[13px]">
+          <thead>
+            <tr class="border-b border-rule bg-stone-subtle text-ink-muted">
+              <th class="px-4 py-3 font-medium">Fuente</th>
+              <th class="px-4 py-3 font-medium">Organismo</th>
+              <th class="px-4 py-3 font-medium">Tipo</th>
+              <th class="px-4 py-3 font-medium">Descarga</th>
+              <th class="px-4 py-3 font-medium">Hash SHA-256</th>
+            </tr>
+          </thead>
+          <tbody class="divide-y divide-rule">
+            {fuentesCitadas.map((f) => (
+              <tr class="align-top">
+                <td class="px-4 py-3">
+                  <a
+                    href={f.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="font-medium text-cobalt hover:underline"
+                  >
+                    {f.nombre} ↗
+                  </a>
+                  {f.notas && <p class="mt-1 text-ink-muted">{f.notas}</p>}
+                </td>
+                <td class="px-4 py-3 text-ink">{f.organismo}</td>
+                <td class="px-4 py-3 text-ink-muted">{TIPO_FUENTE_LABEL[f.tipo] ?? f.tipo}</td>
+                <td class="px-4 py-3 text-ink-muted tabular-nums">{f.fecha_descarga}</td>
+                <td class="px-4 py-3 text-ink-muted tabular-nums">
+                  <span title={f.hash}>{f.hash.slice(0, 22)}...</span>
+                </td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+    </section>
+  </main>
+
+  <footer class="border-t border-rule bg-stone-surface">
+    <div class="mx-auto flex max-w-[1600px] flex-wrap items-center justify-between gap-4 px-5 py-6 text-[13px] text-ink-muted sm:px-8 lg:px-10">
+      <p>
+        Atlas Químico Argentino. Caso modelo de aluminio primario (Chubut) validado íntegramente
+        bajo política strictReal.
+      </p>
+      <a href="/" class="font-medium text-ink hover:text-cobalt">
+        ← Volver al mapa productivo
+      </a>
+    </div>
+  </footer>
+</BaseLayout>

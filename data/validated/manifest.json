@@ -1,0 +1,57 @@
+{
+  "version_esquema": "1.0.0",
+  "generado_en": "2026-11-24T15:47:52.045Z",
+  "origen": "sheets_local",
+  "es_ejemplo": true,
+  "nota": "Dataset mixto: 1 cadena(s) verificadas con fuentes oficiales (Aluminio, Chubut) y marcadores pendientes para las cadenas de Etapa 6.",
+  "tablas": {
+    "fuentes": {
+      "registros": 9,
+      "hash": "sha256:0583a2cab48dce238ae455585caffc2e74d8722c4e18e6777b1e1a79825bfe46"
+    },
+    "provincias": {
+      "registros": 24,
+      "hash": "sha256:ea46ee43093cf5d47c7a5d202accfee0b508af246625010b784da5af2deb91f0"
+    },
+    "departamentos": {
+      "registros": 3,
+      "hash": "sha256:3d3ac683d97900ca51d35eff62760686ae658f5d30e22a84e8b6462228ec4edb"
+    },
+    "productos": {
+      "registros": 7,
+      "hash": "sha256:2f945d53f8a1c55d556cc9e915a36d520b764d2abb534ac17f30c258e2f499d9"
+    },
+    "productos_zonas": {
+      "registros": 9,
+      "hash": "sha256:83db4c50186dfe40c3ef5135878f411597b94be17dc8c4214436e5fea104929a"
+    },
+    "procesos": {
+      "registros": 1,
+      "hash": "sha256:11538a4917ab731c4ca543d31672a95424c1da6cf044ac31d9d5d6c7b9e3e3a4"
+    },
+    "pasos_proceso": {
+      "registros": 6,
+      "hash": "sha256:b48264dc47e6b887fa7ff79bd08521806ea29ed2d6fc8e1edbdb9ddb64130d51"
+    },
+    "conexiones_proceso": {
+      "registros": 7,
+      "hash": "sha256:f46d955e38671336d34e5867151cccef0f52aeab0fea4dd270f0c1089e0b9627"
+    },
+    "empresas": {
+      "registros": 1,
+      "hash": "sha256:8f4cc8233b4fc5d6c62870c39079148004f4a3191e92104464b758eb20f70fae"
+    },
+    "plantas": {
+      "registros": 1,
+      "hash": "sha256:219a171a227f7b164406f4bfd2f5250edaf34f5a0ddc98d6637f7833d3f3cea1"
+    },
+    "produccion": {
+      "registros": 6,
+      "hash": "sha256:bc394f55815decff7d8e1af1cacd04614219d5c6cff071b1416e72ef3131748f"
+    },
+    "comercio_exterior": {
+      "registros": 11,
+      "hash": "sha256:3201384e708ff7c4a4ab134c18bac36076cf49be35a8456e17dea7155098790f"
+    }
+  }
+}

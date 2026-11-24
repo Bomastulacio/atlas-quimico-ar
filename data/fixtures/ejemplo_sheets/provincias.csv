@@ -1,0 +1,25 @@
+provincia_id,nombre,iso_3166_2,region,cobertura_datos,nota_cobertura
+02,Ciudad Autónoma de Buenos Aires,AR-C,Pampeana,sin_datos,[EJEMPLO] Sin datos productivos químicos cargados todavía.
+06,Buenos Aires,AR-B,Pampeana,parcial,[EJEMPLO] Polo petroquímico y fertilizantes de Bahía Blanca (etapa demostrativa).
+10,Catamarca,AR-K,NOA,baja,[EJEMPLO] Cadena de litio en plan MVP (pendiente de carga oficial).
+14,Córdoba,AR-X,Centro,sin_datos,[EJEMPLO] Cobertura pendiente para etapas posteriores.
+18,Corrientes,AR-W,NEA,sin_datos,[EJEMPLO] Cobertura pendiente para etapas posteriores.
+22,Chaco,AR-H,NEA,baja,[EJEMPLO] Cadena de algodón en plan MVP (pendiente de carga oficial).
+26,Chubut,AR-U,Patagonia,parcial,[EJEMPLO] Caso modelo de aluminio primario (datos ficticios de Etapa 1).
+30,Entre Ríos,AR-E,Centro,sin_datos,[EJEMPLO] Cobertura pendiente para etapas posteriores.
+34,Formosa,AR-P,NEA,sin_datos,[EJEMPLO] Cobertura pendiente para etapas posteriores.
+38,Jujuy,AR-Y,NOA,baja,[EJEMPLO] Cadena de litio en plan MVP (pendiente de carga oficial).
+42,La Pampa,AR-L,Pampeana,sin_datos,[EJEMPLO] Cobertura pendiente para etapas posteriores.
+46,La Rioja,AR-F,NOA,sin_datos,[EJEMPLO] Cobertura pendiente para etapas posteriores.
+50,Mendoza,AR-M,Cuyo,sin_datos,[EJEMPLO] Cobertura pendiente para etapas posteriores.
+54,Misiones,AR-N,NEA,sin_datos,[EJEMPLO] Cobertura pendiente para etapas posteriores.
+58,Neuquén,AR-Q,Patagonia,sin_datos,[EJEMPLO] Cobertura pendiente para etapas posteriores.
+62,Río Negro,AR-R,Patagonia,sin_datos,[EJEMPLO] Cobertura pendiente para etapas posteriores.
+66,Salta,AR-A,NOA,baja,[EJEMPLO] Cadena de litio en plan MVP (pendiente de carga oficial).
+70,San Juan,AR-J,Cuyo,sin_datos,[EJEMPLO] Cobertura pendiente para etapas posteriores.
+74,San Luis,AR-D,Cuyo,sin_datos,[EJEMPLO] Cobertura pendiente para etapas posteriores.
+78,Santa Cruz,AR-Z,Patagonia,sin_datos,[EJEMPLO] Cobertura pendiente para etapas posteriores.
+82,Santa Fe,AR-S,Centro,baja,[EJEMPLO] Polo sojero y biodiésel del Gran Rosario (pendiente de carga oficial).
+86,Santiago del Estero,AR-G,NOA,sin_datos,[EJEMPLO] Cobertura pendiente para etapas posteriores.
+90,Tucumán,AR-T,NOA,sin_datos,[EJEMPLO] Cobertura pendiente para etapas posteriores.
+94,Tierra del Fuego Antártida e Islas del Atlántico Sur,AR-V,Patagonia,sin_datos,[EJEMPLO] Jurisdicción bicontinental IGN; cobertura productiva pendiente.

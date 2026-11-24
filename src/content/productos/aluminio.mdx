@@ -1,0 +1,24 @@
+## Por qué la fundición primaria de aluminio se radicó en Puerto Madryn
+
+La producción primaria de aluminio por el proceso **Hall-Héroult** es una de las operaciones industriales más intensivas en energía eléctrica del mundo. Reducir óxido de aluminio (`Al2O3`) a metal líquido (`Al`) demanda corriente continua ininterrumpida a gran escala: durante el ejercicio finalizado el 30 de junio de 2025, la planta de Puerto Madryn (Chubut) registró **6.324.443 MWh** en electrólisis para obtener **445.327 toneladas** de aluminio líquido, equivalente a **14,20 MWh/t Al** en cubas (y **15,06 MWh/t Al** al sumar fundición, ánodos y servicios auxiliares).
+
+Esa ecuación física explica la geografía industrial del complejo chubutense sobre dos pilares logísticos y energéticos:
+
+- **Suministro eléctrico dedicado:** la planta combina generación hidroeléctrica de la Central Futaleufú (**2.716.304 MWh**, 40,5% del total consumido en FY 2024-2025), autogeneración térmica en planta (**3.198.634 MWh**, 47,7%) y generación renovable de su Parque Eólico propio en Puerto Madryn (**791.586 MWh**, 11,8%, con ampliación en curso hacia 582 MW instalados).
+- **Puerto de aguas profundas para insumos importados:** Argentina no cuenta con yacimientos comerciales de bauxita ni refinerías Bayer. El 100% de la alúmina calcinada (`HS 2818.20`) arriba por vía marítima al Sitio 1 del Muelle Almirante Storni y pasa por cinta transportadora directa a los silos de planta, junto con el coque de petróleo calcinado y la brea para la planta de ánodos.
+
+## Química de las cubas y control de consistencia estequiométrica
+
+El paso central del diagrama ocurre entre **950 y 970 °C** dentro de cubas revestidas de carbono que contienen un baño fundido compuesto mayoritariamente por criolita (`Na3AlF6`, alrededor del 80% en peso según las guías técnicas del IPCC). Al disolverse la alúmina y circular corriente continua desde los ánodos precocidos de carbono hacia el cátodo líquido, la reacción global balanceada es:
+
+`2 Al2O3 + 3 C -> 4 Al + 3 CO2`
+
+A partir de las masas molares estándar (`Al = 26,98 g/mol`, `O = 16,00 g/mol`, `C = 12,01 g/mol`), el mínimo estequiométrico teórico exige **1,889 toneladas de alúmina** y **0,334 toneladas de carbono** por cada tonelada de aluminio producido. Al cruzar las estadísticas aduaneras oficiales de **UN Comtrade** (`871.523 t` de alúmina `HS 2818.20` importadas por Argentina en 2024) contra la producción medida en electrólisis (`445.327 t` en FY 2024-2025), resulta una relación real de **1,96 t Al2O3/t Al**, ubicada dentro del rango industrial esperado (`1,9 a 2,0 t/t`) y estrictamente por encima del límite termodinámico.
+
+En la práctica industrial, el consumo neto de ánodos precocidos (`~0,43 t C/t Al`) supera el mínimo electroquímico debido a la oxidación secundaria del carbono con oxígeno atmosférico sobre la superficie de la cuba y en los hornos de cocción. Por ese motivo, el factor de emisión directo de referencia para celdas Prebake documentado en el **IPCC 2006 (Vol. 3, Cap. 4.4, Tabla 4.10)** es de **1,6 t CO2/t Al**, acompañado de trazas de gases perfluorocarbonados (`0,4 kg CF4/t Al` y `0,04 kg C2F6/t Al` en eventos de efecto anódico). Los gases fluorados de cuba pasan por Centros de Tratamiento de Gases (GTC), donde la alúmina fresca adsorbe el fluoruro de hidrógeno (`HF`) y retorna al circuito de electrólisis en reciclo cerrado.
+
+## Nota metodológica y auditoría de fuentes
+
+En el relevamiento manual de este caso modelo se detectó una inconsistencia en la serie pública `41.3_AP_0_A_17` del portal `datos.gob.ar` (etiquetada como producción anual de aluminio primario): los valores publicados en ese endpoint (`~4,93 millones de toneladas` en 2023 y `~3,86 millones` en 2024) multiplican por diez la capacidad instalada total del país y corresponden en realidad a un corrimiento de columnas en origen con la producción nacional de acero crudo.
+
+Siguiendo las reglas de integridad del atlas, esa serie fue descartada y reemplazada por la fuente primaria auditable: la **Memoria y Estados Financieros del 56° Ejercicio** de Aluar Aluminio Argentino S.A.I.C. presentados ante la Comisión Nacional de Valores (CNV) y auditados por PwC, ya que constituye el único productor de aluminio primario del país. Para el comercio exterior de aluminio y manufacturas (Capítulo 76 NCM) se emplearon las series oficiales de **INDEC** vía `datos.gob.ar`, y para la trazabilidad física del insumo crítico (alúmina `HS 2818.20`), los registros oficiales de **UN Comtrade**.

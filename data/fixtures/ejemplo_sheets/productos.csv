@@ -1,0 +1,8 @@
+producto_id,nombre,categoria,formula_quimica,icono_id,descripcion_corta,mdx_slug,estado_mvp
+aluminio,Aluminio primario,metalurgia,Al,aluminio-lingote,[EJEMPLO] Metal ligero obtenido por reducción electrolítica de alúmina en Puerto Madryn.,aluminio,ejemplo
+litio,Carbonato de litio,mineria_quimica,Li2CO3,litio-salmuera,[EJEMPLO] Extracción y precipitación química a partir de salmueras del NOA.,litio,pendiente
+urea,Urea y fertilizantes nitrogenados,fertilizantes,CO(NH2)2,urea-prill,[EJEMPLO] Síntesis de amoníaco y urea a partir de gas natural en Bahía Blanca.,urea,pendiente
+algodon,Algodón y fibra textil,agroindustria,,algodon-fibra,[EJEMPLO] Cadena desmotadora e industrialización primaria del NEA.,algodon,pendiente
+soja,Soja y derivados oleaginosos,agroindustria,,soja-molienda,[EJEMPLO] Extracción por solvente de aceite y harina proteica en el polo Rosario.,soja,pendiente
+petroquimica,Petroquímica básica y polietilenos,petroquimica,C2H4,petroquimica-cracker,[EJEMPLO] Craqueo térmico de etano y polimerización en el polo Bahía Blanca.,petroquimica,pendiente
+biodiesel,Biodiésel (FAME),bioenergia,RCOOCH3,biodiesel-ester,[EJEMPLO] Transesterificación catalítica de aceite de soja con metanol.,biodiesel,pendiente
