@@ -26,6 +26,8 @@ class PipelineSettings(BaseSettings):
     google_api_key: str | None = Field(default=None, alias="GOOGLE_API_KEY")
     supabase_url: str | None = Field(default=None, alias="SUPABASE_URL")
     supabase_publishable_key: str | None = Field(default=None, alias="SUPABASE_PUBLISHABLE_KEY")
+    supabase_service_role_key: str | None = Field(default=None, alias="SUPABASE_SERVICE_ROLE_KEY")
+    supabase_raw_bucket: str = Field(default="atlas-raw-sources", alias="SUPABASE_RAW_BUCKET")
 
     # Modelos por rol (vía .env, nunca hardcodeados en agentes)
     agent1_model: str = Field(default="gemini-3.8-flash", alias="AGENT1_MODEL")

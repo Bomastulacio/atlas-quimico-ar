@@ -11,11 +11,11 @@ Este archivo define las reglas operativas obligatorias para cualquier agente o c
 
 - **Supabase (`project_ref: rbjymgrimmrbetgbeios`, Postgres 17) es la fuente de verdad SQL del proyecto.**
 - Toda información nueva (provincias, departamentos, productos, vínculos territoriales, procesos, pasos, conexiones, empresas, plantas, producción y comercio exterior) **debe quedar cargada en las 12 tablas relacionales de Supabase** (`public.fuentes`, `provincias`, `departamentos`, `productos`, `productos_zonas`, `procesos`, `pasos_proceso`, `conexiones_proceso`, `empresas`, `plantas`, `produccion`, `comercio_exterior` + `atlas_manifest`).
-- **Conversión desde otros formatos:** si una fuente oficial se obtiene en **CSV, Excel, PDF, API JSON o texto de una página web**, el flujo obligatorio es:
-  1. Guardar la descarga cruda en `data/raw/` y calcular su hash `sha256:<64 hex>`.
-  2. Extraer y normalizar las filas al esquema relacional (`data/staging/`), validando con Pydantic (pipeline Python) o Zod (Node/TS).
-  3. Tras verificación y aprobación humana (`interrupt` / PR), convertir los registros validados a SQL idempotente (`ON CONFLICT DO UPDATE` mediante `npm run supabase:seed` o el publicador del pipeline) y **subirlos a Supabase**.
-  4. Re-sincronizar `data/validated/*.json` desde Supabase con `npm run data:sync:supabase` y verificar con `npm run data:validate`.
+- **Conversión desde otros formatos (sin llenar el disco local):** si una fuente oficial se obtiene en **CSV, Excel, PDF, API JSON o texto de una página web**, el flujo obligatorio es:
+  1. Descargar en memoria, calcular su hash `sha256:<64 hex>` y archivar el crudo en el **bucket privado de Supabase Storage** (`storage://atlas-raw-sources/<fuente_id>/<archivo>`) sin acumular PDFs/Excels pesados en `data/raw/` local.
+  2. Extraer y normalizar las filas al esquema relacional (validando con Pydantic + los 6 verificadores químicos + Agente 3).
+  3. Tras verificación y aprobación humana (`interrupt` / PR), **subir directamente a las 12 tablas SQL de Supabase** (`ON CONFLICT DO UPDATE`).
+  4. Re-sincronizar únicamente el snapshot liviano `data/validated/*.json` (~200 KB) desde Supabase con `npm run data:sync:supabase` y verificar con `npm run data:validate`.
 - **Capa única de lectura en la web (`src/data/`):** el sitio estático Astro nunca consulta Supabase ni Google Sheets desde el navegador; lee exclusivamente `data/validated/*.json` a través de `src/data/`.
 - **Seguridad en Supabase:** RLS habilitado en todas las tablas (lectura `SELECT` para `anon, authenticated`; escritura bloqueada para clientes públicos). Nunca exponer `service_role` ni credenciales en el frontend ni commitear `.env`.
 

@@ -120,6 +120,10 @@ def build_stage4_graph(runtime: OrchestratorRuntime, checkpointer: SqliteSaver):
                 spec,
                 runtime.settings.raw_dir,
                 timeout_seconds=runtime.settings.http_timeout_seconds,
+                persist_local=False,
+                supabase_url=runtime.settings.supabase_url,
+                supabase_service_role_key=runtime.settings.supabase_service_role_key,
+                supabase_bucket=runtime.settings.supabase_raw_bucket,
             )
             fetched.append(fs)
         runtime.fetched_sources = fetched
@@ -399,7 +403,15 @@ def build_full_pipeline_graph(runtime: OrchestratorRuntime, checkpointer: Sqlite
         runtime.budget.consume_step("fetch_sources")
         enforce_tool_allowlist("orchestrator", "fetch_source")
         fetched = [
-            fetch_source(spec, runtime.settings.raw_dir, timeout_seconds=runtime.settings.http_timeout_seconds)
+            fetch_source(
+                spec,
+                runtime.settings.raw_dir,
+                timeout_seconds=runtime.settings.http_timeout_seconds,
+                persist_local=False,
+                supabase_url=runtime.settings.supabase_url,
+                supabase_service_role_key=runtime.settings.supabase_service_role_key,
+                supabase_bucket=runtime.settings.supabase_raw_bucket,
+            )
             for spec in runtime.source_specs
         ]
         runtime.fetched_sources = fetched

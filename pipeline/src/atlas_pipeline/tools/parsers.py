@@ -43,10 +43,12 @@ def _strip_html(html_text: str) -> str:
 
 
 def parse_source(fetched: FetchedSource) -> ParsedSource:
-    """Convierte archivos crudos a filas citadas y texto cercado como dato no confiable."""
+    """Convierte archivos crudos (en memoria o disco) a filas citadas y texto cercado."""
     fmt = fetched.spec.formato.lower()
-    raw_bytes = fetched.raw_path.read_bytes()
-    filename = fetched.raw_path.name
+    raw_bytes = fetched.raw_bytes if fetched.raw_bytes else (
+        fetched.raw_path.read_bytes() if fetched.raw_path is not None else b""
+    )
+    filename = fetched.raw_path.name if fetched.raw_path is not None else fetched.spec.filename
     rows: list[CitedRow] = []
     plain_chunks: list[str] = []
 
