@@ -6,29 +6,35 @@
 - **Islas interactivas:** React 19 + TypeScript estricto.
 - **Estilos:** Tailwind CSS v4 con tokens de diseño propios.
 - **Micro-interacciones y movimiento:** `motion` (`motion/react`), siguiendo principios de **Bencho** (`bencho.dev`): físicas de resorte reales (`spring`), transiciones de estado sin saltos bruscos, tarjetas táctiles y controles adaptados tanto a desktop como a mobile.
+- **Arte generativo ASCII / Halftone:** renderizador liviano en Canvas 2D con dithering ordenado (matriz Bayer 4×4, halftone por puntos, glifos ASCII y Braille), inspirado en `devault.design/ascii-art-generator`.
 - **Mapa (Etapa 2 y 7):** D3 (`d3-geo`) + SVG/GeoJSON simplificado del **IGN** con IDs oficiales Georef. Representación **bicontinental** (23 provincias + CABA + recuadro integrado del Sector Antártico e Islas del Atlántico Sur según normativa IGN).
-- **Diagramas de proceso (Etapa 3+):** React Flow alimentado exclusivamente desde `procesos.json`, `pasos_proceso.json` y `conexiones_proceso.json`, enriquecido con micro-interacciones y esquemas visuales/ASCII por unidad operativa.
+- **Diagramas de proceso (Etapa 3+):** React Flow alimentado exclusivamente desde `procesos.json`, `pasos_proceso.json` y `conexiones_proceso.json`, combinando precisión de ingeniería de procesos con viñetas artísticas dithered/ASCII y micro-interacciones spring.
 - **Validación:** Zod en el build de Node/Astro y Pydantic v2 en el pipeline Python.
 
 ---
 
-## 2. Dirección visual y principios UX/UI (Taste Skill + Bencho + ASCII)
+## 2. Dirección visual y principios UX/UI (`details.so` + `bencho.dev` + `devault.design` + `tasteskill.dev`)
 
-Para evitar la estética genérica de plantillas («AI slop»: gradientes violetas repetitivos, tarjetas brillantes idénticas, héroes centrados genéricos), el sitio adopta una dirección **Atlas Técnico Editorial & Laboratorio Industrial**:
+El sitio combina rigor industrial con criterio editorial de galería, evitando plantillas genéricas («AI slop»):
 
-1. **Paleta de alto contraste y papel técnico:**
-   - Superficie principal tipo papel cartográfico cálido (`#F5F3EE`) con tinta carbón profunda (`#141513`), grillas de precisión de 1px (`#DCD7CC`) y acentos inspirados en ingeniería química e instrumentación industrial: cobre/óxido (`#C84B31`), cobalto de proceso (`#1D4E89`) y verde reactivo (`#246A4F`).
-   - Modo de contraste limpio sin glassmorphism innecesario ni sombras difusas artificiales.
-2. **Tipografía editorial + telemetría monoespaciada:**
-   - Títulos con contraste editorial fuerte y cifras/fórmulas/códigos NCM/coordenadas en fuente monoespaciada con `tabular-nums` para alineación exacta en tablas y balances.
-3. **Lenguaje ASCII funcional (no decorativo barato):**
-   - Esquemas de flujo en texto/ASCII (`Al2O3 ──[960°C / Hall-Héroult]──▶ Al + CO2`), divisores de sección con marcas de registro (`+---`, `│`, `├─`), indicadores de estado y diagramas de bloques compactos que refuerzan la identidad de manual de ingeniería y funcionan perfecto incluso en pantallas angostas (mobile).
-4. **Movimiento con propósito (inspiración `bencho.dev`):**
-   - Tarjetas de producto, paneles laterales del mapa y pasos de proceso con físicas spring suaves (`stiffness: 380, damping: 32`), layouts compartidos (`layoutId`) para pestañas y selectores, y gestos cómodos en mobile (drawer deslizable + tap targets generosos).
-   - Respeto estricto de `prefers-reduced-motion`.
+1. **Base estricta en Blanco y Negro + Rupturas de Color intencionales:**
+   - **95% de la interfaz en monocromo nítido:** fondo blanco puro (`#FFFFFF`), superficies secundarias gris hielo (`#F6F6F7`), tinta negra profunda (`#09090B`), texto secundario neutro (`#6B7280`) y divisores exactos de `1px` (`#E4E4E7`), al estilo granular y limpio de `details.so`.
+   - **Colores que rompen el blanco y negro con significado:** el color entra únicamente en el arte ASCII/halftone, las regiones activas del mapa, los estados de reacción y las tarjetas seleccionadas:
+     - **Azul cobalto (`#0038FF`):** señal primaria, energía eléctrica, electrólisis, focos de navegación.
+     - **Ámbar fundición (`#F59E0B`):** alta temperatura, metalurgia, hornos y minerales.
+     - **Verde reactivo (`#00A859`):** cadenas agroindustriales, bioenergía y estados verificados.
+     - **Rojo señal (`#FF331F`):** alertas, emisiones, reacciones exotérmicas y advertencias de datos.
+2. **Visuales ASCII / Halftone / Dithering (estilo `devault.design`):**
+   - Ilustraciones y viñetas de procesos generadas mediante tramas halftone, dithering ordenado Bayer y matrices de glifos ASCII/Braille donde contrastan el negro profundo y golpes de azul cobalto, ámbar y verde.
+   - Pensadas para convivir con datos reales sin competir con la legibilidad de cifras y tablas.
+3. **Tipografía de precisión:**
+   - Sans-serif geométrica/neo-grotesca con tracking ajustado en titulares (`Inter` / `Space Grotesk`) combinada con monoespaciada (`IBM Plex Mono`, `tabular-nums`) para fórmulas químicas, códigos Georef/NCM, coordenadas y metadatos de fuentes.
+4. **Movimiento táctil en web y mobile (inspiración `bencho.dev`):**
+   - Físicas spring calibradas (`stiffness: 420, damping: 34`), pestañas con indicador compartido (`layoutId`), hover reactivo en tarjetas y paneles deslizables cómodos en pantallas móviles.
+   - Respeto total de `prefers-reduced-motion`.
 5. **Honestidad de datos en la UI:**
-   - Todo dato faltante se muestra como `SIN DATOS` con estilo técnico neutro (jamás `0` ni celdas vacías engañosas).
-   - Mientras existan datos de prueba, un indicador visible de `MODO EJEMPLO — DATOS FICTICIOS` marca claramente qué proviene de fixtures de Etapa 1.
+   - Todo dato faltante se renderiza como `SIN DATOS` (jamás `0` ni estimaciones silenciosas).
+   - Mientras existan datos de prueba de Etapa 1, una franja visible marca `MODO EJEMPLO — DATOS FICTICIOS`.
 
 ---
 
