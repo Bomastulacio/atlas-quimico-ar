@@ -515,9 +515,8 @@ export function ArgentinaMapExplorer({
               role="tab"
               aria-selected={activeProductId === null}
               onClick={() => setActiveProductId(null)}
-              className={`relative shrink-0 cursor-pointer px-3 py-1.5 text-[13px] font-medium transition-colors duration-150 ${
-                activeProductId === null ? 'text-white' : 'text-ink-muted hover:text-ink'
-              }`}
+              className={`relative shrink-0 cursor-pointer px-3 py-1.5 text-[13px] font-medium transition-colors duration-150 ${activeProductId === null ? 'text-white' : 'text-ink-muted hover:text-ink'
+                }`}
             >
               {activeProductId === null && (
                 <motion.span
@@ -543,9 +542,8 @@ export function ArgentinaMapExplorer({
                       curr === prod.producto_id ? null : prod.producto_id
                     )
                   }
-                  className={`relative inline-flex shrink-0 cursor-pointer items-center gap-1.5 px-3 py-1.5 text-[13px] font-medium transition-colors duration-150 ${
-                    isActive ? 'text-white' : 'text-ink-muted hover:text-ink'
-                  }`}
+                  className={`relative inline-flex shrink-0 cursor-pointer items-center gap-1.5 px-3 py-1.5 text-[13px] font-medium transition-colors duration-150 ${isActive ? 'text-white' : 'text-ink-muted hover:text-ink'
+                    }`}
                 >
                   {isActive && (
                     <motion.span
@@ -579,9 +577,8 @@ export function ArgentinaMapExplorer({
             onPointerUp={endDrag}
             onPointerCancel={endDrag}
             onDoubleClick={handleStageDoubleClick}
-            className={`relative overflow-hidden border border-rule bg-sea-basin select-none lg:col-span-7 xl:col-span-8 ${
-              isDragging ? 'cursor-grabbing' : 'cursor-grab'
-            }`}
+            className={`relative overflow-hidden border border-rule bg-sea-basin select-none lg:col-span-7 xl:col-span-8 ${isDragging ? 'cursor-grabbing' : 'cursor-grab'
+              }`}
             style={{ touchAction: 'none' }}
           >
             {/* Controles integrados (2D/3D + zoom) en la esquina superior derecha */}
@@ -599,9 +596,8 @@ export function ArgentinaMapExplorer({
                     setUserLocked2D(true);
                   }}
                   aria-pressed={!is3D}
-                  className={`cursor-pointer px-2.5 py-1 font-medium transition-colors duration-150 ${
-                    !is3D ? 'bg-ink text-white' : 'text-ink-muted hover:text-ink'
-                  }`}
+                  className={`cursor-pointer px-2.5 py-1 font-medium transition-colors duration-150 ${!is3D ? 'bg-ink text-white' : 'text-ink-muted hover:text-ink'
+                    }`}
                 >
                   2D
                 </button>
@@ -612,9 +608,8 @@ export function ArgentinaMapExplorer({
                     setUserLocked2D(false);
                   }}
                   aria-pressed={is3D}
-                  className={`inline-flex cursor-pointer items-center gap-1 px-2.5 py-1 font-medium transition-colors duration-150 ${
-                    is3D ? 'bg-cobalt text-white' : 'text-ink-muted hover:text-ink'
-                  }`}
+                  className={`inline-flex cursor-pointer items-center gap-1 px-2.5 py-1 font-medium transition-colors duration-150 ${is3D ? 'bg-cobalt text-white' : 'text-ink-muted hover:text-ink'
+                    }`}
                 >
                   <Box className="h-3.5 w-3.5" />
                   3D
@@ -901,7 +896,7 @@ export function ArgentinaMapExplorer({
                       const displayProduct =
                         activeProductId !== null
                           ? allProds.find((p) => p.producto_id === activeProductId) ??
-                            item.dominante
+                          item.dominante
                           : item.dominante;
 
                       const accent = getCategoryAccent(displayProduct.categoria);
@@ -1056,28 +1051,34 @@ export function ArgentinaMapExplorer({
                               stroke="#F7F7F5"
                               strokeWidth={1.5}
                             />
-                            {showLabel && (
-                              <g transform="translate(10, -8)">
-                                <rect
-                                  width={94}
-                                  height={17}
-                                  fill="#111214"
-                                  stroke="#F7F7F5"
-                                  strokeWidth={0.75}
-                                />
-                                <text
-                                  x={47}
-                                  y={11.5}
-                                  textAnchor="middle"
-                                  fontSize="9"
-                                  fontFamily="Inter, sans-serif"
-                                  fontWeight="600"
-                                  fill="#FFFFFF"
-                                >
-                                  {planta.localidad}
-                                </text>
-                              </g>
-                            )}
+                            {showLabel && (() => {
+                              const labelWidth = Math.max(
+                                88,
+                                Math.round(planta.localidad.length * 5.6 + 16)
+                              );
+                              return (
+                                <g transform="translate(10, -8)">
+                                  <rect
+                                    width={labelWidth}
+                                    height={17}
+                                    fill="#111214"
+                                    stroke="#F7F7F5"
+                                    strokeWidth={0.75}
+                                  />
+                                  <text
+                                    x={labelWidth / 2}
+                                    y={11.5}
+                                    textAnchor="middle"
+                                    fontSize="9"
+                                    fontFamily="Inter, sans-serif"
+                                    fontWeight="600"
+                                    fill="#FFFFFF"
+                                  >
+                                    {planta.localidad}
+                                  </text>
+                                </g>
+                              );
+                            })()}
                           </g>
                         </g>
                       );

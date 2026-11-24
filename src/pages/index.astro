@@ -14,7 +14,13 @@ import {
 
 const esEjemplo = isExampleDataset();
 const productos = getProductos();
-const procesoEjemplo = getProceso('aluminio-hall-heroult');
+const productosValidados = productos.filter((p) => p.estado_mvp === 'validado');
+const productosPendientesCount = productos.length - productosValidados.length;
+const procesosVerificados = [
+  getProceso('aluminio-hall-heroult'),
+  getProceso('litio-salmuera-carbonatacion'),
+  getProceso('urea-haber-bosch-sintesis'),
+].filter((p): p is NonNullable<typeof p> => Boolean(p));
 
 const continentalGeo = getGeoContinental();
 const antartidaIslasGeo = getGeoAntartidaIslas();
@@ -34,19 +40,23 @@ const provinciasData = getMapaProvinciasData();
         <span>Atlas Químico Argentino</span>
       </a>
 
-      <nav aria-label="Navegación principal" class="flex items-center gap-6 text-[15px]">
-        <a href="#mapa" class="text-ink-muted transition-colors duration-150 hover:text-ink">
+      <nav aria-label="Navegación principal" class="flex items-center gap-5 text-[15px]">
+        <a href="#mapa" class="hidden text-ink-muted transition-colors duration-150 hover:text-ink sm:inline">
           Mapa territorial
         </a>
-        <a href="#procesos" class="text-ink-muted transition-colors duration-150 hover:text-ink">
-          Procesos químicos
+        <a href="#procesos" class="hidden text-ink-muted transition-colors duration-150 hover:text-ink md:inline">
+          Procesos
         </a>
-        <a
-          href="/productos/aluminio"
-          class="font-medium text-cobalt transition-colors duration-150 hover:text-ink"
-        >
-          Aluminio (verificado)
-        </a>
+        <div class="flex items-center gap-4 border-l border-rule pl-4">
+          {productosValidados.map((prod) => (
+            <a
+              href={`/productos/${prod.producto_id}`}
+              class="font-medium text-cobalt transition-colors duration-150 hover:text-ink"
+            >
+              {prod.nombre.split(' ')[0]}
+            </a>
+          ))}
+        </div>
       </nav>
     </div>
   </header>
@@ -65,9 +75,20 @@ const provinciasData = getMapaProvinciasData();
           </p>
         </div>
 
-        <p role="status" class="max-w-sm text-[13px] text-ink-muted">
-          Caso modelo <a href="/productos/aluminio" class="font-medium text-cobalt hover:underline">Aluminio (Chubut)</a>{' '}
-          verificado con fuentes oficiales; las otras 6 cadenas siguen pendientes hasta Etapa 6.
+        <p role="status" class="max-w-md text-[13px] text-ink-muted">
+          {productosValidados.length} de {productos.length} cadenas verificadas con fuentes oficiales (
+          {productosValidados.map((prod, idx) => (
+            <>
+              {idx > 0 ? ', ' : ''}
+              <a
+                href={`/productos/${prod.producto_id}`}
+                class="font-medium text-cobalt hover:underline"
+              >
+                {prod.nombre.split(' ')[0]}
+              </a>
+            </>
+          ))}
+          ); {productosPendientesCount} siguen pendientes en Etapa 6.
         </p>
       </div>
 
@@ -87,9 +108,7 @@ const provinciasData = getMapaProvinciasData();
       <ProcessDeckPreview
         client:load
         productos={productos}
-        procesoEjemplo={procesoEjemplo?.proceso ?? null}
-        pasosEjemplo={procesoEjemplo?.pasos ?? []}
-        conexionesEjemplo={procesoEjemplo?.conexiones ?? []}
+        procesosVerificados={procesosVerificados}
         esEjemplo={esEjemplo}
       />
     </section>

@@ -1,0 +1,25 @@
+## Por qué la síntesis de urea se integró en el polo de Bahía Blanca
+
+La urea granulada (`CO(NH2)2`, con 46% de nitrógeno en masa) es el principal fertilizante nitrogenado utilizado en la agricultura extensiva argentina. Su fabricación a gran escala exige un suministro continuo y competitivo de **gas natural** (materia prima y combustible), agua industrial y salida logística marítima y fluvial. Esa combinación explica la radicación del único complejo integrado de amoníaco y urea del país en **Ingeniero White** (Zona Cangrejales del Puerto de Bahía Blanca, Departamento Bahía Blanca, provincia de Buenos Aires).
+
+Operativa desde enero de 2001 sobre un predio de **605.110 m2**, la planta de **Profertil S.A.** (`CUIT 30-69157651-1`) recibe gas natural de las cuencas Neuquina y Austral con contratos de hasta **2.500.000 m3/día** y declara una capacidad nominal de **1.320.000 toneladas anuales de urea granulada** y **790.000 toneladas anuales de amoníaco**. Según sus Estados Financieros auditados al 31 de diciembre de 2025 presentados ante la CNV, tras el cambio accionario concretado en diciembre de 2025 la compañía pertenece en un **90% al Grupo Adecoagro** y en un **10% a la Asociación de Cooperativas Argentinas (ACA)** (anteriormente 50% YPF y 50% Nutrien).
+
+La serie real auditada de producción de urea granulada en Bahía Blanca alcanzó **1.377.821 t** en 2022, **1.220.079 t** en 2023 y **1.332.417 t** en 2024 (por encima del 100% de la capacidad nominal anual). En 2025 la producción se redujo a **959.562 t** debido a la parada general programada de mantenimiento de 54 días y al impacto operativo de la inundación de marzo de 2025 en Bahía Blanca.
+
+## Química del complejo integrado: reformado, Haber-Bosch y síntesis de urea
+
+El complejo encadena tres transformaciones químicas de alta presión y temperatura documentadas en las guías técnicas del **IPCC 2006 (Vol. 3, Cap. 3.2 y Box 3.3)**:
+
+1. **Reformado de metano con vapor y conversión shift (`800-850 °C`, `30 bar`):** el gas natural previamente desulfurado sobre lechos de `ZnO` reacciona con vapor de agua para generar hidrógeno y dióxido de carbono: `CH4 + 2 H2O -> CO2 + 4 H2`. El `CO2` es capturado en una torre de absorción química en lugar de ventearse íntegramente y se envía como materia prima a la planta de urea.
+2. **Síntesis de amoníaco por proceso Haber-Bosch (`400-450 °C`, `150-200 bar`):** el hidrógeno del reformado se combina con nitrógeno atmosférico sobre catalizador de hierro promovido: `N2 + 3 H2 -> 2 NH3`.
+3. **Formación de carbamato y deshidratación a urea (`180-190 °C`, `140-160 bar`):** el amoníaco anhidro y el `CO2` recuperado reaccionan mediante el intermediario carbamato de amonio (`NH2COONH4`) según la ecuación global balanceada: `2 NH3 + CO2 -> CO(NH2)2 + H2O`.
+
+A partir de las masas molares estándar (`CO(NH2)2 = 60,06 g/mol`, `NH3 = 17,03 g/mol`, `CO2 = 44,01 g/mol`), los mínimos estequiométricos teóricos son **0,567 toneladas de NH3** y **0,733 toneladas de CO2** por cada tonelada de urea producida. El cruce con los volúmenes reales auditados de Profertil en 2024 confirma la coherencia física del balance: la planta produjo **810.633 t de amoníaco** (`770.033 t` destinadas a síntesis de urea y `40.600 t` comercializadas), arrojando un consumo real de **0,578 t NH3/t urea**, apenas 1,9% por encima del límite termodinámico.
+
+En términos energéticos, la intensidad de referencia del IPCC (Table 3.1) para plantas modernas de amoníaco por reformado de gas natural es de **30,2 GJ/t NH3**, lo que equivale a **17,46 GJ/t urea** (`4,85 MWh/t urea`) para la relación medida en Bahía Blanca. Gracias a la captura química de `CO2` hacia urea, las emisiones directas residuales en la sección de síntesis de urea se reducen a **2 a 7 kg CO2/t urea** (IPCC Box 3.3).
+
+## Mercado interno, importaciones y auditoría de fuentes
+
+Pese a que la planta de Bahía Blanca supera el millón de toneladas anuales, la demanda agrícola argentina excede la capacidad doméstica y requiere importaciones complementarias. Según los registros oficiales de **UN Comtrade** (`HS 3102.10`, urea), Argentina importó **USD 339,65 millones** en 2023 (saldo comercial de `-USD 339,04 millones` frente a exportaciones menores de `USD 0,61 millones`) y **USD 405,53 millones** en 2024. Los campos no publicados por la fuente aduanera (exportaciones de 2024 y volumen físico importado) se declaran explícitamente como **sin datos**.
+
+Durante la auditoría de fuentes primarias se detectó un segundo corrimiento de columnas en origen dentro del dataset 41 de `datos.gob.ar`: la serie mensual `41.1_U_0_M_4`, etiquetada como producción de urea, reporta sumas anuales cercanas a `422.000 t` que en realidad corresponden a aluminio primario. Siguiendo las reglas de trazabilidad del atlas, esa serie corrupta fue descartada y reemplazada por los Estados Contables auditados de Profertil S.A. presentados ante la CNV.

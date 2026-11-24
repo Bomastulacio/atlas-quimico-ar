@@ -1,0 +1,506 @@
+---
+import BaseLayout from '@/layouts/BaseLayout.astro';
+import { ProcessFlowDiagram } from '@/components/ProcessFlowDiagram';
+import { ProductIcon } from '@/components/ProductIcon';
+import LitioEssay from '@/content/productos/litio.mdx';
+import { getFichaProducto, getFuentes } from '@/data';
+
+const ficha = getFichaProducto('litio');
+if (!ficha) {
+  throw new Error('No se encontró la ficha del producto "litio" en la capa de datos.');
+}
+
+const procesoPrincipal = ficha.procesos[0];
+if (!procesoPrincipal) {
+  throw new Error('No se encontró el proceso principal de litio en la capa de datos.');
+}
+
+const produccionDesc = [...ficha.produccion].sort((a, b) => b.anio - a.anio);
+const maxProduccion = Math.max(
+  ...produccionDesc.map((r) => (r.medicion.estado === 'dato' ? r.medicion.valor : 0)),
+  1
+);
+
+const comexUsd = ficha.comercioExterior
+  .filter((r) => r.metrica === 'valor_usd')
+  .sort((a, b) => b.anio - a.anio);
+
+const comexVol = ficha.comercioExterior
+  .filter((r) => r.metrica === 'volumen_t')
+  .sort((a, b) => b.anio - a.anio);
+
+const ultimaProduccion = produccionDesc[0];
+const produccion2023 = produccionDesc.find((r) => r.anio === 2023);
+const ultimoComexUsd = comexUsd[0];
+const ultimoComexVol = comexVol[0];
+
+const citedFuenteIds = new Set<string>([
+  ...ficha.zonas.map((z) => z.procedencia.fuente_id),
+  ...ficha.procesos.map((p) => p.proceso.procedencia.fuente_id),
+  ...ficha.procesos.flatMap((p) => p.pasos.map((s) => s.procedencia.fuente_id)),
+  ...ficha.procesos.flatMap((p) => p.conexiones.map((c) => c.procedencia.fuente_id)),
+  ...ficha.plantas.map((pl) => pl.procedencia.fuente_id),
+  ...ficha.plantas
+    .map((pl) => pl.empresa?.procedencia.fuente_id)
+    .filter((id): id is string => Boolean(id)),
+  ...ficha.produccion.map((pr) => pr.procedencia.fuente_id),
+  ...ficha.comercioExterior.map((ce) => ce.procedencia.fuente_id),
+]);
+
+const fuentesCitadas = getFuentes().filter((f) => citedFuenteIds.has(f.fuente_id));
+
+const TIPO_FUENTE_LABEL: Record<string, string> = {
+  oficial: 'Oficial',
+  tecnica: 'Técnica internacional',
+  empresa: 'Empresa (oficial)',
+  ejemplo: 'Ejemplo',
+};
+
+const ESTADO_PLANTA_LABEL: Record<string, string> = {
+  operativa: 'Operativa',
+  ampliacion: 'En ampliación',
+  construccion: 'En construcción',
+  proyecto: 'Proyecto',
+  inactiva: 'Inactiva',
+};
+---
+
+<BaseLayout
+  title="Litio y carbonato de litio (Puna) | Atlas Químico Argentino"
+  description="Ficha verificada de litio en Argentina: extracción de salmueras y carbonatación en Jujuy, Catamarca y Salta, producción USGS MCS 2025 y comercio exterior UN Comtrade."
+>
+  <header class="sticky top-0 z-30 border-b border-rule/80 bg-stone-bg/95 backdrop-blur-xs">
+    <div class="mx-auto flex max-w-[1600px] items-center justify-between gap-6 px-5 py-3.5 sm:px-8 lg:px-10">
+      <a
+        href="/"
+        class="flex items-center gap-2.5 font-display text-[19px] font-bold tracking-[-0.02em] text-ink"
+      >
+        <span class="inline-block h-2.5 w-2.5 bg-emerald-react" aria-hidden="true" />
+        <span>Atlas Químico Argentino</span>
+      </a>
+
+      <nav aria-label="Navegación de ficha" class="flex items-center gap-5 text-[15px]">
+        <a href="/" class="text-ink-muted transition-colors duration-150 hover:text-ink">
+          ← Mapa territorial
+        </a>
+        <a href="#diagrama" class="hidden text-ink-muted transition-colors duration-150 hover:text-ink sm:inline">
+          Diagrama
+        </a>
+        <a href="#datos" class="hidden text-ink-muted transition-colors duration-150 hover:text-ink sm:inline">
+          Producción y comercio
+        </a>
+        <a href="#empresas" class="hidden text-ink-muted transition-colors duration-150 hover:text-ink md:inline">
+          Plantas ({ficha.plantas.length})
+        </a>
+        <a href="#fuentes" class="text-ink-muted transition-colors duration-150 hover:text-ink">
+          Fuentes ({fuentesCitadas.length})
+        </a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="mx-auto max-w-[1600px] px-5 pb-20 pt-8 sm:px-8 lg:px-10">
+    {/* Cabecera de ficha de producto */}
+    <section class="border-b border-rule pb-8">
+      <div class="flex flex-wrap items-start justify-between gap-6">
+        <div class="flex items-start gap-4">
+          <span class="mt-1 flex h-12 w-12 shrink-0 items-center justify-center bg-emerald-react text-white">
+            <ProductIcon iconId={ficha.producto.icono_id} size={24} />
+          </span>
+          <div>
+            <div class="flex flex-wrap items-baseline gap-3">
+              <h1 class="font-display text-[clamp(2rem,3.4vw,3rem)] font-bold leading-[1.06] tracking-[-0.03em] text-ink">
+                {ficha.producto.nombre}
+              </h1>
+              {ficha.producto.formula_quimica && (
+                <span class="font-display text-[22px] font-semibold text-emerald-react tabular-nums">
+                  {ficha.producto.formula_quimica}
+                </span>
+              )}
+            </div>
+            <p class="mt-2 max-w-[68ch] text-[15px] text-ink-muted">
+              {ficha.producto.descripcion_corta}
+            </p>
+            <p class="mt-2 text-[13px] text-ink-muted tabular-nums">
+              Jurisdicciones: Jujuy (Susques, 38084) · Catamarca (Antofagasta de la Sierra, 10028) ·
+              Salta (Los Andes, 66105)
+            </p>
+          </div>
+        </div>
+
+        <div class="flex items-center gap-2 text-[13px] font-medium text-ink">
+          <span class="h-2.5 w-2.5 rounded-full bg-emerald-react" />
+          <span>Cadena verificada · 6 verificadores químicos aprobados</span>
+        </div>
+      </div>
+
+      {/* 4 magnitudes verificadas en fila tipográfica limpia */}
+      <dl class="mt-8 grid gap-6 border-t border-rule pt-6 sm:grid-cols-2 lg:grid-cols-4 tabular-nums">
+        <div>
+          <dt class="text-[13px] text-ink-muted">Producción minera ({ultimaProduccion?.anio}e)</dt>
+          <dd class="mt-1 font-display text-[28px] font-bold leading-tight text-ink">
+            {ultimaProduccion?.medicion.estado === 'dato'
+              ? `${ultimaProduccion.medicion.valor.toLocaleString('es-AR')} t Li`
+              : 'Sin datos'}
+          </dd>
+          <p class="mt-1 text-[13px] text-ink-muted">
+            {produccion2023?.medicion.estado === 'dato'
+              ? `${produccion2023.medicion.valor.toLocaleString('es-AR')} t Li en 2023 · USGS MCS 2025`
+              : 'USGS MCS 2025'}
+          </p>
+        </div>
+
+        <div>
+          <dt class="text-[13px] text-ink-muted">Exportación física HS 2836.91 ({ultimoComexVol?.anio})</dt>
+          <dd class="mt-1 font-display text-[28px] font-bold leading-tight text-emerald-react">
+            {ultimoComexVol?.exportacion.estado === 'dato'
+              ? `${Math.round(ultimoComexVol.exportacion.valor).toLocaleString('es-AR')} t`
+              : 'Sin datos'}
+          </dd>
+          <p class="mt-1 text-[13px] text-ink-muted">
+            Carbonato de litio (Li2CO3) · UN Comtrade ({ultimoComexVol?.anio})
+          </p>
+        </div>
+
+        <div>
+          <dt class="text-[13px] text-ink-muted">Saldo comercial HS 2836.91 ({ultimoComexUsd?.anio})</dt>
+          <dd class="mt-1 font-display text-[28px] font-bold leading-tight text-cobalt">
+            {ultimoComexUsd?.saldo_comercial.estado === 'dato'
+              ? `+USD ${ultimoComexUsd.saldo_comercial.valor.toLocaleString('es-AR', { minimumFractionDigits: 2 })} M`
+              : 'Sin datos'}
+          </dd>
+          <p class="mt-1 text-[13px] text-ink-muted">
+            Exp. {ultimoComexUsd?.exportacion.estado === 'dato' ? ultimoComexUsd.exportacion.valor.toLocaleString('es-AR', { minimumFractionDigits: 2 }) : 's/d'} / Imp.{' '}
+            {ultimoComexUsd?.importacion.estado === 'dato' ? ultimoComexUsd.importacion.valor.toLocaleString('es-AR', { minimumFractionDigits: 2 }) : 's/d'} M · UN Comtrade
+          </p>
+        </div>
+
+        <div>
+          <dt class="text-[13px] text-ink-muted">Energía específica declarada</dt>
+          <dd class="mt-1 font-display text-[28px] font-bold leading-tight text-ink-muted">
+            {procesoPrincipal.proceso.energia_especifica.estado === 'dato'
+              ? `${procesoPrincipal.proceso.energia_especifica.valor.toLocaleString('es-AR')} ${procesoPrincipal.proceso.energia_especifica.unidad}`
+              : 'Sin datos'}
+          </dd>
+          <p class="mt-1 text-[13px] text-ink-muted">
+            No se estima sin reporte oficial · 1 t Li = 5,323 t LCE
+          </p>
+        </div>
+      </dl>
+    </section>
+
+    {/* Sección 1: Diagrama de proceso químico interactivo */}
+    <section id="diagrama" class="scroll-mt-20 pt-12">
+      <div class="mb-5 flex flex-wrap items-end justify-between gap-4">
+        <div class="max-w-3xl">
+          <h2 class="font-display text-[24px] font-bold tracking-tight text-ink">
+            Diagrama interactivo de extracción y carbonatación
+          </h2>
+          <p class="mt-1.5 text-[15px] text-ink-muted">
+            Generado desde las tablas validadas en Supabase. Seleccioná cada etapa para inspeccionar
+            reactivos, balance estequiométrico, temperatura, presión y reciclo de licor madre.
+          </p>
+        </div>
+        <p class="text-[13px] text-ink-muted tabular-nums">
+          Reacción global:{' '}
+          <strong class="font-semibold text-ink">
+            {procesoPrincipal.proceso.reaccion_global}
+          </strong>
+        </p>
+      </div>
+
+      <ProcessFlowDiagram client:load procesoCompleto={procesoPrincipal} />
+    </section>
+
+    {/* Sección 2: Producción física y comercio exterior */}
+    <section id="datos" class="scroll-mt-20 pt-16">
+      <div class="border-b border-rule pb-4">
+        <h2 class="font-display text-[24px] font-bold tracking-tight text-ink">
+          Producción minera y comercio exterior verificados
+        </h2>
+        <p class="mt-1.5 max-w-[70ch] text-[15px] text-ink-muted">
+          Datos descargados en memoria y verificados con hash SHA-256 desde USGS y UN Comtrade. Los
+          campos ausentes en los registros aduaneros se declaran explícitamente sin datos.
+        </p>
+      </div>
+
+      <div class="mt-8 grid gap-8 lg:grid-cols-12">
+        <div class="border border-rule bg-stone-surface p-6 lg:col-span-5">
+          <div class="flex items-baseline justify-between gap-2">
+            <h3 class="font-display text-[20px] font-semibold text-ink">
+              Producción minera nacional (Li contenido)
+            </h3>
+            <span class="text-[13px] text-ink-muted">USGS MCS 2025</span>
+          </div>
+          <p class="mt-1 text-[13px] text-ink-muted">
+            Fuente: U.S. Geological Survey, Mineral Commodity Summaries 2025, pág. 111.
+          </p>
+
+          <div class="mt-5 space-y-4 tabular-nums">
+            {produccionDesc.map((reg) => {
+              const val = reg.medicion.estado === 'dato' ? reg.medicion.valor : 0;
+              const widthPct = (val / maxProduccion) * 100;
+              return (
+                <div>
+                  <div class="flex items-baseline justify-between text-[14px]">
+                    <span class="font-medium text-ink">
+                      {reg.anio} ({reg.procedencia.confianza === 'media' ? 'est. USGS' : 'definitivo'})
+                    </span>
+                    <span class="font-semibold text-ink">
+                      {reg.medicion.estado === 'dato'
+                        ? `${reg.medicion.valor.toLocaleString('es-AR')} t Li`
+                        : 'Sin datos'}
+                    </span>
+                  </div>
+                  <div class="mt-1.5 h-2 w-full bg-stone-subtle">
+                    <div
+                      class="h-full bg-emerald-react"
+                      style={{ width: `${widthPct.toFixed(1)}%` }}
+                    />
+                  </div>
+                  <p class="mt-1 text-[12px] text-ink-muted">
+                    Equivalente teórico LCE (×5,323):{' '}
+                    {reg.medicion.estado === 'dato'
+                      ? `${Math.round(reg.medicion.valor * 5.323).toLocaleString('es-AR')} t Li2CO3`
+                      : 'Sin datos'}
+                  </p>
+                </div>
+              );
+            })}
+          </div>
+
+          <div class="mt-6 border-t border-rule pt-5 text-[13px] text-ink-muted tabular-nums">
+            <p class="font-semibold text-ink">Base geológica reportada (USGS MCS 2025)</p>
+            <div class="mt-2 grid grid-cols-2 gap-4">
+              <div>
+                <span class="block text-ink-muted">Reservas verificadas</span>
+                <span class="font-display text-[18px] font-bold text-ink">4.000.000 t Li</span>
+              </div>
+              <div>
+                <span class="block text-ink-muted">Recursos identificados</span>
+                <span class="font-display text-[18px] font-bold text-ink">23.000.000 t Li</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="space-y-6 lg:col-span-7">
+          <div class="border border-rule bg-stone-surface p-6">
+            <div class="flex flex-wrap items-baseline justify-between gap-2">
+              <h3 class="font-display text-[20px] font-semibold text-ink">
+                Comercio exterior en valor (HS 2836.91)
+              </h3>
+              <span class="text-[13px] text-ink-muted">Millones de USD · UN Comtrade</span>
+            </div>
+
+            <div class="mt-4 overflow-x-auto">
+              <table class="w-full border-collapse text-left text-[14px] tabular-nums">
+                <thead>
+                  <tr class="border-b border-rule-strong/30 text-[13px] text-ink-muted">
+                    <th class="py-2.5 pr-4 font-medium">Año</th>
+                    <th class="px-4 py-2.5 text-right font-medium">Exportaciones</th>
+                    <th class="px-4 py-2.5 text-right font-medium">Importaciones</th>
+                    <th class="py-2.5 pl-4 text-right font-medium">Saldo comercial</th>
+                  </tr>
+                </thead>
+                <tbody class="divide-y divide-rule">
+                  {comexUsd.map((row) => (
+                    <tr>
+                      <td class="py-2.5 pr-4 font-semibold text-ink">{row.anio}</td>
+                      <td class="px-4 py-2.5 text-right text-ink">
+                        {row.exportacion.estado === 'dato'
+                          ? `USD ${row.exportacion.valor.toLocaleString('es-AR', { minimumFractionDigits: 2 })} M`
+                          : 'Sin datos'}
+                      </td>
+                      <td class="px-4 py-2.5 text-right text-ink-muted">
+                        {row.importacion.estado === 'dato'
+                          ? `USD ${row.importacion.valor.toLocaleString('es-AR', { minimumFractionDigits: 2 })} M`
+                          : 'Sin datos'}
+                      </td>
+                      <td class="py-2.5 pl-4 text-right font-semibold text-emerald-react">
+                        {row.saldo_comercial.estado === 'dato'
+                          ? `+USD ${row.saldo_comercial.valor.toLocaleString('es-AR', { minimumFractionDigits: 2 })} M`
+                          : 'Sin datos'}
+                      </td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+          <div class="border border-rule bg-stone-surface p-6">
+            <div class="flex flex-wrap items-baseline justify-between gap-2">
+              <h3 class="font-display text-[20px] font-semibold text-ink">
+                Comercio exterior en volumen físico (HS 2836.91)
+              </h3>
+              <span class="text-[13px] text-ink-muted">Toneladas de Li2CO3 · UN Comtrade</span>
+            </div>
+
+            <div class="mt-4 overflow-x-auto">
+              <table class="w-full border-collapse text-left text-[14px] tabular-nums">
+                <thead>
+                  <tr class="border-b border-rule-strong/30 text-[13px] text-ink-muted">
+                    <th class="py-2.5 pr-4 font-medium">Año</th>
+                    <th class="px-4 py-2.5 text-right font-medium">Exportaciones</th>
+                    <th class="px-4 py-2.5 text-right font-medium">Importaciones</th>
+                    <th class="py-2.5 pl-4 text-right font-medium">Saldo físico</th>
+                  </tr>
+                </thead>
+                <tbody class="divide-y divide-rule">
+                  {comexVol.map((row) => (
+                    <tr>
+                      <td class="py-2.5 pr-4 font-semibold text-ink">{row.anio}</td>
+                      <td class="px-4 py-2.5 text-right font-medium text-emerald-react">
+                        {row.exportacion.estado === 'dato'
+                          ? `${row.exportacion.valor.toLocaleString('es-AR', { minimumFractionDigits: 1 })} t`
+                          : 'Sin datos'}
+                      </td>
+                      <td class="px-4 py-2.5 text-right text-ink-muted">
+                        {row.importacion.estado === 'dato'
+                          ? `${row.importacion.valor.toLocaleString('es-AR', { minimumFractionDigits: 1 })} t`
+                          : 'Sin datos'}
+                      </td>
+                      <td class="py-2.5 pl-4 text-right font-semibold text-ink">
+                        {row.saldo_comercial.estado === 'dato'
+                          ? `${row.saldo_comercial.valor.toLocaleString('es-AR', { minimumFractionDigits: 1 })} t`
+                          : 'Sin datos'}
+                      </td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    {/* Sección 3: Complejos y plantas georreferenciadas */}
+    <section id="empresas" class="scroll-mt-20 pt-16">
+      <div class="border-b border-rule pb-4">
+        <h2 class="font-display text-[24px] font-bold tracking-tight text-ink">
+          Complejos productivos georreferenciados en la Puna
+        </h2>
+        <p class="mt-1.5 max-w-[70ch] text-[15px] text-ink-muted">
+          Operaciones con fichas oficiales verificadas. Las capacidades no informadas explícitamente
+          por la fuente se declaran sin datos.
+        </p>
+      </div>
+
+      <div class="mt-8 grid gap-6 md:grid-cols-3">
+        {ficha.plantas.map((pl) => (
+          <article class="flex flex-col justify-between border border-rule bg-stone-surface p-6">
+            <div>
+              <div class="flex items-baseline justify-between gap-2">
+                <h3 class="font-display text-[19px] font-semibold text-ink">{pl.nombre}</h3>
+                <span class="shrink-0 text-[12px] font-medium text-emerald-react">
+                  {ESTADO_PLANTA_LABEL[pl.estado_operativo] ?? pl.estado_operativo}
+                </span>
+              </div>
+              <p class="mt-1.5 text-[13px] text-ink-muted tabular-nums">
+                {pl.localidad}, {pl.provincia?.nombre ?? pl.provincia_id} ({pl.lat.toFixed(3)},{' '}
+                {pl.lon.toFixed(3)})
+              </p>
+
+              <dl class="mt-5 space-y-3 border-t border-rule pt-4 text-[14px] tabular-nums">
+                <div>
+                  <dt class="text-[12px] text-ink-muted">Operador registrado</dt>
+                  <dd class="font-medium text-ink">
+                    {pl.empresa?.razon_social ?? 'Sin registrar'}
+                  </dd>
+                </div>
+                <div>
+                  <dt class="text-[12px] text-ink-muted">Capacidad declarada</dt>
+                  <dd class="font-semibold text-cobalt">
+                    {pl.capacidad.estado === 'dato'
+                      ? `${pl.capacidad.valor.toLocaleString('es-AR')} ${pl.capacidad.unidad}`
+                      : 'Sin datos'}
+                  </dd>
+                </div>
+              </dl>
+            </div>
+
+            <p class="mt-5 border-t border-rule pt-3.5 text-[12px] text-ink-muted">
+              Cita ({pl.procedencia.anio}): {pl.procedencia.cita_ubicacion}
+            </p>
+          </article>
+        ))}
+      </div>
+    </section>
+
+    {/* Sección 4: Ensayo de ingeniería química (MDX) */}
+    <section class="pt-16">
+      <div class="border border-rule bg-stone-surface p-6 sm:p-8 lg:p-10">
+        <div class="atlas-prose max-w-[74ch]">
+          <LitioEssay />
+        </div>
+      </div>
+    </section>
+
+    {/* Sección 5: Registro auditable de fuentes y hashes SHA-256 */}
+    <section id="fuentes" class="scroll-mt-20 pt-16">
+      <div class="border-b border-rule pb-4">
+        <h2 class="font-display text-[24px] font-bold tracking-tight text-ink">
+          Registro de fuentes oficiales y verificación SHA-256
+        </h2>
+        <p class="mt-1.5 text-[15px] text-ink-muted">
+          Todas las cifras de esta ficha provienen de {fuentesCitadas.length} fuentes primarias
+          verificadas en Supabase y sincronizadas al snapshot estático.
+        </p>
+      </div>
+
+      <div class="mt-6 overflow-x-auto border border-rule bg-stone-surface">
+        <table class="w-full border-collapse text-left text-[13px]">
+          <thead>
+            <tr class="border-b border-rule bg-stone-subtle text-ink-muted">
+              <th class="px-4 py-3 font-medium">Fuente</th>
+              <th class="px-4 py-3 font-medium">Organismo</th>
+              <th class="px-4 py-3 font-medium">Tipo</th>
+              <th class="px-4 py-3 font-medium">Descarga</th>
+              <th class="px-4 py-3 font-medium">Hash SHA-256</th>
+            </tr>
+          </thead>
+          <tbody class="divide-y divide-rule">
+            {fuentesCitadas.map((f) => (
+              <tr class="align-top">
+                <td class="px-4 py-3">
+                  <a
+                    href={f.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="font-medium text-cobalt hover:underline"
+                  >
+                    {f.nombre} ↗
+                  </a>
+                  {f.notas && <p class="mt-1 text-ink-muted">{f.notas}</p>}
+                </td>
+                <td class="px-4 py-3 text-ink">{f.organismo}</td>
+                <td class="px-4 py-3 text-ink-muted">{TIPO_FUENTE_LABEL[f.tipo] ?? f.tipo}</td>
+                <td class="px-4 py-3 text-ink-muted tabular-nums">{f.fecha_descarga}</td>
+                <td class="px-4 py-3 text-ink-muted tabular-nums">
+                  <span title={f.hash}>{f.hash.slice(0, 22)}...</span>
+                </td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+    </section>
+  </main>
+
+  <footer class="border-t border-rule bg-stone-surface">
+    <div class="mx-auto flex max-w-[1600px] flex-wrap items-center justify-between gap-4 px-5 py-6 text-[13px] text-ink-muted sm:px-8 lg:px-10">
+      <p>
+        Atlas Químico Argentino. Ficha de litio (Puna argentina) validada bajo política strictReal.
+      </p>
+      <div class="flex items-center gap-5">
+        <a href="/productos/aluminio" class="hover:text-cobalt">Aluminio</a>
+        <a href="/productos/urea" class="hover:text-cobalt">Urea</a>
+        <a href="/" class="font-medium text-ink hover:text-cobalt">
+          ← Volver al mapa productivo
+        </a>
+      </div>
+    </div>
+  </footer>
+</BaseLayout>
