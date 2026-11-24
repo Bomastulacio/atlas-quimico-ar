@@ -1,0 +1,35 @@
+# Dependencias y build
+node_modules/
+dist/
+.astro/
+.vite/
+
+# Variables de entorno y secretos
+.env
+.env.*
+!.env.example
+*.pem
+service-account*.json
+
+# Python / LangGraph pipeline (etapas 4-5)
+pipeline/.venv/
+pipeline/__pycache__/
+**/__pycache__/
+*.pyc
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+
+# Archivos crudos pesados (los manifiestos de hash siempre se versionan)
+data/raw/*.xlsx
+data/raw/*.zip
+data/raw/*.pdf
+data/raw/*.parquet
+!data/raw/.gitkeep
+!data/staging/.gitkeep
+
+# Sistema y editores
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
