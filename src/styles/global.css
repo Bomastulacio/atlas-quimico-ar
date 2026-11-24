@@ -1,31 +1,38 @@
 @import "tailwindcss";
 
 @theme {
+  /* Disciplina tipográfica estricta: 2 familias (Space Grotesk + Inter con tabular-nums) */
   --font-display: "Space Grotesk", "Inter", system-ui, -apple-system, sans-serif;
   --font-sans: "Inter", system-ui, -apple-system, sans-serif;
-  --font-mono: "IBM Plex Mono", ui-monospace, SFMono-Regular, Menlo, monospace;
 
-  /* Base estricta blanco y negro (inspiración details.so) */
-  --color-canvas: #ffffff;
-  --color-surface: #f6f6f7;
-  --color-surface-strong: #ececef;
-  --color-ink: #09090b;
-  --color-ink-muted: #63636e;
-  --color-rule: #e4e4e7;
-  --color-rule-strong: #18181b;
+  /* Paleta moderna-clásica: piedra arquitectónica y tinta carbón (sin blanco clínico) */
+  --color-stone-bg: #ecece9;
+  --color-stone-surface: #f7f7f5;
+  --color-stone-subtle: #e2e2dd;
+  --color-sea-basin: #dfe4ea;
+  --color-ink: #111214;
+  --color-ink-muted: #52555e;
+  --color-rule: #d2d4d8;
+  --color-rule-strong: #1c1e22;
 
-  /* Colores que rompen el blanco y negro (inspiración halftone / procesos) */
-  --color-cobalt: #0038ff;
-  --color-amber-molten: #f59e0b;
-  --color-emerald-react: #00a859;
-  --color-signal-red: #ff331f;
+  /* Rupturas cromáticas semánticas (solo en territorio activo, cadenas y procesos) */
+  --color-cobalt: #0a42e0;
+  --color-emerald-react: #0b7a53;
+  --color-ochre-metal: #c86a11;
+  --color-signal-red: #d93025;
+
+  /* Escala controlada de 3 tamaños de cuerpo */
+  --text-heading: 1.5rem;
+  --text-body: 0.9375rem;
+  --text-sm: 0.8125rem;
 }
 
 @layer base {
   html {
-    background-color: var(--color-canvas);
+    background-color: var(--color-stone-bg);
     color: var(--color-ink);
     font-family: var(--font-sans);
+    font-size: 16px;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     text-rendering: optimizeLegibility;
@@ -33,7 +40,9 @@
 
   body {
     min-height: 100vh;
-    background-color: var(--color-canvas);
+    background-color: var(--color-stone-bg);
+    font-size: var(--text-body);
+    line-height: 1.55;
   }
 }
 
@@ -41,13 +50,26 @@
   font-variant-numeric: tabular-nums;
 }
 
-/* Sutil trama punteada de laboratorio para zonas técnicas sin sobrecargar */
-.dot-matrix-bg {
-  background-image: radial-gradient(rgba(9, 9, 11, 0.14) 1px, transparent 1px);
-  background-size: 16px 16px;
+/* Perspectiva 3D suave para el relieve cartográfico al seleccionar provincia */
+.map-stage-3d {
+  perspective: 1400px;
+  perspective-origin: 50% 45%;
 }
 
-.dot-matrix-dark {
-  background-image: radial-gradient(rgba(255, 255, 255, 0.16) 1px, transparent 1px);
-  background-size: 14px 14px;
+.map-plane {
+  transform-style: preserve-3d;
+  transition: transform 420ms cubic-bezier(0.22, 1, 0.36, 1);
+  will-change: transform;
+}
+
+.map-plane-tilted {
+  transform: rotateX(21deg) rotateZ(-3deg) scale(1.02);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .map-plane,
+  .map-plane-tilted {
+    transform: none;
+    transition: none;
+  }
 }

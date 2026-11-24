@@ -1,24 +1,19 @@
 ---
 import BaseLayout from '@/layouts/BaseLayout.astro';
 import { ArgentinaMapExplorer } from '@/components/ArgentinaMapExplorer';
-import { DitheredAsciiArt } from '@/components/DitheredAsciiArt';
 import { ProcessDeckPreview } from '@/components/ProcessDeckPreview';
 import {
   getGeoAntartidaIslas,
   getGeoContinental,
   getGeoManifest,
-  getManifest,
   getMapaProvinciasData,
   getProceso,
   getProductos,
-  getResumenCobertura,
   isExampleDataset,
 } from '@/data';
 
-const manifest = getManifest();
 const esEjemplo = isExampleDataset();
 const productos = getProductos();
-const cobertura = getResumenCobertura();
 const procesoEjemplo = getProceso('aluminio-hall-heroult');
 
 const continentalGeo = getGeoContinental();
@@ -27,218 +22,88 @@ const geoManifest = getGeoManifest();
 const provinciasData = getMapaProvinciasData();
 ---
 
-<BaseLayout title="Atlas Químico y Productivo de Argentina">
-  {/* Barra superior fija estilo galería técnica (details.so) */}
-  <nav class="sticky top-0 z-30 border-b border-rule bg-canvas/95 backdrop-blur-xs">
-    <div class="mx-auto flex max-w-6xl items-center justify-between px-4 py-3 sm:px-6 lg:px-8">
-      <div class="flex items-center gap-3">
+<BaseLayout title="Atlas Químico Argentino">
+  {/* Encabezado limpio en una sola línea, sin bordes innecesarios hasta hacer scroll */}
+  <header class="sticky top-0 z-30 border-b border-rule/80 bg-stone-bg/95 backdrop-blur-xs">
+    <div class="mx-auto flex max-w-[1600px] items-center justify-between gap-6 px-5 py-3.5 sm:px-8 lg:px-10">
+      <a
+        href="#mapa"
+        class="flex items-center gap-2.5 font-display text-[19px] font-bold tracking-[-0.02em] text-ink"
+      >
         <span class="inline-block h-2.5 w-2.5 bg-cobalt" aria-hidden="true" />
-        <a href="#top" class="font-display text-sm font-semibold tracking-tight text-ink">
-          ATLAS QUÍMICO AR
-        </a>
-        <span class="hidden font-mono text-[11px] text-ink-muted sm:inline">
-          / v{manifest.version_esquema}
-        </span>
-      </div>
+        <span>Atlas Químico Argentino</span>
+      </a>
 
-      <div class="flex items-center gap-4 font-mono text-[11px]">
-        <a href="#mapa" class="hidden text-ink-muted transition-colors hover:text-ink md:inline">
-          Mapa
+      <nav aria-label="Navegación principal" class="flex items-center gap-6 text-[15px]">
+        <a href="#mapa" class="text-ink-muted transition-colors duration-150 hover:text-ink">
+          Mapa territorial
         </a>
-        <a href="#procesos" class="hidden text-ink-muted transition-colors hover:text-ink md:inline">
-          Procesos
+        <a href="#procesos" class="text-ink-muted transition-colors duration-150 hover:text-ink">
+          Procesos químicos
         </a>
-        {esEjemplo ? (
-          <span class="inline-flex items-center gap-1.5 border border-ink bg-ink px-2.5 py-1 text-white">
-            <span class="h-1.5 w-1.5 rounded-full bg-amber-molten" />
-            DATOS DE EJEMPLO · ETAPA 2
-          </span>
-        ) : (
-          <span class="inline-flex items-center gap-1.5 border border-emerald-react bg-emerald-react/10 px-2.5 py-1 text-emerald-react">
-            DATOS VALIDADOS
+        {esEjemplo && (
+          <span class="hidden text-[13px] font-medium text-signal-red md:inline">
+            Vista preliminar con datos de ejemplo
           </span>
         )}
-      </div>
+      </nav>
     </div>
-  </nav>
+  </header>
 
-  <div id="top" class="mx-auto max-w-6xl px-4 py-8 sm:px-6 sm:py-12 lg:px-8">
-    {/* Hero asimétrico B&W con ruptura de color en el lienzo halftone/ASCII */}
-    <header class="grid gap-8 lg:grid-cols-12 lg:items-start">
-      <div class="flex flex-col justify-between space-y-6 lg:col-span-6">
-        <div class="space-y-4">
-          <p class="font-mono text-xs uppercase tracking-[0.14em] text-ink-muted">
-            Argentina · Procesos químicos · Comercio exterior
-          </p>
-          <h1 class="font-display text-4xl font-bold leading-[1.02] tracking-[-0.03em] text-ink sm:text-5xl lg:text-[3.4rem]">
-            Qué produce Argentina, cómo se transforma y cuánto vale.
+  {/* Apertura directa al atlas interactivo a ancho completo (sin hero de relleno ni KPIs genéricos) */}
+  <main class="mx-auto max-w-[1600px] px-5 pb-16 pt-7 sm:px-8 lg:px-10">
+    <section id="mapa" class="scroll-mt-20 space-y-5">
+      <div class="flex flex-wrap items-end justify-between gap-4">
+        <div class="max-w-3xl">
+          <h1 class="font-display text-[clamp(2rem,3.4vw,3rem)] font-bold leading-[1.06] tracking-[-0.03em] text-ink">
+            Mapa productivo e industrial de Argentina
           </h1>
-          <p class="max-w-xl text-base leading-relaxed text-ink-muted">
-            Atlas interactivo de ingeniería de procesos e industria argentina. Cada cifra exige
-            fuente oficial verificable, año, cita exacta y hash SHA-256. Sin estimaciones
-            inventadas.
+          <p class="mt-2 max-w-[65ch] text-[15px] text-ink-muted">
+            Qué fabrica el país, qué procesos químicos transforman cada insumo y cuánto comercio
+            exterior genera, con fuentes oficiales verificables en cada cifra.
           </p>
         </div>
-
-        {/* Métricas en grilla hairline B&W */}
-        <dl class="grid grid-cols-2 gap-px border border-rule bg-rule font-mono tabular-nums sm:grid-cols-4">
-          <div class="bg-canvas p-3.5">
-            <dt class="text-[10px] uppercase text-ink-muted">Jurisdicciones</dt>
-            <dd class="mt-1 text-xl font-semibold text-ink">{cobertura.totalProvincias}</dd>
-          </div>
-          <div class="bg-canvas p-3.5">
-            <dt class="text-[10px] uppercase text-ink-muted">Cadenas MVP</dt>
-            <dd class="mt-1 text-xl font-semibold text-ink">{productos.length}</dd>
-          </div>
-          <div class="bg-canvas p-3.5">
-            <dt class="text-[10px] uppercase text-ink-muted">Tablas SQL</dt>
-            <dd class="mt-1 text-xl font-semibold text-ink">
-              {Object.keys(manifest.tablas).length}
-            </dd>
-          </div>
-          <div class="bg-canvas p-3.5">
-            <dt class="text-[10px] uppercase text-ink-muted">Deptos. polo</dt>
-            <dd class="mt-1 text-xl font-semibold text-cobalt">
-              {cobertura.departamentosConDatos}
-            </dd>
-          </div>
-        </dl>
 
         {esEjemplo && (
-          <div
-            role="status"
-            class="border-l-2 border-signal-red bg-surface px-4 py-3 font-mono text-xs text-ink"
-          >
-            <span class="font-semibold text-signal-red">DATOS DE EJEMPLO:</span> la cartografía del
-            mapa es oficial (IGN / API Georef v2.0), pero las cifras y vínculos productivos siguen
-            en modo demostrativo hasta aprobar <code class="text-ink underline">docs/datos.md</code>{' '}
-            y cargar el caso modelo de Aluminio en Etapa 3.
-          </div>
+          <p role="status" class="max-w-sm text-[13px] text-ink-muted">
+            Cartografía oficial IGN activa. Las cifras y vínculos productivos son de ejemplo hasta
+            cargar aluminio en la siguiente etapa.
+          </p>
         )}
       </div>
 
-      {/* Arte generativo halftone/ASCII con ruptura de color estilo Devault */}
-      <div class="lg:col-span-6">
-        <DitheredAsciiArt client:load initialScene="electrolisis" />
-      </div>
-    </header>
+      <ArgentinaMapExplorer
+        client:load
+        continentalGeo={continentalGeo}
+        antartidaIslasGeo={antartidaIslasGeo}
+        provinciasData={provinciasData}
+        productos={productos}
+        geoManifest={geoManifest}
+        esEjemplo={esEjemplo}
+      />
+    </section>
 
-    {/* Sección principal Etapa 2: Mapa bicontinental IGN */}
-    <main class="mt-14 space-y-14">
-      <section id="mapa" class="scroll-mt-20 space-y-4">
-        <div class="flex flex-wrap items-end justify-between gap-4 border-b border-rule pb-4">
-          <div>
-            <p class="font-mono text-xs uppercase tracking-wider text-cobalt">
-              [01] Cartografía oficial IGN · API Georef v2.0
-            </p>
-            <h2 class="mt-1 font-display text-3xl font-bold tracking-tight text-ink sm:text-4xl">
-              Mapa productivo por provincias
-            </h2>
-          </div>
-          <p class="max-w-md text-sm text-ink-muted">
-            Mostramos el producto dominante en cada provincia y desplegamos el resto al hacer zoom o
-            click. Las zonas sin cobertura oficial se marcan honestamente como{' '}
-            <code class="font-mono text-ink">sin_datos</code>.
-          </p>
-        </div>
+    {/* Sección inferior sostenida con la misma sobriedad editorial */}
+    <section id="procesos" class="mt-16 scroll-mt-20">
+      <ProcessDeckPreview
+        client:load
+        productos={productos}
+        procesoEjemplo={procesoEjemplo?.proceso ?? null}
+        pasosEjemplo={procesoEjemplo?.pasos ?? []}
+        esEjemplo={esEjemplo}
+      />
+    </section>
+  </main>
 
-        <ArgentinaMapExplorer
-          client:load
-          continentalGeo={continentalGeo}
-          antartidaIslasGeo={antartidaIslasGeo}
-          provinciasData={provinciasData}
-          productos={productos}
-          geoManifest={geoManifest}
-          esEjemplo={esEjemplo}
-        />
-      </section>
-
-      {/* Consola de procesos y contrato de datos */}
-      <section id="procesos" class="scroll-mt-20 space-y-4">
-        <div class="flex flex-wrap items-end justify-between gap-4 border-b border-rule pb-4">
-          <div>
-            <p class="font-mono text-xs uppercase tracking-wider text-ink-muted">
-              [02] Contratos de proceso y trazabilidad
-            </p>
-            <h2 class="mt-1 font-display text-2xl font-bold tracking-tight text-ink sm:text-3xl">
-              Vista previa de cadenas y reglas de validación
-            </h2>
-          </div>
-        </div>
-
-        <ProcessDeckPreview
-          client:load
-          productos={productos}
-          procesoEjemplo={procesoEjemplo?.proceso ?? null}
-          pasosEjemplo={procesoEjemplo?.pasos ?? []}
-          esEjemplo={esEjemplo}
-        />
-      </section>
-
-      {/* Arquitectura de datos y hoja de ruta en bento B&W */}
-      <section class="grid gap-6 lg:grid-cols-12">
-        <div class="border border-rule bg-surface p-5 lg:col-span-7">
-          <div class="flex items-center justify-between font-mono text-xs uppercase tracking-wider text-ink-muted">
-            <span>[03] Trazabilidad de datos</span>
-            <span class="text-ink">raw → staging → validated</span>
-          </div>
-
-          <div class="mt-4 grid gap-2 font-mono text-xs sm:grid-cols-4">
-            {[
-              { step: '01', title: 'Sheets / Oficial', desc: '12 pestañas relacionales' },
-              { step: '02', title: 'data/raw', desc: 'Descarga + SHA-256' },
-              { step: '03', title: 'Zod + FKs', desc: 'Bloquea si falta cita' },
-              { step: '04', title: 'src/data/', desc: 'Capa única Astro' },
-            ].map((node, i) => (
-              <div
-                class={`border p-3 ${
-                  i === 3 ? 'border-ink bg-ink text-white' : 'border-rule bg-canvas text-ink'
-                }`}
-              >
-                <span
-                  class={`text-[10px] ${i === 3 ? 'bg-white px-1 text-cobalt' : 'text-ink-muted'}`}
-                >
-                  {node.step}
-                </span>
-                <p class="mt-2 font-semibold">{node.title}</p>
-                <p class={`mt-1 text-[11px] ${i === 3 ? 'text-white/75' : 'text-ink-muted'}`}>
-                  {node.desc}
-                </p>
-              </div>
-            ))}
-          </div>
-        </div>
-
-        <div class="border border-rule bg-canvas p-5 lg:col-span-5">
-          <p class="font-mono text-xs uppercase tracking-wider text-ink-muted">
-            [04] Hoja de ruta
-          </p>
-          <ol class="mt-4 space-y-2.5 font-mono text-xs">
-            <li class="flex items-baseline justify-between border-b border-rule pb-2 text-ink">
-              <span>01 · Repo, esquema y capa src/data</span>
-              <span class="bg-emerald-react px-1.5 py-0.5 text-[10px] font-semibold text-white">
-                LISTO
-              </span>
-            </li>
-            <li class="flex items-baseline justify-between border-b border-rule pb-2 text-ink">
-              <span>02 · Mapa bicontinental IGN interactivo</span>
-              <span class="bg-emerald-react px-1.5 py-0.5 text-[10px] font-semibold text-white">
-                LISTO
-              </span>
-            </li>
-            <li class="flex items-baseline justify-between border-b border-rule pb-2 text-ink">
-              <span>03 · Aluminio (Chubut) a mano — Set de oro</span>
-              <span class="bg-cobalt px-1.5 py-0.5 text-[10px] font-semibold text-white">
-                SIGUIENTE
-              </span>
-            </li>
-            <li class="flex items-baseline justify-between text-ink-muted">
-              <span>04–05 · Pipeline LangGraph + verificación</span>
-              <span>PENDIENTE</span>
-            </li>
-          </ol>
-        </div>
-      </section>
-    </main>
-  </div>
+  <footer class="border-t border-rule bg-stone-surface">
+    <div class="mx-auto flex max-w-[1600px] flex-wrap items-center justify-between gap-4 px-5 py-6 text-[13px] text-ink-muted sm:px-8 lg:px-10">
+      <p>
+        Atlas Químico Argentino. Toda cifra exige año, organismo, URL y verificación de archivo; los
+        faltantes se declaran sin datos.
+      </p>
+      <p class="tabular-nums">
+        Límites provinciales: {geoManifest.organismo} ({geoManifest.fecha_descarga})
+      </p>
+    </div>
+  </footer>
 </BaseLayout>

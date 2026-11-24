@@ -1,7 +1,7 @@
-import { useEffect, useMemo, useRef, useState } from 'react';
-import { geoPath, geoStereographic, geoTransverseMercator } from 'd3-geo';
+import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
+import { geoGraticule, geoPath, geoStereographic, geoTransverseMercator } from 'd3-geo';
 import { AnimatePresence, motion, MotionConfig } from 'motion/react';
-import { Minus, Plus, RotateCcw } from 'lucide-react';
+import { Box, Minus, Move, Plus, RotateCcw } from 'lucide-react';
 import type { Producto } from '@/schemas';
 import type {
   GeoManifest,
@@ -20,48 +20,64 @@ interface ArgentinaMapExplorerProps {
   esEjemplo: boolean;
 }
 
-const VIEW_WIDTH = 520;
-const VIEW_HEIGHT = 720;
+const VIEW_WIDTH = 640;
+const VIEW_HEIGHT = 760;
 
-const INSET_X = 322;
-const INSET_Y = 504;
-const INSET_W = 180;
-const INSET_H = 196;
+const INSET_X = 432;
+const INSET_Y = 532;
+const INSET_W = 188;
+const INSET_H = 206;
 
-const SPRING = {
+const MIN_ZOOM = 1;
+const MAX_ZOOM = 4.5;
+
+const SPRING_TAB = {
   type: 'spring' as const,
   stiffness: 420,
   damping: 34,
   mass: 0.85,
 };
 
-// Ajustes ópticos puntuales para que los íconos dominantes queden centrados
-// dentro de cada provincia sin pisarse entre jurisdicciones vecinas.
 const PIN_OFFSETS: Record<string, [number, number]> = {
-  '06': [10, 14],   // Buenos Aires
-  '26': [-6, 0],    // Chubut
-  '38': [-4, -4],   // Jujuy
-  '66': [8, 6],     // Salta
-  '10': [-6, 4],    // Catamarca
-  '82': [4, 14],    // Santa Fe (polo Rosario al sur)
-  '22': [2, 2],     // Chaco
-  '94': [-22, -4],  // Tierra del Fuego (Isla Grande)
+  '06': [12, 16],
+  '26': [-6, 0],
+  '38': [-5, -5],
+  '66': [10, 8],
+  '10': [-6, 5],
+  '82': [4, 16],
+  '22': [2, 2],
+  '94': [-22, -4],
 };
 
 export function getCategoryAccent(categoria: Producto['categoria']): string {
   switch (categoria) {
     case 'metalurgia':
-      return '#0038FF'; // Azul cobalto
+      return '#0A42E0'; // Azul cobalto
     case 'mineria_quimica':
-      return '#00A859'; // Verde reactivo
+      return '#0B7A53'; // Verde mineral
     case 'fertilizantes':
-      return '#0038FF';
+      return '#0A42E0';
     case 'agroindustria':
-      return '#F59E0B'; // Ámbar fundición/grano
+      return '#C86A11'; // Ocre industrial
     case 'petroquimica':
-      return '#FF331F'; // Rojo señal
+      return '#D93025'; // Rojo señal
     case 'bioenergia':
-      return '#00A859';
+      return '#0B7A53';
+  }
+}
+
+function getExtrusionSideColor(hex: string): string {
+  switch (hex) {
+    case '#0A42E0':
+      return '#062685';
+    case '#0B7A53':
+      return '#064932';
+    case '#C86A11':
+      return '#7B3E08';
+    case '#D93025':
+      return '#8B1B14';
+    default:
+      return '#111214';
   }
 }
 
@@ -69,6 +85,27 @@ interface TooltipState {
   provinciaId: string;
   x: number;
   y: number;
+}
+
+interface ViewportTransform {
+  zoom: number;
+  x: number;
+  y: number;
+}
+
+function clampTransform(next: ViewportTransform): ViewportTransform {
+  const z = Math.max(MIN_ZOOM, Math.min(MAX_ZOOM, next.zoom));
+  const marginX = VIEW_WIDTH * 0.42;
+  const marginY = VIEW_HEIGHT * 0.35;
+  const minX = VIEW_WIDTH - VIEW_WIDTH * z - marginX;
+  const maxX = marginX;
+  const minY = VIEW_HEIGHT - VIEW_HEIGHT * z - marginY;
+  const maxY = marginY;
+  return {
+    zoom: z,
+    x: Math.max(minX, Math.min(maxX, next.x)),
+    y: Math.max(minY, Math.min(maxY, next.y)),
+  };
 }
 
 export function ArgentinaMapExplorer({
@@ -79,39 +116,70 @@ export function ArgentinaMapExplorer({
   geoManifest,
   esEjemplo,
 }: ArgentinaMapExplorerProps) {
-  const mapContainerRef = useRef<HTMLDivElement | null>(null);
+  const mapViewportRef = useRef<HTMLDivElement | null>(null);
+  const svgRef = useRef<SVGSVGElement | null>(null);
 
   const [selectedId, setSelectedId] = useState<string | null>(null);
   const [hoveredId, setHoveredId] = useState<string | null>(null);
   const [activeProductId, setActiveProductId] = useState<string | null>(null);
   const [tooltip, setTooltip] = useState<TooltipState | null>(null);
-  const [zoom, setZoom] = useState<number>(1);
-  const [pan, setPan] = useState<{ x: number; y: number }>({ x: 0, y: 0 });
+
+  // Transformación de vista (zoom + paneo por arrastre) y modo relieve 3D
+  const [view, setView] = useState<ViewportTransform>({ zoom: 1, x: 0, y: 0 });
+  const [isDragging, setIsDragging] = useState(false);
+  const [is3D, setIs3D] = useState(false);
+  const [userLocked2D, setUserLocked2D] = useState(false);
+
+  const dragRef = useRef<{
+    active: boolean;
+    pointerId: number;
+    startClientX: number;
+    startClientY: number;
+    startX: number;
+    startY: number;
+    moved: boolean;
+  }>({
+    active: false,
+    pointerId: -1,
+    startClientX: 0,
+    startClientY: 0,
+    startX: 0,
+    startY: 0,
+    moved: false,
+  });
 
   const dataById = useMemo(
     () => new Map(provinciasData.map((item) => [item.provincia.provincia_id, item])),
     [provinciasData]
   );
 
-  // Proyección Gauss-Krüger / Transverse Mercator centrada en 64°O (estándar IGN)
-  const { pathContinental, pathAntartida, centroids, cabaPoint } = useMemo(() => {
+  // Proyección Gauss-Krüger / Transverse Mercator centrada en 64°O + recuadro polar IGN
+  const { pathContinental, pathAntartida, graticulePath, centroids, cabaPoint } = useMemo(() => {
     const projCont = geoTransverseMercator()
       .rotate([64, 0, 0])
       .fitExtent(
         [
-          [24, 20],
-          [440, 696],
+          [38, 22],
+          [532, 734],
         ],
         continentalGeo
       );
     const pCont = geoPath(projCont);
 
+    const graticule = geoGraticule()
+      .step([5, 5])
+      .extent([
+        [-78, -58],
+        [-48, -20],
+      ]);
+    const gPath = pCont(graticule()) ?? '';
+
     const projAnt = geoStereographic()
       .rotate([50, 90, 0])
       .fitExtent(
         [
-          [14, 26],
-          [INSET_W - 14, INSET_H - 22],
+          [16, 28],
+          [INSET_W - 16, INSET_H - 26],
         ],
         antartidaIslasGeo
       );
@@ -127,74 +195,207 @@ export function ArgentinaMapExplorer({
       }
     }
 
-    const cabaCoord = projCont([-58.44, -34.61]) ?? [285, 290];
+    const cabaCoord = projCont([-58.44, -34.61]) ?? [350, 310];
 
     return {
       pathContinental: pCont,
       pathAntartida: pAnt,
+      graticulePath: gPath,
       centroids: cMap,
       cabaPoint: cabaCoord as [number, number],
     };
   }, [continentalGeo, antartidaIslasGeo]);
 
-  // Cerrar selección con Escape
+  // Conversión precisa de coordenadas de pantalla al sistema viewBox usando el contenedor
+  // exterior sin inclinar (evita saltos de escala al arrastrar o hacer zoom en modo 3D).
+  const clientToSvgCoords = useCallback((clientX: number, clientY: number): [number, number] => {
+    const container = mapViewportRef.current;
+    if (!container) return [VIEW_WIDTH / 2, VIEW_HEIGHT / 2];
+    const rect = container.getBoundingClientRect();
+    if (rect.width === 0 || rect.height === 0) return [VIEW_WIDTH / 2, VIEW_HEIGHT / 2];
+    const scale = Math.min(rect.width / VIEW_WIDTH, rect.height / VIEW_HEIGHT);
+    const renderedW = VIEW_WIDTH * scale;
+    const renderedH = VIEW_HEIGHT * scale;
+    const offsetX = rect.left + (rect.width - renderedW) / 2;
+    const offsetY = rect.top + (rect.height - renderedH) / 2;
+    return [(clientX - offsetX) / scale, (clientY - offsetY) / scale];
+  }, []);
+
+  // Zoom con la rueda del mouse centrado exactamente en el cursor (passive: false)
+  useEffect(() => {
+    const el = mapViewportRef.current;
+    if (!el) return;
+
+    const handleWheel = (e: WheelEvent) => {
+      e.preventDefault();
+      const [svgX, svgY] = clientToSvgCoords(e.clientX, e.clientY);
+      const factor = Math.exp(-e.deltaY * 0.0016);
+
+      setView((prev) => {
+        const nextZoom = Math.max(MIN_ZOOM, Math.min(MAX_ZOOM, prev.zoom * factor));
+        if (Math.abs(nextZoom - prev.zoom) < 0.001) return prev;
+        // Mantener bajo el cursor el mismo punto del mapa
+        const mapX = (svgX - prev.x) / prev.zoom;
+        const mapY = (svgY - prev.y) / prev.zoom;
+        return clampTransform({
+          zoom: nextZoom,
+          x: svgX - mapX * nextZoom,
+          y: svgY - mapY * nextZoom,
+        });
+      });
+    };
+
+    el.addEventListener('wheel', handleWheel, { passive: false });
+    return () => el.removeEventListener('wheel', handleWheel);
+  }, [clientToSvgCoords]);
+
+  // Tecla Escape limpia selección y restablece vista
   useEffect(() => {
     const onKeyDown = (e: KeyboardEvent) => {
       if (e.key === 'Escape') {
         setSelectedId(null);
-        setZoom(1);
-        setPan({ x: 0, y: 0 });
+        setIs3D(false);
+        setView({ zoom: 1, x: 0, y: 0 });
       }
     };
     window.addEventListener('keydown', onKeyDown);
     return () => window.removeEventListener('keydown', onKeyDown);
   }, []);
 
-  const selectedData = selectedId ? (dataById.get(selectedId) ?? null) : null;
-  const hoveredData = tooltip ? (dataById.get(tooltip.provinciaId) ?? null) : null;
+  const zoomToProvincia = useCallback(
+    (provinciaId: string, targetZoom = 2.05) => {
+      const pt = centroids.get(provinciaId);
+      if (!pt) return;
+      setView(
+        clampTransform({
+          zoom: targetZoom,
+          x: VIEW_WIDTH / 2 - pt[0] * targetZoom,
+          y: VIEW_HEIGHT / 2 - pt[1] * targetZoom,
+        })
+      );
+    },
+    [centroids]
+  );
 
-  const zoomToProvincia = (provinciaId: string) => {
-    const pt = centroids.get(provinciaId);
-    if (!pt) return;
-    const targetZoom = 2.15;
-    setZoom(targetZoom);
-    setPan({
-      x: VIEW_WIDTH / 2 - pt[0] * targetZoom,
-      y: VIEW_HEIGHT / 2 - pt[1] * targetZoom,
+  const resetView = () => {
+    setView({ zoom: 1, x: 0, y: 0 });
+    setSelectedId(null);
+    setIs3D(false);
+  };
+
+  const handleStepZoom = (factor: number) => {
+    setView((prev) => {
+      const nextZoom = Math.max(MIN_ZOOM, Math.min(MAX_ZOOM, prev.zoom * factor));
+      if (nextZoom <= 1.01) return { zoom: 1, x: 0, y: 0 };
+      const cx = VIEW_WIDTH / 2;
+      const cy = VIEW_HEIGHT / 2;
+      const mapX = (cx - prev.x) / prev.zoom;
+      const mapY = (cy - prev.y) / prev.zoom;
+      return clampTransform({
+        zoom: nextZoom,
+        x: cx - mapX * nextZoom,
+        y: cy - mapY * nextZoom,
+      });
     });
   };
 
-  const resetView = () => {
-    setZoom(1);
-    setPan({ x: 0, y: 0 });
+  // Arrastre directo (click sostenido + mover) en desktop y táctil
+  const handleStagePointerDown = (e: React.PointerEvent<HTMLDivElement>) => {
+    if (e.button !== 0) return;
+    // Ignorar clicks sobre los botones de control flotantes
+    if ((e.target as HTMLElement).closest('button')) return;
+
+    dragRef.current = {
+      active: true,
+      pointerId: e.pointerId,
+      startClientX: e.clientX,
+      startClientY: e.clientY,
+      startX: view.x,
+      startY: view.y,
+      moved: false,
+    };
   };
 
-  const handleStepZoom = (delta: number) => {
-    setZoom((prev) => {
-      const next = Math.max(1, Math.min(3.2, Number((prev + delta).toFixed(2))));
-      if (next === 1) {
-        setPan({ x: 0, y: 0 });
-      } else {
-        const anchor = selectedId ? centroids.get(selectedId) : [VIEW_WIDTH / 2, VIEW_HEIGHT / 2];
-        const [ax, ay] = anchor ?? [VIEW_WIDTH / 2, VIEW_HEIGHT / 2];
-        setPan({
-          x: VIEW_WIDTH / 2 - ax * next,
-          y: VIEW_HEIGHT / 2 - ay * next,
-        });
-      }
-      return next;
+  const handleStagePointerMove = (e: React.PointerEvent<HTMLDivElement>) => {
+    if (!dragRef.current.active) return;
+
+    const dxScreen = e.clientX - dragRef.current.startClientX;
+    const dyScreen = e.clientY - dragRef.current.startClientY;
+
+    if (!dragRef.current.moved && Math.hypot(dxScreen, dyScreen) > 5) {
+      dragRef.current.moved = true;
+      setIsDragging(true);
+      setTooltip(null);
+      e.currentTarget.setPointerCapture(e.pointerId);
+    }
+
+    if (dragRef.current.moved) {
+      const container = mapViewportRef.current;
+      const rect = container?.getBoundingClientRect();
+      const scale = rect
+        ? Math.min(rect.width / VIEW_WIDTH, rect.height / VIEW_HEIGHT)
+        : 1;
+      const dxSvg = dxScreen / (scale || 1);
+      const dySvg = dyScreen / (scale || 1);
+
+      setView((prev) =>
+        clampTransform({
+          zoom: prev.zoom,
+          x: dragRef.current.startX + dxSvg,
+          y: dragRef.current.startY + dySvg,
+        })
+      );
+    }
+  };
+
+  const endDrag = (e: React.PointerEvent<HTMLDivElement>) => {
+    if (!dragRef.current.active) return;
+    if (dragRef.current.moved && e.currentTarget.hasPointerCapture(e.pointerId)) {
+      e.currentTarget.releasePointerCapture(e.pointerId);
+    }
+    dragRef.current.active = false;
+    setIsDragging(false);
+    // Permitir que el click inmediatamente posterior ignore el arrastre
+    window.setTimeout(() => {
+      dragRef.current.moved = false;
+    }, 0);
+  };
+
+  const handleStageDoubleClick = (e: React.MouseEvent<HTMLDivElement>) => {
+    if ((e.target as HTMLElement).closest('button')) return;
+    const [svgX, svgY] = clientToSvgCoords(e.clientX, e.clientY);
+    setView((prev) => {
+      const nextZoom = Math.min(MAX_ZOOM, prev.zoom * 1.55);
+      const mapX = (svgX - prev.x) / prev.zoom;
+      const mapY = (svgY - prev.y) / prev.zoom;
+      return clampTransform({
+        zoom: nextZoom,
+        x: svgX - mapX * nextZoom,
+        y: svgY - mapY * nextZoom,
+      });
     });
   };
 
   const handleSelectProvincia = (provinciaId: string | null) => {
-    setSelectedId(provinciaId);
-    if (!provinciaId) {
-      resetView();
+    if (dragRef.current.moved) return;
+
+    if (provinciaId === null) {
+      setSelectedId(null);
+      setIs3D(false);
+      setView({ zoom: 1, x: 0, y: 0 });
+      return;
     }
+
+    setSelectedId(provinciaId);
+    if (!userLocked2D) {
+      setIs3D(true);
+    }
+    zoomToProvincia(provinciaId, Math.max(view.zoom, 1.65));
   };
 
-  const handlePointerMove = (e: React.PointerEvent, provinciaId: string) => {
-    const rect = mapContainerRef.current?.getBoundingClientRect();
+  const handleProvincePointerMove = (e: React.PointerEvent, provinciaId: string) => {
+    if (isDragging) return;
+    const rect = mapViewportRef.current?.getBoundingClientRect();
     if (!rect) return;
     setHoveredId(provinciaId);
     setTooltip({
@@ -226,67 +427,80 @@ export function ArgentinaMapExplorer({
         ? getCategoryAccent(filteredProduct.categoria)
         : info?.dominante
           ? getCategoryAccent(info.dominante.categoria)
-          : '#09090B';
+          : '#2B2E36';
 
-    // Paleta estricta B&W en reposo + ruptura de color en selección, hover o filtro activo
-    let fill = 'url(#halftone-sin-datos)';
-    let stroke = '#A1A1AA';
-    let strokeWidth = 0.75;
+    let fill = 'url(#stone-sin-datos)';
+    let stroke = '#9FA5B0';
+    let strokeWidth = 0.85;
 
     if (info?.dominante) {
-      fill = '#F4F4F6';
-      stroke = '#18181B';
-      strokeWidth = 0.9;
+      fill = '#F8F8F5';
+      stroke = '#1C1E22';
+      strokeWidth = 1.05;
     }
 
     if (activeProductId !== null) {
       if (matchesFilter) {
         fill = activeAccent;
-        stroke = '#09090B';
-        strokeWidth = 1.25;
+        stroke = '#111214';
+        strokeWidth = 1.3;
       } else {
-        fill = info?.dominante ? '#FAFAFB' : 'url(#halftone-sin-datos)';
-        stroke = '#D4D4D8';
-        strokeWidth = 0.65;
+        fill = info?.dominante ? '#EEEEEC' : 'url(#stone-sin-datos)';
+        stroke = '#B9BEC7';
+        strokeWidth = 0.7;
       }
     }
 
     if (isHovered && !isSelected) {
-      fill = info?.dominante ? activeAccent : '#E4E4E7';
-      stroke = '#09090B';
-      strokeWidth = 1.3;
+      fill = info?.dominante ? activeAccent : '#CFD4DC';
+      stroke = '#111214';
+      strokeWidth = 1.35;
     }
 
     if (isSelected) {
       fill = activeAccent;
-      stroke = '#09090B';
-      strokeWidth = 1.6;
+      stroke = '#F7F7F5';
+      strokeWidth = 1.65;
     }
 
     return { fill, stroke, strokeWidth, isSelected, isHovered, matchesFilter, activeAccent };
   };
 
+  const selectedData = selectedId ? (dataById.get(selectedId) ?? null) : null;
+  const hoveredData = tooltip && !isDragging ? (dataById.get(tooltip.provinciaId) ?? null) : null;
+  const selectedFeature = selectedId
+    ? continentalGeo.features.find((f) => f.properties.id === selectedId) ?? null
+    : null;
+
+  const invScale = 1 / Math.sqrt(view.zoom);
+
   return (
     <MotionConfig reducedMotion="user">
-      <section aria-label="Mapa productivo e industrial de Argentina" className="space-y-4">
-        {/* Barra de filtros por cadena MVP (Bencho spring pill) */}
-        <div className="flex flex-wrap items-center justify-between gap-3 border border-rule bg-canvas px-4 py-3">
-          <div className="flex items-center gap-2 font-mono text-[11px] uppercase tracking-wider text-ink-muted">
-            <span className="inline-block h-2 w-2 bg-cobalt" />
-            <span>Filtrar cadena</span>
-          </div>
-
-          <div className="flex flex-wrap items-center gap-1.5" role="group" aria-label="Filtro por producto MVP">
+      <div className="space-y-4">
+        {/* Control segmentado conectado para filtrar cadenas productivas (sin pared de botones) */}
+        <div className="flex flex-wrap items-center justify-between gap-3 border-y border-rule py-2.5">
+          <div
+            role="tablist"
+            aria-label="Filtrar mapa por cadena productiva"
+            className="flex max-w-full items-center overflow-x-auto bg-stone-subtle p-1"
+          >
             <button
               type="button"
+              role="tab"
+              aria-selected={activeProductId === null}
               onClick={() => setActiveProductId(null)}
-              className={`relative cursor-pointer border px-2.5 py-1 font-mono text-[11px] transition-colors ${
-                activeProductId === null
-                  ? 'border-ink bg-ink text-white'
-                  : 'border-rule bg-canvas text-ink-muted hover:border-ink hover:text-ink'
+              className={`relative shrink-0 cursor-pointer px-3 py-1.5 text-[13px] font-medium transition-colors duration-150 ${
+                activeProductId === null ? 'text-white' : 'text-ink-muted hover:text-ink'
               }`}
             >
-              Todas (24)
+              {activeProductId === null && (
+                <motion.span
+                  layoutId="map-chain-filter"
+                  transition={SPRING_TAB}
+                  className="absolute inset-0 bg-ink"
+                />
+              )}
+              <span className="relative z-10">Todas las cadenas</span>
             </button>
 
             {productos.map((prod) => {
@@ -296,437 +510,615 @@ export function ArgentinaMapExplorer({
                 <button
                   key={prod.producto_id}
                   type="button"
+                  role="tab"
+                  aria-selected={isActive}
                   onClick={() =>
-                    setActiveProductId((curr) => (curr === prod.producto_id ? null : prod.producto_id))
+                    setActiveProductId((curr) =>
+                      curr === prod.producto_id ? null : prod.producto_id
+                    )
                   }
-                  style={isActive ? { backgroundColor: accent, borderColor: accent } : undefined}
-                  className={`inline-flex cursor-pointer items-center gap-1.5 border px-2.5 py-1 font-mono text-[11px] transition-colors ${
-                    isActive
-                      ? 'text-white font-medium'
-                      : 'border-rule bg-canvas text-ink hover:border-ink'
+                  className={`relative inline-flex shrink-0 cursor-pointer items-center gap-1.5 px-3 py-1.5 text-[13px] font-medium transition-colors duration-150 ${
+                    isActive ? 'text-white' : 'text-ink-muted hover:text-ink'
                   }`}
                 >
-                  <ProductIcon iconId={prod.icono_id} size={13} />
-                  <span>{prod.nombre.split(' ')[0]}</span>
+                  {isActive && (
+                    <motion.span
+                      layoutId="map-chain-filter"
+                      transition={SPRING_TAB}
+                      style={{ backgroundColor: accent }}
+                      className="absolute inset-0"
+                    />
+                  )}
+                  <span className="relative z-10 inline-flex items-center gap-1.5">
+                    <ProductIcon iconId={prod.icono_id} size={14} />
+                    <span>{prod.nombre.split(' ')[0]}</span>
+                  </span>
                 </button>
               );
             })}
           </div>
+
+          <p className="hidden items-center gap-1.5 text-[13px] text-ink-muted xl:flex">
+            <Move className="h-3.5 w-3.5" />
+            <span>Arrastrá para mover, usá la rueda para acercar y hacé click para elevar en 3D</span>
+          </p>
         </div>
 
-        {/* Grilla principal: Mapa bicontinental (7 cols) + Panel lateral táctil (5 cols) */}
+        {/* Espacio principal widescreen: Mapa (62%) + Ficha territorial (38%) */}
         <div className="grid gap-6 lg:grid-cols-12 lg:items-stretch">
           <div
-            ref={mapContainerRef}
-            className="relative overflow-hidden border border-rule bg-canvas lg:col-span-7"
+            ref={mapViewportRef}
+            onPointerDown={handleStagePointerDown}
+            onPointerMove={handleStagePointerMove}
+            onPointerUp={endDrag}
+            onPointerCancel={endDrag}
+            onDoubleClick={handleStageDoubleClick}
+            className={`relative overflow-hidden border border-rule bg-sea-basin select-none lg:col-span-7 xl:col-span-8 ${
+              isDragging ? 'cursor-grabbing' : 'cursor-grab'
+            }`}
+            style={{ touchAction: 'none' }}
           >
-            {/* Cabecera sutil sobre el lienzo del mapa */}
-            <div className="flex flex-wrap items-center justify-between gap-2 border-b border-rule bg-surface px-4 py-2.5 font-mono text-[11px]">
-              <span className="text-ink font-medium">
-                REPÚBLICA ARGENTINA · MAPA BICONTINENTAL (IGN)
-              </span>
-              <span className="tabular-nums text-ink-muted">
-                ZOOM {zoom.toFixed(1)}× · 24 JURISDICCIONES
-              </span>
-            </div>
-
-            {/* Controles de zoom flotantes */}
-            <div className="absolute right-3 top-14 z-20 flex flex-col border border-rule bg-canvas shadow-xs">
-              <button
-                type="button"
-                onClick={() => handleStepZoom(0.55)}
-                aria-label="Acercar mapa"
-                className="cursor-pointer border-b border-rule p-2 text-ink transition-colors hover:bg-ink hover:text-white"
+            {/* Controles integrados (2D/3D + zoom) en la esquina superior derecha */}
+            <div className="absolute right-4 top-4 z-20 flex items-center gap-2">
+              {/* Switch conectado 2D / 3D */}
+              <div
+                role="group"
+                aria-label="Perspectiva cartográfica"
+                className="flex border border-rule bg-stone-surface/95 p-0.5 text-[13px] backdrop-blur-xs"
               >
-                <Plus className="h-3.5 w-3.5" />
-              </button>
-              <button
-                type="button"
-                onClick={() => handleStepZoom(-0.55)}
-                aria-label="Alejar mapa"
-                className="cursor-pointer border-b border-rule p-2 text-ink transition-colors hover:bg-ink hover:text-white"
-              >
-                <Minus className="h-3.5 w-3.5" />
-              </button>
-              <button
-                type="button"
-                onClick={resetView}
-                aria-label="Restablecer vista del mapa"
-                className="cursor-pointer p-2 text-ink transition-colors hover:bg-ink hover:text-white"
-              >
-                <RotateCcw className="h-3.5 w-3.5" />
-              </button>
-            </div>
-
-            {/* Lienzo SVG D3 */}
-            <div className="relative flex items-center justify-center bg-canvas p-2 sm:p-4">
-              <svg
-                viewBox={`0 0 ${VIEW_WIDTH} ${VIEW_HEIGHT}`}
-                role="img"
-                aria-label="Mapa interactivo bicontinental de provincias argentinas con cadenas productivas"
-                className="h-auto max-h-[680px] w-full select-none"
-                onPointerLeave={clearHover}
-              >
-                <defs>
-                  {/* Trama halftone/dithered para jurisdicciones sin datos cargados */}
-                  <pattern
-                    id="halftone-sin-datos"
-                    width="6"
-                    height="6"
-                    patternUnits="userSpaceOnUse"
-                  >
-                    <rect width="6" height="6" fill="#FFFFFF" />
-                    <circle cx="2" cy="2" r="0.85" fill="#D4D4D8" />
-                  </pattern>
-                </defs>
-
-                {/* Grupo con zoom/pan suave spring */}
-                <motion.g
-                  animate={{ x: pan.x, y: pan.y, scale: zoom }}
-                  transition={SPRING}
-                  style={{ transformOrigin: '0px 0px' }}
+                <button
+                  type="button"
+                  onClick={() => {
+                    setIs3D(false);
+                    setUserLocked2D(true);
+                  }}
+                  aria-pressed={!is3D}
+                  className={`cursor-pointer px-2.5 py-1 font-medium transition-colors duration-150 ${
+                    !is3D ? 'bg-ink text-white' : 'text-ink-muted hover:text-ink'
+                  }`}
                 >
-                  {/* 24 jurisdicciones continentales + Islas Malvinas */}
-                  {continentalGeo.features.map((feat) => {
-                    const id = feat.properties.id;
-                    const d = pathContinental(feat) ?? '';
-                    const visual = getProvinceVisual(id);
+                  2D
+                </button>
+                <button
+                  type="button"
+                  onClick={() => {
+                    setIs3D(true);
+                    setUserLocked2D(false);
+                  }}
+                  aria-pressed={is3D}
+                  className={`inline-flex cursor-pointer items-center gap-1 px-2.5 py-1 font-medium transition-colors duration-150 ${
+                    is3D ? 'bg-cobalt text-white' : 'text-ink-muted hover:text-ink'
+                  }`}
+                >
+                  <Box className="h-3.5 w-3.5" />
+                  3D
+                </button>
+              </div>
 
-                    return (
-                      <path
-                        key={id}
-                        d={d}
-                        fill={visual.fill}
-                        stroke={visual.stroke}
-                        strokeWidth={visual.strokeWidth / Math.sqrt(zoom)}
-                        strokeLinejoin="round"
-                        className="cursor-pointer transition-colors duration-150 focus:outline-none"
-                        tabIndex={0}
-                        role="button"
-                        aria-label={`${feat.properties.nombre} (Georef ${id})`}
-                        aria-pressed={visual.isSelected}
-                        onPointerMove={(e) => handlePointerMove(e, id)}
-                        onPointerLeave={clearHover}
-                        onClick={() => handleSelectProvincia(id)}
-                        onKeyDown={(e) => {
-                          if (e.key === 'Enter' || e.key === ' ') {
-                            e.preventDefault();
-                            handleSelectProvincia(id);
-                          }
-                        }}
+              {/* Controles de zoom */}
+              <div className="flex border border-rule bg-stone-surface/95 backdrop-blur-xs">
+                <button
+                  type="button"
+                  onClick={() => handleStepZoom(1.4)}
+                  aria-label="Acercar mapa"
+                  className="cursor-pointer border-r border-rule px-2.5 py-1.5 text-ink transition-colors duration-150 hover:bg-ink hover:text-white"
+                >
+                  <Plus className="h-4 w-4" />
+                </button>
+                <button
+                  type="button"
+                  onClick={() => handleStepZoom(1 / 1.4)}
+                  aria-label="Alejar mapa"
+                  className="cursor-pointer border-r border-rule px-2.5 py-1.5 text-ink transition-colors duration-150 hover:bg-ink hover:text-white"
+                >
+                  <Minus className="h-4 w-4" />
+                </button>
+                <button
+                  type="button"
+                  onClick={resetView}
+                  aria-label="Restablecer vista del mapa"
+                  title="Centrar mapa"
+                  className="cursor-pointer px-2.5 py-1.5 text-ink transition-colors duration-150 hover:bg-ink hover:text-white"
+                >
+                  <RotateCcw className="h-4 w-4" />
+                </button>
+              </div>
+            </div>
+
+            {/* Indicador limpio de escala y proyección arriba a la izquierda */}
+            <div className="pointer-events-none absolute left-4 top-4 z-20 text-[13px] text-ink-muted">
+              <span className="font-medium text-ink">República Argentina</span>
+              <span className="mx-1.5 text-rule-strong/30">/</span>
+              <span className="tabular-nums">{view.zoom.toFixed(1)}×</span>
+            </div>
+
+            {/* Escena con perspectiva 3D suave al hacer click en una provincia */}
+            <div className="map-stage-3d flex h-[540px] items-center justify-center sm:h-[640px] lg:h-[720px]">
+              <div className={`map-plane h-full w-full ${is3D ? 'map-plane-tilted' : ''}`}>
+                <svg
+                  ref={svgRef}
+                  viewBox={`0 0 ${VIEW_WIDTH} ${VIEW_HEIGHT}`}
+                  role="img"
+                  aria-label="Mapa interactivo bicontinental de provincias argentinas con cadenas productivas"
+                  className="h-full w-full"
+                  onPointerLeave={clearHover}
+                  onClick={(e) => {
+                    if (e.target === e.currentTarget && !dragRef.current.moved && selectedId) {
+                      handleSelectProvincia(null);
+                    }
+                  }}
+                >
+                  <defs>
+                    {/* Trama cartográfica sutil para jurisdicciones sin datos */}
+                    <pattern
+                      id="stone-sin-datos"
+                      width="7"
+                      height="7"
+                      patternUnits="userSpaceOnUse"
+                    >
+                      <rect width="7" height="7" fill="#EFEFED" />
+                      <path d="M0 7L7 0" stroke="#D5D7DC" strokeWidth="0.7" />
+                    </pattern>
+
+                    {/* Sombra suave arquitectónica del territorio nacional sobre el mar */}
+                    <filter id="land-shadow" x="-8%" y="-8%" width="120%" height="120%">
+                      <feDropShadow
+                        dx="0"
+                        dy="4"
+                        stdDeviation="4"
+                        floodColor="#111214"
+                        floodOpacity="0.1"
                       />
-                    );
-                  })}
+                    </filter>
 
-                  {/* Callout dedicado para CABA (02) para facilitar click/tap */}
+                    {/* Sombra proyectada por la provincia elevada en 3D */}
+                    <filter id="extrude-shadow" x="-15%" y="-15%" width="140%" height="140%">
+                      <feDropShadow
+                        dx="3"
+                        dy="14"
+                        stdDeviation="5"
+                        floodColor="#090B10"
+                        floodOpacity="0.34"
+                      />
+                    </filter>
+                  </defs>
+
+                  {/* Grupo paneable y zoomeable */}
+                  <g
+                    style={{
+                      transform: `translate(${view.x}px, ${view.y}px) scale(${view.zoom})`,
+                      transformOrigin: '0px 0px',
+                      transition: isDragging
+                        ? 'none'
+                        : 'transform 260ms cubic-bezier(0.22, 1, 0.36, 1)',
+                    }}
+                  >
+                    {/* Retícula geográfica sutil (meridianos y paralelos cada 5°) */}
+                    <path
+                      d={graticulePath}
+                      fill="none"
+                      stroke="rgba(17, 18, 20, 0.08)"
+                      strokeWidth={0.7 / Math.sqrt(view.zoom)}
+                    />
+
+                    {/* Base continental de las 24 jurisdicciones + Islas Malvinas */}
+                    <g filter="url(#land-shadow)">
+                      {continentalGeo.features.map((feat) => {
+                        const id = feat.properties.id;
+                        // Si está seleccionada en modo 3D, se dibuja elevada arriba en la capa de extrusión
+                        if (selectedId === id && is3D) {
+                          return (
+                            <path
+                              key={`${id}-socket`}
+                              d={pathContinental(feat) ?? ''}
+                              fill="#C6CCD4"
+                              stroke="#8C939E"
+                              strokeWidth={0.75 * invScale}
+                            />
+                          );
+                        }
+
+                        const d = pathContinental(feat) ?? '';
+                        const visual = getProvinceVisual(id);
+
+                        return (
+                          <path
+                            key={id}
+                            d={d}
+                            fill={visual.fill}
+                            stroke={visual.stroke}
+                            strokeWidth={visual.strokeWidth * invScale}
+                            strokeLinejoin="round"
+                            className="cursor-pointer transition-colors duration-150 focus:outline-none"
+                            tabIndex={0}
+                            role="button"
+                            aria-label={`${feat.properties.nombre} (código Georef ${id})`}
+                            aria-pressed={visual.isSelected}
+                            onPointerMove={(e) => handleProvincePointerMove(e, id)}
+                            onPointerLeave={clearHover}
+                            onClick={() => handleSelectProvincia(id)}
+                            onKeyDown={(e) => {
+                              if (e.key === 'Enter' || e.key === ' ') {
+                                e.preventDefault();
+                                handleSelectProvincia(id);
+                              }
+                            }}
+                          />
+                        );
+                      })}
+                    </g>
+
+                    {/* Capa de extrusión 3D arquitectónica animada para la provincia seleccionada */}
+                    {selectedFeature && selectedId && is3D && (() => {
+                      const d = pathContinental(selectedFeature) ?? '';
+                      const visual = getProvinceVisual(selectedId);
+                      const sideColor = getExtrusionSideColor(visual.fill);
+                      const lift = 11 * invScale;
+                      const steps = [5, 4, 3, 2, 1];
+
+                      return (
+                        <motion.g
+                          key={`extrude-${selectedId}`}
+                          initial={{ y: lift, opacity: 0.85 }}
+                          animate={{ y: 0, opacity: 1 }}
+                          transition={{ duration: 0.28, ease: [0.22, 1, 0.36, 1] }}
+                          className="cursor-pointer"
+                          onPointerMove={(e) => handleProvincePointerMove(e, selectedId)}
+                          onPointerLeave={clearHover}
+                          onClick={() => handleSelectProvincia(selectedId)}
+                        >
+                          {/* Sombra de elevación */}
+                          <path
+                            d={d}
+                            fill={sideColor}
+                            opacity="0.35"
+                            filter="url(#extrude-shadow)"
+                          />
+
+                          {/* Paredes extruidas apiladas formando volumen arquitectónico */}
+                          {steps.map((step) => {
+                            const dy = -lift + (step / steps.length) * lift;
+                            const dx = (step / steps.length) * 2.4 * invScale;
+                            return (
+                              <path
+                                key={step}
+                                d={d}
+                                transform={`translate(${dx}, ${dy})`}
+                                fill={sideColor}
+                                stroke={sideColor}
+                                strokeWidth={0.85 * invScale}
+                                strokeLinejoin="round"
+                              />
+                            );
+                          })}
+
+                          {/* Cara superior elevada con color vivo y borde luminoso */}
+                          <path
+                            d={d}
+                            transform={`translate(0, ${-lift})`}
+                            fill={visual.fill}
+                            stroke="#F7F7F5"
+                            strokeWidth={1.65 * invScale}
+                            strokeLinejoin="round"
+                          />
+                        </motion.g>
+                      );
+                    })()}
+
+                    {/* Callout nítido para CABA (02) */}
+                    {(() => {
+                      const cabaVis = getProvinceVisual('02');
+                      const boxX = cabaPoint[0] + 46 * invScale;
+                      const boxY = cabaPoint[1] - 12 * invScale;
+                      return (
+                        <g
+                          className="cursor-pointer"
+                          onPointerMove={(e) => handleProvincePointerMove(e, '02')}
+                          onPointerLeave={clearHover}
+                          onClick={() => handleSelectProvincia('02')}
+                        >
+                          <line
+                            x1={cabaPoint[0]}
+                            y1={cabaPoint[1]}
+                            x2={boxX}
+                            y2={boxY + 11 * invScale}
+                            stroke="#111214"
+                            strokeWidth={0.9 * invScale}
+                            strokeDasharray={`${2.5 * invScale} ${2.5 * invScale}`}
+                          />
+                          <circle
+                            cx={cabaPoint[0]}
+                            cy={cabaPoint[1]}
+                            r={3 * invScale}
+                            fill={cabaVis.isSelected ? '#0A42E0' : '#111214'}
+                          />
+                          <g transform={`translate(${boxX}, ${boxY}) scale(${invScale})`}>
+                            <rect
+                              width={58}
+                              height={22}
+                              fill={cabaVis.isSelected ? '#111214' : '#F7F7F5'}
+                              stroke="#111214"
+                              strokeWidth={1}
+                            />
+                            <text
+                              x={29}
+                              y={14.5}
+                              textAnchor="middle"
+                              fontSize="10"
+                              fontFamily="Inter, sans-serif"
+                              fontWeight="600"
+                              fill={cabaVis.isSelected ? '#FFFFFF' : '#111214'}
+                            >
+                              CABA
+                            </text>
+                          </g>
+                        </g>
+                      );
+                    })()}
+
+                    {/* Pines con íconos propios (dominante + badge +N, elevados si la provincia está en 3D) */}
+                    {provinciasData.map((item) => {
+                      const id = item.provincia.provincia_id;
+                      if (!item.dominante) return null;
+                      const pos = centroids.get(id);
+                      if (!pos) return null;
+
+                      const isSelected = selectedId === id;
+                      const isHovered = hoveredId === id;
+                      const allProds = [item.dominante, ...item.secundarios];
+                      const matchesFilter =
+                        activeProductId !== null &&
+                        allProds.some((p) => p.producto_id === activeProductId);
+
+                      if (activeProductId !== null && !matchesFilter) return null;
+
+                      const displayProduct =
+                        activeProductId !== null
+                          ? allProds.find((p) => p.producto_id === activeProductId) ??
+                            item.dominante
+                          : item.dominante;
+
+                      const accent = getCategoryAccent(displayProduct.categoria);
+                      const liftOffset = isSelected && is3D ? -22 * invScale : 0;
+                      const showExpandedSecondary =
+                        item.secundarios.length > 0 &&
+                        activeProductId === null &&
+                        (view.zoom >= 1.75 || isSelected);
+
+                      return (
+                        <g
+                          key={`pin-${id}`}
+                          transform={`translate(${pos[0]}, ${pos[1]})`}
+                          className="cursor-pointer"
+                          onPointerMove={(e) => handleProvincePointerMove(e, id)}
+                          onPointerLeave={clearHover}
+                          onClick={() => handleSelectProvincia(id)}
+                        >
+                          {/* Tallo arquitectónico vertical cuando la provincia está elevada en 3D */}
+                          {isSelected && is3D && (
+                            <g>
+                              <line
+                                x1={0}
+                                y1={-10 * invScale}
+                                x2={0}
+                                y2={liftOffset + 12 * invScale}
+                                stroke="#F7F7F5"
+                                strokeWidth={1.5 * invScale}
+                              />
+                              <circle
+                                cx={0}
+                                cy={-10 * invScale}
+                                r={2.4 * invScale}
+                                fill="#F7F7F5"
+                              />
+                            </g>
+                          )}
+
+                          <g transform={`translate(0, ${liftOffset}) scale(${invScale})`}>
+                            <rect
+                              x={-14}
+                              y={-14}
+                              width={28}
+                              height={28}
+                              fill={isSelected || isHovered || matchesFilter ? '#111214' : '#F7F7F5'}
+                              stroke={isSelected ? '#FFFFFF' : '#111214'}
+                              strokeWidth={1.35}
+                            />
+                            <rect x={-14} y={-14} width={28} height={3.5} fill={accent} />
+
+                            <g
+                              transform="translate(-8, -6.5)"
+                              color={isSelected || isHovered || matchesFilter ? '#FFFFFF' : '#111214'}
+                            >
+                              <ProductIcon iconId={displayProduct.icono_id} size={16} />
+                            </g>
+
+                            {item.secundarios.length > 0 &&
+                              activeProductId === null &&
+                              !showExpandedSecondary && (
+                                <g transform="translate(10, -16)">
+                                  <rect width={18} height={14} fill="#111214" />
+                                  <text
+                                    x={9}
+                                    y={10.5}
+                                    textAnchor="middle"
+                                    fontSize="9.5"
+                                    fontFamily="Inter, sans-serif"
+                                    fontWeight="600"
+                                    fill="#FFFFFF"
+                                  >
+                                    +{item.secundarios.length}
+                                  </text>
+                                </g>
+                              )}
+
+                            {showExpandedSecondary &&
+                              item.secundarios.map((sec, sIdx) => (
+                                <g
+                                  key={sec.producto_id}
+                                  transform={`translate(${29 * (sIdx + 1) + 4}, 0)`}
+                                >
+                                  <rect
+                                    x={-12}
+                                    y={-12}
+                                    width={24}
+                                    height={24}
+                                    fill="#F7F7F5"
+                                    stroke="#111214"
+                                    strokeWidth={1.1}
+                                  />
+                                  <rect
+                                    x={-12}
+                                    y={-12}
+                                    width={24}
+                                    height={3}
+                                    fill={getCategoryAccent(sec.categoria)}
+                                  />
+                                  <g transform="translate(-7, -5.5)" color="#111214">
+                                    <ProductIcon iconId={sec.icono_id} size={14} />
+                                  </g>
+                                </g>
+                              ))}
+                          </g>
+                        </g>
+                      );
+                    })}
+                  </g>
+
+                  {/* Recuadro fijo Bicontinental IGN: Antártida e Islas del Atlántico Sur */}
                   {(() => {
-                    const cabaVis = getProvinceVisual('02');
-                    const boxX = cabaPoint[0] + 42;
-                    const boxY = cabaPoint[1] - 18;
+                    const tdfVis = getProvinceVisual('94');
                     return (
                       <g
+                        transform={`translate(${INSET_X}, ${INSET_Y})`}
                         className="cursor-pointer"
-                        onPointerMove={(e) => handlePointerMove(e, '02')}
+                        onPointerMove={(e) => handleProvincePointerMove(e, '94')}
                         onPointerLeave={clearHover}
-                        onClick={() => handleSelectProvincia('02')}
+                        onClick={() => handleSelectProvincia('94')}
                       >
-                        <line
-                          x1={cabaPoint[0]}
-                          y1={cabaPoint[1]}
-                          x2={boxX}
-                          y2={boxY + 10}
-                          stroke="#18181B"
-                          strokeWidth={0.85 / Math.sqrt(zoom)}
-                          strokeDasharray="2 2"
-                        />
-                        <circle
-                          cx={cabaPoint[0]}
-                          cy={cabaPoint[1]}
-                          r={2.8 / Math.sqrt(zoom)}
-                          fill={cabaVis.isSelected || cabaVis.isHovered ? '#0038FF' : '#09090B'}
-                        />
                         <rect
-                          x={boxX}
-                          y={boxY}
-                          width={54}
-                          height={20}
-                          fill={cabaVis.isSelected ? '#09090B' : '#FFFFFF'}
-                          stroke="#18181B"
-                          strokeWidth={0.9 / Math.sqrt(zoom)}
+                          width={INSET_W}
+                          height={INSET_H}
+                          fill="#E6EBF0"
+                          stroke={tdfVis.isSelected ? '#0A42E0' : '#1C1E22'}
+                          strokeWidth={tdfVis.isSelected ? 1.8 : 1}
                         />
+                        <rect width={INSET_W} height={22} fill="#111214" />
                         <text
-                          x={boxX + 27}
-                          y={boxY + 13}
-                          textAnchor="middle"
-                          fontSize="8.5"
-                          fontFamily="IBM Plex Mono, monospace"
-                          fontWeight="600"
-                          fill={cabaVis.isSelected ? '#FFFFFF' : '#09090B'}
+                          x={10}
+                          y={14.5}
+                          fontSize="9.5"
+                          fontFamily="Inter, sans-serif"
+                          fontWeight="500"
+                          fill="#F7F7F5"
                         >
-                          02·CABA
+                          Antártida e Islas del Atl. Sur
+                        </text>
+
+                        {antartidaIslasGeo.features.map((feat, idx) => (
+                          <path
+                            key={`ant-${idx}`}
+                            d={pathAntartida(feat) ?? ''}
+                            fill={tdfVis.fill}
+                            stroke={tdfVis.stroke}
+                            strokeWidth={0.95}
+                            strokeLinejoin="round"
+                          />
+                        ))}
+
+                        <text
+                          x={10}
+                          y={INSET_H - 8}
+                          fontSize="9"
+                          fontFamily="Inter, sans-serif"
+                          fill="#52555E"
+                        >
+                          74°O a 25°O · Ley 26.651 IGN
                         </text>
                       </g>
                     );
                   })()}
-
-                  {/* Pines con íconos propios (dominante + badge "+N", expande al zoom o selección) */}
-                  {provinciasData.map((item) => {
-                    const id = item.provincia.provincia_id;
-                    if (!item.dominante) return null;
-                    const pos = centroids.get(id);
-                    if (!pos) return null;
-
-                    const isSelected = selectedId === id;
-                    const isHovered = hoveredId === id;
-                    const allProds = [item.dominante, ...item.secundarios];
-                    const matchesFilter =
-                      activeProductId !== null &&
-                      allProds.some((p) => p.producto_id === activeProductId);
-
-                    if (activeProductId !== null && !matchesFilter) return null;
-
-                    const displayProduct =
-                      activeProductId !== null
-                        ? allProds.find((p) => p.producto_id === activeProductId) ?? item.dominante
-                        : item.dominante;
-
-                    const accent = getCategoryAccent(displayProduct.categoria);
-                    const invScale = 1 / Math.sqrt(zoom);
-                    const showExpandedSecondary =
-                      item.secundarios.length > 0 &&
-                      activeProductId === null &&
-                      (zoom >= 1.75 || isSelected);
-
-                    return (
-                      <g
-                        key={`pin-${id}`}
-                        transform={`translate(${pos[0]}, ${pos[1]}) scale(${invScale})`}
-                        className="cursor-pointer"
-                        onPointerMove={(e) => handlePointerMove(e, id)}
-                        onPointerLeave={clearHover}
-                        onClick={() => handleSelectProvincia(id)}
-                      >
-                        {/* Pin principal del producto dominante */}
-                        <rect
-                          x={-13}
-                          y={-13}
-                          width={26}
-                          height={26}
-                          fill={isSelected || isHovered || matchesFilter ? '#09090B' : '#FFFFFF'}
-                          stroke={isSelected || isHovered || matchesFilter ? '#FFFFFF' : '#09090B'}
-                          strokeWidth={1.35}
-                        />
-                        {/* Franja de color en el borde superior del pin */}
-                        <rect x={-13} y={-13} width={26} height={3} fill={accent} />
-
-                        <g
-                          transform="translate(-8, -7)"
-                          color={isSelected || isHovered || matchesFilter ? '#FFFFFF' : '#09090B'}
-                        >
-                          <ProductIcon iconId={displayProduct.icono_id} size={16} />
-                        </g>
-
-                        {/* Badge +N cuando hay productos secundarios sin expandir */}
-                        {item.secundarios.length > 0 &&
-                          activeProductId === null &&
-                          !showExpandedSecondary && (
-                            <g transform="translate(9, -15)">
-                              <rect width={16} height={13} fill="#09090B" />
-                              <text
-                                x={8}
-                                y={9.5}
-                                textAnchor="middle"
-                                fontSize="8"
-                                fontFamily="IBM Plex Mono, monospace"
-                                fontWeight="600"
-                                fill="#FFFFFF"
-                              >
-                                +{item.secundarios.length}
-                              </text>
-                            </g>
-                          )}
-
-                        {/* Al hacer zoom o click, revelar íconos secundarios */}
-                        {showExpandedSecondary &&
-                          item.secundarios.map((sec, sIdx) => (
-                            <g
-                              key={sec.producto_id}
-                              transform={`translate(${26 * (sIdx + 1) + 4}, 0)`}
-                            >
-                              <rect
-                                x={-11}
-                                y={-11}
-                                width={22}
-                                height={22}
-                                fill="#FFFFFF"
-                                stroke="#09090B"
-                                strokeWidth={1.1}
-                              />
-                              <rect
-                                x={-11}
-                                y={-11}
-                                width={22}
-                                height={2.5}
-                                fill={getCategoryAccent(sec.categoria)}
-                              />
-                              <g transform="translate(-7, -6)" color="#09090B">
-                                <ProductIcon iconId={sec.icono_id} size={14} />
-                              </g>
-                            </g>
-                          ))}
-                      </g>
-                    );
-                  })}
-                </motion.g>
-
-                {/* Recuadro fijo Bicontinental IGN: Sector Antártico e Islas del Atlántico Sur */}
-                {(() => {
-                  const tdfVis = getProvinceVisual('94');
-                  return (
-                    <g
-                      transform={`translate(${INSET_X}, ${INSET_Y})`}
-                      className="cursor-pointer"
-                      onPointerMove={(e) => handlePointerMove(e, '94')}
-                      onPointerLeave={clearHover}
-                      onClick={() => handleSelectProvincia('94')}
-                    >
-                      <rect
-                        width={INSET_W}
-                        height={INSET_H}
-                        fill="#FFFFFF"
-                        stroke={tdfVis.isSelected ? '#0038FF' : '#18181B'}
-                        strokeWidth={tdfVis.isSelected ? 1.8 : 1}
-                      />
-                      {/* Cabecera del recuadro */}
-                      <rect width={INSET_W} height={19} fill="#09090B" />
-                      <text
-                        x={8}
-                        y={12.5}
-                        fontSize="7.5"
-                        fontFamily="IBM Plex Mono, monospace"
-                        fontWeight="600"
-                        fill="#FFFFFF"
-                      >
-                        ANTÁRTIDA E ISLAS DEL ATL. SUR
-                      </text>
-
-                      {/* Grilla polar sutil */}
-                      <line
-                        x1={INSET_W / 2}
-                        y1={24}
-                        x2={INSET_W / 2}
-                        y2={INSET_H - 18}
-                        stroke="#E4E4E7"
-                        strokeWidth={0.6}
-                        strokeDasharray="2 2"
-                      />
-
-                      {antartidaIslasGeo.features.map((feat, idx) => (
-                        <path
-                          key={`ant-${idx}`}
-                          d={pathAntartida(feat) ?? ''}
-                          fill={tdfVis.fill}
-                          stroke={tdfVis.stroke}
-                          strokeWidth={0.9}
-                          strokeLinejoin="round"
-                        />
-                      ))}
-
-                      <text
-                        x={8}
-                        y={INSET_H - 7}
-                        fontSize="7"
-                        fontFamily="IBM Plex Mono, monospace"
-                        fill="#63636E"
-                      >
-                        94 · 74°O–25°O · LEY 26.651 IGN
-                      </text>
-                    </g>
-                  );
-                })()}
-              </svg>
-
-              {/* Tooltip flotante al hover (desktop) */}
-              <AnimatePresence>
-                {tooltip && hoveredData && (
-                  <motion.div
-                    key={hoveredData.provincia.provincia_id}
-                    initial={{ opacity: 0, scale: 0.96 }}
-                    animate={{ opacity: 1, scale: 1 }}
-                    exit={{ opacity: 0, scale: 0.96 }}
-                    transition={{ duration: 0.12 }}
-                    style={{
-                      left: Math.min(tooltip.x + 14, (mapContainerRef.current?.clientWidth ?? 420) - 210),
-                      top: Math.max(tooltip.y - 12, 48),
-                    }}
-                    className="pointer-events-none absolute z-30 hidden w-52 border border-ink bg-ink p-3 text-white shadow-md sm:block"
-                  >
-                    <div className="flex items-center justify-between font-mono text-[10px] text-white/65">
-                      <span>GEOREF {hoveredData.provincia.provincia_id}</span>
-                      <span>{hoveredData.provincia.iso_3166_2}</span>
-                    </div>
-                    <p className="mt-1 font-display text-sm font-semibold leading-snug text-white">
-                      {hoveredData.provincia.nombre}
-                    </p>
-                    {hoveredData.dominante ? (
-                      <div className="mt-2 flex items-center gap-2 border-t border-white/15 pt-2 font-mono text-[11px]">
-                        <span
-                          className="h-2 w-2 shrink-0"
-                          style={{
-                            backgroundColor: getCategoryAccent(hoveredData.dominante.categoria),
-                          }}
-                        />
-                        <span className="truncate">
-                          {hoveredData.dominante.nombre}
-                          {hoveredData.secundarios.length > 0
-                            ? ` (+${hoveredData.secundarios.length})`
-                            : ''}
-                        </span>
-                      </div>
-                    ) : (
-                      <p className="mt-2 border-t border-white/15 pt-2 font-mono text-[10px] text-white/60">
-                        SIN DATOS PRODUCTIVOS CARGADOS
-                      </p>
-                    )}
-                  </motion.div>
-                )}
-              </AnimatePresence>
+                </svg>
+              </div>
             </div>
 
-            {/* Leyenda técnica inferior */}
-            <div className="flex flex-wrap items-center justify-between gap-3 border-t border-rule bg-surface px-4 py-2.5 font-mono text-[10px] text-ink-muted">
-              <div className="flex flex-wrap items-center gap-4">
-                <span className="inline-flex items-center gap-1.5">
-                  <span className="inline-block h-3 w-3 border border-ink bg-[#F4F4F6]" />
-                  Con cadenas MVP
+            {/* Tooltip flotante al hover (desktop) */}
+            <AnimatePresence>
+              {tooltip && hoveredData && (
+                <motion.div
+                  key={hoveredData.provincia.provincia_id}
+                  initial={{ opacity: 0, scale: 0.97 }}
+                  animate={{ opacity: 1, scale: 1 }}
+                  exit={{ opacity: 0, scale: 0.97 }}
+                  transition={{ duration: 0.14, ease: [0.22, 1, 0.36, 1] }}
+                  style={{
+                    left: Math.min(
+                      tooltip.x + 16,
+                      (mapViewportRef.current?.clientWidth ?? 480) - 240
+                    ),
+                    top: Math.max(tooltip.y - 16, 56),
+                  }}
+                  className="pointer-events-none absolute z-30 hidden w-56 border border-ink bg-ink px-3.5 py-3 text-white shadow-lg sm:block"
+                >
+                  <p className="text-[13px] font-semibold leading-snug text-white">
+                    {hoveredData.provincia.nombre}
+                  </p>
+                  {hoveredData.dominante ? (
+                    <div className="mt-1.5 flex items-center gap-2 text-[13px] text-white/80">
+                      <span
+                        className="h-2 w-2 shrink-0 rounded-full"
+                        style={{
+                          backgroundColor: getCategoryAccent(hoveredData.dominante.categoria),
+                        }}
+                      />
+                      <span className="truncate">
+                        {hoveredData.dominante.nombre}
+                        {hoveredData.secundarios.length > 0
+                          ? ` (+${hoveredData.secundarios.length})`
+                          : ''}
+                      </span>
+                    </div>
+                  ) : (
+                    <p className="mt-1 text-[13px] text-white/65">Sin datos cargados</p>
+                  )}
+                </motion.div>
+              )}
+            </AnimatePresence>
+
+            {/* Leyenda discreta y clara en la base del mapa */}
+            <div className="flex flex-wrap items-center justify-between gap-3 border-t border-rule bg-stone-surface px-4 py-2.5 text-[13px] text-ink-muted">
+              <div className="flex flex-wrap items-center gap-5">
+                <span className="inline-flex items-center gap-2">
+                  <span className="inline-block h-3 w-3 border border-ink bg-[#F8F8F5]" />
+                  Con cadenas activas
                 </span>
-                <span className="inline-flex items-center gap-1.5">
-                  <span className="dot-matrix-bg inline-block h-3 w-3 border border-rule bg-canvas" />
+                <span className="inline-flex items-center gap-2">
+                  <span className="inline-block h-3 w-3 border border-rule bg-[#EFEFED]" />
                   Sin datos cargados
                 </span>
-                <span className="inline-flex items-center gap-1.5">
+                <span className="inline-flex items-center gap-2">
                   <span className="inline-block h-3 w-3 bg-cobalt" />
-                  Activa / filtro
+                  Seleccionada
                 </span>
               </div>
-              <span>Click para abrir panel · Esc para limpiar</span>
+              <span className="tabular-nums">Fuente cartográfica: IGN / Georef v2.0</span>
             </div>
           </div>
 
-          {/* Panel lateral interactivo */}
-          <div className="lg:col-span-5">
+          {/* Panel lateral territorial */}
+          <div className="lg:col-span-5 xl:col-span-4">
             <ProvinceSidePanel
               selected={selectedData}
               allProvincias={provinciasData}
               onSelectProvincia={handleSelectProvincia}
-              onZoomToSelected={selectedId ? () => zoomToProvincia(selectedId) : undefined}
+              onZoomToSelected={selectedId ? () => zoomToProvincia(selectedId, 2.3) : undefined}
               esEjemplo={esEjemplo}
               geoManifest={geoManifest}
               categoryAccent={getCategoryAccent}
             />
           </div>
         </div>
-      </section>
+      </div>
     </MotionConfig>
   );
 }
