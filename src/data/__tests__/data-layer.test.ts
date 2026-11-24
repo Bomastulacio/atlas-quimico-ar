@@ -9,6 +9,7 @@ import {
   getManifest,
   getMapaProvinciasData,
   getProceso,
+  getProduccion,
   getProductos,
   getProductosPorProvincia,
   getProvincia,
@@ -18,15 +19,17 @@ import {
 } from '@/data';
 
 describe('Capa única de acceso a datos (src/data)', () => {
-  it('marca el dataset inicial de Etapa 1 explícitamente como ejemplo', () => {
+  it('declara el origen de planillas locales y mantiene honestidad sobre cadenas pendientes', () => {
+    expect(getManifest().origen).toBe('sheets_local');
+    // Sigue en true mientras existan marcadores pendientes de Etapa 6 (solo Aluminio es 100% oficial)
     expect(isExampleDataset()).toBe(true);
-    expect(getManifest().origen).toBe('fixtures_ejemplo');
   });
 
   it('carga las 24 jurisdicciones oficiales Georef (23 provincias + CABA)', () => {
     const provincias = getProvincias();
     expect(provincias).toHaveLength(24);
     expect(getProvincia('26')?.nombre).toBe('Chubut');
+    expect(getProvincia('26')?.cobertura_datos).toBe('completa');
     expect(getProvincia('94')?.iso_3166_2).toBe('AR-V');
   });
 
@@ -36,14 +39,18 @@ describe('Capa única de acceso a datos (src/data)', () => {
     expect(buenosAires.secundarios.map((p) => p.producto_id)).toContain('petroquimica');
   });
 
-  it('devuelve la ficha completa de aluminio con pasos ordenados y conexiones', () => {
+  it('devuelve la ficha verificada completa de aluminio con 6 pasos, 7 conexiones, producción y comercio exterior', () => {
     const ficha = getFichaProducto('aluminio');
     expect(ficha).toBeDefined();
+    expect(ficha?.producto.estado_mvp).toBe('validado');
     expect(ficha?.procesos).toHaveLength(1);
-    expect(ficha?.procesos[0].pasos.map((p) => p.orden)).toEqual([1, 2, 3]);
-    expect(ficha?.procesos[0].conexiones).toHaveLength(2);
+    expect(ficha?.procesos[0].pasos.map((p) => p.orden)).toEqual([1, 2, 3, 4, 5, 6]);
+    expect(ficha?.procesos[0].conexiones).toHaveLength(7);
     expect(ficha?.plantas[0].provincia?.provincia_id).toBe('26');
-    expect(getProceso('aluminio-hall-heroult')?.pasos).toHaveLength(3);
+    expect(ficha?.plantas[0].capacidad.estado).toBe('dato');
+    expect(getProceso('aluminio-hall-heroult')?.pasos).toHaveLength(6);
+    expect(getProduccion('aluminio')).toHaveLength(5);
+    expect(getComercioExterior('aluminio')).toHaveLength(10);
   });
 
   it('representa explícitamente "sin_datos" para productos sin cifras verificadas', () => {
@@ -56,6 +63,7 @@ describe('Capa única de acceso a datos (src/data)', () => {
   it('calcula el resumen de cobertura provincial y departamental', () => {
     const resumen = getResumenCobertura();
     expect(resumen.totalProvincias).toBe(24);
+    expect(resumen.porNivel.completa).toBe(1);
     expect(resumen.departamentosConDatos).toBe(getDepartamentos().length);
     expect(getProductos()).toHaveLength(7);
   });

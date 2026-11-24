@@ -41,11 +41,12 @@ const provinciasData = getMapaProvinciasData();
         <a href="#procesos" class="text-ink-muted transition-colors duration-150 hover:text-ink">
           Procesos químicos
         </a>
-        {esEjemplo && (
-          <span class="hidden text-[13px] font-medium text-signal-red md:inline">
-            Vista preliminar con datos de ejemplo
-          </span>
-        )}
+        <a
+          href="/productos/aluminio"
+          class="font-medium text-cobalt transition-colors duration-150 hover:text-ink"
+        >
+          Aluminio (verificado)
+        </a>
       </nav>
     </div>
   </header>
@@ -64,12 +65,10 @@ const provinciasData = getMapaProvinciasData();
           </p>
         </div>
 
-        {esEjemplo && (
-          <p role="status" class="max-w-sm text-[13px] text-ink-muted">
-            Cartografía oficial IGN activa. Las cifras y vínculos productivos son de ejemplo hasta
-            cargar aluminio en la siguiente etapa.
-          </p>
-        )}
+        <p role="status" class="max-w-sm text-[13px] text-ink-muted">
+          Caso modelo <a href="/productos/aluminio" class="font-medium text-cobalt hover:underline">Aluminio (Chubut)</a>{' '}
+          verificado con fuentes oficiales; las otras 6 cadenas siguen pendientes hasta Etapa 6.
+        </p>
       </div>
 
       <ArgentinaMapExplorer
@@ -90,6 +89,7 @@ const provinciasData = getMapaProvinciasData();
         productos={productos}
         procesoEjemplo={procesoEjemplo?.proceso ?? null}
         pasosEjemplo={procesoEjemplo?.pasos ?? []}
+        conexionesEjemplo={procesoEjemplo?.conexiones ?? []}
         esEjemplo={esEjemplo}
       />
     </section>

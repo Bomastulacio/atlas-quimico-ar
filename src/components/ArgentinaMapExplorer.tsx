@@ -85,6 +85,8 @@ interface TooltipState {
   provinciaId: string;
   x: number;
   y: number;
+  plantaNombre?: string;
+  plantaDetalle?: string;
 }
 
 interface ViewportTransform {
@@ -154,7 +156,7 @@ export function ArgentinaMapExplorer({
   );
 
   // Proyección Gauss-Krüger / Transverse Mercator centrada en 64°O + recuadro polar IGN
-  const { pathContinental, pathAntartida, graticulePath, centroids, cabaPoint } = useMemo(() => {
+  const { pathContinental, pathAntartida, graticulePath, centroids, cabaPoint, plantPins } = useMemo(() => {
     const projCont = geoTransverseMercator()
       .rotate([64, 0, 0])
       .fitExtent(
@@ -197,14 +199,23 @@ export function ArgentinaMapExplorer({
 
     const cabaCoord = projCont([-58.44, -34.61]) ?? [350, 310];
 
+    const projectedPlants = provinciasData.flatMap((provItem) =>
+      provItem.plantas.flatMap((pl) => {
+        const pt = projCont([pl.lon, pl.lat]);
+        if (!pt || !Number.isFinite(pt[0]) || !Number.isFinite(pt[1])) return [];
+        return [{ planta: pl, x: pt[0], y: pt[1] }];
+      })
+    );
+
     return {
       pathContinental: pCont,
       pathAntartida: pAnt,
       graticulePath: gPath,
       centroids: cMap,
       cabaPoint: cabaCoord as [number, number],
+      plantPins: projectedPlants,
     };
-  }, [continentalGeo, antartidaIslasGeo]);
+  }, [continentalGeo, antartidaIslasGeo, provinciasData]);
 
   // Conversión precisa de coordenadas de pantalla al sistema viewBox usando el contenedor
   // exterior sin inclinar (evita saltos de escala al arrastrar o hacer zoom en modo 3D).
@@ -402,7 +413,11 @@ export function ArgentinaMapExplorer({
     zoomToProvincia(provinciaId, Math.max(view.zoom, 1.65));
   };
 
-  const handleProvincePointerMove = (e: React.PointerEvent, provinciaId: string) => {
+  const handleProvincePointerMove = (
+    e: React.PointerEvent,
+    provinciaId: string,
+    plantaMeta?: { nombre: string; detalle: string }
+  ) => {
     if (isDragging) return;
     const rect = mapViewportRef.current?.getBoundingClientRect();
     if (!rect) return;
@@ -411,6 +426,8 @@ export function ArgentinaMapExplorer({
       provinciaId,
       x: e.clientX - rect.left,
       y: e.clientY - rect.top,
+      plantaNombre: plantaMeta?.nombre,
+      plantaDetalle: plantaMeta?.detalle,
     });
   };
 
@@ -992,6 +1009,79 @@ export function ArgentinaMapExplorer({
                         </g>
                       );
                     })}
+
+                    {/* Marcadores georreferenciados exactos de plantas industriales verificadas */}
+                    {plantPins.map(({ planta, x, y }) => {
+                      const matchesFilter =
+                        activeProductId === null || activeProductId === planta.producto_id;
+                      if (!matchesFilter) return null;
+
+                      const isProvSelected = selectedId === planta.provincia_id;
+                      const liftY = isProvSelected && is3D ? -11 * invScale : 0;
+                      const showLabel = isProvSelected || view.zoom >= 1.5;
+                      const capDetalle =
+                        planta.capacidad.estado === 'dato'
+                          ? `${planta.localidad} · ${planta.capacidad.valor.toLocaleString('es-AR')} ${planta.capacidad.unidad}`
+                          : planta.localidad;
+
+                      return (
+                        <g
+                          key={`planta-${planta.planta_id}`}
+                          transform={`translate(${x}, ${y + liftY})`}
+                          className="cursor-pointer"
+                          onPointerMove={(e) => {
+                            e.stopPropagation();
+                            handleProvincePointerMove(e, planta.provincia_id, {
+                              nombre: planta.nombre,
+                              detalle: capDetalle,
+                            });
+                          }}
+                          onPointerLeave={clearHover}
+                          onClick={(e) => {
+                            e.stopPropagation();
+                            if (selectedId !== planta.provincia_id) {
+                              handleSelectProvincia(planta.provincia_id);
+                            }
+                          }}
+                        >
+                          <g transform={`scale(${invScale})`}>
+                            <circle r={8} fill="#D93025" fillOpacity={isProvSelected ? 0.25 : 0.16} />
+                            <rect
+                              x={-4.5}
+                              y={-4.5}
+                              width={9}
+                              height={9}
+                              transform="rotate(45)"
+                              fill="#D93025"
+                              stroke="#F7F7F5"
+                              strokeWidth={1.5}
+                            />
+                            {showLabel && (
+                              <g transform="translate(10, -8)">
+                                <rect
+                                  width={94}
+                                  height={17}
+                                  fill="#111214"
+                                  stroke="#F7F7F5"
+                                  strokeWidth={0.75}
+                                />
+                                <text
+                                  x={47}
+                                  y={11.5}
+                                  textAnchor="middle"
+                                  fontSize="9"
+                                  fontFamily="Inter, sans-serif"
+                                  fontWeight="600"
+                                  fill="#FFFFFF"
+                                >
+                                  {planta.localidad}
+                                </text>
+                              </g>
+                            )}
+                          </g>
+                        </g>
+                      );
+                    })}
                   </g>
 
                   {/* Recuadro Bicontinental IGN: se oculta automáticamente al acercar (zoom > 1.3×) para no tapar provincias */}
@@ -1087,9 +1177,13 @@ export function ArgentinaMapExplorer({
                   className="pointer-events-none absolute z-30 hidden w-56 border border-ink bg-ink px-3.5 py-3 text-white shadow-lg sm:block"
                 >
                   <p className="text-[13px] font-semibold leading-snug text-white">
-                    {hoveredData.provincia.nombre}
+                    {tooltip.plantaNombre ?? hoveredData.provincia.nombre}
                   </p>
-                  {hoveredData.dominante ? (
+                  {tooltip.plantaDetalle ? (
+                    <p className="mt-1 text-[13px] text-white/80 tabular-nums">
+                      {tooltip.plantaDetalle}
+                    </p>
+                  ) : hoveredData.dominante ? (
                     <div className="mt-1.5 flex items-center gap-2 text-[13px] text-white/80">
                       <span
                         className="h-2 w-2 shrink-0 rounded-full"
@@ -1125,6 +1219,10 @@ export function ArgentinaMapExplorer({
                 <span className="inline-flex items-center gap-2">
                   <span className="inline-block h-3 w-3 bg-cobalt" />
                   Seleccionada
+                </span>
+                <span className="inline-flex items-center gap-2">
+                  <span className="inline-block h-2.5 w-2.5 rotate-45 bg-signal-red" />
+                  Planta verificada
                 </span>
               </div>
               <span className="tabular-nums">Fuente cartográfica: IGN / Georef v2.0</span>

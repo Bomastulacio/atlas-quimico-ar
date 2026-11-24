@@ -136,8 +136,12 @@ export function ProvinceSidePanel({
                           <span className={`h-2 w-2 rounded-full ${cov.dotClass}`} />
                           {cov.label}
                         </span>
-                        {esEjemplo && (
-                          <span className="text-signal-red">Datos de ejemplo</span>
+                        {selected.provincia.cobertura_datos === 'completa' ? (
+                          <span className="font-medium text-emerald-react">Fuentes oficiales</span>
+                        ) : (
+                          esEjemplo && (
+                            <span className="text-ink-muted">Pendiente Etapa 6</span>
+                          )
                         )}
                       </div>
                       <p className="mt-2 text-[15px] text-ink-muted">
@@ -197,6 +201,15 @@ export function ProvinceSidePanel({
                                     {ROL_LABEL[rel.rol_en_cadena] ?? rel.rol_en_cadena} · Año{' '}
                                     {rel.procedencia.anio}
                                   </p>
+                                )}
+                                {prod.estado_mvp === 'validado' && (
+                                  <a
+                                    href={`/productos/${prod.producto_id}`}
+                                    className="mt-3 inline-flex items-center gap-2 bg-ink px-3.5 py-2 text-[13px] font-medium text-white transition-colors duration-150 hover:bg-cobalt"
+                                  >
+                                    <span>Abrir ficha completa y diagrama</span>
+                                    <ArrowRight className="h-3.5 w-3.5" />
+                                  </a>
                                 )}
                               </div>
                             </div>
@@ -338,6 +351,9 @@ export function ProvinceSidePanel({
                                 {dom.nombre}
                                 {item.secundarios.length > 0
                                   ? ` y ${item.secundarios.length} más`
+                                  : ''}
+                                {item.provincia.cobertura_datos === 'completa'
+                                  ? ' · Verificado'
                                   : ''}
                               </p>
                             </div>

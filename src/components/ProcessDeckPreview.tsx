@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { AnimatePresence, motion, MotionConfig } from 'motion/react';
 import { ArrowRight } from 'lucide-react';
-import type { PasoProceso, Producto, Proceso } from '@/schemas';
+import type { ConexionProceso, PasoProceso, Producto, Proceso } from '@/schemas';
 import { ProductIcon } from './ProductIcon';
 import { getCategoryAccent } from './ArgentinaMapExplorer';
 
@@ -9,6 +9,7 @@ interface ProcessDeckPreviewProps {
   productos: Producto[];
   procesoEjemplo: Proceso | null;
   pasosEjemplo: PasoProceso[];
+  conexionesEjemplo: ConexionProceso[];
   esEjemplo: boolean;
 }
 
@@ -34,15 +35,36 @@ export function ProcessDeckPreview({
   productos,
   procesoEjemplo,
   pasosEjemplo,
-  esEjemplo,
+  conexionesEjemplo,
 }: ProcessDeckPreviewProps) {
   const [activeView, setActiveView] = useState<'proceso' | 'cadenas'>('proceso');
-  const [selectedStepId, setSelectedStepId] = useState<string>(
-    pasosEjemplo[1]?.paso_id ?? pasosEjemplo[0]?.paso_id ?? ''
-  );
+  const defaultStep =
+    pasosEjemplo.find((p) => p.tipo_paso === 'reaccion') ?? pasosEjemplo[0];
+  const [selectedStepId, setSelectedStepId] = useState<string>(defaultStep?.paso_id ?? '');
 
   const selectedStep =
-    pasosEjemplo.find((p) => p.paso_id === selectedStepId) ?? pasosEjemplo[0] ?? null;
+    pasosEjemplo.find((p) => p.paso_id === selectedStepId) ?? defaultStep ?? null;
+
+  // Extraer indicadores clave directamente desde las conexiones y proceso validados (cero hardcode)
+  const aluminaCon = conexionesEjemplo.find(
+    (c) => c.tipo_corriente === 'principal' && c.corriente_nombre.includes('Al2O3')
+  );
+  const emisionCon = conexionesEjemplo.find((c) => c.tipo_corriente === 'emision');
+
+  const aluminaText =
+    aluminaCon?.flujo.estado === 'dato'
+      ? `${aluminaCon.flujo.valor.toLocaleString('es-AR', { minimumFractionDigits: 2 })} t`
+      : 'Sin datos';
+
+  const energiaText =
+    procesoEjemplo?.energia_especifica.estado === 'dato'
+      ? `${procesoEjemplo.energia_especifica.valor.toLocaleString('es-AR', { minimumFractionDigits: 2 })} MWh`
+      : 'Sin datos';
+
+  const emisionText =
+    emisionCon?.flujo.estado === 'dato'
+      ? `${emisionCon.flujo.valor.toLocaleString('es-AR', { minimumFractionDigits: 2 })} t`
+      : 'Sin datos';
 
   return (
     <MotionConfig reducedMotion="user">
@@ -54,9 +76,9 @@ export function ProcessDeckPreview({
               Procesos químicos y cadenas prioritarias
             </h2>
             <p className="mt-1.5 text-[15px] text-ink-muted">
-              Cada cadena se modela paso a paso con sus reacciones, condiciones operativas, energía
-              y subproductos. En la próxima etapa se incorpora el diagrama interactivo completo de
-              aluminio con fuentes oficiales.
+              Cada cadena se modela paso a paso desde tablas JSON validadas con reacciones
+              balanceadas, condiciones operativas, energía y emisiones. Aluminio (Chubut) ya cuenta
+              con ficha verificada y diagrama interactivo completo.
             </p>
           </div>
 
@@ -67,7 +89,7 @@ export function ProcessDeckPreview({
           >
             {(
               [
-                { id: 'proceso', label: 'Aluminio (vista previa)' },
+                { id: 'proceso', label: 'Aluminio (verificado)' },
                 { id: 'cadenas', label: `Las ${productos.length} cadenas iniciales` },
               ] as const
             ).map((tab) => {
@@ -124,8 +146,8 @@ export function ProcessDeckPreview({
                     {procesoEjemplo.ruta_tecnologica}
                   </p>
 
-                  {/* Pasos clickeables en fila limpia sin jaulas anidadas */}
-                  <div className="mt-6 grid gap-3 sm:grid-cols-3">
+                  {/* Pasos clickeables en grilla limpia */}
+                  <div className="mt-6 grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
                     {pasosEjemplo.map((paso, index) => {
                       const isSelected = selectedStep?.paso_id === paso.paso_id;
                       return (
@@ -133,7 +155,7 @@ export function ProcessDeckPreview({
                           key={paso.paso_id}
                           type="button"
                           onClick={() => setSelectedStepId(paso.paso_id)}
-                          className={`group flex cursor-pointer flex-col justify-between border p-4 text-left transition-colors duration-150 ${
+                          className={`group flex cursor-pointer flex-col justify-between border p-3.5 text-left transition-colors duration-150 ${
                             isSelected
                               ? 'border-cobalt bg-cobalt text-white'
                               : 'border-rule bg-stone-bg text-ink hover:border-ink'
@@ -142,7 +164,9 @@ export function ProcessDeckPreview({
                           <div className="flex items-center justify-between text-[13px]">
                             <span
                               className={
-                                isSelected ? 'text-white/80 tabular-nums' : 'text-ink-muted tabular-nums'
+                                isSelected
+                                  ? 'text-white/80 tabular-nums'
+                                  : 'text-ink-muted tabular-nums'
                               }
                             >
                               Paso {paso.orden}
@@ -155,11 +179,11 @@ export function ProcessDeckPreview({
                               />
                             )}
                           </div>
-                          <p className="mt-3 text-[15px] font-semibold leading-snug">
+                          <p className="mt-2.5 text-[14px] font-semibold leading-snug">
                             {paso.nombre}
                           </p>
                           <p
-                            className={`mt-4 text-[13px] tabular-nums ${
+                            className={`mt-3 text-[13px] tabular-nums ${
                               isSelected ? 'text-white/85' : 'text-ink-muted'
                             }`}
                           >
@@ -171,27 +195,39 @@ export function ProcessDeckPreview({
                   </div>
                 </div>
 
-                {/* Balance sintético en fila tipográfica */}
-                <dl className="mt-8 grid grid-cols-3 gap-4 border-t border-rule pt-5 tabular-nums">
-                  <div>
-                    <dt className="text-[13px] text-ink-muted">Alúmina por tonelada</dt>
-                    <dd className="mt-1 font-display text-[24px] font-semibold text-ink">
-                      1,93 t
-                    </dd>
+                {/* Balance sintético verificado + acceso directo al diagrama React Flow */}
+                <div className="mt-8 border-t border-rule pt-5">
+                  <dl className="grid grid-cols-3 gap-4 tabular-nums">
+                    <div>
+                      <dt className="text-[13px] text-ink-muted">Alúmina por tonelada</dt>
+                      <dd className="mt-1 font-display text-[24px] font-semibold text-ink">
+                        {aluminaText}
+                      </dd>
+                    </div>
+                    <div>
+                      <dt className="text-[13px] text-ink-muted">Energía en cubas</dt>
+                      <dd className="mt-1 font-display text-[24px] font-semibold text-cobalt">
+                        {energiaText}
+                      </dd>
+                    </div>
+                    <div>
+                      <dt className="text-[13px] text-ink-muted">Emisión directa CO₂</dt>
+                      <dd className="mt-1 font-display text-[24px] font-semibold text-signal-red">
+                        {emisionText}
+                      </dd>
+                    </div>
+                  </dl>
+
+                  <div className="mt-5">
+                    <a
+                      href="/productos/aluminio"
+                      className="inline-flex items-center gap-2 bg-ink px-4 py-2.5 text-[14px] font-medium text-white transition-colors duration-150 hover:bg-cobalt"
+                    >
+                      <span>Abrir diagrama interactivo React Flow y ficha completa</span>
+                      <ArrowRight className="h-4 w-4" />
+                    </a>
                   </div>
-                  <div>
-                    <dt className="text-[13px] text-ink-muted">Energía eléctrica</dt>
-                    <dd className="mt-1 font-display text-[24px] font-semibold text-cobalt">
-                      14,2 MWh
-                    </dd>
-                  </div>
-                  <div>
-                    <dt className="text-[13px] text-ink-muted">Emisión directa CO₂</dt>
-                    <dd className="mt-1 font-display text-[24px] font-semibold text-signal-red">
-                      1,54 t
-                    </dd>
-                  </div>
-                </dl>
+                </div>
               </div>
 
               {/* Columna derecha: detalle químico del paso seleccionado */}
@@ -240,14 +276,14 @@ export function ProcessDeckPreview({
                             <dt className="text-[13px] text-ink-muted">Consumo energético</dt>
                             <dd className="font-medium text-ink">
                               {selectedStep.energia.estado === 'dato'
-                                ? `${selectedStep.energia.valor} ${selectedStep.energia.unidad}`
+                                ? `${selectedStep.energia.valor.toLocaleString('es-AR', { minimumFractionDigits: 2 })} ${selectedStep.energia.unidad}`
                                 : 'Sin datos'}
                             </dd>
                           </div>
                           <div>
-                            <dt className="text-[13px] text-ink-muted">Estado de fuente</dt>
-                            <dd className="font-medium text-ink">
-                              {esEjemplo ? 'Ejemplo ilustrativo' : selectedStep.procedencia.confianza}
+                            <dt className="text-[13px] text-ink-muted">Nivel de confianza</dt>
+                            <dd className="font-medium text-emerald-react capitalize">
+                              {selectedStep.procedencia.confianza}
                             </dd>
                           </div>
                         </dl>
@@ -263,7 +299,7 @@ export function ProcessDeckPreview({
                       </div>
 
                       <p className="border-t border-rule pt-4 text-[13px] text-ink-muted tabular-nums">
-                        Referencia ({selectedStep.procedencia.anio}):{' '}
+                        Fuente ({selectedStep.procedencia.anio}):{' '}
                         {selectedStep.procedencia.cita_ubicacion}
                       </p>
                     </motion.div>
@@ -285,6 +321,7 @@ export function ProcessDeckPreview({
               <div className="divide-y divide-rule">
                 {productos.map((prod) => {
                   const accent = getCategoryAccent(prod.categoria);
+                  const isValidated = prod.estado_mvp === 'validado';
                   return (
                     <div
                       key={prod.producto_id}
@@ -301,18 +338,27 @@ export function ProcessDeckPreview({
                           <h3 className="text-[15px] font-semibold text-ink">{prod.nombre}</h3>
                           <p className="text-[13px] text-ink-muted">
                             {CATEGORIA_LABEL[prod.categoria]}
+                            {prod.formula_quimica ? ` · ${prod.formula_quimica}` : ''}
                           </p>
                         </div>
                       </div>
 
-                      <p className="text-[15px] text-ink-muted sm:col-span-6">
+                      <p className="text-[15px] text-ink-muted sm:col-span-5">
                         {prod.descripcion_corta}
                       </p>
 
-                      <div className="flex items-center justify-between text-[13px] sm:col-span-2 sm:justify-end sm:gap-4">
-                        <span className="font-medium text-ink tabular-nums">
-                          {prod.formula_quimica ?? 'Complejo'}
-                        </span>
+                      <div className="flex items-center justify-between text-[13px] sm:col-span-3 sm:justify-end">
+                        {isValidated ? (
+                          <a
+                            href={`/productos/${prod.producto_id}`}
+                            className="inline-flex items-center gap-1.5 font-semibold text-cobalt hover:underline"
+                          >
+                            <span>Abrir ficha verificada</span>
+                            <ArrowRight className="h-3.5 w-3.5" />
+                          </a>
+                        ) : (
+                          <span className="text-ink-muted">Pendiente Etapa 6</span>
+                        )}
                       </div>
                     </div>
                   );

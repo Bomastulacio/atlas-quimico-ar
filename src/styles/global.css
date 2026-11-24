@@ -73,3 +73,98 @@
     transition: none;
   }
 }
+
+/* Integración sobria de React Flow con la paleta piedra arquitectónica y tinta */
+.atlas-flow .react-flow__controls {
+  box-shadow: none;
+  border: 1px solid var(--color-rule);
+  border-radius: 0;
+  background: var(--color-stone-surface);
+}
+
+.atlas-flow .react-flow__controls-button {
+  background: var(--color-stone-surface);
+  border-bottom: 1px solid var(--color-rule);
+  color: var(--color-ink);
+  border-radius: 0;
+}
+
+.atlas-flow .react-flow__controls-button:hover {
+  background: var(--color-ink);
+  color: #ffffff;
+}
+
+.atlas-flow .react-flow__controls-button:hover svg {
+  fill: #ffffff;
+}
+
+.atlas-flow .react-flow__minimap {
+  border: 1px solid var(--color-rule);
+  border-radius: 0;
+  background: var(--color-stone-surface);
+}
+
+.atlas-flow .react-flow__attribution {
+  background: rgba(247, 247, 245, 0.85);
+  font-size: 11px;
+  color: var(--color-ink-muted);
+}
+
+/* Tipografía editorial limpia para ensayos técnicos en MDX */
+.atlas-prose h2 {
+  font-family: var(--font-display);
+  font-size: 1.5rem;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  line-height: 1.2;
+  color: var(--color-ink);
+  margin-top: 2.25rem;
+  margin-bottom: 0.75rem;
+}
+
+.atlas-prose h2:first-child {
+  margin-top: 0;
+}
+
+.atlas-prose h3 {
+  font-family: var(--font-display);
+  font-size: 1.125rem;
+  font-weight: 600;
+  color: var(--color-ink);
+  margin-top: 1.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.atlas-prose p {
+  font-size: 0.9375rem;
+  line-height: 1.65;
+  color: var(--color-ink-muted);
+  margin-bottom: 1rem;
+}
+
+.atlas-prose strong {
+  color: var(--color-ink);
+  font-weight: 600;
+}
+
+.atlas-prose ul {
+  list-style-type: square;
+  padding-left: 1.25rem;
+  margin-bottom: 1.1rem;
+  color: var(--color-ink-muted);
+}
+
+.atlas-prose li {
+  margin-bottom: 0.45rem;
+  line-height: 1.6;
+}
+
+.atlas-prose code {
+  font-family: var(--font-sans);
+  font-variant-numeric: tabular-nums;
+  font-weight: 600;
+  font-size: 0.875em;
+  color: var(--color-ink);
+  background: var(--color-stone-subtle);
+  padding: 0.1rem 0.35rem;
+}
