@@ -29,7 +29,8 @@ data/raw/*.geojson
 !data/raw/.gitkeep
 !data/staging/.gitkeep
 
-# Sistema y editores
+# Sistema, skills locales y editores
+.agents/
 .DS_Store
 Thumbs.db
 .vscode/

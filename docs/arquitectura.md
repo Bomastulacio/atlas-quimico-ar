@@ -5,36 +5,34 @@
 - **Framework web:** Astro (generación estática `output: 'static'`) + MDX para ensayos técnicos largos.
 - **Islas interactivas:** React 19 + TypeScript estricto.
 - **Estilos:** Tailwind CSS v4 con tokens de diseño propios.
-- **Micro-interacciones y movimiento:** `motion` (`motion/react`), siguiendo principios de **Bencho** (`bencho.dev`): físicas de resorte reales (`spring`), transiciones de estado sin saltos bruscos, tarjetas táctiles y controles adaptados tanto a desktop como a mobile.
-- **Arte generativo ASCII / Halftone:** renderizador liviano en Canvas 2D con dithering ordenado (matriz Bayer 4×4, halftone por puntos, glifos ASCII y Braille), inspirado en `devault.design/ascii-art-generator`.
-- **Mapa (Etapa 2 y 7):** D3 (`d3-geo`) + SVG/GeoJSON simplificado del **IGN** con IDs oficiales Georef. Representación **bicontinental** (23 provincias + CABA + recuadro integrado del Sector Antártico e Islas del Atlántico Sur según normativa IGN).
-- **Diagramas de proceso (Etapa 3+):** React Flow alimentado exclusivamente desde `procesos.json`, `pasos_proceso.json` y `conexiones_proceso.json`, combinando precisión de ingeniería de procesos con viñetas artísticas dithered/ASCII y micro-interacciones spring.
+- **Micro-interacciones y movimiento:** `motion` (`motion/react`), siguiendo principios táctiles de **Bencho** (`bencho.dev`): físicas spring calibradas, controles conectados y transiciones suaves respetando `prefers-reduced-motion`.
+- **Mapa (Etapa 2 y 7):** D3 (`d3-geo`) + SVG/GeoJSON oficial del **IGN** con IDs Georef. Representación **bicontinental** (23 provincias + CABA + recuadro integrado del Sector Antártico e Islas del Atlántico Sur), paneo por arrastre (drag), zoom con rueda hacia el cursor y elevación 3D sutil de la provincia seleccionada.
+- **Diagramas de proceso (Etapa 3+):** React Flow alimentado exclusivamente desde `procesos.json`, `pasos_proceso.json` y `conexiones_proceso.json`.
 - **Validación:** Zod en el build de Node/Astro y Pydantic v2 en el pipeline Python.
 
 ---
 
-## 2. Dirección visual y principios UX/UI (`details.so` + `bencho.dev` + `devault.design` + `tasteskill.dev`)
+## 2. Dirección visual y principios UX/UI (`gemini-frontend-design` + `details.so` + `bencho.dev`)
 
-El sitio combina rigor industrial con criterio editorial de galería, evitando plantillas genéricas («AI slop»):
+El sitio adopta una estética de **Atlas Cartográfico Moderno y Clásico**: sobria, amplia en pantalla de escritorio, sin ruido decorativo ni clichés de plantillas genéricas.
 
-1. **Base estricta en Blanco y Negro + Rupturas de Color intencionales:**
-   - **95% de la interfaz en monocromo nítido:** fondo blanco puro (`#FFFFFF`), superficies secundarias gris hielo (`#F6F6F7`), tinta negra profunda (`#09090B`), texto secundario neutro (`#6B7280`) y divisores exactos de `1px` (`#E4E4E7`), al estilo granular y limpio de `details.so`.
-   - **Colores que rompen el blanco y negro con significado:** el color entra únicamente en el arte ASCII/halftone, las regiones activas del mapa, los estados de reacción y las tarjetas seleccionadas:
-     - **Azul cobalto (`#0038FF`):** señal primaria, energía eléctrica, electrólisis, focos de navegación.
-     - **Ámbar fundición (`#F59E0B`):** alta temperatura, metalurgia, hornos y minerales.
-     - **Verde reactivo (`#00A859`):** cadenas agroindustriales, bioenergía y estados verificados.
-     - **Rojo señal (`#FF331F`):** alertas, emisiones, reacciones exotérmicas y advertencias de datos.
-2. **Visuales ASCII / Halftone / Dithering (estilo `devault.design`):**
-   - Ilustraciones y viñetas de procesos generadas mediante tramas halftone, dithering ordenado Bayer y matrices de glifos ASCII/Braille donde contrastan el negro profundo y golpes de azul cobalto, ámbar y verde.
-   - Pensadas para convivir con datos reales sin competir con la legibilidad de cifras y tablas.
-3. **Tipografía de precisión:**
-   - Sans-serif geométrica/neo-grotesca con tracking ajustado en titulares (`Inter` / `Space Grotesk`) combinada con monoespaciada (`IBM Plex Mono`, `tabular-nums`) para fórmulas químicas, códigos Georef/NCM, coordenadas y metadatos de fuentes.
-4. **Movimiento táctil en web y mobile (inspiración `bencho.dev`):**
-   - Físicas spring calibradas (`stiffness: 420, damping: 34`), pestañas con indicador compartido (`layoutId`), hover reactivo en tarjetas y paneles deslizables cómodos en pantallas móviles.
-   - Respeto total de `prefers-reduced-motion`.
-5. **Honestidad de datos en la UI:**
-   - Todo dato faltante se renderiza como `SIN DATOS` (jamás `0` ni estimaciones silenciosas).
-   - Mientras existan datos de prueba de Etapa 1, una franja visible marca `MODO EJEMPLO — DATOS FICTICIOS`.
+1. **Superficie arquitectónica en piedra clara y tinta carbón + ruptura de color:**
+   - Fondo de página en piedra clara (`#ECECE9`) para evitar el blanco clínico excesivo, combinado con paneles en piedra porcelana (`#F7F7F5`), cuenca marítima en gris pizarra suave (`#DFE4EA`), tinta carbón profunda (`#111214`), texto secundario de alto contraste (`#52555E`) y divisores exactos de `1px` (`#D2D4D8`).
+   - El color rompe el monocromo únicamente donde expresa significado real (provincias activas, íconos de cadena y pasos seleccionados):
+     - **Azul cobalto (`#0A42E0`):** metalurgia, fertilizantes y foco activo.
+     - **Verde mineral (`#0B7A53`):** minería química de litio y bioenergía.
+     - **Ocre industrial (`#C86A11`):** agroindustria.
+     - **Rojo señal (`#D93025`):** petroquímica, emisiones y avisos de cobertura.
+2. **Disciplina tipográfica estricta (2 familias, 3 escalas de cuerpo):**
+   - `Space Grotesk` para marca y títulos principales; `Inter` con `tabular-nums` para cuerpo, controles, tablas y cifras (sin terceras fuentes innecesarias).
+   - Etiquetas en tipo oración (*sentence case*), sin micro-textos ilegibles (`>= 13px` sobre el pliegue) ni encabezados decorativos numerados.
+3. **Apertura directa al contenido vivo (formato Atlas):**
+   - Sin banners de marketing ni filas genéricas de 4 KPIs. La pantalla inicial abre directamente en el **mapa bicontinental interactivo a ancho completo** acompañado por el panel territorial.
+4. **Interacción cartográfica directa y relieve 3D:**
+   - Arrastre continuo con click sostenido (desktop y táctil), zoom con rueda del mouse centrado en la posición del cursor, controles rápidos y elevación arquitectónica 3D sutil al seleccionar una provincia.
+5. **Honestidad de datos en la interfaz:**
+   - Todo dato faltante se muestra como «Sin datos» (jamás `0` ni estimaciones).
+   - Los registros demostrativos de las etapas iniciales se indican con claridad sin interferir con la lectura del atlas.
 
 ---
 
