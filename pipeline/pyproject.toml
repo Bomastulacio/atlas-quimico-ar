@@ -1,0 +1,41 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "atlas-pipeline"
+version = "0.1.0"
+description = "Pipeline offline de agentes LangGraph (Orquestador + Agentes + Harness determinista) para el Atlas Químico Argentino."
+readme = "README.md"
+requires-python = ">=3.11,<3.14"
+dependencies = [
+  "httpx>=0.28.1",
+  "langchain-core>=0.3.50",
+  "langchain-google-genai>=2.1.2",
+  "langgraph>=0.3.25",
+  "langgraph-checkpoint-sqlite>=2.0.6",
+  "pydantic>=2.11.0",
+  "pydantic-settings>=2.8.1",
+  "pypdf>=5.4.0",
+  "python-dotenv>=1.1.0",
+]
+
+[dependency-groups]
+dev = [
+  "pytest>=8.3.5",
+  "ruff>=0.11.4",
+]
+
+[project.scripts]
+atlas-pipeline = "atlas_pipeline.cli:main"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/atlas_pipeline"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["src"]
+
+[tool.ruff]
+line-length = 100
+target-version = "py312"
