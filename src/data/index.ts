@@ -232,6 +232,51 @@ export function getResumenCobertura(): ResumenCobertura {
   };
 }
 
+export {
+  getGeoContinental,
+  getGeoAntartidaIslas,
+  getGeoManifest,
+  type GeoManifest,
+  type ProvinciaGeoProperties,
+  type ProvinciasFeatureCollection,
+} from './geo';
+
+export interface MapaProvinciaResumen {
+  provincia: Provincia;
+  dominante: Producto | null;
+  secundarios: Producto[];
+  relaciones: ProductoZona[];
+  plantas: Array<Planta & { empresaNombre: string | null }>;
+  departamentosConfiables: Departamento[];
+}
+
+export function getMapaProvinciasData(): MapaProvinciaResumen[] {
+  const ds = loadDataset();
+  const empMap = new Map(ds.empresas.map((e) => [e.empresa_id, e.razon_social]));
+
+  return ds.provincias.map((provincia) => {
+    const { dominante, secundarios, relaciones } = getProductosPorProvincia(provincia.provincia_id);
+    const plantas = ds.plantas
+      .filter((pl) => pl.provincia_id === provincia.provincia_id)
+      .map((pl) => ({
+        ...pl,
+        empresaNombre: empMap.get(pl.empresa_id) ?? null,
+      }));
+    const departamentosConfiables = ds.departamentos.filter(
+      (d) => d.provincia_id === provincia.provincia_id && d.tiene_datos_confiables
+    );
+
+    return {
+      provincia,
+      dominante,
+      secundarios,
+      relaciones,
+      plantas,
+      departamentosConfiables,
+    };
+  });
+}
+
 export interface FichaProducto {
   producto: Producto;
   zonas: Array<ProductoZona & { provincia: Provincia }>;
