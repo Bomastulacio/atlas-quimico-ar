@@ -35,5 +35,153 @@
       "cita_ubicacion": "aluar.com.ar sección Aluar en cifras (460.000 t/año) y Memoria 2025 Nota 35 pág. 50 (Ruta Prov. A010 Parque Industrial Pesado)",
       "confianza": "alta"
     }
+  },
+  {
+    "planta_id": "fenix-hombre-muerto",
+    "empresa_id": "rio-tinto-litio-ar",
+    "producto_id": "litio",
+    "provincia_id": "10",
+    "departamento_id": "10028",
+    "nombre": "Planta Fénix (Salar del Hombre Muerto)",
+    "localidad": "Antofagasta de la Sierra",
+    "lat": -25.458,
+    "lon": -67.078,
+    "estado_operativo": "operativa",
+    "capacidad": {
+      "estado": "dato",
+      "valor": 32000,
+      "unidad": "t/año LCE",
+      "procedencia": {
+        "anio": 2026,
+        "fuente_id": "riotinto-fenix-2026",
+        "fuente": "Ficha oficial de operación Fénix (Salar del Hombre Muerto, Catamarca)",
+        "url": "https://www.riotinto.com/en/operations/south-america/fenix",
+        "fecha_descarga": "2026-11-24",
+        "hash": "sha256:424d17d8d2353a97a4848a105ca616c6a483e4d0e4ced5360b1cec7cb9127e2b",
+        "cita_ubicacion": "riotinto.com/en/operations/south-america/fenix (100% Rio Tinto, 32 ktpa LCE, inicio 1997)",
+        "confianza": "alta"
+      }
+    },
+    "procedencia": {
+      "anio": 2026,
+      "fuente_id": "riotinto-fenix-2026",
+      "fuente": "Ficha oficial de operación Fénix (Salar del Hombre Muerto, Catamarca)",
+      "url": "https://www.riotinto.com/en/operations/south-america/fenix",
+      "fecha_descarga": "2026-11-24",
+      "hash": "sha256:424d17d8d2353a97a4848a105ca616c6a483e4d0e4ced5360b1cec7cb9127e2b",
+      "cita_ubicacion": "riotinto.com/en/operations/south-america/fenix (100% Rio Tinto, 32 ktpa LCE, inicio 1997)",
+      "confianza": "alta"
+    }
+  },
+  {
+    "planta_id": "olaroz-sales-de-jujuy",
+    "empresa_id": "rio-tinto-litio-ar",
+    "producto_id": "litio",
+    "provincia_id": "38",
+    "departamento_id": "38084",
+    "nombre": "Planta Olaroz (Salar de Olaroz)",
+    "localidad": "Susques",
+    "lat": -23.437,
+    "lon": -66.716,
+    "estado_operativo": "operativa",
+    "capacidad": {
+      "estado": "sin_datos",
+      "valor": null,
+      "unidad": "t/año LCE",
+      "procedencia": {
+        "anio": 2026,
+        "fuente_id": "riotinto-olaroz-2026",
+        "fuente": "Ficha oficial de operación Olaroz (Jujuy)",
+        "url": "https://www.riotinto.com/en/operations/south-america/olaroz",
+        "fecha_descarga": "2026-11-24",
+        "hash": "sha256:af95dbcdee6cf821222e0bee00681f65512903c7271cb576e0a0c6b5ae7a13a0",
+        "cita_ubicacion": "riotinto.com/en/operations/south-america/olaroz (operativa desde 2014, 66,5% JV)",
+        "confianza": "alta"
+      }
+    },
+    "procedencia": {
+      "anio": 2026,
+      "fuente_id": "riotinto-olaroz-2026",
+      "fuente": "Ficha oficial de operación Olaroz (Jujuy)",
+      "url": "https://www.riotinto.com/en/operations/south-america/olaroz",
+      "fecha_descarga": "2026-11-24",
+      "hash": "sha256:af95dbcdee6cf821222e0bee00681f65512903c7271cb576e0a0c6b5ae7a13a0",
+      "cita_ubicacion": "riotinto.com/en/operations/south-america/olaroz (operativa desde 2014, 66,5% JV)",
+      "confianza": "alta"
+    }
+  },
+  {
+    "planta_id": "rincon-salta",
+    "empresa_id": "rio-tinto-litio-ar",
+    "producto_id": "litio",
+    "provincia_id": "66",
+    "departamento_id": "66105",
+    "nombre": "Planta Rincón 3000 y expansión (Salar del Rincón)",
+    "localidad": "San Antonio de los Cobres",
+    "lat": -24.132,
+    "lon": -67.11,
+    "estado_operativo": "ampliacion",
+    "capacidad": {
+      "estado": "dato",
+      "valor": 3000,
+      "unidad": "t/año LCE (planta inicial)",
+      "procedencia": {
+        "anio": 2026,
+        "fuente_id": "riotinto-rincon-2026",
+        "fuente": "Ficha oficial del proyecto Rincón (Salta)",
+        "url": "https://www.riotinto.com/en/operations/south-america/rincon",
+        "fecha_descarga": "2026-11-24",
+        "hash": "sha256:b3668429bd53a4e754b1459208fe4f7b3cc80273f893a99d272588d30b599f45",
+        "cita_ubicacion": "riotinto.com/en/operations/south-america/rincon (planta inicial 3.000 t/año nov 2024; ampliación 60 ktpa)",
+        "confianza": "alta"
+      }
+    },
+    "procedencia": {
+      "anio": 2026,
+      "fuente_id": "riotinto-rincon-2026",
+      "fuente": "Ficha oficial del proyecto Rincón (Salta)",
+      "url": "https://www.riotinto.com/en/operations/south-america/rincon",
+      "fecha_descarga": "2026-11-24",
+      "hash": "sha256:b3668429bd53a4e754b1459208fe4f7b3cc80273f893a99d272588d30b599f45",
+      "cita_ubicacion": "riotinto.com/en/operations/south-america/rincon (planta inicial 3.000 t/año nov 2024; ampliación 60 ktpa)",
+      "confianza": "alta"
+    }
+  },
+  {
+    "planta_id": "profertil-ingeniero-white",
+    "empresa_id": "profertil-sa",
+    "producto_id": "urea",
+    "provincia_id": "06",
+    "departamento_id": "06056",
+    "nombre": "Planta Profertil (Ingeniero White)",
+    "localidad": "Bahía Blanca",
+    "lat": -38.786,
+    "lon": -62.288,
+    "estado_operativo": "operativa",
+    "capacidad": {
+      "estado": "dato",
+      "valor": 1320000,
+      "unidad": "t/año urea granulada",
+      "procedencia": {
+        "anio": 2026,
+        "fuente_id": "profertil-web-que-hacemos",
+        "fuente": "Proceso productivo y capacidades declaradas (Profertil S.A.)",
+        "url": "https://www.profertil.com.ar/index.php/que-hacemos",
+        "fecha_descarga": "2026-11-24",
+        "hash": "sha256:4a6b91bc6f405399b277d565c1e98a356b3a91165fddf4bc25b3f9f322e9c679",
+        "cita_ubicacion": "profertil.com.ar/index.php/que-hacemos (capacidad 1.320.000 t urea y 790.000 t amoníaco)",
+        "confianza": "alta"
+      }
+    },
+    "procedencia": {
+      "anio": 2026,
+      "fuente_id": "profertil-web-que-hacemos",
+      "fuente": "Proceso productivo y capacidades declaradas (Profertil S.A.)",
+      "url": "https://www.profertil.com.ar/index.php/que-hacemos",
+      "fecha_descarga": "2026-11-24",
+      "hash": "sha256:4a6b91bc6f405399b277d565c1e98a356b3a91165fddf4bc25b3f9f322e9c679",
+      "cita_ubicacion": "profertil.com.ar/index.php/que-hacemos (capacidad 1.320.000 t urea y 790.000 t amoníaco)",
+      "confianza": "alta"
+    }
   }
 ]

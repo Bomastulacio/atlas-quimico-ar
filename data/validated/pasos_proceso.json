@@ -66,6 +66,120 @@
     }
   },
   {
+    "paso_id": "li-p1-bombeo-salmuera",
+    "proceso_id": "litio-salmuera-carbonatacion",
+    "orden": 1,
+    "nombre": "Bombeo de salmuera continental",
+    "tipo_paso": "materia_prima",
+    "reaccion_balanceada": null,
+    "temperatura_c": "10-20",
+    "presion_bar": "0.65",
+    "reactivos": [
+      {
+        "unidad": "m3/t LCE",
+        "especie": "Salmuera subterránea con LiCl, NaCl, MgCl2",
+        "cantidad": null
+      }
+    ],
+    "productos": [
+      {
+        "unidad": "m3/t LCE",
+        "especie": "Salmuera cruda hacia piletas",
+        "cantidad": null
+      }
+    ],
+    "insumos": [],
+    "subproductos": [],
+    "energia": {
+      "estado": "sin_datos",
+      "valor": null,
+      "unidad": "MWh/t LCE",
+      "procedencia": {
+        "anio": 2026,
+        "fuente_id": "riotinto-olaroz-2026",
+        "fuente": "Ficha oficial de operación Olaroz (Jujuy)",
+        "url": "https://www.riotinto.com/en/operations/south-america/olaroz",
+        "fecha_descarga": "2026-11-24",
+        "hash": "sha256:af95dbcdee6cf821222e0bee00681f65512903c7271cb576e0a0c6b5ae7a13a0",
+        "cita_ubicacion": "riotinto.com/en/operations/south-america/olaroz y USGS MCS 2025 pág. 110",
+        "confianza": "alta"
+      }
+    },
+    "descripcion": "Extracción por pozos desde acuíferos hipersalinos de la Puna (Salar de Olaroz, Hombre Muerto y Rincón) a ~3.900-4.100 msnm.",
+    "pos_x": 20,
+    "pos_y": 150,
+    "procedencia": {
+      "anio": 2026,
+      "fuente_id": "riotinto-olaroz-2026",
+      "fuente": "Ficha oficial de operación Olaroz (Jujuy)",
+      "url": "https://www.riotinto.com/en/operations/south-america/olaroz",
+      "fecha_descarga": "2026-11-24",
+      "hash": "sha256:af95dbcdee6cf821222e0bee00681f65512903c7271cb576e0a0c6b5ae7a13a0",
+      "cita_ubicacion": "riotinto.com/en/operations/south-america/olaroz y USGS MCS 2025 pág. 110",
+      "confianza": "alta"
+    }
+  },
+  {
+    "paso_id": "ur-p1-gas-desulfuracion",
+    "proceso_id": "urea-haber-bosch-sintesis",
+    "orden": 1,
+    "nombre": "Recepción y desulfuración de gas natural",
+    "tipo_paso": "materia_prima",
+    "reaccion_balanceada": null,
+    "temperatura_c": "350-400",
+    "presion_bar": "40",
+    "reactivos": [
+      {
+        "unidad": "t/t urea",
+        "especie": "CH4 (gas natural de cuenca Neuquina/Austral)",
+        "cantidad": 0.25
+      }
+    ],
+    "productos": [
+      {
+        "unidad": "t/t urea",
+        "especie": "CH4 desulfurado",
+        "cantidad": 0.25
+      }
+    ],
+    "insumos": [
+      {
+        "unidad": "catalizador",
+        "especie": "Lecho de ZnO (absorción de azufre)",
+        "cantidad": null
+      }
+    ],
+    "subproductos": [],
+    "energia": {
+      "estado": "sin_datos",
+      "valor": null,
+      "unidad": "GJ/t urea",
+      "procedencia": {
+        "anio": 2025,
+        "fuente_id": "profertil-eecc-2025",
+        "fuente": "Memoria y Estados Financieros al 31 de diciembre de 2025 (Profertil S.A.)",
+        "url": "https://www.profertil.com.ar/wp-content/uploads/2021/04/EECC-31-12-25.pdf",
+        "fecha_descarga": "2026-11-24",
+        "hash": "sha256:d7bf53b4394beebd03259645c41196aaa27ce657ded8cfc71fc1f007f34843f3",
+        "cita_ubicacion": "EECC-31-12-25.pdf pág. 4, 6, 78-79 y 88 (Memoria y Reseña Informativa)",
+        "confianza": "alta"
+      }
+    },
+    "descripcion": "Acondicionamiento y remoción de compuestos azufrados del gas natural (hasta 2.500.000 m3/día en Profertil Bahía Blanca) para proteger los catalizadores de reformado.",
+    "pos_x": 20,
+    "pos_y": 150,
+    "procedencia": {
+      "anio": 2025,
+      "fuente_id": "profertil-eecc-2025",
+      "fuente": "Memoria y Estados Financieros al 31 de diciembre de 2025 (Profertil S.A.)",
+      "url": "https://www.profertil.com.ar/wp-content/uploads/2021/04/EECC-31-12-25.pdf",
+      "fecha_descarga": "2026-11-24",
+      "hash": "sha256:d7bf53b4394beebd03259645c41196aaa27ce657ded8cfc71fc1f007f34843f3",
+      "cita_ubicacion": "EECC-31-12-25.pdf pág. 4, 6, 78-79 y 88 (Memoria y Reseña Informativa)",
+      "confianza": "alta"
+    }
+  },
+  {
     "paso_id": "al-p2-recepcion-storni",
     "proceso_id": "aluminio-hall-heroult",
     "orden": 2,
@@ -126,6 +240,158 @@
       "fecha_descarga": "2026-11-24",
       "hash": "sha256:d0194264776114c118767e9f54fd7567d491b3d041357dbc2254231c0269cf58",
       "cita_ubicacion": "aluar.com.ar/aluminio/como-producimos paso 1 y Memoria 2025 pág. 7",
+      "confianza": "alta"
+    }
+  },
+  {
+    "paso_id": "li-p2-evaporacion-solar",
+    "proceso_id": "litio-salmuera-carbonatacion",
+    "orden": 2,
+    "nombre": "Concentración en piletas de evaporación solar",
+    "tipo_paso": "separacion",
+    "reaccion_balanceada": null,
+    "temperatura_c": "15-35",
+    "presion_bar": "0.65",
+    "reactivos": [
+      {
+        "unidad": "m3/t LCE",
+        "especie": "Salmuera cruda",
+        "cantidad": null
+      }
+    ],
+    "productos": [
+      {
+        "unidad": "t/t LCE",
+        "especie": "Salmuera concentrada en LiCl",
+        "cantidad": 1.25
+      }
+    ],
+    "insumos": [
+      {
+        "unidad": "evaporación natural",
+        "especie": "Radiación solar y viento de altura",
+        "cantidad": null
+      }
+    ],
+    "subproductos": [
+      {
+        "unidad": "evaporación",
+        "especie": "H2O evaporada a atmósfera",
+        "cantidad": null
+      },
+      {
+        "unidad": "sal descartada",
+        "especie": "Halita (NaCl) y sales de K/Mg precipitadas",
+        "cantidad": null
+      }
+    ],
+    "energia": {
+      "estado": "sin_datos",
+      "valor": null,
+      "unidad": "MWh/t LCE",
+      "procedencia": {
+        "anio": 2026,
+        "fuente_id": "riotinto-olaroz-2026",
+        "fuente": "Ficha oficial de operación Olaroz (Jujuy)",
+        "url": "https://www.riotinto.com/en/operations/south-america/olaroz",
+        "fecha_descarga": "2026-11-24",
+        "hash": "sha256:af95dbcdee6cf821222e0bee00681f65512903c7271cb576e0a0c6b5ae7a13a0",
+        "cita_ubicacion": "riotinto.com/en/operations/south-america/olaroz y USGS MCS 2025 pág. 110",
+        "confianza": "alta"
+      }
+    },
+    "descripcion": "Evaporación solar secuencial que concentra el cloruro de litio mientras precipitan halita (NaCl) y sales potásicas/magnésicas.",
+    "pos_x": 330,
+    "pos_y": 150,
+    "procedencia": {
+      "anio": 2026,
+      "fuente_id": "riotinto-olaroz-2026",
+      "fuente": "Ficha oficial de operación Olaroz (Jujuy)",
+      "url": "https://www.riotinto.com/en/operations/south-america/olaroz",
+      "fecha_descarga": "2026-11-24",
+      "hash": "sha256:af95dbcdee6cf821222e0bee00681f65512903c7271cb576e0a0c6b5ae7a13a0",
+      "cita_ubicacion": "riotinto.com/en/operations/south-america/olaroz y USGS MCS 2025 pág. 110",
+      "confianza": "alta"
+    }
+  },
+  {
+    "paso_id": "ur-p2-reformado-shift",
+    "proceso_id": "urea-haber-bosch-sintesis",
+    "orden": 2,
+    "nombre": "Reformado con vapor y conversión shift",
+    "tipo_paso": "reaccion",
+    "reaccion_balanceada": "CH4 + 2 H2O -> CO2 + 4 H2",
+    "temperatura_c": "800-850",
+    "presion_bar": "30",
+    "reactivos": [
+      {
+        "unidad": "t/t urea",
+        "especie": "CH4 (gas natural proceso)",
+        "cantidad": 0.25
+      },
+      {
+        "unidad": "t/t urea",
+        "especie": "H2O (vapor de proceso)",
+        "cantidad": 0.56
+      }
+    ],
+    "productos": [
+      {
+        "unidad": "t/t urea",
+        "especie": "H2 (gas de síntesis)",
+        "cantidad": 0.11
+      },
+      {
+        "unidad": "t/t urea",
+        "especie": "CO2 capturado en regenerador",
+        "cantidad": 0.75
+      }
+    ],
+    "insumos": [
+      {
+        "unidad": "aire ambiente",
+        "especie": "Aire de reformado secundario (aporte N2 y O2)",
+        "cantidad": null
+      },
+      {
+        "unidad": "energía térmica",
+        "especie": "Gas natural combustible (horno reformador)",
+        "cantidad": null
+      }
+    ],
+    "subproductos": [
+      {
+        "unidad": "t/t urea",
+        "especie": "CO2 excedente no capturado (emisión NH3)",
+        "cantidad": 0.23
+      }
+    ],
+    "energia": {
+      "estado": "dato",
+      "valor": 17.46,
+      "unidad": "GJ/t urea",
+      "procedencia": {
+        "anio": 2006,
+        "fuente_id": "ipcc-2006-v3-ch3-amoniaco-urea",
+        "fuente": "2006 IPCC Guidelines for National Greenhouse Gas Inventories (Vol. 3, Cap. 3.2 Ammonia y Box 3.3 Urea)",
+        "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/pdf/3_Volume3/V3_3_Ch3_Chemical_Industry.pdf",
+        "fecha_descarga": "2026-11-24",
+        "hash": "sha256:f25c2817eecdae6a1f930b342eb09b2d8a6065b12bfce632502a01e1a61bbaa2",
+        "cita_ubicacion": "IPCC 2006 Vol. 3 Cap. 3.2 pág. 3.11 y Table 3.1 pág. 3.15 (30,2 GJ/t NH3)",
+        "confianza": "alta"
+      }
+    },
+    "descripcion": "Reformado catalítico de metano con vapor y conversión water-gas shift (IPCC 2006 Cap. 3.2 pág. 3.11). El CO2 separado por absorción química se envía a síntesis de urea.",
+    "pos_x": 340,
+    "pos_y": 150,
+    "procedencia": {
+      "anio": 2006,
+      "fuente_id": "ipcc-2006-v3-ch3-amoniaco-urea",
+      "fuente": "2006 IPCC Guidelines for National Greenhouse Gas Inventories (Vol. 3, Cap. 3.2 Ammonia y Box 3.3 Urea)",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/pdf/3_Volume3/V3_3_Ch3_Chemical_Industry.pdf",
+      "fecha_descarga": "2026-11-24",
+      "hash": "sha256:f25c2817eecdae6a1f930b342eb09b2d8a6065b12bfce632502a01e1a61bbaa2",
+      "cita_ubicacion": "IPCC 2006 Vol. 3 Cap. 3.2 pág. 3.11 y Table 3.1 pág. 3.15 (30,2 GJ/t NH3)",
       "confianza": "alta"
     }
   },
@@ -192,6 +458,143 @@
       "fecha_descarga": "2026-11-24",
       "hash": "sha256:d0194264776114c118767e9f54fd7567d491b3d041357dbc2254231c0269cf58",
       "cita_ubicacion": "aluar.com.ar/aluminio/como-producimos paso 2 e IPCC 2006 Vol. 3 pág. 4.46-4.48",
+      "confianza": "alta"
+    }
+  },
+  {
+    "paso_id": "li-p3-purificacion",
+    "proceso_id": "litio-salmuera-carbonatacion",
+    "orden": 3,
+    "nombre": "Purificación y remoción de Mg, Ca y B",
+    "tipo_paso": "preparacion",
+    "reaccion_balanceada": null,
+    "temperatura_c": "20-40",
+    "presion_bar": "1.0",
+    "reactivos": [
+      {
+        "unidad": "t/t LCE",
+        "especie": "Salmuera concentrada en LiCl",
+        "cantidad": 1.25
+      }
+    ],
+    "productos": [
+      {
+        "unidad": "t/t LCE",
+        "especie": "Solución purificada de LiCl",
+        "cantidad": 1.25
+      }
+    ],
+    "insumos": [
+      {
+        "unidad": "reactivo auxiliar",
+        "especie": "Ca(OH)2 (encalado) y resinas de intercambio",
+        "cantidad": null
+      }
+    ],
+    "subproductos": [
+      {
+        "unidad": "residuo sólido",
+        "especie": "Torta de hidróxidos de Mg/Ca y boratos",
+        "cantidad": null
+      }
+    ],
+    "energia": {
+      "estado": "sin_datos",
+      "valor": null,
+      "unidad": "MWh/t LCE",
+      "procedencia": {
+        "anio": 2026,
+        "fuente_id": "riotinto-olaroz-2026",
+        "fuente": "Ficha oficial de operación Olaroz (Jujuy)",
+        "url": "https://www.riotinto.com/en/operations/south-america/olaroz",
+        "fecha_descarga": "2026-11-24",
+        "hash": "sha256:af95dbcdee6cf821222e0bee00681f65512903c7271cb576e0a0c6b5ae7a13a0",
+        "cita_ubicacion": "riotinto.com/en/operations/south-america/olaroz y USGS MCS 2025 pág. 110",
+        "confianza": "alta"
+      }
+    },
+    "descripcion": "Precipitación química de magnesio y calcio con lechada de cal y remoción de boro por extracción/intercambio iónico previa a la carbonatación.",
+    "pos_x": 640,
+    "pos_y": 150,
+    "procedencia": {
+      "anio": 2026,
+      "fuente_id": "riotinto-olaroz-2026",
+      "fuente": "Ficha oficial de operación Olaroz (Jujuy)",
+      "url": "https://www.riotinto.com/en/operations/south-america/olaroz",
+      "fecha_descarga": "2026-11-24",
+      "hash": "sha256:af95dbcdee6cf821222e0bee00681f65512903c7271cb576e0a0c6b5ae7a13a0",
+      "cita_ubicacion": "riotinto.com/en/operations/south-america/olaroz y USGS MCS 2025 pág. 110",
+      "confianza": "alta"
+    }
+  },
+  {
+    "paso_id": "ur-p3-haber-bosch",
+    "proceso_id": "urea-haber-bosch-sintesis",
+    "orden": 3,
+    "nombre": "Síntesis de amoníaco (Haber-Bosch)",
+    "tipo_paso": "reaccion",
+    "reaccion_balanceada": "N2 + 3 H2 -> 2 NH3",
+    "temperatura_c": "400-450",
+    "presion_bar": "150-200",
+    "reactivos": [
+      {
+        "unidad": "t/t urea",
+        "especie": "H2 (gas de síntesis)",
+        "cantidad": 0.11
+      },
+      {
+        "unidad": "t/t urea",
+        "especie": "N2 (proveniente del aire)",
+        "cantidad": 0.49
+      }
+    ],
+    "productos": [
+      {
+        "unidad": "t/t urea",
+        "especie": "NH3 (amoníaco anhidro)",
+        "cantidad": 0.578
+      }
+    ],
+    "insumos": [
+      {
+        "unidad": "lecho catalítico",
+        "especie": "Catalizador de hierro promovido",
+        "cantidad": null
+      }
+    ],
+    "subproductos": [
+      {
+        "unidad": "t/t urea",
+        "especie": "Gases de purga (CH4/Ar)",
+        "cantidad": 0.022
+      }
+    ],
+    "energia": {
+      "estado": "sin_datos",
+      "valor": null,
+      "unidad": "GJ/t urea",
+      "procedencia": {
+        "anio": 2025,
+        "fuente_id": "profertil-eecc-2025",
+        "fuente": "Memoria y Estados Financieros al 31 de diciembre de 2025 (Profertil S.A.)",
+        "url": "https://www.profertil.com.ar/wp-content/uploads/2021/04/EECC-31-12-25.pdf",
+        "fecha_descarga": "2026-11-24",
+        "hash": "sha256:d7bf53b4394beebd03259645c41196aaa27ce657ded8cfc71fc1f007f34843f3",
+        "cita_ubicacion": "EECC-31-12-25.pdf pág. 4, 6, 78-79 y 88 (Memoria y Reseña Informativa)",
+        "confianza": "alta"
+      }
+    },
+    "descripcion": "Síntesis catalítica a alta presión. En 2024 Profertil produjo 810.633 t de amoníaco (770.033 t para urea y 40.600 t comercializadas): relación real 0,578 t NH3/t urea.",
+    "pos_x": 660,
+    "pos_y": 30,
+    "procedencia": {
+      "anio": 2025,
+      "fuente_id": "profertil-eecc-2025",
+      "fuente": "Memoria y Estados Financieros al 31 de diciembre de 2025 (Profertil S.A.)",
+      "url": "https://www.profertil.com.ar/wp-content/uploads/2021/04/EECC-31-12-25.pdf",
+      "fecha_descarga": "2026-11-24",
+      "hash": "sha256:d7bf53b4394beebd03259645c41196aaa27ce657ded8cfc71fc1f007f34843f3",
+      "cita_ubicacion": "EECC-31-12-25.pdf pág. 4, 6, 78-79 y 88 (Memoria y Reseña Informativa)",
       "confianza": "alta"
     }
   },
@@ -282,6 +685,152 @@
     }
   },
   {
+    "paso_id": "li-p4-carbonatacion",
+    "proceso_id": "litio-salmuera-carbonatacion",
+    "orden": 4,
+    "nombre": "Precipitación con carbonato de sodio",
+    "tipo_paso": "reaccion",
+    "reaccion_balanceada": "2 LiCl + Na2CO3 -> Li2CO3 + 2 NaCl",
+    "temperatura_c": "80-90",
+    "presion_bar": "1.0",
+    "reactivos": [
+      {
+        "unidad": "t/t LCE",
+        "especie": "LiCl (en salmuera purificada)",
+        "cantidad": 1.25
+      },
+      {
+        "unidad": "t/t LCE",
+        "especie": "Na2CO3 (ceniza de soda / soda solvay)",
+        "cantidad": 1.8
+      }
+    ],
+    "productos": [
+      {
+        "unidad": "t/t LCE",
+        "especie": "Li2CO3 precipitado húmedo",
+        "cantidad": 1
+      }
+    ],
+    "insumos": [
+      {
+        "unidad": "servicio térmico",
+        "especie": "Vapor de calentamiento (80-90 °C)",
+        "cantidad": null
+      }
+    ],
+    "subproductos": [
+      {
+        "unidad": "t/t LCE",
+        "especie": "NaCl en licor madre",
+        "cantidad": 1.58
+      },
+      {
+        "unidad": "reciclo",
+        "especie": "Licor madre con Li residual (a reciclo)",
+        "cantidad": null
+      }
+    ],
+    "energia": {
+      "estado": "sin_datos",
+      "valor": null,
+      "unidad": "MWh/t LCE",
+      "procedencia": {
+        "anio": 2026,
+        "fuente_id": "riotinto-olaroz-2026",
+        "fuente": "Ficha oficial de operación Olaroz (Jujuy)",
+        "url": "https://www.riotinto.com/en/operations/south-america/olaroz",
+        "fecha_descarga": "2026-11-24",
+        "hash": "sha256:af95dbcdee6cf821222e0bee00681f65512903c7271cb576e0a0c6b5ae7a13a0",
+        "cita_ubicacion": "riotinto.com/en/operations/south-america/olaroz y USGS MCS 2025 pág. 110",
+        "confianza": "alta"
+      }
+    },
+    "descripcion": "La menor solubilidad del Li2CO3 en caliente permite precipitarlo al reaccionar con Na2CO3. Mínimo estequiométrico teórico: 1,148 t LiCl y 1,434 t Na2CO3 por tonelada de Li2CO3.",
+    "pos_x": 950,
+    "pos_y": 150,
+    "procedencia": {
+      "anio": 2026,
+      "fuente_id": "riotinto-olaroz-2026",
+      "fuente": "Ficha oficial de operación Olaroz (Jujuy)",
+      "url": "https://www.riotinto.com/en/operations/south-america/olaroz",
+      "fecha_descarga": "2026-11-24",
+      "hash": "sha256:af95dbcdee6cf821222e0bee00681f65512903c7271cb576e0a0c6b5ae7a13a0",
+      "cita_ubicacion": "riotinto.com/en/operations/south-america/olaroz y USGS MCS 2025 pág. 110",
+      "confianza": "alta"
+    }
+  },
+  {
+    "paso_id": "ur-p4-sintesis-urea",
+    "proceso_id": "urea-haber-bosch-sintesis",
+    "orden": 4,
+    "nombre": "Formación de carbamato y síntesis de urea",
+    "tipo_paso": "reaccion",
+    "reaccion_balanceada": "2 NH3 + CO2 -> CO(NH2)2 + H2O",
+    "temperatura_c": "180-190",
+    "presion_bar": "140-160",
+    "reactivos": [
+      {
+        "unidad": "t/t urea",
+        "especie": "NH3 (amoníaco anhidro)",
+        "cantidad": 0.578
+      },
+      {
+        "unidad": "t/t urea",
+        "especie": "CO2 recuperado del reformado",
+        "cantidad": 0.745
+      }
+    ],
+    "productos": [
+      {
+        "unidad": "t/t urea",
+        "especie": "CO(NH2)2 (solución de urea)",
+        "cantidad": 1
+      },
+      {
+        "unidad": "t/t urea",
+        "especie": "H2O de reacción (a tratamiento/condensado)",
+        "cantidad": 0.3
+      }
+    ],
+    "insumos": [],
+    "subproductos": [
+      {
+        "unidad": "t/t urea",
+        "especie": "CO2 residual venteado (IPCC Box 3.3: 2-7 kg/t)",
+        "cantidad": 0.005
+      }
+    ],
+    "energia": {
+      "estado": "sin_datos",
+      "valor": null,
+      "unidad": "GJ/t urea",
+      "procedencia": {
+        "anio": 2006,
+        "fuente_id": "ipcc-2006-v3-ch3-amoniaco-urea",
+        "fuente": "2006 IPCC Guidelines for National Greenhouse Gas Inventories (Vol. 3, Cap. 3.2 Ammonia y Box 3.3 Urea)",
+        "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/pdf/3_Volume3/V3_3_Ch3_Chemical_Industry.pdf",
+        "fecha_descarga": "2026-11-24",
+        "hash": "sha256:f25c2817eecdae6a1f930b342eb09b2d8a6065b12bfce632502a01e1a61bbaa2",
+        "cita_ubicacion": "IPCC 2006 Vol. 3 Cap. 3.2 Box 3.3 pág. 3.16 (2 NH3 + CO2 -> CO(NH2)2 + H2O; 0,733 t CO2/t urea)",
+        "confianza": "alta"
+      }
+    },
+    "descripcion": "Reacción en dos etapas (carbamato de amonio NH2COONH4 y deshidratación a urea). Mínimos teóricos: 0,567 t NH3 y 0,733 t CO2 por tonelada de urea (IPCC Box 3.3 pág. 3.16).",
+    "pos_x": 660,
+    "pos_y": 260,
+    "procedencia": {
+      "anio": 2006,
+      "fuente_id": "ipcc-2006-v3-ch3-amoniaco-urea",
+      "fuente": "2006 IPCC Guidelines for National Greenhouse Gas Inventories (Vol. 3, Cap. 3.2 Ammonia y Box 3.3 Urea)",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/pdf/3_Volume3/V3_3_Ch3_Chemical_Industry.pdf",
+      "fecha_descarga": "2026-11-24",
+      "hash": "sha256:f25c2817eecdae6a1f930b342eb09b2d8a6065b12bfce632502a01e1a61bbaa2",
+      "cita_ubicacion": "IPCC 2006 Vol. 3 Cap. 3.2 Box 3.3 pág. 3.16 (2 NH3 + CO2 -> CO(NH2)2 + H2O; 0,733 t CO2/t urea)",
+      "confianza": "alta"
+    }
+  },
+  {
     "paso_id": "al-p5-tratamiento-gases",
     "proceso_id": "aluminio-hall-heroult",
     "orden": 5,
@@ -349,6 +898,138 @@
       "fecha_descarga": "2026-11-24",
       "hash": "sha256:d340e9a8c425cf441429db10a83ccd821988881faf1e0be26dd5eacac56fe6fe",
       "cita_ubicacion": "IPCC 2006 Vol. 3 Cap. 4.4 Table 4.10 pág. 4.47 y Table 4.15 pág. 4.54",
+      "confianza": "alta"
+    }
+  },
+  {
+    "paso_id": "li-p5-secado-grado-bateria",
+    "proceso_id": "litio-salmuera-carbonatacion",
+    "orden": 5,
+    "nombre": "Lavado, secado y embolsado (grado batería/técnico)",
+    "tipo_paso": "producto",
+    "reaccion_balanceada": null,
+    "temperatura_c": "110-130",
+    "presion_bar": "1.0",
+    "reactivos": [
+      {
+        "unidad": "t/t LCE",
+        "especie": "Li2CO3 precipitado húmedo",
+        "cantidad": 1
+      }
+    ],
+    "productos": [
+      {
+        "unidad": "t/t LCE",
+        "especie": "Li2CO3 (grado técnico y grado batería)",
+        "cantidad": 0.995
+      }
+    ],
+    "insumos": [
+      {
+        "unidad": "servicio",
+        "especie": "Agua desmineralizada de lavado",
+        "cantidad": null
+      }
+    ],
+    "subproductos": [
+      {
+        "unidad": "t/t LCE",
+        "especie": "Finos y solución de lavado reciclada",
+        "cantidad": 0.005
+      }
+    ],
+    "energia": {
+      "estado": "sin_datos",
+      "valor": null,
+      "unidad": "MWh/t LCE",
+      "procedencia": {
+        "anio": 2026,
+        "fuente_id": "riotinto-olaroz-2026",
+        "fuente": "Ficha oficial de operación Olaroz (Jujuy)",
+        "url": "https://www.riotinto.com/en/operations/south-america/olaroz",
+        "fecha_descarga": "2026-11-24",
+        "hash": "sha256:af95dbcdee6cf821222e0bee00681f65512903c7271cb576e0a0c6b5ae7a13a0",
+        "cita_ubicacion": "riotinto.com/en/operations/south-america/olaroz y USGS MCS 2025 pág. 110",
+        "confianza": "alta"
+      }
+    },
+    "descripcion": "Centrifugado, lavado en caliente para eliminar cloruros residuales, secado térmico, micronizado y envasado para exportación (HS 2836.91).",
+    "pos_x": 1260,
+    "pos_y": 150,
+    "procedencia": {
+      "anio": 2026,
+      "fuente_id": "riotinto-olaroz-2026",
+      "fuente": "Ficha oficial de operación Olaroz (Jujuy)",
+      "url": "https://www.riotinto.com/en/operations/south-america/olaroz",
+      "fecha_descarga": "2026-11-24",
+      "hash": "sha256:af95dbcdee6cf821222e0bee00681f65512903c7271cb576e0a0c6b5ae7a13a0",
+      "cita_ubicacion": "riotinto.com/en/operations/south-america/olaroz y USGS MCS 2025 pág. 110",
+      "confianza": "alta"
+    }
+  },
+  {
+    "paso_id": "ur-p5-granulacion-despacho",
+    "proceso_id": "urea-haber-bosch-sintesis",
+    "orden": 5,
+    "nombre": "Concentración, granulación y despacho portuario",
+    "tipo_paso": "producto",
+    "reaccion_balanceada": null,
+    "temperatura_c": "130-140",
+    "presion_bar": "1.0",
+    "reactivos": [
+      {
+        "unidad": "t/t urea",
+        "especie": "CO(NH2)2 (solución de urea)",
+        "cantidad": 1
+      }
+    ],
+    "productos": [
+      {
+        "unidad": "t/t urea",
+        "especie": "Urea granulada (46% N)",
+        "cantidad": 0.998
+      }
+    ],
+    "insumos": [
+      {
+        "unidad": "aire ambiente",
+        "especie": "Aire de enfriamiento y fluidización",
+        "cantidad": null
+      }
+    ],
+    "subproductos": [
+      {
+        "unidad": "t/t urea",
+        "especie": "Polvo de urea recuperado en scrubbers",
+        "cantidad": 0.002
+      }
+    ],
+    "energia": {
+      "estado": "sin_datos",
+      "valor": null,
+      "unidad": "GJ/t urea",
+      "procedencia": {
+        "anio": 2026,
+        "fuente_id": "profertil-web-que-hacemos",
+        "fuente": "Proceso productivo y capacidades declaradas (Profertil S.A.)",
+        "url": "https://www.profertil.com.ar/index.php/que-hacemos",
+        "fecha_descarga": "2026-11-24",
+        "hash": "sha256:4a6b91bc6f405399b277d565c1e98a356b3a91165fddf4bc25b3f9f322e9c679",
+        "cita_ubicacion": "profertil.com.ar/index.php/que-hacemos (capacidad 1.320.000 t urea y 790.000 t amoníaco)",
+        "confianza": "alta"
+      }
+    },
+    "descripcion": "Evaporación de agua, granulación en lecho fluidizado y despacho desde Puerto Ingeniero White hacia el mercado agrícola argentino y terminales fluviales.",
+    "pos_x": 1000,
+    "pos_y": 260,
+    "procedencia": {
+      "anio": 2026,
+      "fuente_id": "profertil-web-que-hacemos",
+      "fuente": "Proceso productivo y capacidades declaradas (Profertil S.A.)",
+      "url": "https://www.profertil.com.ar/index.php/que-hacemos",
+      "fecha_descarga": "2026-11-24",
+      "hash": "sha256:4a6b91bc6f405399b277d565c1e98a356b3a91165fddf4bc25b3f9f322e9c679",
+      "cita_ubicacion": "profertil.com.ar/index.php/que-hacemos (capacidad 1.320.000 t urea y 790.000 t amoníaco)",
       "confianza": "alta"
     }
   },

@@ -15,5 +15,39 @@
       "cita_ubicacion": "Memoria 2025 pág. 2 y 10; Estados Financieros Nota 1 pág. 8 y Nota 2.3.1 pág. 11",
       "confianza": "alta"
     }
+  },
+  {
+    "empresa_id": "rio-tinto-litio-ar",
+    "razon_social": "Rio Tinto Lithium Argentina (operaciones Fénix, Olaroz y Rincón)",
+    "tipo_capital": "mixto",
+    "sitio_web_oficial": "https://www.riotinto.com/en/operations/south-america/fenix",
+    "hechos_verificables": "Opera tres complejos de salmuera en la Puna argentina: Fénix en Salar del Hombre Muerto (Catamarca, 100% propia, activa desde 1997, 32.000 t/año LCE), Olaroz en Jujuy (66,5% en JV con Toyota Tsusho y participación provincial, activa desde 2014) y el proyecto Rincón en Salta (planta inicial de 3.000 t/año con primer litio en noviembre 2024 y ampliación aprobada hacia 60.000 t/año).",
+    "procedencia": {
+      "anio": 2026,
+      "fuente_id": "riotinto-fenix-2026",
+      "fuente": "Ficha oficial de operación Fénix (Salar del Hombre Muerto, Catamarca)",
+      "url": "https://www.riotinto.com/en/operations/south-america/fenix",
+      "fecha_descarga": "2026-11-24",
+      "hash": "sha256:424d17d8d2353a97a4848a105ca616c6a483e4d0e4ced5360b1cec7cb9127e2b",
+      "cita_ubicacion": "riotinto.com/en/operations/south-america/fenix (100% Rio Tinto, 32 ktpa LCE, inicio 1997)",
+      "confianza": "alta"
+    }
+  },
+  {
+    "empresa_id": "profertil-sa",
+    "razon_social": "Profertil S.A.",
+    "tipo_capital": "mixto",
+    "sitio_web_oficial": "https://www.profertil.com.ar/",
+    "hechos_verificables": "Único productor integrado de urea granulada y amoníaco a gran escala en Argentina (CUIT 30-69157651-1). Inició producción comercial en enero de 2001 en Zona Cangrejales del Puerto de Bahía Blanca (predio de 605.110 m2). Capacidad nominal: 1.320.000 t/año de urea granulada y 790.000 t/año de amoníaco; contratos de gas natural hasta 2.500.000 m3/día. Al 31/12/2025 su capital pertenece 90% al Grupo Adecoagro y 10% a ACA (hasta dic. 2025: 50% YPF y 50% Nutrien).",
+    "procedencia": {
+      "anio": 2025,
+      "fuente_id": "profertil-eecc-2025",
+      "fuente": "Memoria y Estados Financieros al 31 de diciembre de 2025 (Profertil S.A.)",
+      "url": "https://www.profertil.com.ar/wp-content/uploads/2021/04/EECC-31-12-25.pdf",
+      "fecha_descarga": "2026-11-24",
+      "hash": "sha256:d7bf53b4394beebd03259645c41196aaa27ce657ded8cfc71fc1f007f34843f3",
+      "cita_ubicacion": "EECC-31-12-25.pdf pág. 4, 6, 78-79 y 88 (Memoria y Reseña Informativa)",
+      "confianza": "alta"
+    }
   }
 ]

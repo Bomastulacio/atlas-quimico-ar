@@ -10,26 +10,6 @@
     "estado_mvp": "validado"
   },
   {
-    "producto_id": "litio",
-    "nombre": "Carbonato de litio",
-    "categoria": "mineria_quimica",
-    "formula_quimica": "Li2CO3",
-    "icono_id": "litio-salmuera",
-    "descripcion_corta": "Extracción y precipitación química a partir de salmueras del NOA (carga oficial pendiente de Etapa 6).",
-    "mdx_slug": "litio",
-    "estado_mvp": "pendiente"
-  },
-  {
-    "producto_id": "urea",
-    "nombre": "Urea y fertilizantes nitrogenados",
-    "categoria": "fertilizantes",
-    "formula_quimica": "CO(NH2)2",
-    "icono_id": "urea-prill",
-    "descripcion_corta": "Síntesis de amoníaco y urea a partir de gas natural en Bahía Blanca (carga oficial pendiente de Etapa 6).",
-    "mdx_slug": "urea",
-    "estado_mvp": "pendiente"
-  },
-  {
     "producto_id": "algodon",
     "nombre": "Algodón y fibra textil",
     "categoria": "agroindustria",
@@ -68,5 +48,25 @@
     "descripcion_corta": "Transesterificación catalítica de aceite de soja con metanol (carga oficial pendiente de Etapa 6).",
     "mdx_slug": "biodiesel",
     "estado_mvp": "pendiente"
+  },
+  {
+    "producto_id": "litio",
+    "nombre": "Carbonato de litio",
+    "categoria": "mineria_quimica",
+    "formula_quimica": "Li2CO3",
+    "icono_id": "litio-salmuera",
+    "descripcion_corta": "Carbonato de litio obtenido por evaporación solar y precipitación química en los salares de la Puna (Jujuy, Catamarca y Salta).",
+    "mdx_slug": "litio",
+    "estado_mvp": "validado"
+  },
+  {
+    "producto_id": "urea",
+    "nombre": "Urea y fertilizantes nitrogenados",
+    "categoria": "fertilizantes",
+    "formula_quimica": "CO(NH2)2",
+    "icono_id": "urea-prill",
+    "descripcion_corta": "Fertilizante nitrogenado sintetizado a partir de gas natural, agua y aire (reformado, Haber-Bosch y granulación) en Bahía Blanca.",
+    "mdx_slug": "urea",
+    "estado_mvp": "validado"
   }
 ]

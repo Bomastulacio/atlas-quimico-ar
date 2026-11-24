@@ -5,8 +5,17 @@
     "nombre": "Bahía Blanca",
     "tipo_zona": "polo_industrial",
     "tiene_datos_confiables": true,
-    "cobertura_datos": "baja",
-    "nota_cobertura": "Polo petroquímico y fertilizantes nitrogenados (carga oficial prevista en Etapa 6 y zoom departamental en Etapa 7)."
+    "cobertura_datos": "parcial",
+    "nota_cobertura": "Ingeniero White (Bahía Blanca): urea granulada y amoníaco verificados (Profertil S.A. / CNV 2025); polo petroquímico pendiente en Etapa 6."
+  },
+  {
+    "departamento_id": "10028",
+    "provincia_id": "10",
+    "nombre": "Antofagasta de la Sierra",
+    "tipo_zona": "minero",
+    "tiene_datos_confiables": true,
+    "cobertura_datos": "completa",
+    "nota_cobertura": "Salar del Hombre Muerto (Catamarca): Planta Fénix operativa desde 1997."
   },
   {
     "departamento_id": "26007",
@@ -16,6 +25,24 @@
     "tiene_datos_confiables": true,
     "cobertura_datos": "completa",
     "nota_cobertura": "Puerto Madryn: sede del único complejo productor de aluminio primario del país (Parque Industrial Pesado y Muelle Almirante Storni)."
+  },
+  {
+    "departamento_id": "38084",
+    "provincia_id": "38",
+    "nombre": "Susques",
+    "tipo_zona": "minero",
+    "tiene_datos_confiables": true,
+    "cobertura_datos": "completa",
+    "nota_cobertura": "Salares de Olaroz y Cauchari-Olaroz (Jujuy): polo principal de carbonato de litio."
+  },
+  {
+    "departamento_id": "66105",
+    "provincia_id": "66",
+    "nombre": "Los Andes",
+    "tipo_zona": "minero",
+    "tiene_datos_confiables": true,
+    "cobertura_datos": "parcial",
+    "nota_cobertura": "Puna salteña (Salar del Rincón): planta inicial operativa 2024 y ampliación en curso."
   },
   {
     "departamento_id": "82084",

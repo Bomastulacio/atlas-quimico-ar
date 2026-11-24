@@ -97,5 +97,104 @@
     "hash": "sha256:e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
     "archivo_raw": "data/sheets/",
     "notas": "Usado únicamente para señalar las 6 cadenas pendientes de carga oficial en Etapa 6."
+  },
+  {
+    "fuente_id": "usgs-mcs-2025-litio",
+    "nombre": "Mineral Commodity Summaries 2025: Lithium",
+    "organismo": "U.S. Geological Survey (USGS)",
+    "tipo": "oficial",
+    "url": "https://pubs.usgs.gov/periodicals/mcs2025/mcs2025-lithium.pdf",
+    "fecha_descarga": "2026-11-24",
+    "hash": "sha256:7ec5654133aa5ef64fcfd6d4d23ac64a58f06f51bf1231576ebd8f595ad9257b",
+    "archivo_raw": null,
+    "notas": "Producción minera argentina de litio contenido (8.630 t Li en 2023; 18.000 t Li est. en 2024), reservas (4 Mt Li) y recursos (23 Mt Li)."
+  },
+  {
+    "fuente_id": "uncomtrade-ar-litio-urea-2023",
+    "nombre": "UN Comtrade: comercio exterior de Argentina HS 283691 (Carbonato de litio) y HS 310210 (Urea) 2023",
+    "organismo": "UN Comtrade (Naciones Unidas)",
+    "tipo": "oficial",
+    "url": "https://comtradeapi.un.org/public/v1/preview/C/A/HS?reporterCode=32&period=2023&partnerCode=0&partner2Code=0&customsCode=C00&motCode=0&cmdCode=283691,310210,281410",
+    "fecha_descarga": "2026-11-24",
+    "hash": "sha256:44830ba7da37617022dffd3feecc58bc236e6f1bd860634a19286bff756129c0",
+    "archivo_raw": null,
+    "notas": "Flujos oficiales 2023 de carbonato de litio (HS 283691) y urea (HS 310210)."
+  },
+  {
+    "fuente_id": "uncomtrade-ar-litio-urea-2024",
+    "nombre": "UN Comtrade: comercio exterior de Argentina HS 283691 (Carbonato de litio) y HS 310210 (Urea) 2024",
+    "organismo": "UN Comtrade (Naciones Unidas)",
+    "tipo": "oficial",
+    "url": "https://comtradeapi.un.org/public/v1/preview/C/A/HS?reporterCode=32&period=2024&partnerCode=0&partner2Code=0&customsCode=C00&motCode=0&cmdCode=283691,310210,281410",
+    "fecha_descarga": "2026-11-24",
+    "hash": "sha256:5cb83c4f87b4b5d4b32c9c2dab6dc317c3525bdb833012d5c2ac2381ab79c67a",
+    "archivo_raw": null,
+    "notas": "Flujos oficiales 2024 de carbonato de litio (47.609 t exportadas) y urea importada (USD 405,53 M)."
+  },
+  {
+    "fuente_id": "riotinto-olaroz-2026",
+    "nombre": "Ficha oficial de operación Olaroz (Jujuy)",
+    "organismo": "Rio Tinto Lithium (JV con Toyota Tsusho y JEMSE)",
+    "tipo": "empresa",
+    "url": "https://www.riotinto.com/en/operations/south-america/olaroz",
+    "fecha_descarga": "2026-11-24",
+    "hash": "sha256:af95dbcdee6cf821222e0bee00681f65512903c7271cb576e0a0c6b5ae7a13a0",
+    "archivo_raw": null,
+    "notas": "Operación de salmuera en Jujuy activa desde 2014; participación 66,5% Rio Tinto en JV con TTC."
+  },
+  {
+    "fuente_id": "riotinto-fenix-2026",
+    "nombre": "Ficha oficial de operación Fénix (Salar del Hombre Muerto, Catamarca)",
+    "organismo": "Rio Tinto Lithium",
+    "tipo": "empresa",
+    "url": "https://www.riotinto.com/en/operations/south-america/fenix",
+    "fecha_descarga": "2026-11-24",
+    "hash": "sha256:424d17d8d2353a97a4848a105ca616c6a483e4d0e4ced5360b1cec7cb9127e2b",
+    "archivo_raw": null,
+    "notas": "Operación pionera desde 1997 (100% Rio Tinto); capacidad declarada 32 ktpa LCE y expansión Fénix 1B hacia 40 ktpa."
+  },
+  {
+    "fuente_id": "riotinto-rincon-2026",
+    "nombre": "Ficha oficial del proyecto Rincón (Salta)",
+    "organismo": "Rio Tinto Lithium",
+    "tipo": "empresa",
+    "url": "https://www.riotinto.com/en/operations/south-america/rincon",
+    "fecha_descarga": "2026-11-24",
+    "hash": "sha256:b3668429bd53a4e754b1459208fe4f7b3cc80273f893a99d272588d30b599f45",
+    "archivo_raw": null,
+    "notas": "Planta inicial 3.000 t/año operativa desde noviembre 2024 y expansión aprobada de 57.000 t/año (total 60.000 t/año)."
+  },
+  {
+    "fuente_id": "profertil-eecc-2025",
+    "nombre": "Memoria y Estados Financieros al 31 de diciembre de 2025 (Profertil S.A.)",
+    "organismo": "Profertil S.A. / CNV",
+    "tipo": "empresa",
+    "url": "https://www.profertil.com.ar/wp-content/uploads/2021/04/EECC-31-12-25.pdf",
+    "fecha_descarga": "2026-11-24",
+    "hash": "sha256:d7bf53b4394beebd03259645c41196aaa27ce657ded8cfc71fc1f007f34843f3",
+    "archivo_raw": null,
+    "notas": "Serie 2022-2025 de producción real de urea y amoníaco (pág. 88), CUIT 30-69157651-1, capacidad 1.320.000 t/año y estructura accionaria."
+  },
+  {
+    "fuente_id": "profertil-web-que-hacemos",
+    "nombre": "Proceso productivo y capacidades declaradas (Profertil S.A.)",
+    "organismo": "Profertil S.A.",
+    "tipo": "empresa",
+    "url": "https://www.profertil.com.ar/index.php/que-hacemos",
+    "fecha_descarga": "2026-11-24",
+    "hash": "sha256:4a6b91bc6f405399b277d565c1e98a356b3a91165fddf4bc25b3f9f322e9c679",
+    "archivo_raw": null,
+    "notas": "Etapas gas natural + agua + aire -> amoníaco -> urea granulada en Ingeniero White, Bahía Blanca."
+  },
+  {
+    "fuente_id": "ipcc-2006-v3-ch3-amoniaco-urea",
+    "nombre": "2006 IPCC Guidelines for National Greenhouse Gas Inventories (Vol. 3, Cap. 3.2 Ammonia y Box 3.3 Urea)",
+    "organismo": "IPCC (Intergovernmental Panel on Climate Change)",
+    "tipo": "tecnica",
+    "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/pdf/3_Volume3/V3_3_Ch3_Chemical_Industry.pdf",
+    "fecha_descarga": "2026-11-24",
+    "hash": "sha256:f25c2817eecdae6a1f930b342eb09b2d8a6065b12bfce632502a01e1a61bbaa2",
+    "archivo_raw": null,
+    "notas": "Reacciones balanceadas SMR + Haber-Bosch + Urea, 30,2 GJ/t NH3 (Table 3.1), 0,733 t CO2/t urea y 2-7 kg CO2/t urea (Box 3.3)."
   }
 ]

@@ -626,33 +626,281 @@
     "ncm_codigo": "2836.91",
     "metrica": "valor_usd",
     "exportacion": {
-      "estado": "sin_datos",
-      "valor": null,
+      "estado": "dato",
+      "valor": 406.03,
       "unidad": "millones USD",
       "procedencia": {
         "anio": 2024,
-        "fuente_id": "ejemplo-fuente-01",
-        "fuente": "[EJEMPLO] Marcador territorial demostrativo para cadenas MVP pendientes de Etapa 6",
-        "url": "https://example.org/atlas-quimico-ar/mvp-pendiente",
+        "fuente_id": "uncomtrade-ar-litio-urea-2024",
+        "fuente": "UN Comtrade: comercio exterior de Argentina HS 283691 (Carbonato de litio) y HS 310210 (Urea) 2024",
+        "url": "https://comtradeapi.un.org/public/v1/preview/C/A/HS?reporterCode=32&period=2024&partnerCode=0&partner2Code=0&customsCode=C00&motCode=0&cmdCode=283691,310210,281410",
         "fecha_descarga": "2026-11-24",
-        "hash": "sha256:e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
-        "cita_ubicacion": "plan-mvp:pendiente-etapa-6",
-        "confianza": "ejemplo"
+        "hash": "sha256:5cb83c4f87b4b5d4b32c9c2dab6dc317c3525bdb833012d5c2ac2381ab79c67a",
+        "cita_ubicacion": "UN Comtrade AR 2024 cmdCode=283691 flow=X/M primaryValue (USD 406,03 M exp / USD 0,09 M imp)",
+        "confianza": "alta"
+      }
+    },
+    "importacion": {
+      "estado": "dato",
+      "valor": 0.09,
+      "unidad": "millones USD",
+      "procedencia": {
+        "anio": 2024,
+        "fuente_id": "uncomtrade-ar-litio-urea-2024",
+        "fuente": "UN Comtrade: comercio exterior de Argentina HS 283691 (Carbonato de litio) y HS 310210 (Urea) 2024",
+        "url": "https://comtradeapi.un.org/public/v1/preview/C/A/HS?reporterCode=32&period=2024&partnerCode=0&partner2Code=0&customsCode=C00&motCode=0&cmdCode=283691,310210,281410",
+        "fecha_descarga": "2026-11-24",
+        "hash": "sha256:5cb83c4f87b4b5d4b32c9c2dab6dc317c3525bdb833012d5c2ac2381ab79c67a",
+        "cita_ubicacion": "UN Comtrade AR 2024 cmdCode=283691 flow=X/M primaryValue (USD 406,03 M exp / USD 0,09 M imp)",
+        "confianza": "alta"
+      }
+    },
+    "saldo_comercial": {
+      "estado": "dato",
+      "valor": 405.94,
+      "unidad": "millones USD",
+      "procedencia": {
+        "anio": 2024,
+        "fuente_id": "uncomtrade-ar-litio-urea-2024",
+        "fuente": "UN Comtrade: comercio exterior de Argentina HS 283691 (Carbonato de litio) y HS 310210 (Urea) 2024",
+        "url": "https://comtradeapi.un.org/public/v1/preview/C/A/HS?reporterCode=32&period=2024&partnerCode=0&partner2Code=0&customsCode=C00&motCode=0&cmdCode=283691,310210,281410",
+        "fecha_descarga": "2026-11-24",
+        "hash": "sha256:5cb83c4f87b4b5d4b32c9c2dab6dc317c3525bdb833012d5c2ac2381ab79c67a",
+        "cita_ubicacion": "UN Comtrade AR 2024 cmdCode=283691 flow=X/M primaryValue (USD 406,03 M exp / USD 0,09 M imp)",
+        "confianza": "alta"
+      }
+    },
+    "procedencia": {
+      "anio": 2024,
+      "fuente_id": "uncomtrade-ar-litio-urea-2024",
+      "fuente": "UN Comtrade: comercio exterior de Argentina HS 283691 (Carbonato de litio) y HS 310210 (Urea) 2024",
+      "url": "https://comtradeapi.un.org/public/v1/preview/C/A/HS?reporterCode=32&period=2024&partnerCode=0&partner2Code=0&customsCode=C00&motCode=0&cmdCode=283691,310210,281410",
+      "fecha_descarga": "2026-11-24",
+      "hash": "sha256:5cb83c4f87b4b5d4b32c9c2dab6dc317c3525bdb833012d5c2ac2381ab79c67a",
+      "cita_ubicacion": "UN Comtrade AR 2024 cmdCode=283691 flow=X/M primaryValue (USD 406,03 M exp / USD 0,09 M imp)",
+      "confianza": "alta"
+    }
+  },
+  {
+    "registro_id": "comex-litio-2024-t",
+    "producto_id": "litio",
+    "anio": 2024,
+    "ncm_codigo": "2836.91",
+    "metrica": "volumen_t",
+    "exportacion": {
+      "estado": "dato",
+      "valor": 47609.1,
+      "unidad": "t Li2CO3",
+      "procedencia": {
+        "anio": 2024,
+        "fuente_id": "uncomtrade-ar-litio-urea-2024",
+        "fuente": "UN Comtrade: comercio exterior de Argentina HS 283691 (Carbonato de litio) y HS 310210 (Urea) 2024",
+        "url": "https://comtradeapi.un.org/public/v1/preview/C/A/HS?reporterCode=32&period=2024&partnerCode=0&partner2Code=0&customsCode=C00&motCode=0&cmdCode=283691,310210,281410",
+        "fecha_descarga": "2026-11-24",
+        "hash": "sha256:5cb83c4f87b4b5d4b32c9c2dab6dc317c3525bdb833012d5c2ac2381ab79c67a",
+        "cita_ubicacion": "UN Comtrade AR 2024 cmdCode=283691 flow=X netWgt=47.609.120 kg",
+        "confianza": "alta"
       }
     },
     "importacion": {
       "estado": "sin_datos",
       "valor": null,
+      "unidad": "t Li2CO3",
+      "procedencia": {
+        "anio": 2024,
+        "fuente_id": "uncomtrade-ar-litio-urea-2024",
+        "fuente": "UN Comtrade: comercio exterior de Argentina HS 283691 (Carbonato de litio) y HS 310210 (Urea) 2024",
+        "url": "https://comtradeapi.un.org/public/v1/preview/C/A/HS?reporterCode=32&period=2024&partnerCode=0&partner2Code=0&customsCode=C00&motCode=0&cmdCode=283691,310210,281410",
+        "fecha_descarga": "2026-11-24",
+        "hash": "sha256:5cb83c4f87b4b5d4b32c9c2dab6dc317c3525bdb833012d5c2ac2381ab79c67a",
+        "cita_ubicacion": "UN Comtrade AR 2024 cmdCode=283691 flow=X netWgt=47.609.120 kg",
+        "confianza": "alta"
+      }
+    },
+    "saldo_comercial": {
+      "estado": "sin_datos",
+      "valor": null,
+      "unidad": "t Li2CO3",
+      "procedencia": {
+        "anio": 2024,
+        "fuente_id": "uncomtrade-ar-litio-urea-2024",
+        "fuente": "UN Comtrade: comercio exterior de Argentina HS 283691 (Carbonato de litio) y HS 310210 (Urea) 2024",
+        "url": "https://comtradeapi.un.org/public/v1/preview/C/A/HS?reporterCode=32&period=2024&partnerCode=0&partner2Code=0&customsCode=C00&motCode=0&cmdCode=283691,310210,281410",
+        "fecha_descarga": "2026-11-24",
+        "hash": "sha256:5cb83c4f87b4b5d4b32c9c2dab6dc317c3525bdb833012d5c2ac2381ab79c67a",
+        "cita_ubicacion": "UN Comtrade AR 2024 cmdCode=283691 flow=X netWgt=47.609.120 kg",
+        "confianza": "alta"
+      }
+    },
+    "procedencia": {
+      "anio": 2024,
+      "fuente_id": "uncomtrade-ar-litio-urea-2024",
+      "fuente": "UN Comtrade: comercio exterior de Argentina HS 283691 (Carbonato de litio) y HS 310210 (Urea) 2024",
+      "url": "https://comtradeapi.un.org/public/v1/preview/C/A/HS?reporterCode=32&period=2024&partnerCode=0&partner2Code=0&customsCode=C00&motCode=0&cmdCode=283691,310210,281410",
+      "fecha_descarga": "2026-11-24",
+      "hash": "sha256:5cb83c4f87b4b5d4b32c9c2dab6dc317c3525bdb833012d5c2ac2381ab79c67a",
+      "cita_ubicacion": "UN Comtrade AR 2024 cmdCode=283691 flow=X netWgt=47.609.120 kg",
+      "confianza": "alta"
+    }
+  },
+  {
+    "registro_id": "comex-litio-2023-usd",
+    "producto_id": "litio",
+    "anio": 2023,
+    "ncm_codigo": "2836.91",
+    "metrica": "valor_usd",
+    "exportacion": {
+      "estado": "dato",
+      "valor": 441.3,
+      "unidad": "millones USD",
+      "procedencia": {
+        "anio": 2023,
+        "fuente_id": "uncomtrade-ar-litio-urea-2023",
+        "fuente": "UN Comtrade: comercio exterior de Argentina HS 283691 (Carbonato de litio) y HS 310210 (Urea) 2023",
+        "url": "https://comtradeapi.un.org/public/v1/preview/C/A/HS?reporterCode=32&period=2023&partnerCode=0&partner2Code=0&customsCode=C00&motCode=0&cmdCode=283691,310210,281410",
+        "fecha_descarga": "2026-11-24",
+        "hash": "sha256:44830ba7da37617022dffd3feecc58bc236e6f1bd860634a19286bff756129c0",
+        "cita_ubicacion": "UN Comtrade AR 2023 cmdCode=283691 flow=X/M primaryValue (USD 441,30 M exp / USD 2,50 M imp)",
+        "confianza": "alta"
+      }
+    },
+    "importacion": {
+      "estado": "dato",
+      "valor": 2.5,
+      "unidad": "millones USD",
+      "procedencia": {
+        "anio": 2023,
+        "fuente_id": "uncomtrade-ar-litio-urea-2023",
+        "fuente": "UN Comtrade: comercio exterior de Argentina HS 283691 (Carbonato de litio) y HS 310210 (Urea) 2023",
+        "url": "https://comtradeapi.un.org/public/v1/preview/C/A/HS?reporterCode=32&period=2023&partnerCode=0&partner2Code=0&customsCode=C00&motCode=0&cmdCode=283691,310210,281410",
+        "fecha_descarga": "2026-11-24",
+        "hash": "sha256:44830ba7da37617022dffd3feecc58bc236e6f1bd860634a19286bff756129c0",
+        "cita_ubicacion": "UN Comtrade AR 2023 cmdCode=283691 flow=X/M primaryValue (USD 441,30 M exp / USD 2,50 M imp)",
+        "confianza": "alta"
+      }
+    },
+    "saldo_comercial": {
+      "estado": "dato",
+      "valor": 438.8,
+      "unidad": "millones USD",
+      "procedencia": {
+        "anio": 2023,
+        "fuente_id": "uncomtrade-ar-litio-urea-2023",
+        "fuente": "UN Comtrade: comercio exterior de Argentina HS 283691 (Carbonato de litio) y HS 310210 (Urea) 2023",
+        "url": "https://comtradeapi.un.org/public/v1/preview/C/A/HS?reporterCode=32&period=2023&partnerCode=0&partner2Code=0&customsCode=C00&motCode=0&cmdCode=283691,310210,281410",
+        "fecha_descarga": "2026-11-24",
+        "hash": "sha256:44830ba7da37617022dffd3feecc58bc236e6f1bd860634a19286bff756129c0",
+        "cita_ubicacion": "UN Comtrade AR 2023 cmdCode=283691 flow=X/M primaryValue (USD 441,30 M exp / USD 2,50 M imp)",
+        "confianza": "alta"
+      }
+    },
+    "procedencia": {
+      "anio": 2023,
+      "fuente_id": "uncomtrade-ar-litio-urea-2023",
+      "fuente": "UN Comtrade: comercio exterior de Argentina HS 283691 (Carbonato de litio) y HS 310210 (Urea) 2023",
+      "url": "https://comtradeapi.un.org/public/v1/preview/C/A/HS?reporterCode=32&period=2023&partnerCode=0&partner2Code=0&customsCode=C00&motCode=0&cmdCode=283691,310210,281410",
+      "fecha_descarga": "2026-11-24",
+      "hash": "sha256:44830ba7da37617022dffd3feecc58bc236e6f1bd860634a19286bff756129c0",
+      "cita_ubicacion": "UN Comtrade AR 2023 cmdCode=283691 flow=X/M primaryValue (USD 441,30 M exp / USD 2,50 M imp)",
+      "confianza": "alta"
+    }
+  },
+  {
+    "registro_id": "comex-litio-2023-t",
+    "producto_id": "litio",
+    "anio": 2023,
+    "ncm_codigo": "2836.91",
+    "metrica": "volumen_t",
+    "exportacion": {
+      "estado": "dato",
+      "valor": 29496.6,
+      "unidad": "t Li2CO3",
+      "procedencia": {
+        "anio": 2023,
+        "fuente_id": "uncomtrade-ar-litio-urea-2023",
+        "fuente": "UN Comtrade: comercio exterior de Argentina HS 283691 (Carbonato de litio) y HS 310210 (Urea) 2023",
+        "url": "https://comtradeapi.un.org/public/v1/preview/C/A/HS?reporterCode=32&period=2023&partnerCode=0&partner2Code=0&customsCode=C00&motCode=0&cmdCode=283691,310210,281410",
+        "fecha_descarga": "2026-11-24",
+        "hash": "sha256:44830ba7da37617022dffd3feecc58bc236e6f1bd860634a19286bff756129c0",
+        "cita_ubicacion": "UN Comtrade AR 2023 cmdCode=283691 flow=X/M netWgt_kg (29.496,6 t exp / 49,2 t imp)",
+        "confianza": "alta"
+      }
+    },
+    "importacion": {
+      "estado": "dato",
+      "valor": 49.2,
+      "unidad": "t Li2CO3",
+      "procedencia": {
+        "anio": 2023,
+        "fuente_id": "uncomtrade-ar-litio-urea-2023",
+        "fuente": "UN Comtrade: comercio exterior de Argentina HS 283691 (Carbonato de litio) y HS 310210 (Urea) 2023",
+        "url": "https://comtradeapi.un.org/public/v1/preview/C/A/HS?reporterCode=32&period=2023&partnerCode=0&partner2Code=0&customsCode=C00&motCode=0&cmdCode=283691,310210,281410",
+        "fecha_descarga": "2026-11-24",
+        "hash": "sha256:44830ba7da37617022dffd3feecc58bc236e6f1bd860634a19286bff756129c0",
+        "cita_ubicacion": "UN Comtrade AR 2023 cmdCode=283691 flow=X/M netWgt_kg (29.496,6 t exp / 49,2 t imp)",
+        "confianza": "alta"
+      }
+    },
+    "saldo_comercial": {
+      "estado": "dato",
+      "valor": 29447.4,
+      "unidad": "t Li2CO3",
+      "procedencia": {
+        "anio": 2023,
+        "fuente_id": "uncomtrade-ar-litio-urea-2023",
+        "fuente": "UN Comtrade: comercio exterior de Argentina HS 283691 (Carbonato de litio) y HS 310210 (Urea) 2023",
+        "url": "https://comtradeapi.un.org/public/v1/preview/C/A/HS?reporterCode=32&period=2023&partnerCode=0&partner2Code=0&customsCode=C00&motCode=0&cmdCode=283691,310210,281410",
+        "fecha_descarga": "2026-11-24",
+        "hash": "sha256:44830ba7da37617022dffd3feecc58bc236e6f1bd860634a19286bff756129c0",
+        "cita_ubicacion": "UN Comtrade AR 2023 cmdCode=283691 flow=X/M netWgt_kg (29.496,6 t exp / 49,2 t imp)",
+        "confianza": "alta"
+      }
+    },
+    "procedencia": {
+      "anio": 2023,
+      "fuente_id": "uncomtrade-ar-litio-urea-2023",
+      "fuente": "UN Comtrade: comercio exterior de Argentina HS 283691 (Carbonato de litio) y HS 310210 (Urea) 2023",
+      "url": "https://comtradeapi.un.org/public/v1/preview/C/A/HS?reporterCode=32&period=2023&partnerCode=0&partner2Code=0&customsCode=C00&motCode=0&cmdCode=283691,310210,281410",
+      "fecha_descarga": "2026-11-24",
+      "hash": "sha256:44830ba7da37617022dffd3feecc58bc236e6f1bd860634a19286bff756129c0",
+      "cita_ubicacion": "UN Comtrade AR 2023 cmdCode=283691 flow=X/M netWgt_kg (29.496,6 t exp / 49,2 t imp)",
+      "confianza": "alta"
+    }
+  },
+  {
+    "registro_id": "comex-urea-310210-2024-usd",
+    "producto_id": "urea",
+    "anio": 2024,
+    "ncm_codigo": "3102.10",
+    "metrica": "valor_usd",
+    "exportacion": {
+      "estado": "sin_datos",
+      "valor": null,
       "unidad": "millones USD",
       "procedencia": {
         "anio": 2024,
-        "fuente_id": "ejemplo-fuente-01",
-        "fuente": "[EJEMPLO] Marcador territorial demostrativo para cadenas MVP pendientes de Etapa 6",
-        "url": "https://example.org/atlas-quimico-ar/mvp-pendiente",
+        "fuente_id": "uncomtrade-ar-litio-urea-2024",
+        "fuente": "UN Comtrade: comercio exterior de Argentina HS 283691 (Carbonato de litio) y HS 310210 (Urea) 2024",
+        "url": "https://comtradeapi.un.org/public/v1/preview/C/A/HS?reporterCode=32&period=2024&partnerCode=0&partner2Code=0&customsCode=C00&motCode=0&cmdCode=283691,310210,281410",
         "fecha_descarga": "2026-11-24",
-        "hash": "sha256:e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
-        "cita_ubicacion": "plan-mvp:pendiente-etapa-6",
-        "confianza": "ejemplo"
+        "hash": "sha256:5cb83c4f87b4b5d4b32c9c2dab6dc317c3525bdb833012d5c2ac2381ab79c67a",
+        "cita_ubicacion": "UN Comtrade AR 2024 cmdCode=310210 flow=M primaryValue=405.530.807,55 USD",
+        "confianza": "alta"
+      }
+    },
+    "importacion": {
+      "estado": "dato",
+      "valor": 405.53,
+      "unidad": "millones USD",
+      "procedencia": {
+        "anio": 2024,
+        "fuente_id": "uncomtrade-ar-litio-urea-2024",
+        "fuente": "UN Comtrade: comercio exterior de Argentina HS 283691 (Carbonato de litio) y HS 310210 (Urea) 2024",
+        "url": "https://comtradeapi.un.org/public/v1/preview/C/A/HS?reporterCode=32&period=2024&partnerCode=0&partner2Code=0&customsCode=C00&motCode=0&cmdCode=283691,310210,281410",
+        "fecha_descarga": "2026-11-24",
+        "hash": "sha256:5cb83c4f87b4b5d4b32c9c2dab6dc317c3525bdb833012d5c2ac2381ab79c67a",
+        "cita_ubicacion": "UN Comtrade AR 2024 cmdCode=310210 flow=M primaryValue=405.530.807,55 USD",
+        "confianza": "alta"
       }
     },
     "saldo_comercial": {
@@ -661,24 +909,148 @@
       "unidad": "millones USD",
       "procedencia": {
         "anio": 2024,
-        "fuente_id": "ejemplo-fuente-01",
-        "fuente": "[EJEMPLO] Marcador territorial demostrativo para cadenas MVP pendientes de Etapa 6",
-        "url": "https://example.org/atlas-quimico-ar/mvp-pendiente",
+        "fuente_id": "uncomtrade-ar-litio-urea-2024",
+        "fuente": "UN Comtrade: comercio exterior de Argentina HS 283691 (Carbonato de litio) y HS 310210 (Urea) 2024",
+        "url": "https://comtradeapi.un.org/public/v1/preview/C/A/HS?reporterCode=32&period=2024&partnerCode=0&partner2Code=0&customsCode=C00&motCode=0&cmdCode=283691,310210,281410",
         "fecha_descarga": "2026-11-24",
-        "hash": "sha256:e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
-        "cita_ubicacion": "plan-mvp:pendiente-etapa-6",
-        "confianza": "ejemplo"
+        "hash": "sha256:5cb83c4f87b4b5d4b32c9c2dab6dc317c3525bdb833012d5c2ac2381ab79c67a",
+        "cita_ubicacion": "UN Comtrade AR 2024 cmdCode=310210 flow=M primaryValue=405.530.807,55 USD",
+        "confianza": "alta"
       }
     },
     "procedencia": {
       "anio": 2024,
-      "fuente_id": "ejemplo-fuente-01",
-      "fuente": "[EJEMPLO] Marcador territorial demostrativo para cadenas MVP pendientes de Etapa 6",
-      "url": "https://example.org/atlas-quimico-ar/mvp-pendiente",
+      "fuente_id": "uncomtrade-ar-litio-urea-2024",
+      "fuente": "UN Comtrade: comercio exterior de Argentina HS 283691 (Carbonato de litio) y HS 310210 (Urea) 2024",
+      "url": "https://comtradeapi.un.org/public/v1/preview/C/A/HS?reporterCode=32&period=2024&partnerCode=0&partner2Code=0&customsCode=C00&motCode=0&cmdCode=283691,310210,281410",
       "fecha_descarga": "2026-11-24",
-      "hash": "sha256:e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
-      "cita_ubicacion": "plan-mvp:pendiente-etapa-6",
-      "confianza": "ejemplo"
+      "hash": "sha256:5cb83c4f87b4b5d4b32c9c2dab6dc317c3525bdb833012d5c2ac2381ab79c67a",
+      "cita_ubicacion": "UN Comtrade AR 2024 cmdCode=310210 flow=M primaryValue=405.530.807,55 USD",
+      "confianza": "alta"
+    }
+  },
+  {
+    "registro_id": "comex-urea-310210-2023-usd",
+    "producto_id": "urea",
+    "anio": 2023,
+    "ncm_codigo": "3102.10",
+    "metrica": "valor_usd",
+    "exportacion": {
+      "estado": "dato",
+      "valor": 0.61,
+      "unidad": "millones USD",
+      "procedencia": {
+        "anio": 2023,
+        "fuente_id": "uncomtrade-ar-litio-urea-2023",
+        "fuente": "UN Comtrade: comercio exterior de Argentina HS 283691 (Carbonato de litio) y HS 310210 (Urea) 2023",
+        "url": "https://comtradeapi.un.org/public/v1/preview/C/A/HS?reporterCode=32&period=2023&partnerCode=0&partner2Code=0&customsCode=C00&motCode=0&cmdCode=283691,310210,281410",
+        "fecha_descarga": "2026-11-24",
+        "hash": "sha256:44830ba7da37617022dffd3feecc58bc236e6f1bd860634a19286bff756129c0",
+        "cita_ubicacion": "UN Comtrade AR 2023 cmdCode=310210 flow=X/M primaryValue (USD 0,61 M exp / USD 339,65 M imp)",
+        "confianza": "alta"
+      }
+    },
+    "importacion": {
+      "estado": "dato",
+      "valor": 339.65,
+      "unidad": "millones USD",
+      "procedencia": {
+        "anio": 2023,
+        "fuente_id": "uncomtrade-ar-litio-urea-2023",
+        "fuente": "UN Comtrade: comercio exterior de Argentina HS 283691 (Carbonato de litio) y HS 310210 (Urea) 2023",
+        "url": "https://comtradeapi.un.org/public/v1/preview/C/A/HS?reporterCode=32&period=2023&partnerCode=0&partner2Code=0&customsCode=C00&motCode=0&cmdCode=283691,310210,281410",
+        "fecha_descarga": "2026-11-24",
+        "hash": "sha256:44830ba7da37617022dffd3feecc58bc236e6f1bd860634a19286bff756129c0",
+        "cita_ubicacion": "UN Comtrade AR 2023 cmdCode=310210 flow=X/M primaryValue (USD 0,61 M exp / USD 339,65 M imp)",
+        "confianza": "alta"
+      }
+    },
+    "saldo_comercial": {
+      "estado": "dato",
+      "valor": -339.04,
+      "unidad": "millones USD",
+      "procedencia": {
+        "anio": 2023,
+        "fuente_id": "uncomtrade-ar-litio-urea-2023",
+        "fuente": "UN Comtrade: comercio exterior de Argentina HS 283691 (Carbonato de litio) y HS 310210 (Urea) 2023",
+        "url": "https://comtradeapi.un.org/public/v1/preview/C/A/HS?reporterCode=32&period=2023&partnerCode=0&partner2Code=0&customsCode=C00&motCode=0&cmdCode=283691,310210,281410",
+        "fecha_descarga": "2026-11-24",
+        "hash": "sha256:44830ba7da37617022dffd3feecc58bc236e6f1bd860634a19286bff756129c0",
+        "cita_ubicacion": "UN Comtrade AR 2023 cmdCode=310210 flow=X/M primaryValue (USD 0,61 M exp / USD 339,65 M imp)",
+        "confianza": "alta"
+      }
+    },
+    "procedencia": {
+      "anio": 2023,
+      "fuente_id": "uncomtrade-ar-litio-urea-2023",
+      "fuente": "UN Comtrade: comercio exterior de Argentina HS 283691 (Carbonato de litio) y HS 310210 (Urea) 2023",
+      "url": "https://comtradeapi.un.org/public/v1/preview/C/A/HS?reporterCode=32&period=2023&partnerCode=0&partner2Code=0&customsCode=C00&motCode=0&cmdCode=283691,310210,281410",
+      "fecha_descarga": "2026-11-24",
+      "hash": "sha256:44830ba7da37617022dffd3feecc58bc236e6f1bd860634a19286bff756129c0",
+      "cita_ubicacion": "UN Comtrade AR 2023 cmdCode=310210 flow=X/M primaryValue (USD 0,61 M exp / USD 339,65 M imp)",
+      "confianza": "alta"
+    }
+  },
+  {
+    "registro_id": "comex-urea-310210-2023-t",
+    "producto_id": "urea",
+    "anio": 2023,
+    "ncm_codigo": "3102.10",
+    "metrica": "volumen_t",
+    "exportacion": {
+      "estado": "dato",
+      "valor": 1280.5,
+      "unidad": "t urea",
+      "procedencia": {
+        "anio": 2023,
+        "fuente_id": "uncomtrade-ar-litio-urea-2023",
+        "fuente": "UN Comtrade: comercio exterior de Argentina HS 283691 (Carbonato de litio) y HS 310210 (Urea) 2023",
+        "url": "https://comtradeapi.un.org/public/v1/preview/C/A/HS?reporterCode=32&period=2023&partnerCode=0&partner2Code=0&customsCode=C00&motCode=0&cmdCode=283691,310210,281410",
+        "fecha_descarga": "2026-11-24",
+        "hash": "sha256:44830ba7da37617022dffd3feecc58bc236e6f1bd860634a19286bff756129c0",
+        "cita_ubicacion": "UN Comtrade AR 2023 cmdCode=310210 flow=X netWgt=1.280.500 kg (imp volumen sin_datos)",
+        "confianza": "alta"
+      }
+    },
+    "importacion": {
+      "estado": "sin_datos",
+      "valor": null,
+      "unidad": "t urea",
+      "procedencia": {
+        "anio": 2023,
+        "fuente_id": "uncomtrade-ar-litio-urea-2023",
+        "fuente": "UN Comtrade: comercio exterior de Argentina HS 283691 (Carbonato de litio) y HS 310210 (Urea) 2023",
+        "url": "https://comtradeapi.un.org/public/v1/preview/C/A/HS?reporterCode=32&period=2023&partnerCode=0&partner2Code=0&customsCode=C00&motCode=0&cmdCode=283691,310210,281410",
+        "fecha_descarga": "2026-11-24",
+        "hash": "sha256:44830ba7da37617022dffd3feecc58bc236e6f1bd860634a19286bff756129c0",
+        "cita_ubicacion": "UN Comtrade AR 2023 cmdCode=310210 flow=X netWgt=1.280.500 kg (imp volumen sin_datos)",
+        "confianza": "alta"
+      }
+    },
+    "saldo_comercial": {
+      "estado": "sin_datos",
+      "valor": null,
+      "unidad": "t urea",
+      "procedencia": {
+        "anio": 2023,
+        "fuente_id": "uncomtrade-ar-litio-urea-2023",
+        "fuente": "UN Comtrade: comercio exterior de Argentina HS 283691 (Carbonato de litio) y HS 310210 (Urea) 2023",
+        "url": "https://comtradeapi.un.org/public/v1/preview/C/A/HS?reporterCode=32&period=2023&partnerCode=0&partner2Code=0&customsCode=C00&motCode=0&cmdCode=283691,310210,281410",
+        "fecha_descarga": "2026-11-24",
+        "hash": "sha256:44830ba7da37617022dffd3feecc58bc236e6f1bd860634a19286bff756129c0",
+        "cita_ubicacion": "UN Comtrade AR 2023 cmdCode=310210 flow=X netWgt=1.280.500 kg (imp volumen sin_datos)",
+        "confianza": "alta"
+      }
+    },
+    "procedencia": {
+      "anio": 2023,
+      "fuente_id": "uncomtrade-ar-litio-urea-2023",
+      "fuente": "UN Comtrade: comercio exterior de Argentina HS 283691 (Carbonato de litio) y HS 310210 (Urea) 2023",
+      "url": "https://comtradeapi.un.org/public/v1/preview/C/A/HS?reporterCode=32&period=2023&partnerCode=0&partner2Code=0&customsCode=C00&motCode=0&cmdCode=283691,310210,281410",
+      "fecha_descarga": "2026-11-24",
+      "hash": "sha256:44830ba7da37617022dffd3feecc58bc236e6f1bd860634a19286bff756129c0",
+      "cita_ubicacion": "UN Comtrade AR 2023 cmdCode=310210 flow=X netWgt=1.280.500 kg (imp volumen sin_datos)",
+      "confianza": "alta"
     }
   }
 ]

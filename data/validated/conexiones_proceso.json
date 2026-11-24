@@ -229,5 +229,368 @@
       "cita_ubicacion": "Memoria 2025 pág. 3 (445.327 t aluminio líquido a fundición)",
       "confianza": "alta"
     }
+  },
+  {
+    "conexion_id": "li-c1-pozo-a-piletas",
+    "proceso_id": "litio-salmuera-carbonatacion",
+    "origen_paso_id": "li-p1-bombeo-salmuera",
+    "destino_paso_id": "li-p2-evaporacion-solar",
+    "corriente_nombre": "Salmuera cruda de salar",
+    "tipo_corriente": "principal",
+    "flujo": {
+      "estado": "sin_datos",
+      "valor": null,
+      "unidad": "m3/t LCE",
+      "procedencia": {
+        "anio": 2026,
+        "fuente_id": "riotinto-olaroz-2026",
+        "fuente": "Ficha oficial de operación Olaroz (Jujuy)",
+        "url": "https://www.riotinto.com/en/operations/south-america/olaroz",
+        "fecha_descarga": "2026-11-24",
+        "hash": "sha256:af95dbcdee6cf821222e0bee00681f65512903c7271cb576e0a0c6b5ae7a13a0",
+        "cita_ubicacion": "riotinto.com/en/operations/south-america/olaroz y USGS MCS 2025 pág. 110",
+        "confianza": "alta"
+      }
+    },
+    "procedencia": {
+      "anio": 2026,
+      "fuente_id": "riotinto-olaroz-2026",
+      "fuente": "Ficha oficial de operación Olaroz (Jujuy)",
+      "url": "https://www.riotinto.com/en/operations/south-america/olaroz",
+      "fecha_descarga": "2026-11-24",
+      "hash": "sha256:af95dbcdee6cf821222e0bee00681f65512903c7271cb576e0a0c6b5ae7a13a0",
+      "cita_ubicacion": "riotinto.com/en/operations/south-america/olaroz y USGS MCS 2025 pág. 110",
+      "confianza": "alta"
+    }
+  },
+  {
+    "conexion_id": "li-c2-piletas-a-purificacion",
+    "proceso_id": "litio-salmuera-carbonatacion",
+    "origen_paso_id": "li-p2-evaporacion-solar",
+    "destino_paso_id": "li-p3-purificacion",
+    "corriente_nombre": "Salmuera concentrada en LiCl",
+    "tipo_corriente": "principal",
+    "flujo": {
+      "estado": "dato",
+      "valor": 1.25,
+      "unidad": "t/t LCE",
+      "procedencia": {
+        "anio": 2026,
+        "fuente_id": "riotinto-olaroz-2026",
+        "fuente": "Ficha oficial de operación Olaroz (Jujuy)",
+        "url": "https://www.riotinto.com/en/operations/south-america/olaroz",
+        "fecha_descarga": "2026-11-24",
+        "hash": "sha256:af95dbcdee6cf821222e0bee00681f65512903c7271cb576e0a0c6b5ae7a13a0",
+        "cita_ubicacion": "riotinto.com/en/operations/south-america/olaroz y USGS MCS 2025 pág. 110",
+        "confianza": "alta"
+      }
+    },
+    "procedencia": {
+      "anio": 2026,
+      "fuente_id": "riotinto-olaroz-2026",
+      "fuente": "Ficha oficial de operación Olaroz (Jujuy)",
+      "url": "https://www.riotinto.com/en/operations/south-america/olaroz",
+      "fecha_descarga": "2026-11-24",
+      "hash": "sha256:af95dbcdee6cf821222e0bee00681f65512903c7271cb576e0a0c6b5ae7a13a0",
+      "cita_ubicacion": "riotinto.com/en/operations/south-america/olaroz y USGS MCS 2025 pág. 110",
+      "confianza": "alta"
+    }
+  },
+  {
+    "conexion_id": "li-c3-purificacion-a-carbonatacion",
+    "proceso_id": "litio-salmuera-carbonatacion",
+    "origen_paso_id": "li-p3-purificacion",
+    "destino_paso_id": "li-p4-carbonatacion",
+    "corriente_nombre": "LiCl purificado",
+    "tipo_corriente": "principal",
+    "flujo": {
+      "estado": "dato",
+      "valor": 1.25,
+      "unidad": "t/t LCE",
+      "procedencia": {
+        "anio": 2026,
+        "fuente_id": "riotinto-olaroz-2026",
+        "fuente": "Ficha oficial de operación Olaroz (Jujuy)",
+        "url": "https://www.riotinto.com/en/operations/south-america/olaroz",
+        "fecha_descarga": "2026-11-24",
+        "hash": "sha256:af95dbcdee6cf821222e0bee00681f65512903c7271cb576e0a0c6b5ae7a13a0",
+        "cita_ubicacion": "riotinto.com/en/operations/south-america/olaroz y USGS MCS 2025 pág. 110",
+        "confianza": "alta"
+      }
+    },
+    "procedencia": {
+      "anio": 2026,
+      "fuente_id": "riotinto-olaroz-2026",
+      "fuente": "Ficha oficial de operación Olaroz (Jujuy)",
+      "url": "https://www.riotinto.com/en/operations/south-america/olaroz",
+      "fecha_descarga": "2026-11-24",
+      "hash": "sha256:af95dbcdee6cf821222e0bee00681f65512903c7271cb576e0a0c6b5ae7a13a0",
+      "cita_ubicacion": "riotinto.com/en/operations/south-america/olaroz y USGS MCS 2025 pág. 110",
+      "confianza": "alta"
+    }
+  },
+  {
+    "conexion_id": "li-c4-carbonatacion-a-secado",
+    "proceso_id": "litio-salmuera-carbonatacion",
+    "origen_paso_id": "li-p4-carbonatacion",
+    "destino_paso_id": "li-p5-secado-grado-bateria",
+    "corriente_nombre": "Li2CO3 precipitado",
+    "tipo_corriente": "principal",
+    "flujo": {
+      "estado": "dato",
+      "valor": 1,
+      "unidad": "t/t LCE",
+      "procedencia": {
+        "anio": 2026,
+        "fuente_id": "riotinto-olaroz-2026",
+        "fuente": "Ficha oficial de operación Olaroz (Jujuy)",
+        "url": "https://www.riotinto.com/en/operations/south-america/olaroz",
+        "fecha_descarga": "2026-11-24",
+        "hash": "sha256:af95dbcdee6cf821222e0bee00681f65512903c7271cb576e0a0c6b5ae7a13a0",
+        "cita_ubicacion": "riotinto.com/en/operations/south-america/olaroz y USGS MCS 2025 pág. 110",
+        "confianza": "alta"
+      }
+    },
+    "procedencia": {
+      "anio": 2026,
+      "fuente_id": "riotinto-olaroz-2026",
+      "fuente": "Ficha oficial de operación Olaroz (Jujuy)",
+      "url": "https://www.riotinto.com/en/operations/south-america/olaroz",
+      "fecha_descarga": "2026-11-24",
+      "hash": "sha256:af95dbcdee6cf821222e0bee00681f65512903c7271cb576e0a0c6b5ae7a13a0",
+      "cita_ubicacion": "riotinto.com/en/operations/south-america/olaroz y USGS MCS 2025 pág. 110",
+      "confianza": "alta"
+    }
+  },
+  {
+    "conexion_id": "li-c5-reciclo-lavado",
+    "proceso_id": "litio-salmuera-carbonatacion",
+    "origen_paso_id": "li-p5-secado-grado-bateria",
+    "destino_paso_id": "li-p4-carbonatacion",
+    "corriente_nombre": "Licor de lavado con litio residual",
+    "tipo_corriente": "reciclo",
+    "flujo": {
+      "estado": "sin_datos",
+      "valor": null,
+      "unidad": "m3/t LCE",
+      "procedencia": {
+        "anio": 2026,
+        "fuente_id": "riotinto-olaroz-2026",
+        "fuente": "Ficha oficial de operación Olaroz (Jujuy)",
+        "url": "https://www.riotinto.com/en/operations/south-america/olaroz",
+        "fecha_descarga": "2026-11-24",
+        "hash": "sha256:af95dbcdee6cf821222e0bee00681f65512903c7271cb576e0a0c6b5ae7a13a0",
+        "cita_ubicacion": "riotinto.com/en/operations/south-america/olaroz y USGS MCS 2025 pág. 110",
+        "confianza": "alta"
+      }
+    },
+    "procedencia": {
+      "anio": 2026,
+      "fuente_id": "riotinto-olaroz-2026",
+      "fuente": "Ficha oficial de operación Olaroz (Jujuy)",
+      "url": "https://www.riotinto.com/en/operations/south-america/olaroz",
+      "fecha_descarga": "2026-11-24",
+      "hash": "sha256:af95dbcdee6cf821222e0bee00681f65512903c7271cb576e0a0c6b5ae7a13a0",
+      "cita_ubicacion": "riotinto.com/en/operations/south-america/olaroz y USGS MCS 2025 pág. 110",
+      "confianza": "alta"
+    }
+  },
+  {
+    "conexion_id": "ur-c1-gas-a-reformado",
+    "proceso_id": "urea-haber-bosch-sintesis",
+    "origen_paso_id": "ur-p1-gas-desulfuracion",
+    "destino_paso_id": "ur-p2-reformado-shift",
+    "corriente_nombre": "Gas natural desulfurado (CH4)",
+    "tipo_corriente": "principal",
+    "flujo": {
+      "estado": "dato",
+      "valor": 0.25,
+      "unidad": "t/t urea",
+      "procedencia": {
+        "anio": 2006,
+        "fuente_id": "ipcc-2006-v3-ch3-amoniaco-urea",
+        "fuente": "2006 IPCC Guidelines for National Greenhouse Gas Inventories (Vol. 3, Cap. 3.2 Ammonia y Box 3.3 Urea)",
+        "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/pdf/3_Volume3/V3_3_Ch3_Chemical_Industry.pdf",
+        "fecha_descarga": "2026-11-24",
+        "hash": "sha256:f25c2817eecdae6a1f930b342eb09b2d8a6065b12bfce632502a01e1a61bbaa2",
+        "cita_ubicacion": "IPCC 2006 Vol. 3 Cap. 3.2 pág. 3.11 y Table 3.1 pág. 3.15 (30,2 GJ/t NH3)",
+        "confianza": "alta"
+      }
+    },
+    "procedencia": {
+      "anio": 2006,
+      "fuente_id": "ipcc-2006-v3-ch3-amoniaco-urea",
+      "fuente": "2006 IPCC Guidelines for National Greenhouse Gas Inventories (Vol. 3, Cap. 3.2 Ammonia y Box 3.3 Urea)",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/pdf/3_Volume3/V3_3_Ch3_Chemical_Industry.pdf",
+      "fecha_descarga": "2026-11-24",
+      "hash": "sha256:f25c2817eecdae6a1f930b342eb09b2d8a6065b12bfce632502a01e1a61bbaa2",
+      "cita_ubicacion": "IPCC 2006 Vol. 3 Cap. 3.2 pág. 3.11 y Table 3.1 pág. 3.15 (30,2 GJ/t NH3)",
+      "confianza": "alta"
+    }
+  },
+  {
+    "conexion_id": "ur-c2-reformado-a-hb",
+    "proceso_id": "urea-haber-bosch-sintesis",
+    "origen_paso_id": "ur-p2-reformado-shift",
+    "destino_paso_id": "ur-p3-haber-bosch",
+    "corriente_nombre": "Hidrógeno de síntesis (H2)",
+    "tipo_corriente": "principal",
+    "flujo": {
+      "estado": "dato",
+      "valor": 0.11,
+      "unidad": "t/t urea",
+      "procedencia": {
+        "anio": 2006,
+        "fuente_id": "ipcc-2006-v3-ch3-amoniaco-urea",
+        "fuente": "2006 IPCC Guidelines for National Greenhouse Gas Inventories (Vol. 3, Cap. 3.2 Ammonia y Box 3.3 Urea)",
+        "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/pdf/3_Volume3/V3_3_Ch3_Chemical_Industry.pdf",
+        "fecha_descarga": "2026-11-24",
+        "hash": "sha256:f25c2817eecdae6a1f930b342eb09b2d8a6065b12bfce632502a01e1a61bbaa2",
+        "cita_ubicacion": "IPCC 2006 Vol. 3 Cap. 3.2 pág. 3.11 y Table 3.1 pág. 3.15 (30,2 GJ/t NH3)",
+        "confianza": "alta"
+      }
+    },
+    "procedencia": {
+      "anio": 2006,
+      "fuente_id": "ipcc-2006-v3-ch3-amoniaco-urea",
+      "fuente": "2006 IPCC Guidelines for National Greenhouse Gas Inventories (Vol. 3, Cap. 3.2 Ammonia y Box 3.3 Urea)",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/pdf/3_Volume3/V3_3_Ch3_Chemical_Industry.pdf",
+      "fecha_descarga": "2026-11-24",
+      "hash": "sha256:f25c2817eecdae6a1f930b342eb09b2d8a6065b12bfce632502a01e1a61bbaa2",
+      "cita_ubicacion": "IPCC 2006 Vol. 3 Cap. 3.2 pág. 3.11 y Table 3.1 pág. 3.15 (30,2 GJ/t NH3)",
+      "confianza": "alta"
+    }
+  },
+  {
+    "conexion_id": "ur-c3-co2-a-urea",
+    "proceso_id": "urea-haber-bosch-sintesis",
+    "origen_paso_id": "ur-p2-reformado-shift",
+    "destino_paso_id": "ur-p4-sintesis-urea",
+    "corriente_nombre": "CO2 recuperado del reformado",
+    "tipo_corriente": "insumo",
+    "flujo": {
+      "estado": "dato",
+      "valor": 0.745,
+      "unidad": "t/t urea",
+      "procedencia": {
+        "anio": 2006,
+        "fuente_id": "ipcc-2006-v3-ch3-amoniaco-urea",
+        "fuente": "2006 IPCC Guidelines for National Greenhouse Gas Inventories (Vol. 3, Cap. 3.2 Ammonia y Box 3.3 Urea)",
+        "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/pdf/3_Volume3/V3_3_Ch3_Chemical_Industry.pdf",
+        "fecha_descarga": "2026-11-24",
+        "hash": "sha256:f25c2817eecdae6a1f930b342eb09b2d8a6065b12bfce632502a01e1a61bbaa2",
+        "cita_ubicacion": "IPCC 2006 Vol. 3 Cap. 3.2 Box 3.3 pág. 3.16 (2 NH3 + CO2 -> CO(NH2)2 + H2O; 0,733 t CO2/t urea)",
+        "confianza": "alta"
+      }
+    },
+    "procedencia": {
+      "anio": 2006,
+      "fuente_id": "ipcc-2006-v3-ch3-amoniaco-urea",
+      "fuente": "2006 IPCC Guidelines for National Greenhouse Gas Inventories (Vol. 3, Cap. 3.2 Ammonia y Box 3.3 Urea)",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/pdf/3_Volume3/V3_3_Ch3_Chemical_Industry.pdf",
+      "fecha_descarga": "2026-11-24",
+      "hash": "sha256:f25c2817eecdae6a1f930b342eb09b2d8a6065b12bfce632502a01e1a61bbaa2",
+      "cita_ubicacion": "IPCC 2006 Vol. 3 Cap. 3.2 Box 3.3 pág. 3.16 (2 NH3 + CO2 -> CO(NH2)2 + H2O; 0,733 t CO2/t urea)",
+      "confianza": "alta"
+    }
+  },
+  {
+    "conexion_id": "ur-c4-nh3-a-urea",
+    "proceso_id": "urea-haber-bosch-sintesis",
+    "origen_paso_id": "ur-p3-haber-bosch",
+    "destino_paso_id": "ur-p4-sintesis-urea",
+    "corriente_nombre": "Amoníaco anhidro (NH3)",
+    "tipo_corriente": "principal",
+    "flujo": {
+      "estado": "dato",
+      "valor": 0.578,
+      "unidad": "t/t urea",
+      "procedencia": {
+        "anio": 2025,
+        "fuente_id": "profertil-eecc-2025",
+        "fuente": "Memoria y Estados Financieros al 31 de diciembre de 2025 (Profertil S.A.)",
+        "url": "https://www.profertil.com.ar/wp-content/uploads/2021/04/EECC-31-12-25.pdf",
+        "fecha_descarga": "2026-11-24",
+        "hash": "sha256:d7bf53b4394beebd03259645c41196aaa27ce657ded8cfc71fc1f007f34843f3",
+        "cita_ubicacion": "EECC-31-12-25.pdf pág. 4, 6, 78-79 y 88 (Memoria y Reseña Informativa)",
+        "confianza": "alta"
+      }
+    },
+    "procedencia": {
+      "anio": 2025,
+      "fuente_id": "profertil-eecc-2025",
+      "fuente": "Memoria y Estados Financieros al 31 de diciembre de 2025 (Profertil S.A.)",
+      "url": "https://www.profertil.com.ar/wp-content/uploads/2021/04/EECC-31-12-25.pdf",
+      "fecha_descarga": "2026-11-24",
+      "hash": "sha256:d7bf53b4394beebd03259645c41196aaa27ce657ded8cfc71fc1f007f34843f3",
+      "cita_ubicacion": "EECC-31-12-25.pdf pág. 4, 6, 78-79 y 88 (Memoria y Reseña Informativa)",
+      "confianza": "alta"
+    }
+  },
+  {
+    "conexion_id": "ur-c5-urea-a-granulacion",
+    "proceso_id": "urea-haber-bosch-sintesis",
+    "origen_paso_id": "ur-p4-sintesis-urea",
+    "destino_paso_id": "ur-p5-granulacion-despacho",
+    "corriente_nombre": "Solución de urea (CO(NH2)2)",
+    "tipo_corriente": "principal",
+    "flujo": {
+      "estado": "dato",
+      "valor": 1,
+      "unidad": "t/t urea",
+      "procedencia": {
+        "anio": 2006,
+        "fuente_id": "ipcc-2006-v3-ch3-amoniaco-urea",
+        "fuente": "2006 IPCC Guidelines for National Greenhouse Gas Inventories (Vol. 3, Cap. 3.2 Ammonia y Box 3.3 Urea)",
+        "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/pdf/3_Volume3/V3_3_Ch3_Chemical_Industry.pdf",
+        "fecha_descarga": "2026-11-24",
+        "hash": "sha256:f25c2817eecdae6a1f930b342eb09b2d8a6065b12bfce632502a01e1a61bbaa2",
+        "cita_ubicacion": "IPCC 2006 Vol. 3 Cap. 3.2 Box 3.3 pág. 3.16 (2 NH3 + CO2 -> CO(NH2)2 + H2O; 0,733 t CO2/t urea)",
+        "confianza": "alta"
+      }
+    },
+    "procedencia": {
+      "anio": 2006,
+      "fuente_id": "ipcc-2006-v3-ch3-amoniaco-urea",
+      "fuente": "2006 IPCC Guidelines for National Greenhouse Gas Inventories (Vol. 3, Cap. 3.2 Ammonia y Box 3.3 Urea)",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/pdf/3_Volume3/V3_3_Ch3_Chemical_Industry.pdf",
+      "fecha_descarga": "2026-11-24",
+      "hash": "sha256:f25c2817eecdae6a1f930b342eb09b2d8a6065b12bfce632502a01e1a61bbaa2",
+      "cita_ubicacion": "IPCC 2006 Vol. 3 Cap. 3.2 Box 3.3 pág. 3.16 (2 NH3 + CO2 -> CO(NH2)2 + H2O; 0,733 t CO2/t urea)",
+      "confianza": "alta"
+    }
+  },
+  {
+    "conexion_id": "ur-c6-reciclo-carbamato",
+    "proceso_id": "urea-haber-bosch-sintesis",
+    "origen_paso_id": "ur-p5-granulacion-despacho",
+    "destino_paso_id": "ur-p4-sintesis-urea",
+    "corriente_nombre": "NH3/CO2 recuperados de condensados",
+    "tipo_corriente": "reciclo",
+    "flujo": {
+      "estado": "sin_datos",
+      "valor": null,
+      "unidad": "t/t urea",
+      "procedencia": {
+        "anio": 2006,
+        "fuente_id": "ipcc-2006-v3-ch3-amoniaco-urea",
+        "fuente": "2006 IPCC Guidelines for National Greenhouse Gas Inventories (Vol. 3, Cap. 3.2 Ammonia y Box 3.3 Urea)",
+        "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/pdf/3_Volume3/V3_3_Ch3_Chemical_Industry.pdf",
+        "fecha_descarga": "2026-11-24",
+        "hash": "sha256:f25c2817eecdae6a1f930b342eb09b2d8a6065b12bfce632502a01e1a61bbaa2",
+        "cita_ubicacion": "IPCC 2006 Vol. 3 Cap. 3.2 Box 3.3 pág. 3.16 (2 NH3 + CO2 -> CO(NH2)2 + H2O; 0,733 t CO2/t urea)",
+        "confianza": "alta"
+      }
+    },
+    "procedencia": {
+      "anio": 2006,
+      "fuente_id": "ipcc-2006-v3-ch3-amoniaco-urea",
+      "fuente": "2006 IPCC Guidelines for National Greenhouse Gas Inventories (Vol. 3, Cap. 3.2 Ammonia y Box 3.3 Urea)",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/pdf/3_Volume3/V3_3_Ch3_Chemical_Industry.pdf",
+      "fecha_descarga": "2026-11-24",
+      "hash": "sha256:f25c2817eecdae6a1f930b342eb09b2d8a6065b12bfce632502a01e1a61bbaa2",
+      "cita_ubicacion": "IPCC 2006 Vol. 3 Cap. 3.2 Box 3.3 pág. 3.16 (2 NH3 + CO2 -> CO(NH2)2 + H2O; 0,733 t CO2/t urea)",
+      "confianza": "alta"
+    }
   }
 ]

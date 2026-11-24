@@ -160,29 +160,184 @@
     "provincia_id": null,
     "anio": 2024,
     "medicion": {
-      "estado": "sin_datos",
-      "valor": null,
-      "unidad": "t LCE",
+      "estado": "dato",
+      "valor": 18000,
+      "unidad": "t Li contenido (est. USGS)",
       "procedencia": {
         "anio": 2024,
-        "fuente_id": "ejemplo-fuente-01",
-        "fuente": "[EJEMPLO] Marcador territorial demostrativo para cadenas MVP pendientes de Etapa 6",
-        "url": "https://example.org/atlas-quimico-ar/mvp-pendiente",
+        "fuente_id": "usgs-mcs-2025-litio",
+        "fuente": "Mineral Commodity Summaries 2025: Lithium",
+        "url": "https://pubs.usgs.gov/periodicals/mcs2025/mcs2025-lithium.pdf",
         "fecha_descarga": "2026-11-24",
-        "hash": "sha256:e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
-        "cita_ubicacion": "plan-mvp:pendiente-etapa-6",
-        "confianza": "ejemplo"
+        "hash": "sha256:7ec5654133aa5ef64fcfd6d4d23ac64a58f06f51bf1231576ebd8f595ad9257b",
+        "cita_ubicacion": "mcs2025-lithium.pdf pág. 111 tabla World Mine Production (Argentina 2024e: 18.000 t Li)",
+        "confianza": "media"
       }
     },
     "procedencia": {
       "anio": 2024,
-      "fuente_id": "ejemplo-fuente-01",
-      "fuente": "[EJEMPLO] Marcador territorial demostrativo para cadenas MVP pendientes de Etapa 6",
-      "url": "https://example.org/atlas-quimico-ar/mvp-pendiente",
+      "fuente_id": "usgs-mcs-2025-litio",
+      "fuente": "Mineral Commodity Summaries 2025: Lithium",
+      "url": "https://pubs.usgs.gov/periodicals/mcs2025/mcs2025-lithium.pdf",
       "fecha_descarga": "2026-11-24",
-      "hash": "sha256:e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
-      "cita_ubicacion": "plan-mvp:pendiente-etapa-6",
-      "confianza": "ejemplo"
+      "hash": "sha256:7ec5654133aa5ef64fcfd6d4d23ac64a58f06f51bf1231576ebd8f595ad9257b",
+      "cita_ubicacion": "mcs2025-lithium.pdf pág. 111 tabla World Mine Production (Argentina 2024e: 18.000 t Li)",
+      "confianza": "media"
+    }
+  },
+  {
+    "registro_id": "prod-litio-nac-2023",
+    "producto_id": "litio",
+    "provincia_id": null,
+    "anio": 2023,
+    "medicion": {
+      "estado": "dato",
+      "valor": 8630,
+      "unidad": "t Li contenido",
+      "procedencia": {
+        "anio": 2023,
+        "fuente_id": "usgs-mcs-2025-litio",
+        "fuente": "Mineral Commodity Summaries 2025: Lithium",
+        "url": "https://pubs.usgs.gov/periodicals/mcs2025/mcs2025-lithium.pdf",
+        "fecha_descarga": "2026-11-24",
+        "hash": "sha256:7ec5654133aa5ef64fcfd6d4d23ac64a58f06f51bf1231576ebd8f595ad9257b",
+        "cita_ubicacion": "mcs2025-lithium.pdf pág. 111 tabla World Mine Production (Argentina 2023: 8.630 t Li)",
+        "confianza": "alta"
+      }
+    },
+    "procedencia": {
+      "anio": 2023,
+      "fuente_id": "usgs-mcs-2025-litio",
+      "fuente": "Mineral Commodity Summaries 2025: Lithium",
+      "url": "https://pubs.usgs.gov/periodicals/mcs2025/mcs2025-lithium.pdf",
+      "fecha_descarga": "2026-11-24",
+      "hash": "sha256:7ec5654133aa5ef64fcfd6d4d23ac64a58f06f51bf1231576ebd8f595ad9257b",
+      "cita_ubicacion": "mcs2025-lithium.pdf pág. 111 tabla World Mine Production (Argentina 2023: 8.630 t Li)",
+      "confianza": "alta"
+    }
+  },
+  {
+    "registro_id": "prod-urea-ba-2025",
+    "producto_id": "urea",
+    "provincia_id": "06",
+    "anio": 2025,
+    "medicion": {
+      "estado": "dato",
+      "valor": 959562,
+      "unidad": "t urea granulada",
+      "procedencia": {
+        "anio": 2025,
+        "fuente_id": "profertil-eecc-2025",
+        "fuente": "Memoria y Estados Financieros al 31 de diciembre de 2025 (Profertil S.A.)",
+        "url": "https://www.profertil.com.ar/wp-content/uploads/2021/04/EECC-31-12-25.pdf",
+        "fecha_descarga": "2026-11-24",
+        "hash": "sha256:d7bf53b4394beebd03259645c41196aaa27ce657ded8cfc71fc1f007f34843f3",
+        "cita_ubicacion": "EECC-31-12-25.pdf pág. 88 (parada programada 54 días + inundación marzo 2025)",
+        "confianza": "alta"
+      }
+    },
+    "procedencia": {
+      "anio": 2025,
+      "fuente_id": "profertil-eecc-2025",
+      "fuente": "Memoria y Estados Financieros al 31 de diciembre de 2025 (Profertil S.A.)",
+      "url": "https://www.profertil.com.ar/wp-content/uploads/2021/04/EECC-31-12-25.pdf",
+      "fecha_descarga": "2026-11-24",
+      "hash": "sha256:d7bf53b4394beebd03259645c41196aaa27ce657ded8cfc71fc1f007f34843f3",
+      "cita_ubicacion": "EECC-31-12-25.pdf pág. 88 (parada programada 54 días + inundación marzo 2025)",
+      "confianza": "alta"
+    }
+  },
+  {
+    "registro_id": "prod-urea-ba-2024",
+    "producto_id": "urea",
+    "provincia_id": "06",
+    "anio": 2024,
+    "medicion": {
+      "estado": "dato",
+      "valor": 1332417,
+      "unidad": "t urea granulada",
+      "procedencia": {
+        "anio": 2024,
+        "fuente_id": "profertil-eecc-2025",
+        "fuente": "Memoria y Estados Financieros al 31 de diciembre de 2025 (Profertil S.A.)",
+        "url": "https://www.profertil.com.ar/wp-content/uploads/2021/04/EECC-31-12-25.pdf",
+        "fecha_descarga": "2026-11-24",
+        "hash": "sha256:d7bf53b4394beebd03259645c41196aaa27ce657ded8cfc71fc1f007f34843f3",
+        "cita_ubicacion": "EECC-31-12-25.pdf pág. 88 cuadro Volumen de Producción (2024)",
+        "confianza": "alta"
+      }
+    },
+    "procedencia": {
+      "anio": 2024,
+      "fuente_id": "profertil-eecc-2025",
+      "fuente": "Memoria y Estados Financieros al 31 de diciembre de 2025 (Profertil S.A.)",
+      "url": "https://www.profertil.com.ar/wp-content/uploads/2021/04/EECC-31-12-25.pdf",
+      "fecha_descarga": "2026-11-24",
+      "hash": "sha256:d7bf53b4394beebd03259645c41196aaa27ce657ded8cfc71fc1f007f34843f3",
+      "cita_ubicacion": "EECC-31-12-25.pdf pág. 88 cuadro Volumen de Producción (2024)",
+      "confianza": "alta"
+    }
+  },
+  {
+    "registro_id": "prod-urea-ba-2023",
+    "producto_id": "urea",
+    "provincia_id": "06",
+    "anio": 2023,
+    "medicion": {
+      "estado": "dato",
+      "valor": 1220079,
+      "unidad": "t urea granulada",
+      "procedencia": {
+        "anio": 2023,
+        "fuente_id": "profertil-eecc-2025",
+        "fuente": "Memoria y Estados Financieros al 31 de diciembre de 2025 (Profertil S.A.)",
+        "url": "https://www.profertil.com.ar/wp-content/uploads/2021/04/EECC-31-12-25.pdf",
+        "fecha_descarga": "2026-11-24",
+        "hash": "sha256:d7bf53b4394beebd03259645c41196aaa27ce657ded8cfc71fc1f007f34843f3",
+        "cita_ubicacion": "EECC-31-12-25.pdf pág. 88 cuadro Volumen de Producción (2023)",
+        "confianza": "alta"
+      }
+    },
+    "procedencia": {
+      "anio": 2023,
+      "fuente_id": "profertil-eecc-2025",
+      "fuente": "Memoria y Estados Financieros al 31 de diciembre de 2025 (Profertil S.A.)",
+      "url": "https://www.profertil.com.ar/wp-content/uploads/2021/04/EECC-31-12-25.pdf",
+      "fecha_descarga": "2026-11-24",
+      "hash": "sha256:d7bf53b4394beebd03259645c41196aaa27ce657ded8cfc71fc1f007f34843f3",
+      "cita_ubicacion": "EECC-31-12-25.pdf pág. 88 cuadro Volumen de Producción (2023)",
+      "confianza": "alta"
+    }
+  },
+  {
+    "registro_id": "prod-urea-ba-2022",
+    "producto_id": "urea",
+    "provincia_id": "06",
+    "anio": 2022,
+    "medicion": {
+      "estado": "dato",
+      "valor": 1377821,
+      "unidad": "t urea granulada",
+      "procedencia": {
+        "anio": 2022,
+        "fuente_id": "profertil-eecc-2025",
+        "fuente": "Memoria y Estados Financieros al 31 de diciembre de 2025 (Profertil S.A.)",
+        "url": "https://www.profertil.com.ar/wp-content/uploads/2021/04/EECC-31-12-25.pdf",
+        "fecha_descarga": "2026-11-24",
+        "hash": "sha256:d7bf53b4394beebd03259645c41196aaa27ce657ded8cfc71fc1f007f34843f3",
+        "cita_ubicacion": "EECC-31-12-25.pdf pág. 88 cuadro Volumen de Producción (2022)",
+        "confianza": "alta"
+      }
+    },
+    "procedencia": {
+      "anio": 2022,
+      "fuente_id": "profertil-eecc-2025",
+      "fuente": "Memoria y Estados Financieros al 31 de diciembre de 2025 (Profertil S.A.)",
+      "url": "https://www.profertil.com.ar/wp-content/uploads/2021/04/EECC-31-12-25.pdf",
+      "fecha_descarga": "2026-11-24",
+      "hash": "sha256:d7bf53b4394beebd03259645c41196aaa27ce657ded8cfc71fc1f007f34843f3",
+      "cita_ubicacion": "EECC-31-12-25.pdf pág. 88 cuadro Volumen de Producción (2022)",
+      "confianza": "alta"
     }
   }
 ]

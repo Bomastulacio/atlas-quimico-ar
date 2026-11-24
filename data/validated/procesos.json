@@ -31,5 +31,71 @@
       "cita_ubicacion": "Memoria 2025 pág. 3 (6.324.443 MWh electrólisis / 445.327 t aluminio líquido)",
       "confianza": "alta"
     }
+  },
+  {
+    "proceso_id": "litio-salmuera-carbonatacion",
+    "producto_id": "litio",
+    "nombre": "Extracción de salmueras y precipitación de carbonato de litio",
+    "ruta_tecnologica": "Bombeo de salmuera de salar -> evaporación solar -> purificación (Mg/Ca/B) -> carbonatación con Na2CO3 -> secado y grado batería",
+    "reaccion_global": "2 LiCl + Na2CO3 -> Li2CO3 + 2 NaCl",
+    "energia_especifica": {
+      "estado": "sin_datos",
+      "valor": null,
+      "unidad": "MWh/t LCE",
+      "procedencia": {
+        "anio": 2026,
+        "fuente_id": "riotinto-olaroz-2026",
+        "fuente": "Ficha oficial de operación Olaroz (Jujuy)",
+        "url": "https://www.riotinto.com/en/operations/south-america/olaroz",
+        "fecha_descarga": "2026-11-24",
+        "hash": "sha256:af95dbcdee6cf821222e0bee00681f65512903c7271cb576e0a0c6b5ae7a13a0",
+        "cita_ubicacion": "riotinto.com/en/operations/south-america/olaroz y USGS MCS 2025 pág. 110",
+        "confianza": "alta"
+      }
+    },
+    "descripcion": "Ruta evaporítica predominante en los salares de altura de la Puna argentina (Jujuy, Catamarca y Salta). El carbonato de litio (Li2CO3) contiene 18,79% de litio en masa (1 t Li equivale a 5,323 t LCE).",
+    "procedencia": {
+      "anio": 2026,
+      "fuente_id": "riotinto-olaroz-2026",
+      "fuente": "Ficha oficial de operación Olaroz (Jujuy)",
+      "url": "https://www.riotinto.com/en/operations/south-america/olaroz",
+      "fecha_descarga": "2026-11-24",
+      "hash": "sha256:af95dbcdee6cf821222e0bee00681f65512903c7271cb576e0a0c6b5ae7a13a0",
+      "cita_ubicacion": "riotinto.com/en/operations/south-america/olaroz y USGS MCS 2025 pág. 110",
+      "confianza": "alta"
+    }
+  },
+  {
+    "proceso_id": "urea-haber-bosch-sintesis",
+    "producto_id": "urea",
+    "nombre": "Síntesis integrada de amoníaco (Haber-Bosch) y urea granulada",
+    "ruta_tecnologica": "Gas natural (CH4) + vapor de agua -> reformado catalítico (H2 + CO2) -> síntesis de amoníaco (N2 + 3 H2) -> carbamato y urea -> granulación",
+    "reaccion_global": "2 NH3 + CO2 -> CO(NH2)2 + H2O",
+    "energia_especifica": {
+      "estado": "dato",
+      "valor": 17.46,
+      "unidad": "GJ/t urea",
+      "procedencia": {
+        "anio": 2006,
+        "fuente_id": "ipcc-2006-v3-ch3-amoniaco-urea",
+        "fuente": "2006 IPCC Guidelines for National Greenhouse Gas Inventories (Vol. 3, Cap. 3.2 Ammonia y Box 3.3 Urea)",
+        "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/pdf/3_Volume3/V3_3_Ch3_Chemical_Industry.pdf",
+        "fecha_descarga": "2026-11-24",
+        "hash": "sha256:f25c2817eecdae6a1f930b342eb09b2d8a6065b12bfce632502a01e1a61bbaa2",
+        "cita_ubicacion": "IPCC 2006 Vol. 3 Cap. 3.2 pág. 3.11 y Table 3.1 pág. 3.15 (30,2 GJ/t NH3)",
+        "confianza": "alta"
+      }
+    },
+    "descripcion": "Complejo integrado en Ingeniero White (Bahía Blanca). La energía específica de referencia para amoníaco por reformado moderno de gas natural es 30,2 GJ/t NH3 (IPCC Table 3.1), lo que equivale a 17,46 GJ/t urea (4,85 MWh/t) para el consumo real medido en Profertil 2024 (0,578 t NH3/t urea).",
+    "procedencia": {
+      "anio": 2006,
+      "fuente_id": "ipcc-2006-v3-ch3-amoniaco-urea",
+      "fuente": "2006 IPCC Guidelines for National Greenhouse Gas Inventories (Vol. 3, Cap. 3.2 Ammonia y Box 3.3 Urea)",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/pdf/3_Volume3/V3_3_Ch3_Chemical_Industry.pdf",
+      "fecha_descarga": "2026-11-24",
+      "hash": "sha256:f25c2817eecdae6a1f930b342eb09b2d8a6065b12bfce632502a01e1a61bbaa2",
+      "cita_ubicacion": "IPCC 2006 Vol. 3 Cap. 3.2 pág. 3.11 y Table 3.1 pág. 3.15 (30,2 GJ/t NH3)",
+      "confianza": "alta"
+    }
   }
 ]

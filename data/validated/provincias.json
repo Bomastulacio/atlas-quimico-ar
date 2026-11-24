@@ -12,16 +12,16 @@
     "nombre": "Buenos Aires",
     "iso_3166_2": "AR-B",
     "region": "Pampeana",
-    "cobertura_datos": "baja",
-    "nota_cobertura": "Polo petroquímico y fertilizantes de Bahía Blanca previsto para Etapa 6 (sin cifras oficiales cargadas aún)."
+    "cobertura_datos": "parcial",
+    "nota_cobertura": "Cadena de urea granulada y amoníaco (Profertil, Bahía Blanca) verificada con EECC CNV 2025, IPCC y UN Comtrade; petroquímica pendiente en Etapa 6."
   },
   {
     "provincia_id": "10",
     "nombre": "Catamarca",
     "iso_3166_2": "AR-K",
     "region": "NOA",
-    "cobertura_datos": "baja",
-    "nota_cobertura": "Cadena de litio prevista para Etapa 6 (pendiente de carga oficial)."
+    "cobertura_datos": "completa",
+    "nota_cobertura": "Cadena de litio (Salar del Hombre Muerto, Depto. Antofagasta de la Sierra) verificada con USGS MCS 2025, UN Comtrade y Rio Tinto."
   },
   {
     "provincia_id": "14",
@@ -76,8 +76,8 @@
     "nombre": "Jujuy",
     "iso_3166_2": "AR-Y",
     "region": "NOA",
-    "cobertura_datos": "baja",
-    "nota_cobertura": "Cadena de litio prevista para Etapa 6 (pendiente de carga oficial)."
+    "cobertura_datos": "completa",
+    "nota_cobertura": "Cadena de litio (Salar de Olaroz, Depto. Susques) verificada con USGS MCS 2025, UN Comtrade y fichas oficiales de Rio Tinto."
   },
   {
     "provincia_id": "42",
@@ -132,8 +132,8 @@
     "nombre": "Salta",
     "iso_3166_2": "AR-A",
     "region": "NOA",
-    "cobertura_datos": "baja",
-    "nota_cobertura": "Cadena de litio prevista para Etapa 6 (pendiente de carga oficial)."
+    "cobertura_datos": "completa",
+    "nota_cobertura": "Cadena de litio (Salar del Rincón, Depto. Los Andes) verificada con USGS MCS 2025, UN Comtrade y Rio Tinto."
   },
   {
     "provincia_id": "70",
