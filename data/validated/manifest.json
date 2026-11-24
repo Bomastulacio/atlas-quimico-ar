@@ -1,9 +1,9 @@
 {
   "version_esquema": "1.0.0",
-  "generado_en": "2026-11-24T15:47:52.045Z",
-  "origen": "sheets_local",
+  "generado_en": "2026-11-24T18:12:30.340Z",
+  "origen": "supabase",
   "es_ejemplo": true,
-  "nota": "Dataset mixto: 1 cadena(s) verificadas con fuentes oficiales (Aluminio, Chubut) y marcadores pendientes para las cadenas de Etapa 6.",
+  "nota": "Sincronizado desde Supabase (1 cadena(s) verificadas con fuentes oficiales; marcadores pendientes para Etapa 6).",
   "tablas": {
     "fuentes": {
       "registros": 9,
@@ -15,7 +15,7 @@
     },
     "departamentos": {
       "registros": 3,
-      "hash": "sha256:3d3ac683d97900ca51d35eff62760686ae658f5d30e22a84e8b6462228ec4edb"
+      "hash": "sha256:e385bcbba0fca1dfaf32ee2ff5b9a694c5429bc3cba5ffda8f6edb6349aa5ca6"
     },
     "productos": {
       "registros": 7,
@@ -31,7 +31,7 @@
     },
     "pasos_proceso": {
       "registros": 6,
-      "hash": "sha256:b48264dc47e6b887fa7ff79bd08521806ea29ed2d6fc8e1edbdb9ddb64130d51"
+      "hash": "sha256:2e4a154b4f208383236c81f131e12a78e3ca8f2cfca30c865bdec35fef5ab0d5"
     },
     "conexiones_proceso": {
       "registros": 7,

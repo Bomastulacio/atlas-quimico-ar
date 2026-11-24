@@ -10,30 +10,30 @@
     "presion_bar": "1.0",
     "reactivos": [
       {
+        "unidad": "t/t Al",
         "especie": "Bauxita seca",
-        "cantidad": 4,
-        "unidad": "t/t Al"
+        "cantidad": 4
       }
     ],
     "productos": [
       {
+        "unidad": "t/t Al",
         "especie": "Al2O3 (alúmina calcinada)",
-        "cantidad": 1.96,
-        "unidad": "t/t Al"
+        "cantidad": 1.96
       }
     ],
     "insumos": [
       {
+        "unidad": "reciclo",
         "especie": "NaOH (digestión Bayer en origen)",
-        "cantidad": null,
-        "unidad": "reciclo"
+        "cantidad": null
       }
     ],
     "subproductos": [
       {
+        "unidad": "residuo",
         "especie": "Lodo rojo (en país de origen)",
-        "cantidad": null,
-        "unidad": "residuo"
+        "cantidad": null
       }
     ],
     "energia": {
@@ -76,26 +76,26 @@
     "presion_bar": "1.0",
     "reactivos": [
       {
+        "unidad": "t/t Al",
         "especie": "Al2O3 importada",
-        "cantidad": 1.96,
-        "unidad": "t/t Al"
+        "cantidad": 1.96
       },
       {
+        "unidad": "t/t Al",
         "especie": "Coque calcinado y brea",
-        "cantidad": 0.45,
-        "unidad": "t/t Al"
+        "cantidad": 0.45
       }
     ],
     "productos": [
       {
+        "unidad": "t/t Al",
         "especie": "Al2O3 en silos",
-        "cantidad": 1.96,
-        "unidad": "t/t Al"
+        "cantidad": 1.96
       },
       {
+        "unidad": "t/t Al",
         "especie": "Coque y brea en silos",
-        "cantidad": 0.45,
-        "unidad": "t/t Al"
+        "cantidad": 0.45
       }
     ],
     "insumos": [],
@@ -140,30 +140,30 @@
     "presion_bar": "1.0",
     "reactivos": [
       {
+        "unidad": "t/t Al",
         "especie": "Coque de petróleo calcinado y brea",
-        "cantidad": 0.45,
-        "unidad": "t/t Al"
+        "cantidad": 0.45
       }
     ],
     "productos": [
       {
+        "unidad": "t/t Al",
         "especie": "Ánodos precocidos de carbono (C)",
-        "cantidad": 0.43,
-        "unidad": "t/t Al"
+        "cantidad": 0.43
       }
     ],
     "insumos": [
       {
+        "unidad": "t/t ánodo",
         "especie": "Coque de empaque (packing coke)",
-        "cantidad": 0.015,
-        "unidad": "t/t ánodo"
+        "cantidad": 0.015
       }
     ],
     "subproductos": [
       {
+        "unidad": "emisión tratada",
         "especie": "Volátiles de brea (captados y quemados)",
-        "cantidad": null,
-        "unidad": "emisión tratada"
+        "cantidad": null
       }
     ],
     "energia": {
@@ -206,50 +206,50 @@
     "presion_bar": "1.0",
     "reactivos": [
       {
+        "unidad": "t/t Al",
         "especie": "Al2O3 (alúmina calcinada)",
-        "cantidad": 1.96,
-        "unidad": "t/t Al"
+        "cantidad": 1.96
       },
       {
+        "unidad": "t/t Al",
         "especie": "C (ánodos precocidos)",
-        "cantidad": 0.43,
-        "unidad": "t/t Al"
+        "cantidad": 0.43
       }
     ],
     "productos": [
       {
+        "unidad": "t/t Al",
         "especie": "Al (aluminio líquido, pureza hasta 99,86%)",
-        "cantidad": 1,
-        "unidad": "t/t Al"
+        "cantidad": 1
       }
     ],
     "insumos": [
       {
+        "unidad": "baño electrolítico",
         "especie": "Na3AlF6 (criolita fundida ~80% baño)",
-        "cantidad": null,
-        "unidad": "baño electrolítico"
+        "cantidad": null
       },
       {
+        "unidad": "MWh/t Al",
         "especie": "Electricidad CC (Futaleufú + térmica + eólica)",
-        "cantidad": 14.2,
-        "unidad": "MWh/t Al"
+        "cantidad": 14.2
       },
       {
+        "unidad": "aire ambiente",
         "especie": "O2 atmosférico (oxidación secundaria de ánodos)",
-        "cantidad": null,
-        "unidad": "aire ambiente"
+        "cantidad": null
       }
     ],
     "subproductos": [
       {
+        "unidad": "t/t Al",
         "especie": "CO2 de proceso (factor Prebake IPCC)",
-        "cantidad": 1.6,
-        "unidad": "t/t Al"
+        "cantidad": 1.6
       },
       {
+        "unidad": "t/t Al",
         "especie": "Gases fluorados y PFCs (CF4/C2F6)",
-        "cantidad": 0.00044,
-        "unidad": "t/t Al"
+        "cantidad": 0.00044
       }
     ],
     "energia": {
@@ -292,35 +292,35 @@
     "presion_bar": "1.0",
     "reactivos": [
       {
+        "unidad": "t/t Al",
         "especie": "Gases de cuba (CO2, HF, PFCs)",
-        "cantidad": 1.6,
-        "unidad": "t/t Al"
+        "cantidad": 1.6
       }
     ],
     "productos": [
       {
+        "unidad": "reciclo",
         "especie": "Alúmina fluorada reciclada a cubas",
-        "cantidad": null,
-        "unidad": "reciclo"
+        "cantidad": null
       }
     ],
     "insumos": [
       {
+        "unidad": "contacto gas-sólido",
         "especie": "Alúmina fresca (lecho adsorbente)",
-        "cantidad": null,
-        "unidad": "contacto gas-sólido"
+        "cantidad": null
       }
     ],
     "subproductos": [
       {
+        "unidad": "t/t Al",
         "especie": "CO2 emitido a atmósfera (Tier 1 Prebake)",
-        "cantidad": 1.6,
-        "unidad": "t/t Al"
+        "cantidad": 1.6
       },
       {
+        "unidad": "t/t Al",
         "especie": "CF4 + C2F6 (efectos anódicos, Tier 1 CWPB)",
-        "cantidad": 0.00044,
-        "unidad": "t/t Al"
+        "cantidad": 0.00044
       }
     ],
     "energia": {
@@ -363,30 +363,30 @@
     "presion_bar": "1.0",
     "reactivos": [
       {
+        "unidad": "t/t Al",
         "especie": "Al (aluminio líquido)",
-        "cantidad": 1,
-        "unidad": "t/t Al"
+        "cantidad": 1
       }
     ],
     "productos": [
       {
+        "unidad": "t/t Al",
         "especie": "Lingotes puros, barrotes, lingotes T, alambrón y placas",
-        "cantidad": 0.994,
-        "unidad": "t/t Al"
+        "cantidad": 0.994
       }
     ],
     "insumos": [
       {
+        "unidad": "MWh/t Al",
         "especie": "Energía resto de planta (fundición, ánodos, aux.)",
-        "cantidad": 0.86,
-        "unidad": "MWh/t Al"
+        "cantidad": 0.86
       }
     ],
     "subproductos": [
       {
+        "unidad": "t/t Al",
         "especie": "Escoria / mermas de fundición",
-        "cantidad": 0.006,
-        "unidad": "t/t Al"
+        "cantidad": 0.006
       }
     ],
     "energia": {
