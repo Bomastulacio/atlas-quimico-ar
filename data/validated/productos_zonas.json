@@ -7,14 +7,14 @@
     "es_dominante": true,
     "rol_en_cadena": "refinacion",
     "procedencia": {
-      "anio": 2024,
-      "fuente_id": "ejemplo-fuente-01",
-      "fuente": "[EJEMPLO] Fixture ficticio de prueba para Etapa 1",
-      "url": "https://example.org/atlas-quimico-ar/ejemplo-etapa-1",
+      "anio": 2025,
+      "fuente_id": "aluar-eeff-2025",
+      "fuente": "Memoria y Estados Financieros: 56° Ejercicio Económico (al 30/06/2025 y 30/06/2024)",
+      "url": "https://cdn.aluar.com.ar/assets/uploads/EEFF_Aluar_Ejercicio_2024_2025_4_T_7869bb3511.pdf",
       "fecha_descarga": "2026-11-24",
-      "hash": "sha256:e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
-      "cita_ubicacion": "fixture:productos_zonas.csv fila 2",
-      "confianza": "ejemplo"
+      "hash": "sha256:3ee6b54bf52a0a4e543e8be2d0c23d7399425b274971ae097867aee312233901",
+      "cita_ubicacion": "Memoria 2025 pág. 3 y Nota 35 pág. 50 (Planta Puerto Madryn Chubut)",
+      "confianza": "alta"
     }
   },
   {
@@ -27,11 +27,11 @@
     "procedencia": {
       "anio": 2024,
       "fuente_id": "ejemplo-fuente-01",
-      "fuente": "[EJEMPLO] Fixture ficticio de prueba para Etapa 1",
-      "url": "https://example.org/atlas-quimico-ar/ejemplo-etapa-1",
+      "fuente": "[EJEMPLO] Marcador territorial demostrativo para cadenas MVP pendientes de Etapa 6",
+      "url": "https://example.org/atlas-quimico-ar/mvp-pendiente",
       "fecha_descarga": "2026-11-24",
       "hash": "sha256:e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
-      "cita_ubicacion": "fixture:productos_zonas.csv fila 3",
+      "cita_ubicacion": "plan-mvp:pendiente-etapa-6",
       "confianza": "ejemplo"
     }
   },
@@ -45,11 +45,11 @@
     "procedencia": {
       "anio": 2024,
       "fuente_id": "ejemplo-fuente-01",
-      "fuente": "[EJEMPLO] Fixture ficticio de prueba para Etapa 1",
-      "url": "https://example.org/atlas-quimico-ar/ejemplo-etapa-1",
+      "fuente": "[EJEMPLO] Marcador territorial demostrativo para cadenas MVP pendientes de Etapa 6",
+      "url": "https://example.org/atlas-quimico-ar/mvp-pendiente",
       "fecha_descarga": "2026-11-24",
       "hash": "sha256:e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
-      "cita_ubicacion": "fixture:productos_zonas.csv fila 4",
+      "cita_ubicacion": "plan-mvp:pendiente-etapa-6",
       "confianza": "ejemplo"
     }
   },
@@ -63,11 +63,11 @@
     "procedencia": {
       "anio": 2024,
       "fuente_id": "ejemplo-fuente-01",
-      "fuente": "[EJEMPLO] Fixture ficticio de prueba para Etapa 1",
-      "url": "https://example.org/atlas-quimico-ar/ejemplo-etapa-1",
+      "fuente": "[EJEMPLO] Marcador territorial demostrativo para cadenas MVP pendientes de Etapa 6",
+      "url": "https://example.org/atlas-quimico-ar/mvp-pendiente",
       "fecha_descarga": "2026-11-24",
       "hash": "sha256:e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
-      "cita_ubicacion": "fixture:productos_zonas.csv fila 5",
+      "cita_ubicacion": "plan-mvp:pendiente-etapa-6",
       "confianza": "ejemplo"
     }
   },
@@ -81,11 +81,11 @@
     "procedencia": {
       "anio": 2024,
       "fuente_id": "ejemplo-fuente-01",
-      "fuente": "[EJEMPLO] Fixture ficticio de prueba para Etapa 1",
-      "url": "https://example.org/atlas-quimico-ar/ejemplo-etapa-1",
+      "fuente": "[EJEMPLO] Marcador territorial demostrativo para cadenas MVP pendientes de Etapa 6",
+      "url": "https://example.org/atlas-quimico-ar/mvp-pendiente",
       "fecha_descarga": "2026-11-24",
       "hash": "sha256:e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
-      "cita_ubicacion": "fixture:productos_zonas.csv fila 6",
+      "cita_ubicacion": "plan-mvp:pendiente-etapa-6",
       "confianza": "ejemplo"
     }
   },
@@ -99,11 +99,11 @@
     "procedencia": {
       "anio": 2024,
       "fuente_id": "ejemplo-fuente-01",
-      "fuente": "[EJEMPLO] Fixture ficticio de prueba para Etapa 1",
-      "url": "https://example.org/atlas-quimico-ar/ejemplo-etapa-1",
+      "fuente": "[EJEMPLO] Marcador territorial demostrativo para cadenas MVP pendientes de Etapa 6",
+      "url": "https://example.org/atlas-quimico-ar/mvp-pendiente",
       "fecha_descarga": "2026-11-24",
       "hash": "sha256:e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
-      "cita_ubicacion": "fixture:productos_zonas.csv fila 7",
+      "cita_ubicacion": "plan-mvp:pendiente-etapa-6",
       "confianza": "ejemplo"
     }
   },
@@ -117,11 +117,11 @@
     "procedencia": {
       "anio": 2024,
       "fuente_id": "ejemplo-fuente-01",
-      "fuente": "[EJEMPLO] Fixture ficticio de prueba para Etapa 1",
-      "url": "https://example.org/atlas-quimico-ar/ejemplo-etapa-1",
+      "fuente": "[EJEMPLO] Marcador territorial demostrativo para cadenas MVP pendientes de Etapa 6",
+      "url": "https://example.org/atlas-quimico-ar/mvp-pendiente",
       "fecha_descarga": "2026-11-24",
       "hash": "sha256:e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
-      "cita_ubicacion": "fixture:productos_zonas.csv fila 8",
+      "cita_ubicacion": "plan-mvp:pendiente-etapa-6",
       "confianza": "ejemplo"
     }
   },
@@ -135,11 +135,11 @@
     "procedencia": {
       "anio": 2024,
       "fuente_id": "ejemplo-fuente-01",
-      "fuente": "[EJEMPLO] Fixture ficticio de prueba para Etapa 1",
-      "url": "https://example.org/atlas-quimico-ar/ejemplo-etapa-1",
+      "fuente": "[EJEMPLO] Marcador territorial demostrativo para cadenas MVP pendientes de Etapa 6",
+      "url": "https://example.org/atlas-quimico-ar/mvp-pendiente",
       "fecha_descarga": "2026-11-24",
       "hash": "sha256:e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
-      "cita_ubicacion": "fixture:productos_zonas.csv fila 9",
+      "cita_ubicacion": "plan-mvp:pendiente-etapa-6",
       "confianza": "ejemplo"
     }
   },
@@ -153,11 +153,11 @@
     "procedencia": {
       "anio": 2024,
       "fuente_id": "ejemplo-fuente-01",
-      "fuente": "[EJEMPLO] Fixture ficticio de prueba para Etapa 1",
-      "url": "https://example.org/atlas-quimico-ar/ejemplo-etapa-1",
+      "fuente": "[EJEMPLO] Marcador territorial demostrativo para cadenas MVP pendientes de Etapa 6",
+      "url": "https://example.org/atlas-quimico-ar/mvp-pendiente",
       "fecha_descarga": "2026-11-24",
       "hash": "sha256:e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
-      "cita_ubicacion": "fixture:productos_zonas.csv fila 10",
+      "cita_ubicacion": "plan-mvp:pendiente-etapa-6",
       "confianza": "ejemplo"
     }
   }

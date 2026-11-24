@@ -1,19 +1,19 @@
 [
   {
-    "empresa_id": "ejemplo-empresa-aluminio",
-    "razon_social": "Productora de Aluminio Demo S.A. [EJEMPLO]",
+    "empresa_id": "aluar-saic",
+    "razon_social": "Aluar Aluminio Argentino S.A.I.C.",
     "tipo_capital": "nacional",
-    "sitio_web_oficial": "https://example.org/empresa-demo",
-    "hechos_verificables": "[EJEMPLO] Entidad ficticia para probar la relación empresa-planta en Etapa 1; sin facturación ni cuota estimada.",
+    "sitio_web_oficial": "https://www.aluar.com.ar/",
+    "hechos_verificables": "Único productor de aluminio primario en Argentina (CUIT 30-52278060-6). Creada en 1970, cotiza en la Bolsa de Comercio de Buenos Aires bajo fiscalización de CNV desde 1980. Controla el 60,20% de Hidroeléctrica Futaleufú S.A. y opera un Parque Eólico propio en Puerto Madryn (ampliación en curso hacia 582 MW). Dotación al 30/06/2025: 2.330 personas (1.582 en División Aluminio Primario).",
     "procedencia": {
-      "anio": 2024,
-      "fuente_id": "ejemplo-fuente-01",
-      "fuente": "[EJEMPLO] Fixture ficticio de prueba para Etapa 1",
-      "url": "https://example.org/atlas-quimico-ar/ejemplo-etapa-1",
+      "anio": 2025,
+      "fuente_id": "aluar-eeff-2025",
+      "fuente": "Memoria y Estados Financieros: 56° Ejercicio Económico (al 30/06/2025 y 30/06/2024)",
+      "url": "https://cdn.aluar.com.ar/assets/uploads/EEFF_Aluar_Ejercicio_2024_2025_4_T_7869bb3511.pdf",
       "fecha_descarga": "2026-11-24",
-      "hash": "sha256:e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
-      "cita_ubicacion": "fixture:empresas.csv fila 2",
-      "confianza": "ejemplo"
+      "hash": "sha256:3ee6b54bf52a0a4e543e8be2d0c23d7399425b274971ae097867aee312233901",
+      "cita_ubicacion": "Memoria 2025 pág. 2 y 10; Estados Financieros Nota 1 pág. 8 y Nota 2.3.1 pág. 11",
+      "confianza": "alta"
     }
   }
 ]

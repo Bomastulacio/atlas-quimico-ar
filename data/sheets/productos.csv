@@ -1,0 +1,8 @@
+producto_id,nombre,categoria,formula_quimica,icono_id,descripcion_corta,mdx_slug,estado_mvp
+aluminio,Aluminio primario,metalurgia,Al,aluminio-lingote,"Metal ligero obtenido en Puerto Madryn por reducción electrolítica Hall-Héroult de alúmina importada con energía hidroeléctrica, térmica y eólica.",aluminio,validado
+litio,Carbonato de litio,mineria_quimica,Li2CO3,litio-salmuera,"Extracción y precipitación química a partir de salmueras del NOA (carga oficial pendiente de Etapa 6).",litio,pendiente
+urea,Urea y fertilizantes nitrogenados,fertilizantes,CO(NH2)2,urea-prill,"Síntesis de amoníaco y urea a partir de gas natural en Bahía Blanca (carga oficial pendiente de Etapa 6).",urea,pendiente
+algodon,Algodón y fibra textil,agroindustria,,algodon-fibra,"Cadena desmotadora e industrialización primaria del NEA (carga oficial pendiente de Etapa 6).",algodon,pendiente
+soja,Soja y derivados oleaginosos,agroindustria,,soja-molienda,"Extracción por solvente de aceite y harina proteica en el polo Rosario (carga oficial pendiente de Etapa 6).",soja,pendiente
+petroquimica,Petroquímica básica y polietilenos,petroquimica,C2H4,petroquimica-cracker,"Craqueo térmico de etano y polimerización en el polo Bahía Blanca (carga oficial pendiente de Etapa 6).",petroquimica,pendiente
+biodiesel,Biodiésel (FAME),bioenergia,RCOOCH3,biodiesel-ester,"Transesterificación catalítica de aceite de soja con metanol (carga oficial pendiente de Etapa 6).",biodiesel,pendiente

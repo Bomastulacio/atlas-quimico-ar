@@ -1,0 +1,7 @@
+registro_id,producto_id,provincia_id,anio,valor,estado,unidad,fuente_id,cita_ubicacion,confianza
+prod-aluminio-chubut-2025,aluminio,26,2025,445327,dato,t (ej. Jul 2024-Jun 2025),aluar-eeff-2025,Memoria 2025 pág. 3 y Reseña Informativa pág. 3 cuadro e (Jul 24 - Jun 25),alta
+prod-aluminio-chubut-2024,aluminio,26,2024,443507,dato,t (ej. Jul 2023-Jun 2024),aluar-eeff-2025,Reseña Informativa pág. 3 cuadro e (Jul 23 - Jun 24),alta
+prod-aluminio-chubut-2023,aluminio,26,2023,434647,dato,t (ej. Jul 2022-Jun 2023),aluar-eeff-2025,Reseña Informativa pág. 3 cuadro e (Jul 22 - Jun 23),alta
+prod-aluminio-chubut-2022,aluminio,26,2022,365227,dato,t (ej. Jul 2021-Jun 2022),aluar-eeff-2025,Reseña Informativa pág. 3 cuadro e (Jul 21 - Jun 22),alta
+prod-aluminio-chubut-2021,aluminio,26,2021,305684,dato,t (ej. Jul 2020-Jun 2021),aluar-eeff-2025,Reseña Informativa pág. 3 cuadro e (Jul 20 - Jun 21),alta
+prod-litio-nac-2024,litio,,2024,,sin_datos,t LCE,ejemplo-fuente-01,plan-mvp:pendiente-etapa-6,ejemplo

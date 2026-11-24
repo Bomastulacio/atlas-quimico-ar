@@ -1,37 +1,161 @@
 [
   {
-    "registro_id": "prod-ejemplo-aluminio-nac-2024",
+    "registro_id": "prod-aluminio-chubut-2025",
     "producto_id": "aluminio",
-    "provincia_id": null,
+    "provincia_id": "26",
+    "anio": 2025,
+    "medicion": {
+      "estado": "dato",
+      "valor": 445327,
+      "unidad": "t (ej. Jul 2024-Jun 2025)",
+      "procedencia": {
+        "anio": 2025,
+        "fuente_id": "aluar-eeff-2025",
+        "fuente": "Memoria y Estados Financieros: 56° Ejercicio Económico (al 30/06/2025 y 30/06/2024)",
+        "url": "https://cdn.aluar.com.ar/assets/uploads/EEFF_Aluar_Ejercicio_2024_2025_4_T_7869bb3511.pdf",
+        "fecha_descarga": "2026-11-24",
+        "hash": "sha256:3ee6b54bf52a0a4e543e8be2d0c23d7399425b274971ae097867aee312233901",
+        "cita_ubicacion": "Memoria 2025 pág. 3 y Reseña Informativa pág. 3 cuadro e (Jul 24 - Jun 25)",
+        "confianza": "alta"
+      }
+    },
+    "procedencia": {
+      "anio": 2025,
+      "fuente_id": "aluar-eeff-2025",
+      "fuente": "Memoria y Estados Financieros: 56° Ejercicio Económico (al 30/06/2025 y 30/06/2024)",
+      "url": "https://cdn.aluar.com.ar/assets/uploads/EEFF_Aluar_Ejercicio_2024_2025_4_T_7869bb3511.pdf",
+      "fecha_descarga": "2026-11-24",
+      "hash": "sha256:3ee6b54bf52a0a4e543e8be2d0c23d7399425b274971ae097867aee312233901",
+      "cita_ubicacion": "Memoria 2025 pág. 3 y Reseña Informativa pág. 3 cuadro e (Jul 24 - Jun 25)",
+      "confianza": "alta"
+    }
+  },
+  {
+    "registro_id": "prod-aluminio-chubut-2024",
+    "producto_id": "aluminio",
+    "provincia_id": "26",
     "anio": 2024,
     "medicion": {
       "estado": "dato",
-      "valor": 410000,
-      "unidad": "t",
+      "valor": 443507,
+      "unidad": "t (ej. Jul 2023-Jun 2024)",
       "procedencia": {
         "anio": 2024,
-        "fuente_id": "ejemplo-fuente-01",
-        "fuente": "[EJEMPLO] Fixture ficticio de prueba para Etapa 1",
-        "url": "https://example.org/atlas-quimico-ar/ejemplo-etapa-1",
+        "fuente_id": "aluar-eeff-2025",
+        "fuente": "Memoria y Estados Financieros: 56° Ejercicio Económico (al 30/06/2025 y 30/06/2024)",
+        "url": "https://cdn.aluar.com.ar/assets/uploads/EEFF_Aluar_Ejercicio_2024_2025_4_T_7869bb3511.pdf",
         "fecha_descarga": "2026-11-24",
-        "hash": "sha256:e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
-        "cita_ubicacion": "fixture:produccion.csv fila 2",
-        "confianza": "ejemplo"
+        "hash": "sha256:3ee6b54bf52a0a4e543e8be2d0c23d7399425b274971ae097867aee312233901",
+        "cita_ubicacion": "Reseña Informativa pág. 3 cuadro e (Jul 23 - Jun 24)",
+        "confianza": "alta"
       }
     },
     "procedencia": {
       "anio": 2024,
-      "fuente_id": "ejemplo-fuente-01",
-      "fuente": "[EJEMPLO] Fixture ficticio de prueba para Etapa 1",
-      "url": "https://example.org/atlas-quimico-ar/ejemplo-etapa-1",
+      "fuente_id": "aluar-eeff-2025",
+      "fuente": "Memoria y Estados Financieros: 56° Ejercicio Económico (al 30/06/2025 y 30/06/2024)",
+      "url": "https://cdn.aluar.com.ar/assets/uploads/EEFF_Aluar_Ejercicio_2024_2025_4_T_7869bb3511.pdf",
       "fecha_descarga": "2026-11-24",
-      "hash": "sha256:e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
-      "cita_ubicacion": "fixture:produccion.csv fila 2",
-      "confianza": "ejemplo"
+      "hash": "sha256:3ee6b54bf52a0a4e543e8be2d0c23d7399425b274971ae097867aee312233901",
+      "cita_ubicacion": "Reseña Informativa pág. 3 cuadro e (Jul 23 - Jun 24)",
+      "confianza": "alta"
     }
   },
   {
-    "registro_id": "prod-ejemplo-litio-nac-2024",
+    "registro_id": "prod-aluminio-chubut-2023",
+    "producto_id": "aluminio",
+    "provincia_id": "26",
+    "anio": 2023,
+    "medicion": {
+      "estado": "dato",
+      "valor": 434647,
+      "unidad": "t (ej. Jul 2022-Jun 2023)",
+      "procedencia": {
+        "anio": 2023,
+        "fuente_id": "aluar-eeff-2025",
+        "fuente": "Memoria y Estados Financieros: 56° Ejercicio Económico (al 30/06/2025 y 30/06/2024)",
+        "url": "https://cdn.aluar.com.ar/assets/uploads/EEFF_Aluar_Ejercicio_2024_2025_4_T_7869bb3511.pdf",
+        "fecha_descarga": "2026-11-24",
+        "hash": "sha256:3ee6b54bf52a0a4e543e8be2d0c23d7399425b274971ae097867aee312233901",
+        "cita_ubicacion": "Reseña Informativa pág. 3 cuadro e (Jul 22 - Jun 23)",
+        "confianza": "alta"
+      }
+    },
+    "procedencia": {
+      "anio": 2023,
+      "fuente_id": "aluar-eeff-2025",
+      "fuente": "Memoria y Estados Financieros: 56° Ejercicio Económico (al 30/06/2025 y 30/06/2024)",
+      "url": "https://cdn.aluar.com.ar/assets/uploads/EEFF_Aluar_Ejercicio_2024_2025_4_T_7869bb3511.pdf",
+      "fecha_descarga": "2026-11-24",
+      "hash": "sha256:3ee6b54bf52a0a4e543e8be2d0c23d7399425b274971ae097867aee312233901",
+      "cita_ubicacion": "Reseña Informativa pág. 3 cuadro e (Jul 22 - Jun 23)",
+      "confianza": "alta"
+    }
+  },
+  {
+    "registro_id": "prod-aluminio-chubut-2022",
+    "producto_id": "aluminio",
+    "provincia_id": "26",
+    "anio": 2022,
+    "medicion": {
+      "estado": "dato",
+      "valor": 365227,
+      "unidad": "t (ej. Jul 2021-Jun 2022)",
+      "procedencia": {
+        "anio": 2022,
+        "fuente_id": "aluar-eeff-2025",
+        "fuente": "Memoria y Estados Financieros: 56° Ejercicio Económico (al 30/06/2025 y 30/06/2024)",
+        "url": "https://cdn.aluar.com.ar/assets/uploads/EEFF_Aluar_Ejercicio_2024_2025_4_T_7869bb3511.pdf",
+        "fecha_descarga": "2026-11-24",
+        "hash": "sha256:3ee6b54bf52a0a4e543e8be2d0c23d7399425b274971ae097867aee312233901",
+        "cita_ubicacion": "Reseña Informativa pág. 3 cuadro e (Jul 21 - Jun 22)",
+        "confianza": "alta"
+      }
+    },
+    "procedencia": {
+      "anio": 2022,
+      "fuente_id": "aluar-eeff-2025",
+      "fuente": "Memoria y Estados Financieros: 56° Ejercicio Económico (al 30/06/2025 y 30/06/2024)",
+      "url": "https://cdn.aluar.com.ar/assets/uploads/EEFF_Aluar_Ejercicio_2024_2025_4_T_7869bb3511.pdf",
+      "fecha_descarga": "2026-11-24",
+      "hash": "sha256:3ee6b54bf52a0a4e543e8be2d0c23d7399425b274971ae097867aee312233901",
+      "cita_ubicacion": "Reseña Informativa pág. 3 cuadro e (Jul 21 - Jun 22)",
+      "confianza": "alta"
+    }
+  },
+  {
+    "registro_id": "prod-aluminio-chubut-2021",
+    "producto_id": "aluminio",
+    "provincia_id": "26",
+    "anio": 2021,
+    "medicion": {
+      "estado": "dato",
+      "valor": 305684,
+      "unidad": "t (ej. Jul 2020-Jun 2021)",
+      "procedencia": {
+        "anio": 2021,
+        "fuente_id": "aluar-eeff-2025",
+        "fuente": "Memoria y Estados Financieros: 56° Ejercicio Económico (al 30/06/2025 y 30/06/2024)",
+        "url": "https://cdn.aluar.com.ar/assets/uploads/EEFF_Aluar_Ejercicio_2024_2025_4_T_7869bb3511.pdf",
+        "fecha_descarga": "2026-11-24",
+        "hash": "sha256:3ee6b54bf52a0a4e543e8be2d0c23d7399425b274971ae097867aee312233901",
+        "cita_ubicacion": "Reseña Informativa pág. 3 cuadro e (Jul 20 - Jun 21)",
+        "confianza": "alta"
+      }
+    },
+    "procedencia": {
+      "anio": 2021,
+      "fuente_id": "aluar-eeff-2025",
+      "fuente": "Memoria y Estados Financieros: 56° Ejercicio Económico (al 30/06/2025 y 30/06/2024)",
+      "url": "https://cdn.aluar.com.ar/assets/uploads/EEFF_Aluar_Ejercicio_2024_2025_4_T_7869bb3511.pdf",
+      "fecha_descarga": "2026-11-24",
+      "hash": "sha256:3ee6b54bf52a0a4e543e8be2d0c23d7399425b274971ae097867aee312233901",
+      "cita_ubicacion": "Reseña Informativa pág. 3 cuadro e (Jul 20 - Jun 21)",
+      "confianza": "alta"
+    }
+  },
+  {
+    "registro_id": "prod-litio-nac-2024",
     "producto_id": "litio",
     "provincia_id": null,
     "anio": 2024,
@@ -42,22 +166,22 @@
       "procedencia": {
         "anio": 2024,
         "fuente_id": "ejemplo-fuente-01",
-        "fuente": "[EJEMPLO] Fixture ficticio de prueba para Etapa 1",
-        "url": "https://example.org/atlas-quimico-ar/ejemplo-etapa-1",
+        "fuente": "[EJEMPLO] Marcador territorial demostrativo para cadenas MVP pendientes de Etapa 6",
+        "url": "https://example.org/atlas-quimico-ar/mvp-pendiente",
         "fecha_descarga": "2026-11-24",
         "hash": "sha256:e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
-        "cita_ubicacion": "fixture:produccion.csv fila 3",
+        "cita_ubicacion": "plan-mvp:pendiente-etapa-6",
         "confianza": "ejemplo"
       }
     },
     "procedencia": {
       "anio": 2024,
       "fuente_id": "ejemplo-fuente-01",
-      "fuente": "[EJEMPLO] Fixture ficticio de prueba para Etapa 1",
-      "url": "https://example.org/atlas-quimico-ar/ejemplo-etapa-1",
+      "fuente": "[EJEMPLO] Marcador territorial demostrativo para cadenas MVP pendientes de Etapa 6",
+      "url": "https://example.org/atlas-quimico-ar/mvp-pendiente",
       "fecha_descarga": "2026-11-24",
       "hash": "sha256:e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
-      "cita_ubicacion": "fixture:produccion.csv fila 3",
+      "cita_ubicacion": "plan-mvp:pendiente-etapa-6",
       "confianza": "ejemplo"
     }
   }

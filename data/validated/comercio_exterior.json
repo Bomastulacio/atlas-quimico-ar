@@ -1,68 +1,626 @@
 [
   {
-    "registro_id": "comex-ejemplo-aluminio-2024-usd",
+    "registro_id": "comex-aluminio-cap76-2024-usd",
     "producto_id": "aluminio",
     "anio": 2024,
-    "ncm_codigo": "7601",
+    "ncm_codigo": "76",
     "metrica": "valor_usd",
     "exportacion": {
       "estado": "dato",
-      "valor": 850000000,
-      "unidad": "USD",
+      "valor": 1111.44,
+      "unidad": "millones USD",
       "procedencia": {
         "anio": 2024,
-        "fuente_id": "ejemplo-fuente-01",
-        "fuente": "[EJEMPLO] Fixture ficticio de prueba para Etapa 1",
-        "url": "https://example.org/atlas-quimico-ar/ejemplo-etapa-1",
+        "fuente_id": "indec-comex-aluminio-2024",
+        "fuente": "Series de Tiempo INDEC: comercio exterior de aluminio y sus manufacturas (162.1 / 163.1 / 164.1)",
+        "url": "https://apis.datos.gob.ar/series/api/series/?ids=162.1_XUMINIORAS_0_0_23,163.1_MUMINIORAS_0_0_23,164.1_SLUMINIRAS_0_0_24&start_date=2019-01-01&format=csv",
         "fecha_descarga": "2026-11-24",
-        "hash": "sha256:e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
-        "cita_ubicacion": "fixture:comercio_exterior.csv fila 2",
-        "confianza": "ejemplo"
+        "hash": "sha256:1039267cff39cb3a5093f274e2ceeeab4a8f6ab80eb65b59393f4ca4a700f513",
+        "cita_ubicacion": "datosgob_indec_aluminio_comex_anual.csv fila 2024-01-01 (INDEC series 162.1/163.1/164.1)",
+        "confianza": "alta"
       }
     },
     "importacion": {
       "estado": "dato",
-      "valor": 320000000,
-      "unidad": "USD",
+      "valor": 354.68,
+      "unidad": "millones USD",
       "procedencia": {
         "anio": 2024,
-        "fuente_id": "ejemplo-fuente-01",
-        "fuente": "[EJEMPLO] Fixture ficticio de prueba para Etapa 1",
-        "url": "https://example.org/atlas-quimico-ar/ejemplo-etapa-1",
+        "fuente_id": "indec-comex-aluminio-2024",
+        "fuente": "Series de Tiempo INDEC: comercio exterior de aluminio y sus manufacturas (162.1 / 163.1 / 164.1)",
+        "url": "https://apis.datos.gob.ar/series/api/series/?ids=162.1_XUMINIORAS_0_0_23,163.1_MUMINIORAS_0_0_23,164.1_SLUMINIRAS_0_0_24&start_date=2019-01-01&format=csv",
         "fecha_descarga": "2026-11-24",
-        "hash": "sha256:e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
-        "cita_ubicacion": "fixture:comercio_exterior.csv fila 2",
-        "confianza": "ejemplo"
+        "hash": "sha256:1039267cff39cb3a5093f274e2ceeeab4a8f6ab80eb65b59393f4ca4a700f513",
+        "cita_ubicacion": "datosgob_indec_aluminio_comex_anual.csv fila 2024-01-01 (INDEC series 162.1/163.1/164.1)",
+        "confianza": "alta"
       }
     },
     "saldo_comercial": {
       "estado": "dato",
-      "valor": 530000000,
-      "unidad": "USD",
+      "valor": 756.76,
+      "unidad": "millones USD",
       "procedencia": {
         "anio": 2024,
-        "fuente_id": "ejemplo-fuente-01",
-        "fuente": "[EJEMPLO] Fixture ficticio de prueba para Etapa 1",
-        "url": "https://example.org/atlas-quimico-ar/ejemplo-etapa-1",
+        "fuente_id": "indec-comex-aluminio-2024",
+        "fuente": "Series de Tiempo INDEC: comercio exterior de aluminio y sus manufacturas (162.1 / 163.1 / 164.1)",
+        "url": "https://apis.datos.gob.ar/series/api/series/?ids=162.1_XUMINIORAS_0_0_23,163.1_MUMINIORAS_0_0_23,164.1_SLUMINIRAS_0_0_24&start_date=2019-01-01&format=csv",
         "fecha_descarga": "2026-11-24",
-        "hash": "sha256:e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
-        "cita_ubicacion": "fixture:comercio_exterior.csv fila 2",
-        "confianza": "ejemplo"
+        "hash": "sha256:1039267cff39cb3a5093f274e2ceeeab4a8f6ab80eb65b59393f4ca4a700f513",
+        "cita_ubicacion": "datosgob_indec_aluminio_comex_anual.csv fila 2024-01-01 (INDEC series 162.1/163.1/164.1)",
+        "confianza": "alta"
       }
     },
     "procedencia": {
       "anio": 2024,
-      "fuente_id": "ejemplo-fuente-01",
-      "fuente": "[EJEMPLO] Fixture ficticio de prueba para Etapa 1",
-      "url": "https://example.org/atlas-quimico-ar/ejemplo-etapa-1",
+      "fuente_id": "indec-comex-aluminio-2024",
+      "fuente": "Series de Tiempo INDEC: comercio exterior de aluminio y sus manufacturas (162.1 / 163.1 / 164.1)",
+      "url": "https://apis.datos.gob.ar/series/api/series/?ids=162.1_XUMINIORAS_0_0_23,163.1_MUMINIORAS_0_0_23,164.1_SLUMINIRAS_0_0_24&start_date=2019-01-01&format=csv",
       "fecha_descarga": "2026-11-24",
-      "hash": "sha256:e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
-      "cita_ubicacion": "fixture:comercio_exterior.csv fila 2",
-      "confianza": "ejemplo"
+      "hash": "sha256:1039267cff39cb3a5093f274e2ceeeab4a8f6ab80eb65b59393f4ca4a700f513",
+      "cita_ubicacion": "datosgob_indec_aluminio_comex_anual.csv fila 2024-01-01 (INDEC series 162.1/163.1/164.1)",
+      "confianza": "alta"
     }
   },
   {
-    "registro_id": "comex-ejemplo-litio-2024-usd",
+    "registro_id": "comex-aluminio-cap76-2023-usd",
+    "producto_id": "aluminio",
+    "anio": 2023,
+    "ncm_codigo": "76",
+    "metrica": "valor_usd",
+    "exportacion": {
+      "estado": "dato",
+      "valor": 884.2,
+      "unidad": "millones USD",
+      "procedencia": {
+        "anio": 2023,
+        "fuente_id": "indec-comex-aluminio-2024",
+        "fuente": "Series de Tiempo INDEC: comercio exterior de aluminio y sus manufacturas (162.1 / 163.1 / 164.1)",
+        "url": "https://apis.datos.gob.ar/series/api/series/?ids=162.1_XUMINIORAS_0_0_23,163.1_MUMINIORAS_0_0_23,164.1_SLUMINIRAS_0_0_24&start_date=2019-01-01&format=csv",
+        "fecha_descarga": "2026-11-24",
+        "hash": "sha256:1039267cff39cb3a5093f274e2ceeeab4a8f6ab80eb65b59393f4ca4a700f513",
+        "cita_ubicacion": "datosgob_indec_aluminio_comex_anual.csv fila 2023-01-01 (INDEC series 162.1/163.1/164.1)",
+        "confianza": "alta"
+      }
+    },
+    "importacion": {
+      "estado": "dato",
+      "valor": 419.76,
+      "unidad": "millones USD",
+      "procedencia": {
+        "anio": 2023,
+        "fuente_id": "indec-comex-aluminio-2024",
+        "fuente": "Series de Tiempo INDEC: comercio exterior de aluminio y sus manufacturas (162.1 / 163.1 / 164.1)",
+        "url": "https://apis.datos.gob.ar/series/api/series/?ids=162.1_XUMINIORAS_0_0_23,163.1_MUMINIORAS_0_0_23,164.1_SLUMINIRAS_0_0_24&start_date=2019-01-01&format=csv",
+        "fecha_descarga": "2026-11-24",
+        "hash": "sha256:1039267cff39cb3a5093f274e2ceeeab4a8f6ab80eb65b59393f4ca4a700f513",
+        "cita_ubicacion": "datosgob_indec_aluminio_comex_anual.csv fila 2023-01-01 (INDEC series 162.1/163.1/164.1)",
+        "confianza": "alta"
+      }
+    },
+    "saldo_comercial": {
+      "estado": "dato",
+      "valor": 464.44,
+      "unidad": "millones USD",
+      "procedencia": {
+        "anio": 2023,
+        "fuente_id": "indec-comex-aluminio-2024",
+        "fuente": "Series de Tiempo INDEC: comercio exterior de aluminio y sus manufacturas (162.1 / 163.1 / 164.1)",
+        "url": "https://apis.datos.gob.ar/series/api/series/?ids=162.1_XUMINIORAS_0_0_23,163.1_MUMINIORAS_0_0_23,164.1_SLUMINIRAS_0_0_24&start_date=2019-01-01&format=csv",
+        "fecha_descarga": "2026-11-24",
+        "hash": "sha256:1039267cff39cb3a5093f274e2ceeeab4a8f6ab80eb65b59393f4ca4a700f513",
+        "cita_ubicacion": "datosgob_indec_aluminio_comex_anual.csv fila 2023-01-01 (INDEC series 162.1/163.1/164.1)",
+        "confianza": "alta"
+      }
+    },
+    "procedencia": {
+      "anio": 2023,
+      "fuente_id": "indec-comex-aluminio-2024",
+      "fuente": "Series de Tiempo INDEC: comercio exterior de aluminio y sus manufacturas (162.1 / 163.1 / 164.1)",
+      "url": "https://apis.datos.gob.ar/series/api/series/?ids=162.1_XUMINIORAS_0_0_23,163.1_MUMINIORAS_0_0_23,164.1_SLUMINIRAS_0_0_24&start_date=2019-01-01&format=csv",
+      "fecha_descarga": "2026-11-24",
+      "hash": "sha256:1039267cff39cb3a5093f274e2ceeeab4a8f6ab80eb65b59393f4ca4a700f513",
+      "cita_ubicacion": "datosgob_indec_aluminio_comex_anual.csv fila 2023-01-01 (INDEC series 162.1/163.1/164.1)",
+      "confianza": "alta"
+    }
+  },
+  {
+    "registro_id": "comex-aluminio-cap76-2022-usd",
+    "producto_id": "aluminio",
+    "anio": 2022,
+    "ncm_codigo": "76",
+    "metrica": "valor_usd",
+    "exportacion": {
+      "estado": "dato",
+      "valor": 780.58,
+      "unidad": "millones USD",
+      "procedencia": {
+        "anio": 2022,
+        "fuente_id": "indec-comex-aluminio-2024",
+        "fuente": "Series de Tiempo INDEC: comercio exterior de aluminio y sus manufacturas (162.1 / 163.1 / 164.1)",
+        "url": "https://apis.datos.gob.ar/series/api/series/?ids=162.1_XUMINIORAS_0_0_23,163.1_MUMINIORAS_0_0_23,164.1_SLUMINIRAS_0_0_24&start_date=2019-01-01&format=csv",
+        "fecha_descarga": "2026-11-24",
+        "hash": "sha256:1039267cff39cb3a5093f274e2ceeeab4a8f6ab80eb65b59393f4ca4a700f513",
+        "cita_ubicacion": "datosgob_indec_aluminio_comex_anual.csv fila 2022-01-01 (INDEC series 162.1/163.1/164.1)",
+        "confianza": "alta"
+      }
+    },
+    "importacion": {
+      "estado": "dato",
+      "valor": 533.76,
+      "unidad": "millones USD",
+      "procedencia": {
+        "anio": 2022,
+        "fuente_id": "indec-comex-aluminio-2024",
+        "fuente": "Series de Tiempo INDEC: comercio exterior de aluminio y sus manufacturas (162.1 / 163.1 / 164.1)",
+        "url": "https://apis.datos.gob.ar/series/api/series/?ids=162.1_XUMINIORAS_0_0_23,163.1_MUMINIORAS_0_0_23,164.1_SLUMINIRAS_0_0_24&start_date=2019-01-01&format=csv",
+        "fecha_descarga": "2026-11-24",
+        "hash": "sha256:1039267cff39cb3a5093f274e2ceeeab4a8f6ab80eb65b59393f4ca4a700f513",
+        "cita_ubicacion": "datosgob_indec_aluminio_comex_anual.csv fila 2022-01-01 (INDEC series 162.1/163.1/164.1)",
+        "confianza": "alta"
+      }
+    },
+    "saldo_comercial": {
+      "estado": "dato",
+      "valor": 246.82,
+      "unidad": "millones USD",
+      "procedencia": {
+        "anio": 2022,
+        "fuente_id": "indec-comex-aluminio-2024",
+        "fuente": "Series de Tiempo INDEC: comercio exterior de aluminio y sus manufacturas (162.1 / 163.1 / 164.1)",
+        "url": "https://apis.datos.gob.ar/series/api/series/?ids=162.1_XUMINIORAS_0_0_23,163.1_MUMINIORAS_0_0_23,164.1_SLUMINIRAS_0_0_24&start_date=2019-01-01&format=csv",
+        "fecha_descarga": "2026-11-24",
+        "hash": "sha256:1039267cff39cb3a5093f274e2ceeeab4a8f6ab80eb65b59393f4ca4a700f513",
+        "cita_ubicacion": "datosgob_indec_aluminio_comex_anual.csv fila 2022-01-01 (INDEC series 162.1/163.1/164.1)",
+        "confianza": "alta"
+      }
+    },
+    "procedencia": {
+      "anio": 2022,
+      "fuente_id": "indec-comex-aluminio-2024",
+      "fuente": "Series de Tiempo INDEC: comercio exterior de aluminio y sus manufacturas (162.1 / 163.1 / 164.1)",
+      "url": "https://apis.datos.gob.ar/series/api/series/?ids=162.1_XUMINIORAS_0_0_23,163.1_MUMINIORAS_0_0_23,164.1_SLUMINIRAS_0_0_24&start_date=2019-01-01&format=csv",
+      "fecha_descarga": "2026-11-24",
+      "hash": "sha256:1039267cff39cb3a5093f274e2ceeeab4a8f6ab80eb65b59393f4ca4a700f513",
+      "cita_ubicacion": "datosgob_indec_aluminio_comex_anual.csv fila 2022-01-01 (INDEC series 162.1/163.1/164.1)",
+      "confianza": "alta"
+    }
+  },
+  {
+    "registro_id": "comex-aluminio-cap76-2021-usd",
+    "producto_id": "aluminio",
+    "anio": 2021,
+    "ncm_codigo": "76",
+    "metrica": "valor_usd",
+    "exportacion": {
+      "estado": "dato",
+      "valor": 663.71,
+      "unidad": "millones USD",
+      "procedencia": {
+        "anio": 2021,
+        "fuente_id": "indec-comex-aluminio-2024",
+        "fuente": "Series de Tiempo INDEC: comercio exterior de aluminio y sus manufacturas (162.1 / 163.1 / 164.1)",
+        "url": "https://apis.datos.gob.ar/series/api/series/?ids=162.1_XUMINIORAS_0_0_23,163.1_MUMINIORAS_0_0_23,164.1_SLUMINIRAS_0_0_24&start_date=2019-01-01&format=csv",
+        "fecha_descarga": "2026-11-24",
+        "hash": "sha256:1039267cff39cb3a5093f274e2ceeeab4a8f6ab80eb65b59393f4ca4a700f513",
+        "cita_ubicacion": "datosgob_indec_aluminio_comex_anual.csv fila 2021-01-01 (INDEC series 162.1/163.1/164.1)",
+        "confianza": "alta"
+      }
+    },
+    "importacion": {
+      "estado": "dato",
+      "valor": 420.74,
+      "unidad": "millones USD",
+      "procedencia": {
+        "anio": 2021,
+        "fuente_id": "indec-comex-aluminio-2024",
+        "fuente": "Series de Tiempo INDEC: comercio exterior de aluminio y sus manufacturas (162.1 / 163.1 / 164.1)",
+        "url": "https://apis.datos.gob.ar/series/api/series/?ids=162.1_XUMINIORAS_0_0_23,163.1_MUMINIORAS_0_0_23,164.1_SLUMINIRAS_0_0_24&start_date=2019-01-01&format=csv",
+        "fecha_descarga": "2026-11-24",
+        "hash": "sha256:1039267cff39cb3a5093f274e2ceeeab4a8f6ab80eb65b59393f4ca4a700f513",
+        "cita_ubicacion": "datosgob_indec_aluminio_comex_anual.csv fila 2021-01-01 (INDEC series 162.1/163.1/164.1)",
+        "confianza": "alta"
+      }
+    },
+    "saldo_comercial": {
+      "estado": "dato",
+      "valor": 242.97,
+      "unidad": "millones USD",
+      "procedencia": {
+        "anio": 2021,
+        "fuente_id": "indec-comex-aluminio-2024",
+        "fuente": "Series de Tiempo INDEC: comercio exterior de aluminio y sus manufacturas (162.1 / 163.1 / 164.1)",
+        "url": "https://apis.datos.gob.ar/series/api/series/?ids=162.1_XUMINIORAS_0_0_23,163.1_MUMINIORAS_0_0_23,164.1_SLUMINIRAS_0_0_24&start_date=2019-01-01&format=csv",
+        "fecha_descarga": "2026-11-24",
+        "hash": "sha256:1039267cff39cb3a5093f274e2ceeeab4a8f6ab80eb65b59393f4ca4a700f513",
+        "cita_ubicacion": "datosgob_indec_aluminio_comex_anual.csv fila 2021-01-01 (INDEC series 162.1/163.1/164.1)",
+        "confianza": "alta"
+      }
+    },
+    "procedencia": {
+      "anio": 2021,
+      "fuente_id": "indec-comex-aluminio-2024",
+      "fuente": "Series de Tiempo INDEC: comercio exterior de aluminio y sus manufacturas (162.1 / 163.1 / 164.1)",
+      "url": "https://apis.datos.gob.ar/series/api/series/?ids=162.1_XUMINIORAS_0_0_23,163.1_MUMINIORAS_0_0_23,164.1_SLUMINIRAS_0_0_24&start_date=2019-01-01&format=csv",
+      "fecha_descarga": "2026-11-24",
+      "hash": "sha256:1039267cff39cb3a5093f274e2ceeeab4a8f6ab80eb65b59393f4ca4a700f513",
+      "cita_ubicacion": "datosgob_indec_aluminio_comex_anual.csv fila 2021-01-01 (INDEC series 162.1/163.1/164.1)",
+      "confianza": "alta"
+    }
+  },
+  {
+    "registro_id": "comex-aluminio-cap76-2020-usd",
+    "producto_id": "aluminio",
+    "anio": 2020,
+    "ncm_codigo": "76",
+    "metrica": "valor_usd",
+    "exportacion": {
+      "estado": "dato",
+      "valor": 576.99,
+      "unidad": "millones USD",
+      "procedencia": {
+        "anio": 2020,
+        "fuente_id": "indec-comex-aluminio-2024",
+        "fuente": "Series de Tiempo INDEC: comercio exterior de aluminio y sus manufacturas (162.1 / 163.1 / 164.1)",
+        "url": "https://apis.datos.gob.ar/series/api/series/?ids=162.1_XUMINIORAS_0_0_23,163.1_MUMINIORAS_0_0_23,164.1_SLUMINIRAS_0_0_24&start_date=2019-01-01&format=csv",
+        "fecha_descarga": "2026-11-24",
+        "hash": "sha256:1039267cff39cb3a5093f274e2ceeeab4a8f6ab80eb65b59393f4ca4a700f513",
+        "cita_ubicacion": "datosgob_indec_aluminio_comex_anual.csv fila 2020-01-01 (INDEC series 162.1/163.1/164.1)",
+        "confianza": "alta"
+      }
+    },
+    "importacion": {
+      "estado": "dato",
+      "valor": 303.7,
+      "unidad": "millones USD",
+      "procedencia": {
+        "anio": 2020,
+        "fuente_id": "indec-comex-aluminio-2024",
+        "fuente": "Series de Tiempo INDEC: comercio exterior de aluminio y sus manufacturas (162.1 / 163.1 / 164.1)",
+        "url": "https://apis.datos.gob.ar/series/api/series/?ids=162.1_XUMINIORAS_0_0_23,163.1_MUMINIORAS_0_0_23,164.1_SLUMINIRAS_0_0_24&start_date=2019-01-01&format=csv",
+        "fecha_descarga": "2026-11-24",
+        "hash": "sha256:1039267cff39cb3a5093f274e2ceeeab4a8f6ab80eb65b59393f4ca4a700f513",
+        "cita_ubicacion": "datosgob_indec_aluminio_comex_anual.csv fila 2020-01-01 (INDEC series 162.1/163.1/164.1)",
+        "confianza": "alta"
+      }
+    },
+    "saldo_comercial": {
+      "estado": "dato",
+      "valor": 273.29,
+      "unidad": "millones USD",
+      "procedencia": {
+        "anio": 2020,
+        "fuente_id": "indec-comex-aluminio-2024",
+        "fuente": "Series de Tiempo INDEC: comercio exterior de aluminio y sus manufacturas (162.1 / 163.1 / 164.1)",
+        "url": "https://apis.datos.gob.ar/series/api/series/?ids=162.1_XUMINIORAS_0_0_23,163.1_MUMINIORAS_0_0_23,164.1_SLUMINIRAS_0_0_24&start_date=2019-01-01&format=csv",
+        "fecha_descarga": "2026-11-24",
+        "hash": "sha256:1039267cff39cb3a5093f274e2ceeeab4a8f6ab80eb65b59393f4ca4a700f513",
+        "cita_ubicacion": "datosgob_indec_aluminio_comex_anual.csv fila 2020-01-01 (INDEC series 162.1/163.1/164.1)",
+        "confianza": "alta"
+      }
+    },
+    "procedencia": {
+      "anio": 2020,
+      "fuente_id": "indec-comex-aluminio-2024",
+      "fuente": "Series de Tiempo INDEC: comercio exterior de aluminio y sus manufacturas (162.1 / 163.1 / 164.1)",
+      "url": "https://apis.datos.gob.ar/series/api/series/?ids=162.1_XUMINIORAS_0_0_23,163.1_MUMINIORAS_0_0_23,164.1_SLUMINIRAS_0_0_24&start_date=2019-01-01&format=csv",
+      "fecha_descarga": "2026-11-24",
+      "hash": "sha256:1039267cff39cb3a5093f274e2ceeeab4a8f6ab80eb65b59393f4ca4a700f513",
+      "cita_ubicacion": "datosgob_indec_aluminio_comex_anual.csv fila 2020-01-01 (INDEC series 162.1/163.1/164.1)",
+      "confianza": "alta"
+    }
+  },
+  {
+    "registro_id": "comex-aluminio-cap76-2019-usd",
+    "producto_id": "aluminio",
+    "anio": 2019,
+    "ncm_codigo": "76",
+    "metrica": "valor_usd",
+    "exportacion": {
+      "estado": "dato",
+      "valor": 814.65,
+      "unidad": "millones USD",
+      "procedencia": {
+        "anio": 2019,
+        "fuente_id": "indec-comex-aluminio-2024",
+        "fuente": "Series de Tiempo INDEC: comercio exterior de aluminio y sus manufacturas (162.1 / 163.1 / 164.1)",
+        "url": "https://apis.datos.gob.ar/series/api/series/?ids=162.1_XUMINIORAS_0_0_23,163.1_MUMINIORAS_0_0_23,164.1_SLUMINIRAS_0_0_24&start_date=2019-01-01&format=csv",
+        "fecha_descarga": "2026-11-24",
+        "hash": "sha256:1039267cff39cb3a5093f274e2ceeeab4a8f6ab80eb65b59393f4ca4a700f513",
+        "cita_ubicacion": "datosgob_indec_aluminio_comex_anual.csv fila 2019-01-01 (INDEC series 162.1/163.1/164.1)",
+        "confianza": "alta"
+      }
+    },
+    "importacion": {
+      "estado": "dato",
+      "valor": 316.83,
+      "unidad": "millones USD",
+      "procedencia": {
+        "anio": 2019,
+        "fuente_id": "indec-comex-aluminio-2024",
+        "fuente": "Series de Tiempo INDEC: comercio exterior de aluminio y sus manufacturas (162.1 / 163.1 / 164.1)",
+        "url": "https://apis.datos.gob.ar/series/api/series/?ids=162.1_XUMINIORAS_0_0_23,163.1_MUMINIORAS_0_0_23,164.1_SLUMINIRAS_0_0_24&start_date=2019-01-01&format=csv",
+        "fecha_descarga": "2026-11-24",
+        "hash": "sha256:1039267cff39cb3a5093f274e2ceeeab4a8f6ab80eb65b59393f4ca4a700f513",
+        "cita_ubicacion": "datosgob_indec_aluminio_comex_anual.csv fila 2019-01-01 (INDEC series 162.1/163.1/164.1)",
+        "confianza": "alta"
+      }
+    },
+    "saldo_comercial": {
+      "estado": "dato",
+      "valor": 497.82,
+      "unidad": "millones USD",
+      "procedencia": {
+        "anio": 2019,
+        "fuente_id": "indec-comex-aluminio-2024",
+        "fuente": "Series de Tiempo INDEC: comercio exterior de aluminio y sus manufacturas (162.1 / 163.1 / 164.1)",
+        "url": "https://apis.datos.gob.ar/series/api/series/?ids=162.1_XUMINIORAS_0_0_23,163.1_MUMINIORAS_0_0_23,164.1_SLUMINIRAS_0_0_24&start_date=2019-01-01&format=csv",
+        "fecha_descarga": "2026-11-24",
+        "hash": "sha256:1039267cff39cb3a5093f274e2ceeeab4a8f6ab80eb65b59393f4ca4a700f513",
+        "cita_ubicacion": "datosgob_indec_aluminio_comex_anual.csv fila 2019-01-01 (INDEC series 162.1/163.1/164.1)",
+        "confianza": "alta"
+      }
+    },
+    "procedencia": {
+      "anio": 2019,
+      "fuente_id": "indec-comex-aluminio-2024",
+      "fuente": "Series de Tiempo INDEC: comercio exterior de aluminio y sus manufacturas (162.1 / 163.1 / 164.1)",
+      "url": "https://apis.datos.gob.ar/series/api/series/?ids=162.1_XUMINIORAS_0_0_23,163.1_MUMINIORAS_0_0_23,164.1_SLUMINIRAS_0_0_24&start_date=2019-01-01&format=csv",
+      "fecha_descarga": "2026-11-24",
+      "hash": "sha256:1039267cff39cb3a5093f274e2ceeeab4a8f6ab80eb65b59393f4ca4a700f513",
+      "cita_ubicacion": "datosgob_indec_aluminio_comex_anual.csv fila 2019-01-01 (INDEC series 162.1/163.1/164.1)",
+      "confianza": "alta"
+    }
+  },
+  {
+    "registro_id": "comex-alumina-281820-2024-t",
+    "producto_id": "aluminio",
+    "anio": 2024,
+    "ncm_codigo": "2818.20",
+    "metrica": "volumen_t",
+    "exportacion": {
+      "estado": "sin_datos",
+      "valor": null,
+      "unidad": "t Al2O3 importada",
+      "procedencia": {
+        "anio": 2024,
+        "fuente_id": "uncomtrade-ar-alumina-2024",
+        "fuente": "UN Comtrade: importaciones de Argentina HS 281820 (Alúmina) y HS 7601 (Aluminio en bruto) 2024",
+        "url": "https://comtradeapi.un.org/public/v1/preview/C/A/HS?reporterCode=32&period=2024&partnerCode=0&partner2Code=0&customsCode=C00&motCode=0&cmdCode=7601,281820",
+        "fecha_descarga": "2026-11-24",
+        "hash": "sha256:db1674273b3b721a1421315ff8b7f301851654f7b2431b578d65e80bd35b19d8",
+        "cita_ubicacion": "uncomtrade_ar_7601_281820_2024.json cmdCode=281820 flow=M netWgt=871522601.22 kg",
+        "confianza": "alta"
+      }
+    },
+    "importacion": {
+      "estado": "dato",
+      "valor": 871522.6,
+      "unidad": "t Al2O3 importada",
+      "procedencia": {
+        "anio": 2024,
+        "fuente_id": "uncomtrade-ar-alumina-2024",
+        "fuente": "UN Comtrade: importaciones de Argentina HS 281820 (Alúmina) y HS 7601 (Aluminio en bruto) 2024",
+        "url": "https://comtradeapi.un.org/public/v1/preview/C/A/HS?reporterCode=32&period=2024&partnerCode=0&partner2Code=0&customsCode=C00&motCode=0&cmdCode=7601,281820",
+        "fecha_descarga": "2026-11-24",
+        "hash": "sha256:db1674273b3b721a1421315ff8b7f301851654f7b2431b578d65e80bd35b19d8",
+        "cita_ubicacion": "uncomtrade_ar_7601_281820_2024.json cmdCode=281820 flow=M netWgt=871522601.22 kg",
+        "confianza": "alta"
+      }
+    },
+    "saldo_comercial": {
+      "estado": "sin_datos",
+      "valor": null,
+      "unidad": "t Al2O3 importada",
+      "procedencia": {
+        "anio": 2024,
+        "fuente_id": "uncomtrade-ar-alumina-2024",
+        "fuente": "UN Comtrade: importaciones de Argentina HS 281820 (Alúmina) y HS 7601 (Aluminio en bruto) 2024",
+        "url": "https://comtradeapi.un.org/public/v1/preview/C/A/HS?reporterCode=32&period=2024&partnerCode=0&partner2Code=0&customsCode=C00&motCode=0&cmdCode=7601,281820",
+        "fecha_descarga": "2026-11-24",
+        "hash": "sha256:db1674273b3b721a1421315ff8b7f301851654f7b2431b578d65e80bd35b19d8",
+        "cita_ubicacion": "uncomtrade_ar_7601_281820_2024.json cmdCode=281820 flow=M netWgt=871522601.22 kg",
+        "confianza": "alta"
+      }
+    },
+    "procedencia": {
+      "anio": 2024,
+      "fuente_id": "uncomtrade-ar-alumina-2024",
+      "fuente": "UN Comtrade: importaciones de Argentina HS 281820 (Alúmina) y HS 7601 (Aluminio en bruto) 2024",
+      "url": "https://comtradeapi.un.org/public/v1/preview/C/A/HS?reporterCode=32&period=2024&partnerCode=0&partner2Code=0&customsCode=C00&motCode=0&cmdCode=7601,281820",
+      "fecha_descarga": "2026-11-24",
+      "hash": "sha256:db1674273b3b721a1421315ff8b7f301851654f7b2431b578d65e80bd35b19d8",
+      "cita_ubicacion": "uncomtrade_ar_7601_281820_2024.json cmdCode=281820 flow=M netWgt=871522601.22 kg",
+      "confianza": "alta"
+    }
+  },
+  {
+    "registro_id": "comex-alumina-281820-2024-usd",
+    "producto_id": "aluminio",
+    "anio": 2024,
+    "ncm_codigo": "2818.20",
+    "metrica": "valor_usd",
+    "exportacion": {
+      "estado": "sin_datos",
+      "valor": null,
+      "unidad": "millones USD (insumo)",
+      "procedencia": {
+        "anio": 2024,
+        "fuente_id": "uncomtrade-ar-alumina-2024",
+        "fuente": "UN Comtrade: importaciones de Argentina HS 281820 (Alúmina) y HS 7601 (Aluminio en bruto) 2024",
+        "url": "https://comtradeapi.un.org/public/v1/preview/C/A/HS?reporterCode=32&period=2024&partnerCode=0&partner2Code=0&customsCode=C00&motCode=0&cmdCode=7601,281820",
+        "fecha_descarga": "2026-11-24",
+        "hash": "sha256:db1674273b3b721a1421315ff8b7f301851654f7b2431b578d65e80bd35b19d8",
+        "cita_ubicacion": "uncomtrade_ar_7601_281820_2024.json cmdCode=281820 flow=M primaryValue=405962114.02 USD",
+        "confianza": "alta"
+      }
+    },
+    "importacion": {
+      "estado": "dato",
+      "valor": 405.96,
+      "unidad": "millones USD (insumo)",
+      "procedencia": {
+        "anio": 2024,
+        "fuente_id": "uncomtrade-ar-alumina-2024",
+        "fuente": "UN Comtrade: importaciones de Argentina HS 281820 (Alúmina) y HS 7601 (Aluminio en bruto) 2024",
+        "url": "https://comtradeapi.un.org/public/v1/preview/C/A/HS?reporterCode=32&period=2024&partnerCode=0&partner2Code=0&customsCode=C00&motCode=0&cmdCode=7601,281820",
+        "fecha_descarga": "2026-11-24",
+        "hash": "sha256:db1674273b3b721a1421315ff8b7f301851654f7b2431b578d65e80bd35b19d8",
+        "cita_ubicacion": "uncomtrade_ar_7601_281820_2024.json cmdCode=281820 flow=M primaryValue=405962114.02 USD",
+        "confianza": "alta"
+      }
+    },
+    "saldo_comercial": {
+      "estado": "sin_datos",
+      "valor": null,
+      "unidad": "millones USD (insumo)",
+      "procedencia": {
+        "anio": 2024,
+        "fuente_id": "uncomtrade-ar-alumina-2024",
+        "fuente": "UN Comtrade: importaciones de Argentina HS 281820 (Alúmina) y HS 7601 (Aluminio en bruto) 2024",
+        "url": "https://comtradeapi.un.org/public/v1/preview/C/A/HS?reporterCode=32&period=2024&partnerCode=0&partner2Code=0&customsCode=C00&motCode=0&cmdCode=7601,281820",
+        "fecha_descarga": "2026-11-24",
+        "hash": "sha256:db1674273b3b721a1421315ff8b7f301851654f7b2431b578d65e80bd35b19d8",
+        "cita_ubicacion": "uncomtrade_ar_7601_281820_2024.json cmdCode=281820 flow=M primaryValue=405962114.02 USD",
+        "confianza": "alta"
+      }
+    },
+    "procedencia": {
+      "anio": 2024,
+      "fuente_id": "uncomtrade-ar-alumina-2024",
+      "fuente": "UN Comtrade: importaciones de Argentina HS 281820 (Alúmina) y HS 7601 (Aluminio en bruto) 2024",
+      "url": "https://comtradeapi.un.org/public/v1/preview/C/A/HS?reporterCode=32&period=2024&partnerCode=0&partner2Code=0&customsCode=C00&motCode=0&cmdCode=7601,281820",
+      "fecha_descarga": "2026-11-24",
+      "hash": "sha256:db1674273b3b721a1421315ff8b7f301851654f7b2431b578d65e80bd35b19d8",
+      "cita_ubicacion": "uncomtrade_ar_7601_281820_2024.json cmdCode=281820 flow=M primaryValue=405962114.02 USD",
+      "confianza": "alta"
+    }
+  },
+  {
+    "registro_id": "comex-alumina-281820-2023-t",
+    "producto_id": "aluminio",
+    "anio": 2023,
+    "ncm_codigo": "2818.20",
+    "metrica": "volumen_t",
+    "exportacion": {
+      "estado": "sin_datos",
+      "valor": null,
+      "unidad": "t Al2O3 importada",
+      "procedencia": {
+        "anio": 2023,
+        "fuente_id": "uncomtrade-ar-alumina-2023",
+        "fuente": "UN Comtrade: importaciones de Argentina HS 281820 (Alúmina) y HS 7601 (Aluminio en bruto) 2023",
+        "url": "https://comtradeapi.un.org/public/v1/preview/C/A/HS?reporterCode=32&period=2023&partnerCode=0&partner2Code=0&customsCode=C00&motCode=0&cmdCode=7601,281820",
+        "fecha_descarga": "2026-11-24",
+        "hash": "sha256:491e62a104cd961eb6d9aa058bb0a78e170f4ba684eb8cc1dd2196af9ea8a48e",
+        "cita_ubicacion": "uncomtrade_ar_7601_281820_2023.json cmdCode=281820 flow=M netWgt=855972213.94 kg",
+        "confianza": "alta"
+      }
+    },
+    "importacion": {
+      "estado": "dato",
+      "valor": 855972.2,
+      "unidad": "t Al2O3 importada",
+      "procedencia": {
+        "anio": 2023,
+        "fuente_id": "uncomtrade-ar-alumina-2023",
+        "fuente": "UN Comtrade: importaciones de Argentina HS 281820 (Alúmina) y HS 7601 (Aluminio en bruto) 2023",
+        "url": "https://comtradeapi.un.org/public/v1/preview/C/A/HS?reporterCode=32&period=2023&partnerCode=0&partner2Code=0&customsCode=C00&motCode=0&cmdCode=7601,281820",
+        "fecha_descarga": "2026-11-24",
+        "hash": "sha256:491e62a104cd961eb6d9aa058bb0a78e170f4ba684eb8cc1dd2196af9ea8a48e",
+        "cita_ubicacion": "uncomtrade_ar_7601_281820_2023.json cmdCode=281820 flow=M netWgt=855972213.94 kg",
+        "confianza": "alta"
+      }
+    },
+    "saldo_comercial": {
+      "estado": "sin_datos",
+      "valor": null,
+      "unidad": "t Al2O3 importada",
+      "procedencia": {
+        "anio": 2023,
+        "fuente_id": "uncomtrade-ar-alumina-2023",
+        "fuente": "UN Comtrade: importaciones de Argentina HS 281820 (Alúmina) y HS 7601 (Aluminio en bruto) 2023",
+        "url": "https://comtradeapi.un.org/public/v1/preview/C/A/HS?reporterCode=32&period=2023&partnerCode=0&partner2Code=0&customsCode=C00&motCode=0&cmdCode=7601,281820",
+        "fecha_descarga": "2026-11-24",
+        "hash": "sha256:491e62a104cd961eb6d9aa058bb0a78e170f4ba684eb8cc1dd2196af9ea8a48e",
+        "cita_ubicacion": "uncomtrade_ar_7601_281820_2023.json cmdCode=281820 flow=M netWgt=855972213.94 kg",
+        "confianza": "alta"
+      }
+    },
+    "procedencia": {
+      "anio": 2023,
+      "fuente_id": "uncomtrade-ar-alumina-2023",
+      "fuente": "UN Comtrade: importaciones de Argentina HS 281820 (Alúmina) y HS 7601 (Aluminio en bruto) 2023",
+      "url": "https://comtradeapi.un.org/public/v1/preview/C/A/HS?reporterCode=32&period=2023&partnerCode=0&partner2Code=0&customsCode=C00&motCode=0&cmdCode=7601,281820",
+      "fecha_descarga": "2026-11-24",
+      "hash": "sha256:491e62a104cd961eb6d9aa058bb0a78e170f4ba684eb8cc1dd2196af9ea8a48e",
+      "cita_ubicacion": "uncomtrade_ar_7601_281820_2023.json cmdCode=281820 flow=M netWgt=855972213.94 kg",
+      "confianza": "alta"
+    }
+  },
+  {
+    "registro_id": "comex-alumina-281820-2023-usd",
+    "producto_id": "aluminio",
+    "anio": 2023,
+    "ncm_codigo": "2818.20",
+    "metrica": "valor_usd",
+    "exportacion": {
+      "estado": "sin_datos",
+      "valor": null,
+      "unidad": "millones USD (insumo)",
+      "procedencia": {
+        "anio": 2023,
+        "fuente_id": "uncomtrade-ar-alumina-2023",
+        "fuente": "UN Comtrade: importaciones de Argentina HS 281820 (Alúmina) y HS 7601 (Aluminio en bruto) 2023",
+        "url": "https://comtradeapi.un.org/public/v1/preview/C/A/HS?reporterCode=32&period=2023&partnerCode=0&partner2Code=0&customsCode=C00&motCode=0&cmdCode=7601,281820",
+        "fecha_descarga": "2026-11-24",
+        "hash": "sha256:491e62a104cd961eb6d9aa058bb0a78e170f4ba684eb8cc1dd2196af9ea8a48e",
+        "cita_ubicacion": "uncomtrade_ar_7601_281820_2023.json cmdCode=281820 flow=M primaryValue=316407755.38 USD",
+        "confianza": "alta"
+      }
+    },
+    "importacion": {
+      "estado": "dato",
+      "valor": 316.41,
+      "unidad": "millones USD (insumo)",
+      "procedencia": {
+        "anio": 2023,
+        "fuente_id": "uncomtrade-ar-alumina-2023",
+        "fuente": "UN Comtrade: importaciones de Argentina HS 281820 (Alúmina) y HS 7601 (Aluminio en bruto) 2023",
+        "url": "https://comtradeapi.un.org/public/v1/preview/C/A/HS?reporterCode=32&period=2023&partnerCode=0&partner2Code=0&customsCode=C00&motCode=0&cmdCode=7601,281820",
+        "fecha_descarga": "2026-11-24",
+        "hash": "sha256:491e62a104cd961eb6d9aa058bb0a78e170f4ba684eb8cc1dd2196af9ea8a48e",
+        "cita_ubicacion": "uncomtrade_ar_7601_281820_2023.json cmdCode=281820 flow=M primaryValue=316407755.38 USD",
+        "confianza": "alta"
+      }
+    },
+    "saldo_comercial": {
+      "estado": "sin_datos",
+      "valor": null,
+      "unidad": "millones USD (insumo)",
+      "procedencia": {
+        "anio": 2023,
+        "fuente_id": "uncomtrade-ar-alumina-2023",
+        "fuente": "UN Comtrade: importaciones de Argentina HS 281820 (Alúmina) y HS 7601 (Aluminio en bruto) 2023",
+        "url": "https://comtradeapi.un.org/public/v1/preview/C/A/HS?reporterCode=32&period=2023&partnerCode=0&partner2Code=0&customsCode=C00&motCode=0&cmdCode=7601,281820",
+        "fecha_descarga": "2026-11-24",
+        "hash": "sha256:491e62a104cd961eb6d9aa058bb0a78e170f4ba684eb8cc1dd2196af9ea8a48e",
+        "cita_ubicacion": "uncomtrade_ar_7601_281820_2023.json cmdCode=281820 flow=M primaryValue=316407755.38 USD",
+        "confianza": "alta"
+      }
+    },
+    "procedencia": {
+      "anio": 2023,
+      "fuente_id": "uncomtrade-ar-alumina-2023",
+      "fuente": "UN Comtrade: importaciones de Argentina HS 281820 (Alúmina) y HS 7601 (Aluminio en bruto) 2023",
+      "url": "https://comtradeapi.un.org/public/v1/preview/C/A/HS?reporterCode=32&period=2023&partnerCode=0&partner2Code=0&customsCode=C00&motCode=0&cmdCode=7601,281820",
+      "fecha_descarga": "2026-11-24",
+      "hash": "sha256:491e62a104cd961eb6d9aa058bb0a78e170f4ba684eb8cc1dd2196af9ea8a48e",
+      "cita_ubicacion": "uncomtrade_ar_7601_281820_2023.json cmdCode=281820 flow=M primaryValue=316407755.38 USD",
+      "confianza": "alta"
+    }
+  },
+  {
+    "registro_id": "comex-litio-2024-usd",
     "producto_id": "litio",
     "anio": 2024,
     "ncm_codigo": "2836.91",
@@ -70,56 +628,56 @@
     "exportacion": {
       "estado": "sin_datos",
       "valor": null,
-      "unidad": "USD",
+      "unidad": "millones USD",
       "procedencia": {
         "anio": 2024,
         "fuente_id": "ejemplo-fuente-01",
-        "fuente": "[EJEMPLO] Fixture ficticio de prueba para Etapa 1",
-        "url": "https://example.org/atlas-quimico-ar/ejemplo-etapa-1",
+        "fuente": "[EJEMPLO] Marcador territorial demostrativo para cadenas MVP pendientes de Etapa 6",
+        "url": "https://example.org/atlas-quimico-ar/mvp-pendiente",
         "fecha_descarga": "2026-11-24",
         "hash": "sha256:e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
-        "cita_ubicacion": "fixture:comercio_exterior.csv fila 3",
+        "cita_ubicacion": "plan-mvp:pendiente-etapa-6",
         "confianza": "ejemplo"
       }
     },
     "importacion": {
       "estado": "sin_datos",
       "valor": null,
-      "unidad": "USD",
+      "unidad": "millones USD",
       "procedencia": {
         "anio": 2024,
         "fuente_id": "ejemplo-fuente-01",
-        "fuente": "[EJEMPLO] Fixture ficticio de prueba para Etapa 1",
-        "url": "https://example.org/atlas-quimico-ar/ejemplo-etapa-1",
+        "fuente": "[EJEMPLO] Marcador territorial demostrativo para cadenas MVP pendientes de Etapa 6",
+        "url": "https://example.org/atlas-quimico-ar/mvp-pendiente",
         "fecha_descarga": "2026-11-24",
         "hash": "sha256:e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
-        "cita_ubicacion": "fixture:comercio_exterior.csv fila 3",
+        "cita_ubicacion": "plan-mvp:pendiente-etapa-6",
         "confianza": "ejemplo"
       }
     },
     "saldo_comercial": {
       "estado": "sin_datos",
       "valor": null,
-      "unidad": "USD",
+      "unidad": "millones USD",
       "procedencia": {
         "anio": 2024,
         "fuente_id": "ejemplo-fuente-01",
-        "fuente": "[EJEMPLO] Fixture ficticio de prueba para Etapa 1",
-        "url": "https://example.org/atlas-quimico-ar/ejemplo-etapa-1",
+        "fuente": "[EJEMPLO] Marcador territorial demostrativo para cadenas MVP pendientes de Etapa 6",
+        "url": "https://example.org/atlas-quimico-ar/mvp-pendiente",
         "fecha_descarga": "2026-11-24",
         "hash": "sha256:e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
-        "cita_ubicacion": "fixture:comercio_exterior.csv fila 3",
+        "cita_ubicacion": "plan-mvp:pendiente-etapa-6",
         "confianza": "ejemplo"
       }
     },
     "procedencia": {
       "anio": 2024,
       "fuente_id": "ejemplo-fuente-01",
-      "fuente": "[EJEMPLO] Fixture ficticio de prueba para Etapa 1",
-      "url": "https://example.org/atlas-quimico-ar/ejemplo-etapa-1",
+      "fuente": "[EJEMPLO] Marcador territorial demostrativo para cadenas MVP pendientes de Etapa 6",
+      "url": "https://example.org/atlas-quimico-ar/mvp-pendiente",
       "fecha_descarga": "2026-11-24",
       "hash": "sha256:e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
-      "cita_ubicacion": "fixture:comercio_exterior.csv fila 3",
+      "cita_ubicacion": "plan-mvp:pendiente-etapa-6",
       "confianza": "ejemplo"
     }
   }

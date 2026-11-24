@@ -2,34 +2,34 @@
   {
     "proceso_id": "aluminio-hall-heroult",
     "producto_id": "aluminio",
-    "nombre": "Electrólisis Hall-Héroult (Ejemplo)",
-    "ruta_tecnologica": "Alúmina importada -> reducción electrolítica en baño de criolita -> colada de lingotes",
+    "nombre": "Producción de aluminio primario (Hall-Héroult)",
+    "ruta_tecnologica": "Alúmina calcinada importada (proceso Bayer en origen) + ánodos precocidos de carbono -> reducción electrolítica en criolita fundida -> fundición y solidificación",
     "reaccion_global": "2 Al2O3 + 3 C -> 4 Al + 3 CO2",
     "energia_especifica": {
       "estado": "dato",
       "valor": 14.2,
       "unidad": "MWh/t Al",
       "procedencia": {
-        "anio": 2024,
-        "fuente_id": "ejemplo-fuente-01",
-        "fuente": "[EJEMPLO] Fixture ficticio de prueba para Etapa 1",
-        "url": "https://example.org/atlas-quimico-ar/ejemplo-etapa-1",
+        "anio": 2025,
+        "fuente_id": "aluar-eeff-2025",
+        "fuente": "Memoria y Estados Financieros: 56° Ejercicio Económico (al 30/06/2025 y 30/06/2024)",
+        "url": "https://cdn.aluar.com.ar/assets/uploads/EEFF_Aluar_Ejercicio_2024_2025_4_T_7869bb3511.pdf",
         "fecha_descarga": "2026-11-24",
-        "hash": "sha256:e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
-        "cita_ubicacion": "fixture:procesos.csv fila 2",
-        "confianza": "ejemplo"
+        "hash": "sha256:3ee6b54bf52a0a4e543e8be2d0c23d7399425b274971ae097867aee312233901",
+        "cita_ubicacion": "Memoria 2025 pág. 3 (6.324.443 MWh electrólisis / 445.327 t aluminio líquido)",
+        "confianza": "alta"
       }
     },
-    "descripcion": "[EJEMPLO] Proceso demostrativo de Etapa 1 para validar el contrato de grafos y balances.",
+    "descripcion": "Cadena completa en Puerto Madryn (Chubut): 6.324.443 MWh consumidos en electrólisis para 445.327 t de aluminio líquido (14,20 MWh/t Al en electrólisis; 15,06 MWh/t Al considerando toda la planta) durante el ejercicio finalizado el 30/06/2025.",
     "procedencia": {
-      "anio": 2024,
-      "fuente_id": "ejemplo-fuente-01",
-      "fuente": "[EJEMPLO] Fixture ficticio de prueba para Etapa 1",
-      "url": "https://example.org/atlas-quimico-ar/ejemplo-etapa-1",
+      "anio": 2025,
+      "fuente_id": "aluar-eeff-2025",
+      "fuente": "Memoria y Estados Financieros: 56° Ejercicio Económico (al 30/06/2025 y 30/06/2024)",
+      "url": "https://cdn.aluar.com.ar/assets/uploads/EEFF_Aluar_Ejercicio_2024_2025_4_T_7869bb3511.pdf",
       "fecha_descarga": "2026-11-24",
-      "hash": "sha256:e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
-      "cita_ubicacion": "fixture:procesos.csv fila 2",
-      "confianza": "ejemplo"
+      "hash": "sha256:3ee6b54bf52a0a4e543e8be2d0c23d7399425b274971ae097867aee312233901",
+      "cita_ubicacion": "Memoria 2025 pág. 3 (6.324.443 MWh electrólisis / 445.327 t aluminio líquido)",
+      "confianza": "alta"
     }
   }
 ]

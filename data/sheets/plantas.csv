@@ -1,0 +1,2 @@
+planta_id,empresa_id,producto_id,provincia_id,departamento_id,nombre,localidad,lat,lon,estado_operativo,capacidad_valor,capacidad_estado,capacidad_unidad,anio,fuente_id,cita_ubicacion,confianza
+aluar-puerto-madryn,aluar-saic,aluminio,26,26007,"Planta Aluar (División Aluminio Primario)",Puerto Madryn,-42.735,-65.039,operativa,460000,dato,t/año,2025,aluar-web-institucional,"aluar.com.ar sección Aluar en cifras (460.000 t/año) y Memoria 2025 Nota 35 pág. 50 (Ruta Prov. A010 Parque Industrial Pesado)",alta

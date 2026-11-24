@@ -1,39 +1,39 @@
 [
   {
-    "planta_id": "ejemplo-planta-madryn",
-    "empresa_id": "ejemplo-empresa-aluminio",
+    "planta_id": "aluar-puerto-madryn",
+    "empresa_id": "aluar-saic",
     "producto_id": "aluminio",
     "provincia_id": "26",
     "departamento_id": "26007",
-    "nombre": "[EJEMPLO] Planta Electrolítica Puerto Madryn",
+    "nombre": "Planta Aluar (División Aluminio Primario)",
     "localidad": "Puerto Madryn",
     "lat": -42.735,
     "lon": -65.039,
     "estado_operativo": "operativa",
     "capacidad": {
-      "estado": "sin_datos",
-      "valor": null,
-      "unidad": null,
+      "estado": "dato",
+      "valor": 460000,
+      "unidad": "t/año",
       "procedencia": {
-        "anio": 2024,
-        "fuente_id": "ejemplo-fuente-01",
-        "fuente": "[EJEMPLO] Fixture ficticio de prueba para Etapa 1",
-        "url": "https://example.org/atlas-quimico-ar/ejemplo-etapa-1",
+        "anio": 2025,
+        "fuente_id": "aluar-web-institucional",
+        "fuente": "Portal institucional y cifras operativas (Aluar)",
+        "url": "https://www.aluar.com.ar/",
         "fecha_descarga": "2026-11-24",
-        "hash": "sha256:e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
-        "cita_ubicacion": "fixture:plantas.csv fila 2",
-        "confianza": "ejemplo"
+        "hash": "sha256:a48420cd0884320a8a077268515d54811636d964ef983048fd8e231e56362496",
+        "cita_ubicacion": "aluar.com.ar sección Aluar en cifras (460.000 t/año) y Memoria 2025 Nota 35 pág. 50 (Ruta Prov. A010 Parque Industrial Pesado)",
+        "confianza": "alta"
       }
     },
     "procedencia": {
-      "anio": 2024,
-      "fuente_id": "ejemplo-fuente-01",
-      "fuente": "[EJEMPLO] Fixture ficticio de prueba para Etapa 1",
-      "url": "https://example.org/atlas-quimico-ar/ejemplo-etapa-1",
+      "anio": 2025,
+      "fuente_id": "aluar-web-institucional",
+      "fuente": "Portal institucional y cifras operativas (Aluar)",
+      "url": "https://www.aluar.com.ar/",
       "fecha_descarga": "2026-11-24",
-      "hash": "sha256:e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
-      "cita_ubicacion": "fixture:plantas.csv fila 2",
-      "confianza": "ejemplo"
+      "hash": "sha256:a48420cd0884320a8a077268515d54811636d964ef983048fd8e231e56362496",
+      "cita_ubicacion": "aluar.com.ar sección Aluar en cifras (460.000 t/año) y Memoria 2025 Nota 35 pág. 50 (Ruta Prov. A010 Parque Industrial Pesado)",
+      "confianza": "alta"
     }
   }
 ]

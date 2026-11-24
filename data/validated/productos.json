@@ -5,9 +5,9 @@
     "categoria": "metalurgia",
     "formula_quimica": "Al",
     "icono_id": "aluminio-lingote",
-    "descripcion_corta": "[EJEMPLO] Metal ligero obtenido por reducción electrolítica de alúmina en Puerto Madryn.",
+    "descripcion_corta": "Metal ligero obtenido en Puerto Madryn por reducción electrolítica Hall-Héroult de alúmina importada con energía hidroeléctrica, térmica y eólica.",
     "mdx_slug": "aluminio",
-    "estado_mvp": "ejemplo"
+    "estado_mvp": "validado"
   },
   {
     "producto_id": "litio",
@@ -15,7 +15,7 @@
     "categoria": "mineria_quimica",
     "formula_quimica": "Li2CO3",
     "icono_id": "litio-salmuera",
-    "descripcion_corta": "[EJEMPLO] Extracción y precipitación química a partir de salmueras del NOA.",
+    "descripcion_corta": "Extracción y precipitación química a partir de salmueras del NOA (carga oficial pendiente de Etapa 6).",
     "mdx_slug": "litio",
     "estado_mvp": "pendiente"
   },
@@ -25,7 +25,7 @@
     "categoria": "fertilizantes",
     "formula_quimica": "CO(NH2)2",
     "icono_id": "urea-prill",
-    "descripcion_corta": "[EJEMPLO] Síntesis de amoníaco y urea a partir de gas natural en Bahía Blanca.",
+    "descripcion_corta": "Síntesis de amoníaco y urea a partir de gas natural en Bahía Blanca (carga oficial pendiente de Etapa 6).",
     "mdx_slug": "urea",
     "estado_mvp": "pendiente"
   },
@@ -35,7 +35,7 @@
     "categoria": "agroindustria",
     "formula_quimica": null,
     "icono_id": "algodon-fibra",
-    "descripcion_corta": "[EJEMPLO] Cadena desmotadora e industrialización primaria del NEA.",
+    "descripcion_corta": "Cadena desmotadora e industrialización primaria del NEA (carga oficial pendiente de Etapa 6).",
     "mdx_slug": "algodon",
     "estado_mvp": "pendiente"
   },
@@ -45,7 +45,7 @@
     "categoria": "agroindustria",
     "formula_quimica": null,
     "icono_id": "soja-molienda",
-    "descripcion_corta": "[EJEMPLO] Extracción por solvente de aceite y harina proteica en el polo Rosario.",
+    "descripcion_corta": "Extracción por solvente de aceite y harina proteica en el polo Rosario (carga oficial pendiente de Etapa 6).",
     "mdx_slug": "soja",
     "estado_mvp": "pendiente"
   },
@@ -55,7 +55,7 @@
     "categoria": "petroquimica",
     "formula_quimica": "C2H4",
     "icono_id": "petroquimica-cracker",
-    "descripcion_corta": "[EJEMPLO] Craqueo térmico de etano y polimerización en el polo Bahía Blanca.",
+    "descripcion_corta": "Craqueo térmico de etano y polimerización en el polo Bahía Blanca (carga oficial pendiente de Etapa 6).",
     "mdx_slug": "petroquimica",
     "estado_mvp": "pendiente"
   },
@@ -65,7 +65,7 @@
     "categoria": "bioenergia",
     "formula_quimica": "RCOOCH3",
     "icono_id": "biodiesel-ester",
-    "descripcion_corta": "[EJEMPLO] Transesterificación catalítica de aceite de soja con metanol.",
+    "descripcion_corta": "Transesterificación catalítica de aceite de soja con metanol (carga oficial pendiente de Etapa 6).",
     "mdx_slug": "biodiesel",
     "estado_mvp": "pendiente"
   }
