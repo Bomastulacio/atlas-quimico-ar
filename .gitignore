@@ -20,17 +20,21 @@ pipeline/__pycache__/
 .mypy_cache/
 .ruff_cache/
 
-# Archivos crudos pesados (los manifiestos de hash siempre se versionan)
+# Archivos crudos descargados (los manifiestos de hash y fuentes.csv siempre se versionan)
 data/raw/*.xlsx
 data/raw/*.zip
 data/raw/*.pdf
 data/raw/*.parquet
 data/raw/*.geojson
+data/raw/*.html
+data/raw/*.csv
+data/raw/*.json
 !data/raw/.gitkeep
 !data/staging/.gitkeep
 
 # Sistema, skills locales y editores
 .agents/
+skills-lock.json
 .DS_Store
 Thumbs.db
 .vscode/

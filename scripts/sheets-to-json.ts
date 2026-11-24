@@ -13,6 +13,7 @@ import {
 
 const ROOT_DIR = process.cwd();
 const FIXTURES_DIR = path.join(ROOT_DIR, 'data', 'fixtures', 'ejemplo_sheets');
+const LOCAL_SHEETS_DIR = path.join(ROOT_DIR, 'data', 'sheets');
 const RAW_DIR = path.join(ROOT_DIR, 'data', 'raw');
 const VALIDATED_DIR = path.join(ROOT_DIR, 'data', 'validated');
 
@@ -148,15 +149,19 @@ function buildValorMedido(
 
 async function loadTabCsv(
   tab: TabName,
-  options: { fromFixtures: boolean; sheetId?: string }
+  options: { source: 'fixtures' | 'local' | 'sheets'; sheetId?: string }
 ): Promise<string> {
-  if (options.fromFixtures) {
+  if (options.source === 'fixtures') {
     const fixturePath = path.join(FIXTURES_DIR, `${tab}.csv`);
     return fs.readFile(fixturePath, 'utf-8');
   }
+  if (options.source === 'local') {
+    const localPath = path.join(LOCAL_SHEETS_DIR, `${tab}.csv`);
+    return fs.readFile(localPath, 'utf-8');
+  }
   if (!options.sheetId) {
     throw new Error(
-      'Falta GOOGLE_SHEET_ID en el entorno. Para probar sin planilla real usá: npm run data:sync:example'
+      'Falta GOOGLE_SHEET_ID en el entorno. Para compilar planillas locales usá: npm run data:sync:local'
     );
   }
   const url = `https://docs.google.com/spreadsheets/d/${encodeURIComponent(
@@ -184,16 +189,26 @@ function parseCsvRows(csvText: string): RawRow[] {
 async function main() {
   const args = new Set(process.argv.slice(2));
   const fromFixtures = args.has('--from-fixtures');
+  const fromLocal = args.has('--from-local');
+  const source: 'fixtures' | 'local' | 'sheets' = fromFixtures
+    ? 'fixtures'
+    : fromLocal
+      ? 'local'
+      : 'sheets';
   const strictReal = args.has('--strict-real') || process.env.DATA_STRICT_REAL === 'true';
   const sheetId = process.env.GOOGLE_SHEET_ID;
 
-  console.log(
-    `[sheets-to-json] Origen: ${fromFixtures ? 'fixtures de ejemplo (Etapa 1)' : 'Google Sheets'}`
-  );
+  const sourceLabel =
+    source === 'fixtures'
+      ? 'fixtures de ejemplo (Etapa 1)'
+      : source === 'local'
+        ? 'planillas locales verificadas (data/sheets/)'
+        : 'Google Sheets';
+  console.log(`[sheets-to-json] Origen: ${sourceLabel}`);
 
   const rawRows = {} as Record<TabName, RawRow[]>;
   for (const tab of TABS) {
-    const csv = await loadTabCsv(tab, { fromFixtures, sheetId });
+    const csv = await loadTabCsv(tab, { source, sheetId });
     rawRows[tab] = parseCsvRows(csv);
   }
 
@@ -431,16 +446,27 @@ async function main() {
   }
 
   const esEjemplo =
-    fromFixtures || fuentes.some((f) => f.tipo === 'ejemplo');
+    source === 'fixtures' || fuentes.some((f) => f.tipo === 'ejemplo');
 
+  const origenManifest =
+    source === 'fixtures'
+      ? ('fixtures_ejemplo' as const)
+      : source === 'local'
+        ? ('sheets_local' as const)
+        : ('google_sheets' as const);
+
+  const validadosCount = productos.filter((p) => p.estado_mvp === 'validado').length;
   const manifest = {
     version_esquema: '1.0.0',
     generado_en: new Date().toISOString(),
-    origen: fromFixtures ? ('fixtures_ejemplo' as const) : ('google_sheets' as const),
+    origen: origenManifest,
     es_ejemplo: esEjemplo,
-    nota: esEjemplo
-      ? 'DATOS DE EJEMPLO (NO OFICIALES) generados para validar el contrato de Etapa 1 antes de aprobar docs/datos.md.'
-      : 'Dataset compilado desde Google Sheets oficial del proyecto.',
+    nota:
+      source === 'fixtures'
+        ? 'DATOS DE EJEMPLO (NO OFICIALES) generados para validar el contrato de Etapa 1 antes de aprobar docs/datos.md.'
+        : esEjemplo
+          ? `Dataset mixto: ${validadosCount} cadena(s) verificadas con fuentes oficiales (Aluminio, Chubut) y marcadores pendientes para las cadenas de Etapa 6.`
+          : 'Dataset oficial compilado íntegramente con fuentes verificadas.',
     tablas: manifestTablas,
   };
 

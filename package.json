@@ -13,7 +13,9 @@
     "test": "vitest run",
     "test:watch": "vitest",
     "data:sync": "tsx scripts/sheets-to-json.ts",
+    "data:sync:local": "tsx scripts/sheets-to-json.ts --from-local",
     "data:sync:example": "tsx scripts/sheets-to-json.ts --from-fixtures",
+    "data:golden": "tsx scripts/export-golden-aluminio.ts",
     "data:validate": "tsx scripts/validate-data.ts",
     "data:validate:strict": "tsx scripts/validate-data.ts --strict-real",
     "geo:prepare": "tsx scripts/prepare-geo.ts"
@@ -23,6 +25,7 @@
     "@astrojs/react": "^4.2.4",
     "@tailwindcss/vite": "^4.1.4",
     "@types/d3-geo": "^3.1.1",
+    "@xyflow/react": "^13.0.3",
     "astro": "^5.7.0",
     "csv-parse": "^5.6.0",
     "d3-geo": "^3.1.2",
