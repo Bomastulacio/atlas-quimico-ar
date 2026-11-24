@@ -25,6 +25,7 @@ data/raw/*.xlsx
 data/raw/*.zip
 data/raw/*.pdf
 data/raw/*.parquet
+data/raw/*.geojson
 !data/raw/.gitkeep
 !data/staging/.gitkeep
 
