@@ -1,0 +1,4 @@
+departamento_id,provincia_id,nombre,tipo_zona,tiene_datos_confiables,cobertura_datos,nota_cobertura
+26007,26,Biedma,polo_industrial,true,parcial,[EJEMPLO] Puerto Madryn — nodo alumínico de prueba Etapa 1.
+06056,06,Bahía Blanca,polo_industrial,true,baja,[EJEMPLO] Polo petroquímico y fertilizantes (datos oficiales pendientes).
+82084,82,Rosario,agro,true,baja,[EJEMPLO] Complejo oleaginoso y biodiésel (datos oficiales pendientes).

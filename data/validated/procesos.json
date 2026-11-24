@@ -1,0 +1,35 @@
+[
+  {
+    "proceso_id": "aluminio-hall-heroult",
+    "producto_id": "aluminio",
+    "nombre": "Electrólisis Hall-Héroult (Ejemplo)",
+    "ruta_tecnologica": "Alúmina importada -> reducción electrolítica en baño de criolita -> colada de lingotes",
+    "reaccion_global": "2 Al2O3 + 3 C -> 4 Al + 3 CO2",
+    "energia_especifica": {
+      "estado": "dato",
+      "valor": 14.2,
+      "unidad": "MWh/t Al",
+      "procedencia": {
+        "anio": 2024,
+        "fuente_id": "ejemplo-fuente-01",
+        "fuente": "[EJEMPLO] Fixture ficticio de prueba para Etapa 1",
+        "url": "https://example.org/atlas-quimico-ar/ejemplo-etapa-1",
+        "fecha_descarga": "2026-11-24",
+        "hash": "sha256:e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "cita_ubicacion": "fixture:procesos.csv fila 2",
+        "confianza": "ejemplo"
+      }
+    },
+    "descripcion": "[EJEMPLO] Proceso demostrativo de Etapa 1 para validar el contrato de grafos y balances.",
+    "procedencia": {
+      "anio": 2024,
+      "fuente_id": "ejemplo-fuente-01",
+      "fuente": "[EJEMPLO] Fixture ficticio de prueba para Etapa 1",
+      "url": "https://example.org/atlas-quimico-ar/ejemplo-etapa-1",
+      "fecha_descarga": "2026-11-24",
+      "hash": "sha256:e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "cita_ubicacion": "fixture:procesos.csv fila 2",
+      "confianza": "ejemplo"
+    }
+  }
+]

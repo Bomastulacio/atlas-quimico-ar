@@ -1,0 +1,3 @@
+registro_id,producto_id,anio,ncm_codigo,metrica,exportacion_valor,exportacion_estado,importacion_valor,importacion_estado,saldo_comercial_valor,saldo_comercial_estado,unidad,fuente_id,cita_ubicacion,confianza
+comex-ejemplo-aluminio-2024-usd,aluminio,2024,7601,valor_usd,850000000,dato,320000000,dato,530000000,dato,USD,ejemplo-fuente-01,fixture:comercio_exterior.csv fila 2,ejemplo
+comex-ejemplo-litio-2024-usd,litio,2024,2836.91,valor_usd,,sin_datos,,sin_datos,,sin_datos,USD,ejemplo-fuente-01,fixture:comercio_exterior.csv fila 3,ejemplo

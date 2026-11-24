@@ -1,0 +1,29 @@
+[
+  {
+    "departamento_id": "26007",
+    "provincia_id": "26",
+    "nombre": "Biedma",
+    "tipo_zona": "polo_industrial",
+    "tiene_datos_confiables": true,
+    "cobertura_datos": "parcial",
+    "nota_cobertura": "[EJEMPLO] Puerto Madryn — nodo alumínico de prueba Etapa 1."
+  },
+  {
+    "departamento_id": "06056",
+    "provincia_id": "06",
+    "nombre": "Bahía Blanca",
+    "tipo_zona": "polo_industrial",
+    "tiene_datos_confiables": true,
+    "cobertura_datos": "baja",
+    "nota_cobertura": "[EJEMPLO] Polo petroquímico y fertilizantes (datos oficiales pendientes)."
+  },
+  {
+    "departamento_id": "82084",
+    "provincia_id": "82",
+    "nombre": "Rosario",
+    "tipo_zona": "agro",
+    "tiene_datos_confiables": true,
+    "cobertura_datos": "baja",
+    "nota_cobertura": "[EJEMPLO] Complejo oleaginoso y biodiésel (datos oficiales pendientes)."
+  }
+]

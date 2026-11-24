@@ -1,0 +1,57 @@
+{
+  "version_esquema": "1.0.0",
+  "generado_en": "2026-11-24T14:19:57.123Z",
+  "origen": "fixtures_ejemplo",
+  "es_ejemplo": true,
+  "nota": "DATOS DE EJEMPLO (NO OFICIALES) generados para validar el contrato de Etapa 1 antes de aprobar docs/datos.md.",
+  "tablas": {
+    "fuentes": {
+      "registros": 1,
+      "hash": "sha256:4aa361b727bd5d13b07d613c41f8644cea3d6b2488b420973f53bfaaead3bad2"
+    },
+    "provincias": {
+      "registros": 24,
+      "hash": "sha256:473e435babe642a5904a670e3bbbfc9a80240e876a7a50f293e046e722403848"
+    },
+    "departamentos": {
+      "registros": 3,
+      "hash": "sha256:53e502a5c4732be8c00b0d7a0fdb3ae1d0704dcc2ae0e5765090d5f09269f2d6"
+    },
+    "productos": {
+      "registros": 7,
+      "hash": "sha256:e6cf3d4fcf2b2d95b8584056015d713879285bc92431b98e3e75a8314451b2fa"
+    },
+    "productos_zonas": {
+      "registros": 9,
+      "hash": "sha256:46be1ab5481ffd807218069530f6ad31b5c900b8ff7dabed6a9844d064597d51"
+    },
+    "procesos": {
+      "registros": 1,
+      "hash": "sha256:bef2a25805d4ee638aa4433efec33ac701ec0783170017ce36d37a2151c08f82"
+    },
+    "pasos_proceso": {
+      "registros": 3,
+      "hash": "sha256:841cccbc34fa25160cde605a0549f40937fe89af6e4c0db579b496b42d39998c"
+    },
+    "conexiones_proceso": {
+      "registros": 2,
+      "hash": "sha256:6164af85d944d4925e4b1876712dd2a7e1ef268f1427423c52622f421c13c904"
+    },
+    "empresas": {
+      "registros": 1,
+      "hash": "sha256:6ed60b09bec9c82e81a79e21157457b055db9d6b31cfb4e3ac61e8f4a32fc59e"
+    },
+    "plantas": {
+      "registros": 1,
+      "hash": "sha256:a3ffe2cdb31c3006940f97d09b92a1247d23dc8400463455a048c28c44971406"
+    },
+    "produccion": {
+      "registros": 2,
+      "hash": "sha256:8fd26c2e944218c963655f32dc5950a5be25b383798ae0f19bddf2f2c68ed6e2"
+    },
+    "comercio_exterior": {
+      "registros": 2,
+      "hash": "sha256:831f4f514016b72bee9123b12d2a9989de4ffe3f494b2fb32c6d4b012fce929c"
+    }
+  }
+}

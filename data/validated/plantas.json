@@ -1,0 +1,39 @@
+[
+  {
+    "planta_id": "ejemplo-planta-madryn",
+    "empresa_id": "ejemplo-empresa-aluminio",
+    "producto_id": "aluminio",
+    "provincia_id": "26",
+    "departamento_id": "26007",
+    "nombre": "[EJEMPLO] Planta Electrolítica Puerto Madryn",
+    "localidad": "Puerto Madryn",
+    "lat": -42.735,
+    "lon": -65.039,
+    "estado_operativo": "operativa",
+    "capacidad": {
+      "estado": "sin_datos",
+      "valor": null,
+      "unidad": null,
+      "procedencia": {
+        "anio": 2024,
+        "fuente_id": "ejemplo-fuente-01",
+        "fuente": "[EJEMPLO] Fixture ficticio de prueba para Etapa 1",
+        "url": "https://example.org/atlas-quimico-ar/ejemplo-etapa-1",
+        "fecha_descarga": "2026-11-24",
+        "hash": "sha256:e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "cita_ubicacion": "fixture:plantas.csv fila 2",
+        "confianza": "ejemplo"
+      }
+    },
+    "procedencia": {
+      "anio": 2024,
+      "fuente_id": "ejemplo-fuente-01",
+      "fuente": "[EJEMPLO] Fixture ficticio de prueba para Etapa 1",
+      "url": "https://example.org/atlas-quimico-ar/ejemplo-etapa-1",
+      "fecha_descarga": "2026-11-24",
+      "hash": "sha256:e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "cita_ubicacion": "fixture:plantas.csv fila 2",
+      "confianza": "ejemplo"
+    }
+  }
+]

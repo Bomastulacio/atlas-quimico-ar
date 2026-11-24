@@ -1,0 +1,3 @@
+registro_id,producto_id,provincia_id,anio,valor,estado,unidad,fuente_id,cita_ubicacion,confianza
+prod-ejemplo-aluminio-nac-2024,aluminio,,2024,410000,dato,t,ejemplo-fuente-01,fixture:produccion.csv fila 2,ejemplo
+prod-ejemplo-litio-nac-2024,litio,,2024,,sin_datos,t LCE,ejemplo-fuente-01,fixture:produccion.csv fila 3,ejemplo

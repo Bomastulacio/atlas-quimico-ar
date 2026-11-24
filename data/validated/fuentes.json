@@ -1,0 +1,13 @@
+[
+  {
+    "fuente_id": "ejemplo-fuente-01",
+    "nombre": "[EJEMPLO] Fixture ficticio de prueba para Etapa 1",
+    "organismo": "Atlas Químico AR (Fixture Local)",
+    "tipo": "ejemplo",
+    "url": "https://example.org/atlas-quimico-ar/ejemplo-etapa-1",
+    "fecha_descarga": "2026-11-24",
+    "hash": "sha256:e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "archivo_raw": "data/fixtures/ejemplo_sheets/",
+    "notas": "Datos demostrativos sin valor estadístico; reemplazar en Etapa 3 tras aprobar docs/datos.md."
+  }
+]

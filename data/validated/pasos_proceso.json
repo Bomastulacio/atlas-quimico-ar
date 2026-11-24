@@ -1,0 +1,181 @@
+[
+  {
+    "paso_id": "al-p1-recepcion-alumina",
+    "proceso_id": "aluminio-hall-heroult",
+    "orden": 1,
+    "nombre": "Recepción de alúmina calcinada",
+    "tipo_paso": "materia_prima",
+    "reaccion_balanceada": null,
+    "temperatura_c": "25",
+    "presion_bar": "1.0",
+    "reactivos": [
+      {
+        "especie": "Al2O3",
+        "cantidad": 1.93,
+        "unidad": "t/t Al"
+      }
+    ],
+    "productos": [
+      {
+        "especie": "Al2O3 (seca)",
+        "cantidad": 1.93,
+        "unidad": "t/t Al"
+      }
+    ],
+    "insumos": [],
+    "subproductos": [],
+    "energia": {
+      "estado": "sin_datos",
+      "valor": null,
+      "unidad": null,
+      "procedencia": {
+        "anio": 2024,
+        "fuente_id": "ejemplo-fuente-01",
+        "fuente": "[EJEMPLO] Fixture ficticio de prueba para Etapa 1",
+        "url": "https://example.org/atlas-quimico-ar/ejemplo-etapa-1",
+        "fecha_descarga": "2026-11-24",
+        "hash": "sha256:e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "cita_ubicacion": "fixture:pasos_proceso.csv fila 2",
+        "confianza": "ejemplo"
+      }
+    },
+    "descripcion": "[EJEMPLO] Almacenamiento en silos portuarios de alúmina grado metalúrgico.",
+    "pos_x": 40,
+    "pos_y": 140,
+    "procedencia": {
+      "anio": 2024,
+      "fuente_id": "ejemplo-fuente-01",
+      "fuente": "[EJEMPLO] Fixture ficticio de prueba para Etapa 1",
+      "url": "https://example.org/atlas-quimico-ar/ejemplo-etapa-1",
+      "fecha_descarga": "2026-11-24",
+      "hash": "sha256:e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "cita_ubicacion": "fixture:pasos_proceso.csv fila 2",
+      "confianza": "ejemplo"
+    }
+  },
+  {
+    "paso_id": "al-p2-celda-electrolitica",
+    "proceso_id": "aluminio-hall-heroult",
+    "orden": 2,
+    "nombre": "Celda electrolítica Hall-Héroult",
+    "tipo_paso": "reaccion",
+    "reaccion_balanceada": "2 Al2O3 + 3 C -> 4 Al + 3 CO2",
+    "temperatura_c": "950-970",
+    "presion_bar": "1.0",
+    "reactivos": [
+      {
+        "especie": "Al2O3",
+        "cantidad": 1.93,
+        "unidad": "t/t Al"
+      },
+      {
+        "especie": "C (ánodo)",
+        "cantidad": 0.42,
+        "unidad": "t/t Al"
+      }
+    ],
+    "productos": [
+      {
+        "especie": "Al (líquido)",
+        "cantidad": 1,
+        "unidad": "t/t Al"
+      }
+    ],
+    "insumos": [
+      {
+        "especie": "Na3AlF6 (criolita)",
+        "cantidad": null,
+        "unidad": "baño fundido"
+      }
+    ],
+    "subproductos": [
+      {
+        "especie": "CO2",
+        "cantidad": 1.54,
+        "unidad": "t/t Al"
+      }
+    ],
+    "energia": {
+      "estado": "dato",
+      "valor": 14.2,
+      "unidad": "MWh/t Al",
+      "procedencia": {
+        "anio": 2024,
+        "fuente_id": "ejemplo-fuente-01",
+        "fuente": "[EJEMPLO] Fixture ficticio de prueba para Etapa 1",
+        "url": "https://example.org/atlas-quimico-ar/ejemplo-etapa-1",
+        "fecha_descarga": "2026-11-24",
+        "hash": "sha256:e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "cita_ubicacion": "fixture:pasos_proceso.csv fila 3",
+        "confianza": "ejemplo"
+      }
+    },
+    "descripcion": "[EJEMPLO] Reducción electroquímica continua de alúmina disuelta en criolita fundida.",
+    "pos_x": 360,
+    "pos_y": 140,
+    "procedencia": {
+      "anio": 2024,
+      "fuente_id": "ejemplo-fuente-01",
+      "fuente": "[EJEMPLO] Fixture ficticio de prueba para Etapa 1",
+      "url": "https://example.org/atlas-quimico-ar/ejemplo-etapa-1",
+      "fecha_descarga": "2026-11-24",
+      "hash": "sha256:e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "cita_ubicacion": "fixture:pasos_proceso.csv fila 3",
+      "confianza": "ejemplo"
+    }
+  },
+  {
+    "paso_id": "al-p3-colada-lingotes",
+    "proceso_id": "aluminio-hall-heroult",
+    "orden": 3,
+    "nombre": "Horno de mantenimiento y colada",
+    "tipo_paso": "producto",
+    "reaccion_balanceada": null,
+    "temperatura_c": "700-740",
+    "presion_bar": "1.0",
+    "reactivos": [
+      {
+        "especie": "Al (líquido)",
+        "cantidad": 1,
+        "unidad": "t/t Al"
+      }
+    ],
+    "productos": [
+      {
+        "especie": "Al primario (lingotes/barrotes)",
+        "cantidad": 1,
+        "unidad": "t/t Al"
+      }
+    ],
+    "insumos": [],
+    "subproductos": [],
+    "energia": {
+      "estado": "sin_datos",
+      "valor": null,
+      "unidad": null,
+      "procedencia": {
+        "anio": 2024,
+        "fuente_id": "ejemplo-fuente-01",
+        "fuente": "[EJEMPLO] Fixture ficticio de prueba para Etapa 1",
+        "url": "https://example.org/atlas-quimico-ar/ejemplo-etapa-1",
+        "fecha_descarga": "2026-11-24",
+        "hash": "sha256:e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "cita_ubicacion": "fixture:pasos_proceso.csv fila 4",
+        "confianza": "ejemplo"
+      }
+    },
+    "descripcion": "[EJEMPLO] Ajuste de composición y solidificación en lingotes o barrotes de extrusión.",
+    "pos_x": 680,
+    "pos_y": 140,
+    "procedencia": {
+      "anio": 2024,
+      "fuente_id": "ejemplo-fuente-01",
+      "fuente": "[EJEMPLO] Fixture ficticio de prueba para Etapa 1",
+      "url": "https://example.org/atlas-quimico-ar/ejemplo-etapa-1",
+      "fecha_descarga": "2026-11-24",
+      "hash": "sha256:e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "cita_ubicacion": "fixture:pasos_proceso.csv fila 4",
+      "confianza": "ejemplo"
+    }
+  }
+]

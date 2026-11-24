@@ -1,0 +1,126 @@
+[
+  {
+    "registro_id": "comex-ejemplo-aluminio-2024-usd",
+    "producto_id": "aluminio",
+    "anio": 2024,
+    "ncm_codigo": "7601",
+    "metrica": "valor_usd",
+    "exportacion": {
+      "estado": "dato",
+      "valor": 850000000,
+      "unidad": "USD",
+      "procedencia": {
+        "anio": 2024,
+        "fuente_id": "ejemplo-fuente-01",
+        "fuente": "[EJEMPLO] Fixture ficticio de prueba para Etapa 1",
+        "url": "https://example.org/atlas-quimico-ar/ejemplo-etapa-1",
+        "fecha_descarga": "2026-11-24",
+        "hash": "sha256:e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "cita_ubicacion": "fixture:comercio_exterior.csv fila 2",
+        "confianza": "ejemplo"
+      }
+    },
+    "importacion": {
+      "estado": "dato",
+      "valor": 320000000,
+      "unidad": "USD",
+      "procedencia": {
+        "anio": 2024,
+        "fuente_id": "ejemplo-fuente-01",
+        "fuente": "[EJEMPLO] Fixture ficticio de prueba para Etapa 1",
+        "url": "https://example.org/atlas-quimico-ar/ejemplo-etapa-1",
+        "fecha_descarga": "2026-11-24",
+        "hash": "sha256:e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "cita_ubicacion": "fixture:comercio_exterior.csv fila 2",
+        "confianza": "ejemplo"
+      }
+    },
+    "saldo_comercial": {
+      "estado": "dato",
+      "valor": 530000000,
+      "unidad": "USD",
+      "procedencia": {
+        "anio": 2024,
+        "fuente_id": "ejemplo-fuente-01",
+        "fuente": "[EJEMPLO] Fixture ficticio de prueba para Etapa 1",
+        "url": "https://example.org/atlas-quimico-ar/ejemplo-etapa-1",
+        "fecha_descarga": "2026-11-24",
+        "hash": "sha256:e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "cita_ubicacion": "fixture:comercio_exterior.csv fila 2",
+        "confianza": "ejemplo"
+      }
+    },
+    "procedencia": {
+      "anio": 2024,
+      "fuente_id": "ejemplo-fuente-01",
+      "fuente": "[EJEMPLO] Fixture ficticio de prueba para Etapa 1",
+      "url": "https://example.org/atlas-quimico-ar/ejemplo-etapa-1",
+      "fecha_descarga": "2026-11-24",
+      "hash": "sha256:e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "cita_ubicacion": "fixture:comercio_exterior.csv fila 2",
+      "confianza": "ejemplo"
+    }
+  },
+  {
+    "registro_id": "comex-ejemplo-litio-2024-usd",
+    "producto_id": "litio",
+    "anio": 2024,
+    "ncm_codigo": "2836.91",
+    "metrica": "valor_usd",
+    "exportacion": {
+      "estado": "sin_datos",
+      "valor": null,
+      "unidad": "USD",
+      "procedencia": {
+        "anio": 2024,
+        "fuente_id": "ejemplo-fuente-01",
+        "fuente": "[EJEMPLO] Fixture ficticio de prueba para Etapa 1",
+        "url": "https://example.org/atlas-quimico-ar/ejemplo-etapa-1",
+        "fecha_descarga": "2026-11-24",
+        "hash": "sha256:e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "cita_ubicacion": "fixture:comercio_exterior.csv fila 3",
+        "confianza": "ejemplo"
+      }
+    },
+    "importacion": {
+      "estado": "sin_datos",
+      "valor": null,
+      "unidad": "USD",
+      "procedencia": {
+        "anio": 2024,
+        "fuente_id": "ejemplo-fuente-01",
+        "fuente": "[EJEMPLO] Fixture ficticio de prueba para Etapa 1",
+        "url": "https://example.org/atlas-quimico-ar/ejemplo-etapa-1",
+        "fecha_descarga": "2026-11-24",
+        "hash": "sha256:e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "cita_ubicacion": "fixture:comercio_exterior.csv fila 3",
+        "confianza": "ejemplo"
+      }
+    },
+    "saldo_comercial": {
+      "estado": "sin_datos",
+      "valor": null,
+      "unidad": "USD",
+      "procedencia": {
+        "anio": 2024,
+        "fuente_id": "ejemplo-fuente-01",
+        "fuente": "[EJEMPLO] Fixture ficticio de prueba para Etapa 1",
+        "url": "https://example.org/atlas-quimico-ar/ejemplo-etapa-1",
+        "fecha_descarga": "2026-11-24",
+        "hash": "sha256:e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "cita_ubicacion": "fixture:comercio_exterior.csv fila 3",
+        "confianza": "ejemplo"
+      }
+    },
+    "procedencia": {
+      "anio": 2024,
+      "fuente_id": "ejemplo-fuente-01",
+      "fuente": "[EJEMPLO] Fixture ficticio de prueba para Etapa 1",
+      "url": "https://example.org/atlas-quimico-ar/ejemplo-etapa-1",
+      "fecha_descarga": "2026-11-24",
+      "hash": "sha256:e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "cita_ubicacion": "fixture:comercio_exterior.csv fila 3",
+      "confianza": "ejemplo"
+    }
+  }
+]

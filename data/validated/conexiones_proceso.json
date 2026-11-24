@@ -1,0 +1,68 @@
+[
+  {
+    "conexion_id": "al-c1-alumina-a-celda",
+    "proceso_id": "aluminio-hall-heroult",
+    "origen_paso_id": "al-p1-recepcion-alumina",
+    "destino_paso_id": "al-p2-celda-electrolitica",
+    "corriente_nombre": "Alúmina calcinada (Al2O3)",
+    "tipo_corriente": "principal",
+    "flujo": {
+      "estado": "dato",
+      "valor": 1.93,
+      "unidad": "t/t Al",
+      "procedencia": {
+        "anio": 2024,
+        "fuente_id": "ejemplo-fuente-01",
+        "fuente": "[EJEMPLO] Fixture ficticio de prueba para Etapa 1",
+        "url": "https://example.org/atlas-quimico-ar/ejemplo-etapa-1",
+        "fecha_descarga": "2026-11-24",
+        "hash": "sha256:e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "cita_ubicacion": "fixture:conexiones_proceso.csv fila 2",
+        "confianza": "ejemplo"
+      }
+    },
+    "procedencia": {
+      "anio": 2024,
+      "fuente_id": "ejemplo-fuente-01",
+      "fuente": "[EJEMPLO] Fixture ficticio de prueba para Etapa 1",
+      "url": "https://example.org/atlas-quimico-ar/ejemplo-etapa-1",
+      "fecha_descarga": "2026-11-24",
+      "hash": "sha256:e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "cita_ubicacion": "fixture:conexiones_proceso.csv fila 2",
+      "confianza": "ejemplo"
+    }
+  },
+  {
+    "conexion_id": "al-c2-celda-a-colada",
+    "proceso_id": "aluminio-hall-heroult",
+    "origen_paso_id": "al-p2-celda-electrolitica",
+    "destino_paso_id": "al-p3-colada-lingotes",
+    "corriente_nombre": "Aluminio líquido (Al)",
+    "tipo_corriente": "principal",
+    "flujo": {
+      "estado": "dato",
+      "valor": 1,
+      "unidad": "t/t Al",
+      "procedencia": {
+        "anio": 2024,
+        "fuente_id": "ejemplo-fuente-01",
+        "fuente": "[EJEMPLO] Fixture ficticio de prueba para Etapa 1",
+        "url": "https://example.org/atlas-quimico-ar/ejemplo-etapa-1",
+        "fecha_descarga": "2026-11-24",
+        "hash": "sha256:e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "cita_ubicacion": "fixture:conexiones_proceso.csv fila 3",
+        "confianza": "ejemplo"
+      }
+    },
+    "procedencia": {
+      "anio": 2024,
+      "fuente_id": "ejemplo-fuente-01",
+      "fuente": "[EJEMPLO] Fixture ficticio de prueba para Etapa 1",
+      "url": "https://example.org/atlas-quimico-ar/ejemplo-etapa-1",
+      "fecha_descarga": "2026-11-24",
+      "hash": "sha256:e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "cita_ubicacion": "fixture:conexiones_proceso.csv fila 3",
+      "confianza": "ejemplo"
+    }
+  }
+]
