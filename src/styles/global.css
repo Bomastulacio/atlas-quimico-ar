@@ -1,37 +1,39 @@
 @import "tailwindcss";
 
 @theme {
-  --font-display: "Instrument Serif", Georgia, "Times New Roman", serif;
-  --font-sans: "IBM Plex Sans", system-ui, -apple-system, sans-serif;
+  --font-display: "Space Grotesk", "Inter", system-ui, -apple-system, sans-serif;
+  --font-sans: "Inter", system-ui, -apple-system, sans-serif;
   --font-mono: "IBM Plex Mono", ui-monospace, SFMono-Regular, Menlo, monospace;
 
-  --color-paper: #f5f2eb;
-  --color-paper-elevated: #fcfaf5;
-  --color-paper-muted: #ebe6db;
-  --color-ink: #141513;
-  --color-ink-muted: #4d4c46;
-  --color-rule: #d5cfc1;
-  --color-copper: #c2492b;
-  --color-cobalt: #1d4e89;
-  --color-forest: #1f6b50;
-  --color-amber-warn: #9a5b13;
+  /* Base estricta blanco y negro (inspiración details.so) */
+  --color-canvas: #ffffff;
+  --color-surface: #f6f6f7;
+  --color-surface-strong: #ececef;
+  --color-ink: #09090b;
+  --color-ink-muted: #63636e;
+  --color-rule: #e4e4e7;
+  --color-rule-strong: #18181b;
+
+  /* Colores que rompen el blanco y negro (inspiración halftone / procesos) */
+  --color-cobalt: #0038ff;
+  --color-amber-molten: #f59e0b;
+  --color-emerald-react: #00a859;
+  --color-signal-red: #ff331f;
 }
 
 @layer base {
   html {
-    background-color: var(--color-paper);
+    background-color: var(--color-canvas);
     color: var(--color-ink);
     font-family: var(--font-sans);
     -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
     text-rendering: optimizeLegibility;
   }
 
   body {
     min-height: 100vh;
-    background-image:
-      linear-gradient(to right, rgba(20, 21, 19, 0.045) 1px, transparent 1px),
-      linear-gradient(to bottom, rgba(20, 21, 19, 0.045) 1px, transparent 1px);
-    background-size: 28px 28px;
+    background-color: var(--color-canvas);
   }
 }
 
@@ -39,8 +41,13 @@
   font-variant-numeric: tabular-nums;
 }
 
-.ascii-frame {
-  font-family: var(--font-mono);
-  line-height: 1.45;
-  letter-spacing: -0.01em;
+/* Sutil trama punteada de laboratorio para zonas técnicas sin sobrecargar */
+.dot-matrix-bg {
+  background-image: radial-gradient(rgba(9, 9, 11, 0.14) 1px, transparent 1px);
+  background-size: 16px 16px;
+}
+
+.dot-matrix-dark {
+  background-image: radial-gradient(rgba(255, 255, 255, 0.16) 1px, transparent 1px);
+  background-size: 14px 14px;
 }
