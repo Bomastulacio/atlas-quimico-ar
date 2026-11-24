@@ -238,7 +238,7 @@ export type ComercioExteriorRegistro = z.infer<typeof ComercioExteriorRegistroSc
 export const ManifestSchema = z.object({
   version_esquema: z.string().min(1),
   generado_en: z.string().datetime(),
-  origen: z.enum(['google_sheets', 'sheets_local', 'fixtures_ejemplo']),
+  origen: z.enum(['google_sheets', 'sheets_local', 'supabase', 'fixtures_ejemplo']),
   es_ejemplo: z.boolean(),
   nota: z.string(),
   tablas: z.record(

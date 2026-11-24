@@ -19,8 +19,8 @@ import {
 } from '@/data';
 
 describe('Capa única de acceso a datos (src/data)', () => {
-  it('declara el origen de planillas locales y mantiene honestidad sobre cadenas pendientes', () => {
-    expect(getManifest().origen).toBe('sheets_local');
+  it('declara el origen verificado (sheets_local o supabase) y mantiene honestidad sobre cadenas pendientes', () => {
+    expect(['sheets_local', 'supabase']).toContain(getManifest().origen);
     // Sigue en true mientras existan marcadores pendientes de Etapa 6 (solo Aluminio es 100% oficial)
     expect(isExampleDataset()).toBe(true);
   });
