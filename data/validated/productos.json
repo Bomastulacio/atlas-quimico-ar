@@ -10,46 +10,6 @@
     "estado_mvp": "validado"
   },
   {
-    "producto_id": "algodon",
-    "nombre": "Algodón y fibra textil",
-    "categoria": "agroindustria",
-    "formula_quimica": null,
-    "icono_id": "algodon-fibra",
-    "descripcion_corta": "Cadena desmotadora e industrialización primaria del NEA (carga oficial pendiente de Etapa 6).",
-    "mdx_slug": "algodon",
-    "estado_mvp": "pendiente"
-  },
-  {
-    "producto_id": "soja",
-    "nombre": "Soja y derivados oleaginosos",
-    "categoria": "agroindustria",
-    "formula_quimica": null,
-    "icono_id": "soja-molienda",
-    "descripcion_corta": "Extracción por solvente de aceite y harina proteica en el polo Rosario (carga oficial pendiente de Etapa 6).",
-    "mdx_slug": "soja",
-    "estado_mvp": "pendiente"
-  },
-  {
-    "producto_id": "petroquimica",
-    "nombre": "Petroquímica básica y polietilenos",
-    "categoria": "petroquimica",
-    "formula_quimica": "C2H4",
-    "icono_id": "petroquimica-cracker",
-    "descripcion_corta": "Craqueo térmico de etano y polimerización en el polo Bahía Blanca (carga oficial pendiente de Etapa 6).",
-    "mdx_slug": "petroquimica",
-    "estado_mvp": "pendiente"
-  },
-  {
-    "producto_id": "biodiesel",
-    "nombre": "Biodiésel (FAME)",
-    "categoria": "bioenergia",
-    "formula_quimica": "RCOOCH3",
-    "icono_id": "biodiesel-ester",
-    "descripcion_corta": "Transesterificación catalítica de aceite de soja con metanol (carga oficial pendiente de Etapa 6).",
-    "mdx_slug": "biodiesel",
-    "estado_mvp": "pendiente"
-  },
-  {
     "producto_id": "litio",
     "nombre": "Carbonato de litio",
     "categoria": "mineria_quimica",
@@ -67,6 +27,46 @@
     "icono_id": "urea-prill",
     "descripcion_corta": "Fertilizante nitrogenado sintetizado a partir de gas natural, agua y aire (reformado, Haber-Bosch y granulación) en Bahía Blanca.",
     "mdx_slug": "urea",
+    "estado_mvp": "validado"
+  },
+  {
+    "producto_id": "algodon",
+    "nombre": "Algodón y fibra textil",
+    "categoria": "agroindustria",
+    "formula_quimica": null,
+    "icono_id": "algodon-fibra",
+    "descripcion_corta": "Fibra de celulosa obtenida por desmote mecánico y refinación química húmeda en Chaco y el NEA.",
+    "mdx_slug": "algodon",
+    "estado_mvp": "validado"
+  },
+  {
+    "producto_id": "soja",
+    "nombre": "Soja y derivados oleaginosos",
+    "categoria": "agroindustria",
+    "formula_quimica": null,
+    "icono_id": "soja-molienda",
+    "descripcion_corta": "Molienda de poroto y extracción continua por solvente (hexano) para harina proteica, aceite crudo y lecitina en el Up-River santafesino.",
+    "mdx_slug": "soja",
+    "estado_mvp": "validado"
+  },
+  {
+    "producto_id": "petroquimica",
+    "nombre": "Petroquímica básica y polietilenos",
+    "categoria": "petroquimica",
+    "formula_quimica": "C2H4",
+    "icono_id": "petroquimica-cracker",
+    "descripcion_corta": "Craqueo térmico con vapor de etano (steam cracking) y polimerización a polietileno y PVC en el Polo Petroquímico de Bahía Blanca.",
+    "mdx_slug": "petroquimica",
+    "estado_mvp": "validado"
+  },
+  {
+    "producto_id": "biodiesel",
+    "nombre": "Biodiésel (FAME)",
+    "categoria": "bioenergia",
+    "formula_quimica": "RCOOCH3",
+    "icono_id": "biodiesel-ester",
+    "descripcion_corta": "Ésteres metílicos de ácidos grasos (FAME) obtenidos por transesterificación alcalina de aceite de soja con metanol en San Lorenzo y Gran Rosario.",
+    "mdx_slug": "biodiesel",
     "estado_mvp": "validado"
   }
 ]

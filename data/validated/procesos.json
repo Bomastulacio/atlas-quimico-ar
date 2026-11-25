@@ -78,7 +78,7 @@
       "procedencia": {
         "anio": 2006,
         "fuente_id": "ipcc-2006-v3-ch3-amoniaco-urea",
-        "fuente": "2006 IPCC Guidelines for National Greenhouse Gas Inventories (Vol. 3, Cap. 3.2 Ammonia y Box 3.3 Urea)",
+        "fuente": "2006 IPCC Guidelines for National Greenhouse Gas Inventories (Vol. 3, Cap. 3: Chemical Industry Emissions)",
         "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/pdf/3_Volume3/V3_3_Ch3_Chemical_Industry.pdf",
         "fecha_descarga": "2026-11-24",
         "hash": "sha256:f25c2817eecdae6a1f930b342eb09b2d8a6065b12bfce632502a01e1a61bbaa2",
@@ -90,11 +90,143 @@
     "procedencia": {
       "anio": 2006,
       "fuente_id": "ipcc-2006-v3-ch3-amoniaco-urea",
-      "fuente": "2006 IPCC Guidelines for National Greenhouse Gas Inventories (Vol. 3, Cap. 3.2 Ammonia y Box 3.3 Urea)",
+      "fuente": "2006 IPCC Guidelines for National Greenhouse Gas Inventories (Vol. 3, Cap. 3: Chemical Industry Emissions)",
       "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/pdf/3_Volume3/V3_3_Ch3_Chemical_Industry.pdf",
       "fecha_descarga": "2026-11-24",
       "hash": "sha256:f25c2817eecdae6a1f930b342eb09b2d8a6065b12bfce632502a01e1a61bbaa2",
       "cita_ubicacion": "IPCC 2006 Vol. 3 Cap. 3.2 pág. 3.11 y Table 3.1 pág. 3.15 (30,2 GJ/t NH3)",
+      "confianza": "alta"
+    }
+  },
+  {
+    "proceso_id": "algodon-desmote-refinacion-celulosa",
+    "producto_id": "algodon",
+    "nombre": "Desmote industrial y refinación química de fibra de celulosa",
+    "ruta_tecnologica": "Algodón en bruto -> secado y prelimpieza -> desmote mecánico (fibra y semilla) -> descrudado alcalino y blanqueo (H2O2) -> hilatura y despacho",
+    "reaccion_global": "2 H2O2 -> 2 H2O + O2",
+    "energia_especifica": {
+      "estado": "sin_datos",
+      "valor": null,
+      "unidad": "MWh/t fibra",
+      "procedencia": {
+        "anio": 2026,
+        "fuente_id": "buyatti-web-2026",
+        "fuente": "Plantas industriales y desmote de algodón (Buyatti S.A.I.C.A.)",
+        "url": "https://buyatti.com.ar/",
+        "fecha_descarga": "2026-11-24",
+        "hash": "sha256:7f9e25e1da5fd7163415c3d5b08c73b5a2d1b577b93b10de4dca14cc16395e01",
+        "cita_ubicacion": "buyatti.com.ar (desmote y procesamiento de semilla de algodón, Las Breñas, Chaco)",
+        "confianza": "alta"
+      }
+    },
+    "descripcion": "Transformación industrial del algodón en bruto cosechado en Chaco y NEA. Cada 3,0 t de algodón en bruto rinden ~1,0 t de fibra de celulosa ((C6H10O5)n), 1,7 t de semilla oleaginosa y 0,3 t de impurezas vegetales.",
+    "procedencia": {
+      "anio": 2026,
+      "fuente_id": "buyatti-web-2026",
+      "fuente": "Plantas industriales y desmote de algodón (Buyatti S.A.I.C.A.)",
+      "url": "https://buyatti.com.ar/",
+      "fecha_descarga": "2026-11-24",
+      "hash": "sha256:7f9e25e1da5fd7163415c3d5b08c73b5a2d1b577b93b10de4dca14cc16395e01",
+      "cita_ubicacion": "buyatti.com.ar (desmote y procesamiento de semilla de algodón, Las Breñas, Chaco)",
+      "confianza": "alta"
+    }
+  },
+  {
+    "proceso_id": "soja-molienda-extraccion-solvente",
+    "producto_id": "soja",
+    "nombre": "Molienda de soja y extracción continua por solvente (hexano)",
+    "ruta_tecnologica": "Limpieza y laminado de poroto -> extracción líquido-sólido con hexano (C6H14) -> desolventizado-tostado de harina -> destilación de miscela y reciclo de hexano -> desgomado de aceite y lecitina",
+    "reaccion_global": "C18H34O2 + NaOH -> C18H33NaO2 + H2O",
+    "energia_especifica": {
+      "estado": "sin_datos",
+      "valor": null,
+      "unidad": "MWh/t soja",
+      "procedencia": {
+        "anio": 2026,
+        "fuente_id": "renova-web-2026",
+        "fuente": "Fichas operativas oficiales de Plantas Timbúes y San Lorenzo (Renova S.A.)",
+        "url": "https://renova.com.ar/",
+        "fecha_descarga": "2026-11-24",
+        "hash": "sha256:2a9c82604e9b4a60998bca222a36e3c5147c0a66dc671730e7b9a2af2421204d",
+        "cita_ubicacion": "renova.com.ar (Planta Timbúes 32.400 t/día molienda; Planta San Lorenzo 1.450 t/día biodiésel)",
+        "confianza": "alta"
+      }
+    },
+    "descripcion": "Proceso industrial del nodo oleaginoso Up-River (San Lorenzo, Timbúes y Rosario). Cada tonelada de poroto procesada rinde ~0,76 t de harina proteica (HS 2304.00) y ~0,19 t de aceite crudo (HS 1507.10), con recuperación cerrada del solvente hexano.",
+    "procedencia": {
+      "anio": 2026,
+      "fuente_id": "renova-web-2026",
+      "fuente": "Fichas operativas oficiales de Plantas Timbúes y San Lorenzo (Renova S.A.)",
+      "url": "https://renova.com.ar/",
+      "fecha_descarga": "2026-11-24",
+      "hash": "sha256:2a9c82604e9b4a60998bca222a36e3c5147c0a66dc671730e7b9a2af2421204d",
+      "cita_ubicacion": "renova.com.ar (Planta Timbúes 32.400 t/día molienda; Planta San Lorenzo 1.450 t/día biodiésel)",
+      "confianza": "alta"
+    }
+  },
+  {
+    "proceso_id": "petroquimica-steam-cracking-polietileno",
+    "producto_id": "petroquimica",
+    "nombre": "Craqueo con vapor de etano (Steam Cracking) y polimerización a polietileno",
+    "ruta_tecnologica": "Fraccionamiento de gas natural (etano C2H6) -> craqueo térmico con vapor (800-850 °C) -> enfriamiento y destilación criogénica -> polimerización catalítica a polietileno -> extrusión y peletizado",
+    "reaccion_global": "C2H6 -> C2H4 + H2",
+    "energia_especifica": {
+      "estado": "sin_datos",
+      "valor": null,
+      "unidad": "GJ/t C2H4",
+      "procedencia": {
+        "anio": 2006,
+        "fuente_id": "ipcc-2006-v3-ch3-amoniaco-urea",
+        "fuente": "2006 IPCC Guidelines for National Greenhouse Gas Inventories (Vol. 3, Cap. 3: Chemical Industry Emissions)",
+        "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/pdf/3_Volume3/V3_3_Ch3_Chemical_Industry.pdf",
+        "fecha_descarga": "2026-11-24",
+        "hash": "sha256:f25c2817eecdae6a1f930b342eb09b2d8a6065b12bfce632502a01e1a61bbaa2",
+        "cita_ubicacion": "IPCC 2006 Vol. 3 Cap. 3.9 Box 3.9 pág. 3.59, Table 3.14 pág. 3.75 y Table 3.25 pág. 3.82",
+        "confianza": "alta"
+      }
+    },
+    "descripcion": "Ruta petroquímica gas-intensiva característica del Polo Bahía Blanca. Según IPCC 2006 (Cap. 3.9 Table 3.25), el craqueo de etano rinde 803 kg de etileno por tonelada de carga (1,245 t C2H6/t C2H4) y genera 0,95 t CO2/t C2H4 (Table 3.14).",
+    "procedencia": {
+      "anio": 2006,
+      "fuente_id": "ipcc-2006-v3-ch3-amoniaco-urea",
+      "fuente": "2006 IPCC Guidelines for National Greenhouse Gas Inventories (Vol. 3, Cap. 3: Chemical Industry Emissions)",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/pdf/3_Volume3/V3_3_Ch3_Chemical_Industry.pdf",
+      "fecha_descarga": "2026-11-24",
+      "hash": "sha256:f25c2817eecdae6a1f930b342eb09b2d8a6065b12bfce632502a01e1a61bbaa2",
+      "cita_ubicacion": "IPCC 2006 Vol. 3 Cap. 3.9 Box 3.9 pág. 3.59, Table 3.14 pág. 3.75 y Table 3.25 pág. 3.82",
+      "confianza": "alta"
+    }
+  },
+  {
+    "proceso_id": "biodiesel-transesterificacion-soja",
+    "producto_id": "biodiesel",
+    "nombre": "Transesterificación alcalina de aceite de soja a biodiésel (FAME)",
+    "ruta_tecnologica": "Refinación de aceite de soja -> transesterificación catalítica con metanol (CH4O) -> decantación y refinación de glicerina -> recuperación de metanol -> lavado y secado B100",
+    "reaccion_global": "C57H104O6 + 3 CH4O -> 3 C19H36O2 + C3H8O3",
+    "energia_especifica": {
+      "estado": "sin_datos",
+      "valor": null,
+      "unidad": "MWh/t biodiésel",
+      "procedencia": {
+        "anio": 2026,
+        "fuente_id": "renova-web-2026",
+        "fuente": "Fichas operativas oficiales de Plantas Timbúes y San Lorenzo (Renova S.A.)",
+        "url": "https://renova.com.ar/",
+        "fecha_descarga": "2026-11-24",
+        "hash": "sha256:2a9c82604e9b4a60998bca222a36e3c5147c0a66dc671730e7b9a2af2421204d",
+        "cita_ubicacion": "renova.com.ar (Planta Timbúes 32.400 t/día molienda; Planta San Lorenzo 1.450 t/día biodiésel)",
+        "confianza": "alta"
+      }
+    },
+    "descripcion": "Síntesis continua de ésteres metílicos de ácidos grasos (FAME) a partir de aceite de soja en el cordón San Lorenzo / Rosario. Estequiometría exacta (base trioleína): 0,9955 t aceite + 0,1081 t metanol -> 1,000 t FAME + 0,1035 t glicerina.",
+    "procedencia": {
+      "anio": 2026,
+      "fuente_id": "renova-web-2026",
+      "fuente": "Fichas operativas oficiales de Plantas Timbúes y San Lorenzo (Renova S.A.)",
+      "url": "https://renova.com.ar/",
+      "fecha_descarga": "2026-11-24",
+      "hash": "sha256:2a9c82604e9b4a60998bca222a36e3c5147c0a66dc671730e7b9a2af2421204d",
+      "cita_ubicacion": "renova.com.ar (Planta Timbúes 32.400 t/día molienda; Planta San Lorenzo 1.450 t/día biodiésel)",
       "confianza": "alta"
     }
   }

@@ -339,5 +339,563 @@
       "cita_ubicacion": "EECC-31-12-25.pdf pág. 88 cuadro Volumen de Producción (2022)",
       "confianza": "alta"
     }
+  },
+  {
+    "registro_id": "prod-algodon-chaco-2025",
+    "producto_id": "algodon",
+    "provincia_id": "22",
+    "anio": 2025,
+    "medicion": {
+      "estado": "dato",
+      "valor": 193856,
+      "unidad": "t algodón en bruto (camp. 2024/25)",
+      "procedencia": {
+        "anio": 2025,
+        "fuente_id": "sagyp-estimaciones-2026-03",
+        "fuente": "Estimaciones Agrícolas por provincia y departamento (actualización marzo 2026)",
+        "url": "https://datos.magyp.gob.ar/dataset/9e1e77ba-267e-4eaa-a59f-3296e86b5f36/resource/95d066e6-8a0f-4a80-b59d-6f28f88eacd5/download/estimaciones-agricolas-2026-03.csv",
+        "fecha_descarga": "2026-11-24",
+        "hash": "sha256:7a47a6d356258a69ce0010031f9b2f45ea4c873901d8f812c7c394d9946f9395",
+        "cita_ubicacion": "estimaciones-agricolas-2026-03.csv cultivo=Algodón provincia_id=22 campania=2024/2025",
+        "confianza": "alta"
+      }
+    },
+    "procedencia": {
+      "anio": 2025,
+      "fuente_id": "sagyp-estimaciones-2026-03",
+      "fuente": "Estimaciones Agrícolas por provincia y departamento (actualización marzo 2026)",
+      "url": "https://datos.magyp.gob.ar/dataset/9e1e77ba-267e-4eaa-a59f-3296e86b5f36/resource/95d066e6-8a0f-4a80-b59d-6f28f88eacd5/download/estimaciones-agricolas-2026-03.csv",
+      "fecha_descarga": "2026-11-24",
+      "hash": "sha256:7a47a6d356258a69ce0010031f9b2f45ea4c873901d8f812c7c394d9946f9395",
+      "cita_ubicacion": "estimaciones-agricolas-2026-03.csv cultivo=Algodón provincia_id=22 campania=2024/2025",
+      "confianza": "alta"
+    }
+  },
+  {
+    "registro_id": "prod-algodon-chaco-2024",
+    "producto_id": "algodon",
+    "provincia_id": "22",
+    "anio": 2024,
+    "medicion": {
+      "estado": "dato",
+      "valor": 241717,
+      "unidad": "t algodón en bruto (camp. 2023/24)",
+      "procedencia": {
+        "anio": 2024,
+        "fuente_id": "sagyp-estimaciones-2026-03",
+        "fuente": "Estimaciones Agrícolas por provincia y departamento (actualización marzo 2026)",
+        "url": "https://datos.magyp.gob.ar/dataset/9e1e77ba-267e-4eaa-a59f-3296e86b5f36/resource/95d066e6-8a0f-4a80-b59d-6f28f88eacd5/download/estimaciones-agricolas-2026-03.csv",
+        "fecha_descarga": "2026-11-24",
+        "hash": "sha256:7a47a6d356258a69ce0010031f9b2f45ea4c873901d8f812c7c394d9946f9395",
+        "cita_ubicacion": "estimaciones-agricolas-2026-03.csv cultivo=Algodón provincia_id=22 campania=2023/2024",
+        "confianza": "alta"
+      }
+    },
+    "procedencia": {
+      "anio": 2024,
+      "fuente_id": "sagyp-estimaciones-2026-03",
+      "fuente": "Estimaciones Agrícolas por provincia y departamento (actualización marzo 2026)",
+      "url": "https://datos.magyp.gob.ar/dataset/9e1e77ba-267e-4eaa-a59f-3296e86b5f36/resource/95d066e6-8a0f-4a80-b59d-6f28f88eacd5/download/estimaciones-agricolas-2026-03.csv",
+      "fecha_descarga": "2026-11-24",
+      "hash": "sha256:7a47a6d356258a69ce0010031f9b2f45ea4c873901d8f812c7c394d9946f9395",
+      "cita_ubicacion": "estimaciones-agricolas-2026-03.csv cultivo=Algodón provincia_id=22 campania=2023/2024",
+      "confianza": "alta"
+    }
+  },
+  {
+    "registro_id": "prod-algodon-chaco-2023",
+    "producto_id": "algodon",
+    "provincia_id": "22",
+    "anio": 2023,
+    "medicion": {
+      "estado": "dato",
+      "valor": 229230,
+      "unidad": "t algodón en bruto (camp. 2022/23)",
+      "procedencia": {
+        "anio": 2023,
+        "fuente_id": "sagyp-estimaciones-2026-03",
+        "fuente": "Estimaciones Agrícolas por provincia y departamento (actualización marzo 2026)",
+        "url": "https://datos.magyp.gob.ar/dataset/9e1e77ba-267e-4eaa-a59f-3296e86b5f36/resource/95d066e6-8a0f-4a80-b59d-6f28f88eacd5/download/estimaciones-agricolas-2026-03.csv",
+        "fecha_descarga": "2026-11-24",
+        "hash": "sha256:7a47a6d356258a69ce0010031f9b2f45ea4c873901d8f812c7c394d9946f9395",
+        "cita_ubicacion": "estimaciones-agricolas-2026-03.csv cultivo=Algodón provincia_id=22 campania=2022/2023",
+        "confianza": "alta"
+      }
+    },
+    "procedencia": {
+      "anio": 2023,
+      "fuente_id": "sagyp-estimaciones-2026-03",
+      "fuente": "Estimaciones Agrícolas por provincia y departamento (actualización marzo 2026)",
+      "url": "https://datos.magyp.gob.ar/dataset/9e1e77ba-267e-4eaa-a59f-3296e86b5f36/resource/95d066e6-8a0f-4a80-b59d-6f28f88eacd5/download/estimaciones-agricolas-2026-03.csv",
+      "fecha_descarga": "2026-11-24",
+      "hash": "sha256:7a47a6d356258a69ce0010031f9b2f45ea4c873901d8f812c7c394d9946f9395",
+      "cita_ubicacion": "estimaciones-agricolas-2026-03.csv cultivo=Algodón provincia_id=22 campania=2022/2023",
+      "confianza": "alta"
+    }
+  },
+  {
+    "registro_id": "prod-algodon-chaco-2022",
+    "producto_id": "algodon",
+    "provincia_id": "22",
+    "anio": 2022,
+    "medicion": {
+      "estado": "dato",
+      "valor": 339663,
+      "unidad": "t algodón en bruto (camp. 2021/22)",
+      "procedencia": {
+        "anio": 2022,
+        "fuente_id": "sagyp-estimaciones-2026-03",
+        "fuente": "Estimaciones Agrícolas por provincia y departamento (actualización marzo 2026)",
+        "url": "https://datos.magyp.gob.ar/dataset/9e1e77ba-267e-4eaa-a59f-3296e86b5f36/resource/95d066e6-8a0f-4a80-b59d-6f28f88eacd5/download/estimaciones-agricolas-2026-03.csv",
+        "fecha_descarga": "2026-11-24",
+        "hash": "sha256:7a47a6d356258a69ce0010031f9b2f45ea4c873901d8f812c7c394d9946f9395",
+        "cita_ubicacion": "estimaciones-agricolas-2026-03.csv cultivo=Algodón provincia_id=22 campania=2021/2022",
+        "confianza": "alta"
+      }
+    },
+    "procedencia": {
+      "anio": 2022,
+      "fuente_id": "sagyp-estimaciones-2026-03",
+      "fuente": "Estimaciones Agrícolas por provincia y departamento (actualización marzo 2026)",
+      "url": "https://datos.magyp.gob.ar/dataset/9e1e77ba-267e-4eaa-a59f-3296e86b5f36/resource/95d066e6-8a0f-4a80-b59d-6f28f88eacd5/download/estimaciones-agricolas-2026-03.csv",
+      "fecha_descarga": "2026-11-24",
+      "hash": "sha256:7a47a6d356258a69ce0010031f9b2f45ea4c873901d8f812c7c394d9946f9395",
+      "cita_ubicacion": "estimaciones-agricolas-2026-03.csv cultivo=Algodón provincia_id=22 campania=2021/2022",
+      "confianza": "alta"
+    }
+  },
+  {
+    "registro_id": "prod-algodon-nac-2025",
+    "producto_id": "algodon",
+    "provincia_id": null,
+    "anio": 2025,
+    "medicion": {
+      "estado": "dato",
+      "valor": 1099962,
+      "unidad": "t algodón en bruto total país (camp. 2024/25)",
+      "procedencia": {
+        "anio": 2025,
+        "fuente_id": "sagyp-estimaciones-2026-03",
+        "fuente": "Estimaciones Agrícolas por provincia y departamento (actualización marzo 2026)",
+        "url": "https://datos.magyp.gob.ar/dataset/9e1e77ba-267e-4eaa-a59f-3296e86b5f36/resource/95d066e6-8a0f-4a80-b59d-6f28f88eacd5/download/estimaciones-agricolas-2026-03.csv",
+        "fecha_descarga": "2026-11-24",
+        "hash": "sha256:7a47a6d356258a69ce0010031f9b2f45ea4c873901d8f812c7c394d9946f9395",
+        "cita_ubicacion": "estimaciones-agricolas-2026-03.csv suma nacional cultivo=Algodón campania=2024/2025",
+        "confianza": "alta"
+      }
+    },
+    "procedencia": {
+      "anio": 2025,
+      "fuente_id": "sagyp-estimaciones-2026-03",
+      "fuente": "Estimaciones Agrícolas por provincia y departamento (actualización marzo 2026)",
+      "url": "https://datos.magyp.gob.ar/dataset/9e1e77ba-267e-4eaa-a59f-3296e86b5f36/resource/95d066e6-8a0f-4a80-b59d-6f28f88eacd5/download/estimaciones-agricolas-2026-03.csv",
+      "fecha_descarga": "2026-11-24",
+      "hash": "sha256:7a47a6d356258a69ce0010031f9b2f45ea4c873901d8f812c7c394d9946f9395",
+      "cita_ubicacion": "estimaciones-agricolas-2026-03.csv suma nacional cultivo=Algodón campania=2024/2025",
+      "confianza": "alta"
+    }
+  },
+  {
+    "registro_id": "prod-algodon-nac-2024",
+    "producto_id": "algodon",
+    "provincia_id": null,
+    "anio": 2024,
+    "medicion": {
+      "estado": "dato",
+      "valor": 1269399,
+      "unidad": "t algodón en bruto total país (camp. 2023/24)",
+      "procedencia": {
+        "anio": 2024,
+        "fuente_id": "sagyp-estimaciones-2026-03",
+        "fuente": "Estimaciones Agrícolas por provincia y departamento (actualización marzo 2026)",
+        "url": "https://datos.magyp.gob.ar/dataset/9e1e77ba-267e-4eaa-a59f-3296e86b5f36/resource/95d066e6-8a0f-4a80-b59d-6f28f88eacd5/download/estimaciones-agricolas-2026-03.csv",
+        "fecha_descarga": "2026-11-24",
+        "hash": "sha256:7a47a6d356258a69ce0010031f9b2f45ea4c873901d8f812c7c394d9946f9395",
+        "cita_ubicacion": "estimaciones-agricolas-2026-03.csv suma nacional cultivo=Algodón campania=2023/2024",
+        "confianza": "alta"
+      }
+    },
+    "procedencia": {
+      "anio": 2024,
+      "fuente_id": "sagyp-estimaciones-2026-03",
+      "fuente": "Estimaciones Agrícolas por provincia y departamento (actualización marzo 2026)",
+      "url": "https://datos.magyp.gob.ar/dataset/9e1e77ba-267e-4eaa-a59f-3296e86b5f36/resource/95d066e6-8a0f-4a80-b59d-6f28f88eacd5/download/estimaciones-agricolas-2026-03.csv",
+      "fecha_descarga": "2026-11-24",
+      "hash": "sha256:7a47a6d356258a69ce0010031f9b2f45ea4c873901d8f812c7c394d9946f9395",
+      "cita_ubicacion": "estimaciones-agricolas-2026-03.csv suma nacional cultivo=Algodón campania=2023/2024",
+      "confianza": "alta"
+    }
+  },
+  {
+    "registro_id": "prod-soja-sf-2025",
+    "producto_id": "soja",
+    "provincia_id": "82",
+    "anio": 2025,
+    "medicion": {
+      "estado": "dato",
+      "valor": 11463852,
+      "unidad": "t poroto Santa Fe (camp. 2024/25)",
+      "procedencia": {
+        "anio": 2025,
+        "fuente_id": "sagyp-estimaciones-2026-03",
+        "fuente": "Estimaciones Agrícolas por provincia y departamento (actualización marzo 2026)",
+        "url": "https://datos.magyp.gob.ar/dataset/9e1e77ba-267e-4eaa-a59f-3296e86b5f36/resource/95d066e6-8a0f-4a80-b59d-6f28f88eacd5/download/estimaciones-agricolas-2026-03.csv",
+        "fecha_descarga": "2026-11-24",
+        "hash": "sha256:7a47a6d356258a69ce0010031f9b2f45ea4c873901d8f812c7c394d9946f9395",
+        "cita_ubicacion": "estimaciones-agricolas-2026-03.csv cultivo=Soja provincia_id=82 campania=2024/2025",
+        "confianza": "alta"
+      }
+    },
+    "procedencia": {
+      "anio": 2025,
+      "fuente_id": "sagyp-estimaciones-2026-03",
+      "fuente": "Estimaciones Agrícolas por provincia y departamento (actualización marzo 2026)",
+      "url": "https://datos.magyp.gob.ar/dataset/9e1e77ba-267e-4eaa-a59f-3296e86b5f36/resource/95d066e6-8a0f-4a80-b59d-6f28f88eacd5/download/estimaciones-agricolas-2026-03.csv",
+      "fecha_descarga": "2026-11-24",
+      "hash": "sha256:7a47a6d356258a69ce0010031f9b2f45ea4c873901d8f812c7c394d9946f9395",
+      "cita_ubicacion": "estimaciones-agricolas-2026-03.csv cultivo=Soja provincia_id=82 campania=2024/2025",
+      "confianza": "alta"
+    }
+  },
+  {
+    "registro_id": "prod-soja-sf-2024",
+    "producto_id": "soja",
+    "provincia_id": "82",
+    "anio": 2024,
+    "medicion": {
+      "estado": "dato",
+      "valor": 10796728,
+      "unidad": "t poroto Santa Fe (camp. 2023/24)",
+      "procedencia": {
+        "anio": 2024,
+        "fuente_id": "sagyp-estimaciones-2026-03",
+        "fuente": "Estimaciones Agrícolas por provincia y departamento (actualización marzo 2026)",
+        "url": "https://datos.magyp.gob.ar/dataset/9e1e77ba-267e-4eaa-a59f-3296e86b5f36/resource/95d066e6-8a0f-4a80-b59d-6f28f88eacd5/download/estimaciones-agricolas-2026-03.csv",
+        "fecha_descarga": "2026-11-24",
+        "hash": "sha256:7a47a6d356258a69ce0010031f9b2f45ea4c873901d8f812c7c394d9946f9395",
+        "cita_ubicacion": "estimaciones-agricolas-2026-03.csv cultivo=Soja provincia_id=82 campania=2023/2024",
+        "confianza": "alta"
+      }
+    },
+    "procedencia": {
+      "anio": 2024,
+      "fuente_id": "sagyp-estimaciones-2026-03",
+      "fuente": "Estimaciones Agrícolas por provincia y departamento (actualización marzo 2026)",
+      "url": "https://datos.magyp.gob.ar/dataset/9e1e77ba-267e-4eaa-a59f-3296e86b5f36/resource/95d066e6-8a0f-4a80-b59d-6f28f88eacd5/download/estimaciones-agricolas-2026-03.csv",
+      "fecha_descarga": "2026-11-24",
+      "hash": "sha256:7a47a6d356258a69ce0010031f9b2f45ea4c873901d8f812c7c394d9946f9395",
+      "cita_ubicacion": "estimaciones-agricolas-2026-03.csv cultivo=Soja provincia_id=82 campania=2023/2024",
+      "confianza": "alta"
+    }
+  },
+  {
+    "registro_id": "prod-soja-sf-2023",
+    "producto_id": "soja",
+    "provincia_id": "82",
+    "anio": 2023,
+    "medicion": {
+      "estado": "dato",
+      "valor": 3829670,
+      "unidad": "t poroto Santa Fe (camp. 2022/23, sequía)",
+      "procedencia": {
+        "anio": 2023,
+        "fuente_id": "sagyp-estimaciones-2026-03",
+        "fuente": "Estimaciones Agrícolas por provincia y departamento (actualización marzo 2026)",
+        "url": "https://datos.magyp.gob.ar/dataset/9e1e77ba-267e-4eaa-a59f-3296e86b5f36/resource/95d066e6-8a0f-4a80-b59d-6f28f88eacd5/download/estimaciones-agricolas-2026-03.csv",
+        "fecha_descarga": "2026-11-24",
+        "hash": "sha256:7a47a6d356258a69ce0010031f9b2f45ea4c873901d8f812c7c394d9946f9395",
+        "cita_ubicacion": "estimaciones-agricolas-2026-03.csv cultivo=Soja provincia_id=82 campania=2022/2023",
+        "confianza": "alta"
+      }
+    },
+    "procedencia": {
+      "anio": 2023,
+      "fuente_id": "sagyp-estimaciones-2026-03",
+      "fuente": "Estimaciones Agrícolas por provincia y departamento (actualización marzo 2026)",
+      "url": "https://datos.magyp.gob.ar/dataset/9e1e77ba-267e-4eaa-a59f-3296e86b5f36/resource/95d066e6-8a0f-4a80-b59d-6f28f88eacd5/download/estimaciones-agricolas-2026-03.csv",
+      "fecha_descarga": "2026-11-24",
+      "hash": "sha256:7a47a6d356258a69ce0010031f9b2f45ea4c873901d8f812c7c394d9946f9395",
+      "cita_ubicacion": "estimaciones-agricolas-2026-03.csv cultivo=Soja provincia_id=82 campania=2022/2023",
+      "confianza": "alta"
+    }
+  },
+  {
+    "registro_id": "prod-soja-sf-2022",
+    "producto_id": "soja",
+    "provincia_id": "82",
+    "anio": 2022,
+    "medicion": {
+      "estado": "dato",
+      "valor": 8272320,
+      "unidad": "t poroto Santa Fe (camp. 2021/22)",
+      "procedencia": {
+        "anio": 2022,
+        "fuente_id": "sagyp-estimaciones-2026-03",
+        "fuente": "Estimaciones Agrícolas por provincia y departamento (actualización marzo 2026)",
+        "url": "https://datos.magyp.gob.ar/dataset/9e1e77ba-267e-4eaa-a59f-3296e86b5f36/resource/95d066e6-8a0f-4a80-b59d-6f28f88eacd5/download/estimaciones-agricolas-2026-03.csv",
+        "fecha_descarga": "2026-11-24",
+        "hash": "sha256:7a47a6d356258a69ce0010031f9b2f45ea4c873901d8f812c7c394d9946f9395",
+        "cita_ubicacion": "estimaciones-agricolas-2026-03.csv cultivo=Soja provincia_id=82 campania=2021/2022",
+        "confianza": "alta"
+      }
+    },
+    "procedencia": {
+      "anio": 2022,
+      "fuente_id": "sagyp-estimaciones-2026-03",
+      "fuente": "Estimaciones Agrícolas por provincia y departamento (actualización marzo 2026)",
+      "url": "https://datos.magyp.gob.ar/dataset/9e1e77ba-267e-4eaa-a59f-3296e86b5f36/resource/95d066e6-8a0f-4a80-b59d-6f28f88eacd5/download/estimaciones-agricolas-2026-03.csv",
+      "fecha_descarga": "2026-11-24",
+      "hash": "sha256:7a47a6d356258a69ce0010031f9b2f45ea4c873901d8f812c7c394d9946f9395",
+      "cita_ubicacion": "estimaciones-agricolas-2026-03.csv cultivo=Soja provincia_id=82 campania=2021/2022",
+      "confianza": "alta"
+    }
+  },
+  {
+    "registro_id": "prod-soja-nac-2025",
+    "producto_id": "soja",
+    "provincia_id": null,
+    "anio": 2025,
+    "medicion": {
+      "estado": "dato",
+      "valor": 51107839,
+      "unidad": "t poroto total país (camp. 2024/25)",
+      "procedencia": {
+        "anio": 2025,
+        "fuente_id": "sagyp-estimaciones-2026-03",
+        "fuente": "Estimaciones Agrícolas por provincia y departamento (actualización marzo 2026)",
+        "url": "https://datos.magyp.gob.ar/dataset/9e1e77ba-267e-4eaa-a59f-3296e86b5f36/resource/95d066e6-8a0f-4a80-b59d-6f28f88eacd5/download/estimaciones-agricolas-2026-03.csv",
+        "fecha_descarga": "2026-11-24",
+        "hash": "sha256:7a47a6d356258a69ce0010031f9b2f45ea4c873901d8f812c7c394d9946f9395",
+        "cita_ubicacion": "estimaciones-agricolas-2026-03.csv suma nacional cultivo=Soja campania=2024/2025",
+        "confianza": "alta"
+      }
+    },
+    "procedencia": {
+      "anio": 2025,
+      "fuente_id": "sagyp-estimaciones-2026-03",
+      "fuente": "Estimaciones Agrícolas por provincia y departamento (actualización marzo 2026)",
+      "url": "https://datos.magyp.gob.ar/dataset/9e1e77ba-267e-4eaa-a59f-3296e86b5f36/resource/95d066e6-8a0f-4a80-b59d-6f28f88eacd5/download/estimaciones-agricolas-2026-03.csv",
+      "fecha_descarga": "2026-11-24",
+      "hash": "sha256:7a47a6d356258a69ce0010031f9b2f45ea4c873901d8f812c7c394d9946f9395",
+      "cita_ubicacion": "estimaciones-agricolas-2026-03.csv suma nacional cultivo=Soja campania=2024/2025",
+      "confianza": "alta"
+    }
+  },
+  {
+    "registro_id": "prod-soja-nac-2024",
+    "producto_id": "soja",
+    "provincia_id": null,
+    "anio": 2024,
+    "medicion": {
+      "estado": "dato",
+      "valor": 48213216,
+      "unidad": "t poroto total país (camp. 2023/24)",
+      "procedencia": {
+        "anio": 2024,
+        "fuente_id": "sagyp-estimaciones-2026-03",
+        "fuente": "Estimaciones Agrícolas por provincia y departamento (actualización marzo 2026)",
+        "url": "https://datos.magyp.gob.ar/dataset/9e1e77ba-267e-4eaa-a59f-3296e86b5f36/resource/95d066e6-8a0f-4a80-b59d-6f28f88eacd5/download/estimaciones-agricolas-2026-03.csv",
+        "fecha_descarga": "2026-11-24",
+        "hash": "sha256:7a47a6d356258a69ce0010031f9b2f45ea4c873901d8f812c7c394d9946f9395",
+        "cita_ubicacion": "estimaciones-agricolas-2026-03.csv suma nacional cultivo=Soja campania=2023/2024",
+        "confianza": "alta"
+      }
+    },
+    "procedencia": {
+      "anio": 2024,
+      "fuente_id": "sagyp-estimaciones-2026-03",
+      "fuente": "Estimaciones Agrícolas por provincia y departamento (actualización marzo 2026)",
+      "url": "https://datos.magyp.gob.ar/dataset/9e1e77ba-267e-4eaa-a59f-3296e86b5f36/resource/95d066e6-8a0f-4a80-b59d-6f28f88eacd5/download/estimaciones-agricolas-2026-03.csv",
+      "fecha_descarga": "2026-11-24",
+      "hash": "sha256:7a47a6d356258a69ce0010031f9b2f45ea4c873901d8f812c7c394d9946f9395",
+      "cita_ubicacion": "estimaciones-agricolas-2026-03.csv suma nacional cultivo=Soja campania=2023/2024",
+      "confianza": "alta"
+    }
+  },
+  {
+    "registro_id": "prod-petroquimica-ba-2024",
+    "producto_id": "petroquimica",
+    "provincia_id": "06",
+    "anio": 2024,
+    "medicion": {
+      "estado": "sin_datos",
+      "valor": null,
+      "unidad": "t etileno / polietileno",
+      "procedencia": {
+        "anio": 2024,
+        "fuente_id": "dow-argentina-web-2026",
+        "fuente": "Perfil oficial de operaciones en Argentina y Complejo Bahía Blanca (Dow Argentina)",
+        "url": "https://ar.dow.com/es-ar.html",
+        "fecha_descarga": "2026-11-24",
+        "hash": "sha256:37eb576cb7e3c6ea56143c9d668799c30fc2ee4bd2019ada561e42cbc6fff323",
+        "cita_ubicacion": "Sin reporte público primario auditado (dataset 41 datos.gob.ar descartado por corrimiento de columnas)",
+        "confianza": "alta"
+      }
+    },
+    "procedencia": {
+      "anio": 2024,
+      "fuente_id": "dow-argentina-web-2026",
+      "fuente": "Perfil oficial de operaciones en Argentina y Complejo Bahía Blanca (Dow Argentina)",
+      "url": "https://ar.dow.com/es-ar.html",
+      "fecha_descarga": "2026-11-24",
+      "hash": "sha256:37eb576cb7e3c6ea56143c9d668799c30fc2ee4bd2019ada561e42cbc6fff323",
+      "cita_ubicacion": "Sin reporte público primario auditado (dataset 41 datos.gob.ar descartado por corrimiento de columnas)",
+      "confianza": "alta"
+    }
+  },
+  {
+    "registro_id": "prod-biodiesel-nac-2025",
+    "producto_id": "biodiesel",
+    "provincia_id": null,
+    "anio": 2025,
+    "medicion": {
+      "estado": "dato",
+      "valor": 972202,
+      "unidad": "t biodiésel (prov. SE)",
+      "procedencia": {
+        "anio": 2025,
+        "fuente_id": "se-biocombustibles-2026",
+        "fuente": "Estadísticas oficiales de Producción, Ventas y Exportaciones de Biodiésel y Bioetanol",
+        "url": "https://www.energia.gob.ar/contenidos/archivos/Reorganizacion/informacion_del_mercado/mercado_hidrocarburos/bio/estadisticas_biocombustibles.xls",
+        "fecha_descarga": "2026-11-25",
+        "hash": "sha256:57bdb23af88de8b8cf6eee977e24141725d6f63b15facf196e34f63364e73ffb",
+        "cita_ubicacion": "estadisticas_biocombustibles.xls hoja RESUMEN BIODIESEL fila 24 (2025 provisorio)",
+        "confianza": "media"
+      }
+    },
+    "procedencia": {
+      "anio": 2025,
+      "fuente_id": "se-biocombustibles-2026",
+      "fuente": "Estadísticas oficiales de Producción, Ventas y Exportaciones de Biodiésel y Bioetanol",
+      "url": "https://www.energia.gob.ar/contenidos/archivos/Reorganizacion/informacion_del_mercado/mercado_hidrocarburos/bio/estadisticas_biocombustibles.xls",
+      "fecha_descarga": "2026-11-25",
+      "hash": "sha256:57bdb23af88de8b8cf6eee977e24141725d6f63b15facf196e34f63364e73ffb",
+      "cita_ubicacion": "estadisticas_biocombustibles.xls hoja RESUMEN BIODIESEL fila 24 (2025 provisorio)",
+      "confianza": "media"
+    }
+  },
+  {
+    "registro_id": "prod-biodiesel-nac-2024",
+    "producto_id": "biodiesel",
+    "provincia_id": null,
+    "anio": 2024,
+    "medicion": {
+      "estado": "dato",
+      "valor": 1162697,
+      "unidad": "t biodiésel",
+      "procedencia": {
+        "anio": 2024,
+        "fuente_id": "se-biocombustibles-2026",
+        "fuente": "Estadísticas oficiales de Producción, Ventas y Exportaciones de Biodiésel y Bioetanol",
+        "url": "https://www.energia.gob.ar/contenidos/archivos/Reorganizacion/informacion_del_mercado/mercado_hidrocarburos/bio/estadisticas_biocombustibles.xls",
+        "fecha_descarga": "2026-11-25",
+        "hash": "sha256:57bdb23af88de8b8cf6eee977e24141725d6f63b15facf196e34f63364e73ffb",
+        "cita_ubicacion": "estadisticas_biocombustibles.xls hoja RESUMEN BIODIESEL fila 23 (2024)",
+        "confianza": "alta"
+      }
+    },
+    "procedencia": {
+      "anio": 2024,
+      "fuente_id": "se-biocombustibles-2026",
+      "fuente": "Estadísticas oficiales de Producción, Ventas y Exportaciones de Biodiésel y Bioetanol",
+      "url": "https://www.energia.gob.ar/contenidos/archivos/Reorganizacion/informacion_del_mercado/mercado_hidrocarburos/bio/estadisticas_biocombustibles.xls",
+      "fecha_descarga": "2026-11-25",
+      "hash": "sha256:57bdb23af88de8b8cf6eee977e24141725d6f63b15facf196e34f63364e73ffb",
+      "cita_ubicacion": "estadisticas_biocombustibles.xls hoja RESUMEN BIODIESEL fila 23 (2024)",
+      "confianza": "alta"
+    }
+  },
+  {
+    "registro_id": "prod-biodiesel-nac-2023",
+    "producto_id": "biodiesel",
+    "provincia_id": null,
+    "anio": 2023,
+    "medicion": {
+      "estado": "dato",
+      "valor": 831269,
+      "unidad": "t biodiésel",
+      "procedencia": {
+        "anio": 2023,
+        "fuente_id": "se-biocombustibles-2026",
+        "fuente": "Estadísticas oficiales de Producción, Ventas y Exportaciones de Biodiésel y Bioetanol",
+        "url": "https://www.energia.gob.ar/contenidos/archivos/Reorganizacion/informacion_del_mercado/mercado_hidrocarburos/bio/estadisticas_biocombustibles.xls",
+        "fecha_descarga": "2026-11-25",
+        "hash": "sha256:57bdb23af88de8b8cf6eee977e24141725d6f63b15facf196e34f63364e73ffb",
+        "cita_ubicacion": "estadisticas_biocombustibles.xls hoja RESUMEN BIODIESEL fila 22 (2023)",
+        "confianza": "alta"
+      }
+    },
+    "procedencia": {
+      "anio": 2023,
+      "fuente_id": "se-biocombustibles-2026",
+      "fuente": "Estadísticas oficiales de Producción, Ventas y Exportaciones de Biodiésel y Bioetanol",
+      "url": "https://www.energia.gob.ar/contenidos/archivos/Reorganizacion/informacion_del_mercado/mercado_hidrocarburos/bio/estadisticas_biocombustibles.xls",
+      "fecha_descarga": "2026-11-25",
+      "hash": "sha256:57bdb23af88de8b8cf6eee977e24141725d6f63b15facf196e34f63364e73ffb",
+      "cita_ubicacion": "estadisticas_biocombustibles.xls hoja RESUMEN BIODIESEL fila 22 (2023)",
+      "confianza": "alta"
+    }
+  },
+  {
+    "registro_id": "prod-biodiesel-nac-2022",
+    "producto_id": "biodiesel",
+    "provincia_id": null,
+    "anio": 2022,
+    "medicion": {
+      "estado": "dato",
+      "valor": 1909618,
+      "unidad": "t biodiésel",
+      "procedencia": {
+        "anio": 2022,
+        "fuente_id": "se-biocombustibles-2026",
+        "fuente": "Estadísticas oficiales de Producción, Ventas y Exportaciones de Biodiésel y Bioetanol",
+        "url": "https://www.energia.gob.ar/contenidos/archivos/Reorganizacion/informacion_del_mercado/mercado_hidrocarburos/bio/estadisticas_biocombustibles.xls",
+        "fecha_descarga": "2026-11-25",
+        "hash": "sha256:57bdb23af88de8b8cf6eee977e24141725d6f63b15facf196e34f63364e73ffb",
+        "cita_ubicacion": "estadisticas_biocombustibles.xls hoja RESUMEN BIODIESEL fila 21 (2022)",
+        "confianza": "alta"
+      }
+    },
+    "procedencia": {
+      "anio": 2022,
+      "fuente_id": "se-biocombustibles-2026",
+      "fuente": "Estadísticas oficiales de Producción, Ventas y Exportaciones de Biodiésel y Bioetanol",
+      "url": "https://www.energia.gob.ar/contenidos/archivos/Reorganizacion/informacion_del_mercado/mercado_hidrocarburos/bio/estadisticas_biocombustibles.xls",
+      "fecha_descarga": "2026-11-25",
+      "hash": "sha256:57bdb23af88de8b8cf6eee977e24141725d6f63b15facf196e34f63364e73ffb",
+      "cita_ubicacion": "estadisticas_biocombustibles.xls hoja RESUMEN BIODIESEL fila 21 (2022)",
+      "confianza": "alta"
+    }
+  },
+  {
+    "registro_id": "prod-biodiesel-nac-2021",
+    "producto_id": "biodiesel",
+    "provincia_id": null,
+    "anio": 2021,
+    "medicion": {
+      "estado": "dato",
+      "valor": 1723665,
+      "unidad": "t biodiésel",
+      "procedencia": {
+        "anio": 2021,
+        "fuente_id": "se-biocombustibles-2026",
+        "fuente": "Estadísticas oficiales de Producción, Ventas y Exportaciones de Biodiésel y Bioetanol",
+        "url": "https://www.energia.gob.ar/contenidos/archivos/Reorganizacion/informacion_del_mercado/mercado_hidrocarburos/bio/estadisticas_biocombustibles.xls",
+        "fecha_descarga": "2026-11-25",
+        "hash": "sha256:57bdb23af88de8b8cf6eee977e24141725d6f63b15facf196e34f63364e73ffb",
+        "cita_ubicacion": "estadisticas_biocombustibles.xls hoja RESUMEN BIODIESEL fila 20 (2021)",
+        "confianza": "alta"
+      }
+    },
+    "procedencia": {
+      "anio": 2021,
+      "fuente_id": "se-biocombustibles-2026",
+      "fuente": "Estadísticas oficiales de Producción, Ventas y Exportaciones de Biodiésel y Bioetanol",
+      "url": "https://www.energia.gob.ar/contenidos/archivos/Reorganizacion/informacion_del_mercado/mercado_hidrocarburos/bio/estadisticas_biocombustibles.xls",
+      "fecha_descarga": "2026-11-25",
+      "hash": "sha256:57bdb23af88de8b8cf6eee977e24141725d6f63b15facf196e34f63364e73ffb",
+      "cita_ubicacion": "estadisticas_biocombustibles.xls hoja RESUMEN BIODIESEL fila 20 (2021)",
+      "confianza": "alta"
+    }
   }
 ]

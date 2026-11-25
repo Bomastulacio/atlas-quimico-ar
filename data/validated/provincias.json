@@ -12,8 +12,8 @@
     "nombre": "Buenos Aires",
     "iso_3166_2": "AR-B",
     "region": "Pampeana",
-    "cobertura_datos": "parcial",
-    "nota_cobertura": "Cadena de urea granulada y amoníaco (Profertil, Bahía Blanca) verificada con EECC CNV 2025, IPCC y UN Comtrade; petroquímica pendiente en Etapa 6."
+    "cobertura_datos": "completa",
+    "nota_cobertura": "Cadenas de urea granulada (Profertil) y petroquímica (Dow y Unipar Indupa en Bahía Blanca) verificadas con CNV, IPCC y UN Comtrade."
   },
   {
     "provincia_id": "10",
@@ -44,8 +44,8 @@
     "nombre": "Chaco",
     "iso_3166_2": "AR-H",
     "region": "NEA",
-    "cobertura_datos": "baja",
-    "nota_cobertura": "Cadena de algodón prevista para Etapa 6 (pendiente de carga oficial)."
+    "cobertura_datos": "completa",
+    "nota_cobertura": "Cadena algodonera (desmote y fibra de celulosa en Chaco) verificada con SAGyP Estimaciones Agrícolas 2026, Buyatti y UN Comtrade."
   },
   {
     "provincia_id": "26",
@@ -164,8 +164,8 @@
     "nombre": "Santa Fe",
     "iso_3166_2": "AR-S",
     "region": "Centro",
-    "cobertura_datos": "baja",
-    "nota_cobertura": "Polo sojero y biodiésel del Gran Rosario previsto para Etapa 6 (pendiente de carga oficial)."
+    "cobertura_datos": "completa",
+    "nota_cobertura": "Complejo oleaginoso de soja y polo de biodiésel (San Lorenzo, Timbúes y Rosario) verificados con SAGyP, Secretaría de Energía, Renova, Molinos Agro y UN Comtrade."
   },
   {
     "provincia_id": "86",

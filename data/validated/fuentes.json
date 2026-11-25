@@ -88,17 +88,6 @@
     "notas": "Relación técnica bauxita -> alúmina -> aluminio (4 t bauxita -> 2 t alúmina -> 1 t Al) y clasificación HS 2818.20."
   },
   {
-    "fuente_id": "ejemplo-fuente-01",
-    "nombre": "[EJEMPLO] Marcador territorial demostrativo para cadenas MVP pendientes de Etapa 6",
-    "organismo": "Atlas Químico AR (Plan MVP)",
-    "tipo": "ejemplo",
-    "url": "https://example.org/atlas-quimico-ar/mvp-pendiente",
-    "fecha_descarga": "2026-11-24",
-    "hash": "sha256:e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
-    "archivo_raw": "data/sheets/",
-    "notas": "Usado únicamente para señalar las 6 cadenas pendientes de carga oficial en Etapa 6."
-  },
-  {
     "fuente_id": "usgs-mcs-2025-litio",
     "nombre": "Mineral Commodity Summaries 2025: Lithium",
     "organismo": "U.S. Geological Survey (USGS)",
@@ -187,14 +176,135 @@
     "notas": "Etapas gas natural + agua + aire -> amoníaco -> urea granulada en Ingeniero White, Bahía Blanca."
   },
   {
+    "fuente_id": "sagyp-estimaciones-2026-03",
+    "nombre": "Estimaciones Agrícolas por provincia y departamento (actualización marzo 2026)",
+    "organismo": "Secretaría de Agricultura, Ganadería y Pesca (SAGyP)",
+    "tipo": "oficial",
+    "url": "https://datos.magyp.gob.ar/dataset/9e1e77ba-267e-4eaa-a59f-3296e86b5f36/resource/95d066e6-8a0f-4a80-b59d-6f28f88eacd5/download/estimaciones-agricolas-2026-03.csv",
+    "fecha_descarga": "2026-11-24",
+    "hash": "sha256:7a47a6d356258a69ce0010031f9b2f45ea4c873901d8f812c7c394d9946f9395",
+    "archivo_raw": null,
+    "notas": "Series oficiales 2019/20-2024/25 de algodón en bruto (Chaco y nacional) y soja (Santa Fe y nacional) con códigos Georef departamentales."
+  },
+  {
+    "fuente_id": "uncomtrade-ar-lote2-agro-2024",
+    "nombre": "UN Comtrade: comercio exterior de Argentina HS 520100 (Algodón), 150710/230400 (Soja) y 382600 (Biodiésel) 2024",
+    "organismo": "UN Comtrade (Naciones Unidas)",
+    "tipo": "oficial",
+    "url": "https://comtradeapi.un.org/public/v1/preview/C/A/HS?reporterCode=32&period=2024&partnerCode=0&partner2Code=0&customsCode=C00&motCode=0&cmdCode=520100,150710,230400,382600",
+    "fecha_descarga": "2026-11-24",
+    "hash": "sha256:6903f23febd3bd252ce0a4cfeb667b824cdc10a00e80432321f5dcd288229e40",
+    "archivo_raw": null,
+    "notas": "Flujos oficiales 2024 de fibra de algodón (HS 520100), aceite crudo de soja (HS 150710), harina/pellets de soja (HS 230400) y biodiésel (HS 382600)."
+  },
+  {
+    "fuente_id": "uncomtrade-ar-lote2-agro-2023",
+    "nombre": "UN Comtrade: comercio exterior de Argentina HS 520100 (Algodón), 150710/230400 (Soja) y 382600 (Biodiésel) 2023",
+    "organismo": "UN Comtrade (Naciones Unidas)",
+    "tipo": "oficial",
+    "url": "https://comtradeapi.un.org/public/v1/preview/C/A/HS?reporterCode=32&period=2023&partnerCode=0&partner2Code=0&customsCode=C00&motCode=0&cmdCode=520100,150710,230400,382600",
+    "fecha_descarga": "2026-11-24",
+    "hash": "sha256:23308cd7e21d66fc6d854fee155c7a32acf4790f15f7f35d9e314b6ef9226adc",
+    "archivo_raw": null,
+    "notas": "Flujos oficiales 2023 de fibra de algodón (HS 520100), aceite y harina de soja (HS 150710/230400) y biodiésel (HS 382600)."
+  },
+  {
+    "fuente_id": "uncomtrade-ar-lote2-ind-2024",
+    "nombre": "UN Comtrade: comercio exterior de Argentina HS 390110/390120 (Polietileno), 390410 (PVC) y 120190 (Soja poroto) 2024",
+    "organismo": "UN Comtrade (Naciones Unidas)",
+    "tipo": "oficial",
+    "url": "https://comtradeapi.un.org/public/v1/preview/C/A/HS?reporterCode=32&period=2024&partnerCode=0&partner2Code=0&customsCode=C00&motCode=0&cmdCode=390110,390120,390410,120190",
+    "fecha_descarga": "2026-11-24",
+    "hash": "sha256:0ce593fa415610c3bf8866de3f82a5d306f8b483cbd1562b5e870cb812d9774f",
+    "archivo_raw": null,
+    "notas": "Flujos oficiales 2024 de polietileno LDPE/LLDPE (390110), HDPE (390120), PVC (390410) y poroto de soja (120190)."
+  },
+  {
+    "fuente_id": "uncomtrade-ar-lote2-ind-2023",
+    "nombre": "UN Comtrade: comercio exterior de Argentina HS 390110/390120 (Polietileno), 390410 (PVC) y 120190 (Soja poroto) 2023",
+    "organismo": "UN Comtrade (Naciones Unidas)",
+    "tipo": "oficial",
+    "url": "https://comtradeapi.un.org/public/v1/preview/C/A/HS?reporterCode=32&period=2023&partnerCode=0&partner2Code=0&customsCode=C00&motCode=0&cmdCode=390110,390120,390410,120190",
+    "fecha_descarga": "2026-11-24",
+    "hash": "sha256:04e836fa2465b831d632401a04bf530701a0fb5dcafaff62a87ba3ca6876240e",
+    "archivo_raw": null,
+    "notas": "Flujos oficiales 2023 de polietileno LDPE/LLDPE (390110), HDPE (390120), PVC (390410) y poroto de soja (120190)."
+  },
+  {
+    "fuente_id": "se-biocombustibles-2026",
+    "nombre": "Estadísticas oficiales de Producción, Ventas y Exportaciones de Biodiésel y Bioetanol",
+    "organismo": "Secretaría de Energía de la Nación",
+    "tipo": "oficial",
+    "url": "https://www.energia.gob.ar/contenidos/archivos/Reorganizacion/informacion_del_mercado/mercado_hidrocarburos/bio/estadisticas_biocombustibles.xls",
+    "fecha_descarga": "2026-11-25",
+    "hash": "sha256:57bdb23af88de8b8cf6eee977e24141725d6f63b15facf196e34f63364e73ffb",
+    "archivo_raw": null,
+    "notas": "Hoja RESUMEN BIODIESEL (toneladas 2008-2025): 1.909.618 t (2022), 831.269 t (2023), 1.162.697 t (2024) y 972.202 t prov. (2025)."
+  },
+  {
     "fuente_id": "ipcc-2006-v3-ch3-amoniaco-urea",
-    "nombre": "2006 IPCC Guidelines for National Greenhouse Gas Inventories (Vol. 3, Cap. 3.2 Ammonia y Box 3.3 Urea)",
+    "nombre": "2006 IPCC Guidelines for National Greenhouse Gas Inventories (Vol. 3, Cap. 3: Chemical Industry Emissions)",
     "organismo": "IPCC (Intergovernmental Panel on Climate Change)",
     "tipo": "tecnica",
     "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/pdf/3_Volume3/V3_3_Ch3_Chemical_Industry.pdf",
     "fecha_descarga": "2026-11-24",
     "hash": "sha256:f25c2817eecdae6a1f930b342eb09b2d8a6065b12bfce632502a01e1a61bbaa2",
     "archivo_raw": null,
-    "notas": "Reacciones balanceadas SMR + Haber-Bosch + Urea, 30,2 GJ/t NH3 (Table 3.1), 0,733 t CO2/t urea y 2-7 kg CO2/t urea (Box 3.3)."
+    "notas": "Cap. 3.2 Amoníaco/Urea y Cap. 3.9 Petroquímica: Box 3.9 steam cracking, Table 3.14 (0,95 t CO2/t etileno desde etano) y Table 3.25 (803 kg etileno/t etano)."
+  },
+  {
+    "fuente_id": "renova-web-2026",
+    "nombre": "Fichas operativas oficiales de Plantas Timbúes y San Lorenzo (Renova S.A.)",
+    "organismo": "Renova S.A.",
+    "tipo": "empresa",
+    "url": "https://renova.com.ar/",
+    "fecha_descarga": "2026-11-24",
+    "hash": "sha256:2a9c82604e9b4a60998bca222a36e3c5147c0a66dc671730e7b9a2af2421204d",
+    "archivo_raw": null,
+    "notas": "Planta Timbúes: 32.400 t/día de molienda de soja. Planta San Lorenzo: 1.450 t/día biodiésel, 900 t/día refinado y 270 t/día glicerina refinada."
+  },
+  {
+    "fuente_id": "molinosagro-web-2026",
+    "nombre": "Ficha de capacidad industrial Puerto San Benito (Molinos Agro S.A.)",
+    "organismo": "Molinos Agro S.A.",
+    "tipo": "empresa",
+    "url": "https://molinosagro.com.ar/nuestro-negocio/",
+    "fecha_descarga": "2026-11-24",
+    "hash": "sha256:cc3b5a0e525cb497f7750c973ad8f134caa4839b7fbaaf9da26cce5d3a0a4875",
+    "archivo_raw": null,
+    "notas": "Capacidad de molienda de soja declarada: 6 millones de toneladas anuales en San Lorenzo (Puerto San Benito, Santa Fe)."
+  },
+  {
+    "fuente_id": "dow-argentina-web-2026",
+    "nombre": "Perfil oficial de operaciones en Argentina y Complejo Bahía Blanca (Dow Argentina)",
+    "organismo": "Dow Argentina (PBBPolisur S.R.L.)",
+    "tipo": "empresa",
+    "url": "https://ar.dow.com/es-ar.html",
+    "fecha_descarga": "2026-11-24",
+    "hash": "sha256:37eb576cb7e3c6ea56143c9d668799c30fc2ee4bd2019ada561e42cbc6fff323",
+    "archivo_raw": null,
+    "notas": "Declara seis plantas industriales en el Complejo Bahía Blanca (2 de etileno y 4 de polietileno)."
+  },
+  {
+    "fuente_id": "unipar-acerca-2026",
+    "nombre": "Perfil institucional y unidad productiva Bahía Blanca (Unipar Indupa S.A.I.C.)",
+    "organismo": "Unipar Indupa S.A.I.C.",
+    "tipo": "empresa",
+    "url": "https://unipar.com/es/acerca-de-unipar",
+    "fecha_descarga": "2026-11-25",
+    "hash": "sha256:078744f42c406f68aa33110931629fe7dfa3cd9c6544791837111532d225a6f8",
+    "archivo_raw": null,
+    "notas": "Operador petroquímico y cloro-álcali en Bahía Blanca (cloro, soda cáustica y PVC)."
+  },
+  {
+    "fuente_id": "buyatti-web-2026",
+    "nombre": "Plantas industriales y desmote de algodón (Buyatti S.A.I.C.A.)",
+    "organismo": "Buyatti S.A.I.C.A.",
+    "tipo": "empresa",
+    "url": "https://buyatti.com.ar/",
+    "fecha_descarga": "2026-11-24",
+    "hash": "sha256:7f9e25e1da5fd7163415c3d5b08c73b5a2d1b577b93b10de4dca14cc16395e01",
+    "archivo_raw": null,
+    "notas": "Operación de desmote y procesamiento de semilla de algodón en Las Breñas (Chaco) y Reconquista (Santa Fe)."
   }
 ]

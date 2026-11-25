@@ -180,6 +180,258 @@
     }
   },
   {
+    "paso_id": "alg-p1-recepcion-limpieza",
+    "proceso_id": "algodon-desmote-refinacion-celulosa",
+    "orden": 1,
+    "nombre": "Recepción, secado y prelimpieza de algodón en bruto",
+    "tipo_paso": "materia_prima",
+    "reaccion_balanceada": null,
+    "temperatura_c": "60-80",
+    "presion_bar": "1.0",
+    "reactivos": [
+      {
+        "unidad": "t/t fibra",
+        "especie": "Algodón en bruto cosechado",
+        "cantidad": 3
+      }
+    ],
+    "productos": [
+      {
+        "unidad": "t/t fibra",
+        "especie": "Algodón en bruto seco y limpio",
+        "cantidad": 2.7
+      }
+    ],
+    "insumos": [
+      {
+        "unidad": "servicio térmico",
+        "especie": "Aire caliente de secado",
+        "cantidad": null
+      }
+    ],
+    "subproductos": [
+      {
+        "unidad": "t/t fibra",
+        "especie": "Restos vegetales, brácteas y polvo",
+        "cantidad": 0.3
+      }
+    ],
+    "energia": {
+      "estado": "sin_datos",
+      "valor": null,
+      "unidad": "MWh/t fibra",
+      "procedencia": {
+        "anio": 2025,
+        "fuente_id": "sagyp-estimaciones-2026-03",
+        "fuente": "Estimaciones Agrícolas por provincia y departamento (actualización marzo 2026)",
+        "url": "https://datos.magyp.gob.ar/dataset/9e1e77ba-267e-4eaa-a59f-3296e86b5f36/resource/95d066e6-8a0f-4a80-b59d-6f28f88eacd5/download/estimaciones-agricolas-2026-03.csv",
+        "fecha_descarga": "2026-11-24",
+        "hash": "sha256:7a47a6d356258a69ce0010031f9b2f45ea4c873901d8f812c7c394d9946f9395",
+        "cita_ubicacion": "estimaciones-agricolas-2026-03.csv cultivo=Algodón provincia_id=22 campania=2024/2025",
+        "confianza": "alta"
+      }
+    },
+    "descripcion": "Acondicionamiento de humedad y separación neumática de restos vegetales de cosecha mecánica (stripper/picker) en desmotadoras chaqueñas.",
+    "pos_x": 20,
+    "pos_y": 150,
+    "procedencia": {
+      "anio": 2025,
+      "fuente_id": "sagyp-estimaciones-2026-03",
+      "fuente": "Estimaciones Agrícolas por provincia y departamento (actualización marzo 2026)",
+      "url": "https://datos.magyp.gob.ar/dataset/9e1e77ba-267e-4eaa-a59f-3296e86b5f36/resource/95d066e6-8a0f-4a80-b59d-6f28f88eacd5/download/estimaciones-agricolas-2026-03.csv",
+      "fecha_descarga": "2026-11-24",
+      "hash": "sha256:7a47a6d356258a69ce0010031f9b2f45ea4c873901d8f812c7c394d9946f9395",
+      "cita_ubicacion": "estimaciones-agricolas-2026-03.csv cultivo=Algodón provincia_id=22 campania=2024/2025",
+      "confianza": "alta"
+    }
+  },
+  {
+    "paso_id": "soj-p1-limpieza-laminado",
+    "proceso_id": "soja-molienda-extraccion-solvente",
+    "orden": 1,
+    "nombre": "Limpieza, quebrado, descascarado y laminado",
+    "tipo_paso": "materia_prima",
+    "reaccion_balanceada": null,
+    "temperatura_c": "60-65",
+    "presion_bar": "1.0",
+    "reactivos": [
+      {
+        "unidad": "t/t soja",
+        "especie": "Poroto de soja (Glycine max)",
+        "cantidad": 1
+      }
+    ],
+    "productos": [
+      {
+        "unidad": "t/t soja",
+        "especie": "Láminas acondicionadas de soja",
+        "cantidad": 0.97
+      }
+    ],
+    "insumos": [
+      {
+        "unidad": "servicio térmico",
+        "especie": "Vapor de acondicionamiento",
+        "cantidad": null
+      }
+    ],
+    "subproductos": [
+      {
+        "unidad": "t/t soja",
+        "especie": "Cáscara (pelletizada) e impurezas",
+        "cantidad": 0.03
+      }
+    ],
+    "energia": {
+      "estado": "sin_datos",
+      "valor": null,
+      "unidad": "MWh/t soja",
+      "procedencia": {
+        "anio": 2026,
+        "fuente_id": "renova-web-2026",
+        "fuente": "Fichas operativas oficiales de Plantas Timbúes y San Lorenzo (Renova S.A.)",
+        "url": "https://renova.com.ar/",
+        "fecha_descarga": "2026-11-24",
+        "hash": "sha256:2a9c82604e9b4a60998bca222a36e3c5147c0a66dc671730e7b9a2af2421204d",
+        "cita_ubicacion": "renova.com.ar (Planta Timbúes 32.400 t/día molienda)",
+        "confianza": "alta"
+      }
+    },
+    "descripcion": "Recepción por camiones y barcazas en puertos del Paraná, descascarado parcial y laminado a 0,3 mm para facilitar la extracción.",
+    "pos_x": 20,
+    "pos_y": 150,
+    "procedencia": {
+      "anio": 2026,
+      "fuente_id": "renova-web-2026",
+      "fuente": "Fichas operativas oficiales de Plantas Timbúes y San Lorenzo (Renova S.A.)",
+      "url": "https://renova.com.ar/",
+      "fecha_descarga": "2026-11-24",
+      "hash": "sha256:2a9c82604e9b4a60998bca222a36e3c5147c0a66dc671730e7b9a2af2421204d",
+      "cita_ubicacion": "renova.com.ar (Planta Timbúes 32.400 t/día molienda)",
+      "confianza": "alta"
+    }
+  },
+  {
+    "paso_id": "pet-p1-fraccionamiento-etano",
+    "proceso_id": "petroquimica-steam-cracking-polietileno",
+    "orden": 1,
+    "nombre": "Separación de etano (C2H6) desde gas natural",
+    "tipo_paso": "materia_prima",
+    "reaccion_balanceada": null,
+    "temperatura_c": "-90 a -30",
+    "presion_bar": "30",
+    "reactivos": [
+      {
+        "unidad": "t/t C2H4",
+        "especie": "C2H6 en líquidos de gas natural (Cuenca Neuquina)",
+        "cantidad": 1.245
+      }
+    ],
+    "productos": [
+      {
+        "unidad": "t/t C2H4",
+        "especie": "C2H6 (etano grado petroquímico)",
+        "cantidad": 1.245
+      }
+    ],
+    "insumos": [],
+    "subproductos": [],
+    "energia": {
+      "estado": "sin_datos",
+      "valor": null,
+      "unidad": "GJ/t C2H4",
+      "procedencia": {
+        "anio": 2006,
+        "fuente_id": "ipcc-2006-v3-ch3-amoniaco-urea",
+        "fuente": "2006 IPCC Guidelines for National Greenhouse Gas Inventories (Vol. 3, Cap. 3: Chemical Industry Emissions)",
+        "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/pdf/3_Volume3/V3_3_Ch3_Chemical_Industry.pdf",
+        "fecha_descarga": "2026-11-24",
+        "hash": "sha256:f25c2817eecdae6a1f930b342eb09b2d8a6065b12bfce632502a01e1a61bbaa2",
+        "cita_ubicacion": "IPCC 2006 Vol. 3 Cap. 3.9 Table 3.25 pág. 3.82",
+        "confianza": "alta"
+      }
+    },
+    "descripcion": "Fraccionamiento criogénico en General Cerri / Puerto Galván (Bahía Blanca) que provee etano por ducto directo a los crackers de etileno.",
+    "pos_x": 20,
+    "pos_y": 150,
+    "procedencia": {
+      "anio": 2006,
+      "fuente_id": "ipcc-2006-v3-ch3-amoniaco-urea",
+      "fuente": "2006 IPCC Guidelines for National Greenhouse Gas Inventories (Vol. 3, Cap. 3: Chemical Industry Emissions)",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/pdf/3_Volume3/V3_3_Ch3_Chemical_Industry.pdf",
+      "fecha_descarga": "2026-11-24",
+      "hash": "sha256:f25c2817eecdae6a1f930b342eb09b2d8a6065b12bfce632502a01e1a61bbaa2",
+      "cita_ubicacion": "IPCC 2006 Vol. 3 Cap. 3.9 Table 3.25 pág. 3.82",
+      "confianza": "alta"
+    }
+  },
+  {
+    "paso_id": "bio-p1-refinacion-aceite",
+    "proceso_id": "biodiesel-transesterificacion-soja",
+    "orden": 1,
+    "nombre": "Refinación y neutralización de aceite de soja",
+    "tipo_paso": "materia_prima",
+    "reaccion_balanceada": null,
+    "temperatura_c": "70-90",
+    "presion_bar": "1.0",
+    "reactivos": [
+      {
+        "unidad": "t/t biodiésel",
+        "especie": "Aceite crudo desgomado de soja",
+        "cantidad": 1.02
+      }
+    ],
+    "productos": [
+      {
+        "unidad": "t/t biodiésel",
+        "especie": "Aceite de soja neutro y seco (triglicéridos)",
+        "cantidad": 1.005
+      }
+    ],
+    "insumos": [
+      {
+        "unidad": "reactivo auxiliar",
+        "especie": "Ácido fosfórico / NaOH de neutralización",
+        "cantidad": null
+      }
+    ],
+    "subproductos": [
+      {
+        "unidad": "t/t biodiésel",
+        "especie": "Borras de neutralización y ácidos grasos libres",
+        "cantidad": 0.015
+      }
+    ],
+    "energia": {
+      "estado": "sin_datos",
+      "valor": null,
+      "unidad": "MWh/t biodiésel",
+      "procedencia": {
+        "anio": 2026,
+        "fuente_id": "renova-web-2026",
+        "fuente": "Fichas operativas oficiales de Plantas Timbúes y San Lorenzo (Renova S.A.)",
+        "url": "https://renova.com.ar/",
+        "fecha_descarga": "2026-11-24",
+        "hash": "sha256:2a9c82604e9b4a60998bca222a36e3c5147c0a66dc671730e7b9a2af2421204d",
+        "cita_ubicacion": "renova.com.ar (Planta San Lorenzo: refinado 900 t/día)",
+        "confianza": "alta"
+      }
+    },
+    "descripcion": "Remoción de fosfolípidos, humedad (<0,05%) y acidez libre (<0,1%) para evitar saponificación durante la catálisis alcalina.",
+    "pos_x": 20,
+    "pos_y": 150,
+    "procedencia": {
+      "anio": 2026,
+      "fuente_id": "renova-web-2026",
+      "fuente": "Fichas operativas oficiales de Plantas Timbúes y San Lorenzo (Renova S.A.)",
+      "url": "https://renova.com.ar/",
+      "fecha_descarga": "2026-11-24",
+      "hash": "sha256:2a9c82604e9b4a60998bca222a36e3c5147c0a66dc671730e7b9a2af2421204d",
+      "cita_ubicacion": "renova.com.ar (Planta San Lorenzo: refinado 900 t/día)",
+      "confianza": "alta"
+    }
+  },
+  {
     "paso_id": "al-p2-recepcion-storni",
     "proceso_id": "aluminio-hall-heroult",
     "orden": 2,
@@ -373,7 +625,7 @@
       "procedencia": {
         "anio": 2006,
         "fuente_id": "ipcc-2006-v3-ch3-amoniaco-urea",
-        "fuente": "2006 IPCC Guidelines for National Greenhouse Gas Inventories (Vol. 3, Cap. 3.2 Ammonia y Box 3.3 Urea)",
+        "fuente": "2006 IPCC Guidelines for National Greenhouse Gas Inventories (Vol. 3, Cap. 3: Chemical Industry Emissions)",
         "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/pdf/3_Volume3/V3_3_Ch3_Chemical_Industry.pdf",
         "fecha_descarga": "2026-11-24",
         "hash": "sha256:f25c2817eecdae6a1f930b342eb09b2d8a6065b12bfce632502a01e1a61bbaa2",
@@ -387,11 +639,282 @@
     "procedencia": {
       "anio": 2006,
       "fuente_id": "ipcc-2006-v3-ch3-amoniaco-urea",
-      "fuente": "2006 IPCC Guidelines for National Greenhouse Gas Inventories (Vol. 3, Cap. 3.2 Ammonia y Box 3.3 Urea)",
+      "fuente": "2006 IPCC Guidelines for National Greenhouse Gas Inventories (Vol. 3, Cap. 3: Chemical Industry Emissions)",
       "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/pdf/3_Volume3/V3_3_Ch3_Chemical_Industry.pdf",
       "fecha_descarga": "2026-11-24",
       "hash": "sha256:f25c2817eecdae6a1f930b342eb09b2d8a6065b12bfce632502a01e1a61bbaa2",
       "cita_ubicacion": "IPCC 2006 Vol. 3 Cap. 3.2 pág. 3.11 y Table 3.1 pág. 3.15 (30,2 GJ/t NH3)",
+      "confianza": "alta"
+    }
+  },
+  {
+    "paso_id": "alg-p2-desmote-separacion",
+    "proceso_id": "algodon-desmote-refinacion-celulosa",
+    "orden": 2,
+    "nombre": "Desmote mecánico (separación fibra-semilla)",
+    "tipo_paso": "separacion",
+    "reaccion_balanceada": null,
+    "temperatura_c": "25-35",
+    "presion_bar": "1.0",
+    "reactivos": [
+      {
+        "unidad": "t/t fibra",
+        "especie": "Algodón en bruto seco y limpio",
+        "cantidad": 2.7
+      }
+    ],
+    "productos": [
+      {
+        "unidad": "t/t fibra",
+        "especie": "Fibra de algodón cruda (celulosa ~94%)",
+        "cantidad": 1
+      }
+    ],
+    "insumos": [],
+    "subproductos": [
+      {
+        "unidad": "t/t fibra",
+        "especie": "Semilla de algodón (a aceite y forraje)",
+        "cantidad": 1.7
+      }
+    ],
+    "energia": {
+      "estado": "sin_datos",
+      "valor": null,
+      "unidad": "MWh/t fibra",
+      "procedencia": {
+        "anio": 2026,
+        "fuente_id": "buyatti-web-2026",
+        "fuente": "Plantas industriales y desmote de algodón (Buyatti S.A.I.C.A.)",
+        "url": "https://buyatti.com.ar/",
+        "fecha_descarga": "2026-11-24",
+        "hash": "sha256:7f9e25e1da5fd7163415c3d5b08c73b5a2d1b577b93b10de4dca14cc16395e01",
+        "cita_ubicacion": "buyatti.com.ar (desmote y procesamiento de semilla de algodón, Las Breñas, Chaco)",
+        "confianza": "alta"
+      }
+    },
+    "descripcion": "Bancos de sierras de desmote que separan la fibra de celulosa de la semilla oleaginosa; la semilla se procesa para aceite y alimentación animal.",
+    "pos_x": 340,
+    "pos_y": 150,
+    "procedencia": {
+      "anio": 2026,
+      "fuente_id": "buyatti-web-2026",
+      "fuente": "Plantas industriales y desmote de algodón (Buyatti S.A.I.C.A.)",
+      "url": "https://buyatti.com.ar/",
+      "fecha_descarga": "2026-11-24",
+      "hash": "sha256:7f9e25e1da5fd7163415c3d5b08c73b5a2d1b577b93b10de4dca14cc16395e01",
+      "cita_ubicacion": "buyatti.com.ar (desmote y procesamiento de semilla de algodón, Las Breñas, Chaco)",
+      "confianza": "alta"
+    }
+  },
+  {
+    "paso_id": "soj-p2-extraccion-hexano",
+    "proceso_id": "soja-molienda-extraccion-solvente",
+    "orden": 2,
+    "nombre": "Extracción continua por solvente (hexano)",
+    "tipo_paso": "separacion",
+    "reaccion_balanceada": null,
+    "temperatura_c": "55-60",
+    "presion_bar": "1.0",
+    "reactivos": [
+      {
+        "unidad": "t/t soja",
+        "especie": "Láminas de soja",
+        "cantidad": 0.97
+      },
+      {
+        "unidad": "t/t soja",
+        "especie": "Hexano comercial (C6H14, circuito cerrado)",
+        "cantidad": 0.97
+      }
+    ],
+    "productos": [
+      {
+        "unidad": "t/t soja",
+        "especie": "Miscela aceite-hexano",
+        "cantidad": 1.16
+      },
+      {
+        "unidad": "t/t soja",
+        "especie": "Harina húmeda impregnada en solvente",
+        "cantidad": 0.78
+      }
+    ],
+    "insumos": [],
+    "subproductos": [],
+    "energia": {
+      "estado": "sin_datos",
+      "valor": null,
+      "unidad": "MWh/t soja",
+      "procedencia": {
+        "anio": 2026,
+        "fuente_id": "renova-web-2026",
+        "fuente": "Fichas operativas oficiales de Plantas Timbúes y San Lorenzo (Renova S.A.)",
+        "url": "https://renova.com.ar/",
+        "fecha_descarga": "2026-11-24",
+        "hash": "sha256:2a9c82604e9b4a60998bca222a36e3c5147c0a66dc671730e7b9a2af2421204d",
+        "cita_ubicacion": "renova.com.ar (Planta Timbúes 32.400 t/día molienda)",
+        "confianza": "alta"
+      }
+    },
+    "descripcion": "Lavado sólido-líquido en contracorriente con hexano comercial que reduce el aceite residual en la harina por debajo de 1% en peso.",
+    "pos_x": 340,
+    "pos_y": 150,
+    "procedencia": {
+      "anio": 2026,
+      "fuente_id": "renova-web-2026",
+      "fuente": "Fichas operativas oficiales de Plantas Timbúes y San Lorenzo (Renova S.A.)",
+      "url": "https://renova.com.ar/",
+      "fecha_descarga": "2026-11-24",
+      "hash": "sha256:2a9c82604e9b4a60998bca222a36e3c5147c0a66dc671730e7b9a2af2421204d",
+      "cita_ubicacion": "renova.com.ar (Planta Timbúes 32.400 t/día molienda)",
+      "confianza": "alta"
+    }
+  },
+  {
+    "paso_id": "pet-p2-steam-cracking",
+    "proceso_id": "petroquimica-steam-cracking-polietileno",
+    "orden": 2,
+    "nombre": "Craqueo térmico con vapor (Steam Cracking)",
+    "tipo_paso": "reaccion",
+    "reaccion_balanceada": "C2H6 -> C2H4 + H2",
+    "temperatura_c": "800-850",
+    "presion_bar": "1.5-2.0",
+    "reactivos": [
+      {
+        "unidad": "t/t C2H4",
+        "especie": "C2H6 (etano fresco + reciclo)",
+        "cantidad": 1.245
+      }
+    ],
+    "productos": [
+      {
+        "unidad": "t/t C2H4",
+        "especie": "C2H4 (etileno en gas de pirólisis)",
+        "cantidad": 1
+      }
+    ],
+    "insumos": [
+      {
+        "unidad": "servicio térmico",
+        "especie": "Vapor de dilución (reduce coquificación)",
+        "cantidad": null
+      },
+      {
+        "unidad": "energía térmica",
+        "especie": "Gas combustible de hornos (0,95 t CO2/t C2H4, IPCC Table 3.14)",
+        "cantidad": null
+      }
+    ],
+    "subproductos": [
+      {
+        "unidad": "t/t C2H4",
+        "especie": "H2 coproducido (60 kg/t etano, IPCC Table 3.25)",
+        "cantidad": 0.075
+      },
+      {
+        "unidad": "t/t C2H4",
+        "especie": "CH4, propileno, butadieno y C4+ en gas craqueado",
+        "cantidad": 0.17
+      }
+    ],
+    "energia": {
+      "estado": "sin_datos",
+      "valor": null,
+      "unidad": "GJ/t C2H4",
+      "procedencia": {
+        "anio": 2006,
+        "fuente_id": "ipcc-2006-v3-ch3-amoniaco-urea",
+        "fuente": "2006 IPCC Guidelines for National Greenhouse Gas Inventories (Vol. 3, Cap. 3: Chemical Industry Emissions)",
+        "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/pdf/3_Volume3/V3_3_Ch3_Chemical_Industry.pdf",
+        "fecha_descarga": "2026-11-24",
+        "hash": "sha256:f25c2817eecdae6a1f930b342eb09b2d8a6065b12bfce632502a01e1a61bbaa2",
+        "cita_ubicacion": "IPCC 2006 Vol. 3 Cap. 3.9 Box 3.9 pág. 3.59, Table 3.14 pág. 3.75 y Table 3.25 pág. 3.82",
+        "confianza": "alta"
+      }
+    },
+    "descripcion": "Deshidrogenación térmica endotérmica en hornos tubulares (<0,5 s). Mínimo estequiométrico: 1,072 t C2H6/t C2H4; rendimiento industrial IPCC: 803 kg C2H4/t C2H6; emisión directa 0,95 t CO2/t C2H4.",
+    "pos_x": 340,
+    "pos_y": 150,
+    "procedencia": {
+      "anio": 2006,
+      "fuente_id": "ipcc-2006-v3-ch3-amoniaco-urea",
+      "fuente": "2006 IPCC Guidelines for National Greenhouse Gas Inventories (Vol. 3, Cap. 3: Chemical Industry Emissions)",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/pdf/3_Volume3/V3_3_Ch3_Chemical_Industry.pdf",
+      "fecha_descarga": "2026-11-24",
+      "hash": "sha256:f25c2817eecdae6a1f930b342eb09b2d8a6065b12bfce632502a01e1a61bbaa2",
+      "cita_ubicacion": "IPCC 2006 Vol. 3 Cap. 3.9 Box 3.9 pág. 3.59, Table 3.14 pág. 3.75 y Table 3.25 pág. 3.82",
+      "confianza": "alta"
+    }
+  },
+  {
+    "paso_id": "bio-p2-transesterificacion",
+    "proceso_id": "biodiesel-transesterificacion-soja",
+    "orden": 2,
+    "nombre": "Transesterificación alcalina con metanol",
+    "tipo_paso": "reaccion",
+    "reaccion_balanceada": "C57H104O6 + 3 CH4O -> 3 C19H36O2 + C3H8O3",
+    "temperatura_c": "60-65",
+    "presion_bar": "1.0",
+    "reactivos": [
+      {
+        "unidad": "t/t biodiésel",
+        "especie": "C57H104O6 (aceite de soja refinado)",
+        "cantidad": 1.005
+      },
+      {
+        "unidad": "t/t biodiésel",
+        "especie": "CH4O (metanol neto consumido)",
+        "cantidad": 0.11
+      }
+    ],
+    "productos": [
+      {
+        "unidad": "t/t biodiésel",
+        "especie": "C19H36O2 (ésteres metílicos FAME crudos)",
+        "cantidad": 1
+      }
+    ],
+    "insumos": [
+      {
+        "unidad": "catalizador",
+        "especie": "Metilato de sodio (NaOCH3, catalizador)",
+        "cantidad": null
+      }
+    ],
+    "subproductos": [
+      {
+        "unidad": "t/t biodiésel",
+        "especie": "C3H8O3 (fase glicerina y sales de neutralización)",
+        "cantidad": 0.115
+      }
+    ],
+    "energia": {
+      "estado": "sin_datos",
+      "valor": null,
+      "unidad": "MWh/t biodiésel",
+      "procedencia": {
+        "anio": 2026,
+        "fuente_id": "renova-web-2026",
+        "fuente": "Fichas operativas oficiales de Plantas Timbúes y San Lorenzo (Renova S.A.)",
+        "url": "https://renova.com.ar/",
+        "fecha_descarga": "2026-11-24",
+        "hash": "sha256:2a9c82604e9b4a60998bca222a36e3c5147c0a66dc671730e7b9a2af2421204d",
+        "cita_ubicacion": "renova.com.ar (Planta San Lorenzo: biodiésel 1.450 t/día)",
+        "confianza": "alta"
+      }
+    },
+    "descripcion": "Reacción en reactores continuos en serie con exceso molar 6:1 de metanol para desplazar el equilibrio hacia >99% de conversión a FAME.",
+    "pos_x": 340,
+    "pos_y": 150,
+    "procedencia": {
+      "anio": 2026,
+      "fuente_id": "renova-web-2026",
+      "fuente": "Fichas operativas oficiales de Plantas Timbúes y San Lorenzo (Renova S.A.)",
+      "url": "https://renova.com.ar/",
+      "fecha_descarga": "2026-11-24",
+      "hash": "sha256:2a9c82604e9b4a60998bca222a36e3c5147c0a66dc671730e7b9a2af2421204d",
+      "cita_ubicacion": "renova.com.ar (Planta San Lorenzo: biodiésel 1.450 t/día)",
       "confianza": "alta"
     }
   },
@@ -595,6 +1118,267 @@
       "fecha_descarga": "2026-11-24",
       "hash": "sha256:d7bf53b4394beebd03259645c41196aaa27ce657ded8cfc71fc1f007f34843f3",
       "cita_ubicacion": "EECC-31-12-25.pdf pág. 4, 6, 78-79 y 88 (Memoria y Reseña Informativa)",
+      "confianza": "alta"
+    }
+  },
+  {
+    "paso_id": "alg-p3-limpieza-fibra-hvi",
+    "proceso_id": "algodon-desmote-refinacion-celulosa",
+    "orden": 3,
+    "nombre": "Limpieza de fibra, prensado y tipificación HVI",
+    "tipo_paso": "preparacion",
+    "reaccion_balanceada": null,
+    "temperatura_c": "20-30",
+    "presion_bar": "1.0",
+    "reactivos": [
+      {
+        "unidad": "t/t fibra",
+        "especie": "Fibra de algodón cruda",
+        "cantidad": 1
+      }
+    ],
+    "productos": [
+      {
+        "unidad": "t/t fibra",
+        "especie": "Fardos de fibra clasificada (HS 5201.00)",
+        "cantidad": 0.97
+      }
+    ],
+    "insumos": [],
+    "subproductos": [
+      {
+        "unidad": "t/t fibra",
+        "especie": "Linters y fibrilla corta",
+        "cantidad": 0.03
+      }
+    ],
+    "energia": {
+      "estado": "sin_datos",
+      "valor": null,
+      "unidad": "MWh/t fibra",
+      "procedencia": {
+        "anio": 2024,
+        "fuente_id": "uncomtrade-ar-lote2-agro-2024",
+        "fuente": "UN Comtrade: comercio exterior de Argentina HS 520100 (Algodón), 150710/230400 (Soja) y 382600 (Biodiésel) 2024",
+        "url": "https://comtradeapi.un.org/public/v1/preview/C/A/HS?reporterCode=32&period=2024&partnerCode=0&partner2Code=0&customsCode=C00&motCode=0&cmdCode=520100,150710,230400,382600",
+        "fecha_descarga": "2026-11-24",
+        "hash": "sha256:6903f23febd3bd252ce0a4cfeb667b824cdc10a00e80432321f5dcd288229e40",
+        "cita_ubicacion": "UN Comtrade AR 2024 cmdCode=520100 flow=X/M netWgt_kg (131.062,5 t exp / 159,8 t imp)",
+        "confianza": "alta"
+      }
+    },
+    "descripcion": "Limpiadores de fibra y prensado hidráulico en fardos estándar clasificados por longitud, resistencia y micronaire para hilanderías y exportación.",
+    "pos_x": 660,
+    "pos_y": 150,
+    "procedencia": {
+      "anio": 2024,
+      "fuente_id": "uncomtrade-ar-lote2-agro-2024",
+      "fuente": "UN Comtrade: comercio exterior de Argentina HS 520100 (Algodón), 150710/230400 (Soja) y 382600 (Biodiésel) 2024",
+      "url": "https://comtradeapi.un.org/public/v1/preview/C/A/HS?reporterCode=32&period=2024&partnerCode=0&partner2Code=0&customsCode=C00&motCode=0&cmdCode=520100,150710,230400,382600",
+      "fecha_descarga": "2026-11-24",
+      "hash": "sha256:6903f23febd3bd252ce0a4cfeb667b824cdc10a00e80432321f5dcd288229e40",
+      "cita_ubicacion": "UN Comtrade AR 2024 cmdCode=520100 flow=X/M netWgt_kg (131.062,5 t exp / 159,8 t imp)",
+      "confianza": "alta"
+    }
+  },
+  {
+    "paso_id": "soj-p3-desolventizado-tostado",
+    "proceso_id": "soja-molienda-extraccion-solvente",
+    "orden": 3,
+    "nombre": "Desolventizado-tostado (DT) de harina proteica",
+    "tipo_paso": "preparacion",
+    "reaccion_balanceada": null,
+    "temperatura_c": "100-110",
+    "presion_bar": "1.0",
+    "reactivos": [
+      {
+        "unidad": "t/t soja",
+        "especie": "Harina húmeda con solvente",
+        "cantidad": 0.78
+      }
+    ],
+    "productos": [
+      {
+        "unidad": "t/t soja",
+        "especie": "Harina y pellets de soja (46-47% proteína, HS 2304.00)",
+        "cantidad": 0.76
+      }
+    ],
+    "insumos": [
+      {
+        "unidad": "servicio térmico",
+        "especie": "Vapor vivo de stripping",
+        "cantidad": null
+      }
+    ],
+    "subproductos": [
+      {
+        "unidad": "t/t soja",
+        "especie": "Vapores de hexano/agua a condensación",
+        "cantidad": 0.02
+      }
+    ],
+    "energia": {
+      "estado": "sin_datos",
+      "valor": null,
+      "unidad": "MWh/t soja",
+      "procedencia": {
+        "anio": 2024,
+        "fuente_id": "uncomtrade-ar-lote2-agro-2024",
+        "fuente": "UN Comtrade: comercio exterior de Argentina HS 520100 (Algodón), 150710/230400 (Soja) y 382600 (Biodiésel) 2024",
+        "url": "https://comtradeapi.un.org/public/v1/preview/C/A/HS?reporterCode=32&period=2024&partnerCode=0&partner2Code=0&customsCode=C00&motCode=0&cmdCode=520100,150710,230400,382600",
+        "fecha_descarga": "2026-11-24",
+        "hash": "sha256:6903f23febd3bd252ce0a4cfeb667b824cdc10a00e80432321f5dcd288229e40",
+        "cita_ubicacion": "UN Comtrade AR 2024 cmdCode=230400 flow=X/M netWgt_kg (16,67 Mt exp)",
+        "confianza": "alta"
+      }
+    },
+    "descripcion": "Evaporación del solvente retenido y tostado controlado para inactivar inhibidores de tripsina y obtener harina/pellets exportables.",
+    "pos_x": 680,
+    "pos_y": 30,
+    "procedencia": {
+      "anio": 2024,
+      "fuente_id": "uncomtrade-ar-lote2-agro-2024",
+      "fuente": "UN Comtrade: comercio exterior de Argentina HS 520100 (Algodón), 150710/230400 (Soja) y 382600 (Biodiésel) 2024",
+      "url": "https://comtradeapi.un.org/public/v1/preview/C/A/HS?reporterCode=32&period=2024&partnerCode=0&partner2Code=0&customsCode=C00&motCode=0&cmdCode=520100,150710,230400,382600",
+      "fecha_descarga": "2026-11-24",
+      "hash": "sha256:6903f23febd3bd252ce0a4cfeb667b824cdc10a00e80432321f5dcd288229e40",
+      "cita_ubicacion": "UN Comtrade AR 2024 cmdCode=230400 flow=X/M netWgt_kg (16,67 Mt exp)",
+      "confianza": "alta"
+    }
+  },
+  {
+    "paso_id": "pet-p3-fraccionamiento-criogenico",
+    "proceso_id": "petroquimica-steam-cracking-polietileno",
+    "orden": 3,
+    "nombre": "Quench, compresión y destilación criogénica",
+    "tipo_paso": "separacion",
+    "reaccion_balanceada": null,
+    "temperatura_c": "-100 a 30",
+    "presion_bar": "35",
+    "reactivos": [
+      {
+        "unidad": "t/t C2H4",
+        "especie": "Gas de pirólisis craqueado",
+        "cantidad": 1.245
+      }
+    ],
+    "productos": [
+      {
+        "unidad": "t/t C2H4",
+        "especie": "C2H4 (etileno grado polímero >99,9%)",
+        "cantidad": 1
+      }
+    ],
+    "insumos": [],
+    "subproductos": [
+      {
+        "unidad": "t/t C2H4",
+        "especie": "H2 (60 kg/t etano, IPCC Table 3.25)",
+        "cantidad": 0.075
+      },
+      {
+        "unidad": "t/t C2H4",
+        "especie": "CH4 combustible de hornos (61 kg/t etano)",
+        "cantidad": 0.076
+      },
+      {
+        "unidad": "t/t C2H4",
+        "especie": "Propileno, butadieno y C4+ (IPCC Table 3.25)",
+        "cantidad": 0.094
+      }
+    ],
+    "energia": {
+      "estado": "sin_datos",
+      "valor": null,
+      "unidad": "GJ/t C2H4",
+      "procedencia": {
+        "anio": 2006,
+        "fuente_id": "ipcc-2006-v3-ch3-amoniaco-urea",
+        "fuente": "2006 IPCC Guidelines for National Greenhouse Gas Inventories (Vol. 3, Cap. 3: Chemical Industry Emissions)",
+        "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/pdf/3_Volume3/V3_3_Ch3_Chemical_Industry.pdf",
+        "fecha_descarga": "2026-11-24",
+        "hash": "sha256:f25c2817eecdae6a1f930b342eb09b2d8a6065b12bfce632502a01e1a61bbaa2",
+        "cita_ubicacion": "IPCC 2006 Vol. 3 Cap. 3.9 Table 3.25 pág. 3.82",
+        "confianza": "alta"
+      }
+    },
+    "descripcion": "Enfriamiento rápido, remoción de gases ácidos y tren criogénico (demetanizador, deetanizador y splitter C2) con reciclo de etano no convertido al horno.",
+    "pos_x": 660,
+    "pos_y": 150,
+    "procedencia": {
+      "anio": 2006,
+      "fuente_id": "ipcc-2006-v3-ch3-amoniaco-urea",
+      "fuente": "2006 IPCC Guidelines for National Greenhouse Gas Inventories (Vol. 3, Cap. 3: Chemical Industry Emissions)",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/pdf/3_Volume3/V3_3_Ch3_Chemical_Industry.pdf",
+      "fecha_descarga": "2026-11-24",
+      "hash": "sha256:f25c2817eecdae6a1f930b342eb09b2d8a6065b12bfce632502a01e1a61bbaa2",
+      "cita_ubicacion": "IPCC 2006 Vol. 3 Cap. 3.9 Table 3.25 pág. 3.82",
+      "confianza": "alta"
+    }
+  },
+  {
+    "paso_id": "bio-p3-decantacion-glicerina",
+    "proceso_id": "biodiesel-transesterificacion-soja",
+    "orden": 3,
+    "nombre": "Separación de fases y purificación de glicerina",
+    "tipo_paso": "separacion",
+    "reaccion_balanceada": null,
+    "temperatura_c": "50-60",
+    "presion_bar": "1.0",
+    "reactivos": [
+      {
+        "unidad": "t/t biodiésel",
+        "especie": "Mezcla FAME + glicerina",
+        "cantidad": 1.115
+      }
+    ],
+    "productos": [
+      {
+        "unidad": "t/t biodiésel",
+        "especie": "Biodiésel crudo (fase liviana)",
+        "cantidad": 1
+      }
+    ],
+    "insumos": [],
+    "subproductos": [
+      {
+        "unidad": "t/t biodiésel",
+        "especie": "C3H8O3 (glicerina cruda/refinada USP)",
+        "cantidad": 0.105
+      },
+      {
+        "unidad": "t/t biodiésel",
+        "especie": "Sales de neutralización y restos grasos",
+        "cantidad": 0.01
+      }
+    ],
+    "energia": {
+      "estado": "sin_datos",
+      "valor": null,
+      "unidad": "MWh/t biodiésel",
+      "procedencia": {
+        "anio": 2026,
+        "fuente_id": "renova-web-2026",
+        "fuente": "Fichas operativas oficiales de Plantas Timbúes y San Lorenzo (Renova S.A.)",
+        "url": "https://renova.com.ar/",
+        "fecha_descarga": "2026-11-24",
+        "hash": "sha256:2a9c82604e9b4a60998bca222a36e3c5147c0a66dc671730e7b9a2af2421204d",
+        "cita_ubicacion": "renova.com.ar (Planta San Lorenzo: glicerina refinada 270 t/día)",
+        "confianza": "alta"
+      }
+    },
+    "descripcion": "Decantación y centrifugación por densidad: la fase pesada se destila a glicerina refinada (270 t/día en Renova San Lorenzo).",
+    "pos_x": 660,
+    "pos_y": 150,
+    "procedencia": {
+      "anio": 2026,
+      "fuente_id": "renova-web-2026",
+      "fuente": "Fichas operativas oficiales de Plantas Timbúes y San Lorenzo (Renova S.A.)",
+      "url": "https://renova.com.ar/",
+      "fecha_descarga": "2026-11-24",
+      "hash": "sha256:2a9c82604e9b4a60998bca222a36e3c5147c0a66dc671730e7b9a2af2421204d",
+      "cita_ubicacion": "renova.com.ar (Planta San Lorenzo: glicerina refinada 270 t/día)",
       "confianza": "alta"
     }
   },
@@ -808,7 +1592,7 @@
       "procedencia": {
         "anio": 2006,
         "fuente_id": "ipcc-2006-v3-ch3-amoniaco-urea",
-        "fuente": "2006 IPCC Guidelines for National Greenhouse Gas Inventories (Vol. 3, Cap. 3.2 Ammonia y Box 3.3 Urea)",
+        "fuente": "2006 IPCC Guidelines for National Greenhouse Gas Inventories (Vol. 3, Cap. 3: Chemical Industry Emissions)",
         "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/pdf/3_Volume3/V3_3_Ch3_Chemical_Industry.pdf",
         "fecha_descarga": "2026-11-24",
         "hash": "sha256:f25c2817eecdae6a1f930b342eb09b2d8a6065b12bfce632502a01e1a61bbaa2",
@@ -822,11 +1606,268 @@
     "procedencia": {
       "anio": 2006,
       "fuente_id": "ipcc-2006-v3-ch3-amoniaco-urea",
-      "fuente": "2006 IPCC Guidelines for National Greenhouse Gas Inventories (Vol. 3, Cap. 3.2 Ammonia y Box 3.3 Urea)",
+      "fuente": "2006 IPCC Guidelines for National Greenhouse Gas Inventories (Vol. 3, Cap. 3: Chemical Industry Emissions)",
       "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/pdf/3_Volume3/V3_3_Ch3_Chemical_Industry.pdf",
       "fecha_descarga": "2026-11-24",
       "hash": "sha256:f25c2817eecdae6a1f930b342eb09b2d8a6065b12bfce632502a01e1a61bbaa2",
       "cita_ubicacion": "IPCC 2006 Vol. 3 Cap. 3.2 Box 3.3 pág. 3.16 (2 NH3 + CO2 -> CO(NH2)2 + H2O; 0,733 t CO2/t urea)",
+      "confianza": "alta"
+    }
+  },
+  {
+    "paso_id": "alg-p4-descrudado-blanqueo",
+    "proceso_id": "algodon-desmote-refinacion-celulosa",
+    "orden": 4,
+    "nombre": "Descrudado alcalino y blanqueo de celulosa",
+    "tipo_paso": "reaccion",
+    "reaccion_balanceada": "2 H2O2 -> 2 H2O + O2",
+    "temperatura_c": "90-100",
+    "presion_bar": "1.0",
+    "reactivos": [
+      {
+        "unidad": "t/t fibra",
+        "especie": "Fardos de fibra clasificada",
+        "cantidad": 0.97
+      }
+    ],
+    "productos": [
+      {
+        "unidad": "t/t fibra",
+        "especie": "Celulosa de algodón purificada y blanqueada",
+        "cantidad": 0.92
+      }
+    ],
+    "insumos": [
+      {
+        "unidad": "reactivo auxiliar",
+        "especie": "NaOH (saponificación de ceras y pectinas)",
+        "cantidad": null
+      },
+      {
+        "unidad": "reactivo auxiliar",
+        "especie": "H2O2 (blanqueo oxidativo controlado)",
+        "cantidad": null
+      }
+    ],
+    "subproductos": [
+      {
+        "unidad": "t/t fibra",
+        "especie": "Ceras, pectinas y efluente neutralizado",
+        "cantidad": 0.05
+      }
+    ],
+    "energia": {
+      "estado": "sin_datos",
+      "valor": null,
+      "unidad": "MWh/t fibra",
+      "procedencia": {
+        "anio": 2026,
+        "fuente_id": "buyatti-web-2026",
+        "fuente": "Plantas industriales y desmote de algodón (Buyatti S.A.I.C.A.)",
+        "url": "https://buyatti.com.ar/",
+        "fecha_descarga": "2026-11-24",
+        "hash": "sha256:7f9e25e1da5fd7163415c3d5b08c73b5a2d1b577b93b10de4dca14cc16395e01",
+        "cita_ubicacion": "buyatti.com.ar (desmote y procesamiento de semilla de algodón, Las Breñas, Chaco)",
+        "confianza": "alta"
+      }
+    },
+    "descripcion": "Tratamiento químico húmedo textil: la soda cáustica remueve ceras/pectinas no celulósicas y el peróxido de hidrógeno blanquea los pigmentos naturales.",
+    "pos_x": 980,
+    "pos_y": 150,
+    "procedencia": {
+      "anio": 2026,
+      "fuente_id": "buyatti-web-2026",
+      "fuente": "Plantas industriales y desmote de algodón (Buyatti S.A.I.C.A.)",
+      "url": "https://buyatti.com.ar/",
+      "fecha_descarga": "2026-11-24",
+      "hash": "sha256:7f9e25e1da5fd7163415c3d5b08c73b5a2d1b577b93b10de4dca14cc16395e01",
+      "cita_ubicacion": "buyatti.com.ar (desmote y procesamiento de semilla de algodón, Las Breñas, Chaco)",
+      "confianza": "alta"
+    }
+  },
+  {
+    "paso_id": "soj-p4-destilacion-miscela",
+    "proceso_id": "soja-molienda-extraccion-solvente",
+    "orden": 4,
+    "nombre": "Evaporación de miscela y reciclo de hexano",
+    "tipo_paso": "separacion",
+    "reaccion_balanceada": null,
+    "temperatura_c": "95-115",
+    "presion_bar": "0.4",
+    "reactivos": [
+      {
+        "unidad": "t/t soja",
+        "especie": "Miscela aceite-hexano",
+        "cantidad": 1.16
+      }
+    ],
+    "productos": [
+      {
+        "unidad": "t/t soja",
+        "especie": "Aceite crudo de soja",
+        "cantidad": 0.19
+      }
+    ],
+    "insumos": [],
+    "subproductos": [
+      {
+        "unidad": "t/t soja",
+        "especie": "Hexano condensado y recuperado (reciclo)",
+        "cantidad": 0.97
+      }
+    ],
+    "energia": {
+      "estado": "sin_datos",
+      "valor": null,
+      "unidad": "MWh/t soja",
+      "procedencia": {
+        "anio": 2026,
+        "fuente_id": "renova-web-2026",
+        "fuente": "Fichas operativas oficiales de Plantas Timbúes y San Lorenzo (Renova S.A.)",
+        "url": "https://renova.com.ar/",
+        "fecha_descarga": "2026-11-24",
+        "hash": "sha256:2a9c82604e9b4a60998bca222a36e3c5147c0a66dc671730e7b9a2af2421204d",
+        "cita_ubicacion": "renova.com.ar (Planta Timbúes 32.400 t/día molienda)",
+        "confianza": "alta"
+      }
+    },
+    "descripcion": "Evaporadores al vacío y columna de stripping que recuperan más del 99,8% del hexano para reingresarlo al extractor.",
+    "pos_x": 680,
+    "pos_y": 260,
+    "procedencia": {
+      "anio": 2026,
+      "fuente_id": "renova-web-2026",
+      "fuente": "Fichas operativas oficiales de Plantas Timbúes y San Lorenzo (Renova S.A.)",
+      "url": "https://renova.com.ar/",
+      "fecha_descarga": "2026-11-24",
+      "hash": "sha256:2a9c82604e9b4a60998bca222a36e3c5147c0a66dc671730e7b9a2af2421204d",
+      "cita_ubicacion": "renova.com.ar (Planta Timbúes 32.400 t/día molienda)",
+      "confianza": "alta"
+    }
+  },
+  {
+    "paso_id": "pet-p4-polimerizacion-pe",
+    "proceso_id": "petroquimica-steam-cracking-polietileno",
+    "orden": 4,
+    "nombre": "Polimerización catalítica a polietileno (LDPE/LLDPE/HDPE)",
+    "tipo_paso": "preparacion",
+    "reaccion_balanceada": null,
+    "temperatura_c": "80-250",
+    "presion_bar": "20-2000",
+    "reactivos": [
+      {
+        "unidad": "t/t C2H4",
+        "especie": "C2H4 (etileno grado polímero)",
+        "cantidad": 1
+      }
+    ],
+    "productos": [
+      {
+        "unidad": "t/t C2H4",
+        "especie": "Resina de polietileno fundido / polvo",
+        "cantidad": 0.99
+      }
+    ],
+    "insumos": [
+      {
+        "unidad": "catalizador",
+        "especie": "Catalizadores Ziegler-Natta / metalocenos",
+        "cantidad": null
+      }
+    ],
+    "subproductos": [
+      {
+        "unidad": "t/t C2H4",
+        "especie": "Etileno no reaccionado y purgas",
+        "cantidad": 0.01
+      }
+    ],
+    "energia": {
+      "estado": "sin_datos",
+      "valor": null,
+      "unidad": "GJ/t C2H4",
+      "procedencia": {
+        "anio": 2026,
+        "fuente_id": "dow-argentina-web-2026",
+        "fuente": "Perfil oficial de operaciones en Argentina y Complejo Bahía Blanca (Dow Argentina)",
+        "url": "https://ar.dow.com/es-ar.html",
+        "fecha_descarga": "2026-11-24",
+        "hash": "sha256:37eb576cb7e3c6ea56143c9d668799c30fc2ee4bd2019ada561e42cbc6fff323",
+        "cita_ubicacion": "ar.dow.com/es-ar.html (4 plantas de polietileno en Complejo Bahía Blanca)",
+        "confianza": "alta"
+      }
+    },
+    "descripcion": "Polimerización por adición en reactores de alta presión (LDPE) o fase gas/slurry (LLDPE/HDPE) en las 4 plantas de polietileno de Bahía Blanca.",
+    "pos_x": 980,
+    "pos_y": 150,
+    "procedencia": {
+      "anio": 2026,
+      "fuente_id": "dow-argentina-web-2026",
+      "fuente": "Perfil oficial de operaciones en Argentina y Complejo Bahía Blanca (Dow Argentina)",
+      "url": "https://ar.dow.com/es-ar.html",
+      "fecha_descarga": "2026-11-24",
+      "hash": "sha256:37eb576cb7e3c6ea56143c9d668799c30fc2ee4bd2019ada561e42cbc6fff323",
+      "cita_ubicacion": "ar.dow.com/es-ar.html (4 plantas de polietileno en Complejo Bahía Blanca)",
+      "confianza": "alta"
+    }
+  },
+  {
+    "paso_id": "bio-p4-recuperacion-metanol",
+    "proceso_id": "biodiesel-transesterificacion-soja",
+    "orden": 4,
+    "nombre": "Recuperación y rectificación de metanol excedente",
+    "tipo_paso": "separacion",
+    "reaccion_balanceada": null,
+    "temperatura_c": "70-90",
+    "presion_bar": "0.3",
+    "reactivos": [
+      {
+        "unidad": "t/t biodiésel",
+        "especie": "Biodiésel crudo con metanol residual",
+        "cantidad": 1
+      }
+    ],
+    "productos": [
+      {
+        "unidad": "t/t biodiésel",
+        "especie": "Biodiésel desmetanolizado",
+        "cantidad": 1
+      }
+    ],
+    "insumos": [],
+    "subproductos": [
+      {
+        "unidad": "reciclo",
+        "especie": "Metanol rectificado (reciclo al reactor)",
+        "cantidad": null
+      }
+    ],
+    "energia": {
+      "estado": "sin_datos",
+      "valor": null,
+      "unidad": "MWh/t biodiésel",
+      "procedencia": {
+        "anio": 2026,
+        "fuente_id": "renova-web-2026",
+        "fuente": "Fichas operativas oficiales de Plantas Timbúes y San Lorenzo (Renova S.A.)",
+        "url": "https://renova.com.ar/",
+        "fecha_descarga": "2026-11-24",
+        "hash": "sha256:2a9c82604e9b4a60998bca222a36e3c5147c0a66dc671730e7b9a2af2421204d",
+        "cita_ubicacion": "renova.com.ar (Planta San Lorenzo)",
+        "confianza": "alta"
+      }
+    },
+    "descripcion": "Evaporación flash al vacío y columna de rectificación que recicla el metanol no consumido hacia la transesterificación.",
+    "pos_x": 980,
+    "pos_y": 150,
+    "procedencia": {
+      "anio": 2026,
+      "fuente_id": "renova-web-2026",
+      "fuente": "Fichas operativas oficiales de Plantas Timbúes y San Lorenzo (Renova S.A.)",
+      "url": "https://renova.com.ar/",
+      "fecha_descarga": "2026-11-24",
+      "hash": "sha256:2a9c82604e9b4a60998bca222a36e3c5147c0a66dc671730e7b9a2af2421204d",
+      "cita_ubicacion": "renova.com.ar (Planta San Lorenzo)",
       "confianza": "alta"
     }
   },
@@ -1030,6 +2071,263 @@
       "fecha_descarga": "2026-11-24",
       "hash": "sha256:4a6b91bc6f405399b277d565c1e98a356b3a91165fddf4bc25b3f9f322e9c679",
       "cita_ubicacion": "profertil.com.ar/index.php/que-hacemos (capacidad 1.320.000 t urea y 790.000 t amoníaco)",
+      "confianza": "alta"
+    }
+  },
+  {
+    "paso_id": "alg-p5-hilatura-despacho",
+    "proceso_id": "algodon-desmote-refinacion-celulosa",
+    "orden": 5,
+    "nombre": "Hilatura textil, tejido y despacho comercial",
+    "tipo_paso": "producto",
+    "reaccion_balanceada": null,
+    "temperatura_c": "20-25",
+    "presion_bar": "1.0",
+    "reactivos": [
+      {
+        "unidad": "t/t fibra",
+        "especie": "Celulosa de algodón purificada",
+        "cantidad": 0.92
+      }
+    ],
+    "productos": [
+      {
+        "unidad": "t/t fibra",
+        "especie": "Hilados y tejidos de algodón (celulosa)",
+        "cantidad": 0.9
+      }
+    ],
+    "insumos": [],
+    "subproductos": [
+      {
+        "unidad": "t/t fibra",
+        "especie": "Borra corta recuperada en cardas",
+        "cantidad": 0.02
+      }
+    ],
+    "energia": {
+      "estado": "sin_datos",
+      "valor": null,
+      "unidad": "MWh/t fibra",
+      "procedencia": {
+        "anio": 2024,
+        "fuente_id": "uncomtrade-ar-lote2-agro-2024",
+        "fuente": "UN Comtrade: comercio exterior de Argentina HS 520100 (Algodón), 150710/230400 (Soja) y 382600 (Biodiésel) 2024",
+        "url": "https://comtradeapi.un.org/public/v1/preview/C/A/HS?reporterCode=32&period=2024&partnerCode=0&partner2Code=0&customsCode=C00&motCode=0&cmdCode=520100,150710,230400,382600",
+        "fecha_descarga": "2026-11-24",
+        "hash": "sha256:6903f23febd3bd252ce0a4cfeb667b824cdc10a00e80432321f5dcd288229e40",
+        "cita_ubicacion": "UN Comtrade AR 2024 cmdCode=520100 flow=X/M netWgt_kg (131.062,5 t exp / 159,8 t imp)",
+        "confianza": "alta"
+      }
+    },
+    "descripcion": "Cardado, estiraje e hilatura open-end/anillo en polos textiles del NEA y Buenos Aires.",
+    "pos_x": 1300,
+    "pos_y": 150,
+    "procedencia": {
+      "anio": 2024,
+      "fuente_id": "uncomtrade-ar-lote2-agro-2024",
+      "fuente": "UN Comtrade: comercio exterior de Argentina HS 520100 (Algodón), 150710/230400 (Soja) y 382600 (Biodiésel) 2024",
+      "url": "https://comtradeapi.un.org/public/v1/preview/C/A/HS?reporterCode=32&period=2024&partnerCode=0&partner2Code=0&customsCode=C00&motCode=0&cmdCode=520100,150710,230400,382600",
+      "fecha_descarga": "2026-11-24",
+      "hash": "sha256:6903f23febd3bd252ce0a4cfeb667b824cdc10a00e80432321f5dcd288229e40",
+      "cita_ubicacion": "UN Comtrade AR 2024 cmdCode=520100 flow=X/M netWgt_kg (131.062,5 t exp / 159,8 t imp)",
+      "confianza": "alta"
+    }
+  },
+  {
+    "paso_id": "soj-p5-desgomado-embarque",
+    "proceso_id": "soja-molienda-extraccion-solvente",
+    "orden": 5,
+    "nombre": "Desgomado, neutralización de acidez y embarque portuario",
+    "tipo_paso": "producto",
+    "reaccion_balanceada": "C18H34O2 + NaOH -> C18H33NaO2 + H2O",
+    "temperatura_c": "70-80",
+    "presion_bar": "1.0",
+    "reactivos": [
+      {
+        "unidad": "t/t soja",
+        "especie": "Aceite crudo de soja",
+        "cantidad": 0.19
+      }
+    ],
+    "productos": [
+      {
+        "unidad": "t/t soja",
+        "especie": "Aceite crudo desgomado / neutro (HS 1507.10)",
+        "cantidad": 0.185
+      }
+    ],
+    "insumos": [
+      {
+        "unidad": "servicio",
+        "especie": "Agua desmineralizada de hidratación de gomas",
+        "cantidad": null
+      },
+      {
+        "unidad": "reactivo auxiliar",
+        "especie": "NaOH diluido (neutralización de ácidos grasos libres)",
+        "cantidad": null
+      }
+    ],
+    "subproductos": [
+      {
+        "unidad": "t/t soja",
+        "especie": "Lecitina comercial y borras de neutralización",
+        "cantidad": 0.005
+      }
+    ],
+    "energia": {
+      "estado": "sin_datos",
+      "valor": null,
+      "unidad": "MWh/t soja",
+      "procedencia": {
+        "anio": 2024,
+        "fuente_id": "uncomtrade-ar-lote2-agro-2024",
+        "fuente": "UN Comtrade: comercio exterior de Argentina HS 520100 (Algodón), 150710/230400 (Soja) y 382600 (Biodiésel) 2024",
+        "url": "https://comtradeapi.un.org/public/v1/preview/C/A/HS?reporterCode=32&period=2024&partnerCode=0&partner2Code=0&customsCode=C00&motCode=0&cmdCode=520100,150710,230400,382600",
+        "fecha_descarga": "2026-11-24",
+        "hash": "sha256:6903f23febd3bd252ce0a4cfeb667b824cdc10a00e80432321f5dcd288229e40",
+        "cita_ubicacion": "UN Comtrade AR 2024 cmdCode=150710 flow=X/M netWgt_kg (4,98 Mt exp)",
+        "confianza": "alta"
+      }
+    },
+    "descripcion": "Hidratación y centrifugación de fosfolípidos para obtener lecitina y aceite desgomado destinado a exportación (4,98 Mt en 2024) y biodiésel.",
+    "pos_x": 1020,
+    "pos_y": 260,
+    "procedencia": {
+      "anio": 2024,
+      "fuente_id": "uncomtrade-ar-lote2-agro-2024",
+      "fuente": "UN Comtrade: comercio exterior de Argentina HS 520100 (Algodón), 150710/230400 (Soja) y 382600 (Biodiésel) 2024",
+      "url": "https://comtradeapi.un.org/public/v1/preview/C/A/HS?reporterCode=32&period=2024&partnerCode=0&partner2Code=0&customsCode=C00&motCode=0&cmdCode=520100,150710,230400,382600",
+      "fecha_descarga": "2026-11-24",
+      "hash": "sha256:6903f23febd3bd252ce0a4cfeb667b824cdc10a00e80432321f5dcd288229e40",
+      "cita_ubicacion": "UN Comtrade AR 2024 cmdCode=150710 flow=X/M netWgt_kg (4,98 Mt exp)",
+      "confianza": "alta"
+    }
+  },
+  {
+    "paso_id": "pet-p5-peletizado-despacho",
+    "proceso_id": "petroquimica-steam-cracking-polietileno",
+    "orden": 5,
+    "nombre": "Extrusión, peletizado y despacho de resinas",
+    "tipo_paso": "producto",
+    "reaccion_balanceada": null,
+    "temperatura_c": "180-220",
+    "presion_bar": "1.0",
+    "reactivos": [
+      {
+        "unidad": "t/t C2H4",
+        "especie": "Resina de polietileno",
+        "cantidad": 0.99
+      }
+    ],
+    "productos": [
+      {
+        "unidad": "t/t C2H4",
+        "especie": "Pellets de polietileno (HS 3901.10 / 3901.20)",
+        "cantidad": 0.99
+      }
+    ],
+    "insumos": [
+      {
+        "unidad": "aditivo",
+        "especie": "Aditivos antioxidantes y estabilizantes UV",
+        "cantidad": null
+      }
+    ],
+    "subproductos": [],
+    "energia": {
+      "estado": "sin_datos",
+      "valor": null,
+      "unidad": "GJ/t C2H4",
+      "procedencia": {
+        "anio": 2024,
+        "fuente_id": "uncomtrade-ar-lote2-ind-2024",
+        "fuente": "UN Comtrade: comercio exterior de Argentina HS 390110/390120 (Polietileno), 390410 (PVC) y 120190 (Soja poroto) 2024",
+        "url": "https://comtradeapi.un.org/public/v1/preview/C/A/HS?reporterCode=32&period=2024&partnerCode=0&partner2Code=0&customsCode=C00&motCode=0&cmdCode=390110,390120,390410,120190",
+        "fecha_descarga": "2026-11-24",
+        "hash": "sha256:0ce593fa415610c3bf8866de3f82a5d306f8b483cbd1562b5e870cb812d9774f",
+        "cita_ubicacion": "UN Comtrade AR 2024 cmdCode=390110/390120",
+        "confianza": "alta"
+      }
+    },
+    "descripcion": "Aditivación, corte bajo agua en pellets y embolsado para industria de envases, agro-películas, tuberías y exportación regional.",
+    "pos_x": 1300,
+    "pos_y": 150,
+    "procedencia": {
+      "anio": 2024,
+      "fuente_id": "uncomtrade-ar-lote2-ind-2024",
+      "fuente": "UN Comtrade: comercio exterior de Argentina HS 390110/390120 (Polietileno), 390410 (PVC) y 120190 (Soja poroto) 2024",
+      "url": "https://comtradeapi.un.org/public/v1/preview/C/A/HS?reporterCode=32&period=2024&partnerCode=0&partner2Code=0&customsCode=C00&motCode=0&cmdCode=390110,390120,390410,120190",
+      "fecha_descarga": "2026-11-24",
+      "hash": "sha256:0ce593fa415610c3bf8866de3f82a5d306f8b483cbd1562b5e870cb812d9774f",
+      "cita_ubicacion": "UN Comtrade AR 2024 cmdCode=390110/390120",
+      "confianza": "alta"
+    }
+  },
+  {
+    "paso_id": "bio-p5-lavado-secado-despacho",
+    "proceso_id": "biodiesel-transesterificacion-soja",
+    "orden": 5,
+    "nombre": "Lavado, secado al vacío y despacho B100",
+    "tipo_paso": "producto",
+    "reaccion_balanceada": null,
+    "temperatura_c": "80-100",
+    "presion_bar": "0.1",
+    "reactivos": [
+      {
+        "unidad": "t/t biodiésel",
+        "especie": "Biodiésel desmetanolizado",
+        "cantidad": 1
+      }
+    ],
+    "productos": [
+      {
+        "unidad": "t/t biodiésel",
+        "especie": "Biodiésel B100 IRAM / EN 14214 (HS 3826.00)",
+        "cantidad": 0.995
+      }
+    ],
+    "insumos": [
+      {
+        "unidad": "servicio",
+        "especie": "Agua ácida de lavado",
+        "cantidad": null
+      }
+    ],
+    "subproductos": [
+      {
+        "unidad": "t/t biodiésel",
+        "especie": "Agua de lavado a tratamiento",
+        "cantidad": 0.005
+      }
+    ],
+    "energia": {
+      "estado": "sin_datos",
+      "valor": null,
+      "unidad": "MWh/t biodiésel",
+      "procedencia": {
+        "anio": 2024,
+        "fuente_id": "se-biocombustibles-2026",
+        "fuente": "Estadísticas oficiales de Producción, Ventas y Exportaciones de Biodiésel y Bioetanol",
+        "url": "https://www.energia.gob.ar/contenidos/archivos/Reorganizacion/informacion_del_mercado/mercado_hidrocarburos/bio/estadisticas_biocombustibles.xls",
+        "fecha_descarga": "2026-11-25",
+        "hash": "sha256:57bdb23af88de8b8cf6eee977e24141725d6f63b15facf196e34f63364e73ffb",
+        "cita_ubicacion": "estadisticas_biocombustibles.xls hoja RESUMEN BIODIESEL fila 23 (2024)",
+        "confianza": "alta"
+      }
+    },
+    "descripcion": "Lavado de trazas de catalizador/jabones, secado al vacío y despacho al corte obligatorio local (775.366 t en 2024) y exportación.",
+    "pos_x": 1300,
+    "pos_y": 150,
+    "procedencia": {
+      "anio": 2024,
+      "fuente_id": "se-biocombustibles-2026",
+      "fuente": "Estadísticas oficiales de Producción, Ventas y Exportaciones de Biodiésel y Bioetanol",
+      "url": "https://www.energia.gob.ar/contenidos/archivos/Reorganizacion/informacion_del_mercado/mercado_hidrocarburos/bio/estadisticas_biocombustibles.xls",
+      "fecha_descarga": "2026-11-25",
+      "hash": "sha256:57bdb23af88de8b8cf6eee977e24141725d6f63b15facf196e34f63364e73ffb",
+      "cita_ubicacion": "estadisticas_biocombustibles.xls hoja RESUMEN BIODIESEL fila 23 (2024)",
       "confianza": "alta"
     }
   },

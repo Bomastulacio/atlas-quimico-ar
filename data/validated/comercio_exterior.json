@@ -1052,5 +1052,1307 @@
       "cita_ubicacion": "UN Comtrade AR 2023 cmdCode=310210 flow=X netWgt=1.280.500 kg (imp volumen sin_datos)",
       "confianza": "alta"
     }
+  },
+  {
+    "registro_id": "comex-algodon-520100-2024-usd",
+    "producto_id": "algodon",
+    "anio": 2024,
+    "ncm_codigo": "5201.00",
+    "metrica": "valor_usd",
+    "exportacion": {
+      "estado": "dato",
+      "valor": 142.15,
+      "unidad": "millones USD",
+      "procedencia": {
+        "anio": 2024,
+        "fuente_id": "uncomtrade-ar-lote2-agro-2024",
+        "fuente": "UN Comtrade: comercio exterior de Argentina HS 520100 (Algodón), 150710/230400 (Soja) y 382600 (Biodiésel) 2024",
+        "url": "https://comtradeapi.un.org/public/v1/preview/C/A/HS?reporterCode=32&period=2024&partnerCode=0&partner2Code=0&customsCode=C00&motCode=0&cmdCode=520100,150710,230400,382600",
+        "fecha_descarga": "2026-11-24",
+        "hash": "sha256:6903f23febd3bd252ce0a4cfeb667b824cdc10a00e80432321f5dcd288229e40",
+        "cita_ubicacion": "UN Comtrade AR 2024 cmdCode=520100 flow=X/M primaryValue (USD 142,15 M exp / USD 0,30 M imp)",
+        "confianza": "alta"
+      }
+    },
+    "importacion": {
+      "estado": "dato",
+      "valor": 0.3,
+      "unidad": "millones USD",
+      "procedencia": {
+        "anio": 2024,
+        "fuente_id": "uncomtrade-ar-lote2-agro-2024",
+        "fuente": "UN Comtrade: comercio exterior de Argentina HS 520100 (Algodón), 150710/230400 (Soja) y 382600 (Biodiésel) 2024",
+        "url": "https://comtradeapi.un.org/public/v1/preview/C/A/HS?reporterCode=32&period=2024&partnerCode=0&partner2Code=0&customsCode=C00&motCode=0&cmdCode=520100,150710,230400,382600",
+        "fecha_descarga": "2026-11-24",
+        "hash": "sha256:6903f23febd3bd252ce0a4cfeb667b824cdc10a00e80432321f5dcd288229e40",
+        "cita_ubicacion": "UN Comtrade AR 2024 cmdCode=520100 flow=X/M primaryValue (USD 142,15 M exp / USD 0,30 M imp)",
+        "confianza": "alta"
+      }
+    },
+    "saldo_comercial": {
+      "estado": "dato",
+      "valor": 141.85,
+      "unidad": "millones USD",
+      "procedencia": {
+        "anio": 2024,
+        "fuente_id": "uncomtrade-ar-lote2-agro-2024",
+        "fuente": "UN Comtrade: comercio exterior de Argentina HS 520100 (Algodón), 150710/230400 (Soja) y 382600 (Biodiésel) 2024",
+        "url": "https://comtradeapi.un.org/public/v1/preview/C/A/HS?reporterCode=32&period=2024&partnerCode=0&partner2Code=0&customsCode=C00&motCode=0&cmdCode=520100,150710,230400,382600",
+        "fecha_descarga": "2026-11-24",
+        "hash": "sha256:6903f23febd3bd252ce0a4cfeb667b824cdc10a00e80432321f5dcd288229e40",
+        "cita_ubicacion": "UN Comtrade AR 2024 cmdCode=520100 flow=X/M primaryValue (USD 142,15 M exp / USD 0,30 M imp)",
+        "confianza": "alta"
+      }
+    },
+    "procedencia": {
+      "anio": 2024,
+      "fuente_id": "uncomtrade-ar-lote2-agro-2024",
+      "fuente": "UN Comtrade: comercio exterior de Argentina HS 520100 (Algodón), 150710/230400 (Soja) y 382600 (Biodiésel) 2024",
+      "url": "https://comtradeapi.un.org/public/v1/preview/C/A/HS?reporterCode=32&period=2024&partnerCode=0&partner2Code=0&customsCode=C00&motCode=0&cmdCode=520100,150710,230400,382600",
+      "fecha_descarga": "2026-11-24",
+      "hash": "sha256:6903f23febd3bd252ce0a4cfeb667b824cdc10a00e80432321f5dcd288229e40",
+      "cita_ubicacion": "UN Comtrade AR 2024 cmdCode=520100 flow=X/M primaryValue (USD 142,15 M exp / USD 0,30 M imp)",
+      "confianza": "alta"
+    }
+  },
+  {
+    "registro_id": "comex-algodon-520100-2024-t",
+    "producto_id": "algodon",
+    "anio": 2024,
+    "ncm_codigo": "5201.00",
+    "metrica": "volumen_t",
+    "exportacion": {
+      "estado": "dato",
+      "valor": 131062.5,
+      "unidad": "t fibra de algodón",
+      "procedencia": {
+        "anio": 2024,
+        "fuente_id": "uncomtrade-ar-lote2-agro-2024",
+        "fuente": "UN Comtrade: comercio exterior de Argentina HS 520100 (Algodón), 150710/230400 (Soja) y 382600 (Biodiésel) 2024",
+        "url": "https://comtradeapi.un.org/public/v1/preview/C/A/HS?reporterCode=32&period=2024&partnerCode=0&partner2Code=0&customsCode=C00&motCode=0&cmdCode=520100,150710,230400,382600",
+        "fecha_descarga": "2026-11-24",
+        "hash": "sha256:6903f23febd3bd252ce0a4cfeb667b824cdc10a00e80432321f5dcd288229e40",
+        "cita_ubicacion": "UN Comtrade AR 2024 cmdCode=520100 flow=X/M netWgt_kg (131.062,5 t exp / 159,8 t imp)",
+        "confianza": "alta"
+      }
+    },
+    "importacion": {
+      "estado": "dato",
+      "valor": 159.8,
+      "unidad": "t fibra de algodón",
+      "procedencia": {
+        "anio": 2024,
+        "fuente_id": "uncomtrade-ar-lote2-agro-2024",
+        "fuente": "UN Comtrade: comercio exterior de Argentina HS 520100 (Algodón), 150710/230400 (Soja) y 382600 (Biodiésel) 2024",
+        "url": "https://comtradeapi.un.org/public/v1/preview/C/A/HS?reporterCode=32&period=2024&partnerCode=0&partner2Code=0&customsCode=C00&motCode=0&cmdCode=520100,150710,230400,382600",
+        "fecha_descarga": "2026-11-24",
+        "hash": "sha256:6903f23febd3bd252ce0a4cfeb667b824cdc10a00e80432321f5dcd288229e40",
+        "cita_ubicacion": "UN Comtrade AR 2024 cmdCode=520100 flow=X/M netWgt_kg (131.062,5 t exp / 159,8 t imp)",
+        "confianza": "alta"
+      }
+    },
+    "saldo_comercial": {
+      "estado": "dato",
+      "valor": 130902.7,
+      "unidad": "t fibra de algodón",
+      "procedencia": {
+        "anio": 2024,
+        "fuente_id": "uncomtrade-ar-lote2-agro-2024",
+        "fuente": "UN Comtrade: comercio exterior de Argentina HS 520100 (Algodón), 150710/230400 (Soja) y 382600 (Biodiésel) 2024",
+        "url": "https://comtradeapi.un.org/public/v1/preview/C/A/HS?reporterCode=32&period=2024&partnerCode=0&partner2Code=0&customsCode=C00&motCode=0&cmdCode=520100,150710,230400,382600",
+        "fecha_descarga": "2026-11-24",
+        "hash": "sha256:6903f23febd3bd252ce0a4cfeb667b824cdc10a00e80432321f5dcd288229e40",
+        "cita_ubicacion": "UN Comtrade AR 2024 cmdCode=520100 flow=X/M netWgt_kg (131.062,5 t exp / 159,8 t imp)",
+        "confianza": "alta"
+      }
+    },
+    "procedencia": {
+      "anio": 2024,
+      "fuente_id": "uncomtrade-ar-lote2-agro-2024",
+      "fuente": "UN Comtrade: comercio exterior de Argentina HS 520100 (Algodón), 150710/230400 (Soja) y 382600 (Biodiésel) 2024",
+      "url": "https://comtradeapi.un.org/public/v1/preview/C/A/HS?reporterCode=32&period=2024&partnerCode=0&partner2Code=0&customsCode=C00&motCode=0&cmdCode=520100,150710,230400,382600",
+      "fecha_descarga": "2026-11-24",
+      "hash": "sha256:6903f23febd3bd252ce0a4cfeb667b824cdc10a00e80432321f5dcd288229e40",
+      "cita_ubicacion": "UN Comtrade AR 2024 cmdCode=520100 flow=X/M netWgt_kg (131.062,5 t exp / 159,8 t imp)",
+      "confianza": "alta"
+    }
+  },
+  {
+    "registro_id": "comex-algodon-520100-2023-usd",
+    "producto_id": "algodon",
+    "anio": 2023,
+    "ncm_codigo": "5201.00",
+    "metrica": "valor_usd",
+    "exportacion": {
+      "estado": "dato",
+      "valor": 58.7,
+      "unidad": "millones USD",
+      "procedencia": {
+        "anio": 2023,
+        "fuente_id": "uncomtrade-ar-lote2-agro-2023",
+        "fuente": "UN Comtrade: comercio exterior de Argentina HS 520100 (Algodón), 150710/230400 (Soja) y 382600 (Biodiésel) 2023",
+        "url": "https://comtradeapi.un.org/public/v1/preview/C/A/HS?reporterCode=32&period=2023&partnerCode=0&partner2Code=0&customsCode=C00&motCode=0&cmdCode=520100,150710,230400,382600",
+        "fecha_descarga": "2026-11-24",
+        "hash": "sha256:23308cd7e21d66fc6d854fee155c7a32acf4790f15f7f35d9e314b6ef9226adc",
+        "cita_ubicacion": "UN Comtrade AR 2023 cmdCode=520100 flow=X/M primaryValue (USD 58,70 M exp / USD 0,003 M imp)",
+        "confianza": "alta"
+      }
+    },
+    "importacion": {
+      "estado": "dato",
+      "valor": 0.003,
+      "unidad": "millones USD",
+      "procedencia": {
+        "anio": 2023,
+        "fuente_id": "uncomtrade-ar-lote2-agro-2023",
+        "fuente": "UN Comtrade: comercio exterior de Argentina HS 520100 (Algodón), 150710/230400 (Soja) y 382600 (Biodiésel) 2023",
+        "url": "https://comtradeapi.un.org/public/v1/preview/C/A/HS?reporterCode=32&period=2023&partnerCode=0&partner2Code=0&customsCode=C00&motCode=0&cmdCode=520100,150710,230400,382600",
+        "fecha_descarga": "2026-11-24",
+        "hash": "sha256:23308cd7e21d66fc6d854fee155c7a32acf4790f15f7f35d9e314b6ef9226adc",
+        "cita_ubicacion": "UN Comtrade AR 2023 cmdCode=520100 flow=X/M primaryValue (USD 58,70 M exp / USD 0,003 M imp)",
+        "confianza": "alta"
+      }
+    },
+    "saldo_comercial": {
+      "estado": "dato",
+      "valor": 58.697,
+      "unidad": "millones USD",
+      "procedencia": {
+        "anio": 2023,
+        "fuente_id": "uncomtrade-ar-lote2-agro-2023",
+        "fuente": "UN Comtrade: comercio exterior de Argentina HS 520100 (Algodón), 150710/230400 (Soja) y 382600 (Biodiésel) 2023",
+        "url": "https://comtradeapi.un.org/public/v1/preview/C/A/HS?reporterCode=32&period=2023&partnerCode=0&partner2Code=0&customsCode=C00&motCode=0&cmdCode=520100,150710,230400,382600",
+        "fecha_descarga": "2026-11-24",
+        "hash": "sha256:23308cd7e21d66fc6d854fee155c7a32acf4790f15f7f35d9e314b6ef9226adc",
+        "cita_ubicacion": "UN Comtrade AR 2023 cmdCode=520100 flow=X/M primaryValue (USD 58,70 M exp / USD 0,003 M imp)",
+        "confianza": "alta"
+      }
+    },
+    "procedencia": {
+      "anio": 2023,
+      "fuente_id": "uncomtrade-ar-lote2-agro-2023",
+      "fuente": "UN Comtrade: comercio exterior de Argentina HS 520100 (Algodón), 150710/230400 (Soja) y 382600 (Biodiésel) 2023",
+      "url": "https://comtradeapi.un.org/public/v1/preview/C/A/HS?reporterCode=32&period=2023&partnerCode=0&partner2Code=0&customsCode=C00&motCode=0&cmdCode=520100,150710,230400,382600",
+      "fecha_descarga": "2026-11-24",
+      "hash": "sha256:23308cd7e21d66fc6d854fee155c7a32acf4790f15f7f35d9e314b6ef9226adc",
+      "cita_ubicacion": "UN Comtrade AR 2023 cmdCode=520100 flow=X/M primaryValue (USD 58,70 M exp / USD 0,003 M imp)",
+      "confianza": "alta"
+    }
+  },
+  {
+    "registro_id": "comex-algodon-520100-2023-t",
+    "producto_id": "algodon",
+    "anio": 2023,
+    "ncm_codigo": "5201.00",
+    "metrica": "volumen_t",
+    "exportacion": {
+      "estado": "dato",
+      "valor": 54948.6,
+      "unidad": "t fibra de algodón",
+      "procedencia": {
+        "anio": 2023,
+        "fuente_id": "uncomtrade-ar-lote2-agro-2023",
+        "fuente": "UN Comtrade: comercio exterior de Argentina HS 520100 (Algodón), 150710/230400 (Soja) y 382600 (Biodiésel) 2023",
+        "url": "https://comtradeapi.un.org/public/v1/preview/C/A/HS?reporterCode=32&period=2023&partnerCode=0&partner2Code=0&customsCode=C00&motCode=0&cmdCode=520100,150710,230400,382600",
+        "fecha_descarga": "2026-11-24",
+        "hash": "sha256:23308cd7e21d66fc6d854fee155c7a32acf4790f15f7f35d9e314b6ef9226adc",
+        "cita_ubicacion": "UN Comtrade AR 2023 cmdCode=520100 flow=X/M netWgt_kg (54.948,6 t exp / 0,05 t imp)",
+        "confianza": "alta"
+      }
+    },
+    "importacion": {
+      "estado": "dato",
+      "valor": 0.1,
+      "unidad": "t fibra de algodón",
+      "procedencia": {
+        "anio": 2023,
+        "fuente_id": "uncomtrade-ar-lote2-agro-2023",
+        "fuente": "UN Comtrade: comercio exterior de Argentina HS 520100 (Algodón), 150710/230400 (Soja) y 382600 (Biodiésel) 2023",
+        "url": "https://comtradeapi.un.org/public/v1/preview/C/A/HS?reporterCode=32&period=2023&partnerCode=0&partner2Code=0&customsCode=C00&motCode=0&cmdCode=520100,150710,230400,382600",
+        "fecha_descarga": "2026-11-24",
+        "hash": "sha256:23308cd7e21d66fc6d854fee155c7a32acf4790f15f7f35d9e314b6ef9226adc",
+        "cita_ubicacion": "UN Comtrade AR 2023 cmdCode=520100 flow=X/M netWgt_kg (54.948,6 t exp / 0,05 t imp)",
+        "confianza": "alta"
+      }
+    },
+    "saldo_comercial": {
+      "estado": "dato",
+      "valor": 54948.5,
+      "unidad": "t fibra de algodón",
+      "procedencia": {
+        "anio": 2023,
+        "fuente_id": "uncomtrade-ar-lote2-agro-2023",
+        "fuente": "UN Comtrade: comercio exterior de Argentina HS 520100 (Algodón), 150710/230400 (Soja) y 382600 (Biodiésel) 2023",
+        "url": "https://comtradeapi.un.org/public/v1/preview/C/A/HS?reporterCode=32&period=2023&partnerCode=0&partner2Code=0&customsCode=C00&motCode=0&cmdCode=520100,150710,230400,382600",
+        "fecha_descarga": "2026-11-24",
+        "hash": "sha256:23308cd7e21d66fc6d854fee155c7a32acf4790f15f7f35d9e314b6ef9226adc",
+        "cita_ubicacion": "UN Comtrade AR 2023 cmdCode=520100 flow=X/M netWgt_kg (54.948,6 t exp / 0,05 t imp)",
+        "confianza": "alta"
+      }
+    },
+    "procedencia": {
+      "anio": 2023,
+      "fuente_id": "uncomtrade-ar-lote2-agro-2023",
+      "fuente": "UN Comtrade: comercio exterior de Argentina HS 520100 (Algodón), 150710/230400 (Soja) y 382600 (Biodiésel) 2023",
+      "url": "https://comtradeapi.un.org/public/v1/preview/C/A/HS?reporterCode=32&period=2023&partnerCode=0&partner2Code=0&customsCode=C00&motCode=0&cmdCode=520100,150710,230400,382600",
+      "fecha_descarga": "2026-11-24",
+      "hash": "sha256:23308cd7e21d66fc6d854fee155c7a32acf4790f15f7f35d9e314b6ef9226adc",
+      "cita_ubicacion": "UN Comtrade AR 2023 cmdCode=520100 flow=X/M netWgt_kg (54.948,6 t exp / 0,05 t imp)",
+      "confianza": "alta"
+    }
+  },
+  {
+    "registro_id": "comex-soja-harina-230400-2024-usd",
+    "producto_id": "soja",
+    "anio": 2024,
+    "ncm_codigo": "2304.00",
+    "metrica": "valor_usd",
+    "exportacion": {
+      "estado": "dato",
+      "valor": 6440.47,
+      "unidad": "millones USD",
+      "procedencia": {
+        "anio": 2024,
+        "fuente_id": "uncomtrade-ar-lote2-agro-2024",
+        "fuente": "UN Comtrade: comercio exterior de Argentina HS 520100 (Algodón), 150710/230400 (Soja) y 382600 (Biodiésel) 2024",
+        "url": "https://comtradeapi.un.org/public/v1/preview/C/A/HS?reporterCode=32&period=2024&partnerCode=0&partner2Code=0&customsCode=C00&motCode=0&cmdCode=520100,150710,230400,382600",
+        "fecha_descarga": "2026-11-24",
+        "hash": "sha256:6903f23febd3bd252ce0a4cfeb667b824cdc10a00e80432321f5dcd288229e40",
+        "cita_ubicacion": "UN Comtrade AR 2024 cmdCode=230400 flow=X/M primaryValue (USD 6.440,47 M exp)",
+        "confianza": "alta"
+      }
+    },
+    "importacion": {
+      "estado": "dato",
+      "valor": 0.44,
+      "unidad": "millones USD",
+      "procedencia": {
+        "anio": 2024,
+        "fuente_id": "uncomtrade-ar-lote2-agro-2024",
+        "fuente": "UN Comtrade: comercio exterior de Argentina HS 520100 (Algodón), 150710/230400 (Soja) y 382600 (Biodiésel) 2024",
+        "url": "https://comtradeapi.un.org/public/v1/preview/C/A/HS?reporterCode=32&period=2024&partnerCode=0&partner2Code=0&customsCode=C00&motCode=0&cmdCode=520100,150710,230400,382600",
+        "fecha_descarga": "2026-11-24",
+        "hash": "sha256:6903f23febd3bd252ce0a4cfeb667b824cdc10a00e80432321f5dcd288229e40",
+        "cita_ubicacion": "UN Comtrade AR 2024 cmdCode=230400 flow=X/M primaryValue (USD 6.440,47 M exp)",
+        "confianza": "alta"
+      }
+    },
+    "saldo_comercial": {
+      "estado": "dato",
+      "valor": 6440.03,
+      "unidad": "millones USD",
+      "procedencia": {
+        "anio": 2024,
+        "fuente_id": "uncomtrade-ar-lote2-agro-2024",
+        "fuente": "UN Comtrade: comercio exterior de Argentina HS 520100 (Algodón), 150710/230400 (Soja) y 382600 (Biodiésel) 2024",
+        "url": "https://comtradeapi.un.org/public/v1/preview/C/A/HS?reporterCode=32&period=2024&partnerCode=0&partner2Code=0&customsCode=C00&motCode=0&cmdCode=520100,150710,230400,382600",
+        "fecha_descarga": "2026-11-24",
+        "hash": "sha256:6903f23febd3bd252ce0a4cfeb667b824cdc10a00e80432321f5dcd288229e40",
+        "cita_ubicacion": "UN Comtrade AR 2024 cmdCode=230400 flow=X/M primaryValue (USD 6.440,47 M exp)",
+        "confianza": "alta"
+      }
+    },
+    "procedencia": {
+      "anio": 2024,
+      "fuente_id": "uncomtrade-ar-lote2-agro-2024",
+      "fuente": "UN Comtrade: comercio exterior de Argentina HS 520100 (Algodón), 150710/230400 (Soja) y 382600 (Biodiésel) 2024",
+      "url": "https://comtradeapi.un.org/public/v1/preview/C/A/HS?reporterCode=32&period=2024&partnerCode=0&partner2Code=0&customsCode=C00&motCode=0&cmdCode=520100,150710,230400,382600",
+      "fecha_descarga": "2026-11-24",
+      "hash": "sha256:6903f23febd3bd252ce0a4cfeb667b824cdc10a00e80432321f5dcd288229e40",
+      "cita_ubicacion": "UN Comtrade AR 2024 cmdCode=230400 flow=X/M primaryValue (USD 6.440,47 M exp)",
+      "confianza": "alta"
+    }
+  },
+  {
+    "registro_id": "comex-soja-harina-230400-2024-t",
+    "producto_id": "soja",
+    "anio": 2024,
+    "ncm_codigo": "2304.00",
+    "metrica": "volumen_t",
+    "exportacion": {
+      "estado": "dato",
+      "valor": 16674862.9,
+      "unidad": "t harina/pellets soja",
+      "procedencia": {
+        "anio": 2024,
+        "fuente_id": "uncomtrade-ar-lote2-agro-2024",
+        "fuente": "UN Comtrade: comercio exterior de Argentina HS 520100 (Algodón), 150710/230400 (Soja) y 382600 (Biodiésel) 2024",
+        "url": "https://comtradeapi.un.org/public/v1/preview/C/A/HS?reporterCode=32&period=2024&partnerCode=0&partner2Code=0&customsCode=C00&motCode=0&cmdCode=520100,150710,230400,382600",
+        "fecha_descarga": "2026-11-24",
+        "hash": "sha256:6903f23febd3bd252ce0a4cfeb667b824cdc10a00e80432321f5dcd288229e40",
+        "cita_ubicacion": "UN Comtrade AR 2024 cmdCode=230400 flow=X/M netWgt_kg (16,67 Mt exp)",
+        "confianza": "alta"
+      }
+    },
+    "importacion": {
+      "estado": "dato",
+      "valor": 269.6,
+      "unidad": "t harina/pellets soja",
+      "procedencia": {
+        "anio": 2024,
+        "fuente_id": "uncomtrade-ar-lote2-agro-2024",
+        "fuente": "UN Comtrade: comercio exterior de Argentina HS 520100 (Algodón), 150710/230400 (Soja) y 382600 (Biodiésel) 2024",
+        "url": "https://comtradeapi.un.org/public/v1/preview/C/A/HS?reporterCode=32&period=2024&partnerCode=0&partner2Code=0&customsCode=C00&motCode=0&cmdCode=520100,150710,230400,382600",
+        "fecha_descarga": "2026-11-24",
+        "hash": "sha256:6903f23febd3bd252ce0a4cfeb667b824cdc10a00e80432321f5dcd288229e40",
+        "cita_ubicacion": "UN Comtrade AR 2024 cmdCode=230400 flow=X/M netWgt_kg (16,67 Mt exp)",
+        "confianza": "alta"
+      }
+    },
+    "saldo_comercial": {
+      "estado": "dato",
+      "valor": 16674593.3,
+      "unidad": "t harina/pellets soja",
+      "procedencia": {
+        "anio": 2024,
+        "fuente_id": "uncomtrade-ar-lote2-agro-2024",
+        "fuente": "UN Comtrade: comercio exterior de Argentina HS 520100 (Algodón), 150710/230400 (Soja) y 382600 (Biodiésel) 2024",
+        "url": "https://comtradeapi.un.org/public/v1/preview/C/A/HS?reporterCode=32&period=2024&partnerCode=0&partner2Code=0&customsCode=C00&motCode=0&cmdCode=520100,150710,230400,382600",
+        "fecha_descarga": "2026-11-24",
+        "hash": "sha256:6903f23febd3bd252ce0a4cfeb667b824cdc10a00e80432321f5dcd288229e40",
+        "cita_ubicacion": "UN Comtrade AR 2024 cmdCode=230400 flow=X/M netWgt_kg (16,67 Mt exp)",
+        "confianza": "alta"
+      }
+    },
+    "procedencia": {
+      "anio": 2024,
+      "fuente_id": "uncomtrade-ar-lote2-agro-2024",
+      "fuente": "UN Comtrade: comercio exterior de Argentina HS 520100 (Algodón), 150710/230400 (Soja) y 382600 (Biodiésel) 2024",
+      "url": "https://comtradeapi.un.org/public/v1/preview/C/A/HS?reporterCode=32&period=2024&partnerCode=0&partner2Code=0&customsCode=C00&motCode=0&cmdCode=520100,150710,230400,382600",
+      "fecha_descarga": "2026-11-24",
+      "hash": "sha256:6903f23febd3bd252ce0a4cfeb667b824cdc10a00e80432321f5dcd288229e40",
+      "cita_ubicacion": "UN Comtrade AR 2024 cmdCode=230400 flow=X/M netWgt_kg (16,67 Mt exp)",
+      "confianza": "alta"
+    }
+  },
+  {
+    "registro_id": "comex-soja-harina-230400-2023-usd",
+    "producto_id": "soja",
+    "anio": 2023,
+    "ncm_codigo": "2304.00",
+    "metrica": "valor_usd",
+    "exportacion": {
+      "estado": "dato",
+      "valor": 7379.82,
+      "unidad": "millones USD",
+      "procedencia": {
+        "anio": 2023,
+        "fuente_id": "uncomtrade-ar-lote2-agro-2023",
+        "fuente": "UN Comtrade: comercio exterior de Argentina HS 520100 (Algodón), 150710/230400 (Soja) y 382600 (Biodiésel) 2023",
+        "url": "https://comtradeapi.un.org/public/v1/preview/C/A/HS?reporterCode=32&period=2023&partnerCode=0&partner2Code=0&customsCode=C00&motCode=0&cmdCode=520100,150710,230400,382600",
+        "fecha_descarga": "2026-11-24",
+        "hash": "sha256:23308cd7e21d66fc6d854fee155c7a32acf4790f15f7f35d9e314b6ef9226adc",
+        "cita_ubicacion": "UN Comtrade AR 2023 cmdCode=230400 flow=X/M primaryValue (USD 7.379,82 M exp)",
+        "confianza": "alta"
+      }
+    },
+    "importacion": {
+      "estado": "dato",
+      "valor": 17.95,
+      "unidad": "millones USD",
+      "procedencia": {
+        "anio": 2023,
+        "fuente_id": "uncomtrade-ar-lote2-agro-2023",
+        "fuente": "UN Comtrade: comercio exterior de Argentina HS 520100 (Algodón), 150710/230400 (Soja) y 382600 (Biodiésel) 2023",
+        "url": "https://comtradeapi.un.org/public/v1/preview/C/A/HS?reporterCode=32&period=2023&partnerCode=0&partner2Code=0&customsCode=C00&motCode=0&cmdCode=520100,150710,230400,382600",
+        "fecha_descarga": "2026-11-24",
+        "hash": "sha256:23308cd7e21d66fc6d854fee155c7a32acf4790f15f7f35d9e314b6ef9226adc",
+        "cita_ubicacion": "UN Comtrade AR 2023 cmdCode=230400 flow=X/M primaryValue (USD 7.379,82 M exp)",
+        "confianza": "alta"
+      }
+    },
+    "saldo_comercial": {
+      "estado": "dato",
+      "valor": 7361.87,
+      "unidad": "millones USD",
+      "procedencia": {
+        "anio": 2023,
+        "fuente_id": "uncomtrade-ar-lote2-agro-2023",
+        "fuente": "UN Comtrade: comercio exterior de Argentina HS 520100 (Algodón), 150710/230400 (Soja) y 382600 (Biodiésel) 2023",
+        "url": "https://comtradeapi.un.org/public/v1/preview/C/A/HS?reporterCode=32&period=2023&partnerCode=0&partner2Code=0&customsCode=C00&motCode=0&cmdCode=520100,150710,230400,382600",
+        "fecha_descarga": "2026-11-24",
+        "hash": "sha256:23308cd7e21d66fc6d854fee155c7a32acf4790f15f7f35d9e314b6ef9226adc",
+        "cita_ubicacion": "UN Comtrade AR 2023 cmdCode=230400 flow=X/M primaryValue (USD 7.379,82 M exp)",
+        "confianza": "alta"
+      }
+    },
+    "procedencia": {
+      "anio": 2023,
+      "fuente_id": "uncomtrade-ar-lote2-agro-2023",
+      "fuente": "UN Comtrade: comercio exterior de Argentina HS 520100 (Algodón), 150710/230400 (Soja) y 382600 (Biodiésel) 2023",
+      "url": "https://comtradeapi.un.org/public/v1/preview/C/A/HS?reporterCode=32&period=2023&partnerCode=0&partner2Code=0&customsCode=C00&motCode=0&cmdCode=520100,150710,230400,382600",
+      "fecha_descarga": "2026-11-24",
+      "hash": "sha256:23308cd7e21d66fc6d854fee155c7a32acf4790f15f7f35d9e314b6ef9226adc",
+      "cita_ubicacion": "UN Comtrade AR 2023 cmdCode=230400 flow=X/M primaryValue (USD 7.379,82 M exp)",
+      "confianza": "alta"
+    }
+  },
+  {
+    "registro_id": "comex-soja-aceite-150710-2024-usd",
+    "producto_id": "soja",
+    "anio": 2024,
+    "ncm_codigo": "1507.10",
+    "metrica": "valor_usd",
+    "exportacion": {
+      "estado": "dato",
+      "valor": 4638.14,
+      "unidad": "millones USD",
+      "procedencia": {
+        "anio": 2024,
+        "fuente_id": "uncomtrade-ar-lote2-agro-2024",
+        "fuente": "UN Comtrade: comercio exterior de Argentina HS 520100 (Algodón), 150710/230400 (Soja) y 382600 (Biodiésel) 2024",
+        "url": "https://comtradeapi.un.org/public/v1/preview/C/A/HS?reporterCode=32&period=2024&partnerCode=0&partner2Code=0&customsCode=C00&motCode=0&cmdCode=520100,150710,230400,382600",
+        "fecha_descarga": "2026-11-24",
+        "hash": "sha256:6903f23febd3bd252ce0a4cfeb667b824cdc10a00e80432321f5dcd288229e40",
+        "cita_ubicacion": "UN Comtrade AR 2024 cmdCode=150710 flow=X/M primaryValue (USD 4.638,14 M exp)",
+        "confianza": "alta"
+      }
+    },
+    "importacion": {
+      "estado": "dato",
+      "valor": 6.32,
+      "unidad": "millones USD",
+      "procedencia": {
+        "anio": 2024,
+        "fuente_id": "uncomtrade-ar-lote2-agro-2024",
+        "fuente": "UN Comtrade: comercio exterior de Argentina HS 520100 (Algodón), 150710/230400 (Soja) y 382600 (Biodiésel) 2024",
+        "url": "https://comtradeapi.un.org/public/v1/preview/C/A/HS?reporterCode=32&period=2024&partnerCode=0&partner2Code=0&customsCode=C00&motCode=0&cmdCode=520100,150710,230400,382600",
+        "fecha_descarga": "2026-11-24",
+        "hash": "sha256:6903f23febd3bd252ce0a4cfeb667b824cdc10a00e80432321f5dcd288229e40",
+        "cita_ubicacion": "UN Comtrade AR 2024 cmdCode=150710 flow=X/M primaryValue (USD 4.638,14 M exp)",
+        "confianza": "alta"
+      }
+    },
+    "saldo_comercial": {
+      "estado": "dato",
+      "valor": 4631.82,
+      "unidad": "millones USD",
+      "procedencia": {
+        "anio": 2024,
+        "fuente_id": "uncomtrade-ar-lote2-agro-2024",
+        "fuente": "UN Comtrade: comercio exterior de Argentina HS 520100 (Algodón), 150710/230400 (Soja) y 382600 (Biodiésel) 2024",
+        "url": "https://comtradeapi.un.org/public/v1/preview/C/A/HS?reporterCode=32&period=2024&partnerCode=0&partner2Code=0&customsCode=C00&motCode=0&cmdCode=520100,150710,230400,382600",
+        "fecha_descarga": "2026-11-24",
+        "hash": "sha256:6903f23febd3bd252ce0a4cfeb667b824cdc10a00e80432321f5dcd288229e40",
+        "cita_ubicacion": "UN Comtrade AR 2024 cmdCode=150710 flow=X/M primaryValue (USD 4.638,14 M exp)",
+        "confianza": "alta"
+      }
+    },
+    "procedencia": {
+      "anio": 2024,
+      "fuente_id": "uncomtrade-ar-lote2-agro-2024",
+      "fuente": "UN Comtrade: comercio exterior de Argentina HS 520100 (Algodón), 150710/230400 (Soja) y 382600 (Biodiésel) 2024",
+      "url": "https://comtradeapi.un.org/public/v1/preview/C/A/HS?reporterCode=32&period=2024&partnerCode=0&partner2Code=0&customsCode=C00&motCode=0&cmdCode=520100,150710,230400,382600",
+      "fecha_descarga": "2026-11-24",
+      "hash": "sha256:6903f23febd3bd252ce0a4cfeb667b824cdc10a00e80432321f5dcd288229e40",
+      "cita_ubicacion": "UN Comtrade AR 2024 cmdCode=150710 flow=X/M primaryValue (USD 4.638,14 M exp)",
+      "confianza": "alta"
+    }
+  },
+  {
+    "registro_id": "comex-soja-aceite-150710-2024-t",
+    "producto_id": "soja",
+    "anio": 2024,
+    "ncm_codigo": "1507.10",
+    "metrica": "volumen_t",
+    "exportacion": {
+      "estado": "dato",
+      "valor": 4976567.5,
+      "unidad": "t aceite crudo soja",
+      "procedencia": {
+        "anio": 2024,
+        "fuente_id": "uncomtrade-ar-lote2-agro-2024",
+        "fuente": "UN Comtrade: comercio exterior de Argentina HS 520100 (Algodón), 150710/230400 (Soja) y 382600 (Biodiésel) 2024",
+        "url": "https://comtradeapi.un.org/public/v1/preview/C/A/HS?reporterCode=32&period=2024&partnerCode=0&partner2Code=0&customsCode=C00&motCode=0&cmdCode=520100,150710,230400,382600",
+        "fecha_descarga": "2026-11-24",
+        "hash": "sha256:6903f23febd3bd252ce0a4cfeb667b824cdc10a00e80432321f5dcd288229e40",
+        "cita_ubicacion": "UN Comtrade AR 2024 cmdCode=150710 flow=X/M netWgt_kg (4,98 Mt exp)",
+        "confianza": "alta"
+      }
+    },
+    "importacion": {
+      "estado": "dato",
+      "valor": 5938.6,
+      "unidad": "t aceite crudo soja",
+      "procedencia": {
+        "anio": 2024,
+        "fuente_id": "uncomtrade-ar-lote2-agro-2024",
+        "fuente": "UN Comtrade: comercio exterior de Argentina HS 520100 (Algodón), 150710/230400 (Soja) y 382600 (Biodiésel) 2024",
+        "url": "https://comtradeapi.un.org/public/v1/preview/C/A/HS?reporterCode=32&period=2024&partnerCode=0&partner2Code=0&customsCode=C00&motCode=0&cmdCode=520100,150710,230400,382600",
+        "fecha_descarga": "2026-11-24",
+        "hash": "sha256:6903f23febd3bd252ce0a4cfeb667b824cdc10a00e80432321f5dcd288229e40",
+        "cita_ubicacion": "UN Comtrade AR 2024 cmdCode=150710 flow=X/M netWgt_kg (4,98 Mt exp)",
+        "confianza": "alta"
+      }
+    },
+    "saldo_comercial": {
+      "estado": "dato",
+      "valor": 4970628.9,
+      "unidad": "t aceite crudo soja",
+      "procedencia": {
+        "anio": 2024,
+        "fuente_id": "uncomtrade-ar-lote2-agro-2024",
+        "fuente": "UN Comtrade: comercio exterior de Argentina HS 520100 (Algodón), 150710/230400 (Soja) y 382600 (Biodiésel) 2024",
+        "url": "https://comtradeapi.un.org/public/v1/preview/C/A/HS?reporterCode=32&period=2024&partnerCode=0&partner2Code=0&customsCode=C00&motCode=0&cmdCode=520100,150710,230400,382600",
+        "fecha_descarga": "2026-11-24",
+        "hash": "sha256:6903f23febd3bd252ce0a4cfeb667b824cdc10a00e80432321f5dcd288229e40",
+        "cita_ubicacion": "UN Comtrade AR 2024 cmdCode=150710 flow=X/M netWgt_kg (4,98 Mt exp)",
+        "confianza": "alta"
+      }
+    },
+    "procedencia": {
+      "anio": 2024,
+      "fuente_id": "uncomtrade-ar-lote2-agro-2024",
+      "fuente": "UN Comtrade: comercio exterior de Argentina HS 520100 (Algodón), 150710/230400 (Soja) y 382600 (Biodiésel) 2024",
+      "url": "https://comtradeapi.un.org/public/v1/preview/C/A/HS?reporterCode=32&period=2024&partnerCode=0&partner2Code=0&customsCode=C00&motCode=0&cmdCode=520100,150710,230400,382600",
+      "fecha_descarga": "2026-11-24",
+      "hash": "sha256:6903f23febd3bd252ce0a4cfeb667b824cdc10a00e80432321f5dcd288229e40",
+      "cita_ubicacion": "UN Comtrade AR 2024 cmdCode=150710 flow=X/M netWgt_kg (4,98 Mt exp)",
+      "confianza": "alta"
+    }
+  },
+  {
+    "registro_id": "comex-soja-aceite-150710-2023-usd",
+    "producto_id": "soja",
+    "anio": 2023,
+    "ncm_codigo": "1507.10",
+    "metrica": "valor_usd",
+    "exportacion": {
+      "estado": "dato",
+      "valor": 3303.95,
+      "unidad": "millones USD",
+      "procedencia": {
+        "anio": 2023,
+        "fuente_id": "uncomtrade-ar-lote2-agro-2023",
+        "fuente": "UN Comtrade: comercio exterior de Argentina HS 520100 (Algodón), 150710/230400 (Soja) y 382600 (Biodiésel) 2023",
+        "url": "https://comtradeapi.un.org/public/v1/preview/C/A/HS?reporterCode=32&period=2023&partnerCode=0&partner2Code=0&customsCode=C00&motCode=0&cmdCode=520100,150710,230400,382600",
+        "fecha_descarga": "2026-11-24",
+        "hash": "sha256:23308cd7e21d66fc6d854fee155c7a32acf4790f15f7f35d9e314b6ef9226adc",
+        "cita_ubicacion": "UN Comtrade AR 2023 cmdCode=150710 flow=X primaryValue (USD 3.303,95 M exp; imp sin_datos)",
+        "confianza": "alta"
+      }
+    },
+    "importacion": {
+      "estado": "sin_datos",
+      "valor": null,
+      "unidad": "millones USD",
+      "procedencia": {
+        "anio": 2023,
+        "fuente_id": "uncomtrade-ar-lote2-agro-2023",
+        "fuente": "UN Comtrade: comercio exterior de Argentina HS 520100 (Algodón), 150710/230400 (Soja) y 382600 (Biodiésel) 2023",
+        "url": "https://comtradeapi.un.org/public/v1/preview/C/A/HS?reporterCode=32&period=2023&partnerCode=0&partner2Code=0&customsCode=C00&motCode=0&cmdCode=520100,150710,230400,382600",
+        "fecha_descarga": "2026-11-24",
+        "hash": "sha256:23308cd7e21d66fc6d854fee155c7a32acf4790f15f7f35d9e314b6ef9226adc",
+        "cita_ubicacion": "UN Comtrade AR 2023 cmdCode=150710 flow=X primaryValue (USD 3.303,95 M exp; imp sin_datos)",
+        "confianza": "alta"
+      }
+    },
+    "saldo_comercial": {
+      "estado": "sin_datos",
+      "valor": null,
+      "unidad": "millones USD",
+      "procedencia": {
+        "anio": 2023,
+        "fuente_id": "uncomtrade-ar-lote2-agro-2023",
+        "fuente": "UN Comtrade: comercio exterior de Argentina HS 520100 (Algodón), 150710/230400 (Soja) y 382600 (Biodiésel) 2023",
+        "url": "https://comtradeapi.un.org/public/v1/preview/C/A/HS?reporterCode=32&period=2023&partnerCode=0&partner2Code=0&customsCode=C00&motCode=0&cmdCode=520100,150710,230400,382600",
+        "fecha_descarga": "2026-11-24",
+        "hash": "sha256:23308cd7e21d66fc6d854fee155c7a32acf4790f15f7f35d9e314b6ef9226adc",
+        "cita_ubicacion": "UN Comtrade AR 2023 cmdCode=150710 flow=X primaryValue (USD 3.303,95 M exp; imp sin_datos)",
+        "confianza": "alta"
+      }
+    },
+    "procedencia": {
+      "anio": 2023,
+      "fuente_id": "uncomtrade-ar-lote2-agro-2023",
+      "fuente": "UN Comtrade: comercio exterior de Argentina HS 520100 (Algodón), 150710/230400 (Soja) y 382600 (Biodiésel) 2023",
+      "url": "https://comtradeapi.un.org/public/v1/preview/C/A/HS?reporterCode=32&period=2023&partnerCode=0&partner2Code=0&customsCode=C00&motCode=0&cmdCode=520100,150710,230400,382600",
+      "fecha_descarga": "2026-11-24",
+      "hash": "sha256:23308cd7e21d66fc6d854fee155c7a32acf4790f15f7f35d9e314b6ef9226adc",
+      "cita_ubicacion": "UN Comtrade AR 2023 cmdCode=150710 flow=X primaryValue (USD 3.303,95 M exp; imp sin_datos)",
+      "confianza": "alta"
+    }
+  },
+  {
+    "registro_id": "comex-soja-poroto-120190-2024-t",
+    "producto_id": "soja",
+    "anio": 2024,
+    "ncm_codigo": "1201.90",
+    "metrica": "volumen_t",
+    "exportacion": {
+      "estado": "dato",
+      "valor": 4134918.3,
+      "unidad": "t poroto de soja",
+      "procedencia": {
+        "anio": 2024,
+        "fuente_id": "uncomtrade-ar-lote2-ind-2024",
+        "fuente": "UN Comtrade: comercio exterior de Argentina HS 390110/390120 (Polietileno), 390410 (PVC) y 120190 (Soja poroto) 2024",
+        "url": "https://comtradeapi.un.org/public/v1/preview/C/A/HS?reporterCode=32&period=2024&partnerCode=0&partner2Code=0&customsCode=C00&motCode=0&cmdCode=390110,390120,390410,120190",
+        "fecha_descarga": "2026-11-24",
+        "hash": "sha256:0ce593fa415610c3bf8866de3f82a5d306f8b483cbd1562b5e870cb812d9774f",
+        "cita_ubicacion": "UN Comtrade AR 2024 cmdCode=120190 flow=X/M netWgt_kg (importación para molienda Up-River)",
+        "confianza": "alta"
+      }
+    },
+    "importacion": {
+      "estado": "dato",
+      "valor": 7577686.5,
+      "unidad": "t poroto de soja",
+      "procedencia": {
+        "anio": 2024,
+        "fuente_id": "uncomtrade-ar-lote2-ind-2024",
+        "fuente": "UN Comtrade: comercio exterior de Argentina HS 390110/390120 (Polietileno), 390410 (PVC) y 120190 (Soja poroto) 2024",
+        "url": "https://comtradeapi.un.org/public/v1/preview/C/A/HS?reporterCode=32&period=2024&partnerCode=0&partner2Code=0&customsCode=C00&motCode=0&cmdCode=390110,390120,390410,120190",
+        "fecha_descarga": "2026-11-24",
+        "hash": "sha256:0ce593fa415610c3bf8866de3f82a5d306f8b483cbd1562b5e870cb812d9774f",
+        "cita_ubicacion": "UN Comtrade AR 2024 cmdCode=120190 flow=X/M netWgt_kg (importación para molienda Up-River)",
+        "confianza": "alta"
+      }
+    },
+    "saldo_comercial": {
+      "estado": "dato",
+      "valor": -3442768.2,
+      "unidad": "t poroto de soja",
+      "procedencia": {
+        "anio": 2024,
+        "fuente_id": "uncomtrade-ar-lote2-ind-2024",
+        "fuente": "UN Comtrade: comercio exterior de Argentina HS 390110/390120 (Polietileno), 390410 (PVC) y 120190 (Soja poroto) 2024",
+        "url": "https://comtradeapi.un.org/public/v1/preview/C/A/HS?reporterCode=32&period=2024&partnerCode=0&partner2Code=0&customsCode=C00&motCode=0&cmdCode=390110,390120,390410,120190",
+        "fecha_descarga": "2026-11-24",
+        "hash": "sha256:0ce593fa415610c3bf8866de3f82a5d306f8b483cbd1562b5e870cb812d9774f",
+        "cita_ubicacion": "UN Comtrade AR 2024 cmdCode=120190 flow=X/M netWgt_kg (importación para molienda Up-River)",
+        "confianza": "alta"
+      }
+    },
+    "procedencia": {
+      "anio": 2024,
+      "fuente_id": "uncomtrade-ar-lote2-ind-2024",
+      "fuente": "UN Comtrade: comercio exterior de Argentina HS 390110/390120 (Polietileno), 390410 (PVC) y 120190 (Soja poroto) 2024",
+      "url": "https://comtradeapi.un.org/public/v1/preview/C/A/HS?reporterCode=32&period=2024&partnerCode=0&partner2Code=0&customsCode=C00&motCode=0&cmdCode=390110,390120,390410,120190",
+      "fecha_descarga": "2026-11-24",
+      "hash": "sha256:0ce593fa415610c3bf8866de3f82a5d306f8b483cbd1562b5e870cb812d9774f",
+      "cita_ubicacion": "UN Comtrade AR 2024 cmdCode=120190 flow=X/M netWgt_kg (importación para molienda Up-River)",
+      "confianza": "alta"
+    }
+  },
+  {
+    "registro_id": "comex-pe-390110-2024-usd",
+    "producto_id": "petroquimica",
+    "anio": 2024,
+    "ncm_codigo": "3901.10",
+    "metrica": "valor_usd",
+    "exportacion": {
+      "estado": "dato",
+      "valor": 26.17,
+      "unidad": "millones USD",
+      "procedencia": {
+        "anio": 2024,
+        "fuente_id": "uncomtrade-ar-lote2-ind-2024",
+        "fuente": "UN Comtrade: comercio exterior de Argentina HS 390110/390120 (Polietileno), 390410 (PVC) y 120190 (Soja poroto) 2024",
+        "url": "https://comtradeapi.un.org/public/v1/preview/C/A/HS?reporterCode=32&period=2024&partnerCode=0&partner2Code=0&customsCode=C00&motCode=0&cmdCode=390110,390120,390410,120190",
+        "fecha_descarga": "2026-11-24",
+        "hash": "sha256:0ce593fa415610c3bf8866de3f82a5d306f8b483cbd1562b5e870cb812d9774f",
+        "cita_ubicacion": "UN Comtrade AR 2024 cmdCode=390110 (PE densidad <0,94) flow=X/M primaryValue",
+        "confianza": "alta"
+      }
+    },
+    "importacion": {
+      "estado": "dato",
+      "valor": 181.04,
+      "unidad": "millones USD",
+      "procedencia": {
+        "anio": 2024,
+        "fuente_id": "uncomtrade-ar-lote2-ind-2024",
+        "fuente": "UN Comtrade: comercio exterior de Argentina HS 390110/390120 (Polietileno), 390410 (PVC) y 120190 (Soja poroto) 2024",
+        "url": "https://comtradeapi.un.org/public/v1/preview/C/A/HS?reporterCode=32&period=2024&partnerCode=0&partner2Code=0&customsCode=C00&motCode=0&cmdCode=390110,390120,390410,120190",
+        "fecha_descarga": "2026-11-24",
+        "hash": "sha256:0ce593fa415610c3bf8866de3f82a5d306f8b483cbd1562b5e870cb812d9774f",
+        "cita_ubicacion": "UN Comtrade AR 2024 cmdCode=390110 (PE densidad <0,94) flow=X/M primaryValue",
+        "confianza": "alta"
+      }
+    },
+    "saldo_comercial": {
+      "estado": "dato",
+      "valor": -154.87,
+      "unidad": "millones USD",
+      "procedencia": {
+        "anio": 2024,
+        "fuente_id": "uncomtrade-ar-lote2-ind-2024",
+        "fuente": "UN Comtrade: comercio exterior de Argentina HS 390110/390120 (Polietileno), 390410 (PVC) y 120190 (Soja poroto) 2024",
+        "url": "https://comtradeapi.un.org/public/v1/preview/C/A/HS?reporterCode=32&period=2024&partnerCode=0&partner2Code=0&customsCode=C00&motCode=0&cmdCode=390110,390120,390410,120190",
+        "fecha_descarga": "2026-11-24",
+        "hash": "sha256:0ce593fa415610c3bf8866de3f82a5d306f8b483cbd1562b5e870cb812d9774f",
+        "cita_ubicacion": "UN Comtrade AR 2024 cmdCode=390110 (PE densidad <0,94) flow=X/M primaryValue",
+        "confianza": "alta"
+      }
+    },
+    "procedencia": {
+      "anio": 2024,
+      "fuente_id": "uncomtrade-ar-lote2-ind-2024",
+      "fuente": "UN Comtrade: comercio exterior de Argentina HS 390110/390120 (Polietileno), 390410 (PVC) y 120190 (Soja poroto) 2024",
+      "url": "https://comtradeapi.un.org/public/v1/preview/C/A/HS?reporterCode=32&period=2024&partnerCode=0&partner2Code=0&customsCode=C00&motCode=0&cmdCode=390110,390120,390410,120190",
+      "fecha_descarga": "2026-11-24",
+      "hash": "sha256:0ce593fa415610c3bf8866de3f82a5d306f8b483cbd1562b5e870cb812d9774f",
+      "cita_ubicacion": "UN Comtrade AR 2024 cmdCode=390110 (PE densidad <0,94) flow=X/M primaryValue",
+      "confianza": "alta"
+    }
+  },
+  {
+    "registro_id": "comex-pe-390110-2024-t",
+    "producto_id": "petroquimica",
+    "anio": 2024,
+    "ncm_codigo": "3901.10",
+    "metrica": "volumen_t",
+    "exportacion": {
+      "estado": "dato",
+      "valor": 21682.5,
+      "unidad": "t PE baja densidad",
+      "procedencia": {
+        "anio": 2024,
+        "fuente_id": "uncomtrade-ar-lote2-ind-2024",
+        "fuente": "UN Comtrade: comercio exterior de Argentina HS 390110/390120 (Polietileno), 390410 (PVC) y 120190 (Soja poroto) 2024",
+        "url": "https://comtradeapi.un.org/public/v1/preview/C/A/HS?reporterCode=32&period=2024&partnerCode=0&partner2Code=0&customsCode=C00&motCode=0&cmdCode=390110,390120,390410,120190",
+        "fecha_descarga": "2026-11-24",
+        "hash": "sha256:0ce593fa415610c3bf8866de3f82a5d306f8b483cbd1562b5e870cb812d9774f",
+        "cita_ubicacion": "UN Comtrade AR 2024 cmdCode=390110 flow=X/M netWgt_kg",
+        "confianza": "alta"
+      }
+    },
+    "importacion": {
+      "estado": "dato",
+      "valor": 125896.7,
+      "unidad": "t PE baja densidad",
+      "procedencia": {
+        "anio": 2024,
+        "fuente_id": "uncomtrade-ar-lote2-ind-2024",
+        "fuente": "UN Comtrade: comercio exterior de Argentina HS 390110/390120 (Polietileno), 390410 (PVC) y 120190 (Soja poroto) 2024",
+        "url": "https://comtradeapi.un.org/public/v1/preview/C/A/HS?reporterCode=32&period=2024&partnerCode=0&partner2Code=0&customsCode=C00&motCode=0&cmdCode=390110,390120,390410,120190",
+        "fecha_descarga": "2026-11-24",
+        "hash": "sha256:0ce593fa415610c3bf8866de3f82a5d306f8b483cbd1562b5e870cb812d9774f",
+        "cita_ubicacion": "UN Comtrade AR 2024 cmdCode=390110 flow=X/M netWgt_kg",
+        "confianza": "alta"
+      }
+    },
+    "saldo_comercial": {
+      "estado": "dato",
+      "valor": -104214.2,
+      "unidad": "t PE baja densidad",
+      "procedencia": {
+        "anio": 2024,
+        "fuente_id": "uncomtrade-ar-lote2-ind-2024",
+        "fuente": "UN Comtrade: comercio exterior de Argentina HS 390110/390120 (Polietileno), 390410 (PVC) y 120190 (Soja poroto) 2024",
+        "url": "https://comtradeapi.un.org/public/v1/preview/C/A/HS?reporterCode=32&period=2024&partnerCode=0&partner2Code=0&customsCode=C00&motCode=0&cmdCode=390110,390120,390410,120190",
+        "fecha_descarga": "2026-11-24",
+        "hash": "sha256:0ce593fa415610c3bf8866de3f82a5d306f8b483cbd1562b5e870cb812d9774f",
+        "cita_ubicacion": "UN Comtrade AR 2024 cmdCode=390110 flow=X/M netWgt_kg",
+        "confianza": "alta"
+      }
+    },
+    "procedencia": {
+      "anio": 2024,
+      "fuente_id": "uncomtrade-ar-lote2-ind-2024",
+      "fuente": "UN Comtrade: comercio exterior de Argentina HS 390110/390120 (Polietileno), 390410 (PVC) y 120190 (Soja poroto) 2024",
+      "url": "https://comtradeapi.un.org/public/v1/preview/C/A/HS?reporterCode=32&period=2024&partnerCode=0&partner2Code=0&customsCode=C00&motCode=0&cmdCode=390110,390120,390410,120190",
+      "fecha_descarga": "2026-11-24",
+      "hash": "sha256:0ce593fa415610c3bf8866de3f82a5d306f8b483cbd1562b5e870cb812d9774f",
+      "cita_ubicacion": "UN Comtrade AR 2024 cmdCode=390110 flow=X/M netWgt_kg",
+      "confianza": "alta"
+    }
+  },
+  {
+    "registro_id": "comex-pe-390110-2023-usd",
+    "producto_id": "petroquimica",
+    "anio": 2023,
+    "ncm_codigo": "3901.10",
+    "metrica": "valor_usd",
+    "exportacion": {
+      "estado": "dato",
+      "valor": 55.71,
+      "unidad": "millones USD",
+      "procedencia": {
+        "anio": 2023,
+        "fuente_id": "uncomtrade-ar-lote2-ind-2023",
+        "fuente": "UN Comtrade: comercio exterior de Argentina HS 390110/390120 (Polietileno), 390410 (PVC) y 120190 (Soja poroto) 2023",
+        "url": "https://comtradeapi.un.org/public/v1/preview/C/A/HS?reporterCode=32&period=2023&partnerCode=0&partner2Code=0&customsCode=C00&motCode=0&cmdCode=390110,390120,390410,120190",
+        "fecha_descarga": "2026-11-24",
+        "hash": "sha256:04e836fa2465b831d632401a04bf530701a0fb5dcafaff62a87ba3ca6876240e",
+        "cita_ubicacion": "UN Comtrade AR 2023 cmdCode=390110 flow=X/M primaryValue",
+        "confianza": "alta"
+      }
+    },
+    "importacion": {
+      "estado": "dato",
+      "valor": 209.45,
+      "unidad": "millones USD",
+      "procedencia": {
+        "anio": 2023,
+        "fuente_id": "uncomtrade-ar-lote2-ind-2023",
+        "fuente": "UN Comtrade: comercio exterior de Argentina HS 390110/390120 (Polietileno), 390410 (PVC) y 120190 (Soja poroto) 2023",
+        "url": "https://comtradeapi.un.org/public/v1/preview/C/A/HS?reporterCode=32&period=2023&partnerCode=0&partner2Code=0&customsCode=C00&motCode=0&cmdCode=390110,390120,390410,120190",
+        "fecha_descarga": "2026-11-24",
+        "hash": "sha256:04e836fa2465b831d632401a04bf530701a0fb5dcafaff62a87ba3ca6876240e",
+        "cita_ubicacion": "UN Comtrade AR 2023 cmdCode=390110 flow=X/M primaryValue",
+        "confianza": "alta"
+      }
+    },
+    "saldo_comercial": {
+      "estado": "dato",
+      "valor": -153.74,
+      "unidad": "millones USD",
+      "procedencia": {
+        "anio": 2023,
+        "fuente_id": "uncomtrade-ar-lote2-ind-2023",
+        "fuente": "UN Comtrade: comercio exterior de Argentina HS 390110/390120 (Polietileno), 390410 (PVC) y 120190 (Soja poroto) 2023",
+        "url": "https://comtradeapi.un.org/public/v1/preview/C/A/HS?reporterCode=32&period=2023&partnerCode=0&partner2Code=0&customsCode=C00&motCode=0&cmdCode=390110,390120,390410,120190",
+        "fecha_descarga": "2026-11-24",
+        "hash": "sha256:04e836fa2465b831d632401a04bf530701a0fb5dcafaff62a87ba3ca6876240e",
+        "cita_ubicacion": "UN Comtrade AR 2023 cmdCode=390110 flow=X/M primaryValue",
+        "confianza": "alta"
+      }
+    },
+    "procedencia": {
+      "anio": 2023,
+      "fuente_id": "uncomtrade-ar-lote2-ind-2023",
+      "fuente": "UN Comtrade: comercio exterior de Argentina HS 390110/390120 (Polietileno), 390410 (PVC) y 120190 (Soja poroto) 2023",
+      "url": "https://comtradeapi.un.org/public/v1/preview/C/A/HS?reporterCode=32&period=2023&partnerCode=0&partner2Code=0&customsCode=C00&motCode=0&cmdCode=390110,390120,390410,120190",
+      "fecha_descarga": "2026-11-24",
+      "hash": "sha256:04e836fa2465b831d632401a04bf530701a0fb5dcafaff62a87ba3ca6876240e",
+      "cita_ubicacion": "UN Comtrade AR 2023 cmdCode=390110 flow=X/M primaryValue",
+      "confianza": "alta"
+    }
+  },
+  {
+    "registro_id": "comex-pe-390120-2024-usd",
+    "producto_id": "petroquimica",
+    "anio": 2024,
+    "ncm_codigo": "3901.20",
+    "metrica": "valor_usd",
+    "exportacion": {
+      "estado": "dato",
+      "valor": 18.02,
+      "unidad": "millones USD",
+      "procedencia": {
+        "anio": 2024,
+        "fuente_id": "uncomtrade-ar-lote2-ind-2024",
+        "fuente": "UN Comtrade: comercio exterior de Argentina HS 390110/390120 (Polietileno), 390410 (PVC) y 120190 (Soja poroto) 2024",
+        "url": "https://comtradeapi.un.org/public/v1/preview/C/A/HS?reporterCode=32&period=2024&partnerCode=0&partner2Code=0&customsCode=C00&motCode=0&cmdCode=390110,390120,390410,120190",
+        "fecha_descarga": "2026-11-24",
+        "hash": "sha256:0ce593fa415610c3bf8866de3f82a5d306f8b483cbd1562b5e870cb812d9774f",
+        "cita_ubicacion": "UN Comtrade AR 2024 cmdCode=390120 (PE densidad >=0,94) flow=X/M primaryValue",
+        "confianza": "alta"
+      }
+    },
+    "importacion": {
+      "estado": "dato",
+      "valor": 132.49,
+      "unidad": "millones USD",
+      "procedencia": {
+        "anio": 2024,
+        "fuente_id": "uncomtrade-ar-lote2-ind-2024",
+        "fuente": "UN Comtrade: comercio exterior de Argentina HS 390110/390120 (Polietileno), 390410 (PVC) y 120190 (Soja poroto) 2024",
+        "url": "https://comtradeapi.un.org/public/v1/preview/C/A/HS?reporterCode=32&period=2024&partnerCode=0&partner2Code=0&customsCode=C00&motCode=0&cmdCode=390110,390120,390410,120190",
+        "fecha_descarga": "2026-11-24",
+        "hash": "sha256:0ce593fa415610c3bf8866de3f82a5d306f8b483cbd1562b5e870cb812d9774f",
+        "cita_ubicacion": "UN Comtrade AR 2024 cmdCode=390120 (PE densidad >=0,94) flow=X/M primaryValue",
+        "confianza": "alta"
+      }
+    },
+    "saldo_comercial": {
+      "estado": "dato",
+      "valor": -114.47,
+      "unidad": "millones USD",
+      "procedencia": {
+        "anio": 2024,
+        "fuente_id": "uncomtrade-ar-lote2-ind-2024",
+        "fuente": "UN Comtrade: comercio exterior de Argentina HS 390110/390120 (Polietileno), 390410 (PVC) y 120190 (Soja poroto) 2024",
+        "url": "https://comtradeapi.un.org/public/v1/preview/C/A/HS?reporterCode=32&period=2024&partnerCode=0&partner2Code=0&customsCode=C00&motCode=0&cmdCode=390110,390120,390410,120190",
+        "fecha_descarga": "2026-11-24",
+        "hash": "sha256:0ce593fa415610c3bf8866de3f82a5d306f8b483cbd1562b5e870cb812d9774f",
+        "cita_ubicacion": "UN Comtrade AR 2024 cmdCode=390120 (PE densidad >=0,94) flow=X/M primaryValue",
+        "confianza": "alta"
+      }
+    },
+    "procedencia": {
+      "anio": 2024,
+      "fuente_id": "uncomtrade-ar-lote2-ind-2024",
+      "fuente": "UN Comtrade: comercio exterior de Argentina HS 390110/390120 (Polietileno), 390410 (PVC) y 120190 (Soja poroto) 2024",
+      "url": "https://comtradeapi.un.org/public/v1/preview/C/A/HS?reporterCode=32&period=2024&partnerCode=0&partner2Code=0&customsCode=C00&motCode=0&cmdCode=390110,390120,390410,120190",
+      "fecha_descarga": "2026-11-24",
+      "hash": "sha256:0ce593fa415610c3bf8866de3f82a5d306f8b483cbd1562b5e870cb812d9774f",
+      "cita_ubicacion": "UN Comtrade AR 2024 cmdCode=390120 (PE densidad >=0,94) flow=X/M primaryValue",
+      "confianza": "alta"
+    }
+  },
+  {
+    "registro_id": "comex-pe-390120-2023-usd",
+    "producto_id": "petroquimica",
+    "anio": 2023,
+    "ncm_codigo": "3901.20",
+    "metrica": "valor_usd",
+    "exportacion": {
+      "estado": "dato",
+      "valor": 97.56,
+      "unidad": "millones USD",
+      "procedencia": {
+        "anio": 2023,
+        "fuente_id": "uncomtrade-ar-lote2-ind-2023",
+        "fuente": "UN Comtrade: comercio exterior de Argentina HS 390110/390120 (Polietileno), 390410 (PVC) y 120190 (Soja poroto) 2023",
+        "url": "https://comtradeapi.un.org/public/v1/preview/C/A/HS?reporterCode=32&period=2023&partnerCode=0&partner2Code=0&customsCode=C00&motCode=0&cmdCode=390110,390120,390410,120190",
+        "fecha_descarga": "2026-11-24",
+        "hash": "sha256:04e836fa2465b831d632401a04bf530701a0fb5dcafaff62a87ba3ca6876240e",
+        "cita_ubicacion": "UN Comtrade AR 2023 cmdCode=390120 flow=X/M primaryValue",
+        "confianza": "alta"
+      }
+    },
+    "importacion": {
+      "estado": "dato",
+      "valor": 151.31,
+      "unidad": "millones USD",
+      "procedencia": {
+        "anio": 2023,
+        "fuente_id": "uncomtrade-ar-lote2-ind-2023",
+        "fuente": "UN Comtrade: comercio exterior de Argentina HS 390110/390120 (Polietileno), 390410 (PVC) y 120190 (Soja poroto) 2023",
+        "url": "https://comtradeapi.un.org/public/v1/preview/C/A/HS?reporterCode=32&period=2023&partnerCode=0&partner2Code=0&customsCode=C00&motCode=0&cmdCode=390110,390120,390410,120190",
+        "fecha_descarga": "2026-11-24",
+        "hash": "sha256:04e836fa2465b831d632401a04bf530701a0fb5dcafaff62a87ba3ca6876240e",
+        "cita_ubicacion": "UN Comtrade AR 2023 cmdCode=390120 flow=X/M primaryValue",
+        "confianza": "alta"
+      }
+    },
+    "saldo_comercial": {
+      "estado": "dato",
+      "valor": -53.75,
+      "unidad": "millones USD",
+      "procedencia": {
+        "anio": 2023,
+        "fuente_id": "uncomtrade-ar-lote2-ind-2023",
+        "fuente": "UN Comtrade: comercio exterior de Argentina HS 390110/390120 (Polietileno), 390410 (PVC) y 120190 (Soja poroto) 2023",
+        "url": "https://comtradeapi.un.org/public/v1/preview/C/A/HS?reporterCode=32&period=2023&partnerCode=0&partner2Code=0&customsCode=C00&motCode=0&cmdCode=390110,390120,390410,120190",
+        "fecha_descarga": "2026-11-24",
+        "hash": "sha256:04e836fa2465b831d632401a04bf530701a0fb5dcafaff62a87ba3ca6876240e",
+        "cita_ubicacion": "UN Comtrade AR 2023 cmdCode=390120 flow=X/M primaryValue",
+        "confianza": "alta"
+      }
+    },
+    "procedencia": {
+      "anio": 2023,
+      "fuente_id": "uncomtrade-ar-lote2-ind-2023",
+      "fuente": "UN Comtrade: comercio exterior de Argentina HS 390110/390120 (Polietileno), 390410 (PVC) y 120190 (Soja poroto) 2023",
+      "url": "https://comtradeapi.un.org/public/v1/preview/C/A/HS?reporterCode=32&period=2023&partnerCode=0&partner2Code=0&customsCode=C00&motCode=0&cmdCode=390110,390120,390410,120190",
+      "fecha_descarga": "2026-11-24",
+      "hash": "sha256:04e836fa2465b831d632401a04bf530701a0fb5dcafaff62a87ba3ca6876240e",
+      "cita_ubicacion": "UN Comtrade AR 2023 cmdCode=390120 flow=X/M primaryValue",
+      "confianza": "alta"
+    }
+  },
+  {
+    "registro_id": "comex-pvc-390410-2024-usd",
+    "producto_id": "petroquimica",
+    "anio": 2024,
+    "ncm_codigo": "3904.10",
+    "metrica": "valor_usd",
+    "exportacion": {
+      "estado": "sin_datos",
+      "valor": null,
+      "unidad": "millones USD",
+      "procedencia": {
+        "anio": 2024,
+        "fuente_id": "uncomtrade-ar-lote2-ind-2024",
+        "fuente": "UN Comtrade: comercio exterior de Argentina HS 390110/390120 (Polietileno), 390410 (PVC) y 120190 (Soja poroto) 2024",
+        "url": "https://comtradeapi.un.org/public/v1/preview/C/A/HS?reporterCode=32&period=2024&partnerCode=0&partner2Code=0&customsCode=C00&motCode=0&cmdCode=390110,390120,390410,120190",
+        "fecha_descarga": "2026-11-24",
+        "hash": "sha256:0ce593fa415610c3bf8866de3f82a5d306f8b483cbd1562b5e870cb812d9774f",
+        "cita_ubicacion": "UN Comtrade AR 2024 cmdCode=390410 (PVC sin mezclar) flow=M primaryValue (exp sin_datos)",
+        "confianza": "alta"
+      }
+    },
+    "importacion": {
+      "estado": "dato",
+      "valor": 7.74,
+      "unidad": "millones USD",
+      "procedencia": {
+        "anio": 2024,
+        "fuente_id": "uncomtrade-ar-lote2-ind-2024",
+        "fuente": "UN Comtrade: comercio exterior de Argentina HS 390110/390120 (Polietileno), 390410 (PVC) y 120190 (Soja poroto) 2024",
+        "url": "https://comtradeapi.un.org/public/v1/preview/C/A/HS?reporterCode=32&period=2024&partnerCode=0&partner2Code=0&customsCode=C00&motCode=0&cmdCode=390110,390120,390410,120190",
+        "fecha_descarga": "2026-11-24",
+        "hash": "sha256:0ce593fa415610c3bf8866de3f82a5d306f8b483cbd1562b5e870cb812d9774f",
+        "cita_ubicacion": "UN Comtrade AR 2024 cmdCode=390410 (PVC sin mezclar) flow=M primaryValue (exp sin_datos)",
+        "confianza": "alta"
+      }
+    },
+    "saldo_comercial": {
+      "estado": "sin_datos",
+      "valor": null,
+      "unidad": "millones USD",
+      "procedencia": {
+        "anio": 2024,
+        "fuente_id": "uncomtrade-ar-lote2-ind-2024",
+        "fuente": "UN Comtrade: comercio exterior de Argentina HS 390110/390120 (Polietileno), 390410 (PVC) y 120190 (Soja poroto) 2024",
+        "url": "https://comtradeapi.un.org/public/v1/preview/C/A/HS?reporterCode=32&period=2024&partnerCode=0&partner2Code=0&customsCode=C00&motCode=0&cmdCode=390110,390120,390410,120190",
+        "fecha_descarga": "2026-11-24",
+        "hash": "sha256:0ce593fa415610c3bf8866de3f82a5d306f8b483cbd1562b5e870cb812d9774f",
+        "cita_ubicacion": "UN Comtrade AR 2024 cmdCode=390410 (PVC sin mezclar) flow=M primaryValue (exp sin_datos)",
+        "confianza": "alta"
+      }
+    },
+    "procedencia": {
+      "anio": 2024,
+      "fuente_id": "uncomtrade-ar-lote2-ind-2024",
+      "fuente": "UN Comtrade: comercio exterior de Argentina HS 390110/390120 (Polietileno), 390410 (PVC) y 120190 (Soja poroto) 2024",
+      "url": "https://comtradeapi.un.org/public/v1/preview/C/A/HS?reporterCode=32&period=2024&partnerCode=0&partner2Code=0&customsCode=C00&motCode=0&cmdCode=390110,390120,390410,120190",
+      "fecha_descarga": "2026-11-24",
+      "hash": "sha256:0ce593fa415610c3bf8866de3f82a5d306f8b483cbd1562b5e870cb812d9774f",
+      "cita_ubicacion": "UN Comtrade AR 2024 cmdCode=390410 (PVC sin mezclar) flow=M primaryValue (exp sin_datos)",
+      "confianza": "alta"
+    }
+  },
+  {
+    "registro_id": "comex-biodiesel-382600-2024-usd",
+    "producto_id": "biodiesel",
+    "anio": 2024,
+    "ncm_codigo": "3826.00",
+    "metrica": "valor_usd",
+    "exportacion": {
+      "estado": "dato",
+      "valor": 252.2,
+      "unidad": "millones USD",
+      "procedencia": {
+        "anio": 2024,
+        "fuente_id": "uncomtrade-ar-lote2-agro-2024",
+        "fuente": "UN Comtrade: comercio exterior de Argentina HS 520100 (Algodón), 150710/230400 (Soja) y 382600 (Biodiésel) 2024",
+        "url": "https://comtradeapi.un.org/public/v1/preview/C/A/HS?reporterCode=32&period=2024&partnerCode=0&partner2Code=0&customsCode=C00&motCode=0&cmdCode=520100,150710,230400,382600",
+        "fecha_descarga": "2026-11-24",
+        "hash": "sha256:6903f23febd3bd252ce0a4cfeb667b824cdc10a00e80432321f5dcd288229e40",
+        "cita_ubicacion": "UN Comtrade AR 2024 cmdCode=382600 flow=X/M primaryValue (USD 252,20 M exp)",
+        "confianza": "alta"
+      }
+    },
+    "importacion": {
+      "estado": "dato",
+      "valor": 0.05,
+      "unidad": "millones USD",
+      "procedencia": {
+        "anio": 2024,
+        "fuente_id": "uncomtrade-ar-lote2-agro-2024",
+        "fuente": "UN Comtrade: comercio exterior de Argentina HS 520100 (Algodón), 150710/230400 (Soja) y 382600 (Biodiésel) 2024",
+        "url": "https://comtradeapi.un.org/public/v1/preview/C/A/HS?reporterCode=32&period=2024&partnerCode=0&partner2Code=0&customsCode=C00&motCode=0&cmdCode=520100,150710,230400,382600",
+        "fecha_descarga": "2026-11-24",
+        "hash": "sha256:6903f23febd3bd252ce0a4cfeb667b824cdc10a00e80432321f5dcd288229e40",
+        "cita_ubicacion": "UN Comtrade AR 2024 cmdCode=382600 flow=X/M primaryValue (USD 252,20 M exp)",
+        "confianza": "alta"
+      }
+    },
+    "saldo_comercial": {
+      "estado": "dato",
+      "valor": 252.15,
+      "unidad": "millones USD",
+      "procedencia": {
+        "anio": 2024,
+        "fuente_id": "uncomtrade-ar-lote2-agro-2024",
+        "fuente": "UN Comtrade: comercio exterior de Argentina HS 520100 (Algodón), 150710/230400 (Soja) y 382600 (Biodiésel) 2024",
+        "url": "https://comtradeapi.un.org/public/v1/preview/C/A/HS?reporterCode=32&period=2024&partnerCode=0&partner2Code=0&customsCode=C00&motCode=0&cmdCode=520100,150710,230400,382600",
+        "fecha_descarga": "2026-11-24",
+        "hash": "sha256:6903f23febd3bd252ce0a4cfeb667b824cdc10a00e80432321f5dcd288229e40",
+        "cita_ubicacion": "UN Comtrade AR 2024 cmdCode=382600 flow=X/M primaryValue (USD 252,20 M exp)",
+        "confianza": "alta"
+      }
+    },
+    "procedencia": {
+      "anio": 2024,
+      "fuente_id": "uncomtrade-ar-lote2-agro-2024",
+      "fuente": "UN Comtrade: comercio exterior de Argentina HS 520100 (Algodón), 150710/230400 (Soja) y 382600 (Biodiésel) 2024",
+      "url": "https://comtradeapi.un.org/public/v1/preview/C/A/HS?reporterCode=32&period=2024&partnerCode=0&partner2Code=0&customsCode=C00&motCode=0&cmdCode=520100,150710,230400,382600",
+      "fecha_descarga": "2026-11-24",
+      "hash": "sha256:6903f23febd3bd252ce0a4cfeb667b824cdc10a00e80432321f5dcd288229e40",
+      "cita_ubicacion": "UN Comtrade AR 2024 cmdCode=382600 flow=X/M primaryValue (USD 252,20 M exp)",
+      "confianza": "alta"
+    }
+  },
+  {
+    "registro_id": "comex-biodiesel-382600-2024-t",
+    "producto_id": "biodiesel",
+    "anio": 2024,
+    "ncm_codigo": "3826.00",
+    "metrica": "volumen_t",
+    "exportacion": {
+      "estado": "dato",
+      "valor": 246374,
+      "unidad": "t biodiésel",
+      "procedencia": {
+        "anio": 2024,
+        "fuente_id": "uncomtrade-ar-lote2-agro-2024",
+        "fuente": "UN Comtrade: comercio exterior de Argentina HS 520100 (Algodón), 150710/230400 (Soja) y 382600 (Biodiésel) 2024",
+        "url": "https://comtradeapi.un.org/public/v1/preview/C/A/HS?reporterCode=32&period=2024&partnerCode=0&partner2Code=0&customsCode=C00&motCode=0&cmdCode=520100,150710,230400,382600",
+        "fecha_descarga": "2026-11-24",
+        "hash": "sha256:6903f23febd3bd252ce0a4cfeb667b824cdc10a00e80432321f5dcd288229e40",
+        "cita_ubicacion": "UN Comtrade AR 2024 cmdCode=382600 flow=X/M netWgt_kg (246.374 t exp)",
+        "confianza": "alta"
+      }
+    },
+    "importacion": {
+      "estado": "dato",
+      "valor": 37.2,
+      "unidad": "t biodiésel",
+      "procedencia": {
+        "anio": 2024,
+        "fuente_id": "uncomtrade-ar-lote2-agro-2024",
+        "fuente": "UN Comtrade: comercio exterior de Argentina HS 520100 (Algodón), 150710/230400 (Soja) y 382600 (Biodiésel) 2024",
+        "url": "https://comtradeapi.un.org/public/v1/preview/C/A/HS?reporterCode=32&period=2024&partnerCode=0&partner2Code=0&customsCode=C00&motCode=0&cmdCode=520100,150710,230400,382600",
+        "fecha_descarga": "2026-11-24",
+        "hash": "sha256:6903f23febd3bd252ce0a4cfeb667b824cdc10a00e80432321f5dcd288229e40",
+        "cita_ubicacion": "UN Comtrade AR 2024 cmdCode=382600 flow=X/M netWgt_kg (246.374 t exp)",
+        "confianza": "alta"
+      }
+    },
+    "saldo_comercial": {
+      "estado": "dato",
+      "valor": 246336.8,
+      "unidad": "t biodiésel",
+      "procedencia": {
+        "anio": 2024,
+        "fuente_id": "uncomtrade-ar-lote2-agro-2024",
+        "fuente": "UN Comtrade: comercio exterior de Argentina HS 520100 (Algodón), 150710/230400 (Soja) y 382600 (Biodiésel) 2024",
+        "url": "https://comtradeapi.un.org/public/v1/preview/C/A/HS?reporterCode=32&period=2024&partnerCode=0&partner2Code=0&customsCode=C00&motCode=0&cmdCode=520100,150710,230400,382600",
+        "fecha_descarga": "2026-11-24",
+        "hash": "sha256:6903f23febd3bd252ce0a4cfeb667b824cdc10a00e80432321f5dcd288229e40",
+        "cita_ubicacion": "UN Comtrade AR 2024 cmdCode=382600 flow=X/M netWgt_kg (246.374 t exp)",
+        "confianza": "alta"
+      }
+    },
+    "procedencia": {
+      "anio": 2024,
+      "fuente_id": "uncomtrade-ar-lote2-agro-2024",
+      "fuente": "UN Comtrade: comercio exterior de Argentina HS 520100 (Algodón), 150710/230400 (Soja) y 382600 (Biodiésel) 2024",
+      "url": "https://comtradeapi.un.org/public/v1/preview/C/A/HS?reporterCode=32&period=2024&partnerCode=0&partner2Code=0&customsCode=C00&motCode=0&cmdCode=520100,150710,230400,382600",
+      "fecha_descarga": "2026-11-24",
+      "hash": "sha256:6903f23febd3bd252ce0a4cfeb667b824cdc10a00e80432321f5dcd288229e40",
+      "cita_ubicacion": "UN Comtrade AR 2024 cmdCode=382600 flow=X/M netWgt_kg (246.374 t exp)",
+      "confianza": "alta"
+    }
+  },
+  {
+    "registro_id": "comex-biodiesel-382600-2023-usd",
+    "producto_id": "biodiesel",
+    "anio": 2023,
+    "ncm_codigo": "3826.00",
+    "metrica": "valor_usd",
+    "exportacion": {
+      "estado": "dato",
+      "valor": 319.71,
+      "unidad": "millones USD",
+      "procedencia": {
+        "anio": 2023,
+        "fuente_id": "uncomtrade-ar-lote2-agro-2023",
+        "fuente": "UN Comtrade: comercio exterior de Argentina HS 520100 (Algodón), 150710/230400 (Soja) y 382600 (Biodiésel) 2023",
+        "url": "https://comtradeapi.un.org/public/v1/preview/C/A/HS?reporterCode=32&period=2023&partnerCode=0&partner2Code=0&customsCode=C00&motCode=0&cmdCode=520100,150710,230400,382600",
+        "fecha_descarga": "2026-11-24",
+        "hash": "sha256:23308cd7e21d66fc6d854fee155c7a32acf4790f15f7f35d9e314b6ef9226adc",
+        "cita_ubicacion": "UN Comtrade AR 2023 cmdCode=382600 flow=X/M primaryValue (USD 319,71 M exp)",
+        "confianza": "alta"
+      }
+    },
+    "importacion": {
+      "estado": "dato",
+      "valor": 0.11,
+      "unidad": "millones USD",
+      "procedencia": {
+        "anio": 2023,
+        "fuente_id": "uncomtrade-ar-lote2-agro-2023",
+        "fuente": "UN Comtrade: comercio exterior de Argentina HS 520100 (Algodón), 150710/230400 (Soja) y 382600 (Biodiésel) 2023",
+        "url": "https://comtradeapi.un.org/public/v1/preview/C/A/HS?reporterCode=32&period=2023&partnerCode=0&partner2Code=0&customsCode=C00&motCode=0&cmdCode=520100,150710,230400,382600",
+        "fecha_descarga": "2026-11-24",
+        "hash": "sha256:23308cd7e21d66fc6d854fee155c7a32acf4790f15f7f35d9e314b6ef9226adc",
+        "cita_ubicacion": "UN Comtrade AR 2023 cmdCode=382600 flow=X/M primaryValue (USD 319,71 M exp)",
+        "confianza": "alta"
+      }
+    },
+    "saldo_comercial": {
+      "estado": "dato",
+      "valor": 319.6,
+      "unidad": "millones USD",
+      "procedencia": {
+        "anio": 2023,
+        "fuente_id": "uncomtrade-ar-lote2-agro-2023",
+        "fuente": "UN Comtrade: comercio exterior de Argentina HS 520100 (Algodón), 150710/230400 (Soja) y 382600 (Biodiésel) 2023",
+        "url": "https://comtradeapi.un.org/public/v1/preview/C/A/HS?reporterCode=32&period=2023&partnerCode=0&partner2Code=0&customsCode=C00&motCode=0&cmdCode=520100,150710,230400,382600",
+        "fecha_descarga": "2026-11-24",
+        "hash": "sha256:23308cd7e21d66fc6d854fee155c7a32acf4790f15f7f35d9e314b6ef9226adc",
+        "cita_ubicacion": "UN Comtrade AR 2023 cmdCode=382600 flow=X/M primaryValue (USD 319,71 M exp)",
+        "confianza": "alta"
+      }
+    },
+    "procedencia": {
+      "anio": 2023,
+      "fuente_id": "uncomtrade-ar-lote2-agro-2023",
+      "fuente": "UN Comtrade: comercio exterior de Argentina HS 520100 (Algodón), 150710/230400 (Soja) y 382600 (Biodiésel) 2023",
+      "url": "https://comtradeapi.un.org/public/v1/preview/C/A/HS?reporterCode=32&period=2023&partnerCode=0&partner2Code=0&customsCode=C00&motCode=0&cmdCode=520100,150710,230400,382600",
+      "fecha_descarga": "2026-11-24",
+      "hash": "sha256:23308cd7e21d66fc6d854fee155c7a32acf4790f15f7f35d9e314b6ef9226adc",
+      "cita_ubicacion": "UN Comtrade AR 2023 cmdCode=382600 flow=X/M primaryValue (USD 319,71 M exp)",
+      "confianza": "alta"
+    }
+  },
+  {
+    "registro_id": "comex-biodiesel-382600-2023-t",
+    "producto_id": "biodiesel",
+    "anio": 2023,
+    "ncm_codigo": "3826.00",
+    "metrica": "volumen_t",
+    "exportacion": {
+      "estado": "dato",
+      "valor": 264600,
+      "unidad": "t biodiésel",
+      "procedencia": {
+        "anio": 2023,
+        "fuente_id": "uncomtrade-ar-lote2-agro-2023",
+        "fuente": "UN Comtrade: comercio exterior de Argentina HS 520100 (Algodón), 150710/230400 (Soja) y 382600 (Biodiésel) 2023",
+        "url": "https://comtradeapi.un.org/public/v1/preview/C/A/HS?reporterCode=32&period=2023&partnerCode=0&partner2Code=0&customsCode=C00&motCode=0&cmdCode=520100,150710,230400,382600",
+        "fecha_descarga": "2026-11-24",
+        "hash": "sha256:23308cd7e21d66fc6d854fee155c7a32acf4790f15f7f35d9e314b6ef9226adc",
+        "cita_ubicacion": "UN Comtrade AR 2023 cmdCode=382600 flow=X/M netWgt_kg (264.600 t exp)",
+        "confianza": "alta"
+      }
+    },
+    "importacion": {
+      "estado": "dato",
+      "valor": 48.6,
+      "unidad": "t biodiésel",
+      "procedencia": {
+        "anio": 2023,
+        "fuente_id": "uncomtrade-ar-lote2-agro-2023",
+        "fuente": "UN Comtrade: comercio exterior de Argentina HS 520100 (Algodón), 150710/230400 (Soja) y 382600 (Biodiésel) 2023",
+        "url": "https://comtradeapi.un.org/public/v1/preview/C/A/HS?reporterCode=32&period=2023&partnerCode=0&partner2Code=0&customsCode=C00&motCode=0&cmdCode=520100,150710,230400,382600",
+        "fecha_descarga": "2026-11-24",
+        "hash": "sha256:23308cd7e21d66fc6d854fee155c7a32acf4790f15f7f35d9e314b6ef9226adc",
+        "cita_ubicacion": "UN Comtrade AR 2023 cmdCode=382600 flow=X/M netWgt_kg (264.600 t exp)",
+        "confianza": "alta"
+      }
+    },
+    "saldo_comercial": {
+      "estado": "dato",
+      "valor": 264551.4,
+      "unidad": "t biodiésel",
+      "procedencia": {
+        "anio": 2023,
+        "fuente_id": "uncomtrade-ar-lote2-agro-2023",
+        "fuente": "UN Comtrade: comercio exterior de Argentina HS 520100 (Algodón), 150710/230400 (Soja) y 382600 (Biodiésel) 2023",
+        "url": "https://comtradeapi.un.org/public/v1/preview/C/A/HS?reporterCode=32&period=2023&partnerCode=0&partner2Code=0&customsCode=C00&motCode=0&cmdCode=520100,150710,230400,382600",
+        "fecha_descarga": "2026-11-24",
+        "hash": "sha256:23308cd7e21d66fc6d854fee155c7a32acf4790f15f7f35d9e314b6ef9226adc",
+        "cita_ubicacion": "UN Comtrade AR 2023 cmdCode=382600 flow=X/M netWgt_kg (264.600 t exp)",
+        "confianza": "alta"
+      }
+    },
+    "procedencia": {
+      "anio": 2023,
+      "fuente_id": "uncomtrade-ar-lote2-agro-2023",
+      "fuente": "UN Comtrade: comercio exterior de Argentina HS 520100 (Algodón), 150710/230400 (Soja) y 382600 (Biodiésel) 2023",
+      "url": "https://comtradeapi.un.org/public/v1/preview/C/A/HS?reporterCode=32&period=2023&partnerCode=0&partner2Code=0&customsCode=C00&motCode=0&cmdCode=520100,150710,230400,382600",
+      "fecha_descarga": "2026-11-24",
+      "hash": "sha256:23308cd7e21d66fc6d854fee155c7a32acf4790f15f7f35d9e314b6ef9226adc",
+      "cita_ubicacion": "UN Comtrade AR 2023 cmdCode=382600 flow=X/M netWgt_kg (264.600 t exp)",
+      "confianza": "alta"
+    }
   }
 ]

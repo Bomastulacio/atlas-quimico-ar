@@ -49,5 +49,90 @@
       "cita_ubicacion": "EECC-31-12-25.pdf pág. 4, 6, 78-79 y 88 (Memoria y Reseña Informativa)",
       "confianza": "alta"
     }
+  },
+  {
+    "empresa_id": "buyatti-saica",
+    "razon_social": "Buyatti S.A.I.C.A.",
+    "tipo_capital": "nacional",
+    "sitio_web_oficial": "https://buyatti.com.ar/",
+    "hechos_verificables": "Complejo agroindustrial con planta de desmote y procesamiento de semillas de algodón en Las Breñas (Depto. 9 de Julio, Chaco) y plantas oleaginosas en Reconquista y Puerto General San Martín (Santa Fe).",
+    "procedencia": {
+      "anio": 2026,
+      "fuente_id": "buyatti-web-2026",
+      "fuente": "Plantas industriales y desmote de algodón (Buyatti S.A.I.C.A.)",
+      "url": "https://buyatti.com.ar/",
+      "fecha_descarga": "2026-11-24",
+      "hash": "sha256:7f9e25e1da5fd7163415c3d5b08c73b5a2d1b577b93b10de4dca14cc16395e01",
+      "cita_ubicacion": "buyatti.com.ar (desmote y procesamiento de semilla de algodón, Las Breñas, Chaco)",
+      "confianza": "alta"
+    }
+  },
+  {
+    "empresa_id": "renova-sa",
+    "razon_social": "Renova S.A.",
+    "tipo_capital": "mixto",
+    "sitio_web_oficial": "https://renova.com.ar/",
+    "hechos_verificables": "Opera en Timbúes (Depto. San Lorenzo, Santa Fe) uno de los mayores complejos de molienda de soja del mundo (32.400 t/día, recepción 60.000 t/día camiones y 15.000 t/día barcazas), además de planta de biodiésel (1.450 t/día) y glicerina refinada (270 t/día) en San Lorenzo.",
+    "procedencia": {
+      "anio": 2026,
+      "fuente_id": "renova-web-2026",
+      "fuente": "Fichas operativas oficiales de Plantas Timbúes y San Lorenzo (Renova S.A.)",
+      "url": "https://renova.com.ar/",
+      "fecha_descarga": "2026-11-24",
+      "hash": "sha256:2a9c82604e9b4a60998bca222a36e3c5147c0a66dc671730e7b9a2af2421204d",
+      "cita_ubicacion": "renova.com.ar (Planta Timbúes 32.400 t/día molienda; Planta San Lorenzo 1.450 t/día biodiésel)",
+      "confianza": "alta"
+    }
+  },
+  {
+    "empresa_id": "molinos-agro-sa",
+    "razon_social": "Molinos Agro S.A.",
+    "tipo_capital": "nacional",
+    "sitio_web_oficial": "https://molinosagro.com.ar/",
+    "hechos_verificables": "Opera el complejo industrial y Puerto San Benito en San Lorenzo (Santa Fe) con capacidad de molienda declarada de 6.000.000 t/año de poroto de soja, embarcando 5% del comercio mundial de harina y 4% del aceite de soja.",
+    "procedencia": {
+      "anio": 2026,
+      "fuente_id": "molinosagro-web-2026",
+      "fuente": "Ficha de capacidad industrial Puerto San Benito (Molinos Agro S.A.)",
+      "url": "https://molinosagro.com.ar/nuestro-negocio/",
+      "fecha_descarga": "2026-11-24",
+      "hash": "sha256:cc3b5a0e525cb497f7750c973ad8f134caa4839b7fbaaf9da26cce5d3a0a4875",
+      "cita_ubicacion": "molinosagro.com.ar/nuestro-negocio/ (Puerto San Benito: 6.000.000 t/año molienda soja)",
+      "confianza": "alta"
+    }
+  },
+  {
+    "empresa_id": "dow-pbbpolisur",
+    "razon_social": "Dow Argentina (PBBPolisur S.R.L.)",
+    "tipo_capital": "extranjero",
+    "sitio_web_oficial": "https://ar.dow.com/es-ar.html",
+    "hechos_verificables": "Opera en Bahía Blanca el complejo petroquímico más grande de América Latina, con seis plantas productivas (2 de etileno y 4 de polietileno LDPE, LLDPE y HDPE).",
+    "procedencia": {
+      "anio": 2026,
+      "fuente_id": "dow-argentina-web-2026",
+      "fuente": "Perfil oficial de operaciones en Argentina y Complejo Bahía Blanca (Dow Argentina)",
+      "url": "https://ar.dow.com/es-ar.html",
+      "fecha_descarga": "2026-11-24",
+      "hash": "sha256:37eb576cb7e3c6ea56143c9d668799c30fc2ee4bd2019ada561e42cbc6fff323",
+      "cita_ubicacion": "ar.dow.com/es-ar.html (seis plantas: 2 de etileno y 4 de polietileno en Bahía Blanca)",
+      "confianza": "alta"
+    }
+  },
+  {
+    "empresa_id": "unipar-indupa",
+    "razon_social": "Unipar Indupa S.A.I.C.",
+    "tipo_capital": "extranjero",
+    "sitio_web_oficial": "https://unipar.com/es/acerca-de-unipar",
+    "hechos_verificables": "Opera en el Polo Petroquímico de Bahía Blanca el complejo cloro-álcali y vinílico que elabora cloro, soda cáustica y policloruro de vinilo (PVC).",
+    "procedencia": {
+      "anio": 2026,
+      "fuente_id": "unipar-acerca-2026",
+      "fuente": "Perfil institucional y unidad productiva Bahía Blanca (Unipar Indupa S.A.I.C.)",
+      "url": "https://unipar.com/es/acerca-de-unipar",
+      "fecha_descarga": "2026-11-25",
+      "hash": "sha256:078744f42c406f68aa33110931629fe7dfa3cd9c6544791837111532d225a6f8",
+      "cita_ubicacion": "unipar.com/es/acerca-de-unipar (unidad Bahía Blanca: cloro, soda cáustica y PVC)",
+      "confianza": "alta"
+    }
   }
 ]

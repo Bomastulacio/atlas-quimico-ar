@@ -18,78 +18,6 @@
     }
   },
   {
-    "relacion_id": "petroquimica-06-06056",
-    "producto_id": "petroquimica",
-    "provincia_id": "06",
-    "departamento_id": "06056",
-    "es_dominante": false,
-    "rol_en_cadena": "procesamiento",
-    "procedencia": {
-      "anio": 2024,
-      "fuente_id": "ejemplo-fuente-01",
-      "fuente": "[EJEMPLO] Marcador territorial demostrativo para cadenas MVP pendientes de Etapa 6",
-      "url": "https://example.org/atlas-quimico-ar/mvp-pendiente",
-      "fecha_descarga": "2026-11-24",
-      "hash": "sha256:e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
-      "cita_ubicacion": "plan-mvp:pendiente-etapa-6",
-      "confianza": "ejemplo"
-    }
-  },
-  {
-    "relacion_id": "algodon-22",
-    "producto_id": "algodon",
-    "provincia_id": "22",
-    "departamento_id": null,
-    "es_dominante": true,
-    "rol_en_cadena": "procesamiento",
-    "procedencia": {
-      "anio": 2024,
-      "fuente_id": "ejemplo-fuente-01",
-      "fuente": "[EJEMPLO] Marcador territorial demostrativo para cadenas MVP pendientes de Etapa 6",
-      "url": "https://example.org/atlas-quimico-ar/mvp-pendiente",
-      "fecha_descarga": "2026-11-24",
-      "hash": "sha256:e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
-      "cita_ubicacion": "plan-mvp:pendiente-etapa-6",
-      "confianza": "ejemplo"
-    }
-  },
-  {
-    "relacion_id": "soja-82-82084",
-    "producto_id": "soja",
-    "provincia_id": "82",
-    "departamento_id": "82084",
-    "es_dominante": true,
-    "rol_en_cadena": "procesamiento",
-    "procedencia": {
-      "anio": 2024,
-      "fuente_id": "ejemplo-fuente-01",
-      "fuente": "[EJEMPLO] Marcador territorial demostrativo para cadenas MVP pendientes de Etapa 6",
-      "url": "https://example.org/atlas-quimico-ar/mvp-pendiente",
-      "fecha_descarga": "2026-11-24",
-      "hash": "sha256:e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
-      "cita_ubicacion": "plan-mvp:pendiente-etapa-6",
-      "confianza": "ejemplo"
-    }
-  },
-  {
-    "relacion_id": "biodiesel-82-82084",
-    "producto_id": "biodiesel",
-    "provincia_id": "82",
-    "departamento_id": "82084",
-    "es_dominante": false,
-    "rol_en_cadena": "sintesis",
-    "procedencia": {
-      "anio": 2024,
-      "fuente_id": "ejemplo-fuente-01",
-      "fuente": "[EJEMPLO] Marcador territorial demostrativo para cadenas MVP pendientes de Etapa 6",
-      "url": "https://example.org/atlas-quimico-ar/mvp-pendiente",
-      "fecha_descarga": "2026-11-24",
-      "hash": "sha256:e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
-      "cita_ubicacion": "plan-mvp:pendiente-etapa-6",
-      "confianza": "ejemplo"
-    }
-  },
-  {
     "relacion_id": "litio-38",
     "producto_id": "litio",
     "provincia_id": "38",
@@ -158,6 +86,78 @@
       "fecha_descarga": "2026-11-24",
       "hash": "sha256:d7bf53b4394beebd03259645c41196aaa27ce657ded8cfc71fc1f007f34843f3",
       "cita_ubicacion": "EECC-31-12-25.pdf pág. 4 y 88 (Planta Ingeniero White, Bahía Blanca)",
+      "confianza": "alta"
+    }
+  },
+  {
+    "relacion_id": "algodon-22",
+    "producto_id": "algodon",
+    "provincia_id": "22",
+    "departamento_id": "22105",
+    "es_dominante": true,
+    "rol_en_cadena": "procesamiento",
+    "procedencia": {
+      "anio": 2025,
+      "fuente_id": "sagyp-estimaciones-2026-03",
+      "fuente": "Estimaciones Agrícolas por provincia y departamento (actualización marzo 2026)",
+      "url": "https://datos.magyp.gob.ar/dataset/9e1e77ba-267e-4eaa-a59f-3296e86b5f36/resource/95d066e6-8a0f-4a80-b59d-6f28f88eacd5/download/estimaciones-agricolas-2026-03.csv",
+      "fecha_descarga": "2026-11-24",
+      "hash": "sha256:7a47a6d356258a69ce0010031f9b2f45ea4c873901d8f812c7c394d9946f9395",
+      "cita_ubicacion": "estimaciones-agricolas-2026-03.csv (Chaco) y buyatti.com.ar (Las Breñas)",
+      "confianza": "alta"
+    }
+  },
+  {
+    "relacion_id": "petroquimica-06-06056",
+    "producto_id": "petroquimica",
+    "provincia_id": "06",
+    "departamento_id": "06056",
+    "es_dominante": false,
+    "rol_en_cadena": "procesamiento",
+    "procedencia": {
+      "anio": 2026,
+      "fuente_id": "dow-argentina-web-2026",
+      "fuente": "Perfil oficial de operaciones en Argentina y Complejo Bahía Blanca (Dow Argentina)",
+      "url": "https://ar.dow.com/es-ar.html",
+      "fecha_descarga": "2026-11-24",
+      "hash": "sha256:37eb576cb7e3c6ea56143c9d668799c30fc2ee4bd2019ada561e42cbc6fff323",
+      "cita_ubicacion": "ar.dow.com/es-ar.html y unipar.com/es/acerca-de-unipar (Bahía Blanca)",
+      "confianza": "alta"
+    }
+  },
+  {
+    "relacion_id": "soja-82-82084",
+    "producto_id": "soja",
+    "provincia_id": "82",
+    "departamento_id": "82119",
+    "es_dominante": true,
+    "rol_en_cadena": "procesamiento",
+    "procedencia": {
+      "anio": 2026,
+      "fuente_id": "renova-web-2026",
+      "fuente": "Fichas operativas oficiales de Plantas Timbúes y San Lorenzo (Renova S.A.)",
+      "url": "https://renova.com.ar/",
+      "fecha_descarga": "2026-11-24",
+      "hash": "sha256:2a9c82604e9b4a60998bca222a36e3c5147c0a66dc671730e7b9a2af2421204d",
+      "cita_ubicacion": "renova.com.ar (Timbúes) y molinosagro.com.ar/nuestro-negocio/ (San Lorenzo)",
+      "confianza": "alta"
+    }
+  },
+  {
+    "relacion_id": "biodiesel-82-82084",
+    "producto_id": "biodiesel",
+    "provincia_id": "82",
+    "departamento_id": "82119",
+    "es_dominante": false,
+    "rol_en_cadena": "sintesis",
+    "procedencia": {
+      "anio": 2024,
+      "fuente_id": "se-biocombustibles-2026",
+      "fuente": "Estadísticas oficiales de Producción, Ventas y Exportaciones de Biodiésel y Bioetanol",
+      "url": "https://www.energia.gob.ar/contenidos/archivos/Reorganizacion/informacion_del_mercado/mercado_hidrocarburos/bio/estadisticas_biocombustibles.xls",
+      "fecha_descarga": "2026-11-25",
+      "hash": "sha256:57bdb23af88de8b8cf6eee977e24141725d6f63b15facf196e34f63364e73ffb",
+      "cita_ubicacion": "estadisticas_biocombustibles.xls y renova.com.ar (San Lorenzo, Santa Fe)",
       "confianza": "alta"
     }
   }

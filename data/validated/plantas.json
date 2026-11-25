@@ -183,5 +183,227 @@
       "cita_ubicacion": "profertil.com.ar/index.php/que-hacemos (capacidad 1.320.000 t urea y 790.000 t amoníaco)",
       "confianza": "alta"
     }
+  },
+  {
+    "planta_id": "buyatti-las-brenas",
+    "empresa_id": "buyatti-saica",
+    "producto_id": "algodon",
+    "provincia_id": "22",
+    "departamento_id": "22105",
+    "nombre": "Planta Desmotadora Buyatti (Las Breñas)",
+    "localidad": "Las Breñas",
+    "lat": -27.09,
+    "lon": -61.081,
+    "estado_operativo": "operativa",
+    "capacidad": {
+      "estado": "sin_datos",
+      "valor": null,
+      "unidad": "t/año fibra",
+      "procedencia": {
+        "anio": 2026,
+        "fuente_id": "buyatti-web-2026",
+        "fuente": "Plantas industriales y desmote de algodón (Buyatti S.A.I.C.A.)",
+        "url": "https://buyatti.com.ar/",
+        "fecha_descarga": "2026-11-24",
+        "hash": "sha256:7f9e25e1da5fd7163415c3d5b08c73b5a2d1b577b93b10de4dca14cc16395e01",
+        "cita_ubicacion": "buyatti.com.ar (desmote y procesamiento de semilla de algodón, Las Breñas, Chaco)",
+        "confianza": "alta"
+      }
+    },
+    "procedencia": {
+      "anio": 2026,
+      "fuente_id": "buyatti-web-2026",
+      "fuente": "Plantas industriales y desmote de algodón (Buyatti S.A.I.C.A.)",
+      "url": "https://buyatti.com.ar/",
+      "fecha_descarga": "2026-11-24",
+      "hash": "sha256:7f9e25e1da5fd7163415c3d5b08c73b5a2d1b577b93b10de4dca14cc16395e01",
+      "cita_ubicacion": "buyatti.com.ar (desmote y procesamiento de semilla de algodón, Las Breñas, Chaco)",
+      "confianza": "alta"
+    }
+  },
+  {
+    "planta_id": "renova-timbues-crushing",
+    "empresa_id": "renova-sa",
+    "producto_id": "soja",
+    "provincia_id": "82",
+    "departamento_id": "82119",
+    "nombre": "Complejo Renova Timbúes (Molienda de soja)",
+    "localidad": "Timbúes",
+    "lat": -32.662,
+    "lon": -60.752,
+    "estado_operativo": "operativa",
+    "capacidad": {
+      "estado": "dato",
+      "valor": 32400,
+      "unidad": "t/día molienda de soja",
+      "procedencia": {
+        "anio": 2026,
+        "fuente_id": "renova-web-2026",
+        "fuente": "Fichas operativas oficiales de Plantas Timbúes y San Lorenzo (Renova S.A.)",
+        "url": "https://renova.com.ar/",
+        "fecha_descarga": "2026-11-24",
+        "hash": "sha256:2a9c82604e9b4a60998bca222a36e3c5147c0a66dc671730e7b9a2af2421204d",
+        "cita_ubicacion": "renova.com.ar (Planta Timbúes 32.400 t/día molienda; Planta San Lorenzo 1.450 t/día biodiésel)",
+        "confianza": "alta"
+      }
+    },
+    "procedencia": {
+      "anio": 2026,
+      "fuente_id": "renova-web-2026",
+      "fuente": "Fichas operativas oficiales de Plantas Timbúes y San Lorenzo (Renova S.A.)",
+      "url": "https://renova.com.ar/",
+      "fecha_descarga": "2026-11-24",
+      "hash": "sha256:2a9c82604e9b4a60998bca222a36e3c5147c0a66dc671730e7b9a2af2421204d",
+      "cita_ubicacion": "renova.com.ar (Planta Timbúes 32.400 t/día molienda; Planta San Lorenzo 1.450 t/día biodiésel)",
+      "confianza": "alta"
+    }
+  },
+  {
+    "planta_id": "molinos-agro-san-lorenzo",
+    "empresa_id": "molinos-agro-sa",
+    "producto_id": "soja",
+    "provincia_id": "82",
+    "departamento_id": "82119",
+    "nombre": "Complejo Molinos Agro (Puerto San Benito)",
+    "localidad": "San Lorenzo",
+    "lat": -32.735,
+    "lon": -60.728,
+    "estado_operativo": "operativa",
+    "capacidad": {
+      "estado": "dato",
+      "valor": 6000000,
+      "unidad": "t/año molienda de soja",
+      "procedencia": {
+        "anio": 2026,
+        "fuente_id": "molinosagro-web-2026",
+        "fuente": "Ficha de capacidad industrial Puerto San Benito (Molinos Agro S.A.)",
+        "url": "https://molinosagro.com.ar/nuestro-negocio/",
+        "fecha_descarga": "2026-11-24",
+        "hash": "sha256:cc3b5a0e525cb497f7750c973ad8f134caa4839b7fbaaf9da26cce5d3a0a4875",
+        "cita_ubicacion": "molinosagro.com.ar/nuestro-negocio/ (Puerto San Benito: 6.000.000 t/año molienda soja)",
+        "confianza": "alta"
+      }
+    },
+    "procedencia": {
+      "anio": 2026,
+      "fuente_id": "molinosagro-web-2026",
+      "fuente": "Ficha de capacidad industrial Puerto San Benito (Molinos Agro S.A.)",
+      "url": "https://molinosagro.com.ar/nuestro-negocio/",
+      "fecha_descarga": "2026-11-24",
+      "hash": "sha256:cc3b5a0e525cb497f7750c973ad8f134caa4839b7fbaaf9da26cce5d3a0a4875",
+      "cita_ubicacion": "molinosagro.com.ar/nuestro-negocio/ (Puerto San Benito: 6.000.000 t/año molienda soja)",
+      "confianza": "alta"
+    }
+  },
+  {
+    "planta_id": "dow-polo-bahia-blanca",
+    "empresa_id": "dow-pbbpolisur",
+    "producto_id": "petroquimica",
+    "provincia_id": "06",
+    "departamento_id": "06056",
+    "nombre": "Complejo Dow Bahía Blanca (2 Crackers Etileno + 4 Polietileno)",
+    "localidad": "Bahía Blanca",
+    "lat": -38.774,
+    "lon": -62.299,
+    "estado_operativo": "operativa",
+    "capacidad": {
+      "estado": "sin_datos",
+      "valor": null,
+      "unidad": "t/año etileno/PE",
+      "procedencia": {
+        "anio": 2026,
+        "fuente_id": "dow-argentina-web-2026",
+        "fuente": "Perfil oficial de operaciones en Argentina y Complejo Bahía Blanca (Dow Argentina)",
+        "url": "https://ar.dow.com/es-ar.html",
+        "fecha_descarga": "2026-11-24",
+        "hash": "sha256:37eb576cb7e3c6ea56143c9d668799c30fc2ee4bd2019ada561e42cbc6fff323",
+        "cita_ubicacion": "ar.dow.com/es-ar.html (seis plantas: 2 de etileno y 4 de polietileno en Bahía Blanca)",
+        "confianza": "alta"
+      }
+    },
+    "procedencia": {
+      "anio": 2026,
+      "fuente_id": "dow-argentina-web-2026",
+      "fuente": "Perfil oficial de operaciones en Argentina y Complejo Bahía Blanca (Dow Argentina)",
+      "url": "https://ar.dow.com/es-ar.html",
+      "fecha_descarga": "2026-11-24",
+      "hash": "sha256:37eb576cb7e3c6ea56143c9d668799c30fc2ee4bd2019ada561e42cbc6fff323",
+      "cita_ubicacion": "ar.dow.com/es-ar.html (seis plantas: 2 de etileno y 4 de polietileno en Bahía Blanca)",
+      "confianza": "alta"
+    }
+  },
+  {
+    "planta_id": "unipar-indupa-bahia-blanca",
+    "empresa_id": "unipar-indupa",
+    "producto_id": "petroquimica",
+    "provincia_id": "06",
+    "departamento_id": "06056",
+    "nombre": "Complejo Unipar Indupa (Cloro-Soda y PVC)",
+    "localidad": "Bahía Blanca",
+    "lat": -38.779,
+    "lon": -62.294,
+    "estado_operativo": "operativa",
+    "capacidad": {
+      "estado": "sin_datos",
+      "valor": null,
+      "unidad": "t/año PVC",
+      "procedencia": {
+        "anio": 2026,
+        "fuente_id": "unipar-acerca-2026",
+        "fuente": "Perfil institucional y unidad productiva Bahía Blanca (Unipar Indupa S.A.I.C.)",
+        "url": "https://unipar.com/es/acerca-de-unipar",
+        "fecha_descarga": "2026-11-25",
+        "hash": "sha256:078744f42c406f68aa33110931629fe7dfa3cd9c6544791837111532d225a6f8",
+        "cita_ubicacion": "unipar.com/es/acerca-de-unipar (unidad Bahía Blanca: cloro, soda cáustica y PVC)",
+        "confianza": "alta"
+      }
+    },
+    "procedencia": {
+      "anio": 2026,
+      "fuente_id": "unipar-acerca-2026",
+      "fuente": "Perfil institucional y unidad productiva Bahía Blanca (Unipar Indupa S.A.I.C.)",
+      "url": "https://unipar.com/es/acerca-de-unipar",
+      "fecha_descarga": "2026-11-25",
+      "hash": "sha256:078744f42c406f68aa33110931629fe7dfa3cd9c6544791837111532d225a6f8",
+      "cita_ubicacion": "unipar.com/es/acerca-de-unipar (unidad Bahía Blanca: cloro, soda cáustica y PVC)",
+      "confianza": "alta"
+    }
+  },
+  {
+    "planta_id": "renova-san-lorenzo-biodiesel",
+    "empresa_id": "renova-sa",
+    "producto_id": "biodiesel",
+    "provincia_id": "82",
+    "departamento_id": "82119",
+    "nombre": "Planta Renova San Lorenzo (Biodiésel y Glicerina Refinada)",
+    "localidad": "San Lorenzo",
+    "lat": -32.751,
+    "lon": -60.736,
+    "estado_operativo": "operativa",
+    "capacidad": {
+      "estado": "dato",
+      "valor": 1450,
+      "unidad": "t/día biodiésel",
+      "procedencia": {
+        "anio": 2026,
+        "fuente_id": "renova-web-2026",
+        "fuente": "Fichas operativas oficiales de Plantas Timbúes y San Lorenzo (Renova S.A.)",
+        "url": "https://renova.com.ar/",
+        "fecha_descarga": "2026-11-24",
+        "hash": "sha256:2a9c82604e9b4a60998bca222a36e3c5147c0a66dc671730e7b9a2af2421204d",
+        "cita_ubicacion": "renova.com.ar (Planta Timbúes 32.400 t/día molienda; Planta San Lorenzo 1.450 t/día biodiésel)",
+        "confianza": "alta"
+      }
+    },
+    "procedencia": {
+      "anio": 2026,
+      "fuente_id": "renova-web-2026",
+      "fuente": "Fichas operativas oficiales de Plantas Timbúes y San Lorenzo (Renova S.A.)",
+      "url": "https://renova.com.ar/",
+      "fecha_descarga": "2026-11-24",
+      "hash": "sha256:2a9c82604e9b4a60998bca222a36e3c5147c0a66dc671730e7b9a2af2421204d",
+      "cita_ubicacion": "renova.com.ar (Planta Timbúes 32.400 t/día molienda; Planta San Lorenzo 1.450 t/día biodiésel)",
+      "confianza": "alta"
+    }
   }
 ]
