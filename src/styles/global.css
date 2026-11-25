@@ -176,30 +176,30 @@
   padding: 0.1rem 0.35rem;
 }
 
-/* Sistema visual Anatomy (isométrico de 4 tonos adaptado a la paleta piedra del Atlas) */
+/* Sistema visual Anatomy (isométrico de 4 tonos con contraste arquitectónico y materiales reales) */
 .atlas-iso {
   --anatomy-paper: #f7f7f5;
   --anatomy-face: #ffffff;
-  --anatomy-top: #fcfcfa;
-  --anatomy-shade-0: #d5d6d1;
-  --anatomy-shade-1: #e0e0dc;
-  --anatomy-shade-2: #e9e9e5;
-  --anatomy-shade-3: #f2f2ee;
+  --anatomy-top: #fbfbf9;
+  --anatomy-shade-0: #b2b4ac;
+  --anatomy-shade-1: #c5c7c0;
+  --anatomy-shade-2: #d8dad4;
+  --anatomy-shade-3: #e8e9e4;
   --anatomy-lit-top: #ffffff;
-  --anatomy-lit-shade: #e7ecf7;
-  --anatomy-hi: #1c1e22;
-  --anatomy-mid: #6b6f78;
-  --anatomy-lo: #a6a9b0;
-  --anatomy-faint: #cdcfd3;
+  --anatomy-lit-shade: #dce5fa;
+  --anatomy-hi: #14161a;
+  --anatomy-mid: #535863;
+  --anatomy-lo: #8d929c;
+  --anatomy-faint: #c4c7ce;
   --anatomy-lit: #0a42e0;
-  --anatomy-halo: #6b6f78;
-  --anatomy-halo-opacity: 0.24;
-  --anatomy-dot: #1c1e22;
+  --anatomy-halo: #3d434e;
+  --anatomy-halo-opacity: 0.28;
+  --anatomy-dot: #14161a;
   --anatomy-red: #d93025;
   --anatomy-green: #0b7a53;
   --anatomy-blue: #0a42e0;
   --anatomy-ochre: #c86a11;
-  --anatomy-weight: 0.72;
+  --anatomy-weight: 0.88;
 }
 
 .atlas-iso .iso-svg {
@@ -240,57 +240,194 @@
   fill: var(--anatomy-top);
 }
 
-/* Cavidades y materiales reales dentro de la cuba Hall-Héroult */
-.atlas-iso .iso-cavity-refractory {
-  --anatomy-top: #d8d5cc;
-  --anatomy-shade-0: #b9b5aa;
-  --anatomy-shade-1: #c4c0b6;
+/* Materiales reales del complejo costero e industrial Aluar Puerto Madryn */
+.atlas-iso .iso-terrain-stone {
+  --anatomy-top: #f2f1ec;
+  --anatomy-shade-0: #b8b6ad;
+  --anatomy-shade-1: #c9c7bf;
+  --anatomy-shade-2: #d9d8d1;
+  --anatomy-shade-3: #e7e6e0;
+}
+
+.atlas-iso .iso-water {
+  --anatomy-top: #c7d9ea;
+  --anatomy-shade-0: #7c9bb8;
+  --anatomy-shade-1: #8faac4;
+  --anatomy-shade-2: #a3bcd2;
+  --anatomy-shade-3: #b5cbe0;
+  --anatomy-hi: #426180;
+  --anatomy-mid: #5d7c9c;
+  --anatomy-lo: #7f9bb8;
+}
+
+.atlas-iso .iso-water-ripple {
+  stroke: #ffffff;
+  stroke-width: 1.1;
+  opacity: 0.72;
+}
+
+.atlas-iso .iso-concrete {
+  --anatomy-top: #eae8e0;
+  --anatomy-shade-0: #aba79c;
+  --anatomy-shade-1: #bdb9ae;
   --anatomy-shade-2: #cecac0;
-  --anatomy-shade-3: #d6d2c8;
+  --anatomy-shade-3: #dedbd3;
 }
 
-.atlas-iso .iso-cavity-carbon,
-.atlas-iso .iso-anode-carbon {
-  --anatomy-top: #50545e;
-  --anatomy-shade-0: #2b2e35;
-  --anatomy-shade-1: #353941;
-  --anatomy-shade-2: #41454f;
-  --anatomy-shade-3: #4b4f59;
-  --anatomy-hi: #111214;
-  --anatomy-lo: #6c707a;
-  --anatomy-faint: #6c707a;
+.atlas-iso .iso-ship-hull {
+  --anatomy-top: #4b5769;
+  --anatomy-shade-0: #222a36;
+  --anatomy-shade-1: #2c3645;
+  --anatomy-shade-2: #384456;
+  --anatomy-shade-3: #435063;
+  --anatomy-hi: #121720;
+  --anatomy-lo: #6c7a8f;
 }
 
-.atlas-iso .iso-layer-al {
-  --anatomy-top: #e3e8f0;
-  --anatomy-shade-0: #b2bccb;
-  --anatomy-shade-1: #c2cbd8;
-  --anatomy-shade-2: #d1d8e3;
-  --anatomy-shade-3: #dce2eb;
+.atlas-iso .iso-ship-boot {
+  --anatomy-top: #b84b3e;
+  --anatomy-shade-0: #7c2b22;
+  --anatomy-shade-1: #8f352b;
+  --anatomy-shade-2: #a34035;
+  --anatomy-shade-3: #b0463a;
+  --anatomy-hi: #4f1a14;
 }
 
-.atlas-iso .iso-layer-bath {
-  --anatomy-top: #f2cf9e;
-  --anatomy-shade-0: #c78336;
-  --anatomy-shade-1: #d4964c;
-  --anatomy-shade-2: #e1ab67;
-  --anatomy-shade-3: #ebbe82;
+.atlas-iso .iso-alumina-powder {
+  --anatomy-top: #ffffff;
+  --anatomy-shade-0: #d8d4c8;
+  --anatomy-shade-1: #e4e1d7;
+  --anatomy-shade-2: #efede5;
+  --anatomy-shade-3: #f8f7f2;
+}
+
+.atlas-iso .iso-crane-cobalt {
+  --anatomy-top: #4f79e8;
+  --anatomy-shade-0: #1b3d99;
+  --anatomy-shade-1: #244bb5;
+  --anatomy-shade-2: #305bd1;
+  --anatomy-shade-3: #3f6be0;
+  --anatomy-hi: #10245e;
+  --anatomy-lo: #8ca8f0;
+}
+
+.atlas-iso .iso-steel-bright {
+  --anatomy-top: #ffffff;
+  --anatomy-shade-0: #b5bac2;
+  --anatomy-shade-1: #c8cdd4;
+  --anatomy-shade-2: #dce0e5;
+  --anatomy-shade-3: #edf0f3;
+}
+
+.atlas-iso .iso-steel-mid {
+  --anatomy-top: #dce0e5;
+  --anatomy-shade-0: #8f96a1;
+  --anatomy-shade-1: #a3aab4;
+  --anatomy-shade-2: #b8bec7;
+  --anatomy-shade-3: #ccd1d8;
+}
+
+.atlas-iso .iso-refractory {
+  --anatomy-top: #d8ae87;
+  --anatomy-shade-0: #996d46;
+  --anatomy-shade-1: #ac7e55;
+  --anatomy-shade-2: #be9067;
+  --anatomy-shade-3: #cca078;
+  --anatomy-hi: #593b21;
+}
+
+.atlas-iso .iso-carbon {
+  --anatomy-top: #4f5561;
+  --anatomy-shade-0: #22262e;
+  --anatomy-shade-1: #2d323b;
+  --anatomy-shade-2: #393f4a;
+  --anatomy-shade-3: #454b57;
+  --anatomy-hi: #111317;
+  --anatomy-mid: #6b7280;
+  --anatomy-lo: #7c8391;
+}
+
+.atlas-iso .iso-molten-al {
+  --anatomy-top: #eef4fc;
+  --anatomy-shade-0: #93a9c4;
+  --anatomy-shade-1: #aac0d9;
+  --anatomy-shade-2: #c4d5e8;
+  --anatomy-shade-3: #dbe7f5;
+  --anatomy-hi: #2d425c;
+}
+
+.atlas-iso .iso-cryolite {
+  --anatomy-top: #f7c372;
+  --anatomy-shade-0: #be6712;
+  --anatomy-shade-1: #d17c22;
+  --anatomy-shade-2: #e39538;
+  --anatomy-shade-3: #f0ae54;
+  --anatomy-hi: #6e3606;
 }
 
 .atlas-iso .iso-dc-busbar {
-  --anatomy-top: #dde6fa;
-  --anatomy-shade-0: #8ca9eb;
-  --anatomy-shade-1: #a4bcf0;
-  --anatomy-shade-2: #bdcff5;
-  --anatomy-shade-3: #d0ddf8;
+  --anatomy-top: #cbdafa;
+  --anatomy-shade-0: #557ee0;
+  --anatomy-shade-1: #7296eb;
+  --anatomy-shade-2: #92b0f2;
+  --anatomy-shade-3: #b1c7f7;
+  --anatomy-hi: #173482;
 }
 
-.atlas-iso .iso-ingot-al {
-  --anatomy-top: #eef1f5;
-  --anatomy-shade-0: #c3c9d1;
-  --anatomy-shade-1: #d0d5dc;
-  --anatomy-shade-2: #dce0e6;
-  --anatomy-shade-3: #e6e9ee;
+.atlas-iso .iso-gtc-emerald {
+  --anatomy-top: #cce8dc;
+  --anatomy-shade-0: #3d8c6d;
+  --anatomy-shade-1: #5ba688;
+  --anatomy-shade-2: #82bfa6;
+  --anatomy-shade-3: #a8d6c3;
+  --anatomy-hi: #164734;
+}
+
+/* Ductos 3D con brillo especular y sombra propia (iso-tube) */
+.atlas-iso .tb-body {
+  fill: #cfd4dc;
+  stroke: none;
+}
+.atlas-iso .tb-shine {
+  fill: #ffffff;
+  stroke: none;
+}
+.atlas-iso .tb-shade {
+  fill: #8d95a3;
+  stroke: none;
+}
+.atlas-iso .iso-pipe-alumina .tb-body {
+  fill: #e8e4da;
+}
+.atlas-iso .iso-pipe-alumina .tb-shine {
+  fill: #ffffff;
+}
+.atlas-iso .iso-pipe-alumina .tb-shade {
+  fill: #b8b0a0;
+}
+.atlas-iso .iso-pipe-gas .tb-body {
+  fill: #c7ced8;
+}
+.atlas-iso .iso-pipe-gas .tb-shade {
+  fill: #7f8999;
+}
+.atlas-iso .iso-pipe-recycle .tb-body {
+  fill: #75bd9f;
+}
+.atlas-iso .iso-pipe-recycle .tb-shine {
+  fill: #d7f2e6;
+}
+.atlas-iso .iso-pipe-recycle .tb-shade {
+  fill: #277052;
+}
+.atlas-iso .iso-pipe-steel .tb-body {
+  fill: #b6c2d6;
+}
+.atlas-iso .iso-pipe-steel .tb-shine {
+  fill: #edf3fc;
+}
+.atlas-iso .iso-pipe-steel .tb-shade {
+  fill: #647796;
 }
 
 /* Destaque táctil de un ensamble seleccionado o en hover */
@@ -300,20 +437,21 @@
 }
 
 .atlas-iso .iso-assembly[data-dim='true'] {
-  opacity: 0.42;
+  opacity: 0.36;
 }
 
-.atlas-iso .iso-assembly[data-active='true'] .iso-edge {
+.atlas-iso .iso-assembly[data-active='true'] .iso-edge,
+.atlas-iso .iso-assembly[data-active='true'] .tb-edge {
   stroke: var(--anatomy-lit);
-  stroke-width: 1.05;
+  stroke-width: 1.2;
 }
 
 .atlas-iso .iso-halo {
   fill: var(--anatomy-halo);
   stroke: none;
-  filter: blur(8px);
+  filter: blur(10px);
   opacity: var(--anatomy-halo-opacity);
-  transform: translateY(3px);
+  transform: translateY(4px);
 }
 
 .atlas-iso .iso-line {
@@ -338,41 +476,45 @@
 }
 .atlas-iso .iso-line[data-tone='lit'] {
   stroke: var(--anatomy-lit);
-  stroke-width: 1.35;
+  stroke-width: 1.6;
 }
 .atlas-iso .iso-line[data-tone='red'] {
   stroke: var(--anatomy-red);
-  stroke-width: 1.2;
+  stroke-width: 1.4;
 }
 .atlas-iso .iso-line[data-tone='green'] {
   stroke: var(--anatomy-green);
-  stroke-width: 1.25;
+  stroke-width: 1.4;
 }
 .atlas-iso .iso-line[data-tone='blue'] {
   stroke: var(--anatomy-blue);
-  stroke-width: 1.25;
+  stroke-width: 1.4;
+}
+.atlas-iso .iso-line[data-tone='ochre'] {
+  stroke: var(--anatomy-ochre);
+  stroke-width: 1.4;
 }
 .atlas-iso .iso-line[data-dashed='true'] {
   stroke-dasharray: 3.5 3.5;
 }
 .atlas-iso .iso-line[data-flow='true'] {
-  stroke-dasharray: 2.5 5.5;
-  animation: atlas-iso-flow 1600ms linear infinite;
+  stroke-dasharray: 3 6;
+  animation: atlas-iso-flow 1500ms linear infinite;
 }
 
 .atlas-iso .iso-dots circle {
   fill: var(--anatomy-dot);
   stroke: none;
-  opacity: 0.36;
+  opacity: 0.42;
 }
 .atlas-iso .iso-dots[data-tone='hi'] circle {
-  opacity: 0.85;
+  opacity: 0.9;
 }
 .atlas-iso .iso-dots[data-tone='mid'] circle {
-  opacity: 0.48;
+  opacity: 0.55;
 }
 .atlas-iso .iso-dots[data-tone='lo'] circle {
-  opacity: 0.24;
+  opacity: 0.28;
 }
 .atlas-iso .iso-dots circle[data-pulse='true'] {
   animation: atlas-iso-pulse 1800ms ease-in-out infinite;
@@ -380,17 +522,17 @@
 
 @keyframes atlas-iso-flow {
   to {
-    stroke-dashoffset: -32;
+    stroke-dashoffset: -36;
   }
 }
 
 @keyframes atlas-iso-pulse {
   0%,
   100% {
-    opacity: 0.2;
+    opacity: 0.22;
   }
   50% {
-    opacity: 0.85;
+    opacity: 0.92;
   }
 }
 

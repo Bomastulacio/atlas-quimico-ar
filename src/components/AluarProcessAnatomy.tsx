@@ -1,6 +1,6 @@
 import { useEffect, useMemo, useState } from 'react';
 import { AnimatePresence, motion, MotionConfig } from 'motion/react';
-import { Layers, Pause, Play, RotateCcw } from 'lucide-react';
+import { Focus, Layers, Maximize2, Pause, Play, RotateCcw } from 'lucide-react';
 import type { PasoProceso } from '@/schemas';
 import {
   buildAluarAnatomyScene,
@@ -9,6 +9,8 @@ import {
   type DrawnDots,
   type DrawnLine,
   type DrawnSolid,
+  type DrawnTube,
+  type StageCameraBox,
 } from './aluar/aluarAnatomyGeometry';
 
 interface AluarProcessAnatomyProps {
@@ -24,7 +26,6 @@ interface StageSpec {
   shortLabel: string;
   pasoId: string;
   dialTempC: number;
-  accentColor: string;
   calloutMetric: string;
   calloutCaption: string;
   physicalParts: string;
@@ -45,18 +46,28 @@ const SPRING_TAB = {
 };
 
 function SolidElement({ solid }: { solid: DrawnSolid }) {
-  const { paths, tone = 'hi', crease = 'faint', lit = false, flat = false, className, innerLines, innerDots } = solid;
+  const {
+    paths,
+    tone = 'hi',
+    crease = 'faint',
+    lit = false,
+    flat = false,
+    className,
+    innerLines,
+    innerDots,
+  } = solid;
   return (
     <g
       className={className ? `iso-solid ${className}` : 'iso-solid'}
       data-lit={lit ? '' : undefined}
+      data-seamless={paths.seamless ? '' : undefined}
     >
       <path className="iso-fill" d={paths.fill} />
       {!flat &&
         paths.shades.map((d, idx) =>
           d ? <path key={idx} className="iso-shade" data-shade={String(idx)} d={d} /> : null
         )}
-      {!flat && <path className="iso-top" d={paths.top} />}
+      {!flat && paths.top && <path className="iso-top" d={paths.top} />}
       {crease !== 'none' && paths.crease && (
         <path className="iso-line iso-crease" data-tone={crease} d={paths.crease} />
       )}
@@ -73,7 +84,23 @@ function SolidElement({ solid }: { solid: DrawnSolid }) {
           ))}
         </g>
       ))}
-      <path className="iso-line iso-edge" data-tone={tone} d={paths.outline} />
+      {paths.outline && <path className="iso-line iso-edge" data-tone={tone} d={paths.outline} />}
+    </g>
+  );
+}
+
+function TubeElement({ tube }: { tube: DrawnTube }) {
+  const { pieces, tone = 'hi', className } = tube;
+  return (
+    <g className={className ? `tb ${className}` : 'tb'}>
+      {pieces.map((pc, idx) => (
+        <g key={idx}>
+          <path className="tb-body" d={pc.body} />
+          {pc.wide && pc.shine && <path className="tb-shine" d={pc.shine} />}
+          {pc.wide && pc.shade && <path className="tb-shade" d={pc.shade} />}
+          <path className="iso-line tb-edge" data-tone={tone} d={pc.edges} />
+        </g>
+      ))}
     </g>
   );
 }
@@ -141,63 +168,64 @@ export function AluarProcessAnatomy({
       {
         id: 'silo',
         code: '01',
-        shortLabel: 'Silo y alúmina (Storni)',
+        shortLabel: 'Muelle Storni, buque y silos',
         pasoId: 'al-p2-recepcion-storni',
         dialTempC: 25,
-        accentColor: '#C86A11',
         calloutMetric: aluminaStr,
         calloutCaption: 'Alúmina importada HS 2818.20 (UN Comtrade 2024)',
-        physicalParts: 'Silo cilíndrico con anillo rigidizador, válvula rotativa y cinta aérea hacia tolva.',
+        physicalParts:
+          'Golfo Nuevo, muelle sobre pilotes, buque granelero con bodegas de alúmina, torre neumática, galería cubierta y silos cónicos.',
       },
       {
         id: 'anodos',
         code: '02',
-        shortLabel: 'Ánodos precocidos y CC',
+        shortLabel: 'Horno de ánodos y envarillado',
         pasoId: 'al-p3-planta-anodos',
         dialTempC: 1150,
-        accentColor: '#111214',
         calloutMetric: '0,43 t C/t Al',
         calloutCaption: 'Consumo neto anódico · cocción 1.100 a 1.200 °C',
-        physicalParts: '4 bloques de carbono precocido, yugos, vástagos, grampas y viga colectora CC.',
+        physicalParts:
+          'Horno de fosas incandescentes, puente quemador, mesa de envarillado y bloques de carbono precocido.',
       },
       {
         id: 'cuba',
         code: '03',
-        shortLabel: 'Cuba Hall-Héroult (corte)',
+        shortLabel: 'Cuba Hall-Héroult en corte',
         pasoId: 'al-p4-electrolisis-hall-heroult',
         dialTempC: 960,
-        accentColor: '#0A42E0',
         calloutMetric: energiaStr,
         calloutCaption: `${prodStr} líquido FY 2024-25 · baño criolita 950 a 970 °C`,
-        physicalParts: 'Carcasa de acero en corte, refractario, cátodo de carbono, colchón de Al y baño Na3AlF6.',
+        physicalParts:
+          'Carcasa en corte, refractario, cátodo de carbono, colchón de Al líquido, baño criolita, 4 ánodos precocidos y viga CC.',
       },
       {
         id: 'gtc',
         code: '04',
-        shortLabel: 'Tratamiento de gases (GTC)',
+        shortLabel: 'Gases GTC y reciclo HF',
         pasoId: 'al-p5-tratamiento-gases',
         dialTempC: 100,
-        accentColor: '#0B7A53',
         calloutMetric: '1,6 t CO2/t Al',
         calloutCaption: 'Captura seca de HF en reciclo cerrado · IPCC Table 4.10',
-        physicalParts: 'Reactor seco GTC, filtro de mangas, chimenea y válvula de retorno de alúmina fluorada.',
+        physicalParts:
+          'Ducto extractor, 2 ciclones reactores secos, filtros de mangas, chimenea cónica y ducto verde de retorno.',
       },
       {
         id: 'fundicion',
         code: '05',
-        shortLabel: 'Crisol, colada y lingotes',
+        shortLabel: 'Fundición, lingotes y barrotes',
         pasoId: 'al-p6-fundicion-colada',
         dialTempC: 720,
-        accentColor: '#0A42E0',
         calloutMetric: '0,86 MWh/t Al',
         calloutCaption: '425.409 t solidificadas + 17.028 t líquido · 700 a 740 °C',
-        physicalParts: 'Crisol de vacío para sifonado desde cuba y mesa de lingotes T / barrotes de colada.',
+        physicalParts:
+          'Crisol de vacío, horno de mantenimiento a 720 °C, lingotes T, barrotes cilíndricos de extrusión y bobina de alambrón.',
       },
     ];
   }, [aluminaImportadaT, energiaElectrolisisMwhT, produccionLiquidaT]);
 
   const [selectedId, setSelectedId] = useState<AluarAssemblyId>('cuba');
   const [hoveredId, setHoveredId] = useState<AluarAssemblyId | null>(null);
+  const [zoomed, setZoomed] = useState(false);
   const [exploded, setExploded] = useState(false);
   const [autoTour, setAutoTour] = useState(false);
 
@@ -205,7 +233,50 @@ export function AluarProcessAnatomy({
   const activeStage = stages.find((s) => s.id === activeId) ?? stages[2]!;
   const activePaso = pasos.find((p) => p.paso_id === activeStage.pasoId) ?? null;
 
-  // Interpolación suave de la aguja del dial de temperatura (0-1250 °C)
+  // Interpolación suave de la cámara SVG (viewBox) al enfocar una etapa o volver a planta completa
+  const targetCamera: StageCameraBox = zoomed ? scene.cameraViews[selectedId] : scene.cameraViews.all;
+  const [cam, setCam] = useState<StageCameraBox>(scene.cameraViews.all);
+
+  useEffect(() => {
+    const prefersReduced =
+      typeof window !== 'undefined' &&
+      window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    if (prefersReduced) {
+      setCam(targetCamera);
+      return;
+    }
+
+    let frame = 0;
+    let cur = { ...cam };
+    const step = () => {
+      const dx = targetCamera.x - cur.x;
+      const dy = targetCamera.y - cur.y;
+      const dw = targetCamera.w - cur.w;
+      const dh = targetCamera.h - cur.h;
+      if (
+        Math.abs(dx) < 0.4 &&
+        Math.abs(dy) < 0.4 &&
+        Math.abs(dw) < 0.4 &&
+        Math.abs(dh) < 0.4
+      ) {
+        setCam(targetCamera);
+        return;
+      }
+      cur = {
+        x: cur.x + dx * 0.16,
+        y: cur.y + dy * 0.16,
+        w: cur.w + dw * 0.16,
+        h: cur.h + dh * 0.16,
+      };
+      setCam(cur);
+      frame = window.requestAnimationFrame(step);
+    };
+    frame = window.requestAnimationFrame(step);
+    return () => window.cancelAnimationFrame(frame);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [targetCamera.x, targetCamera.y, targetCamera.w, targetCamera.h]);
+
+  // Interpolación suave de la aguja del dial de temperatura
   const [needleTemp, setNeedleTemp] = useState(activeStage.dialTempC);
   useEffect(() => {
     const prefersReduced =
@@ -215,7 +286,6 @@ export function AluarProcessAnatomy({
       setNeedleTemp(activeStage.dialTempC);
       return;
     }
-
     let frame = 0;
     let current = needleTemp;
     const target = activeStage.dialTempC;
@@ -234,7 +304,7 @@ export function AluarProcessAnatomy({
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [activeStage.dialTempC]);
 
-  // Recorrido automático calmo cuando el usuario lo activa
+  // Recorrido automático por las 5 etapas
   useEffect(() => {
     if (!autoTour) return;
     const timer = window.setInterval(() => {
@@ -242,7 +312,7 @@ export function AluarProcessAnatomy({
         const idx = stages.findIndex((s) => s.id === curr);
         return stages[(idx + 1) % stages.length]!.id;
       });
-    }, 3600);
+    }, 3800);
     return () => window.clearInterval(timer);
   }, [autoTour, stages]);
 
@@ -251,73 +321,104 @@ export function AluarProcessAnatomy({
   const isDimmed = (id: AluarAssemblyId) => hoveredId !== null && hoveredId !== id;
   const isActive = (id: AluarAssemblyId) => activeId === id;
 
-  const handleSelectAssembly = (id: AluarAssemblyId) => {
+  const handleSelectAssembly = (id: AluarAssemblyId, shouldZoom?: boolean) => {
     setAutoTour(false);
     setSelectedId(id);
+    if (shouldZoom !== undefined) {
+      setZoomed(shouldZoom);
+    }
   };
+
+  const viewBoxStr = `${cam.x.toFixed(1)} ${cam.y.toFixed(1)} ${cam.w.toFixed(1)} ${cam.h.toFixed(1)}`;
 
   return (
     <MotionConfig reducedMotion="user">
       <div className="border border-rule bg-stone-surface">
-        {/* Cabecera de control integrada: vista armada / despiece + recorrido */}
+        {/* Cabecera de controles táctiles: Vista planta / Enfocar etapa + Despiece + Recorrido */}
         <div className="flex flex-wrap items-center justify-between gap-3 border-b border-rule px-5 py-3.5 sm:px-6">
-          <div className="flex flex-wrap items-center gap-3">
+          <div className="flex flex-wrap items-center gap-2.5">
             <span className="text-[13px] font-semibold text-ink tabular-nums">Fig. 01</span>
             <span className="text-rule-strong/30">/</span>
             <span className="text-[13px] text-ink-muted">
-              Corte isométrico de una cuba Hall-Héroult y circuito integrado en Aluar Puerto Madryn
+              Diorama costero e industrial Aluar (Golfo Nuevo, Muelle Storni y planta Puerto Madryn)
             </span>
           </div>
 
           <div className="flex flex-wrap items-center gap-2">
-            {/* Switch segmentado Vista armada / Despiece vertical */}
+            {/* Switch cámara: Planta completa / Zoom en etapa */}
             <div
               role="group"
-              aria-label="Modo de visualización del corte"
+              aria-label="Encuadre de cámara"
               className="inline-flex bg-stone-subtle p-0.5 text-[13px]"
             >
               <button
                 type="button"
-                aria-pressed={!exploded}
-                onClick={() => setExploded(false)}
-                className={`relative cursor-pointer px-3 py-1 font-medium transition-colors duration-150 ${
-                  !exploded ? 'text-white' : 'text-ink-muted hover:text-ink'
+                aria-pressed={!zoomed}
+                onClick={() => setZoomed(false)}
+                className={`relative inline-flex cursor-pointer items-center gap-1.5 px-3 py-1 font-medium transition-colors duration-150 ${
+                  !zoomed ? 'text-white' : 'text-ink-muted hover:text-ink'
                 }`}
               >
-                {!exploded && (
+                {!zoomed && (
                   <motion.span
-                    layoutId="aluar-anatomy-mode"
+                    layoutId="aluar-camera-mode"
                     transition={SPRING_TAB}
                     className="absolute inset-0 bg-ink"
                   />
                 )}
-                <span className="relative z-10">Armada</span>
+                <span className="relative z-10 inline-flex items-center gap-1.5">
+                  <Maximize2 className="h-3.5 w-3.5" />
+                  Planta completa
+                </span>
               </button>
               <button
                 type="button"
-                aria-pressed={exploded}
-                onClick={() => setExploded(true)}
+                aria-pressed={zoomed}
+                onClick={() => setZoomed(true)}
                 className={`relative inline-flex cursor-pointer items-center gap-1.5 px-3 py-1 font-medium transition-colors duration-150 ${
-                  exploded ? 'text-white' : 'text-ink-muted hover:text-ink'
+                  zoomed ? 'text-white' : 'text-ink-muted hover:text-ink'
                 }`}
               >
-                {exploded && (
+                {zoomed && (
                   <motion.span
-                    layoutId="aluar-anatomy-mode"
+                    layoutId="aluar-camera-mode"
                     transition={SPRING_TAB}
                     className="absolute inset-0 bg-cobalt"
                   />
                 )}
                 <span className="relative z-10 inline-flex items-center gap-1.5">
-                  <Layers className="h-3.5 w-3.5" />
-                  Despiece vertical
+                  <Focus className="h-3.5 w-3.5" />
+                  Zoom etapa {activeStage.code}
                 </span>
               </button>
             </div>
 
             <button
               type="button"
-              onClick={() => setAutoTour((prev) => !prev)}
+              onClick={() => {
+                setExploded((prev) => !prev);
+                if (!exploded) setSelectedId('cuba');
+              }}
+              aria-pressed={exploded}
+              className={`inline-flex cursor-pointer items-center gap-1.5 border px-3 py-1 text-[13px] font-medium transition-colors duration-150 ${
+                exploded
+                  ? 'border-cobalt bg-cobalt text-white'
+                  : 'border-rule bg-stone-bg text-ink hover:border-ink'
+              }`}
+            >
+              <Layers className="h-3.5 w-3.5" />
+              <span>{exploded ? 'Cerrar cuba' : 'Despiece cuba'}</span>
+            </button>
+
+            <button
+              type="button"
+              onClick={() => {
+                setAutoTour((prev) => {
+                  const next = !prev;
+                  if (next) setZoomed(true);
+                  return next;
+                });
+              }}
               aria-pressed={autoTour}
               className={`inline-flex cursor-pointer items-center gap-1.5 border px-3 py-1 text-[13px] font-medium transition-colors duration-150 ${
                 autoTour
@@ -334,11 +435,12 @@ export function AluarProcessAnatomy({
               onClick={() => {
                 setAutoTour(false);
                 setExploded(false);
+                setZoomed(false);
                 setSelectedId('cuba');
                 setHoveredId(null);
               }}
-              aria-label="Restablecer figura"
-              title="Restablecer vista"
+              aria-label="Restablecer vista completa"
+              title="Restablecer vista completa"
               className="inline-flex cursor-pointer items-center justify-center border border-rule bg-stone-bg p-1.5 text-ink-muted transition-colors duration-150 hover:border-ink hover:text-ink"
             >
               <RotateCcw className="h-3.5 w-3.5" />
@@ -346,43 +448,43 @@ export function AluarProcessAnatomy({
           </div>
         </div>
 
-        {/* Cuerpo widescreen: Placa isométrica Anatomy (8 cols) + Inspector técnico (4 cols) */}
+        {/* Cuerpo widescreen: Placa isométrica 3D (8 cols) + Inspector técnico (4 cols) */}
         <div className="grid lg:grid-cols-12">
           <div className="atlas-iso relative flex flex-col justify-between bg-stone-surface p-4 sm:p-6 lg:col-span-8 lg:border-r lg:border-rule">
-            {/* Esquinas discretas del plate estilo Anatomy (sin texto flotando sobre la máquina) */}
-            <div className="flex items-center justify-between gap-4 text-[13px] text-ink-muted">
-              <span className="font-medium text-ink">
+            {/* Cabecera del plate */}
+            <div className="flex flex-wrap items-center justify-between gap-2 text-[13px] text-ink-muted">
+              <span className="font-semibold text-ink">
                 {activeStage.code} · {activeStage.shortLabel}
               </span>
               <span className="tabular-nums">
-                {exploded ? 'Despiece activo (+Z)' : 'Corte ensamblado'}
+                {zoomed ? 'Detalle enfocado (click doble para alejar)' : 'Vista general 1× (click doble en una etapa para acercar)'}
               </span>
             </div>
 
-            {/* Figura SVG isométrica construida en 4 tonos con painter's order */}
-            <div className="my-2 overflow-hidden">
+            {/* Lienzo SVG isométrico con cámara suavizada y ductos 3D */}
+            <div className="my-3 overflow-hidden border border-rule/70 bg-[#F4F3EE]">
               <svg
-                viewBox={`0 0 ${scene.width} ${scene.height}`}
+                viewBox={viewBoxStr}
                 role="img"
-                aria-label="Corte isométrico interactivo del proceso Hall-Héroult en Aluar Puerto Madryn: silo de alúmina, ánodos precocidos, cuba electrolítica, tratamiento de gases GTC y colada"
-                className="iso-svg mx-auto max-w-[780px]"
+                aria-label="Diorama isométrico interactivo del complejo Aluar en Puerto Madryn: Golfo Nuevo, Muelle Almirante Storni, buque alúminero, silos, horno de ánodos, cuba Hall-Héroult en corte, GTC y fundición"
+                className="iso-svg mx-auto w-full"
               >
-                {/* 1. Halo y placa base maquinada */}
+                {/* 1. Halo y terreno escalonado (Golfo Nuevo + Terraza Puerto Madryn) */}
                 <g aria-hidden="true">
                   <path className="iso-halo" d={scene.baseHalo} />
-                  {scene.baseSolids.map((s) => (
+                  {scene.terrainSolids.map((s) => (
                     <SolidElement key={s.id} solid={s} />
                   ))}
-                  <LinesLayer lines={scene.baseLines} />
-                  <DotsLayer dots={scene.baseDots} />
+                  <LinesLayer lines={scene.terrainLines} />
+                  <DotsLayer dots={scene.terrainDots} />
                   <g transform={scene.plateLabelTransform}>
                     <text
                       x="0"
                       y="0"
-                      fontSize="5.4"
-                      fontWeight="600"
+                      fontSize="5.2"
+                      fontWeight="700"
                       letterSpacing="0.08em"
-                      fill="#52555E"
+                      fill="#424650"
                       style={{ fontFamily: 'var(--font-display)' }}
                     >
                       ALUAR · CHUBUT
@@ -390,40 +492,33 @@ export function AluarProcessAnatomy({
                   </g>
                 </g>
 
-                {/* 2. Ensamble 01: Silo de alúmina y cinta Muelle Storni */}
+                {/* 2. Ensamble 02 (atrás-izquierda): Planta de ánodos y horno de cocción */}
                 <g
                   role="button"
                   tabIndex={0}
-                  aria-label="01 Silo y dosificación de alúmina (Muelle Storni)"
+                  aria-label="02 Planta de ánodos precocidos y horno de cocción 1.150 °C"
                   className="iso-assembly"
-                  data-active={isActive('silo')}
-                  data-dim={isDimmed('silo')}
-                  onMouseEnter={() => setHoveredId('silo')}
+                  data-active={isActive('anodos')}
+                  data-dim={isDimmed('anodos')}
+                  onMouseEnter={() => setHoveredId('anodos')}
                   onMouseLeave={() => setHoveredId(null)}
-                  onClick={() => handleSelectAssembly('silo')}
+                  onClick={() => handleSelectAssembly('anodos')}
+                  onDoubleClick={() => handleSelectAssembly('anodos', !zoomed)}
                   onKeyDown={(e) => {
                     if (e.key === 'Enter' || e.key === ' ') {
                       e.preventDefault();
-                      handleSelectAssembly('silo');
+                      handleSelectAssembly('anodos');
                     }
                   }}
                 >
-                  {scene.siloSolids.map((s) => (
+                  {scene.anodosPlantSolids.map((s) => (
                     <SolidElement key={s.id} solid={s} />
                   ))}
-                  <LinesLayer lines={scene.siloLines} />
-                  <DotsLayer dots={scene.siloDots} />
+                  <LinesLayer lines={scene.anodosPlantLines} />
+                  <DotsLayer dots={scene.anodosPlantDots} />
                 </g>
 
-                {/* Corriente de alúmina desde el silo hacia la cuba */}
-                <path
-                  className="iso-line"
-                  data-tone={isActive('silo') ? 'lit' : 'mid'}
-                  data-flow={isActive('silo') || isActive('cuba') ? 'true' : undefined}
-                  d={scene.flowPaths.aluminaFeed}
-                />
-
-                {/* 3. Ensamble 04: Centro de Tratamiento de Gases (GTC) y reciclo HF */}
+                {/* 3. Ensamble 04 (atrás-derecha): Centro de Tratamiento de Gases (GTC) */}
                 <g
                   role="button"
                   tabIndex={0}
@@ -434,6 +529,7 @@ export function AluarProcessAnatomy({
                   onMouseEnter={() => setHoveredId('gtc')}
                   onMouseLeave={() => setHoveredId(null)}
                   onClick={() => handleSelectAssembly('gtc')}
+                  onDoubleClick={() => handleSelectAssembly('gtc', !zoomed)}
                   onKeyDown={(e) => {
                     if (e.key === 'Enter' || e.key === ' ') {
                       e.preventDefault();
@@ -444,35 +540,54 @@ export function AluarProcessAnatomy({
                   {scene.gtcSolids.map((s) => (
                     <SolidElement key={s.id} solid={s} />
                   ))}
+                  {scene.gtcTubes.map((tb) => (
+                    <TubeElement key={tb.id} tube={tb} />
+                  ))}
                   <LinesLayer lines={scene.gtcLines} />
                   <DotsLayer dots={scene.gtcDots} />
                 </g>
 
-                {/* Corrientes de extracción de gases y reciclo cerrado GTC */}
-                <path
-                  className="iso-line"
-                  data-tone={isActive('gtc') ? 'red' : 'lo'}
-                  data-flow={isActive('gtc') ? 'true' : undefined}
-                  d={scene.flowPaths.gasToGtc}
-                />
-                <path
-                  className="iso-line"
-                  data-tone={isActive('gtc') ? 'green' : 'lo'}
-                  data-flow={isActive('gtc') || isActive('cuba') ? 'true' : undefined}
-                  d={scene.flowPaths.gtcRecycle}
-                />
-
-                {/* 4. Ensamble 03 (parte trasera): Pilotes, piso y paredes traseras de la cuba */}
+                {/* 4. Ensamble 01 (izquierda costera): Muelle Storni, Buque, Grúa y Silos */}
                 <g
                   role="button"
                   tabIndex={0}
-                  aria-label="03 Cuba electrolítica Hall-Héroult en corte"
+                  aria-label="01 Muelle Almirante Storni, buque granelero, grúa descargadora y silos"
+                  className="iso-assembly"
+                  data-active={isActive('silo')}
+                  data-dim={isDimmed('silo')}
+                  onMouseEnter={() => setHoveredId('silo')}
+                  onMouseLeave={() => setHoveredId(null)}
+                  onClick={() => handleSelectAssembly('silo')}
+                  onDoubleClick={() => handleSelectAssembly('silo', !zoomed)}
+                  onKeyDown={(e) => {
+                    if (e.key === 'Enter' || e.key === ' ') {
+                      e.preventDefault();
+                      handleSelectAssembly('silo');
+                    }
+                  }}
+                >
+                  {scene.pierSolids.map((s) => (
+                    <SolidElement key={s.id} solid={s} />
+                  ))}
+                  {scene.pierTubes.map((tb) => (
+                    <TubeElement key={tb.id} tube={tb} />
+                  ))}
+                  <LinesLayer lines={scene.pierLines} />
+                  <DotsLayer dots={scene.pierDots} />
+                </g>
+
+                {/* 5. Ensamble 03 (centro hero): Cuba Hall-Héroult en corte abierto */}
+                <g
+                  role="button"
+                  tabIndex={0}
+                  aria-label="03 Cuba electrolítica Hall-Héroult en corte abierto"
                   className="iso-assembly"
                   data-active={isActive('cuba')}
                   data-dim={isDimmed('cuba')}
                   onMouseEnter={() => setHoveredId('cuba')}
                   onMouseLeave={() => setHoveredId(null)}
                   onClick={() => handleSelectAssembly('cuba')}
+                  onDoubleClick={() => handleSelectAssembly('cuba', !zoomed)}
                   onKeyDown={(e) => {
                     if (e.key === 'Enter' || e.key === ' ') {
                       e.preventDefault();
@@ -484,12 +599,11 @@ export function AluarProcessAnatomy({
                     <SolidElement key={s.id} solid={s} />
                   ))}
                   <LinesLayer lines={scene.cubaBackLines} />
-                  {/* Refractario y cátodo de carbono (fijo en la base de la cuba) */}
                   {scene.cubaCathodeSolids.map((s) => (
                     <SolidElement key={s.id} solid={s} />
                   ))}
 
-                  {/* Colchón de aluminio líquido (sube suavemente en Despiece vertical) */}
+                  {/* Colchón de aluminio líquido */}
                   <motion.g
                     animate={{
                       x: exploded ? scene.explodeVectors.metal[0] : 0,
@@ -502,7 +616,7 @@ export function AluarProcessAnatomy({
                     ))}
                   </motion.g>
 
-                  {/* Baño electrolítico fundido de criolita Na3AlF6 + Al2O3 */}
+                  {/* Baño fundido de criolita */}
                   <motion.g
                     animate={{
                       x: exploded ? scene.explodeVectors.bath[0] : 0,
@@ -517,34 +631,24 @@ export function AluarProcessAnatomy({
                   </motion.g>
                 </g>
 
-                {/* 5. Ensamble 02: 4 ánodos precocidos de carbono + viga colectora CC */}
+                {/* Ánodos suspendidos + viga CC (vinculados a etapa 02 y 03, suben en Despiece) */}
                 <motion.g
-                  role="button"
-                  tabIndex={0}
-                  aria-label="02 Ánodos precocidos de carbono y viga de corriente continua"
                   className="iso-assembly"
-                  data-active={isActive('anodos')}
-                  data-dim={isDimmed('anodos')}
+                  data-active={isActive('anodos') || isActive('cuba')}
+                  data-dim={hoveredId !== null && hoveredId !== 'anodos' && hoveredId !== 'cuba'}
                   animate={{
                     x: exploded ? scene.explodeVectors.anodos[0] : 0,
                     y: exploded ? scene.explodeVectors.anodos[1] : 0,
                   }}
                   transition={{ ...SPRING_EXPLODE, delay: exploded ? 0.08 : 0 }}
-                  onMouseEnter={() => setHoveredId('anodos')}
+                  onMouseEnter={() => setHoveredId('cuba')}
                   onMouseLeave={() => setHoveredId(null)}
-                  onClick={() => handleSelectAssembly('anodos')}
-                  onKeyDown={(e) => {
-                    if (e.key === 'Enter' || e.key === ' ') {
-                      e.preventDefault();
-                      handleSelectAssembly('anodos');
-                    }
-                  }}
+                  onClick={() => handleSelectAssembly('cuba')}
                 >
-                  {scene.anodosSolids.map((s) => (
+                  {scene.cubaAnodesSolids.map((s) => (
                     <SolidElement key={s.id} solid={s} />
                   ))}
-                  <LinesLayer lines={scene.anodosLines} />
-                  <DotsLayer dots={scene.anodosDots} />
+                  <DotsLayer dots={scene.cubaAnodesDots} />
                   <path
                     className="iso-line"
                     data-tone="blue"
@@ -553,7 +657,7 @@ export function AluarProcessAnatomy({
                   />
                 </motion.g>
 
-                {/* 6. Borde frontal cortado de la cuba, barras colectoras de cátodo y pórtico frontal */}
+                {/* Labio frontal cortado + barras colectoras de cátodo + pórtico frontal */}
                 <g
                   className="iso-assembly"
                   data-active={isActive('cuba')}
@@ -565,13 +669,12 @@ export function AluarProcessAnatomy({
                   {scene.cubaFrontSolids.map((s) => (
                     <SolidElement key={s.id} solid={s} />
                   ))}
-                  <LinesLayer lines={scene.cubaFrontLines} />
                 </g>
 
-                {/* Superestructura superior: tolva dosificadora y campana (sube al máximo en Despiece) */}
+                {/* Superestructura tolva y campana superior */}
                 <motion.g
                   className="iso-assembly"
-                  data-active={isActive('cuba') || isActive('silo')}
+                  data-active={isActive('cuba')}
                   data-dim={hoveredId !== null && hoveredId !== 'cuba' && hoveredId !== 'silo'}
                   animate={{
                     x: exploded ? scene.explodeVectors.hood[0] : 0,
@@ -588,25 +691,18 @@ export function AluarProcessAnatomy({
                   <LinesLayer lines={scene.cubaHoodLines} />
                 </motion.g>
 
-                {/* Corriente de sifonado de aluminio líquido hacia el crisol */}
-                <path
-                  className="iso-line"
-                  data-tone={isActive('fundicion') ? 'blue' : 'lo'}
-                  data-flow={isActive('fundicion') || isActive('cuba') ? 'true' : undefined}
-                  d={scene.flowPaths.metalTap}
-                />
-
-                {/* 7. Ensamble 05 (frente-derecha): Crisol de vacío y lingotes solidificados */}
+                {/* 6. Ensamble 05 (frente-derecha): Crisol, Horno 720 °C, Lingotes, Barrotes y Alambrón */}
                 <g
                   role="button"
                   tabIndex={0}
-                  aria-label="05 Crisol de sifonado y lingotes de aluminio solidificado"
+                  aria-label="05 Sala de fundición, crisol de vacío, horno 720 °C, lingotes y barrotes"
                   className="iso-assembly"
                   data-active={isActive('fundicion')}
                   data-dim={isDimmed('fundicion')}
                   onMouseEnter={() => setHoveredId('fundicion')}
                   onMouseLeave={() => setHoveredId(null)}
                   onClick={() => handleSelectAssembly('fundicion')}
+                  onDoubleClick={() => handleSelectAssembly('fundicion', !zoomed)}
                   onKeyDown={(e) => {
                     if (e.key === 'Enter' || e.key === ' ') {
                       e.preventDefault();
@@ -614,6 +710,9 @@ export function AluarProcessAnatomy({
                     }
                   }}
                 >
+                  {scene.fundicionTubes.map((tb) => (
+                    <TubeElement key={tb.id} tube={tb} />
+                  ))}
                   {scene.fundicionSolids.map((s) => (
                     <SolidElement key={s.id} solid={s} />
                   ))}
@@ -621,7 +720,21 @@ export function AluarProcessAnatomy({
                   <DotsLayer dots={scene.fundicionDots} />
                 </g>
 
-                {/* 8. Dial de telemetría de temperatura (0-1250 °C) con aguja viva */}
+                {/* Corrientes animadas sutiles cuando se selecciona la etapa correspondiente */}
+                {isActive('silo') && (
+                  <path className="iso-line" data-tone="ochre" data-flow="true" d={scene.flowPaths.aluminaFeed} />
+                )}
+                {isActive('gtc') && (
+                  <>
+                    <path className="iso-line" data-tone="red" data-flow="true" d={scene.flowPaths.gasToGtc} />
+                    <path className="iso-line" data-tone="green" data-flow="true" d={scene.flowPaths.gtcRecycle} />
+                  </>
+                )}
+                {isActive('fundicion') && (
+                  <path className="iso-line" data-tone="blue" data-flow="true" d={scene.flowPaths.metalTap} />
+                )}
+
+                {/* 7. Dial térmico isométrico (0 a 1.250 °C) */}
                 <g aria-hidden="true">
                   {scene.dialSolids.map((s) => (
                     <SolidElement key={s.id} solid={s} />
@@ -630,13 +743,57 @@ export function AluarProcessAnatomy({
                   <path className="iso-line" data-tone="lit" d={needlePath} />
                   <DotsLayer dots={scene.dialDots} />
                 </g>
+
+                {/* 8. Pins numerados interactivos (01..05) para lectura instantánea de cada estación */}
+                <g>
+                  {scene.pins.map((pin) => {
+                    const active = isActive(pin.id);
+                    const scaleFactor = cam.w / scene.width;
+                    return (
+                      <g
+                        key={pin.id}
+                        transform={`translate(${pin.x.toFixed(1)} ${pin.y.toFixed(1)}) scale(${scaleFactor.toFixed(3)})`}
+                        role="button"
+                        tabIndex={0}
+                        aria-label={`${pin.code} ${pin.label}`}
+                        className="cursor-pointer"
+                        onMouseEnter={() => setHoveredId(pin.id)}
+                        onMouseLeave={() => setHoveredId(null)}
+                        onClick={() => handleSelectAssembly(pin.id, true)}
+                        onKeyDown={(e) => {
+                          if (e.key === 'Enter' || e.key === ' ') {
+                            e.preventDefault();
+                            handleSelectAssembly(pin.id, true);
+                          }
+                        }}
+                      >
+                        <circle
+                          r={active ? 12 : 10.5}
+                          fill={active ? '#0A42E0' : '#111214'}
+                          stroke="#F7F7F5"
+                          strokeWidth="1.8"
+                        />
+                        <text
+                          textAnchor="middle"
+                          dominantBaseline="central"
+                          fontSize="9.5"
+                          fontWeight="700"
+                          fill="#FFFFFF"
+                          style={{ fontFamily: 'var(--font-display)' }}
+                        >
+                          {pin.code}
+                        </text>
+                      </g>
+                    );
+                  })}
+                </g>
               </svg>
             </div>
 
             {/* Pie del plate: pista interactiva + lectura en vivo del dial */}
             <div className="flex flex-wrap items-center justify-between gap-3 border-t border-rule pt-3 text-[13px]">
               <span className="text-ink-muted">
-                Pasá o hacé click en cualquier módulo para aislarlo
+                Hacé click en los pins 01 a 05 para enfocar cada etapa en detalle
               </span>
               <span className="font-medium text-ink tabular-nums">
                 Dial térmico: {Math.round(needleTemp).toLocaleString('es-AR')} °C ·{' '}
@@ -644,27 +801,31 @@ export function AluarProcessAnatomy({
               </span>
             </div>
 
-            {/* Leyenda material compacta bajo la figura (regla Anatomy: nada de carteles flotantes en el dibujo) */}
+            {/* Leyenda material compacta */}
             <div className="mt-3 flex flex-wrap items-center gap-x-5 gap-y-2 text-[13px] text-ink-muted">
               <span className="inline-flex items-center gap-2">
-                <span className="inline-block h-2.5 w-2.5 border border-ink/40 bg-[#41454F]" />
-                Ánodos y cátodo de carbono (C)
+                <span className="inline-block h-2.5 w-2.5 border border-ink/30 bg-[#A3BCD2]" />
+                Golfo Nuevo y Muelle Storni
               </span>
               <span className="inline-flex items-center gap-2">
-                <span className="inline-block h-2.5 w-2.5 border border-ink/30 bg-[#E1AB67]" />
-                Baño criolita (Na3AlF6 + Al2O3)
+                <span className="inline-block h-2.5 w-2.5 border border-ink/40 bg-[#393F4A]" />
+                Carbono (ánodos y cátodo)
               </span>
               <span className="inline-flex items-center gap-2">
-                <span className="inline-block h-2.5 w-2.5 border border-ink/30 bg-[#D1D8E3]" />
-                Aluminio líquido y lingotes
+                <span className="inline-block h-2.5 w-2.5 border border-ink/30 bg-[#E39538]" />
+                Baño criolita / hornos
+              </span>
+              <span className="inline-flex items-center gap-2">
+                <span className="inline-block h-2.5 w-2.5 border border-ink/30 bg-[#C4D5E8]" />
+                Aluminio líquido y colada
               </span>
               <span className="inline-flex items-center gap-2">
                 <span className="inline-block h-2.5 w-2.5 bg-cobalt" />
-                Corriente continua (CC)
+                Grúa portuaria y viga CC
               </span>
               <span className="inline-flex items-center gap-2">
                 <span className="inline-block h-2.5 w-2.5 bg-emerald-react" />
-                Reciclo cerrado GTC (HF)
+                GTC y reciclo HF
               </span>
             </div>
           </div>
@@ -672,12 +833,26 @@ export function AluarProcessAnatomy({
           {/* Panel lateral técnico sincronizado con los datos verificados de Aluar */}
           <div className="flex flex-col justify-between border-t border-rule bg-stone-surface lg:col-span-4 lg:border-t-0">
             <div>
-              {/* Lista numerada de ensambles (estilo Anatomy legend selector) */}
               <div className="border-b border-rule p-4 sm:p-5">
-                <p className="text-[13px] font-medium text-ink-muted">
-                  Ensambles del circuito Aluar
-                </p>
-                <div className="mt-3 flex flex-col gap-1.5" role="tablist" aria-label="Ensambles de planta Aluar">
+                <div className="flex items-center justify-between gap-2">
+                  <p className="text-[13px] font-medium text-ink-muted">
+                    Etapas del complejo Aluar
+                  </p>
+                  {zoomed && (
+                    <button
+                      type="button"
+                      onClick={() => setZoomed(false)}
+                      className="cursor-pointer text-[13px] font-medium text-cobalt hover:underline"
+                    >
+                      Ver planta 1×
+                    </button>
+                  )}
+                </div>
+                <div
+                  className="mt-3 flex flex-col gap-1.5"
+                  role="tablist"
+                  aria-label="Etapas de planta Aluar"
+                >
                   {stages.map((st) => {
                     const selected = activeId === st.id;
                     return (
@@ -688,7 +863,7 @@ export function AluarProcessAnatomy({
                         aria-selected={selected}
                         onMouseEnter={() => setHoveredId(st.id)}
                         onMouseLeave={() => setHoveredId(null)}
-                        onClick={() => handleSelectAssembly(st.id)}
+                        onClick={() => handleSelectAssembly(st.id, true)}
                         className={`flex cursor-pointer items-center justify-between gap-3 border px-3 py-2 text-left text-[14px] transition-colors duration-150 ${
                           selected
                             ? 'border-ink bg-ink text-white'
@@ -718,7 +893,6 @@ export function AluarProcessAnatomy({
                 </div>
               </div>
 
-              {/* Detalle verificado de la etapa activa */}
               <AnimatePresence mode="wait">
                 <motion.div
                   key={activeStage.id}
@@ -728,11 +902,9 @@ export function AluarProcessAnatomy({
                   transition={{ duration: 0.18, ease: [0.22, 1, 0.36, 1] }}
                   className="p-5 sm:p-6"
                 >
-                  <div className="flex items-baseline justify-between gap-3">
-                    <h3 className="font-display text-[20px] font-bold leading-snug text-ink">
-                      {activePaso?.nombre ?? activeStage.shortLabel}
-                    </h3>
-                  </div>
+                  <h3 className="font-display text-[20px] font-bold leading-snug text-ink">
+                    {activePaso?.nombre ?? activeStage.shortLabel}
+                  </h3>
 
                   <p className="mt-2 font-display text-[26px] font-bold leading-tight text-cobalt tabular-nums">
                     {activeStage.calloutMetric}
@@ -770,7 +942,7 @@ export function AluarProcessAnatomy({
                   )}
 
                   <p className="mt-3 text-[13px] text-ink-muted">
-                    <strong className="font-medium text-ink">En el corte:</strong>{' '}
+                    <strong className="font-medium text-ink">En el diorama:</strong>{' '}
                     {activeStage.physicalParts}
                   </p>
                 </motion.div>
