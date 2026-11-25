@@ -21,7 +21,8 @@ const TABS = [
 ] as const;
 
 function sha256(content: string): string {
-  return `sha256:${crypto.createHash('sha256').update(content).digest('hex')}`;
+  const normalized = content.replace(/\r\n/g, '\n');
+  return `sha256:${crypto.createHash('sha256').update(normalized).digest('hex')}`;
 }
 
 async function readJsonFile(fileName: string): Promise<{ raw: string; data: unknown }> {
