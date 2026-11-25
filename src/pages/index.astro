@@ -3,11 +3,11 @@ import BaseLayout from '@/layouts/BaseLayout.astro';
 import { ArgentinaMapExplorer } from '@/components/ArgentinaMapExplorer';
 import { ProcessDeckPreview } from '@/components/ProcessDeckPreview';
 import {
+  getFichaProducto,
   getGeoAntartidaIslas,
   getGeoContinental,
   getGeoManifest,
   getMapaProvinciasData,
-  getProceso,
   getProductos,
   isExampleDataset,
 } from '@/data';
@@ -16,11 +16,9 @@ const esEjemplo = isExampleDataset();
 const productos = getProductos();
 const productosValidados = productos.filter((p) => p.estado_mvp === 'validado');
 const productosPendientesCount = productos.length - productosValidados.length;
-const procesosVerificados = [
-  getProceso('aluminio-hall-heroult'),
-  getProceso('litio-salmuera-carbonatacion'),
-  getProceso('urea-haber-bosch-sintesis'),
-].filter((p): p is NonNullable<typeof p> => Boolean(p));
+const procesosVerificados = productosValidados
+  .map((p) => getFichaProducto(p.producto_id)?.procesos[0] ?? null)
+  .filter((p): p is NonNullable<typeof p> => Boolean(p));
 
 const continentalGeo = getGeoContinental();
 const antartidaIslasGeo = getGeoAntartidaIslas();
@@ -41,22 +39,36 @@ const provinciasData = getMapaProvinciasData();
       </a>
 
       <nav aria-label="Navegación principal" class="flex items-center gap-5 text-[15px]">
-        <a href="#mapa" class="hidden text-ink-muted transition-colors duration-150 hover:text-ink sm:inline">
+        <a href="#mapa" class="text-ink-muted transition-colors duration-150 hover:text-ink">
           Mapa territorial
         </a>
-        <a href="#procesos" class="hidden text-ink-muted transition-colors duration-150 hover:text-ink md:inline">
-          Procesos
+        <a href="#procesos" class="text-ink-muted transition-colors duration-150 hover:text-ink">
+          Procesos ({procesosVerificados.length})
         </a>
-        <div class="flex items-center gap-4 border-l border-rule pl-4">
-          {productosValidados.map((prod) => (
-            <a
-              href={`/productos/${prod.producto_id}`}
-              class="font-medium text-cobalt transition-colors duration-150 hover:text-ink"
-            >
-              {prod.nombre.split(' ')[0]}
-            </a>
-          ))}
-        </div>
+        <a
+          href="/productos/aluminio"
+          class="hidden font-medium text-cobalt transition-colors duration-150 hover:text-ink md:inline"
+        >
+          Aluminio
+        </a>
+        <a
+          href="/productos/litio"
+          class="hidden font-medium text-cobalt transition-colors duration-150 hover:text-ink md:inline"
+        >
+          Litio
+        </a>
+        <a
+          href="/productos/urea"
+          class="hidden font-medium text-cobalt transition-colors duration-150 hover:text-ink lg:inline"
+        >
+          Urea
+        </a>
+        <a
+          href="/productos/soja"
+          class="hidden font-medium text-cobalt transition-colors duration-150 hover:text-ink lg:inline"
+        >
+          Soja
+        </a>
       </nav>
     </div>
   </header>
@@ -76,19 +88,11 @@ const provinciasData = getMapaProvinciasData();
         </div>
 
         <p role="status" class="max-w-md text-[13px] text-ink-muted">
-          {productosValidados.length} de {productos.length} cadenas verificadas con fuentes oficiales (
-          {productosValidados.map((prod, idx) => (
-            <>
-              {idx > 0 ? ', ' : ''}
-              <a
-                href={`/productos/${prod.producto_id}`}
-                class="font-medium text-cobalt hover:underline"
-              >
-                {prod.nombre.split(' ')[0]}
-              </a>
-            </>
-          ))}
-          ); {productosPendientesCount} siguen pendientes en Etapa 6.
+          {productosValidados.length} de {productos.length} cadenas MVP verificadas con fuentes
+          oficiales y verificación química en Supabase
+          {productosPendientesCount > 0
+            ? ` (${productosPendientesCount} pendientes en Etapa 6).`
+            : '; las 17 jurisdicciones sin datos se muestran con transparencia.'}
         </p>
       </div>
 

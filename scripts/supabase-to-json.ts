@@ -338,8 +338,23 @@ async function main() {
     };
   });
 
+  // Excluir fuentes placeholder de tipo 'ejemplo' que ya no están referenciadas por ninguna tabla
+  const referencedFuenteIds = new Set<string>([
+    ...productos_zonas.map((r) => r.procedencia.fuente_id),
+    ...procesos.map((r) => r.procedencia.fuente_id),
+    ...pasos_proceso.map((r) => r.procedencia.fuente_id),
+    ...conexiones_proceso.map((r) => r.procedencia.fuente_id),
+    ...empresas.map((r) => r.procedencia.fuente_id),
+    ...plantas.map((r) => r.procedencia.fuente_id),
+    ...produccion.map((r) => r.procedencia.fuente_id),
+    ...comercio_exterior.map((r) => r.procedencia.fuente_id),
+  ]);
+  const fuentesActivas = fuentes.filter(
+    (f) => f.tipo !== 'ejemplo' || referencedFuenteIds.has(f.fuente_id)
+  );
+
   const tablesPayload: Record<TabName, unknown[]> = {
-    fuentes,
+    fuentes: fuentesActivas,
     provincias,
     departamentos,
     productos,
@@ -364,7 +379,7 @@ async function main() {
     };
   }
 
-  const esEjemplo = fuentes.some((f) => f.tipo === 'ejemplo');
+  const esEjemplo = fuentesActivas.some((f) => f.tipo === 'ejemplo');
   const validadosCount = productos.filter((p) => p.estado_mvp === 'validado').length;
 
   const parsed: AtlasDataset = AtlasDatasetSchema.parse({

@@ -74,8 +74,9 @@ export function ProcessDeckPreview({
             </h2>
             <p className="mt-1.5 text-[15px] text-ink-muted">
               Cada cadena se modela paso a paso desde tablas validadas en Supabase con reacciones
-              balanceadas, condiciones operativas, energía y citas verificables. Ya cuentan con
-              ficha completa y diagrama React Flow: Aluminio, Litio y Urea.
+              balanceadas, condiciones operativas, energía y citas verificables. Las{' '}
+              {procesosVerificados.length} cadenas del plan inicial cuentan con ficha completa y
+              diagrama React Flow.
             </p>
           </div>
 

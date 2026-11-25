@@ -69,6 +69,7 @@ def validate_staging_bundle(
     known_fuentes: dict[str, Fuente] | None = None,
     strict_real: bool = True,
     max_capacity_factor: float = 1.35,
+    is_multi_plant_sector: bool = False,
 ) -> ValidationReport:
     """
     Ejecuta todas las barreras deterministas sobre el borrador del Agente 1:
@@ -121,7 +122,13 @@ def validate_staging_bundle(
             if pl.capacidad.valor <= 0:
                 errors.append(f"[plantas:{pl.planta_id}] capacidad debe ser > 0")
             elif "t" in pl.capacidad.unidad.lower():
-                total_installed_capacity_t += pl.capacidad.valor
+                unit_low = pl.capacidad.unidad.lower()
+                annual_cap = (
+                    pl.capacidad.valor * 365.0
+                    if ("/día" in unit_low or "/dia" in unit_low or "t/d" in unit_low)
+                    else pl.capacidad.valor
+                )
+                total_installed_capacity_t += annual_cap
         _check_provenance(
             pl.procedencia,
             f"plantas:{pl.planta_id}",
@@ -151,12 +158,19 @@ def validate_staging_bundle(
                 errors.append(f"[produccion:{pr.registro_id}] valor negativo imposible: {pr.medicion.valor}")
             # Control físico contra capacidad instalada declarada (atrapa bug datos.gob.ar acero vs aluminio)
             if total_installed_capacity_t > 0 and pr.medicion.valor > total_installed_capacity_t * max_capacity_factor:
-                anomalies.append(
+                msg = (
                     f"[produccion:{pr.registro_id}] valor {pr.medicion.valor:,.1f} {pr.medicion.unidad} "
                     f"supera en >{max_capacity_factor:.2f}x la capacidad instalada declarada "
-                    f"({total_installed_capacity_t:,.0f} t/año). Posible error en fuente oficial "
-                    "(ej. corrimiento de columnas en origen)."
+                    f"({total_installed_capacity_t:,.0f} t/año)."
                 )
+                if is_multi_plant_sector:
+                    warnings.append(
+                        f"{msg} Sector multiplanta: las plantas registradas son anclas representativas."
+                    )
+                else:
+                    anomalies.append(
+                        f"{msg} Posible error en fuente oficial (ej. corrimiento de columnas en origen)."
+                    )
 
     seen_comex: set[str] = set()
     for ce in bundle.comercio_exterior:
