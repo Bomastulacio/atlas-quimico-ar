@@ -1,14 +1,26 @@
 import { useMemo, useState } from 'react';
 import { motion, MotionConfig } from 'motion/react';
-import { ArrowRight, Building2, ExternalLink, MapPin, Search, ShieldCheck, X } from 'lucide-react';
-import type { Empresa, Planta, Producto } from '@/schemas';
+import {
+  ArrowRight,
+  Building2,
+  ExternalLink,
+  MapPin,
+  RefreshCw,
+  Search,
+  ShieldCheck,
+  X,
+} from 'lucide-react';
+import type { DolarSelector, Empresa, MercadoSnapshot, Planta, Producto } from '@/schemas';
 import type { EmpresaConPlantas } from '@/data';
+import { useLiveMarket } from '@/lib/useLiveMarket';
+import { CompanyMarketCard } from './CompanyMarketCard';
 import { ProductIcon } from './ProductIcon';
 import { getCategoryAccent } from './ArgentinaMapExplorer';
 
 interface EmpresasExplorerProps {
   empresas: EmpresaConPlantas[];
   productos: Producto[];
+  mercadoSnapshot: MercadoSnapshot;
 }
 
 const SPRING_TAB = {
@@ -44,10 +56,35 @@ function normalizeText(value: string): string {
     .replace(/[\u0300-\u036f]/g, '');
 }
 
-export function EmpresasExplorer({ empresas, productos }: EmpresasExplorerProps) {
+export function EmpresasExplorer({
+  empresas,
+  productos,
+  mercadoSnapshot,
+}: EmpresasExplorerProps) {
   const [selectedProductId, setSelectedProductId] = useState<string | null>(null);
   const [selectedCapital, setSelectedCapital] = useState<Empresa['tipo_capital'] | 'todos'>('todos');
   const [query, setQuery] = useState('');
+
+  const {
+    dolarCasa,
+    setDolarCasa,
+    tiposCambio,
+    empresasMercado,
+    mode,
+    isRefreshing,
+    refreshNow,
+  } = useLiveMarket(mercadoSnapshot);
+
+  const liveMercadoById = useMemo(
+    () => new Map(empresasMercado.map((m) => [m.empresa_id, m])),
+    [empresasMercado]
+  );
+
+  const dolarOptions: Array<{ casa: DolarSelector; label: string }> = [
+    { casa: 'contadoconliqui', label: 'Dólar CCL' },
+    { casa: 'bolsa', label: 'Dólar MEP' },
+    { casa: 'oficial', label: 'Dólar Oficial' },
+  ];
 
   const availableCapitals = useMemo(() => {
     const set = new Set(empresas.map((e) => e.empresa.tipo_capital));
@@ -93,6 +130,73 @@ export function EmpresasExplorer({ empresas, productos }: EmpresasExplorerProps)
   return (
     <MotionConfig reducedMotion="user">
       <div className="space-y-6">
+        {/* Barra de tipo de cambio (CCL por defecto / MEP / Oficial) para valuación en ARS y USD */}
+        <div className="flex flex-wrap items-center justify-between gap-4 border border-rule bg-stone-surface px-5 py-4">
+          <div className="flex flex-wrap items-center gap-3">
+            <span className="text-[13px] font-semibold text-ink">
+              Conversión bursátil ARS / USD:
+            </span>
+            <div
+              role="tablist"
+              aria-label="Seleccionar tipo de cambio argentino"
+              className="inline-flex flex-wrap bg-stone-subtle p-1 text-[13px]"
+            >
+              {dolarOptions.map((opt) => {
+                const fx = tiposCambio.find((t) => t.casa === opt.casa);
+                const isActive = dolarCasa === opt.casa;
+                return (
+                  <button
+                    key={opt.casa}
+                    type="button"
+                    role="tab"
+                    aria-selected={isActive}
+                    onClick={() => setDolarCasa(opt.casa)}
+                    className={`relative cursor-pointer px-3 py-1.5 font-medium transition-colors duration-150 tabular-nums ${
+                      isActive ? 'text-white' : 'text-ink-muted hover:text-ink'
+                    }`}
+                  >
+                    {isActive && (
+                      <motion.span
+                        layoutId="dolar-casa-tab"
+                        transition={SPRING_TAB}
+                        className="absolute inset-0 bg-ink"
+                      />
+                    )}
+                    <span className="relative z-10">
+                      {opt.label}{' '}
+                      {fx
+                        ? `· $${fx.venta.toLocaleString('es-AR', {
+                            minimumFractionDigits: 1,
+                            maximumFractionDigits: 1,
+                          })}`
+                        : ''}
+                    </span>
+                  </button>
+                );
+              })}
+            </div>
+          </div>
+
+          <div className="flex flex-wrap items-center gap-3 text-[13px] text-ink-muted">
+            <span>
+              {mode === 'live_edge'
+                ? 'Bolsa y dólar actualizados (Supabase Edge)'
+                : mode === 'live_dolarapi'
+                  ? 'Dólar en vivo (DolarApi) · último cierre bursátil'
+                  : 'Último cierre verificado'}
+            </span>
+            <button
+              type="button"
+              onClick={() => void refreshNow()}
+              disabled={isRefreshing}
+              className="inline-flex cursor-pointer items-center gap-1.5 border border-rule bg-stone-bg px-3 py-1.5 font-medium text-ink transition-colors duration-150 hover:border-ink hover:text-cobalt disabled:opacity-50"
+            >
+              <RefreshCw className={`h-3.5 w-3.5 ${isRefreshing ? 'animate-spin' : ''}`} />
+              <span>Actualizar</span>
+            </button>
+          </div>
+        </div>
+
         {/* Barra editorial de filtros por cadena, capital y búsqueda */}
         <div className="space-y-4 border border-rule bg-stone-surface p-5">
           <div className="flex flex-wrap items-center justify-between gap-4">
@@ -298,6 +402,15 @@ export function EmpresasExplorer({ empresas, productos }: EmpresasExplorerProps)
                             {empresa.hechos_verificables}
                           </p>
                         </div>
+
+                        {/* Valuación bursátil (BYMA directa / Grupo matriz global / No cotiza) */}
+                        {(liveMercadoById.get(empresa.empresa_id) ?? item.mercado) && (
+                          <CompanyMarketCard
+                            mercado={(liveMercadoById.get(empresa.empresa_id) ?? item.mercado)!}
+                            tiposCambio={tiposCambio}
+                            dolarCasa={dolarCasa}
+                          />
+                        )}
                       </div>
 
                       {/* Pie de procedencia auditable */}

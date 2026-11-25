@@ -1,12 +1,14 @@
 ---
 import BaseLayout from '@/layouts/BaseLayout.astro';
 import { SiteHeader } from '@/components/SiteHeader';
+import { StandaloneCompanyMarket } from '@/components/CompanyMarketCard';
 import { ProcessFlowDiagram } from '@/components/ProcessFlowDiagram';
 import { ProductIcon } from '@/components/ProductIcon';
 import PetroquimicaEssay from '@/content/productos/petroquimica.mdx';
-import { getFichaProducto, getFuentes, getSearchIndex } from '@/data';
+import { getFichaProducto, getFuentes, getMercadoSnapshot, getSearchIndex } from '@/data';
 
 const searchItems = getSearchIndex();
+const mercadoSnapshot = getMercadoSnapshot();
 
 const ficha = getFichaProducto('petroquimica');
 if (!ficha) {
@@ -276,6 +278,13 @@ const TIPO_FUENTE_LABEL: Record<string, string> = {
                   </dd>
                 </div>
               </dl>
+              {pl.empresa && (
+                <StandaloneCompanyMarket
+                  client:load
+                  empresaId={pl.empresa.empresa_id}
+                  initialSnapshot={mercadoSnapshot}
+                />
+              )}
             </div>
             <p class="mt-4 border-t border-rule pt-3 text-[12px] text-ink-muted">
               Cita ({pl.procedencia.anio}): {pl.procedencia.cita_ubicacion}

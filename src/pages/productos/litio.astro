@@ -1,12 +1,14 @@
 ---
 import BaseLayout from '@/layouts/BaseLayout.astro';
 import { SiteHeader } from '@/components/SiteHeader';
+import { StandaloneCompanyMarket } from '@/components/CompanyMarketCard';
 import { ProcessFlowDiagram } from '@/components/ProcessFlowDiagram';
 import { ProductIcon } from '@/components/ProductIcon';
 import LitioEssay from '@/content/productos/litio.mdx';
-import { getFichaProducto, getFuentes, getSearchIndex } from '@/data';
+import { getFichaProducto, getFuentes, getMercadoSnapshot, getSearchIndex } from '@/data';
 
 const searchItems = getSearchIndex();
+const mercadoSnapshot = getMercadoSnapshot();
 
 const ficha = getFichaProducto('litio');
 if (!ficha) {
@@ -420,6 +422,19 @@ const ESTADO_PLANTA_LABEL: Record<string, string> = {
           </article>
         ))}
       </div>
+
+      {ficha.plantas[0]?.empresa && (
+        <div class="mt-6 border border-rule bg-stone-surface p-6">
+          <h3 class="font-display text-[18px] font-semibold text-ink">
+            Cotización bursátil del grupo operador ({ficha.plantas[0].empresa.razon_social})
+          </h3>
+          <StandaloneCompanyMarket
+            client:load
+            empresaId={ficha.plantas[0].empresa.empresa_id}
+            initialSnapshot={mercadoSnapshot}
+          />
+        </div>
+      )}
     </section>
 
     {/* Sección 4: Ensayo de ingeniería química (MDX) */}

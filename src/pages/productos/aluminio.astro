@@ -2,12 +2,14 @@
 import BaseLayout from '@/layouts/BaseLayout.astro';
 import { SiteHeader } from '@/components/SiteHeader';
 import { AluarProcessAnatomy } from '@/components/AluarProcessAnatomy';
+import { StandaloneCompanyMarket } from '@/components/CompanyMarketCard';
 import { ProcessFlowDiagram } from '@/components/ProcessFlowDiagram';
 import { ProductIcon } from '@/components/ProductIcon';
 import AluminioEssay from '@/content/productos/aluminio.mdx';
-import { getFichaProducto, getFuentes, getSearchIndex } from '@/data';
+import { getFichaProducto, getFuentes, getMercadoSnapshot, getSearchIndex } from '@/data';
 
 const searchItems = getSearchIndex();
+const mercadoSnapshot = getMercadoSnapshot();
 
 const ficha = getFichaProducto('aluminio');
 if (!ficha) {
@@ -494,6 +496,12 @@ const TIPO_FUENTE_LABEL: Record<string, string> = {
                 </dd>
               </div>
             </dl>
+
+            <StandaloneCompanyMarket
+              client:load
+              empresaId={empresaPrincipal.empresa_id}
+              initialSnapshot={mercadoSnapshot}
+            />
 
             <p class="mt-5 border-t border-rule pt-4 text-[13px] text-ink-muted">
               Cita ({empresaPrincipal.procedencia.anio}): {empresaPrincipal.procedencia.cita_ubicacion}.{' '}

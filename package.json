@@ -15,6 +15,7 @@
     "data:sync": "tsx scripts/sheets-to-json.ts",
     "data:sync:local": "tsx scripts/sheets-to-json.ts --from-local",
     "data:sync:supabase": "tsx scripts/supabase-to-json.ts",
+    "data:sync:mercado": "tsx scripts/sync-mercado.ts",
     "data:sync:example": "tsx scripts/sheets-to-json.ts --from-fixtures",
     "data:golden": "tsx scripts/export-golden-aluminio.ts",
     "supabase:seed": "tsx scripts/json-to-supabase-seed.ts",

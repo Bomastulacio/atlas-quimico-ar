@@ -20,9 +20,11 @@ import empresasRaw from '@data/empresas.json';
 import plantasRaw from '@data/plantas.json';
 import produccionRaw from '@data/produccion.json';
 import comercioExteriorRaw from '@data/comercio_exterior.json';
+import mercadoRaw from '@data/mercado.json';
 
 import {
   AtlasDatasetSchema,
+  MercadoSnapshotSchema,
   type AtlasDataset,
   type CoberturaDatos,
   type ComercioExteriorRegistro,
@@ -30,7 +32,9 @@ import {
   type DatasetManifest,
   type Departamento,
   type Empresa,
+  type EmpresaMercado,
   type Fuente,
+  type MercadoSnapshot,
   type PasoProceso,
   type Planta,
   type Proceso,
@@ -41,6 +45,17 @@ import {
 } from '@/schemas';
 
 let cachedDataset: AtlasDataset | null = null;
+let cachedMercado: MercadoSnapshot | null = null;
+
+export function getMercadoSnapshot(): MercadoSnapshot {
+  if (cachedMercado) return cachedMercado;
+  cachedMercado = MercadoSnapshotSchema.parse(mercadoRaw);
+  return cachedMercado;
+}
+
+export function getEmpresaMercado(empresaId: string): EmpresaMercado | undefined {
+  return getMercadoSnapshot().empresas.find((e) => e.empresa_id === empresaId);
+}
 
 function loadDataset(): AtlasDataset {
   if (cachedDataset) return cachedDataset;
@@ -545,10 +560,12 @@ export interface EmpresaConPlantas {
   plantas: PlantaConContexto[];
   productos: Producto[];
   provincias: Provincia[];
+  mercado: EmpresaMercado | null;
 }
 
 export function getEmpresasConPlantas(): EmpresaConPlantas[] {
   const ds = loadDataset();
+  const mercadoMap = new Map(getMercadoSnapshot().empresas.map((m) => [m.empresa_id, m]));
   const provMap = new Map(ds.provincias.map((p) => [p.provincia_id, p]));
   const deptMap = new Map(ds.departamentos.map((d) => [d.departamento_id, d]));
   const prodMap = new Map(ds.productos.map((p) => [p.producto_id, p]));
@@ -582,7 +599,13 @@ export function getEmpresasConPlantas(): EmpresaConPlantas[] {
         }
       }
 
-      return { empresa, plantas, productos, provincias };
+      return {
+        empresa,
+        plantas,
+        productos,
+        provincias,
+        mercado: mercadoMap.get(empresa.empresa_id) ?? null,
+      };
     });
 }
 

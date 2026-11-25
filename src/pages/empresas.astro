@@ -5,6 +5,7 @@ import { EmpresasExplorer } from '@/components/EmpresasExplorer';
 import {
   getCoberturaDetallada,
   getEmpresasConPlantas,
+  getMercadoSnapshot,
   getProductos,
   getSearchIndex,
 } from '@/data';
@@ -12,6 +13,7 @@ import {
 const empresas = getEmpresasConPlantas();
 const productos = getProductos();
 const cobertura = getCoberturaDetallada();
+const mercadoSnapshot = getMercadoSnapshot();
 const searchItems = getSearchIndex();
 
 const plantasConCapacidad =
@@ -100,7 +102,12 @@ const plantasConCapacidad =
 
     {/* Explorador interactivo */}
     <section class="pt-10">
-      <EmpresasExplorer client:load empresas={empresas} productos={productos} />
+      <EmpresasExplorer
+        client:load
+        empresas={empresas}
+        productos={productos}
+        mercadoSnapshot={mercadoSnapshot}
+      />
     </section>
   </main>
 

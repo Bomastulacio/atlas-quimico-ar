@@ -3,6 +3,7 @@ import {
   getCoberturaDetallada,
   getComercioExterior,
   getDepartamentos,
+  getEmpresaMercado,
   getEmpresasConPlantas,
   getFichaProducto,
   getGeoAntartidaIslas,
@@ -12,6 +13,7 @@ import {
   getManifest,
   getMapaDepartamentosData,
   getMapaProvinciasData,
+  getMercadoSnapshot,
   getProceso,
   getProduccion,
   getProductos,
@@ -22,6 +24,7 @@ import {
   getSearchIndex,
   isExampleDataset,
 } from '@/data';
+import { computeValuationArsUsd, formatMarketCap } from '@/schemas';
 
 describe('Capa única de acceso a datos (src/data)', () => {
   it('declara el origen verificado (supabase) en modo real sin marcadores de ejemplo', () => {
@@ -159,5 +162,36 @@ describe('Capa única de acceso a datos (src/data)', () => {
     expect(sumaRegiones).toBe(24);
     const sumaConDatos = cov.porRegion.reduce((acc, r) => acc + r.conDatos, 0);
     expect(sumaConDatos).toBe(7);
+  });
+
+  it('valida el snapshot bursátil y las conversiones ARS/USD por tipo de dólar (CCL, MEP, Oficial)', () => {
+    const snap = getMercadoSnapshot();
+    expect(snap.empresas).toHaveLength(8);
+    expect(snap.tipos_cambio.map((t) => t.casa)).toEqual(
+      expect.arrayContaining(['contadoconliqui', 'bolsa', 'oficial', 'usd_brl'])
+    );
+
+    const aluar = getEmpresaMercado('aluar-saic')!;
+    expect(aluar.tipo_cotizacion).toBe('directa_local');
+    expect(aluar.ticker).toBe('ALUA');
+    const valCcl = computeValuationArsUsd(aluar, snap.tipos_cambio, 'contadoconliqui')!;
+    const valOficial = computeValuationArsUsd(aluar, snap.tipos_cambio, 'oficial')!;
+    expect(valCcl.marketCapArs).toBeCloseTo(aluar.market_cap_origen!, 0);
+    expect(valCcl.marketCapUsd).toBeGreaterThan(100_000_000);
+    expect(valOficial.marketCapUsd).not.toEqual(valCcl.marketCapUsd);
+    expect(formatMarketCap(valCcl.marketCapUsd, 'USD')).toMatch(/^USD /);
+    expect(formatMarketCap(valCcl.marketCapArs, 'ARS')).toMatch(/^ARS /);
+
+    // Matriz global en BRL (Unipar) debe convertir vía BRL=X a USD y luego a ARS
+    const unipar = getEmpresaMercado('unipar-indupa')!;
+    expect(unipar.tipo_cotizacion).toBe('matriz_global');
+    const valUnipar = computeValuationArsUsd(unipar, snap.tipos_cambio, 'contadoconliqui')!;
+    expect(valUnipar.marketCapUsd).toBeGreaterThan(100_000_000);
+    expect(valUnipar.marketCapArs).toBeGreaterThan(valUnipar.marketCapUsd);
+
+    // Empresa cerrada no inventa valuación
+    const profertil = getEmpresaMercado('profertil-sa')!;
+    expect(profertil.tipo_cotizacion).toBe('no_cotiza');
+    expect(computeValuationArsUsd(profertil, snap.tipos_cambio, 'contadoconliqui')).toBeNull();
   });
 });

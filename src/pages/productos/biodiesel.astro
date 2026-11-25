@@ -1,34 +1,42 @@
 ---
 import BaseLayout from '@/layouts/BaseLayout.astro';
 import { SiteHeader } from '@/components/SiteHeader';
+import { StandaloneCompanyMarket } from '@/components/CompanyMarketCard';
 import { ProcessFlowDiagram } from '@/components/ProcessFlowDiagram';
 import { ProductIcon } from '@/components/ProductIcon';
 import BiodieselEssay from '@/content/productos/biodiesel.mdx';
-import { getFichaProducto, getFuentes, getSearchIndex } from '@/data';
+import { getFichaProducto, getFuentes, getMercadoSnapshot, getSearchIndex } from '@/data';
 
 const searchItems = getSearchIndex();
+const mercadoSnapshot = getMercadoSnapshot();
 
-const ficha = getFichaProducto('biodiesel');
+const ficha = getFichaProducto("biodiesel");
 if (!ficha) {
-  throw new Error('No se encontró la ficha del producto "biodiesel" en la capa de datos.');
+  throw new Error(
+    'No se encontró la ficha del producto "biodiesel" en la capa de datos.',
+  );
 }
 
 const procesoPrincipal = ficha.procesos[0];
 if (!procesoPrincipal) {
-  throw new Error('No se encontró el proceso principal de biodiésel en la capa de datos.');
+  throw new Error(
+    "No se encontró el proceso principal de biodiésel en la capa de datos.",
+  );
 }
 
 const produccionDesc = [...ficha.produccion].sort((a, b) => b.anio - a.anio);
 const maxProduccion = Math.max(
-  ...produccionDesc.map((r) => (r.medicion.estado === 'dato' ? r.medicion.valor : 0)),
-  1
+  ...produccionDesc.map((r) =>
+    r.medicion.estado === "dato" ? r.medicion.valor : 0,
+  ),
+  1,
 );
 
 const comexUsd = ficha.comercioExterior
-  .filter((r) => r.metrica === 'valor_usd')
+  .filter((r) => r.metrica === "valor_usd")
   .sort((a, b) => b.anio - a.anio);
 const comexVol = ficha.comercioExterior
-  .filter((r) => r.metrica === 'volumen_t')
+  .filter((r) => r.metrica === "volumen_t")
   .sort((a, b) => b.anio - a.anio);
 
 const prod2024 = produccionDesc.find((r) => r.anio === 2024);
@@ -41,7 +49,9 @@ const citedFuenteIds = new Set<string>([
   ...ficha.zonas.map((z) => z.procedencia.fuente_id),
   ...ficha.procesos.map((p) => p.proceso.procedencia.fuente_id),
   ...ficha.procesos.flatMap((p) => p.pasos.map((s) => s.procedencia.fuente_id)),
-  ...ficha.procesos.flatMap((p) => p.conexiones.map((c) => c.procedencia.fuente_id)),
+  ...ficha.procesos.flatMap((p) =>
+    p.conexiones.map((c) => c.procedencia.fuente_id),
+  ),
   ...ficha.plantas.map((pl) => pl.procedencia.fuente_id),
   ...ficha.plantas
     .map((pl) => pl.empresa?.procedencia.fuente_id)
@@ -50,13 +60,15 @@ const citedFuenteIds = new Set<string>([
   ...ficha.comercioExterior.map((ce) => ce.procedencia.fuente_id),
 ]);
 
-const fuentesCitadas = getFuentes().filter((f) => citedFuenteIds.has(f.fuente_id));
+const fuentesCitadas = getFuentes().filter((f) =>
+  citedFuenteIds.has(f.fuente_id),
+);
 
 const TIPO_FUENTE_LABEL: Record<string, string> = {
-  oficial: 'Oficial',
-  tecnica: 'Técnica internacional',
-  empresa: 'Empresa (oficial)',
-  ejemplo: 'Ejemplo',
+  oficial: "Oficial",
+  tecnica: "Técnica internacional",
+  empresa: "Empresa (oficial)",
+  ejemplo: "Ejemplo",
 };
 ---
 
@@ -64,21 +76,44 @@ const TIPO_FUENTE_LABEL: Record<string, string> = {
   title="Biodiésel de soja FAME (Santa Fe) | Atlas Químico Argentino"
   description="Ficha verificada de biodiésel en Argentina: transesterificación alcalina en San Lorenzo y Gran Rosario, serie Secretaría de Energía 2021-2025 y UN Comtrade."
 >
-  <SiteHeader client:load variant="solid" searchItems={searchItems} currentPath="/productos/biodiesel" />
+  <SiteHeader
+    client:load
+    variant="solid"
+    searchItems={searchItems}
+    currentPath="/productos/biodiesel"
+  />
 
   <main class="mx-auto max-w-[1600px] px-5 pb-20 pt-6 sm:px-8 lg:px-10">
     <nav
       aria-label="Secciones de la ficha"
       class="mb-7 flex flex-wrap items-center justify-between gap-3 border-b border-rule pb-3 text-[13px] text-ink-muted"
     >
-      <a href="/#mapa" class="font-medium text-ink transition-colors duration-150 hover:text-cobalt">
+      <a
+        href="/#mapa"
+        class="font-medium text-ink transition-colors duration-150 hover:text-cobalt"
+      >
         ← Volver al mapa territorial
       </a>
       <div class="flex flex-wrap items-center gap-4">
-        <a href="#diagrama" class="transition-colors duration-150 hover:text-ink">Diagrama</a>
-        <a href="#datos" class="transition-colors duration-150 hover:text-ink">Producción y comercio</a>
-        <a href="#empresas" class="transition-colors duration-150 hover:text-ink">Planta</a>
-        <a href="#fuentes" class="transition-colors duration-150 hover:text-ink tabular-nums">
+        <a
+          href="#diagrama"
+          class="transition-colors duration-150 hover:text-ink"
+        >
+          Diagrama
+        </a>
+        <a href="#datos" class="transition-colors duration-150 hover:text-ink">
+          Producción y comercio
+        </a>
+        <a
+          href="#empresas"
+          class="transition-colors duration-150 hover:text-ink"
+        >
+          Planta
+        </a>
+        <a
+          href="#fuentes"
+          class="transition-colors duration-150 hover:text-ink tabular-nums"
+        >
           Fuentes ({fuentesCitadas.length})
         </a>
       </div>
@@ -104,8 +139,8 @@ const TIPO_FUENTE_LABEL: Record<string, string> = {
               {ficha.producto.descripcion_corta}
             </p>
             <p class="mt-2 text-[13px] text-ink-muted tabular-nums">
-              Jurisdicción: Santa Fe (Georef 82) · Departamentos San Lorenzo (82119) y Rosario
-              (82084)
+              Jurisdicción: Santa Fe (Georef 82) · Departamentos San Lorenzo
+              (82119) y Rosario (82084)
             </p>
           </div>
         </div>
@@ -120,45 +155,59 @@ const TIPO_FUENTE_LABEL: Record<string, string> = {
         <div>
           <dt class="text-[13px] text-ink-muted">Producción nacional (2024)</dt>
           <dd class="mt-1 font-display text-[28px] font-bold leading-tight text-ink">
-            {prod2024?.medicion.estado === 'dato'
-              ? `${prod2024.medicion.valor.toLocaleString('es-AR')} t`
-              : 'Sin datos'}
+            {prod2024?.medicion.estado === "dato"
+              ? `${prod2024.medicion.valor.toLocaleString("es-AR")} t`
+              : "Sin datos"}
           </dd>
           <p class="mt-1 text-[13px] text-ink-muted">
-            {prod2025?.medicion.estado === 'dato'
-              ? `${prod2025.medicion.valor.toLocaleString('es-AR')} t en 2025 (prov.) · Sec. Energía`
-              : 'Secretaría de Energía'}
+            {prod2025?.medicion.estado === "dato"
+              ? `${prod2025.medicion.valor.toLocaleString("es-AR")} t en 2025 (prov.) · Sec. Energía`
+              : "Secretaría de Energía"}
           </p>
         </div>
 
         <div>
-          <dt class="text-[13px] text-ink-muted">Exportación física HS 3826.00 ({ultimoComexVol?.anio})</dt>
+          <dt class="text-[13px] text-ink-muted">
+            Exportación física HS 3826.00 ({ultimoComexVol?.anio})
+          </dt>
           <dd class="mt-1 font-display text-[28px] font-bold leading-tight text-emerald-react">
-            {ultimoComexVol?.exportacion.estado === 'dato'
-              ? `${Math.round(ultimoComexVol.exportacion.valor).toLocaleString('es-AR')} t`
-              : 'Sin datos'}
+            {ultimoComexVol?.exportacion.estado === "dato"
+              ? `${Math.round(ultimoComexVol.exportacion.valor).toLocaleString("es-AR")} t`
+              : "Sin datos"}
           </dd>
           <p class="mt-1 text-[13px] text-ink-muted">
-            Saldo {ultimoComexUsd?.saldo_comercial.estado === 'dato' ? `+USD ${ultimoComexUsd.saldo_comercial.valor.toLocaleString('es-AR', { minimumFractionDigits: 2 })} M` : 's/d'} · UN Comtrade
+            Saldo{" "}
+            {ultimoComexUsd?.saldo_comercial.estado === "dato"
+              ? `+USD ${ultimoComexUsd.saldo_comercial.valor.toLocaleString("es-AR", { minimumFractionDigits: 2 })} M`
+              : "s/d"}{" "}
+            · UN Comtrade
           </p>
         </div>
 
         <div>
-          <dt class="text-[13px] text-ink-muted">Planta ancla San Lorenzo (Renova)</dt>
+          <dt class="text-[13px] text-ink-muted">
+            Planta ancla San Lorenzo (Renova)
+          </dt>
           <dd class="mt-1 font-display text-[28px] font-bold leading-tight text-cobalt">
-            {plantaAncla?.capacidad.estado === 'dato'
-              ? `${plantaAncla.capacidad.valor.toLocaleString('es-AR')} t/día`
-              : 'Sin datos'}
+            {plantaAncla?.capacidad.estado === "dato"
+              ? `${plantaAncla.capacidad.valor.toLocaleString("es-AR")} t/día`
+              : "Sin datos"}
           </dd>
-          <p class="mt-1 text-[13px] text-ink-muted">+270 t/día de glicerina refinada USP</p>
+          <p class="mt-1 text-[13px] text-ink-muted">
+            +270 t/día de glicerina refinada USP
+          </p>
         </div>
 
         <div>
-          <dt class="text-[13px] text-ink-muted">Consumo estequiométrico aceite</dt>
+          <dt class="text-[13px] text-ink-muted">
+            Consumo estequiométrico aceite
+          </dt>
           <dd class="mt-1 font-display text-[28px] font-bold leading-tight text-ochre-metal">
             1,005 t/t
           </dd>
-          <p class="mt-1 text-[13px] text-ink-muted">Mín. teórico 0,9955 t aceite + 0,1081 t CH4O</p>
+          <p class="mt-1 text-[13px] text-ink-muted">
+            Mín. teórico 0,9955 t aceite + 0,1081 t CH4O
+          </p>
         </div>
       </dl>
     </section>
@@ -170,12 +219,16 @@ const TIPO_FUENTE_LABEL: Record<string, string> = {
             Diagrama interactivo de transesterificación alcalina
           </h2>
           <p class="mt-1.5 text-[15px] text-ink-muted">
-            Generado desde Supabase con balance atómico IUPAC exacto (base trioleína), separación de
-            glicerina USP y reciclo cerrado de metanol excedente.
+            Generado desde Supabase con balance atómico IUPAC exacto (base
+            trioleína), separación de glicerina USP y reciclo cerrado de metanol
+            excedente.
           </p>
         </div>
         <p class="text-[13px] text-ink-muted tabular-nums">
-          Reacción: <strong class="font-semibold text-ink">{procesoPrincipal.proceso.reaccion_global}</strong>
+          Reacción:{" "}
+          <strong class="font-semibold text-ink">
+            {procesoPrincipal.proceso.reaccion_global}
+          </strong>
         </p>
       </div>
 
@@ -200,18 +253,20 @@ const TIPO_FUENTE_LABEL: Record<string, string> = {
 
           <div class="mt-5 space-y-3.5 tabular-nums">
             {produccionDesc.map((reg) => {
-              const val = reg.medicion.estado === 'dato' ? reg.medicion.valor : 0;
+              const val =
+                reg.medicion.estado === "dato" ? reg.medicion.valor : 0;
               const widthPct = (val / maxProduccion) * 100;
               return (
                 <div>
                   <div class="flex items-baseline justify-between text-[14px]">
                     <span class="font-medium text-ink">
-                      {reg.anio} {reg.procedencia.confianza === 'media' ? '(prov.)' : ''}
+                      {reg.anio}{" "}
+                      {reg.procedencia.confianza === "media" ? "(prov.)" : ""}
                     </span>
                     <span class="font-semibold text-ink">
-                      {reg.medicion.estado === 'dato'
-                        ? `${reg.medicion.valor.toLocaleString('es-AR')} t`
-                        : 'Sin datos'}
+                      {reg.medicion.estado === "dato"
+                        ? `${reg.medicion.valor.toLocaleString("es-AR")} t`
+                        : "Sin datos"}
                     </span>
                   </div>
                   <div class="mt-1.5 h-2 w-full bg-stone-subtle">
@@ -232,36 +287,46 @@ const TIPO_FUENTE_LABEL: Record<string, string> = {
               <h3 class="font-display text-[20px] font-semibold text-ink">
                 Comercio exterior en valor (HS 3826.00)
               </h3>
-              <span class="text-[13px] text-ink-muted">Millones de USD · UN Comtrade</span>
+              <span class="text-[13px] text-ink-muted">
+                Millones de USD · UN Comtrade
+              </span>
             </div>
             <div class="mt-4 overflow-x-auto">
               <table class="w-full border-collapse text-left text-[14px] tabular-nums">
                 <thead>
                   <tr class="border-b border-rule-strong/30 text-[13px] text-ink-muted">
                     <th class="py-2.5 pr-4 font-medium">Año</th>
-                    <th class="px-4 py-2.5 text-right font-medium">Exportaciones</th>
-                    <th class="px-4 py-2.5 text-right font-medium">Importaciones</th>
-                    <th class="py-2.5 pl-4 text-right font-medium">Saldo comercial</th>
+                    <th class="px-4 py-2.5 text-right font-medium">
+                      Exportaciones
+                    </th>
+                    <th class="px-4 py-2.5 text-right font-medium">
+                      Importaciones
+                    </th>
+                    <th class="py-2.5 pl-4 text-right font-medium">
+                      Saldo comercial
+                    </th>
                   </tr>
                 </thead>
                 <tbody class="divide-y divide-rule">
                   {comexUsd.map((row) => (
                     <tr>
-                      <td class="py-2.5 pr-4 font-semibold text-ink">{row.anio}</td>
+                      <td class="py-2.5 pr-4 font-semibold text-ink">
+                        {row.anio}
+                      </td>
                       <td class="px-4 py-2.5 text-right text-ink">
-                        {row.exportacion.estado === 'dato'
-                          ? `USD ${row.exportacion.valor.toLocaleString('es-AR', { minimumFractionDigits: 2 })} M`
-                          : 'Sin datos'}
+                        {row.exportacion.estado === "dato"
+                          ? `USD ${row.exportacion.valor.toLocaleString("es-AR", { minimumFractionDigits: 2 })} M`
+                          : "Sin datos"}
                       </td>
                       <td class="px-4 py-2.5 text-right text-ink-muted">
-                        {row.importacion.estado === 'dato'
-                          ? `USD ${row.importacion.valor.toLocaleString('es-AR', { minimumFractionDigits: 2 })} M`
-                          : 'Sin datos'}
+                        {row.importacion.estado === "dato"
+                          ? `USD ${row.importacion.valor.toLocaleString("es-AR", { minimumFractionDigits: 2 })} M`
+                          : "Sin datos"}
                       </td>
                       <td class="py-2.5 pl-4 text-right font-semibold text-emerald-react">
-                        {row.saldo_comercial.estado === 'dato'
-                          ? `+USD ${row.saldo_comercial.valor.toLocaleString('es-AR', { minimumFractionDigits: 2 })} M`
-                          : 'Sin datos'}
+                        {row.saldo_comercial.estado === "dato"
+                          ? `+USD ${row.saldo_comercial.valor.toLocaleString("es-AR", { minimumFractionDigits: 2 })} M`
+                          : "Sin datos"}
                       </td>
                     </tr>
                   ))}
@@ -275,36 +340,46 @@ const TIPO_FUENTE_LABEL: Record<string, string> = {
               <h3 class="font-display text-[20px] font-semibold text-ink">
                 Volumen físico exportado e importado (HS 3826.00)
               </h3>
-              <span class="text-[13px] text-ink-muted">Toneladas · UN Comtrade</span>
+              <span class="text-[13px] text-ink-muted">
+                Toneladas · UN Comtrade
+              </span>
             </div>
             <div class="mt-4 overflow-x-auto">
               <table class="w-full border-collapse text-left text-[14px] tabular-nums">
                 <thead>
                   <tr class="border-b border-rule-strong/30 text-[13px] text-ink-muted">
                     <th class="py-2.5 pr-4 font-medium">Año</th>
-                    <th class="px-4 py-2.5 text-right font-medium">Exportaciones</th>
-                    <th class="px-4 py-2.5 text-right font-medium">Importaciones</th>
-                    <th class="py-2.5 pl-4 text-right font-medium">Saldo físico</th>
+                    <th class="px-4 py-2.5 text-right font-medium">
+                      Exportaciones
+                    </th>
+                    <th class="px-4 py-2.5 text-right font-medium">
+                      Importaciones
+                    </th>
+                    <th class="py-2.5 pl-4 text-right font-medium">
+                      Saldo físico
+                    </th>
                   </tr>
                 </thead>
                 <tbody class="divide-y divide-rule">
                   {comexVol.map((row) => (
                     <tr>
-                      <td class="py-2.5 pr-4 font-semibold text-ink">{row.anio}</td>
+                      <td class="py-2.5 pr-4 font-semibold text-ink">
+                        {row.anio}
+                      </td>
                       <td class="px-4 py-2.5 text-right font-medium text-emerald-react">
-                        {row.exportacion.estado === 'dato'
-                          ? `${row.exportacion.valor.toLocaleString('es-AR', { minimumFractionDigits: 1 })} t`
-                          : 'Sin datos'}
+                        {row.exportacion.estado === "dato"
+                          ? `${row.exportacion.valor.toLocaleString("es-AR", { minimumFractionDigits: 1 })} t`
+                          : "Sin datos"}
                       </td>
                       <td class="px-4 py-2.5 text-right text-ink-muted">
-                        {row.importacion.estado === 'dato'
-                          ? `${row.importacion.valor.toLocaleString('es-AR', { minimumFractionDigits: 1 })} t`
-                          : 'Sin datos'}
+                        {row.importacion.estado === "dato"
+                          ? `${row.importacion.valor.toLocaleString("es-AR", { minimumFractionDigits: 1 })} t`
+                          : "Sin datos"}
                       </td>
                       <td class="py-2.5 pl-4 text-right font-semibold text-ink">
-                        {row.saldo_comercial.estado === 'dato'
-                          ? `${row.saldo_comercial.valor.toLocaleString('es-AR', { minimumFractionDigits: 1 })} t`
-                          : 'Sin datos'}
+                        {row.saldo_comercial.estado === "dato"
+                          ? `${row.saldo_comercial.valor.toLocaleString("es-AR", { minimumFractionDigits: 1 })} t`
+                          : "Sin datos"}
                       </td>
                     </tr>
                   ))}
@@ -324,17 +399,28 @@ const TIPO_FUENTE_LABEL: Record<string, string> = {
       </div>
       {plantaAncla && (
         <div class="mt-8 border border-rule bg-stone-surface p-6">
-          <h3 class="font-display text-[20px] font-semibold text-ink">{plantaAncla.nombre}</h3>
+          <h3 class="font-display text-[20px] font-semibold text-ink">
+            {plantaAncla.nombre}
+          </h3>
           <p class="mt-1 text-[13px] text-ink-muted tabular-nums">
-            {plantaAncla.localidad}, Santa Fe ({plantaAncla.lat.toFixed(3)}, {plantaAncla.lon.toFixed(3)})
+            {plantaAncla.localidad}, Santa Fe ({plantaAncla.lat.toFixed(3)},{" "}
+            {plantaAncla.lon.toFixed(3)})
           </p>
           {plantaAncla.empresa && (
-            <p class="mt-3 max-w-[85ch] text-[15px] text-ink-muted">
-              {plantaAncla.empresa.hechos_verificables}
-            </p>
+            <>
+              <p class="mt-3 max-w-[85ch] text-[15px] text-ink-muted">
+                {plantaAncla.empresa.hechos_verificables}
+              </p>
+              <StandaloneCompanyMarket
+                client:load
+                empresaId={plantaAncla.empresa.empresa_id}
+                initialSnapshot={mercadoSnapshot}
+              />
+            </>
           )}
           <p class="mt-4 border-t border-rule pt-3 text-[12px] text-ink-muted">
-            Cita ({plantaAncla.procedencia.anio}): {plantaAncla.procedencia.cita_ubicacion}
+            Cita ({plantaAncla.procedencia.anio}):{" "}
+            {plantaAncla.procedencia.cita_ubicacion}
           </p>
         </div>
       )}
@@ -369,14 +455,23 @@ const TIPO_FUENTE_LABEL: Record<string, string> = {
             {fuentesCitadas.map((f) => (
               <tr class="align-top">
                 <td class="px-4 py-3">
-                  <a href={f.url} target="_blank" rel="noopener noreferrer" class="font-medium text-cobalt hover:underline">
+                  <a
+                    href={f.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="font-medium text-cobalt hover:underline"
+                  >
                     {f.nombre} ↗
                   </a>
                   {f.notas && <p class="mt-1 text-ink-muted">{f.notas}</p>}
                 </td>
                 <td class="px-4 py-3 text-ink">{f.organismo}</td>
-                <td class="px-4 py-3 text-ink-muted">{TIPO_FUENTE_LABEL[f.tipo] ?? f.tipo}</td>
-                <td class="px-4 py-3 text-ink-muted tabular-nums">{f.fecha_descarga}</td>
+                <td class="px-4 py-3 text-ink-muted">
+                  {TIPO_FUENTE_LABEL[f.tipo] ?? f.tipo}
+                </td>
+                <td class="px-4 py-3 text-ink-muted tabular-nums">
+                  {f.fecha_descarga}
+                </td>
                 <td class="px-4 py-3 text-ink-muted tabular-nums">
                   <span title={f.hash}>{f.hash.slice(0, 22)}...</span>
                 </td>
@@ -390,8 +485,13 @@ const TIPO_FUENTE_LABEL: Record<string, string> = {
 
   <footer class="border-t border-rule bg-stone-surface">
     <div class="mx-auto flex max-w-[1600px] flex-wrap items-center justify-between gap-4 px-5 py-6 text-[13px] text-ink-muted sm:px-8 lg:px-10">
-      <p>Atlas Químico Argentino. Ficha de biodiésel (Santa Fe) validada bajo política strictReal.</p>
-      <a href="/" class="font-medium text-ink hover:text-cobalt">← Volver al mapa productivo</a>
+      <p>
+        Atlas Químico Argentino. Ficha de biodiésel (Santa Fe) validada bajo
+        política strictReal.
+      </p>
+      <a href="/" class="font-medium text-ink hover:text-cobalt">
+        ← Volver al mapa productivo
+      </a>
     </div>
   </footer>
 </BaseLayout>
