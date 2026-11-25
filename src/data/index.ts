@@ -313,3 +313,132 @@ export function getFichaProducto(productoId: string): FichaProducto | undefined 
     comercioExterior: getComercioExterior(productoId),
   };
 }
+
+export interface SearchIndexItem {
+  id: string;
+  kind: 'cadena' | 'provincia' | 'planta' | 'proceso';
+  title: string;
+  subtitle: string;
+  href: string;
+  keywords: string;
+  provinciaId?: string;
+  iconId?: string;
+  categoria?: Producto['categoria'];
+}
+
+export function getSearchIndex(): SearchIndexItem[] {
+  const ds = loadDataset();
+  const provMap = new Map(ds.provincias.map((p) => [p.provincia_id, p]));
+  const prodMap = new Map(ds.productos.map((p) => [p.producto_id, p]));
+
+  const items: SearchIndexItem[] = [];
+
+  for (const prod of ds.productos) {
+    const zonas = getZonasPorProducto(prod.producto_id);
+    const provNames = Array.from(new Set(zonas.map((z) => z.provincia.nombre)));
+    items.push({
+      id: `cadena-${prod.producto_id}`,
+      kind: 'cadena',
+      title: prod.nombre,
+      subtitle: `${prod.formula_quimica ? `${prod.formula_quimica} · ` : ''}${provNames.join(', ') || 'Argentina'}`,
+      href: `/productos/${prod.producto_id}`,
+      keywords: `${prod.nombre} ${prod.producto_id} ${prod.formula_quimica ?? ''} ${prod.descripcion_corta} ${provNames.join(' ')}`,
+      iconId: prod.icono_id,
+      categoria: prod.categoria,
+    });
+  }
+
+  for (const proc of ds.procesos) {
+    const prod = prodMap.get(proc.producto_id);
+    items.push({
+      id: `proceso-${proc.proceso_id}`,
+      kind: 'proceso',
+      title: proc.nombre,
+      subtitle: `${prod?.nombre ?? proc.producto_id}${proc.reaccion_global ? ` · ${proc.reaccion_global}` : ''}`,
+      href: `/productos/${proc.producto_id}#diagrama`,
+      keywords: `${proc.nombre} ${proc.ruta_tecnologica} ${proc.reaccion_global ?? ''} ${prod?.nombre ?? ''}`,
+      iconId: prod?.icono_id,
+      categoria: prod?.categoria,
+    });
+  }
+
+  for (const pl of ds.plantas) {
+    const prov = provMap.get(pl.provincia_id);
+    const prod = prodMap.get(pl.producto_id);
+    items.push({
+      id: `planta-${pl.planta_id}`,
+      kind: 'planta',
+      title: pl.nombre,
+      subtitle: `${pl.localidad}, ${prov?.nombre ?? pl.provincia_id} · ${prod?.nombre ?? pl.producto_id}`,
+      href: `/productos/${pl.producto_id}#empresas`,
+      keywords: `${pl.nombre} ${pl.localidad} ${prov?.nombre ?? ''} ${prod?.nombre ?? ''}`,
+      iconId: prod?.icono_id,
+      categoria: prod?.categoria,
+    });
+  }
+
+  for (const prov of ds.provincias) {
+    const { dominante, secundarios } = getProductosPorProvincia(prov.provincia_id);
+    const cadenas = dominante ? [dominante, ...secundarios].map((p) => p.nombre).join(', ') : 'Sin datos cargados';
+    items.push({
+      id: `prov-${prov.provincia_id}`,
+      kind: 'provincia',
+      title: prov.nombre,
+      subtitle: `${prov.region} · ${cadenas}`,
+      href: `/?provincia=${prov.provincia_id}#mapa`,
+      keywords: `${prov.nombre} ${prov.region} ${prov.iso_3166_2} ${cadenas}`,
+      provinciaId: prov.provincia_id,
+    });
+  }
+
+  return items;
+}
+
+export interface ChainCardSummary {
+  producto: Producto;
+  jurisdicciones: string;
+  plantasCount: number;
+  pasosCount: number;
+  reaccionGlobal: string | null;
+  metricaLabel: string;
+  metricaValor: string;
+}
+
+export function getChainCardSummaries(): ChainCardSummary[] {
+  return getProductos().map((producto) => {
+    const ficha = getFichaProducto(producto.producto_id);
+    const provNames = Array.from(new Set((ficha?.zonas ?? []).map((z) => z.provincia.nombre)));
+    const proc = ficha?.procesos[0];
+
+    const latestProd = ficha?.produccion.find((r) => r.medicion.estado === 'dato');
+    const latestComexUsd = ficha?.comercioExterior.find(
+      (c) => c.metrica === 'valor_usd' && c.exportacion.estado === 'dato'
+    );
+
+    let metricaLabel = 'Producción registrada';
+    let metricaValor = 'Sin datos';
+
+    if (latestProd && latestProd.medicion.estado === 'dato') {
+      metricaLabel = `Producción (${latestProd.anio})`;
+      const v = latestProd.medicion.valor;
+      metricaValor =
+        v >= 1_000_000
+          ? `${(v / 1_000_000).toLocaleString('es-AR', { minimumFractionDigits: 2, maximumFractionDigits: 2 })} Mt`
+          : `${Math.round(v).toLocaleString('es-AR')} t`;
+    } else if (latestComexUsd && latestComexUsd.saldo_comercial.estado === 'dato') {
+      metricaLabel = `Saldo comercial (${latestComexUsd.anio})`;
+      const s = latestComexUsd.saldo_comercial.valor;
+      metricaValor = `${s >= 0 ? '+' : ''}USD ${s.toLocaleString('es-AR', { minimumFractionDigits: 1, maximumFractionDigits: 1 })} M`;
+    }
+
+    return {
+      producto,
+      jurisdicciones: provNames.join(', ') || 'Argentina',
+      plantasCount: ficha?.plantas.length ?? 0,
+      pasosCount: proc?.pasos.length ?? 0,
+      reaccionGlobal: proc?.proceso.reaccion_global ?? null,
+      metricaLabel,
+      metricaValor,
+    };
+  });
+}

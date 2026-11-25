@@ -2,13 +2,14 @@ import { useState } from 'react';
 import { AnimatePresence, motion, MotionConfig } from 'motion/react';
 import { ArrowRight } from 'lucide-react';
 import type { Producto } from '@/schemas';
-import type { ProcesoCompleto } from '@/data';
+import type { ChainCardSummary, ProcesoCompleto } from '@/data';
 import { ProductIcon } from './ProductIcon';
 import { getCategoryAccent } from './ArgentinaMapExplorer';
 
 interface ProcessDeckPreviewProps {
   productos: Producto[];
   procesosVerificados: ProcesoCompleto[];
+  chainSummaries: ChainCardSummary[];
   esEjemplo: boolean;
 }
 
@@ -19,6 +20,12 @@ const SPRING_TAB = {
   stiffness: 420,
   damping: 34,
   mass: 0.85,
+};
+
+const SPRING_CARD = {
+  type: 'spring' as const,
+  stiffness: 380,
+  damping: 30,
 };
 
 const CATEGORIA_LABEL: Record<Producto['categoria'], string> = {
@@ -33,8 +40,9 @@ const CATEGORIA_LABEL: Record<Producto['categoria'], string> = {
 export function ProcessDeckPreview({
   productos,
   procesosVerificados,
+  chainSummaries,
 }: ProcessDeckPreviewProps) {
-  const [activeView, setActiveView] = useState<'proceso' | 'cadenas'>('proceso');
+  const [activeView, setActiveView] = useState<'cadenas' | 'proceso'>('cadenas');
   const [selectedProcesoId, setSelectedProcesoId] = useState<string>(
     procesosVerificados[0]?.proceso.proceso_id ?? ''
   );
@@ -66,29 +74,27 @@ export function ProcessDeckPreview({
   return (
     <MotionConfig reducedMotion="user">
       <div className="space-y-6">
-        {/* Cabecera limpia de sección + control segmentado conectado */}
+        {/* Cabecera limpia + switcher segmentado estilo Bencho */}
         <div className="flex flex-wrap items-end justify-between gap-4 border-b border-rule pb-4">
           <div className="max-w-2xl">
-            <h2 className="font-display text-[24px] font-bold tracking-tight text-ink">
-              Procesos químicos y cadenas prioritarias
+            <h2 className="font-display text-[24px] font-bold tracking-[-0.02em] text-ink">
+              Cadenas industriales y procesos químicos
             </h2>
             <p className="mt-1.5 text-[15px] text-ink-muted">
-              Cada cadena se modela paso a paso desde tablas validadas en Supabase con reacciones
-              balanceadas, condiciones operativas, energía y citas verificables. Las{' '}
-              {procesosVerificados.length} cadenas del plan inicial cuentan con ficha completa y
-              diagrama React Flow.
+              Las {productos.length} cadenas verificadas con reacciones balanceadas, balances de
+              masa, comercio exterior oficial y trazabilidad SHA-256 desde Supabase.
             </p>
           </div>
 
           <div
             role="tablist"
-            aria-label="Vista de procesos y cadenas"
+            aria-label="Vista de cadenas y procesos"
             className="inline-flex bg-stone-subtle p-1 text-[13px]"
           >
             {(
               [
-                { id: 'proceso', label: `Procesos verificados (${procesosVerificados.length})` },
-                { id: 'cadenas', label: `Las ${productos.length} cadenas iniciales` },
+                { id: 'cadenas', label: `Las ${productos.length} cadenas` },
+                { id: 'proceso', label: 'Explorador paso a paso' },
               ] as const
             ).map((tab) => {
               const isActive = activeView === tab.id;
@@ -118,67 +124,144 @@ export function ProcessDeckPreview({
         </div>
 
         <AnimatePresence mode="wait">
+          {/* Vista 1: Grid de cards táctiles inspiradas en bencho.dev (web + mobile) */}
+          {activeView === 'cadenas' && (
+            <motion.div
+              key="cadenas"
+              initial={{ opacity: 0, y: 10 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: -6 }}
+              transition={{ duration: 0.2, ease: EASE }}
+              className="grid gap-4 sm:grid-cols-2 lg:grid-cols-12"
+            >
+              {chainSummaries.map((item, idx) => {
+                const { producto } = item;
+                const accent = getCategoryAccent(producto.categoria);
+                // Ritmo asimétrico editorial: primeras 3 cards en tercios (4 cols), siguientes 4 en cuartos (3 cols)
+                const colSpan = idx < 3 ? 'lg:col-span-4' : 'lg:col-span-3';
+                return (
+                  <motion.a
+                    key={producto.producto_id}
+                    href={`/productos/${producto.producto_id}`}
+                    whileHover={{ y: -3 }}
+                    whileTap={{ scale: 0.99 }}
+                    transition={SPRING_CARD}
+                    className={`group relative flex flex-col justify-between border border-rule bg-stone-surface p-5 transition-colors duration-150 hover:border-ink ${colSpan}`}
+                  >
+                    {/* Filete cromático superior de identidad de cadena */}
+                    <span
+                      className="absolute inset-x-0 top-0 h-[3px] transition-opacity duration-150"
+                      style={{ backgroundColor: accent }}
+                      aria-hidden="true"
+                    />
+
+                    <div>
+                      <div className="flex items-start justify-between gap-3">
+                        <span
+                          className="flex h-10 w-10 shrink-0 items-center justify-center bg-stone-bg text-ink transition-colors duration-150 group-hover:bg-[var(--card-accent)] group-hover:text-white"
+                          style={{ ['--card-accent' as string]: accent }}
+                        >
+                          <ProductIcon iconId={producto.icono_id} size={19} />
+                        </span>
+                        {producto.formula_quimica && (
+                          <span className="text-[13px] font-semibold text-ink-muted tabular-nums">
+                            {producto.formula_quimica}
+                          </span>
+                        )}
+                      </div>
+
+                      <h3 className="mt-4 font-display text-[19px] font-bold leading-snug tracking-[-0.015em] text-ink group-hover:text-cobalt">
+                        {producto.nombre}
+                      </h3>
+                      <p className="mt-1 text-[13px] text-ink-muted">
+                        {CATEGORIA_LABEL[producto.categoria]} · {item.jurisdicciones}
+                      </p>
+
+                      <p className="mt-3 text-[14px] leading-relaxed text-ink-muted">
+                        {producto.descripcion_corta}
+                      </p>
+                    </div>
+
+                    <div className="mt-6 border-t border-rule pt-4">
+                      <div className="flex items-end justify-between gap-3 tabular-nums">
+                        <div>
+                          <p className="text-[13px] text-ink-muted">{item.metricaLabel}</p>
+                          <p className="mt-0.5 font-display text-[20px] font-bold leading-tight text-ink">
+                            {item.metricaValor}
+                          </p>
+                        </div>
+                        <span className="inline-flex items-center gap-1 text-[13px] font-semibold text-ink transition-colors duration-150 group-hover:text-cobalt">
+                          <span>Ficha</span>
+                          <ArrowRight className="h-3.5 w-3.5 transition-transform duration-150 group-hover:translate-x-1" />
+                        </span>
+                      </div>
+                    </div>
+                  </motion.a>
+                );
+              })}
+            </motion.div>
+          )}
+
+          {/* Vista 2: Explorador interactivo paso a paso de los 7 procesos */}
           {activeView === 'proceso' && activeBundle && (
             <motion.div
               key="proceso"
-              initial={{ opacity: 0, y: 8 }}
+              initial={{ opacity: 0, y: 10 }}
               animate={{ opacity: 1, y: 0 }}
               exit={{ opacity: 0, y: -6 }}
               transition={{ duration: 0.2, ease: EASE }}
               className="space-y-4"
             >
-              {/* Selector horizontal limpio entre los procesos verificados */}
-              {procesosVerificados.length > 1 && (
-                <div
-                  role="tablist"
-                  aria-label="Seleccionar proceso químico verificado"
-                  className="inline-flex flex-wrap border border-rule bg-stone-surface p-1 text-[13px]"
-                >
-                  {procesosVerificados.map((bundle) => {
-                    const prod = productos.find(
-                      (p) => p.producto_id === bundle.proceso.producto_id
-                    );
-                    const isSelected = bundle.proceso.proceso_id === activeProcessId;
-                    const accent = prod ? getCategoryAccent(prod.categoria) : '#0A42E0';
-                    return (
-                      <button
-                        key={bundle.proceso.proceso_id}
-                        type="button"
-                        role="tab"
-                        aria-selected={isSelected}
-                        onClick={() => setSelectedProcesoId(bundle.proceso.proceso_id)}
-                        className={`relative inline-flex cursor-pointer items-center gap-2 px-3.5 py-1.5 font-medium transition-colors duration-150 ${
-                          isSelected ? 'text-white' : 'text-ink-muted hover:text-ink'
-                        }`}
-                      >
-                        {isSelected && (
-                          <motion.span
-                            layoutId="verified-process-switcher"
-                            transition={SPRING_TAB}
-                            style={{ backgroundColor: accent }}
-                            className="absolute inset-0"
-                          />
-                        )}
-                        <span className="relative z-10 inline-flex items-center gap-1.5">
-                          {prod && <ProductIcon iconId={prod.icono_id} size={14} />}
-                          <span>{prod?.nombre ?? bundle.proceso.producto_id}</span>
-                        </span>
-                      </button>
-                    );
-                  })}
-                </div>
-              )}
+              {/* Dock táctil horizontal de procesos verificados */}
+              <div
+                role="tablist"
+                aria-label="Seleccionar proceso químico verificado"
+                className="flex max-w-full items-center overflow-x-auto border border-rule bg-stone-surface p-1 text-[13px]"
+              >
+                {procesosVerificados.map((bundle) => {
+                  const prod = productos.find(
+                    (p) => p.producto_id === bundle.proceso.producto_id
+                  );
+                  const isSelected = bundle.proceso.proceso_id === activeProcessId;
+                  const accent = prod ? getCategoryAccent(prod.categoria) : '#0A42E0';
+                  return (
+                    <button
+                      key={bundle.proceso.proceso_id}
+                      type="button"
+                      role="tab"
+                      aria-selected={isSelected}
+                      onClick={() => setSelectedProcesoId(bundle.proceso.proceso_id)}
+                      className={`relative inline-flex shrink-0 cursor-pointer items-center gap-2 px-3.5 py-1.5 font-medium transition-colors duration-150 ${
+                        isSelected ? 'text-white' : 'text-ink-muted hover:text-ink'
+                      }`}
+                    >
+                      {isSelected && (
+                        <motion.span
+                          layoutId="verified-process-switcher"
+                          transition={SPRING_TAB}
+                          style={{ backgroundColor: accent }}
+                          className="absolute inset-0"
+                        />
+                      )}
+                      <span className="relative z-10 inline-flex items-center gap-1.5">
+                        {prod && <ProductIcon iconId={prod.icono_id} size={14} />}
+                        <span>{prod?.nombre.split(' ')[0] ?? bundle.proceso.producto_id}</span>
+                      </span>
+                    </button>
+                  );
+                })}
+              </div>
 
-              <div className="grid gap-6 border border-rule bg-stone-surface lg:grid-cols-12">
-                {/* Columna izquierda: secuencia interactiva de pasos */}
+              <div className="grid border border-rule bg-stone-surface lg:grid-cols-12">
+                {/* Secuencia interactiva de pasos */}
                 <div className="flex flex-col justify-between p-6 lg:col-span-7 lg:border-r lg:border-rule">
                   <div>
                     <div className="flex flex-wrap items-baseline justify-between gap-3">
-                      <h3 className="font-display text-[24px] font-semibold tracking-tight text-ink">
+                      <h3 className="font-display text-[22px] font-semibold tracking-tight text-ink">
                         {activeBundle.proceso.nombre}
                       </h3>
                       {activeBundle.proceso.reaccion_global && (
-                        <span className="text-[15px] font-medium text-cobalt tabular-nums">
+                        <span className="text-[14px] font-semibold text-cobalt tabular-nums">
                           {activeBundle.proceso.reaccion_global}
                         </span>
                       )}
@@ -187,14 +270,16 @@ export function ProcessDeckPreview({
                       {activeBundle.proceso.ruta_tecnologica}
                     </p>
 
-                    {/* Pasos clickeables en grilla limpia */}
                     <div className="mt-6 grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
                       {pasosActivos.map((paso, index) => {
                         const isSelected = selectedStep?.paso_id === paso.paso_id;
                         return (
-                          <button
+                          <motion.button
                             key={paso.paso_id}
                             type="button"
+                            whileHover={{ y: -2 }}
+                            whileTap={{ scale: 0.99 }}
+                            transition={SPRING_CARD}
                             onClick={() =>
                               setSelectedStepByProcess((prev) => ({
                                 ...prev,
@@ -203,7 +288,7 @@ export function ProcessDeckPreview({
                             }
                             className={`group flex cursor-pointer flex-col justify-between border p-3.5 text-left transition-colors duration-150 ${
                               isSelected
-                                ? 'border-cobalt bg-cobalt text-white'
+                                ? 'border-ink bg-ink text-white'
                                 : 'border-rule bg-stone-bg text-ink hover:border-ink'
                             }`}
                           >
@@ -211,7 +296,7 @@ export function ProcessDeckPreview({
                               <span
                                 className={
                                   isSelected
-                                    ? 'text-white/80 tabular-nums'
+                                    ? 'text-white/75 tabular-nums'
                                     : 'text-ink-muted tabular-nums'
                                 }
                               >
@@ -220,7 +305,7 @@ export function ProcessDeckPreview({
                               {index < pasosActivos.length - 1 && (
                                 <ArrowRight
                                   className={`h-3.5 w-3.5 ${
-                                    isSelected ? 'text-white/80' : 'text-ink-muted'
+                                    isSelected ? 'text-white/75' : 'text-ink-muted'
                                   }`}
                                 />
                               )}
@@ -235,30 +320,29 @@ export function ProcessDeckPreview({
                             >
                               {paso.temperatura_c ? `${paso.temperatura_c} °C` : 'Sin datos de T'}
                             </p>
-                          </button>
+                          </motion.button>
                         );
                       })}
                     </div>
                   </div>
 
-                  {/* Balance sintético verificado + acceso directo al diagrama React Flow */}
                   <div className="mt-8 border-t border-rule pt-5">
                     <dl className="grid grid-cols-3 gap-4 tabular-nums">
                       <div>
                         <dt className="text-[13px] text-ink-muted">Etapas modeladas</dt>
-                        <dd className="mt-1 font-display text-[24px] font-semibold text-ink">
+                        <dd className="mt-1 font-display text-[22px] font-semibold text-ink">
                           {pasosActivos.length} pasos
                         </dd>
                       </div>
                       <div>
                         <dt className="text-[13px] text-ink-muted">Energía específica</dt>
-                        <dd className="mt-1 font-display text-[24px] font-semibold text-cobalt">
+                        <dd className="mt-1 font-display text-[22px] font-semibold text-cobalt">
                           {energiaText}
                         </dd>
                       </div>
                       <div>
                         <dt className="text-[13px] text-ink-muted">Corrientes y reciclos</dt>
-                        <dd className="mt-1 font-display text-[24px] font-semibold text-emerald-react">
+                        <dd className="mt-1 font-display text-[22px] font-semibold text-emerald-react">
                           {activeBundle.conexiones.length} ({recicloCount} rec.)
                         </dd>
                       </div>
@@ -267,7 +351,7 @@ export function ProcessDeckPreview({
                     <div className="mt-5">
                       <a
                         href={`/productos/${activeBundle.proceso.producto_id}`}
-                        className="inline-flex items-center gap-2 bg-ink px-4 py-2.5 text-[14px] font-medium text-white transition-colors duration-150 hover:bg-cobalt"
+                        className="inline-flex items-center gap-2 rounded-full bg-ink px-5 py-2.5 text-[14px] font-medium text-white transition-colors duration-150 hover:bg-cobalt"
                       >
                         <span>Abrir diagrama interactivo React Flow y ficha completa</span>
                         <ArrowRight className="h-4 w-4" />
@@ -276,7 +360,7 @@ export function ProcessDeckPreview({
                   </div>
                 </div>
 
-                {/* Columna derecha: detalle químico del paso seleccionado */}
+                {/* Detalle químico del paso seleccionado */}
                 <div className="p-6 lg:col-span-5">
                   <AnimatePresence mode="wait">
                     {selectedStep && (
@@ -293,7 +377,7 @@ export function ProcessDeckPreview({
                             <p className="text-[13px] font-medium text-cobalt">
                               Paso {selectedStep.orden} · {selectedStep.tipo_paso.replace('_', ' ')}
                             </p>
-                            <h4 className="mt-1 font-display text-[24px] font-semibold leading-snug text-ink">
+                            <h4 className="mt-1 font-display text-[22px] font-semibold leading-snug text-ink">
                               {selectedStep.nombre}
                             </h4>
                             <p className="mt-2 text-[15px] text-ink-muted">
@@ -352,64 +436,6 @@ export function ProcessDeckPreview({
                     )}
                   </AnimatePresence>
                 </div>
-              </div>
-            </motion.div>
-          )}
-
-          {activeView === 'cadenas' && (
-            <motion.div
-              key="cadenas"
-              initial={{ opacity: 0, y: 8 }}
-              animate={{ opacity: 1, y: 0 }}
-              exit={{ opacity: 0, y: -6 }}
-              transition={{ duration: 0.2, ease: EASE }}
-              className="border border-rule bg-stone-surface"
-            >
-              <div className="divide-y divide-rule">
-                {productos.map((prod) => {
-                  const accent = getCategoryAccent(prod.categoria);
-                  const isValidated = prod.estado_mvp === 'validado';
-                  return (
-                    <div
-                      key={prod.producto_id}
-                      className="grid items-center gap-4 px-6 py-4 transition-colors duration-150 hover:bg-stone-bg/70 sm:grid-cols-12"
-                    >
-                      <div className="flex items-center gap-3.5 sm:col-span-4">
-                        <span
-                          className="flex h-9 w-9 shrink-0 items-center justify-center text-white"
-                          style={{ backgroundColor: accent }}
-                        >
-                          <ProductIcon iconId={prod.icono_id} size={18} />
-                        </span>
-                        <div>
-                          <h3 className="text-[15px] font-semibold text-ink">{prod.nombre}</h3>
-                          <p className="text-[13px] text-ink-muted">
-                            {CATEGORIA_LABEL[prod.categoria]}
-                            {prod.formula_quimica ? ` · ${prod.formula_quimica}` : ''}
-                          </p>
-                        </div>
-                      </div>
-
-                      <p className="text-[15px] text-ink-muted sm:col-span-5">
-                        {prod.descripcion_corta}
-                      </p>
-
-                      <div className="flex items-center justify-between text-[13px] sm:col-span-3 sm:justify-end">
-                        {isValidated ? (
-                          <a
-                            href={`/productos/${prod.producto_id}`}
-                            className="inline-flex items-center gap-1.5 font-semibold text-cobalt hover:underline"
-                          >
-                            <span>Abrir ficha verificada</span>
-                            <ArrowRight className="h-3.5 w-3.5" />
-                          </a>
-                        ) : (
-                          <span className="text-ink-muted">Pendiente Etapa 6</span>
-                        )}
-                      </div>
-                    </div>
-                  );
-                })}
               </div>
             </motion.div>
           )}

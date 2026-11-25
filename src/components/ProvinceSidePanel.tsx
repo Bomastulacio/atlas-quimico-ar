@@ -67,7 +67,7 @@ export function ProvinceSidePanel({
   return (
     <aside
       aria-label="Ficha de jurisdicción seleccionada"
-      className="flex h-full flex-col border border-rule bg-stone-surface"
+      className="flex h-full flex-col border-t border-rule bg-stone-surface lg:border-t-0"
     >
       <AnimatePresence mode="wait">
         {selected ? (

@@ -288,6 +288,32 @@ export function ArgentinaMapExplorer({
     [centroids]
   );
 
+  // Permitir selección directa por query (?provincia=26) o desde el buscador global del header
+  useEffect(() => {
+    const selectFromExternal = (provId: string | null) => {
+      if (!provId || !dataById.has(provId)) return;
+      setSelectedId(provId);
+      if (!userLocked2D) setIs3D(true);
+      zoomToProvincia(provId, 1.85);
+    };
+
+    const params = new URLSearchParams(window.location.search);
+    const initialProv = params.get('provincia');
+    if (initialProv) {
+      selectFromExternal(initialProv);
+    }
+
+    const onExternalSelect = (ev: Event) => {
+      const detail = (ev as CustomEvent<{ provinciaId?: string }>).detail;
+      if (detail?.provinciaId) {
+        selectFromExternal(detail.provinciaId);
+      }
+    };
+
+    window.addEventListener('atlas:select-provincia', onExternalSelect);
+    return () => window.removeEventListener('atlas:select-provincia', onExternalSelect);
+  }, [dataById, userLocked2D, zoomToProvincia]);
+
   const resetView = () => {
     setView({ zoom: 1, x: 0, y: 0 });
     setSelectedId(null);
@@ -502,92 +528,25 @@ export function ArgentinaMapExplorer({
 
   return (
     <MotionConfig reducedMotion="user">
-      <div className="space-y-4">
-        {/* Control segmentado conectado para filtrar cadenas productivas (sin pared de botones) */}
-        <div className="flex flex-wrap items-center justify-between gap-3 border-y border-rule py-2.5">
-          <div
-            role="tablist"
-            aria-label="Filtrar mapa por cadena productiva"
-            className="flex max-w-full items-center overflow-x-auto bg-stone-subtle p-1"
-          >
-            <button
-              type="button"
-              role="tab"
-              aria-selected={activeProductId === null}
-              onClick={() => setActiveProductId(null)}
-              className={`relative shrink-0 cursor-pointer px-3 py-1.5 text-[13px] font-medium transition-colors duration-150 ${activeProductId === null ? 'text-white' : 'text-ink-muted hover:text-ink'
-                }`}
-            >
-              {activeProductId === null && (
-                <motion.span
-                  layoutId="map-chain-filter"
-                  transition={SPRING_TAB}
-                  className="absolute inset-0 bg-ink"
-                />
-              )}
-              <span className="relative z-10">Todas las cadenas</span>
-            </button>
+      <div className="border border-rule bg-stone-surface shadow-[0_24px_64px_-28px_rgba(17,18,20,0.28)]">
+        {/* Cabecera integrada de la hoja del mapa: título, dock de cadenas y controles 2D/3D + zoom */}
+        <div className="flex flex-col gap-4 border-b border-rule px-5 py-5 sm:px-7">
+          <div className="flex flex-wrap items-center justify-between gap-4">
+            <div className="flex flex-wrap items-baseline gap-x-3 gap-y-1">
+              <h2 className="font-display text-[24px] font-bold leading-none tracking-[-0.025em] text-ink sm:text-[28px]">
+                Mapa productivo
+              </h2>
+              <span className="text-[13px] text-ink-muted tabular-nums">
+                {productos.length} cadenas verificadas · 24 jurisdicciones
+              </span>
+            </div>
 
-            {productos.map((prod) => {
-              const isActive = activeProductId === prod.producto_id;
-              const accent = getCategoryAccent(prod.categoria);
-              return (
-                <button
-                  key={prod.producto_id}
-                  type="button"
-                  role="tab"
-                  aria-selected={isActive}
-                  onClick={() =>
-                    setActiveProductId((curr) =>
-                      curr === prod.producto_id ? null : prod.producto_id
-                    )
-                  }
-                  className={`relative inline-flex shrink-0 cursor-pointer items-center gap-1.5 px-3 py-1.5 text-[13px] font-medium transition-colors duration-150 ${isActive ? 'text-white' : 'text-ink-muted hover:text-ink'
-                    }`}
-                >
-                  {isActive && (
-                    <motion.span
-                      layoutId="map-chain-filter"
-                      transition={SPRING_TAB}
-                      style={{ backgroundColor: accent }}
-                      className="absolute inset-0"
-                    />
-                  )}
-                  <span className="relative z-10 inline-flex items-center gap-1.5">
-                    <ProductIcon iconId={prod.icono_id} size={14} />
-                    <span>{prod.nombre.split(' ')[0]}</span>
-                  </span>
-                </button>
-              );
-            })}
-          </div>
-
-          <p className="hidden items-center gap-1.5 text-[13px] text-ink-muted xl:flex">
-            <Move className="h-3.5 w-3.5" />
-            <span>Arrastrá para mover, rueda para zoom y doble click para volver a 2D</span>
-          </p>
-        </div>
-
-        {/* Espacio principal widescreen: Mapa (62%) + Ficha territorial (38%) */}
-        <div className="grid gap-6 lg:grid-cols-12 lg:items-stretch">
-          <div
-            ref={mapViewportRef}
-            onPointerDown={handleStagePointerDown}
-            onPointerMove={handleStagePointerMove}
-            onPointerUp={endDrag}
-            onPointerCancel={endDrag}
-            onDoubleClick={handleStageDoubleClick}
-            className={`relative overflow-hidden border border-rule bg-sea-basin select-none lg:col-span-7 xl:col-span-8 ${isDragging ? 'cursor-grabbing' : 'cursor-grab'
-              }`}
-            style={{ touchAction: 'none' }}
-          >
-            {/* Controles integrados (2D/3D + zoom) en la esquina superior derecha */}
-            <div className="absolute right-4 top-4 z-20 flex items-center gap-2">
-              {/* Switch conectado 2D / 3D */}
+            {/* Controles integrados (2D/3D + zoom) en la cabecera */}
+            <div className="flex items-center gap-2">
               <div
                 role="group"
                 aria-label="Perspectiva cartográfica"
-                className="flex border border-rule bg-stone-surface/95 p-0.5 text-[13px] backdrop-blur-xs"
+                className="flex border border-rule bg-stone-bg p-0.5 text-[13px]"
               >
                 <button
                   type="button"
@@ -596,8 +555,9 @@ export function ArgentinaMapExplorer({
                     setUserLocked2D(true);
                   }}
                   aria-pressed={!is3D}
-                  className={`cursor-pointer px-2.5 py-1 font-medium transition-colors duration-150 ${!is3D ? 'bg-ink text-white' : 'text-ink-muted hover:text-ink'
-                    }`}
+                  className={`cursor-pointer px-2.5 py-1 font-medium transition-colors duration-150 ${
+                    !is3D ? 'bg-ink text-white' : 'text-ink-muted hover:text-ink'
+                  }`}
                 >
                   2D
                 </button>
@@ -608,16 +568,16 @@ export function ArgentinaMapExplorer({
                     setUserLocked2D(false);
                   }}
                   aria-pressed={is3D}
-                  className={`inline-flex cursor-pointer items-center gap-1 px-2.5 py-1 font-medium transition-colors duration-150 ${is3D ? 'bg-cobalt text-white' : 'text-ink-muted hover:text-ink'
-                    }`}
+                  className={`inline-flex cursor-pointer items-center gap-1 px-2.5 py-1 font-medium transition-colors duration-150 ${
+                    is3D ? 'bg-cobalt text-white' : 'text-ink-muted hover:text-ink'
+                  }`}
                 >
                   <Box className="h-3.5 w-3.5" />
                   3D
                 </button>
               </div>
 
-              {/* Controles de zoom */}
-              <div className="flex border border-rule bg-stone-surface/95 backdrop-blur-xs">
+              <div className="flex border border-rule bg-stone-surface">
                 <button
                   type="button"
                   onClick={() => handleStepZoom(1.4)}
@@ -645,7 +605,89 @@ export function ArgentinaMapExplorer({
                 </button>
               </div>
             </div>
+          </div>
 
+          <div className="flex flex-wrap items-center justify-between gap-3">
+            <div
+              role="tablist"
+              aria-label="Filtrar mapa por cadena productiva"
+              className="flex max-w-full items-center overflow-x-auto bg-stone-subtle p-1"
+            >
+              <button
+                type="button"
+                role="tab"
+                aria-selected={activeProductId === null}
+                onClick={() => setActiveProductId(null)}
+                className={`relative shrink-0 cursor-pointer px-3 py-1.5 text-[13px] font-medium transition-colors duration-150 ${
+                  activeProductId === null ? 'text-white' : 'text-ink-muted hover:text-ink'
+                }`}
+              >
+                {activeProductId === null && (
+                  <motion.span
+                    layoutId="map-chain-filter"
+                    transition={SPRING_TAB}
+                    className="absolute inset-0 bg-ink"
+                  />
+                )}
+                <span className="relative z-10">Todas las cadenas</span>
+              </button>
+
+              {productos.map((prod) => {
+                const isActive = activeProductId === prod.producto_id;
+                const accent = getCategoryAccent(prod.categoria);
+                return (
+                  <button
+                    key={prod.producto_id}
+                    type="button"
+                    role="tab"
+                    aria-selected={isActive}
+                    onClick={() =>
+                      setActiveProductId((curr) =>
+                        curr === prod.producto_id ? null : prod.producto_id
+                      )
+                    }
+                    className={`relative inline-flex shrink-0 cursor-pointer items-center gap-1.5 px-3 py-1.5 text-[13px] font-medium transition-colors duration-150 ${
+                      isActive ? 'text-white' : 'text-ink-muted hover:text-ink'
+                    }`}
+                  >
+                    {isActive && (
+                      <motion.span
+                        layoutId="map-chain-filter"
+                        transition={SPRING_TAB}
+                        style={{ backgroundColor: accent }}
+                        className="absolute inset-0"
+                      />
+                    )}
+                    <span className="relative z-10 inline-flex items-center gap-1.5">
+                      <ProductIcon iconId={prod.icono_id} size={14} />
+                      <span>{prod.nombre.split(' ')[0]}</span>
+                    </span>
+                  </button>
+                );
+              })}
+            </div>
+
+            <p className="hidden items-center gap-1.5 text-[13px] text-ink-muted xl:flex">
+              <Move className="h-3.5 w-3.5" />
+              <span>Arrastrá para mover, rueda para zoom y doble click para volver a 2D</span>
+            </p>
+          </div>
+        </div>
+
+        {/* Espacio principal widescreen: Mapa (62%) + Ficha territorial (38%) sin bordes duplicados */}
+        <div className="grid lg:grid-cols-12 lg:items-stretch">
+          <div
+            ref={mapViewportRef}
+            onPointerDown={handleStagePointerDown}
+            onPointerMove={handleStagePointerMove}
+            onPointerUp={endDrag}
+            onPointerCancel={endDrag}
+            onDoubleClick={handleStageDoubleClick}
+            className={`relative overflow-hidden bg-sea-basin select-none lg:col-span-7 lg:border-r lg:border-rule xl:col-span-8 ${
+              isDragging ? 'cursor-grabbing' : 'cursor-grab'
+            }`}
+            style={{ touchAction: 'none' }}
+          >
             {/* Indicador limpio de escala y proyección arriba a la izquierda */}
             <div className="pointer-events-none absolute left-4 top-4 z-20 text-[13px] text-ink-muted">
               <span className="font-medium text-ink">República Argentina</span>
