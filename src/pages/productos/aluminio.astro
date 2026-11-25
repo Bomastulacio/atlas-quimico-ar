@@ -1,6 +1,7 @@
 ---
 import BaseLayout from '@/layouts/BaseLayout.astro';
 import { SiteHeader } from '@/components/SiteHeader';
+import { AluarProcessAnatomy } from '@/components/AluarProcessAnatomy';
 import { ProcessFlowDiagram } from '@/components/ProcessFlowDiagram';
 import { ProductIcon } from '@/components/ProductIcon';
 import AluminioEssay from '@/content/productos/aluminio.mdx';
@@ -107,6 +108,7 @@ const TIPO_FUENTE_LABEL: Record<string, string> = {
         ← Volver al mapa territorial
       </a>
       <div class="flex flex-wrap items-center gap-4">
+        <a href="#anatomia" class="transition-colors duration-150 hover:text-ink">Corte de planta</a>
         <a href="#diagrama" class="transition-colors duration-150 hover:text-ink">Diagrama</a>
         <a href="#datos" class="transition-colors duration-150 hover:text-ink">Producción y comercio</a>
         <a href="#empresas" class="transition-colors duration-150 hover:text-ink">Planta</a>
@@ -204,8 +206,43 @@ const TIPO_FUENTE_LABEL: Record<string, string> = {
       </dl>
     </section>
 
-    {/* Sección 1: Diagrama de proceso químico interactivo (React Flow desde JSON) */}
-    <section id="diagrama" class="scroll-mt-20 pt-12">
+    {/* Sección 1: Anatomía física isométrica del proceso en Aluar Puerto Madryn */}
+    <section id="anatomia" class="scroll-mt-20 pt-12">
+      <div class="mb-5 flex flex-wrap items-end justify-between gap-4">
+        <div class="max-w-3xl">
+          <h2 class="font-display text-[24px] font-bold tracking-tight text-ink">
+            Anatomía del proceso en Aluar (Puerto Madryn)
+          </h2>
+          <p class="mt-1.5 text-[15px] text-ink-muted">
+            Representación isométrica en corte del circuito industrial chubutense: desde el silo de
+            alúmina alimentado desde el Muelle Storni hasta los ánodos precocidos, la cuba
+            electrolítica Hall-Héroult, el reciclo de fluoruros en GTC y la colada.
+          </p>
+        </div>
+        <p class="text-[13px] text-ink-muted tabular-nums">
+          Alterná entre vista armada y despiece vertical para inspeccionar el interior de la cuba
+        </p>
+      </div>
+
+      <AluarProcessAnatomy
+        client:load
+        pasos={procesoPrincipal.pasos}
+        produccionLiquidaT={
+          ultimaProduccion?.medicion.estado === 'dato' ? ultimaProduccion.medicion.valor : null
+        }
+        aluminaImportadaT={
+          ultimaAluminaVol?.importacion.estado === 'dato' ? ultimaAluminaVol.importacion.valor : null
+        }
+        energiaElectrolisisMwhT={
+          procesoPrincipal.proceso.energia_especifica.estado === 'dato'
+            ? procesoPrincipal.proceso.energia_especifica.valor
+            : null
+        }
+      />
+    </section>
+
+    {/* Sección 2: Diagrama de proceso químico interactivo (React Flow desde JSON) */}
+    <section id="diagrama" class="scroll-mt-20 pt-16">
       <div class="mb-5 flex flex-wrap items-end justify-between gap-4">
         <div class="max-w-3xl">
           <h2 class="font-display text-[24px] font-bold tracking-tight text-ink">

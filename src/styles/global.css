@@ -175,3 +175,228 @@
   background: var(--color-stone-subtle);
   padding: 0.1rem 0.35rem;
 }
+
+/* Sistema visual Anatomy (isométrico de 4 tonos adaptado a la paleta piedra del Atlas) */
+.atlas-iso {
+  --anatomy-paper: #f7f7f5;
+  --anatomy-face: #ffffff;
+  --anatomy-top: #fcfcfa;
+  --anatomy-shade-0: #d5d6d1;
+  --anatomy-shade-1: #e0e0dc;
+  --anatomy-shade-2: #e9e9e5;
+  --anatomy-shade-3: #f2f2ee;
+  --anatomy-lit-top: #ffffff;
+  --anatomy-lit-shade: #e7ecf7;
+  --anatomy-hi: #1c1e22;
+  --anatomy-mid: #6b6f78;
+  --anatomy-lo: #a6a9b0;
+  --anatomy-faint: #cdcfd3;
+  --anatomy-lit: #0a42e0;
+  --anatomy-halo: #6b6f78;
+  --anatomy-halo-opacity: 0.24;
+  --anatomy-dot: #1c1e22;
+  --anatomy-red: #d93025;
+  --anatomy-green: #0b7a53;
+  --anatomy-blue: #0a42e0;
+  --anatomy-ochre: #c86a11;
+  --anatomy-weight: 0.72;
+}
+
+.atlas-iso .iso-svg {
+  display: block;
+  width: 100%;
+  height: auto;
+  overflow: visible;
+}
+
+.atlas-iso .iso-svg path,
+.atlas-iso .iso-svg circle {
+  vector-effect: non-scaling-stroke;
+}
+
+.atlas-iso .iso-fill {
+  fill: var(--anatomy-paper);
+  stroke: none;
+}
+
+.atlas-iso .iso-shade,
+.atlas-iso .iso-top {
+  stroke: none;
+}
+
+.atlas-iso .iso-shade[data-shade='0'] {
+  fill: var(--anatomy-shade-0);
+}
+.atlas-iso .iso-shade[data-shade='1'] {
+  fill: var(--anatomy-shade-1);
+}
+.atlas-iso .iso-shade[data-shade='2'] {
+  fill: var(--anatomy-shade-2);
+}
+.atlas-iso .iso-shade[data-shade='3'] {
+  fill: var(--anatomy-shade-3);
+}
+.atlas-iso .iso-top {
+  fill: var(--anatomy-top);
+}
+
+/* Cavidades y materiales reales dentro de la cuba Hall-Héroult */
+.atlas-iso .iso-cavity-refractory {
+  --anatomy-top: #d8d5cc;
+  --anatomy-shade-0: #b9b5aa;
+  --anatomy-shade-1: #c4c0b6;
+  --anatomy-shade-2: #cecac0;
+  --anatomy-shade-3: #d6d2c8;
+}
+
+.atlas-iso .iso-cavity-carbon,
+.atlas-iso .iso-anode-carbon {
+  --anatomy-top: #50545e;
+  --anatomy-shade-0: #2b2e35;
+  --anatomy-shade-1: #353941;
+  --anatomy-shade-2: #41454f;
+  --anatomy-shade-3: #4b4f59;
+  --anatomy-hi: #111214;
+  --anatomy-lo: #6c707a;
+  --anatomy-faint: #6c707a;
+}
+
+.atlas-iso .iso-layer-al {
+  --anatomy-top: #e3e8f0;
+  --anatomy-shade-0: #b2bccb;
+  --anatomy-shade-1: #c2cbd8;
+  --anatomy-shade-2: #d1d8e3;
+  --anatomy-shade-3: #dce2eb;
+}
+
+.atlas-iso .iso-layer-bath {
+  --anatomy-top: #f2cf9e;
+  --anatomy-shade-0: #c78336;
+  --anatomy-shade-1: #d4964c;
+  --anatomy-shade-2: #e1ab67;
+  --anatomy-shade-3: #ebbe82;
+}
+
+.atlas-iso .iso-dc-busbar {
+  --anatomy-top: #dde6fa;
+  --anatomy-shade-0: #8ca9eb;
+  --anatomy-shade-1: #a4bcf0;
+  --anatomy-shade-2: #bdcff5;
+  --anatomy-shade-3: #d0ddf8;
+}
+
+.atlas-iso .iso-ingot-al {
+  --anatomy-top: #eef1f5;
+  --anatomy-shade-0: #c3c9d1;
+  --anatomy-shade-1: #d0d5dc;
+  --anatomy-shade-2: #dce0e6;
+  --anatomy-shade-3: #e6e9ee;
+}
+
+/* Destaque táctil de un ensamble seleccionado o en hover */
+.atlas-iso .iso-assembly {
+  cursor: pointer;
+  transition: opacity 220ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.atlas-iso .iso-assembly[data-dim='true'] {
+  opacity: 0.42;
+}
+
+.atlas-iso .iso-assembly[data-active='true'] .iso-edge {
+  stroke: var(--anatomy-lit);
+  stroke-width: 1.05;
+}
+
+.atlas-iso .iso-halo {
+  fill: var(--anatomy-halo);
+  stroke: none;
+  filter: blur(8px);
+  opacity: var(--anatomy-halo-opacity);
+  transform: translateY(3px);
+}
+
+.atlas-iso .iso-line {
+  fill: none;
+  stroke: var(--anatomy-lo);
+  stroke-width: var(--anatomy-weight);
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.atlas-iso .iso-line[data-tone='hi'] {
+  stroke: var(--anatomy-hi);
+}
+.atlas-iso .iso-line[data-tone='mid'] {
+  stroke: var(--anatomy-mid);
+}
+.atlas-iso .iso-line[data-tone='lo'] {
+  stroke: var(--anatomy-lo);
+}
+.atlas-iso .iso-line[data-tone='faint'] {
+  stroke: var(--anatomy-faint);
+}
+.atlas-iso .iso-line[data-tone='lit'] {
+  stroke: var(--anatomy-lit);
+  stroke-width: 1.35;
+}
+.atlas-iso .iso-line[data-tone='red'] {
+  stroke: var(--anatomy-red);
+  stroke-width: 1.2;
+}
+.atlas-iso .iso-line[data-tone='green'] {
+  stroke: var(--anatomy-green);
+  stroke-width: 1.25;
+}
+.atlas-iso .iso-line[data-tone='blue'] {
+  stroke: var(--anatomy-blue);
+  stroke-width: 1.25;
+}
+.atlas-iso .iso-line[data-dashed='true'] {
+  stroke-dasharray: 3.5 3.5;
+}
+.atlas-iso .iso-line[data-flow='true'] {
+  stroke-dasharray: 2.5 5.5;
+  animation: atlas-iso-flow 1600ms linear infinite;
+}
+
+.atlas-iso .iso-dots circle {
+  fill: var(--anatomy-dot);
+  stroke: none;
+  opacity: 0.36;
+}
+.atlas-iso .iso-dots[data-tone='hi'] circle {
+  opacity: 0.85;
+}
+.atlas-iso .iso-dots[data-tone='mid'] circle {
+  opacity: 0.48;
+}
+.atlas-iso .iso-dots[data-tone='lo'] circle {
+  opacity: 0.24;
+}
+.atlas-iso .iso-dots circle[data-pulse='true'] {
+  animation: atlas-iso-pulse 1800ms ease-in-out infinite;
+}
+
+@keyframes atlas-iso-flow {
+  to {
+    stroke-dashoffset: -32;
+  }
+}
+
+@keyframes atlas-iso-pulse {
+  0%,
+  100% {
+    opacity: 0.2;
+  }
+  50% {
+    opacity: 0.85;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .atlas-iso .iso-line[data-flow='true'],
+  .atlas-iso .iso-dots circle[data-pulse='true'] {
+    animation: none;
+  }
+}
