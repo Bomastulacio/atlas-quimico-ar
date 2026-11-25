@@ -540,6 +540,13 @@ export function ProvinceSidePanel({
                   {totalDeptosConfiables} departamentos Georef con datos confiables · {sinDatosCount}{' '}
                   jurisdicciones marcadas como sin datos.
                 </p>
+                <a
+                  href="/cobertura"
+                  className="mt-2.5 inline-flex items-center gap-1 text-[13px] font-medium text-cobalt hover:underline"
+                >
+                  <span>Ver indicador completo de cobertura</span>
+                  <ArrowRight className="h-3.5 w-3.5" />
+                </a>
               </div>
 
               {/* Lista interactiva de provincias con cadenas cargadas */}

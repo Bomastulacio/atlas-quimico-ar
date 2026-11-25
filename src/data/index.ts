@@ -365,7 +365,7 @@ export function getFichaProducto(productoId: string): FichaProducto | undefined 
 
 export interface SearchIndexItem {
   id: string;
-  kind: 'cadena' | 'provincia' | 'departamento' | 'planta' | 'proceso';
+  kind: 'cadena' | 'provincia' | 'departamento' | 'empresa' | 'planta' | 'proceso';
   title: string;
   subtitle: string;
   href: string;
@@ -409,6 +409,32 @@ export function getSearchIndex(): SearchIndexItem[] {
       keywords: `${proc.nombre} ${proc.ruta_tecnologica} ${proc.reaccion_global ?? ''} ${prod?.nombre ?? ''}`,
       iconId: prod?.icono_id,
       categoria: prod?.categoria,
+    });
+  }
+
+  for (const emp of ds.empresas) {
+    const empPlantas = ds.plantas.filter((pl) => pl.empresa_id === emp.empresa_id);
+    const empProvs = Array.from(
+      new Set(
+        empPlantas
+          .map((pl) => provMap.get(pl.provincia_id)?.nombre)
+          .filter((n): n is string => Boolean(n))
+      )
+    );
+    const empProds = Array.from(
+      new Set(
+        empPlantas
+          .map((pl) => prodMap.get(pl.producto_id)?.nombre)
+          .filter((n): n is string => Boolean(n))
+      )
+    );
+    items.push({
+      id: `empresa-${emp.empresa_id}`,
+      kind: 'empresa',
+      title: emp.razon_social,
+      subtitle: `Capital ${emp.tipo_capital} · ${empProvs.join(', ') || 'Argentina'}`,
+      href: `/empresas#${emp.empresa_id}`,
+      keywords: `${emp.razon_social} ${emp.tipo_capital} ${emp.hechos_verificables} ${empProvs.join(' ')} ${empProds.join(' ')}`,
     });
   }
 
@@ -506,4 +532,180 @@ export function getChainCardSummaries(): ChainCardSummary[] {
       metricaValor,
     };
   });
+}
+
+export interface PlantaConContexto extends Planta {
+  provincia: Provincia;
+  departamento: Departamento | null;
+  producto: Producto;
+}
+
+export interface EmpresaConPlantas {
+  empresa: Empresa;
+  plantas: PlantaConContexto[];
+  productos: Producto[];
+  provincias: Provincia[];
+}
+
+export function getEmpresasConPlantas(): EmpresaConPlantas[] {
+  const ds = loadDataset();
+  const provMap = new Map(ds.provincias.map((p) => [p.provincia_id, p]));
+  const deptMap = new Map(ds.departamentos.map((d) => [d.departamento_id, d]));
+  const prodMap = new Map(ds.productos.map((p) => [p.producto_id, p]));
+
+  return [...ds.empresas]
+    .sort((a, b) => a.razon_social.localeCompare(b.razon_social, 'es'))
+    .map((empresa) => {
+      const plantas = ds.plantas
+        .filter((pl) => pl.empresa_id === empresa.empresa_id)
+        .flatMap((pl) => {
+          const provincia = provMap.get(pl.provincia_id);
+          const producto = prodMap.get(pl.producto_id);
+          if (!provincia || !producto) return [];
+          const departamento = pl.departamento_id ? (deptMap.get(pl.departamento_id) ?? null) : null;
+          return [{ ...pl, provincia, departamento, producto }];
+        });
+
+      const prodSeen = new Set<string>();
+      const productos: Producto[] = [];
+      const provSeen = new Set<string>();
+      const provincias: Provincia[] = [];
+
+      for (const pl of plantas) {
+        if (!prodSeen.has(pl.producto.producto_id)) {
+          prodSeen.add(pl.producto.producto_id);
+          productos.push(pl.producto);
+        }
+        if (!provSeen.has(pl.provincia.provincia_id)) {
+          provSeen.add(pl.provincia.provincia_id);
+          provincias.push(pl.provincia);
+        }
+      }
+
+      return { empresa, plantas, productos, provincias };
+    });
+}
+
+export interface ProvinciaCoberturaItem {
+  provincia: Provincia;
+  cadenas: Producto[];
+  departamentosConfiables: Departamento[];
+  plantasCount: number;
+  ultimoAnioDato: number | null;
+}
+
+export interface RegionCoberturaResumen {
+  region: Provincia['region'];
+  total: number;
+  conDatos: number;
+  sinDatos: number;
+  porcentaje: number;
+  provinciasConDatos: string[];
+}
+
+export interface CoberturaDetallada {
+  resumen: ResumenCobertura;
+  totales: {
+    totalProvincias: number;
+    provinciasConDatos: number;
+    provinciasSinDatos: number;
+    departamentosConDatos: number;
+    cadenasVerificadas: number;
+    empresasVerificadas: number;
+    plantasGeorreferenciadas: number;
+    plantasSinCapacidadPublica: number;
+    fuentesVerificadas: number;
+    seriesProduccionSinDatos: number;
+    seriesComexParciales: number;
+  };
+  porRegion: RegionCoberturaResumen[];
+  provincias: ProvinciaCoberturaItem[];
+}
+
+const REGION_ORDER: Provincia['region'][] = [
+  'NOA',
+  'NEA',
+  'Centro',
+  'Pampeana',
+  'Cuyo',
+  'Patagonia',
+];
+
+export function getCoberturaDetallada(): CoberturaDetallada {
+  const ds = loadDataset();
+  const resumen = getResumenCobertura();
+
+  const provincias: ProvinciaCoberturaItem[] = [...ds.provincias]
+    .sort((a, b) => a.nombre.localeCompare(b.nombre, 'es'))
+    .map((provincia) => {
+      const { dominante, secundarios, relaciones } = getProductosPorProvincia(provincia.provincia_id);
+      const cadenas = dominante ? [dominante, ...secundarios] : [];
+      const departamentosConfiables = ds.departamentos.filter(
+        (d) => d.provincia_id === provincia.provincia_id && d.tiene_datos_confiables
+      );
+      const plantasProv = ds.plantas.filter((pl) => pl.provincia_id === provincia.provincia_id);
+      const anios = [
+        ...relaciones.map((r) => r.procedencia.anio),
+        ...plantasProv.map((pl) => pl.procedencia.anio),
+      ];
+      const ultimoAnioDato = anios.length > 0 ? Math.max(...anios) : null;
+
+      return {
+        provincia,
+        cadenas,
+        departamentosConfiables,
+        plantasCount: plantasProv.length,
+        ultimoAnioDato,
+      };
+    });
+
+  const porRegion: RegionCoberturaResumen[] = REGION_ORDER.map((region) => {
+    const items = provincias.filter((p) => p.provincia.region === region);
+    const conDatosItems = items.filter((p) => p.provincia.cobertura_datos !== 'sin_datos');
+    const total = items.length;
+    const conDatos = conDatosItems.length;
+    return {
+      region,
+      total,
+      conDatos,
+      sinDatos: total - conDatos,
+      porcentaje: total > 0 ? Math.round((conDatos / total) * 100) : 0,
+      provinciasConDatos: conDatosItems.map((p) => p.provincia.nombre),
+    };
+  });
+
+  const provinciasConDatos = provincias.filter(
+    (p) => p.provincia.cobertura_datos !== 'sin_datos'
+  ).length;
+  const plantasSinCapacidadPublica = ds.plantas.filter(
+    (pl) => pl.capacidad.estado === 'sin_datos'
+  ).length;
+  const seriesProduccionSinDatos = ds.produccion.filter(
+    (r) => r.medicion.estado === 'sin_datos'
+  ).length;
+  const seriesComexParciales = ds.comercio_exterior.filter(
+    (c) =>
+      c.exportacion.estado === 'sin_datos' ||
+      c.importacion.estado === 'sin_datos' ||
+      c.saldo_comercial.estado === 'sin_datos'
+  ).length;
+
+  return {
+    resumen,
+    totales: {
+      totalProvincias: ds.provincias.length,
+      provinciasConDatos,
+      provinciasSinDatos: ds.provincias.length - provinciasConDatos,
+      departamentosConDatos: resumen.departamentosConDatos,
+      cadenasVerificadas: ds.productos.filter((p) => p.estado_mvp === 'validado').length,
+      empresasVerificadas: ds.empresas.length,
+      plantasGeorreferenciadas: ds.plantas.length,
+      plantasSinCapacidadPublica,
+      fuentesVerificadas: ds.fuentes.length,
+      seriesProduccionSinDatos,
+      seriesComexParciales,
+    },
+    porRegion,
+    provincias,
+  };
 }

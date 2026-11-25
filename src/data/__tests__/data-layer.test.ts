@@ -1,7 +1,9 @@
 import { describe, expect, it } from 'vitest';
 import {
+  getCoberturaDetallada,
   getComercioExterior,
   getDepartamentos,
+  getEmpresasConPlantas,
   getFichaProducto,
   getGeoAntartidaIslas,
   getGeoContinental,
@@ -127,5 +129,35 @@ describe('Capa única de acceso a datos (src/data)', () => {
 
     const searchDeptItems = getSearchIndex().filter((i) => i.kind === 'departamento');
     expect(searchDeptItems).toHaveLength(10);
+  });
+
+  it('expone el directorio verificable de empresas con plantas, productos y trazabilidad (Etapa 8)', () => {
+    const empresas = getEmpresasConPlantas();
+    expect(empresas).toHaveLength(8);
+    for (const item of empresas) {
+      expect(item.plantas.length).toBeGreaterThanOrEqual(1);
+      expect(item.productos.length).toBeGreaterThanOrEqual(1);
+      expect(item.provincias.length).toBeGreaterThanOrEqual(1);
+      expect(item.empresa.procedencia.hash).toMatch(/^sha256:[a-f0-9]{64}$/);
+      expect(item.empresa.procedencia.cita_ubicacion.length).toBeGreaterThan(5);
+    }
+
+    const searchEmpItems = getSearchIndex().filter((i) => i.kind === 'empresa');
+    expect(searchEmpItems).toHaveLength(8);
+  });
+
+  it('consolida el indicador de cobertura territorial por región y las 24 jurisdicciones (Etapa 8)', () => {
+    const cov = getCoberturaDetallada();
+    expect(cov.provincias).toHaveLength(24);
+    expect(cov.totales.provinciasConDatos).toBe(7);
+    expect(cov.totales.provinciasSinDatos).toBe(17);
+    expect(cov.totales.empresasVerificadas).toBe(8);
+    expect(cov.totales.plantasGeorreferenciadas).toBe(11);
+    expect(cov.totales.plantasSinCapacidadPublica).toBeGreaterThanOrEqual(1);
+
+    const sumaRegiones = cov.porRegion.reduce((acc, r) => acc + r.total, 0);
+    expect(sumaRegiones).toBe(24);
+    const sumaConDatos = cov.porRegion.reduce((acc, r) => acc + r.conDatos, 0);
+    expect(sumaConDatos).toBe(7);
   });
 });

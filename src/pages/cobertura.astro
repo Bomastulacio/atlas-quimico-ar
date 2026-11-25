@@ -1,0 +1,119 @@
+---
+import BaseLayout from '@/layouts/BaseLayout.astro';
+import { SiteHeader } from '@/components/SiteHeader';
+import { CoverageDashboard } from '@/components/CoverageDashboard';
+import { getCoberturaDetallada, getManifest, getSearchIndex } from '@/data';
+
+const cobertura = getCoberturaDetallada();
+const manifest = getManifest();
+const searchItems = getSearchIndex();
+
+const pctNacional = Math.round(
+  (cobertura.totales.provinciasConDatos / cobertura.totales.totalProvincias) * 100
+);
+---
+
+<BaseLayout
+  title="Indicador de cobertura de datos | Atlas Químico Argentino"
+  description="Transparencia territorial del Atlas Químico Argentino: qué provincias, regiones, departamentos y plantas cuentan con datos oficiales verificados y dónde faltan datos."
+>
+  <SiteHeader client:load variant="solid" searchItems={searchItems} currentPath="/cobertura" />
+
+  <main class="mx-auto max-w-[1600px] px-5 pb-20 pt-8 sm:px-8 lg:px-10">
+    {/* Navegación contextual */}
+    <nav
+      aria-label="Ruta de navegación"
+      class="mb-7 flex flex-wrap items-center justify-between gap-3 border-b border-rule pb-3 text-[13px] text-ink-muted"
+    >
+      <a href="/#mapa" class="font-medium text-ink transition-colors duration-150 hover:text-cobalt">
+        ← Volver al mapa territorial
+      </a>
+      <a href="/empresas" class="transition-colors duration-150 hover:text-ink">
+        Directorio de empresas ({cobertura.totales.empresasVerificadas})
+      </a>
+    </nav>
+
+    {/* Cabecera editorial */}
+    <section class="border-b border-rule pb-8">
+      <div class="flex flex-wrap items-start justify-between gap-6">
+        <div class="max-w-3xl">
+          <h1 class="font-display text-[clamp(2rem,3.4vw,3rem)] font-bold leading-[1.06] tracking-[-0.03em] text-ink">
+            Indicador de cobertura de datos
+          </h1>
+          <p class="mt-3 text-[15px] leading-relaxed text-ink-muted sm:text-[16px]">
+            Cuando una provincia, un departamento o una planta tiene poca información o todavía no
+            cuenta con fuentes primarias verificadas, el atlas lo declara explícitamente. Ninguna
+            cifra se inventa ni se completa por estimación.
+          </p>
+        </div>
+
+        <div class="border border-rule bg-stone-surface px-4 py-3 text-[13px] tabular-nums">
+          <p class="font-medium text-ink">Fuente de verdad: {manifest.origen}</p>
+          <p class="mt-0.5 text-ink-muted">
+            {cobertura.totales.fuentesVerificadas} fuentes con SHA-256 · Actualizado{' '}
+            {manifest.generado_en.slice(0, 10)}
+          </p>
+        </div>
+      </div>
+
+      {/* 4 indicadores clave de cobertura */}
+      <dl class="mt-8 grid gap-6 border-t border-rule pt-6 sm:grid-cols-2 lg:grid-cols-4 tabular-nums">
+        <div>
+          <dt class="text-[13px] text-ink-muted">Jurisdicciones con datos</dt>
+          <dd class="mt-1 font-display text-[28px] font-bold leading-tight text-cobalt">
+            {cobertura.totales.provinciasConDatos} de {cobertura.totales.totalProvincias}
+          </dd>
+          <p class="mt-1 text-[13px] text-ink-muted">
+            {pctNacional}% del total jurisdiccional ({cobertura.totales.provinciasSinDatos} sin datos)
+          </p>
+        </div>
+
+        <div>
+          <dt class="text-[13px] text-ink-muted">Departamentos confiables</dt>
+          <dd class="mt-1 font-display text-[28px] font-bold leading-tight text-emerald-react">
+            {cobertura.totales.departamentosConDatos}
+          </dd>
+          <p class="mt-1 text-[13px] text-ink-muted">
+            Polígonos IGN activos en zoom profundo
+          </p>
+        </div>
+
+        <div>
+          <dt class="text-[13px] text-ink-muted">Empresas y plantas</dt>
+          <dd class="mt-1 font-display text-[28px] font-bold leading-tight text-ink">
+            {cobertura.totales.empresasVerificadas} / {cobertura.totales.plantasGeorreferenciadas}
+          </dd>
+          <p class="mt-1 text-[13px] text-ink-muted">
+            Operadores verificados e instalaciones georreferenciadas
+          </p>
+        </div>
+
+        <div>
+          <dt class="text-[13px] text-ink-muted">Fuentes oficiales auditadas</dt>
+          <dd class="mt-1 font-display text-[28px] font-bold leading-tight text-ink">
+            {cobertura.totales.fuentesVerificadas}
+          </dd>
+          <p class="mt-1 text-[13px] text-ink-muted">
+            Respaldadas con URL, fecha y hash SHA-256
+          </p>
+        </div>
+      </dl>
+    </section>
+
+    <section class="pt-10">
+      <CoverageDashboard client:load cobertura={cobertura} />
+    </section>
+  </main>
+
+  <footer class="border-t border-rule bg-stone-surface">
+    <div class="mx-auto flex max-w-[1600px] flex-wrap items-center justify-between gap-4 px-5 py-6 text-[13px] text-ink-muted sm:px-8 lg:px-10">
+      <p>
+        Atlas Químico Argentino. Reporte en vivo generado desde el snapshot validado de Supabase.
+      </p>
+      <div class="flex items-center gap-5">
+        <a href="/empresas" class="hover:text-cobalt">Empresas</a>
+        <a href="/" class="font-medium text-ink hover:text-cobalt">← Volver al mapa</a>
+      </div>
+    </div>
+  </footer>
+</BaseLayout>

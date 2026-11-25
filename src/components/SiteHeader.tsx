@@ -20,6 +20,7 @@ const SPRING_UI = {
 const KIND_LABEL: Record<SearchIndexItem['kind'], string> = {
   cadena: 'Cadena',
   proceso: 'Proceso',
+  empresa: 'Empresa',
   planta: 'Planta',
   provincia: 'Provincia',
   departamento: 'Departamento',
@@ -174,6 +175,7 @@ export function SiteHeader({
       case 'provincia':
       case 'departamento':
         return <MapPin className="h-4 w-4" />;
+      case 'empresa':
       case 'planta':
         return <Building2 className="h-4 w-4" />;
       case 'proceso':
@@ -229,6 +231,34 @@ export function SiteHeader({
               }`}
             >
               Procesos
+            </a>
+            <a
+              href="/empresas"
+              className={`transition-colors duration-150 ${
+                currentPath === '/empresas'
+                  ? isHeroTop
+                    ? 'font-semibold text-white'
+                    : 'font-semibold text-cobalt'
+                  : isHeroTop
+                    ? 'text-white/85 hover:text-white'
+                    : 'text-ink-muted hover:text-ink'
+              }`}
+            >
+              Empresas
+            </a>
+            <a
+              href="/cobertura"
+              className={`transition-colors duration-150 ${
+                currentPath === '/cobertura'
+                  ? isHeroTop
+                    ? 'font-semibold text-white'
+                    : 'font-semibold text-cobalt'
+                  : isHeroTop
+                    ? 'text-white/85 hover:text-white'
+                    : 'text-ink-muted hover:text-ink'
+              }`}
+            >
+              Cobertura
             </a>
 
             <span
@@ -337,6 +367,24 @@ export function SiteHeader({
                   >
                     Procesos químicos
                   </a>
+                  <a
+                    href="/empresas"
+                    onClick={() => setMobileMenuOpen(false)}
+                    className={`py-1 ${
+                      currentPath === '/empresas' ? 'font-semibold text-cobalt' : 'text-ink hover:text-cobalt'
+                    }`}
+                  >
+                    Empresas y plantas
+                  </a>
+                  <a
+                    href="/cobertura"
+                    onClick={() => setMobileMenuOpen(false)}
+                    className={`py-1 ${
+                      currentPath === '/cobertura' ? 'font-semibold text-cobalt' : 'text-ink hover:text-cobalt'
+                    }`}
+                  >
+                    Cobertura de datos
+                  </a>
                 </div>
 
                 <div>
@@ -401,7 +449,7 @@ export function SiteHeader({
                     setActiveIdx(0);
                   }}
                   onKeyDown={handleInputKeyDown}
-                  placeholder="Buscar cadena, provincia, planta o proceso (ej. Litio, Bahía Blanca, Renova)..."
+                  placeholder="Buscar cadena, empresa, provincia, departamento o planta (ej. Aluar, Litio, 9 de Julio)..."
                   className="w-full bg-transparent text-[15px] text-ink placeholder:text-ink-muted focus:outline-none"
                 />
                 <button
