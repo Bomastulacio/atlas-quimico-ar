@@ -8,7 +8,9 @@ import {
   getFichaProducto,
   getGeoAntartidaIslas,
   getGeoContinental,
+  getGeoDepartamentos,
   getGeoManifest,
+  getMapaDepartamentosData,
   getMapaProvinciasData,
   getProductos,
   getSearchIndex,
@@ -24,8 +26,10 @@ const procesosVerificados = productosValidados
 
 const continentalGeo = getGeoContinental();
 const antartidaIslasGeo = getGeoAntartidaIslas();
+const departamentosGeo = getGeoDepartamentos();
 const geoManifest = getGeoManifest();
 const provinciasData = getMapaProvinciasData();
+const departamentosData = getMapaDepartamentosData();
 const searchItems = getSearchIndex();
 const chainSummaries = getChainCardSummaries();
 ---
@@ -112,7 +116,9 @@ const chainSummaries = getChainCardSummaries();
         client:load
         continentalGeo={continentalGeo}
         antartidaIslasGeo={antartidaIslasGeo}
+        departamentosGeo={departamentosGeo}
         provinciasData={provinciasData}
+        departamentosData={departamentosData}
         productos={productos}
         geoManifest={geoManifest}
         esEjemplo={esEjemplo}

@@ -1,14 +1,17 @@
 import { AnimatePresence, motion } from 'motion/react';
-import { ArrowRight, Building2, Crosshair, MapPin, X } from 'lucide-react';
-import type { CoberturaDatos, Producto } from '@/schemas';
-import type { GeoManifest, MapaProvinciaResumen } from '@/data';
+import { ArrowLeft, ArrowRight, Building2, Crosshair, MapPin, X } from 'lucide-react';
+import type { CoberturaDatos, Departamento, Producto } from '@/schemas';
+import type { GeoManifest, MapaDepartamentoResumen, MapaProvinciaResumen } from '@/data';
 import { ProductIcon } from './ProductIcon';
 
 interface ProvinceSidePanelProps {
   selected: MapaProvinciaResumen | null;
+  selectedDepartamento: MapaDepartamentoResumen | null;
   allProvincias: MapaProvinciaResumen[];
   onSelectProvincia: (provinciaId: string | null) => void;
+  onSelectDepartamento: (departamentoId: string | null) => void;
   onZoomToSelected?: () => void;
+  onZoomToDepartamento?: () => void;
   esEjemplo: boolean;
   geoManifest: GeoManifest;
   categoryAccent: (categoria: Producto['categoria']) => string;
@@ -50,11 +53,25 @@ const ROL_LABEL: Record<string, string> = {
   logistica_export: 'Logística y exportación',
 };
 
+const TIPO_ZONA_META: Record<
+  Departamento['tipo_zona'],
+  { label: string; color: string }
+> = {
+  polo_industrial: { label: 'Polo industrial', color: '#0A42E0' },
+  minero: { label: 'Zona minera', color: '#0B7A53' },
+  agro: { label: 'Núcleo agroindustrial', color: '#C86A11' },
+  energetico: { label: 'Zona energética', color: '#D93025' },
+  mixto: { label: 'Zona mixta', color: '#111214' },
+};
+
 export function ProvinceSidePanel({
   selected,
+  selectedDepartamento,
   allProvincias,
   onSelectProvincia,
+  onSelectDepartamento,
   onZoomToSelected,
+  onZoomToDepartamento,
   esEjemplo,
   geoManifest,
   categoryAccent,
@@ -63,14 +80,200 @@ export function ProvinceSidePanel({
   const sinDatosCount = allProvincias.filter(
     (p) => p.provincia.cobertura_datos === 'sin_datos'
   ).length;
+  const totalDeptosConfiables = allProvincias.reduce(
+    (acc, p) => acc + p.departamentosConfiables.length,
+    0
+  );
 
   return (
     <aside
-      aria-label="Ficha de jurisdicción seleccionada"
+      aria-label="Ficha de jurisdicción o departamento seleccionado"
       className="flex h-full flex-col border-t border-rule bg-stone-surface lg:border-t-0"
     >
       <AnimatePresence mode="wait">
-        {selected ? (
+        {selectedDepartamento ? (
+          <motion.div
+            key={`dept-${selectedDepartamento.departamento.departamento_id}`}
+            initial={{ opacity: 0, x: 10 }}
+            animate={{ opacity: 1, x: 0 }}
+            exit={{ opacity: 0, x: -8 }}
+            transition={{ duration: 0.2, ease: PANEL_EASE }}
+            className="flex h-full flex-col justify-between"
+          >
+            <div>
+              {/* Filete superior según tipo de zona productiva */}
+              <div
+                className="h-1 w-full transition-colors duration-200"
+                style={{
+                  backgroundColor:
+                    TIPO_ZONA_META[selectedDepartamento.departamento.tipo_zona]?.color ?? '#111214',
+                }}
+              />
+
+              {/* Breadcrumb de retorno a la provincia padre */}
+              <div className="flex items-center justify-between gap-2 border-b border-rule bg-stone-bg px-6 py-2.5 text-[13px]">
+                <button
+                  type="button"
+                  onClick={() => onSelectDepartamento(null)}
+                  className="inline-flex cursor-pointer items-center gap-1.5 font-medium text-ink transition-colors duration-150 hover:text-cobalt"
+                >
+                  <ArrowLeft className="h-3.5 w-3.5" />
+                  <span>Volver a {selectedDepartamento.provincia.nombre}</span>
+                </button>
+                <span className="text-ink-muted">Departamento</span>
+              </div>
+
+              {/* Cabecera departamental */}
+              <div className="flex items-start justify-between gap-4 border-b border-rule px-6 py-5">
+                <div>
+                  <h2 className="font-display text-[24px] font-bold leading-tight tracking-tight text-ink">
+                    {selectedDepartamento.departamento.nombre}
+                  </h2>
+                  <p className="mt-1.5 text-[13px] text-ink-muted tabular-nums">
+                    {selectedDepartamento.provincia.nombre} ·{' '}
+                    {TIPO_ZONA_META[selectedDepartamento.departamento.tipo_zona]?.label ??
+                      selectedDepartamento.departamento.tipo_zona}{' '}
+                    · Georef {selectedDepartamento.departamento.departamento_id}
+                  </p>
+                </div>
+
+                <div className="flex items-center gap-1">
+                  {onZoomToDepartamento && (
+                    <button
+                      type="button"
+                      onClick={onZoomToDepartamento}
+                      title="Acercar a este departamento"
+                      aria-label="Acercar a este departamento"
+                      className="cursor-pointer p-2 text-ink-muted transition-colors duration-150 hover:bg-stone-subtle hover:text-ink"
+                    >
+                      <Crosshair className="h-4 w-4" />
+                    </button>
+                  )}
+                  <button
+                    type="button"
+                    onClick={() => onSelectProvincia(null)}
+                    aria-label="Volver al resumen nacional"
+                    className="cursor-pointer p-2 text-ink-muted transition-colors duration-150 hover:bg-ink hover:text-white"
+                  >
+                    <X className="h-4 w-4" />
+                  </button>
+                </div>
+              </div>
+
+              <div className="divide-y divide-rule px-6">
+                {/* Cobertura y nota departamental */}
+                {(() => {
+                  const cov = COBERTURA_META[selectedDepartamento.departamento.cobertura_datos];
+                  return (
+                    <div className="py-5">
+                      <div className="flex items-center justify-between gap-2 text-[13px]">
+                        <span className="inline-flex items-center gap-2 font-medium text-ink">
+                          <span className={`h-2 w-2 rounded-full ${cov.dotClass}`} />
+                          {cov.label}
+                        </span>
+                        <span className="font-medium text-emerald-react">Datos confiables</span>
+                      </div>
+                      <p className="mt-2 text-[15px] text-ink-muted">
+                        {selectedDepartamento.departamento.nota_cobertura ?? cov.fallback}
+                      </p>
+                    </div>
+                  );
+                })()}
+
+                {/* Cadenas presentes en el departamento */}
+                <div className="py-5">
+                  <div className="flex items-baseline justify-between text-[13px] font-medium text-ink-muted">
+                    <span>Cadenas en este departamento</span>
+                    <span className="tabular-nums text-ink">
+                      {selectedDepartamento.productos.length}
+                    </span>
+                  </div>
+                  <ul className="mt-4 divide-y divide-rule">
+                    {selectedDepartamento.productos.map((prod) => {
+                      const accent = categoryAccent(prod.categoria);
+                      return (
+                        <li key={prod.producto_id} className="py-4 first:pt-0 last:pb-0">
+                          <div className="flex items-start gap-3.5">
+                            <span
+                              className="mt-0.5 flex h-9 w-9 shrink-0 items-center justify-center text-white"
+                              style={{ backgroundColor: accent }}
+                            >
+                              <ProductIcon iconId={prod.icono_id} size={18} />
+                            </span>
+                            <div className="min-w-0 flex-1">
+                              <div className="flex flex-wrap items-baseline justify-between gap-2">
+                                <h3 className="text-[15px] font-semibold text-ink">
+                                  {prod.nombre}
+                                </h3>
+                                {prod.formula_quimica && (
+                                  <span className="text-[13px] font-medium text-ink-muted tabular-nums">
+                                    {prod.formula_quimica}
+                                  </span>
+                                )}
+                              </div>
+                              <p className="mt-1 text-[14px] text-ink-muted">
+                                {prod.descripcion_corta}
+                              </p>
+                              {prod.estado_mvp === 'validado' && (
+                                <a
+                                  href={`/productos/${prod.producto_id}`}
+                                  className="mt-3 inline-flex items-center gap-2 bg-ink px-3.5 py-2 text-[13px] font-medium text-white transition-colors duration-150 hover:bg-cobalt"
+                                >
+                                  <span>Abrir ficha completa y diagrama</span>
+                                  <ArrowRight className="h-3.5 w-3.5" />
+                                </a>
+                              )}
+                            </div>
+                          </div>
+                        </li>
+                      );
+                    })}
+                  </ul>
+                </div>
+
+                {/* Plantas georreferenciadas dentro del departamento */}
+                {selectedDepartamento.plantas.length > 0 && (
+                  <div className="py-5">
+                    <div className="flex items-center gap-2 text-[13px] font-medium text-ink-muted">
+                      <Building2 className="h-4 w-4 text-ink" />
+                      <span>
+                        Plantas en {selectedDepartamento.departamento.nombre} (
+                        {selectedDepartamento.plantas.length})
+                      </span>
+                    </div>
+                    <ul className="mt-3 space-y-3">
+                      {selectedDepartamento.plantas.map((pl) => (
+                        <li key={pl.planta_id}>
+                          <p className="text-[15px] font-medium text-ink">{pl.nombre}</p>
+                          <p className="mt-0.5 text-[13px] text-ink-muted tabular-nums">
+                            {pl.localidad} ({pl.lat.toFixed(3)}, {pl.lon.toFixed(3)}) ·{' '}
+                            {pl.empresaNombre ?? 'Operador sin registrar'}
+                          </p>
+                          <p className="mt-0.5 text-[13px] text-ink-muted tabular-nums">
+                            Capacidad:{' '}
+                            {pl.capacidad.estado === 'dato'
+                              ? `${pl.capacidad.valor.toLocaleString('es-AR')} ${pl.capacidad.unidad}`
+                              : 'Sin datos'}
+                          </p>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                )}
+
+                <div className="py-4 text-[13px] text-ink-muted">
+                  Solo se cartografían departamentos con datos confiables verificados; el resto del
+                  territorio provincial se consulta a nivel jurisdiccional.
+                </div>
+              </div>
+            </div>
+
+            <div className="border-t border-rule px-6 py-3.5 text-[13px] text-ink-muted tabular-nums">
+              Límites departamentales: IGN / API Georef v2.0 (
+              {geoManifest.departamentos_oficial?.fecha_descarga ?? geoManifest.fecha_descarga})
+            </div>
+          </motion.div>
+        ) : selected ? (
           <motion.div
             key={selected.provincia.provincia_id}
             initial={{ opacity: 0, x: 10 }}
@@ -139,9 +342,7 @@ export function ProvinceSidePanel({
                         {selected.provincia.cobertura_datos === 'completa' ? (
                           <span className="font-medium text-emerald-react">Fuentes oficiales</span>
                         ) : (
-                          esEjemplo && (
-                            <span className="text-ink-muted">Pendiente Etapa 6</span>
-                          )
+                          esEjemplo && <span className="text-ink-muted">Pendiente Etapa 6</span>
                         )}
                       </div>
                       <p className="mt-2 text-[15px] text-ink-muted">
@@ -150,6 +351,49 @@ export function ProvinceSidePanel({
                     </div>
                   );
                 })()}
+
+                {/* Departamentos con datos confiables (interactivos: abren zoom y ficha departamental) */}
+                {selected.departamentosConfiables.length > 0 && (
+                  <div className="py-5">
+                    <div className="flex items-center justify-between gap-2 text-[13px] font-medium text-ink-muted">
+                      <span className="inline-flex items-center gap-2">
+                        <MapPin className="h-4 w-4 text-ink" />
+                        <span>Departamentos con datos ({selected.departamentosConfiables.length})</span>
+                      </span>
+                      <span className="text-[13px] text-ink-muted">Click para acercar</span>
+                    </div>
+                    <ul className="mt-3 space-y-2">
+                      {selected.departamentosConfiables.map((d) => {
+                        const zm = TIPO_ZONA_META[d.tipo_zona];
+                        return (
+                          <li key={d.departamento_id}>
+                            <button
+                              type="button"
+                              onClick={() => onSelectDepartamento(d.departamento_id)}
+                              className="group flex w-full cursor-pointer items-center justify-between gap-3 border border-rule bg-stone-bg px-3.5 py-2.5 text-left transition-colors duration-150 hover:border-ink hover:bg-stone-surface"
+                            >
+                              <div className="min-w-0">
+                                <div className="flex items-center gap-2">
+                                  <span
+                                    className="inline-block h-2 w-2 shrink-0 rounded-full"
+                                    style={{ backgroundColor: zm?.color ?? '#111214' }}
+                                  />
+                                  <span className="truncate text-[14px] font-semibold text-ink group-hover:text-cobalt">
+                                    {d.nombre}
+                                  </span>
+                                </div>
+                                <p className="mt-0.5 text-[13px] text-ink-muted tabular-nums">
+                                  {zm?.label ?? d.tipo_zona} · Georef {d.departamento_id}
+                                </p>
+                              </div>
+                              <ArrowRight className="h-4 w-4 shrink-0 text-ink-muted transition-transform duration-150 group-hover:translate-x-0.5 group-hover:text-cobalt" />
+                            </button>
+                          </li>
+                        );
+                      })}
+                    </ul>
+                  </div>
+                )}
 
                 {/* Cadenas productivas de la jurisdicción */}
                 <div className="py-5">
@@ -170,10 +414,7 @@ export function ProvinceSidePanel({
                         const isDom = index === 0;
 
                         return (
-                          <li
-                            key={prod.producto_id}
-                            className="py-4 first:pt-0 last:pb-0"
-                          >
+                          <li key={prod.producto_id} className="py-4 first:pt-0 last:pb-0">
                             <div className="flex items-start gap-3.5">
                               <span
                                 className="mt-0.5 flex h-9 w-9 shrink-0 items-center justify-center text-white"
@@ -219,9 +460,9 @@ export function ProvinceSidePanel({
                     </ul>
                   ) : (
                     <p className="mt-3 text-[15px] text-ink-muted">
-                      Esta provincia no tiene cadenas productivas cargadas todavía. Nunca
-                      estimamos cifras faltantes: cuando se incorporen fuentes oficiales aparecerán
-                      en este panel.
+                      Esta provincia no tiene cadenas productivas cargadas todavía. Nunca estimamos
+                      cifras faltantes: cuando se incorporen fuentes oficiales aparecerán en este
+                      panel.
                     </p>
                   )}
                 </div>
@@ -252,26 +493,6 @@ export function ProvinceSidePanel({
                     </ul>
                   </div>
                 )}
-
-                {/* Departamentos con datos confiables */}
-                {selected.departamentosConfiables.length > 0 && (
-                  <div className="py-5">
-                    <div className="flex items-center gap-2 text-[13px] font-medium text-ink-muted">
-                      <MapPin className="h-4 w-4 text-ink" />
-                      <span>Departamentos con cobertura prioritaria</span>
-                    </div>
-                    <ul className="mt-2.5 space-y-1.5 text-[15px] text-ink">
-                      {selected.departamentosConfiables.map((d) => (
-                        <li key={d.departamento_id} className="flex justify-between tabular-nums">
-                          <span>{d.nombre}</span>
-                          <span className="text-[13px] text-ink-muted">
-                            Georef {d.departamento_id}
-                          </span>
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
-                )}
               </div>
             </div>
 
@@ -295,8 +516,9 @@ export function ProvinceSidePanel({
                   Explorá el territorio
                 </h2>
                 <p className="mt-2 text-[15px] text-ink-muted">
-                  Hacé click en cualquier provincia para elevarla en relieve 3D y abrir su detalle
-                  productivo, plantas registradas y cobertura de datos.
+                  Hacé click en cualquier provincia o acercá el mapa para revelar los{' '}
+                  {totalDeptosConfiables} departamentos con datos verificados (polos industriales,
+                  mineros y agroindustriales).
                 </p>
               </div>
 
@@ -314,16 +536,16 @@ export function ProvinceSidePanel({
                     style={{ width: `${(activas.length / allProvincias.length) * 100}%` }}
                   />
                 </div>
-                <p className="mt-2.5 text-[13px] text-ink-muted">
-                  {sinDatosCount} jurisdicciones permanecen marcadas como sin datos hasta sumar
-                  fuentes oficiales verificadas.
+                <p className="mt-2.5 text-[13px] text-ink-muted tabular-nums">
+                  {totalDeptosConfiables} departamentos Georef con datos confiables · {sinDatosCount}{' '}
+                  jurisdicciones marcadas como sin datos.
                 </p>
               </div>
 
               {/* Lista interactiva de provincias con cadenas cargadas */}
               <div className="px-6 py-5">
                 <p className="text-[13px] font-medium text-ink-muted">
-                  Jurisdicciones con cadenas en el plan inicial
+                  Jurisdicciones con cadenas verificadas
                 </p>
                 <ul className="mt-3 divide-y divide-rule">
                   {activas.map((item) => {
@@ -347,13 +569,13 @@ export function ProvinceSidePanel({
                               <p className="text-[15px] font-medium text-ink group-hover:text-cobalt">
                                 {item.provincia.nombre}
                               </p>
-                              <p className="text-[13px] text-ink-muted">
+                              <p className="text-[13px] text-ink-muted tabular-nums">
                                 {dom.nombre}
                                 {item.secundarios.length > 0
                                   ? ` y ${item.secundarios.length} más`
                                   : ''}
-                                {item.provincia.cobertura_datos === 'completa'
-                                  ? ' · Verificado'
+                                {item.departamentosConfiables.length > 0
+                                  ? ` · ${item.departamentosConfiables.length} depto${item.departamentosConfiables.length > 1 ? 's' : ''}`
                                   : ''}
                               </p>
                             </div>

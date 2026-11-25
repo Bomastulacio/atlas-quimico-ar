@@ -5,8 +5,10 @@ import {
   getFichaProducto,
   getGeoAntartidaIslas,
   getGeoContinental,
+  getGeoDepartamentos,
   getGeoManifest,
   getManifest,
+  getMapaDepartamentosData,
   getMapaProvinciasData,
   getProceso,
   getProduccion,
@@ -15,6 +17,7 @@ import {
   getProvincia,
   getProvincias,
   getResumenCobertura,
+  getSearchIndex,
   isExampleDataset,
 } from '@/data';
 
@@ -104,5 +107,25 @@ describe('Capa única de acceso a datos (src/data)', () => {
 
     const totalPlantas = mapaData.reduce((acc, p) => acc + p.plantas.length, 0);
     expect(totalPlantas).toBe(11);
+  });
+
+  it('alinea 1:1 los 10 departamentos confiables con el GeoJSON oficial IGN y el índice de búsqueda', () => {
+    const deptGeo = getGeoDepartamentos();
+    const deptData = getMapaDepartamentosData();
+    const manifestGeo = getGeoManifest();
+
+    expect(deptGeo.features).toHaveLength(10);
+    expect(deptData).toHaveLength(10);
+    expect(manifestGeo.departamentos_oficial?.hash_raw).toMatch(/^sha256:[a-f0-9]{64}$/);
+
+    const geoDeptIds = new Set(deptGeo.features.map((f) => f.properties.id));
+    for (const item of deptData) {
+      expect(item.departamento.tiene_datos_confiables).toBe(true);
+      expect(geoDeptIds.has(item.departamento.departamento_id)).toBe(true);
+      expect(item.productos.length).toBeGreaterThanOrEqual(1);
+    }
+
+    const searchDeptItems = getSearchIndex().filter((i) => i.kind === 'departamento');
+    expect(searchDeptItems).toHaveLength(10);
   });
 });

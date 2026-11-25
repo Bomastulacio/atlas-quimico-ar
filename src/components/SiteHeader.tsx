@@ -22,6 +22,7 @@ const KIND_LABEL: Record<SearchIndexItem['kind'], string> = {
   proceso: 'Proceso',
   planta: 'Planta',
   provincia: 'Provincia',
+  departamento: 'Departamento',
 };
 
 function normalizeText(value: string): string {
@@ -126,6 +127,20 @@ export function SiteHeader({
   const navigateToItem = (item: SearchIndexItem) => {
     setSearchOpen(false);
     setMobileMenuOpen(false);
+    if (
+      item.kind === 'departamento' &&
+      item.departamentoId &&
+      item.provinciaId &&
+      window.location.pathname === '/'
+    ) {
+      window.dispatchEvent(
+        new CustomEvent('atlas:select-departamento', {
+          detail: { provinciaId: item.provinciaId, departamentoId: item.departamentoId },
+        })
+      );
+      document.getElementById('mapa')?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      return;
+    }
     if (item.kind === 'provincia' && item.provinciaId && window.location.pathname === '/') {
       window.dispatchEvent(
         new CustomEvent('atlas:select-provincia', { detail: { provinciaId: item.provinciaId } })
@@ -157,6 +172,7 @@ export function SiteHeader({
     }
     switch (item.kind) {
       case 'provincia':
+      case 'departamento':
         return <MapPin className="h-4 w-4" />;
       case 'planta':
         return <Building2 className="h-4 w-4" />;

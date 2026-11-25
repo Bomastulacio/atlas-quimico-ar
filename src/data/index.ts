@@ -235,11 +235,60 @@ export function getResumenCobertura(): ResumenCobertura {
 export {
   getGeoContinental,
   getGeoAntartidaIslas,
+  getGeoDepartamentos,
   getGeoManifest,
+  type DepartamentoGeoProperties,
+  type DepartamentosFeatureCollection,
   type GeoManifest,
   type ProvinciaGeoProperties,
   type ProvinciasFeatureCollection,
 } from './geo';
+
+export interface MapaDepartamentoResumen {
+  departamento: Departamento;
+  provincia: Provincia;
+  productos: Producto[];
+  plantas: Array<Planta & { empresaNombre: string | null }>;
+}
+
+export function getMapaDepartamentosData(): MapaDepartamentoResumen[] {
+  const ds = loadDataset();
+  const provMap = new Map(ds.provincias.map((p) => [p.provincia_id, p]));
+  const prodMap = new Map(ds.productos.map((p) => [p.producto_id, p]));
+  const empMap = new Map(ds.empresas.map((e) => [e.empresa_id, e.razon_social]));
+
+  return ds.departamentos
+    .filter((d) => d.tiene_datos_confiables)
+    .flatMap((departamento) => {
+      const provincia = provMap.get(departamento.provincia_id);
+      if (!provincia) return [];
+
+      const plantas = ds.plantas
+        .filter((pl) => pl.departamento_id === departamento.departamento_id)
+        .map((pl) => ({
+          ...pl,
+          empresaNombre: empMap.get(pl.empresa_id) ?? null,
+        }));
+
+      // Productos explícitamente asociados al departamento por plantas o zonas (fallback a provincia)
+      const prodIds = new Set<string>([
+        ...plantas.map((pl) => pl.producto_id),
+        ...ds.productos_zonas
+          .filter((z) => z.departamento_id === departamento.departamento_id)
+          .map((z) => z.producto_id),
+      ]);
+      if (prodIds.size === 0) {
+        for (const z of ds.productos_zonas.filter((r) => r.provincia_id === departamento.provincia_id)) {
+          prodIds.add(z.producto_id);
+        }
+      }
+      const productos = [...prodIds]
+        .map((id) => prodMap.get(id))
+        .filter((p): p is Producto => Boolean(p));
+
+      return [{ departamento, provincia, productos, plantas }];
+    });
+}
 
 export interface MapaProvinciaResumen {
   provincia: Provincia;
@@ -316,12 +365,13 @@ export function getFichaProducto(productoId: string): FichaProducto | undefined 
 
 export interface SearchIndexItem {
   id: string;
-  kind: 'cadena' | 'provincia' | 'planta' | 'proceso';
+  kind: 'cadena' | 'provincia' | 'departamento' | 'planta' | 'proceso';
   title: string;
   subtitle: string;
   href: string;
   keywords: string;
   provinciaId?: string;
+  departamentoId?: string;
   iconId?: string;
   categoria?: Producto['categoria'];
 }
@@ -388,6 +438,21 @@ export function getSearchIndex(): SearchIndexItem[] {
       href: `/?provincia=${prov.provincia_id}#mapa`,
       keywords: `${prov.nombre} ${prov.region} ${prov.iso_3166_2} ${cadenas}`,
       provinciaId: prov.provincia_id,
+    });
+  }
+
+  for (const deptItem of getMapaDepartamentosData()) {
+    const { departamento, provincia, productos } = deptItem;
+    const cadenas = productos.map((p) => p.nombre).join(', ');
+    items.push({
+      id: `dept-${departamento.departamento_id}`,
+      kind: 'departamento',
+      title: `${departamento.nombre} (${provincia.nombre})`,
+      subtitle: `${departamento.tipo_zona.replace('_', ' ')} · ${cadenas || 'Con datos verificados'}`,
+      href: `/?provincia=${provincia.provincia_id}&departamento=${departamento.departamento_id}#mapa`,
+      keywords: `${departamento.nombre} ${provincia.nombre} ${departamento.departamento_id} ${departamento.nota_cobertura ?? ''} ${cadenas}`,
+      provinciaId: provincia.provincia_id,
+      departamentoId: departamento.departamento_id,
     });
   }
 

@@ -6,8 +6,9 @@
 - **Islas interactivas:** React 19 + TypeScript estricto.
 - **Estilos:** Tailwind CSS v4 con tokens de diseño propios.
 - **Micro-interacciones y movimiento:** `motion` (`motion/react`), siguiendo principios táctiles de **Bencho** (`bencho.dev`): físicas spring calibradas, controles conectados y transiciones suaves respetando `prefers-reduced-motion`.
-- **Mapa (Etapa 2 y 7):** D3 (`d3-geo`) + SVG/GeoJSON oficial del **IGN** con IDs Georef. Representación **bicontinental** (23 provincias + CABA + recuadro integrado del Sector Antártico e Islas del Atlántico Sur), paneo por arrastre (drag), zoom con rueda hacia el cursor y elevación 3D sutil de la provincia seleccionada.
+- **Mapa (Etapa 2 y 7):** D3 (`d3-geo`) + SVG/GeoJSON oficial del **IGN** con IDs Georef. Representación **bicontinental** (23 provincias + CABA + recuadro integrado del Sector Antártico e Islas del Atlántico Sur), paneo por arrastre (drag), zoom con rueda hacia el cursor, elevación 3D sutil de la provincia seleccionada y capa de **departamentos con datos confiables** (Etapa 7) al acercar o seleccionar provincia.
 - **Diagramas de proceso (Etapa 3+):** React Flow alimentado exclusivamente desde `procesos.json`, `pasos_proceso.json` y `conexiones_proceso.json`.
+- **Dioramas isométricos 3D estilo Anatomy (referencia para futuras cadenas):** implementado primero en Aluminio (`AluarProcessAnatomy` con `src/lib/iso-kit.ts`, `iso-lathe.js` e `iso-tube.js`, licencia MIT de `wheresryan22/anatomy`). Estándar guardado para replicar más adelante en Litio, Urea, Petroquímica, Soja, Algodón y Biodiésel: 4 tonos por material en paleta piedra del Atlas, ductos 3D, zoom suave por etapa (`01`..`05`) y vista despiece cuando aplica.
 - **Fuente de verdad SQL:** Supabase (PostgreSQL 17, proyecto `rbjymgrimmrbetgbeios`) con las 12 tablas relacionales + `atlas_manifest`, RLS en lectura pública y sincronización a `data/validated/*.json` vía `npm run data:sync:supabase`.
 - **Validación:** Zod en el build de Node/Astro y Pydantic v2 en el pipeline Python.
 

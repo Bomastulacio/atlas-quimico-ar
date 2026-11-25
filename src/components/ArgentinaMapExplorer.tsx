@@ -1,10 +1,12 @@
 import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
 import { geoGraticule, geoPath, geoStereographic, geoTransverseMercator } from 'd3-geo';
 import { AnimatePresence, motion, MotionConfig } from 'motion/react';
-import { Box, Minus, Move, Plus, RotateCcw } from 'lucide-react';
-import type { Producto } from '@/schemas';
+import { Box, MapPin, Minus, Move, Plus, RotateCcw } from 'lucide-react';
+import type { Departamento, Producto } from '@/schemas';
 import type {
+  DepartamentosFeatureCollection,
   GeoManifest,
+  MapaDepartamentoResumen,
   MapaProvinciaResumen,
   ProvinciasFeatureCollection,
 } from '@/data';
@@ -14,7 +16,9 @@ import { ProvinceSidePanel } from './ProvinceSidePanel';
 interface ArgentinaMapExplorerProps {
   continentalGeo: ProvinciasFeatureCollection;
   antartidaIslasGeo: ProvinciasFeatureCollection;
+  departamentosGeo: DepartamentosFeatureCollection;
   provinciasData: MapaProvinciaResumen[];
+  departamentosData: MapaDepartamentoResumen[];
   productos: Producto[];
   geoManifest: GeoManifest;
   esEjemplo: boolean;
@@ -81,8 +85,32 @@ function getExtrusionSideColor(hex: string): string {
   }
 }
 
+function getTipoZonaColor(tipo: Departamento['tipo_zona']): string {
+  switch (tipo) {
+    case 'polo_industrial':
+      return '#0A42E0';
+    case 'minero':
+      return '#0B7A53';
+    case 'agro':
+      return '#C86A11';
+    case 'energetico':
+      return '#D93025';
+    default:
+      return '#111214';
+  }
+}
+
+const TIPO_ZONA_LABEL: Record<Departamento['tipo_zona'], string> = {
+  polo_industrial: 'Polo industrial',
+  minero: 'Zona minera',
+  agro: 'Núcleo agroindustrial',
+  energetico: 'Zona energética',
+  mixto: 'Zona mixta',
+};
+
 interface TooltipState {
   provinciaId: string;
+  departamentoId?: string;
   x: number;
   y: number;
   plantaNombre?: string;
@@ -113,7 +141,9 @@ function clampTransform(next: ViewportTransform): ViewportTransform {
 export function ArgentinaMapExplorer({
   continentalGeo,
   antartidaIslasGeo,
+  departamentosGeo,
   provinciasData,
+  departamentosData,
   productos,
   geoManifest,
   esEjemplo,
@@ -122,8 +152,11 @@ export function ArgentinaMapExplorer({
   const svgRef = useRef<SVGSVGElement | null>(null);
 
   const [selectedId, setSelectedId] = useState<string | null>(null);
+  const [selectedDeptId, setSelectedDeptId] = useState<string | null>(null);
   const [hoveredId, setHoveredId] = useState<string | null>(null);
+  const [hoveredDeptId, setHoveredDeptId] = useState<string | null>(null);
   const [activeProductId, setActiveProductId] = useState<string | null>(null);
+  const [showAllDeptos, setShowAllDeptos] = useState(false);
   const [tooltip, setTooltip] = useState<TooltipState | null>(null);
 
   // Transformación de vista (zoom + paneo por arrastre) y modo relieve 3D
@@ -155,8 +188,21 @@ export function ArgentinaMapExplorer({
     [provinciasData]
   );
 
+  const deptById = useMemo(
+    () => new Map(departamentosData.map((item) => [item.departamento.departamento_id, item])),
+    [departamentosData]
+  );
+
   // Proyección Gauss-Krüger / Transverse Mercator centrada en 64°O + recuadro polar IGN
-  const { pathContinental, pathAntartida, graticulePath, centroids, cabaPoint, plantPins } = useMemo(() => {
+  const {
+    pathContinental,
+    pathAntartida,
+    graticulePath,
+    centroids,
+    deptCentroids,
+    cabaPoint,
+    plantPins,
+  } = useMemo(() => {
     const projCont = geoTransverseMercator()
       .rotate([64, 0, 0])
       .fitExtent(
@@ -197,6 +243,15 @@ export function ArgentinaMapExplorer({
       }
     }
 
+    const dMap = new Map<string, [number, number]>();
+    for (const feat of departamentosGeo.features) {
+      const id = feat.properties.id;
+      const raw = pCont.centroid(feat);
+      if (Number.isFinite(raw[0]) && Number.isFinite(raw[1])) {
+        dMap.set(id, [raw[0], raw[1]]);
+      }
+    }
+
     const cabaCoord = projCont([-58.44, -34.61]) ?? [350, 310];
 
     const projectedPlants = provinciasData.flatMap((provItem) =>
@@ -212,10 +267,11 @@ export function ArgentinaMapExplorer({
       pathAntartida: pAnt,
       graticulePath: gPath,
       centroids: cMap,
+      deptCentroids: dMap,
       cabaPoint: cabaCoord as [number, number],
       plantPins: projectedPlants,
     };
-  }, [continentalGeo, antartidaIslasGeo, provinciasData]);
+  }, [continentalGeo, antartidaIslasGeo, departamentosGeo, provinciasData]);
 
   // Conversión precisa de coordenadas de pantalla al sistema viewBox usando el contenedor
   // exterior sin inclinar (evita saltos de escala al arrastrar o hacer zoom en modo 3D).
@@ -264,6 +320,7 @@ export function ArgentinaMapExplorer({
   useEffect(() => {
     const onKeyDown = (e: KeyboardEvent) => {
       if (e.key === 'Escape') {
+        setSelectedDeptId(null);
         setSelectedId(null);
         setIs3D(false);
         setView({ zoom: 1, x: 0, y: 0 });
@@ -288,18 +345,47 @@ export function ArgentinaMapExplorer({
     [centroids]
   );
 
-  // Permitir selección directa por query (?provincia=26) o desde el buscador global del header
+  const zoomToDepartamento = useCallback(
+    (deptId: string, targetZoom = 2.95) => {
+      const pt = deptCentroids.get(deptId);
+      if (!pt) return;
+      setView(
+        clampTransform({
+          zoom: targetZoom,
+          x: VIEW_WIDTH / 2 - pt[0] * targetZoom,
+          y: VIEW_HEIGHT / 2 - pt[1] * targetZoom,
+        })
+      );
+    },
+    [deptCentroids]
+  );
+
+  // Permitir selección directa por query (?provincia=26&departamento=26007) o desde el buscador global
   useEffect(() => {
     const selectFromExternal = (provId: string | null) => {
       if (!provId || !dataById.has(provId)) return;
+      setSelectedDeptId(null);
       setSelectedId(provId);
       if (!userLocked2D) setIs3D(true);
       zoomToProvincia(provId, 1.85);
     };
 
+    const selectDeptFromExternal = (deptId: string | null) => {
+      if (!deptId) return;
+      const info = deptById.get(deptId);
+      if (!info) return;
+      setSelectedId(info.provincia.provincia_id);
+      setSelectedDeptId(deptId);
+      if (!userLocked2D) setIs3D(true);
+      zoomToDepartamento(deptId, 2.95);
+    };
+
     const params = new URLSearchParams(window.location.search);
+    const initialDept = params.get('departamento');
     const initialProv = params.get('provincia');
-    if (initialProv) {
+    if (initialDept) {
+      selectDeptFromExternal(initialDept);
+    } else if (initialProv) {
       selectFromExternal(initialProv);
     }
 
@@ -310,12 +396,24 @@ export function ArgentinaMapExplorer({
       }
     };
 
+    const onExternalDeptSelect = (ev: Event) => {
+      const detail = (ev as CustomEvent<{ provinciaId?: string; departamentoId?: string }>).detail;
+      if (detail?.departamentoId) {
+        selectDeptFromExternal(detail.departamentoId);
+      }
+    };
+
     window.addEventListener('atlas:select-provincia', onExternalSelect);
-    return () => window.removeEventListener('atlas:select-provincia', onExternalSelect);
-  }, [dataById, userLocked2D, zoomToProvincia]);
+    window.addEventListener('atlas:select-departamento', onExternalDeptSelect);
+    return () => {
+      window.removeEventListener('atlas:select-provincia', onExternalSelect);
+      window.removeEventListener('atlas:select-departamento', onExternalDeptSelect);
+    };
+  }, [dataById, deptById, userLocked2D, zoomToProvincia, zoomToDepartamento]);
 
   const resetView = () => {
     setView({ zoom: 1, x: 0, y: 0 });
+    setSelectedDeptId(null);
     setSelectedId(null);
     setIs3D(false);
   };
@@ -424,19 +522,40 @@ export function ArgentinaMapExplorer({
   const handleSelectProvincia = (provinciaId: string | null) => {
     if (dragRef.current.moved) return;
 
-    // Volver a hacer click en la provincia ya seleccionada (o pasar null) vuelve a 2D normal
-    if (provinciaId === null || provinciaId === selectedId) {
+    // Volver a hacer click en la provincia ya seleccionada (sin departamento activo) vuelve a 2D normal
+    if (provinciaId === null || (provinciaId === selectedId && selectedDeptId === null)) {
+      setSelectedDeptId(null);
       setSelectedId(null);
       setIs3D(false);
       setView({ zoom: 1, x: 0, y: 0 });
       return;
     }
 
+    setSelectedDeptId(null);
     setSelectedId(provinciaId);
     if (!userLocked2D) {
       setIs3D(true);
     }
-    zoomToProvincia(provinciaId, Math.max(view.zoom, 1.65));
+    zoomToProvincia(provinciaId, Math.max(view.zoom, 1.75));
+  };
+
+  const handleSelectDepartamento = (deptId: string | null) => {
+    if (dragRef.current.moved) return;
+    if (deptId === null) {
+      setSelectedDeptId(null);
+      if (selectedId) {
+        zoomToProvincia(selectedId, 1.85);
+      }
+      return;
+    }
+    const info = deptById.get(deptId);
+    if (!info) return;
+    setSelectedId(info.provincia.provincia_id);
+    setSelectedDeptId(deptId);
+    if (!userLocked2D) {
+      setIs3D(true);
+    }
+    zoomToDepartamento(deptId, Math.max(view.zoom, 2.85));
   };
 
   const handleProvincePointerMove = (
@@ -448,6 +567,7 @@ export function ArgentinaMapExplorer({
     const rect = mapViewportRef.current?.getBoundingClientRect();
     if (!rect) return;
     setHoveredId(provinciaId);
+    setHoveredDeptId(null);
     setTooltip({
       provinciaId,
       x: e.clientX - rect.left,
@@ -457,8 +577,27 @@ export function ArgentinaMapExplorer({
     });
   };
 
+  const handleDeptPointerMove = (
+    e: React.PointerEvent,
+    deptId: string,
+    provinciaId: string
+  ) => {
+    if (isDragging) return;
+    const rect = mapViewportRef.current?.getBoundingClientRect();
+    if (!rect) return;
+    setHoveredId(provinciaId);
+    setHoveredDeptId(deptId);
+    setTooltip({
+      provinciaId,
+      departamentoId: deptId,
+      x: e.clientX - rect.left,
+      y: e.clientY - rect.top,
+    });
+  };
+
   const clearHover = () => {
     setHoveredId(null);
+    setHoveredDeptId(null);
     setTooltip(null);
   };
 
@@ -519,12 +658,29 @@ export function ArgentinaMapExplorer({
   };
 
   const selectedData = selectedId ? (dataById.get(selectedId) ?? null) : null;
+  const selectedDeptData = selectedDeptId ? (deptById.get(selectedDeptId) ?? null) : null;
   const hoveredData = tooltip && !isDragging ? (dataById.get(tooltip.provinciaId) ?? null) : null;
+  const hoveredDeptData =
+    tooltip?.departamentoId && !isDragging ? (deptById.get(tooltip.departamentoId) ?? null) : null;
   const selectedFeature = selectedId
     ? continentalGeo.features.find((f) => f.properties.id === selectedId) ?? null
     : null;
 
   const invScale = 1 / Math.sqrt(view.zoom);
+  const showDepartamentosLayer = showAllDeptos || view.zoom >= 1.55 || selectedId !== null;
+
+  const visibleDepartamentoFeatures = useMemo(() => {
+    if (!showDepartamentosLayer) return [];
+    return departamentosGeo.features.filter((feat) => {
+      const info = deptById.get(feat.properties.id);
+      if (!info) return false;
+      if (activeProductId !== null) {
+        if (!info.productos.some((p) => p.producto_id === activeProductId)) return false;
+      }
+      if (showAllDeptos || view.zoom >= 1.55) return true;
+      return selectedId === feat.properties.provincia_id;
+    });
+  }, [showDepartamentosLayer, departamentosGeo, deptById, activeProductId, showAllDeptos, view.zoom, selectedId]);
 
   return (
     <MotionConfig reducedMotion="user">
@@ -537,12 +693,27 @@ export function ArgentinaMapExplorer({
                 Mapa productivo
               </h2>
               <span className="text-[13px] text-ink-muted tabular-nums">
-                {productos.length} cadenas verificadas · 24 jurisdicciones
+                {productos.length} cadenas · 24 jurisdicciones · {departamentosData.length}{' '}
+                departamentos con datos
               </span>
             </div>
 
-            {/* Controles integrados (2D/3D + zoom) en la cabecera */}
-            <div className="flex items-center gap-2">
+            {/* Controles integrados (Deptos + 2D/3D + zoom) en la cabecera */}
+            <div className="flex flex-wrap items-center gap-2">
+              <button
+                type="button"
+                aria-pressed={showAllDeptos}
+                onClick={() => setShowAllDeptos((prev) => !prev)}
+                className={`inline-flex cursor-pointer items-center gap-1.5 border px-2.5 py-1.5 text-[13px] font-medium transition-colors duration-150 ${
+                  showAllDeptos
+                    ? 'border-ink bg-ink text-white'
+                    : 'border-rule bg-stone-bg text-ink hover:border-ink'
+                }`}
+              >
+                <MapPin className="h-3.5 w-3.5" />
+                <span>Deptos ({departamentosData.length})</span>
+              </button>
+
               <div
                 role="group"
                 aria-label="Perspectiva cartográfica"
@@ -689,10 +860,19 @@ export function ArgentinaMapExplorer({
             style={{ touchAction: 'none' }}
           >
             {/* Indicador limpio de escala y proyección arriba a la izquierda */}
-            <div className="pointer-events-none absolute left-4 top-4 z-20 text-[13px] text-ink-muted">
+            <div className="pointer-events-none absolute left-4 top-4 z-20 flex flex-wrap items-center gap-x-2 text-[13px] text-ink-muted">
               <span className="font-medium text-ink">República Argentina</span>
-              <span className="mx-1.5 text-rule-strong/30">/</span>
+              <span className="text-rule-strong/30">/</span>
               <span className="tabular-nums">{view.zoom.toFixed(1)}×</span>
+              {visibleDepartamentoFeatures.length > 0 && (
+                <>
+                  <span className="text-rule-strong/30">·</span>
+                  <span className="font-medium text-cobalt tabular-nums">
+                    {visibleDepartamentoFeatures.length} depto
+                    {visibleDepartamentoFeatures.length > 1 ? 's' : ''} visibles
+                  </span>
+                </>
+              )}
             </div>
 
             {/* Escena con perspectiva 3D suave y recorte limpio sobre la leyenda inferior */}
@@ -867,6 +1047,97 @@ export function ArgentinaMapExplorer({
                         </motion.g>
                       );
                     })()}
+
+                    {/* Capa de departamentos IGN con datos confiables (aparece al hacer zoom, seleccionar provincia o activar Deptos) */}
+                    {visibleDepartamentoFeatures.length > 0 && (
+                      <g aria-label="Departamentos con datos productivos confiables">
+                        {visibleDepartamentoFeatures.map((feat) => {
+                          const deptId = feat.properties.id;
+                          const provId = feat.properties.provincia_id;
+                          const info = deptById.get(deptId);
+                          if (!info) return null;
+
+                          const d = pathContinental(feat) ?? '';
+                          const isDeptSelected = selectedDeptId === deptId;
+                          const isDeptHovered = hoveredDeptId === deptId;
+                          const isParentLifted = selectedId === provId && is3D;
+                          const liftY = isParentLifted ? -11 * invScale : 0;
+                          const zonaColor = getTipoZonaColor(info.departamento.tipo_zona);
+                          const deptPt = deptCentroids.get(deptId);
+                          const showDeptName = isDeptSelected || isDeptHovered || view.zoom >= 2.15;
+
+                          return (
+                            <g
+                              key={`dept-${deptId}`}
+                              transform={liftY !== 0 ? `translate(0, ${liftY})` : undefined}
+                              className="cursor-pointer"
+                              role="button"
+                              tabIndex={0}
+                              aria-label={`Departamento ${info.departamento.nombre}, ${info.provincia.nombre} (Georef ${deptId})`}
+                              aria-pressed={isDeptSelected}
+                              onPointerMove={(e) => {
+                                e.stopPropagation();
+                                handleDeptPointerMove(e, deptId, provId);
+                              }}
+                              onPointerLeave={clearHover}
+                              onClick={(e) => {
+                                e.stopPropagation();
+                                handleSelectDepartamento(isDeptSelected ? null : deptId);
+                              }}
+                              onKeyDown={(e) => {
+                                if (e.key === 'Enter' || e.key === ' ') {
+                                  e.preventDefault();
+                                  e.stopPropagation();
+                                  handleSelectDepartamento(isDeptSelected ? null : deptId);
+                                }
+                              }}
+                            >
+                              <path
+                                d={d}
+                                fill={isDeptSelected ? '#111214' : zonaColor}
+                                fillOpacity={
+                                  isDeptSelected ? 0.52 : isDeptHovered ? 0.44 : isParentLifted ? 0.28 : 0.32
+                                }
+                                stroke={isDeptSelected ? '#FFFFFF' : isParentLifted ? '#F7F7F5' : '#111214'}
+                                strokeWidth={(isDeptSelected ? 2 : 1.15) * invScale}
+                                strokeDasharray={
+                                  isDeptSelected ? undefined : `${3 * invScale} ${2 * invScale}`
+                                }
+                                strokeLinejoin="round"
+                              />
+                              {showDeptName && deptPt && (
+                                <g
+                                  transform={`translate(${deptPt[0]}, ${deptPt[1] - 12 * invScale}) scale(${invScale})`}
+                                  className="pointer-events-none"
+                                >
+                                  <rect
+                                    x={-Math.max(38, info.departamento.nombre.length * 3.1 + 8)}
+                                    y={-9}
+                                    width={Math.max(76, info.departamento.nombre.length * 6.2 + 16)}
+                                    height={16}
+                                    fill={isDeptSelected ? '#0A42E0' : '#F7F7F5'}
+                                    fillOpacity={0.96}
+                                    stroke="#111214"
+                                    strokeWidth={0.85}
+                                  />
+                                  <text
+                                    x={0}
+                                    y={2.5}
+                                    textAnchor="middle"
+                                    fontSize="9"
+                                    fontFamily="Inter, sans-serif"
+                                    fontWeight="600"
+                                    fill={isDeptSelected ? '#FFFFFF' : '#111214'}
+                                  >
+                                    {info.departamento.nombre}
+                                  </text>
+                                </g>
+                              )}
+                            </g>
+                          );
+                        })}
+                      </g>
+                    )}
 
                     {/* Callout nítido para CABA (02) */}
                     {(() => {
@@ -1220,12 +1491,25 @@ export function ArgentinaMapExplorer({
                   className="pointer-events-none absolute z-30 hidden w-56 border border-ink bg-ink px-3.5 py-3 text-white shadow-lg sm:block"
                 >
                   <p className="text-[13px] font-semibold leading-snug text-white">
-                    {tooltip.plantaNombre ?? hoveredData.provincia.nombre}
+                    {tooltip.plantaNombre ??
+                      (hoveredDeptData
+                        ? `${hoveredDeptData.departamento.nombre} (${hoveredDeptData.provincia.nombre})`
+                        : hoveredData.provincia.nombre)}
                   </p>
                   {tooltip.plantaDetalle ? (
                     <p className="mt-1 text-[13px] text-white/80 tabular-nums">
                       {tooltip.plantaDetalle}
                     </p>
+                  ) : hoveredDeptData ? (
+                    <div className="mt-1.5 space-y-1 text-[13px] text-white/80">
+                      <p className="font-medium text-white/95">
+                        {TIPO_ZONA_LABEL[hoveredDeptData.departamento.tipo_zona]} · Georef{' '}
+                        {hoveredDeptData.departamento.departamento_id}
+                      </p>
+                      <p className="truncate text-white/75">
+                        {hoveredDeptData.productos.map((p) => p.nombre.split(' ')[0]).join(', ')}
+                      </p>
+                    </div>
                   ) : hoveredData.dominante ? (
                     <div className="mt-1.5 flex items-center gap-2 text-[13px] text-white/80">
                       <span
@@ -1264,6 +1548,10 @@ export function ArgentinaMapExplorer({
                   Seleccionada
                 </span>
                 <span className="inline-flex items-center gap-2">
+                  <span className="inline-block h-3 w-3 border border-dashed border-ink bg-cobalt/35" />
+                  Depto con datos ({departamentosData.length})
+                </span>
+                <span className="inline-flex items-center gap-2">
                   <span className="inline-block h-2.5 w-2.5 rotate-45 bg-signal-red" />
                   Planta verificada
                 </span>
@@ -1276,9 +1564,14 @@ export function ArgentinaMapExplorer({
           <div className="lg:col-span-5 xl:col-span-4">
             <ProvinceSidePanel
               selected={selectedData}
+              selectedDepartamento={selectedDeptData}
               allProvincias={provinciasData}
               onSelectProvincia={handleSelectProvincia}
+              onSelectDepartamento={handleSelectDepartamento}
               onZoomToSelected={selectedId ? () => zoomToProvincia(selectedId, 2.3) : undefined}
+              onZoomToDepartamento={
+                selectedDeptId ? () => zoomToDepartamento(selectedDeptId, 3.2) : undefined
+              }
               esEjemplo={esEjemplo}
               geoManifest={geoManifest}
               categoryAccent={getCategoryAccent}
