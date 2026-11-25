@@ -976,7 +976,7 @@ export function ArgentinaMapExplorer({
         <div className="flex flex-col gap-4 border-b border-rule px-5 py-5 sm:px-7">
           <div className="flex flex-wrap items-center justify-between gap-4">
             <div className="flex flex-wrap items-baseline gap-x-3 gap-y-1">
-              <h2 className="font-display text-[24px] font-bold leading-none tracking-[-0.025em] text-ink sm:text-[28px]">
+              <h2 className="font-display text-[22px] font-medium leading-[1.15] tracking-[-0.022em] text-ink sm:text-[24px]">
                 Mapa productivo
               </h2>
               <span className="text-[13px] text-ink-muted tabular-nums">
@@ -1824,7 +1824,7 @@ export function ArgentinaMapExplorer({
                   }}
                   className="pointer-events-none absolute z-30 hidden w-56 border border-ink bg-ink px-3.5 py-3 text-white shadow-lg sm:block"
                 >
-                  <p className="text-[13px] font-semibold leading-snug text-white">
+                  <p className="text-[13px] font-medium leading-snug text-white">
                     {tooltip.plantaNombre ??
                       (hoveredDeptData
                         ? `${hoveredDeptData.departamento.nombre} (${hoveredDeptData.provincia.nombre})`

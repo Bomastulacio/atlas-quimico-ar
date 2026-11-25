@@ -337,7 +337,7 @@ export function AluarProcessAnatomy({
         {/* Cabecera de controles táctiles: Vista planta / Enfocar etapa + Despiece + Recorrido */}
         <div className="flex flex-wrap items-center justify-between gap-3 border-b border-rule px-5 py-3.5 sm:px-6">
           <div className="flex flex-wrap items-center gap-2.5">
-            <span className="text-[13px] font-semibold text-ink tabular-nums">Fig. 01</span>
+            <span className="text-[13px] font-medium text-ink tabular-nums">Fig. 01</span>
             <span className="text-rule-strong/30">/</span>
             <span className="text-[13px] text-ink-muted">
               Diorama costero e industrial Aluar (Golfo Nuevo, Muelle Storni y planta Puerto Madryn)
@@ -453,7 +453,7 @@ export function AluarProcessAnatomy({
           <div className="atlas-iso relative flex flex-col justify-between bg-stone-surface p-4 sm:p-6 lg:col-span-8 lg:border-r lg:border-rule">
             {/* Cabecera del plate */}
             <div className="flex flex-wrap items-center justify-between gap-2 text-[13px] text-ink-muted">
-              <span className="font-semibold text-ink">
+              <span className="font-medium text-ink">
                 {activeStage.code} · {activeStage.shortLabel}
               </span>
               <span className="tabular-nums">
@@ -872,7 +872,7 @@ export function AluarProcessAnatomy({
                       >
                         <span className="flex items-center gap-2.5">
                           <span
-                            className={`text-[13px] font-semibold tabular-nums ${
+                            className={`text-[13px] font-medium tabular-nums ${
                               selected ? 'text-white/75' : 'text-ink-muted'
                             }`}
                           >
@@ -902,11 +902,11 @@ export function AluarProcessAnatomy({
                   transition={{ duration: 0.18, ease: [0.22, 1, 0.36, 1] }}
                   className="p-5 sm:p-6"
                 >
-                  <h3 className="font-display text-[20px] font-bold leading-snug text-ink">
+                  <h3 className="font-display text-[20px] font-medium leading-snug text-ink">
                     {activePaso?.nombre ?? activeStage.shortLabel}
                   </h3>
 
-                  <p className="mt-2 font-display text-[26px] font-bold leading-tight text-cobalt tabular-nums">
+                  <p className="mt-2 font-display text-[26px] font-medium leading-tight text-cobalt tabular-nums">
                     {activeStage.calloutMetric}
                   </p>
                   <p className="mt-1 text-[13px] text-ink-muted">{activeStage.calloutCaption}</p>
@@ -914,7 +914,7 @@ export function AluarProcessAnatomy({
                   {activePaso?.reaccion_balanceada && (
                     <div className="mt-4 border-l-2 border-cobalt bg-stone-bg px-3.5 py-2.5">
                       <p className="text-[13px] text-ink-muted">Reacción balanceada</p>
-                      <p className="mt-0.5 font-display text-[15px] font-semibold text-ink tabular-nums">
+                      <p className="mt-0.5 font-display text-[15px] font-medium text-ink tabular-nums">
                         {activePaso.reaccion_balanceada}
                       </p>
                     </div>
@@ -923,13 +923,13 @@ export function AluarProcessAnatomy({
                   <dl className="mt-4 grid grid-cols-2 gap-3 border-y border-rule py-3.5 text-[13px] tabular-nums">
                     <div>
                       <dt className="text-ink-muted">Temperatura</dt>
-                      <dd className="mt-0.5 font-semibold text-ink">
+                      <dd className="mt-0.5 font-medium text-ink">
                         {activePaso?.temperatura_c ? `${activePaso.temperatura_c} °C` : 'Sin datos'}
                       </dd>
                     </div>
                     <div>
                       <dt className="text-ink-muted">Presión</dt>
-                      <dd className="mt-0.5 font-semibold text-ink">
+                      <dd className="mt-0.5 font-medium text-ink">
                         {activePaso?.presion_bar ? `${activePaso.presion_bar} bar` : 'Sin datos'}
                       </dd>
                     </div>

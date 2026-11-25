@@ -74,13 +74,13 @@ export function ProcessDeckPreview({
   return (
     <MotionConfig reducedMotion="user">
       <div className="space-y-6">
-        {/* Cabecera limpia + switcher segmentado estilo Bencho */}
-        <div className="flex flex-wrap items-end justify-between gap-4 border-b border-rule pb-4">
+        {/* Cabecera limpia + switcher segmentado */}
+        <div className="flex flex-wrap items-end justify-between gap-4 border-b border-rule pb-5">
           <div className="max-w-2xl">
-            <h2 className="font-display text-[24px] font-bold tracking-[-0.02em] text-ink">
+            <h2 className="font-display text-[24px] font-medium leading-[1.15] tracking-[-0.022em] text-ink">
               Cadenas industriales y procesos químicos
             </h2>
-            <p className="mt-1.5 text-[15px] text-ink-muted">
+            <p className="mt-2 text-[15px] font-normal text-ink-muted">
               Las {productos.length} cadenas verificadas con reacciones balanceadas, balances de
               masa, comercio exterior oficial y trazabilidad SHA-256 desde Supabase.
             </p>
@@ -164,20 +164,20 @@ export function ProcessDeckPreview({
                           <ProductIcon iconId={producto.icono_id} size={19} />
                         </span>
                         {producto.formula_quimica && (
-                          <span className="text-[13px] font-semibold text-ink-muted tabular-nums">
+                          <span className="text-[13px] font-medium text-ink-muted tabular-nums">
                             {producto.formula_quimica}
                           </span>
                         )}
                       </div>
 
-                      <h3 className="mt-4 font-display text-[19px] font-bold leading-snug tracking-[-0.015em] text-ink group-hover:text-cobalt">
+                      <h3 className="mt-4 font-display text-[17px] font-medium leading-snug tracking-[-0.015em] text-ink group-hover:text-cobalt">
                         {producto.nombre}
                       </h3>
-                      <p className="mt-1 text-[13px] text-ink-muted">
+                      <p className="mt-1 text-[13px] font-normal text-ink-muted">
                         {CATEGORIA_LABEL[producto.categoria]} · {item.jurisdicciones}
                       </p>
 
-                      <p className="mt-3 text-[14px] leading-relaxed text-ink-muted">
+                      <p className="mt-3 text-[14px] font-normal leading-relaxed text-ink-muted">
                         {producto.descripcion_corta}
                       </p>
                     </div>
@@ -185,12 +185,12 @@ export function ProcessDeckPreview({
                     <div className="mt-6 border-t border-rule pt-4">
                       <div className="flex items-end justify-between gap-3 tabular-nums">
                         <div>
-                          <p className="text-[13px] text-ink-muted">{item.metricaLabel}</p>
-                          <p className="mt-0.5 font-display text-[20px] font-bold leading-tight text-ink">
+                          <p className="text-[12px] text-ink-muted">{item.metricaLabel}</p>
+                          <p className="mt-0.5 font-display text-[18px] font-medium leading-tight tracking-[-0.015em] text-ink">
                             {item.metricaValor}
                           </p>
                         </div>
-                        <span className="inline-flex items-center gap-1 text-[13px] font-semibold text-ink transition-colors duration-150 group-hover:text-cobalt">
+                        <span className="inline-flex items-center gap-1 text-[13px] font-medium text-ink transition-colors duration-150 group-hover:text-cobalt">
                           <span>Ficha</span>
                           <ArrowRight className="h-3.5 w-3.5 transition-transform duration-150 group-hover:translate-x-1" />
                         </span>
@@ -257,16 +257,16 @@ export function ProcessDeckPreview({
                 <div className="flex flex-col justify-between p-6 lg:col-span-7 lg:border-r lg:border-rule">
                   <div>
                     <div className="flex flex-wrap items-baseline justify-between gap-3">
-                      <h3 className="font-display text-[22px] font-semibold tracking-tight text-ink">
+                      <h3 className="font-display text-[19px] font-medium tracking-[-0.015em] text-ink">
                         {activeBundle.proceso.nombre}
                       </h3>
                       {activeBundle.proceso.reaccion_global && (
-                        <span className="text-[14px] font-semibold text-cobalt tabular-nums">
+                        <span className="text-[13px] font-medium text-cobalt tabular-nums">
                           {activeBundle.proceso.reaccion_global}
                         </span>
                       )}
                     </div>
-                    <p className="mt-2 max-w-[65ch] text-[15px] text-ink-muted">
+                    <p className="mt-2 max-w-[65ch] text-[14px] font-normal text-ink-muted">
                       {activeBundle.proceso.ruta_tecnologica}
                     </p>
 
@@ -310,7 +310,7 @@ export function ProcessDeckPreview({
                                 />
                               )}
                             </div>
-                            <p className="mt-2.5 text-[14px] font-semibold leading-snug">
+                            <p className="mt-2.5 text-[14px] font-medium leading-snug">
                               {paso.nombre}
                             </p>
                             <p
@@ -329,20 +329,20 @@ export function ProcessDeckPreview({
                   <div className="mt-8 border-t border-rule pt-5">
                     <dl className="grid grid-cols-3 gap-4 tabular-nums">
                       <div>
-                        <dt className="text-[13px] text-ink-muted">Etapas modeladas</dt>
-                        <dd className="mt-1 font-display text-[22px] font-semibold text-ink">
+                        <dt className="text-[12px] text-ink-muted">Etapas modeladas</dt>
+                        <dd className="mt-1 font-display text-[20px] font-medium tracking-[-0.015em] text-ink">
                           {pasosActivos.length} pasos
                         </dd>
                       </div>
                       <div>
-                        <dt className="text-[13px] text-ink-muted">Energía específica</dt>
-                        <dd className="mt-1 font-display text-[22px] font-semibold text-cobalt">
+                        <dt className="text-[12px] text-ink-muted">Energía específica</dt>
+                        <dd className="mt-1 font-display text-[20px] font-medium tracking-[-0.015em] text-cobalt">
                           {energiaText}
                         </dd>
                       </div>
                       <div>
-                        <dt className="text-[13px] text-ink-muted">Corrientes y reciclos</dt>
-                        <dd className="mt-1 font-display text-[22px] font-semibold text-emerald-react">
+                        <dt className="text-[12px] text-ink-muted">Corrientes y reciclos</dt>
+                        <dd className="mt-1 font-display text-[20px] font-medium tracking-[-0.015em] text-emerald-react">
                           {activeBundle.conexiones.length} ({recicloCount} rec.)
                         </dd>
                       </div>
@@ -351,10 +351,10 @@ export function ProcessDeckPreview({
                     <div className="mt-5">
                       <a
                         href={`/productos/${activeBundle.proceso.producto_id}`}
-                        className="inline-flex items-center gap-2 rounded-full bg-ink px-5 py-2.5 text-[14px] font-medium text-white transition-colors duration-150 hover:bg-cobalt"
+                        className="inline-flex items-center gap-2 rounded-full bg-ink px-4 py-2 text-[13px] font-medium text-white transition-colors duration-150 hover:bg-cobalt"
                       >
-                        <span>Abrir diagrama interactivo React Flow y ficha completa</span>
-                        <ArrowRight className="h-4 w-4" />
+                        <span>Abrir diagrama interactivo y ficha completa</span>
+                        <ArrowRight className="h-3.5 w-3.5" />
                       </a>
                     </div>
                   </div>
@@ -377,10 +377,10 @@ export function ProcessDeckPreview({
                             <p className="text-[13px] font-medium text-cobalt">
                               Paso {selectedStep.orden} · {selectedStep.tipo_paso.replace('_', ' ')}
                             </p>
-                            <h4 className="mt-1 font-display text-[22px] font-semibold leading-snug text-ink">
+                            <h4 className="mt-1 font-display text-[19px] font-medium leading-snug tracking-[-0.015em] text-ink">
                               {selectedStep.nombre}
                             </h4>
-                            <p className="mt-2 text-[15px] text-ink-muted">
+                            <p className="mt-2 text-[14px] font-normal text-ink-muted">
                               {selectedStep.descripcion}
                             </p>
                           </div>
@@ -421,7 +421,7 @@ export function ProcessDeckPreview({
                           {selectedStep.reaccion_balanceada && (
                             <div>
                               <p className="text-[13px] text-ink-muted">Reacción principal</p>
-                              <p className="mt-1 text-[15px] font-semibold text-ink tabular-nums">
+                              <p className="mt-1 text-[15px] font-medium text-ink tabular-nums">
                                 {selectedStep.reaccion_balanceada}
                               </p>
                             </div>

@@ -197,17 +197,11 @@ export function SiteHeader({
         }`}
       >
         <div className="mx-auto flex h-16 max-w-[1600px] items-center justify-between gap-3 px-4 sm:gap-4 sm:px-8 lg:px-10">
-          {/* Identidad tipográfica con presencia editorial */}
+          {/* Identidad tipográfica sobria sin elementos decorativos */}
           <a
             href="/"
-            className="flex min-w-0 shrink-0 items-center gap-2 font-display text-[16px] font-bold tracking-[-0.025em] sm:gap-2.5 sm:text-[19px] lg:text-[20px]"
+            className="flex min-w-0 shrink-0 items-center font-display text-[16px] font-medium tracking-[-0.022em] sm:text-[18px]"
           >
-            <span
-              className={`inline-block h-2.5 w-2.5 shrink-0 transition-colors duration-200 ${
-                isHeroTop ? 'bg-white' : 'bg-cobalt'
-              }`}
-              aria-hidden="true"
-            />
             <span className="truncate">Atlas Químico Argentino</span>
           </a>
 
@@ -237,8 +231,8 @@ export function SiteHeader({
               className={`transition-colors duration-150 ${
                 currentPath === '/empresas'
                   ? isHeroTop
-                    ? 'font-semibold text-white'
-                    : 'font-semibold text-cobalt'
+                    ? 'font-medium text-white'
+                    : 'font-medium text-cobalt'
                   : isHeroTop
                     ? 'text-white/85 hover:text-white'
                     : 'text-ink-muted hover:text-ink'
@@ -251,8 +245,8 @@ export function SiteHeader({
               className={`transition-colors duration-150 ${
                 currentPath === '/cobertura'
                   ? isHeroTop
-                    ? 'font-semibold text-white'
-                    : 'font-semibold text-cobalt'
+                    ? 'font-medium text-white'
+                    : 'font-medium text-cobalt'
                   : isHeroTop
                     ? 'text-white/85 hover:text-white'
                     : 'text-ink-muted hover:text-ink'
@@ -278,8 +272,8 @@ export function SiteHeader({
                     className={`transition-colors duration-150 ${
                       isCurrent
                         ? isHeroTop
-                          ? 'font-semibold text-white'
-                          : 'font-semibold text-cobalt'
+                          ? 'font-medium text-white'
+                          : 'font-medium text-cobalt'
                         : isHeroTop
                           ? 'text-white/80 hover:text-white'
                           : 'text-ink-muted hover:text-ink'
@@ -291,12 +285,12 @@ export function SiteHeader({
               })}
             </div>
 
-            {/* Botón pill Buscar → fiel al mockup */}
+            {/* Botón Buscar: 1 px menor que los enlaces de navegación (13px vs 14px) */}
             <button
               type="button"
               onClick={() => setSearchOpen(true)}
               aria-label="Buscar cadenas, provincias o plantas (Ctrl+K)"
-              className={`inline-flex cursor-pointer items-center gap-2 rounded-full px-4 py-1.5 text-[14px] font-medium transition-colors duration-150 ${
+              className={`inline-flex cursor-pointer items-center gap-1.5 rounded-full px-3.5 py-1.5 text-[13px] font-medium transition-colors duration-150 ${
                 isHeroTop
                   ? 'bg-white text-ink hover:bg-stone-bg'
                   : 'bg-ink text-white hover:bg-cobalt'
@@ -371,7 +365,7 @@ export function SiteHeader({
                     href="/empresas"
                     onClick={() => setMobileMenuOpen(false)}
                     className={`py-1 ${
-                      currentPath === '/empresas' ? 'font-semibold text-cobalt' : 'text-ink hover:text-cobalt'
+                      currentPath === '/empresas' ? 'font-medium text-cobalt' : 'text-ink hover:text-cobalt'
                     }`}
                   >
                     Empresas y plantas
@@ -380,7 +374,7 @@ export function SiteHeader({
                     href="/cobertura"
                     onClick={() => setMobileMenuOpen(false)}
                     className={`py-1 ${
-                      currentPath === '/cobertura' ? 'font-semibold text-cobalt' : 'text-ink hover:text-cobalt'
+                      currentPath === '/cobertura' ? 'font-medium text-cobalt' : 'text-ink hover:text-cobalt'
                     }`}
                   >
                     Cobertura de datos
@@ -485,7 +479,7 @@ export function SiteHeader({
                             {renderKindIcon(item)}
                           </span>
                           <div className="min-w-0">
-                            <p className="truncate text-[14px] font-semibold">{item.title}</p>
+                            <p className="truncate text-[14px] font-medium">{item.title}</p>
                             <p
                               className={`truncate text-[13px] ${
                                 isSelected ? 'text-white/75' : 'text-ink-muted'

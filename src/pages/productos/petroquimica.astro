@@ -90,11 +90,11 @@ const TIPO_FUENTE_LABEL: Record<string, string> = {
           </span>
           <div>
             <div class="flex flex-wrap items-baseline gap-3">
-              <h1 class="font-display text-[clamp(2rem,3.4vw,3rem)] font-bold leading-[1.06] tracking-[-0.03em] text-ink">
+              <h1 class="font-display text-[clamp(1.85rem,3vw,2.6rem)] font-medium leading-[1.06] tracking-[-0.032em] text-ink">
                 {ficha.producto.nombre}
               </h1>
               {ficha.producto.formula_quimica && (
-                <span class="font-display text-[22px] font-semibold text-signal-red tabular-nums">
+                <span class="font-display text-[19px] font-medium text-signal-red tabular-nums">
                   {ficha.producto.formula_quimica}
                 </span>
               )}
@@ -118,7 +118,7 @@ const TIPO_FUENTE_LABEL: Record<string, string> = {
       <dl class="mt-8 grid gap-6 border-t border-rule pt-6 sm:grid-cols-2 lg:grid-cols-4 tabular-nums">
         <div>
           <dt class="text-[13px] text-ink-muted">Producción anual pública auditada</dt>
-          <dd class="mt-1 font-display text-[28px] font-bold leading-tight text-ink-muted">
+          <dd class="mt-1 font-display text-[24px] font-medium leading-tight tracking-[-0.02em] text-ink-muted">
             {prodRow?.medicion.estado === 'dato'
               ? `${prodRow.medicion.valor.toLocaleString('es-AR')} t`
               : 'Sin datos'}
@@ -128,7 +128,7 @@ const TIPO_FUENTE_LABEL: Record<string, string> = {
 
         <div>
           <dt class="text-[13px] text-ink-muted">Rendimiento etano a etileno</dt>
-          <dd class="mt-1 font-display text-[28px] font-bold leading-tight text-cobalt">
+          <dd class="mt-1 font-display text-[24px] font-medium leading-tight tracking-[-0.02em] text-cobalt">
             1,245 t/t
           </dd>
           <p class="mt-1 text-[13px] text-ink-muted">803 kg C2H4/t C2H6 · IPCC Table 3.25</p>
@@ -136,7 +136,7 @@ const TIPO_FUENTE_LABEL: Record<string, string> = {
 
         <div>
           <dt class="text-[13px] text-ink-muted">Emisión directa en cracking</dt>
-          <dd class="mt-1 font-display text-[28px] font-bold leading-tight text-signal-red">
+          <dd class="mt-1 font-display text-[24px] font-medium leading-tight tracking-[-0.02em] text-signal-red">
             0,95 t CO2/t
           </dd>
           <p class="mt-1 text-[13px] text-ink-muted">Carga etano · IPCC 2006 Table 3.14</p>
@@ -144,7 +144,7 @@ const TIPO_FUENTE_LABEL: Record<string, string> = {
 
         <div>
           <dt class="text-[13px] text-ink-muted">Saldo comercial PE (2024)</dt>
-          <dd class="mt-1 font-display text-[28px] font-bold leading-tight text-ochre-metal">
+          <dd class="mt-1 font-display text-[24px] font-medium leading-tight tracking-[-0.02em] text-ochre-metal">
             {peLdpe24?.saldo_comercial.estado === 'dato' && peHdpe24?.saldo_comercial.estado === 'dato'
               ? `USD ${(peLdpe24.saldo_comercial.valor + peHdpe24.saldo_comercial.valor).toLocaleString('es-AR', { minimumFractionDigits: 2 })} M`
               : 'Sin datos'}
@@ -154,10 +154,10 @@ const TIPO_FUENTE_LABEL: Record<string, string> = {
       </dl>
     </section>
 
-    <section id="diagrama" class="scroll-mt-20 pt-12">
+    <section id="diagrama" class="scroll-mt-24 pt-16">
       <div class="mb-5 flex flex-wrap items-end justify-between gap-4">
         <div class="max-w-3xl">
-          <h2 class="font-display text-[24px] font-bold tracking-tight text-ink">
+          <h2 class="font-display text-[23px] font-medium leading-[1.15] tracking-[-0.022em] text-ink">
             Diagrama interactivo de steam cracking y polimerización
           </h2>
           <p class="mt-1.5 text-[15px] text-ink-muted">
@@ -166,7 +166,7 @@ const TIPO_FUENTE_LABEL: Record<string, string> = {
           </p>
         </div>
         <p class="text-[13px] text-ink-muted tabular-nums">
-          Reacción global: <strong class="font-semibold text-ink">{procesoPrincipal.proceso.reaccion_global}</strong>{' '}
+          Reacción global: <strong class="font-medium text-ink">{procesoPrincipal.proceso.reaccion_global}</strong>{' '}
           (mín. teórico 1,072 t C2H6/t C2H4)
         </p>
       </div>
@@ -174,16 +174,16 @@ const TIPO_FUENTE_LABEL: Record<string, string> = {
       <ProcessFlowDiagram client:load procesoCompleto={procesoPrincipal} />
     </section>
 
-    <section id="datos" class="scroll-mt-20 pt-16">
+    <section id="datos" class="scroll-mt-24 pt-20">
       <div class="border-b border-rule pb-4">
-        <h2 class="font-display text-[24px] font-bold tracking-tight text-ink">
+        <h2 class="font-display text-[23px] font-medium leading-[1.15] tracking-[-0.022em] text-ink">
           Comercio exterior de polímeros y transparencia de producción
         </h2>
       </div>
 
       <div class="mt-8 grid gap-8 lg:grid-cols-12">
         <div class="border border-rule bg-stone-surface p-6 lg:col-span-4">
-          <h3 class="font-display text-[20px] font-semibold text-ink">
+          <h3 class="font-display text-[17px] font-medium leading-[1.24] tracking-[-0.015em] text-ink">
             Auditoría de producción física
           </h3>
           <p class="mt-2 text-[14px] text-ink-muted">
@@ -200,7 +200,7 @@ const TIPO_FUENTE_LABEL: Record<string, string> = {
 
         <div class="border border-rule bg-stone-surface p-6 lg:col-span-8">
           <div class="flex flex-wrap items-baseline justify-between gap-2">
-            <h3 class="font-display text-[20px] font-semibold text-ink">
+            <h3 class="font-display text-[17px] font-medium leading-[1.24] tracking-[-0.015em] text-ink">
               Comercio exterior de resinas (HS 3901.10, 3901.20 y 3904.10)
             </h3>
             <span class="text-[13px] text-ink-muted">Millones de USD · UN Comtrade</span>
@@ -233,7 +233,7 @@ const TIPO_FUENTE_LABEL: Record<string, string> = {
                         ? `USD ${row.importacion.valor.toLocaleString('es-AR', { minimumFractionDigits: 2 })} M`
                         : 'Sin datos'}
                     </td>
-                    <td class="py-2.5 pl-3 text-right font-semibold text-signal-red">
+                    <td class="py-2.5 pl-3 text-right font-medium text-signal-red">
                       {row.saldo_comercial.estado === 'dato'
                         ? `USD ${row.saldo_comercial.valor.toLocaleString('es-AR', { minimumFractionDigits: 2 })} M`
                         : 'Sin datos'}
@@ -247,9 +247,9 @@ const TIPO_FUENTE_LABEL: Record<string, string> = {
       </div>
     </section>
 
-    <section id="empresas" class="scroll-mt-20 pt-16">
+    <section id="empresas" class="scroll-mt-24 pt-20">
       <div class="border-b border-rule pb-4">
-        <h2 class="font-display text-[24px] font-bold tracking-tight text-ink">
+        <h2 class="font-display text-[23px] font-medium leading-[1.15] tracking-[-0.022em] text-ink">
           Complejos petroquímicos registrados en Bahía Blanca
         </h2>
       </div>
@@ -257,7 +257,7 @@ const TIPO_FUENTE_LABEL: Record<string, string> = {
         {ficha.plantas.map((pl) => (
           <article class="flex flex-col justify-between border border-rule bg-stone-surface p-6">
             <div>
-              <h3 class="font-display text-[20px] font-semibold text-ink">{pl.nombre}</h3>
+              <h3 class="font-display text-[17px] font-medium leading-[1.24] tracking-[-0.015em] text-ink">{pl.nombre}</h3>
               <p class="mt-1 text-[13px] text-ink-muted tabular-nums">
                 {pl.localidad}, Buenos Aires ({pl.lat.toFixed(3)}, {pl.lon.toFixed(3)})
               </p>
@@ -294,7 +294,7 @@ const TIPO_FUENTE_LABEL: Record<string, string> = {
       </div>
     </section>
 
-    <section class="pt-16">
+    <section class="pt-20">
       <div class="border border-rule bg-stone-surface p-6 sm:p-8 lg:p-10">
         <div class="atlas-prose max-w-[74ch]">
           <PetroquimicaEssay />
@@ -302,9 +302,9 @@ const TIPO_FUENTE_LABEL: Record<string, string> = {
       </div>
     </section>
 
-    <section id="fuentes" class="scroll-mt-20 pt-16">
+    <section id="fuentes" class="scroll-mt-24 pt-20">
       <div class="border-b border-rule pb-4">
-        <h2 class="font-display text-[24px] font-bold tracking-tight text-ink">
+        <h2 class="font-display text-[23px] font-medium leading-[1.15] tracking-[-0.022em] text-ink">
           Registro de fuentes oficiales y verificación SHA-256
         </h2>
       </div>

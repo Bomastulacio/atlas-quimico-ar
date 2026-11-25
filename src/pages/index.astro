@@ -71,45 +71,23 @@ const pctCobertura = Math.round(
 
     <div class="relative z-10 mx-auto w-full max-w-[1600px] px-5 pb-24 pt-28 sm:px-8 sm:pb-32 sm:pt-32 lg:px-10 lg:pb-36 lg:pt-36">
       <div class="max-w-2xl">
-        <h1 class="font-display text-[clamp(2.4rem,4.7vw,4.35rem)] font-bold leading-[1.03] tracking-[-0.035em] text-white">
+        <h1 class="font-display text-[clamp(2.35rem,4.5vw,4rem)] font-medium leading-[1.04] tracking-[-0.036em] text-white text-balance">
           Mapa productivo
           <br />
-          e industrial de
-          <br />
-          Argentina
+          e industrial de Argentina
         </h1>
 
-        <p class="mt-5 max-w-[46ch] text-[15px] leading-relaxed text-white/80 sm:text-[17px]">
+        <p class="mt-5 max-w-[46ch] text-[15px] font-normal leading-relaxed text-white/80 sm:text-[16px]">
           Qué fabrica el país, qué procesos químicos transforman cada insumo y cuánto comercio
           exterior genera, con fuentes oficiales verificables en cada cifra.
         </p>
 
-        <div class="mt-8 flex items-center gap-3">
+        <div class="mt-8">
           <a
             href="#mapa"
-            class="inline-flex items-center gap-2 rounded-full bg-white px-6 py-3 text-[15px] font-semibold text-ink transition-colors duration-150 hover:bg-stone-bg"
+            class="inline-flex items-center gap-2 rounded-full bg-white px-5 py-2.5 text-[14px] font-medium text-ink transition-colors duration-150 hover:bg-stone-bg"
           >
             <span>Explorar mapa interactivo</span>
-          </a>
-          <a
-            href="#mapa"
-            aria-label="Desplazarse al mapa productivo interactivo"
-            class="inline-flex h-11 w-11 items-center justify-center rounded-full border border-white/25 text-white/85 transition-colors duration-150 hover:border-white/60 hover:text-white"
-          >
-            <svg
-              width="18"
-              height="18"
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="currentColor"
-              stroke-width="2"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              aria-hidden="true"
-            >
-              <path d="M12 5v14" />
-              <path d="m19 12-7 7-7-7" />
-            </svg>
           </a>
         </div>
       </div>
@@ -117,7 +95,7 @@ const pctCobertura = Math.round(
   </section>
 
   {/* Hoja elevada del mapa productivo asomando sobre el cierre del hero */}
-  <main class="relative z-20 mx-auto max-w-[1600px] px-5 pb-20 sm:px-8 lg:px-10">
+  <main class="relative z-20 mx-auto max-w-[1600px] px-5 pb-24 sm:px-8 lg:px-10">
     <section id="mapa" class="-mt-14 scroll-mt-24 sm:-mt-20">
       <ArgentinaMapExplorer
         client:load
@@ -133,7 +111,7 @@ const pctCobertura = Math.round(
     </section>
 
     {/* Sección interactiva de cadenas y explorador paso a paso */}
-    <section id="procesos" class="mt-20 scroll-mt-24">
+    <section id="procesos" class="mt-24 scroll-mt-24">
       <ProcessDeckPreview
         client:load
         productos={productos}
@@ -144,29 +122,29 @@ const pctCobertura = Math.round(
     </section>
 
     {/* Etapa 8: Resumen editorial de empresas predominantes e indicador de cobertura territorial */}
-    <section id="empresas-cobertura" class="mt-20 scroll-mt-24">
+    <section id="empresas-cobertura" class="mt-24 scroll-mt-24">
       <div class="grid gap-6 lg:grid-cols-12">
         {/* Directorio compacto de empresas verificables */}
         <div class="flex flex-col justify-between border border-rule bg-stone-surface p-6 sm:p-7 lg:col-span-7">
           <div>
             <div class="flex flex-wrap items-baseline justify-between gap-3 border-b border-rule pb-4">
               <div>
-                <h2 class="font-display text-[22px] font-bold tracking-[-0.02em] text-ink">
+                <h2 class="font-display text-[22px] font-medium leading-[1.15] tracking-[-0.022em] text-ink">
                   Empresas predominantes y plantas
                 </h2>
-                <p class="mt-1 text-[14px] text-ink-muted">
-                  Solo hechos verificables con fuente pública (sin facturación ni cuotas estimadas).
+                <p class="mt-1 text-[14px] font-normal text-ink-muted">
+                  Solo hechos verificables con fuente pública, sin facturación ni cuotas estimadas.
                 </p>
               </div>
               <a
                 href="/empresas"
-                class="text-[13px] font-semibold text-cobalt hover:underline"
+                class="text-[13px] font-medium text-cobalt hover:underline"
               >
-                Ver directorio completo →
+                Ver directorio →
               </a>
             </div>
 
-            <ul class="mt-4 grid gap-3 sm:grid-cols-2">
+            <ul class="mt-5 grid gap-3 sm:grid-cols-2">
               {empresasConPlantas.map((item) => (
                 <li>
                   <a
@@ -174,14 +152,14 @@ const pctCobertura = Math.round(
                     class="group flex h-full flex-col justify-between border border-rule bg-stone-bg p-4 transition-colors duration-150 hover:border-ink hover:bg-stone-surface"
                   >
                     <div>
-                      <p class="text-[15px] font-semibold leading-snug text-ink group-hover:text-cobalt">
+                      <h3 class="font-display text-[15px] font-medium leading-snug tracking-[-0.01em] text-ink group-hover:text-cobalt">
                         {item.empresa.razon_social}
-                      </p>
-                      <p class="mt-1 text-[13px] text-ink-muted">
+                      </h3>
+                      <p class="mt-1 text-[13px] font-normal text-ink-muted">
                         {item.productos.map((p) => p.nombre).join(' · ')}
                       </p>
                     </div>
-                    <p class="mt-3 text-[13px] text-ink-muted tabular-nums">
+                    <p class="mt-3 text-[12px] font-normal text-ink-muted tabular-nums">
                       {item.provincias.map((p) => p.nombre).join(', ')} · {item.plantas.length}{' '}
                       {item.plantas.length === 1 ? 'planta' : 'plantas'} · Capital{' '}
                       {item.empresa.tipo_capital}
@@ -192,45 +170,35 @@ const pctCobertura = Math.round(
             </ul>
           </div>
 
-          <div class="mt-6 flex flex-wrap items-center justify-between gap-3 border-t border-rule pt-4 text-[13px] text-ink-muted tabular-nums">
-            <span>
-              {cobertura.totales.empresasVerificadas} empresas ·{' '}
-              {cobertura.totales.plantasGeorreferenciadas} plantas georreferenciadas
-            </span>
-            <a href="/empresas" class="font-medium text-ink transition-colors duration-150 hover:text-cobalt">
-              Filtrar por cadena, capital y ubicación →
-            </a>
-          </div>
+          <p class="mt-6 border-t border-rule pt-4 text-[13px] font-normal text-ink-muted tabular-nums">
+            {cobertura.totales.empresasVerificadas} empresas verificadas ·{' '}
+            {cobertura.totales.plantasGeorreferenciadas} plantas georreferenciadas
+          </p>
         </div>
 
         {/* Indicador honesto de cobertura territorial */}
         <div class="flex flex-col justify-between border border-rule bg-stone-surface p-6 sm:p-7 lg:col-span-5">
           <div>
-            <div class="flex flex-wrap items-baseline justify-between gap-3 border-b border-rule pb-4">
-              <div>
-                <h2 class="font-display text-[22px] font-bold tracking-[-0.02em] text-ink">
-                  Indicador de cobertura
-                </h2>
-                <p class="mt-1 text-[14px] text-ink-muted">
-                  Donde faltan datos confiables, el atlas lo declara sin estimaciones.
-                </p>
-              </div>
-              <a href="/cobertura" class="text-[13px] font-semibold text-cobalt hover:underline">
-                Ver detalle →
-              </a>
+            <div class="border-b border-rule pb-4">
+              <h2 class="font-display text-[22px] font-medium leading-[1.15] tracking-[-0.022em] text-ink">
+                Indicador de cobertura
+              </h2>
+              <p class="mt-1 text-[14px] font-normal text-ink-muted">
+                Donde faltan datos confiables, el atlas lo declara sin estimaciones.
+              </p>
             </div>
 
             <div class="mt-5">
               <div class="flex items-baseline justify-between text-[14px] tabular-nums">
-                <span class="font-medium text-ink">Cobertura jurisdiccional verificada</span>
-                <span class="font-display text-[20px] font-bold text-cobalt">
+                <span class="font-normal text-ink">Cobertura jurisdiccional verificada</span>
+                <span class="font-display text-[19px] font-medium tracking-[-0.02em] text-cobalt">
                   {cobertura.totales.provinciasConDatos} / {cobertura.totales.totalProvincias} ({pctCobertura}%)
                 </span>
               </div>
               <div class="mt-2 h-2 w-full bg-stone-subtle">
                 <div class="h-full bg-cobalt" style={{ width: `${pctCobertura}%` }} />
               </div>
-              <p class="mt-2.5 text-[13px] text-ink-muted tabular-nums">
+              <p class="mt-2.5 text-[13px] font-normal text-ink-muted tabular-nums">
                 {cobertura.totales.departamentosConDatos} departamentos confiables ·{' '}
                 {cobertura.totales.provinciasSinDatos} provincias declaradas sin datos ·{' '}
                 {cobertura.totales.fuentesVerificadas} fuentes con SHA-256.
@@ -241,7 +209,7 @@ const pctCobertura = Math.round(
             <ul class="mt-5 divide-y divide-rule border-t border-rule text-[13px] tabular-nums">
               {cobertura.porRegion.map((reg) => (
                 <li class="flex items-center justify-between gap-3 py-2.5">
-                  <span class="font-medium text-ink">{reg.region}</span>
+                  <span class="font-normal text-ink">{reg.region}</span>
                   <div class="flex items-center gap-3">
                     <div class="h-1.5 w-24 bg-stone-subtle">
                       <div
@@ -261,9 +229,9 @@ const pctCobertura = Math.round(
           <div class="mt-6 border-t border-rule pt-4">
             <a
               href="/cobertura"
-              class="inline-flex w-full items-center justify-center gap-2 bg-ink px-4 py-2.5 text-[14px] font-medium text-white transition-colors duration-150 hover:bg-cobalt"
+              class="inline-flex w-full items-center justify-center bg-ink px-4 py-2.5 text-[13px] font-medium text-white transition-colors duration-150 hover:bg-cobalt"
             >
-              <span>Abrir tablero completo de cobertura y faltantes</span>
+              <span>Ver tablero de cobertura y faltantes</span>
             </a>
           </div>
         </div>

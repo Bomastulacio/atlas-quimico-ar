@@ -65,25 +65,25 @@ export function CompanyMarketCard({
       }`}
     >
       <div className="flex flex-wrap items-center justify-between gap-2 text-[13px]">
-        <div className="flex flex-wrap items-center gap-2">
+        <div className="flex flex-wrap items-baseline gap-2">
           {isGlobalParent ? (
-            <span className="inline-flex items-center gap-1.5 font-semibold text-ink">
+            <span className="inline-flex items-center gap-1.5 font-medium text-ink">
               <Globe className="h-3.5 w-3.5 text-ink-muted" />
               <span>Grupo matriz global</span>
             </span>
           ) : (
-            <span className="font-semibold text-cobalt">Valuación bursátil directa</span>
+            <span className="font-medium text-cobalt">Valuación bursátil directa</span>
           )}
           {mercado.bolsa && mercado.ticker && (
-            <span className="border border-rule bg-stone-surface px-2 py-0.5 font-semibold text-ink tabular-nums">
-              {mercado.bolsa}: {mercado.ticker}
+            <span className="text-[12px] font-medium text-ink-muted tabular-nums">
+              {mercado.bolsa} · {mercado.ticker}
             </span>
           )}
         </div>
 
         {varPct !== null && (
           <span
-            className={`inline-flex items-center gap-1 font-semibold tabular-nums ${
+            className={`inline-flex items-center gap-1 text-[13px] font-medium tabular-nums ${
               isPositive ? 'text-emerald-react' : 'text-signal-red'
             }`}
           >
@@ -106,7 +106,7 @@ export function CompanyMarketCard({
 
       {isGlobalParent && (
         <p className="mt-2 text-[13px] leading-snug text-ink-muted">
-          Cotización consolidada de <strong className="font-semibold text-ink">{mercado.entidad_cotizante}</strong>{' '}
+          Cotización consolidada de <strong className="font-medium text-ink">{mercado.entidad_cotizante}</strong>{' '}
           (no exclusiva de sus plantas en Argentina).
         </p>
       )}
@@ -117,7 +117,7 @@ export function CompanyMarketCard({
             <dt className="text-[12px] text-ink-muted">
               Valor de mercado en dólares ({DOLAR_LABELS[dolarCasa]})
             </dt>
-            <dd className="mt-0.5 font-display text-[20px] font-bold leading-tight text-ink">
+            <dd className="mt-0.5 font-display text-[19px] font-medium leading-tight tracking-[-0.02em] text-ink">
               {formatMarketCap(val.marketCapUsd, 'USD')}
             </dd>
           </div>
@@ -126,14 +126,14 @@ export function CompanyMarketCard({
             <dt className="text-[12px] text-ink-muted">
               Valor de mercado en pesos ({DOLAR_LABELS[dolarCasa]})
             </dt>
-            <dd className="mt-0.5 font-display text-[20px] font-bold leading-tight text-ink">
+            <dd className="mt-0.5 font-display text-[19px] font-medium leading-tight tracking-[-0.02em] text-ink">
               {formatMarketCap(val.marketCapArs, 'ARS')}
             </dd>
           </div>
 
           <div>
             <dt className="text-[12px] text-ink-muted">Precio por acción</dt>
-            <dd className="mt-0.5 text-[14px] font-semibold text-ink">
+            <dd className="mt-0.5 text-[14px] font-medium text-ink">
               {mercado.moneda_origen === 'ARS'
                 ? `ARS ${val.precioArs.toLocaleString('es-AR', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}`
                 : mercado.moneda_origen === 'BRL'
@@ -144,7 +144,7 @@ export function CompanyMarketCard({
 
           <div>
             <dt className="text-[12px] text-ink-muted">Acciones auditadas</dt>
-            <dd className="mt-0.5 text-[14px] font-medium text-ink">
+            <dd className="mt-0.5 text-[14px] font-normal text-ink">
               {mercado.acciones_circulacion
                 ? `${(mercado.acciones_circulacion / 1_000_000).toLocaleString('es-AR', {
                     minimumFractionDigits: 1,

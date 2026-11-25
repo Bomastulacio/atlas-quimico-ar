@@ -126,7 +126,7 @@ export function ProvinceSidePanel({
               {/* Cabecera departamental */}
               <div className="flex items-start justify-between gap-4 border-b border-rule px-6 py-5">
                 <div>
-                  <h2 className="font-display text-[24px] font-bold leading-tight tracking-tight text-ink">
+                  <h2 className="font-display text-[20px] font-medium leading-[1.18] tracking-[-0.02em] text-ink">
                     {selectedDepartamento.departamento.nombre}
                   </h2>
                   <p className="mt-1.5 text-[13px] text-ink-muted tabular-nums">
@@ -173,7 +173,7 @@ export function ProvinceSidePanel({
                         </span>
                         <span className="font-medium text-emerald-react">Datos confiables</span>
                       </div>
-                      <p className="mt-2 text-[15px] text-ink-muted">
+                      <p className="mt-2 text-[14px] text-ink-muted">
                         {selectedDepartamento.departamento.nota_cobertura ?? cov.fallback}
                       </p>
                     </div>
@@ -202,7 +202,7 @@ export function ProvinceSidePanel({
                             </span>
                             <div className="min-w-0 flex-1">
                               <div className="flex flex-wrap items-baseline justify-between gap-2">
-                                <h3 className="text-[15px] font-semibold text-ink">
+                                <h3 className="text-[15px] font-medium text-ink">
                                   {prod.nombre}
                                 </h3>
                                 {prod.formula_quimica && (
@@ -296,7 +296,7 @@ export function ProvinceSidePanel({
               {/* Cabecera limpia sin chips decorativos */}
               <div className="flex items-start justify-between gap-4 border-b border-rule px-6 py-5">
                 <div>
-                  <h2 className="font-display text-[24px] font-bold leading-tight tracking-tight text-ink">
+                  <h2 className="font-display text-[20px] font-medium leading-[1.18] tracking-[-0.02em] text-ink">
                     {selected.provincia.nombre}
                   </h2>
                   <p className="mt-1.5 text-[13px] text-ink-muted tabular-nums">
@@ -345,7 +345,7 @@ export function ProvinceSidePanel({
                           esEjemplo && <span className="text-ink-muted">Pendiente Etapa 6</span>
                         )}
                       </div>
-                      <p className="mt-2 text-[15px] text-ink-muted">
+                      <p className="mt-2 text-[14px] text-ink-muted">
                         {selected.provincia.nota_cobertura ?? cov.fallback}
                       </p>
                     </div>
@@ -378,7 +378,7 @@ export function ProvinceSidePanel({
                                     className="inline-block h-2 w-2 shrink-0 rounded-full"
                                     style={{ backgroundColor: zm?.color ?? '#111214' }}
                                   />
-                                  <span className="truncate text-[14px] font-semibold text-ink group-hover:text-cobalt">
+                                  <span className="truncate text-[14px] font-medium text-ink group-hover:text-cobalt">
                                     {d.nombre}
                                   </span>
                                 </div>
@@ -424,7 +424,7 @@ export function ProvinceSidePanel({
                               </span>
                               <div className="min-w-0 flex-1">
                                 <div className="flex flex-wrap items-baseline justify-between gap-2">
-                                  <h3 className="text-[15px] font-semibold text-ink">
+                                  <h3 className="text-[15px] font-medium text-ink">
                                     {prod.nombre}
                                   </h3>
                                   {prod.formula_quimica && (
@@ -433,7 +433,7 @@ export function ProvinceSidePanel({
                                     </span>
                                   )}
                                 </div>
-                                <p className="mt-1 text-[15px] text-ink-muted">
+                                <p className="mt-1 text-[14px] text-ink-muted">
                                   {prod.descripcion_corta}
                                 </p>
                                 {rel && (
@@ -512,10 +512,10 @@ export function ProvinceSidePanel({
           >
             <div>
               <div className="border-b border-rule px-6 py-5">
-                <h2 className="font-display text-[24px] font-bold leading-tight tracking-tight text-ink">
+                <h2 className="font-display text-[20px] font-medium leading-[1.18] tracking-[-0.02em] text-ink">
                   Explorá el territorio
                 </h2>
-                <p className="mt-2 text-[15px] text-ink-muted">
+                <p className="mt-2 text-[14px] text-ink-muted">
                   Hacé click en cualquier provincia o acercá el mapa para revelar los{' '}
                   {totalDeptosConfiables} departamentos con datos verificados (polos industriales,
                   mineros y agroindustriales).

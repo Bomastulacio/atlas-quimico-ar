@@ -144,7 +144,7 @@ function ProcessStepNode({ data }: NodeProps<StepFlowNode>) {
           <span>{meta.label}</span>
         </div>
 
-        <h3 className="mt-1.5 font-display text-[15px] font-semibold leading-snug text-ink">
+        <h3 className="mt-1.5 font-display text-[15px] font-medium leading-snug text-ink">
           {paso.nombre}
         </h3>
 
@@ -158,7 +158,7 @@ function ProcessStepNode({ data }: NodeProps<StepFlowNode>) {
           <span>{paso.temperatura_c ? `${paso.temperatura_c} °C` : 'T ambiente'}</span>
           <span
             className={
-              paso.energia.estado === 'dato' ? 'font-semibold text-cobalt' : 'text-ink-muted'
+              paso.energia.estado === 'dato' ? 'font-medium text-cobalt' : 'text-ink-muted'
             }
           >
             {paso.energia.estado === 'dato'
@@ -384,7 +384,7 @@ export function ProcessFlowDiagram({ procesoCompleto }: ProcessFlowDiagramProps)
           <div className="atlas-flow flex flex-col border border-rule bg-[#E6E7E3] lg:col-span-8">
             <div className="flex flex-wrap items-center justify-between gap-2 border-b border-rule bg-stone-surface px-4 py-2.5 text-[13px]">
               <div className="flex flex-wrap items-baseline gap-2">
-                <span className="font-semibold text-ink">{proceso.nombre}</span>
+                <span className="font-medium text-ink">{proceso.nombre}</span>
                 {proceso.reaccion_global && (
                   <span className="font-medium text-cobalt tabular-nums">
                     {proceso.reaccion_global}
@@ -480,7 +480,7 @@ export function ProcessFlowDiagram({ procesoCompleto }: ProcessFlowDiagramProps)
                         Paso {selectedStep.orden} de {pasos.length} ·{' '}
                         {TIPO_PASO_META[selectedStep.tipo_paso].label}
                       </p>
-                      <h3 className="mt-1 font-display text-[22px] font-bold leading-snug tracking-tight text-ink">
+                      <h3 className="mt-1 font-display text-[22px] font-medium leading-snug tracking-tight text-ink">
                         {selectedStep.nombre}
                       </h3>
                       <p className="mt-2 text-[15px] text-ink-muted">{selectedStep.descripcion}</p>
@@ -492,7 +492,7 @@ export function ProcessFlowDiagram({ procesoCompleto }: ProcessFlowDiagramProps)
                           <p className="text-[12px] font-medium text-ink-muted">
                             Reacción química balanceada
                           </p>
-                          <p className="mt-1 font-display text-[16px] font-semibold text-ink tabular-nums">
+                          <p className="mt-1 font-display text-[16px] font-medium text-ink tabular-nums">
                             {selectedStep.reaccion_balanceada}
                           </p>
                         </div>
@@ -505,7 +505,7 @@ export function ProcessFlowDiagram({ procesoCompleto }: ProcessFlowDiagramProps)
                             <Flame className="h-3.5 w-3.5" />
                             <span>Temp.</span>
                           </dt>
-                          <dd className="mt-1 text-[14px] font-semibold text-ink">
+                          <dd className="mt-1 text-[14px] font-medium text-ink">
                             {selectedStep.temperatura_c
                               ? `${selectedStep.temperatura_c} °C`
                               : 'Sin datos'}
@@ -516,7 +516,7 @@ export function ProcessFlowDiagram({ procesoCompleto }: ProcessFlowDiagramProps)
                             <Gauge className="h-3.5 w-3.5" />
                             <span>Presión</span>
                           </dt>
-                          <dd className="mt-1 text-[14px] font-semibold text-ink">
+                          <dd className="mt-1 text-[14px] font-medium text-ink">
                             {selectedStep.presion_bar
                               ? `${selectedStep.presion_bar} bar`
                               : 'Sin datos'}
@@ -527,7 +527,7 @@ export function ProcessFlowDiagram({ procesoCompleto }: ProcessFlowDiagramProps)
                             <Zap className="h-3.5 w-3.5" />
                             <span>Energía</span>
                           </dt>
-                          <dd className="mt-1 text-[14px] font-semibold text-cobalt">
+                          <dd className="mt-1 text-[14px] font-medium text-cobalt">
                             {selectedStep.energia.estado === 'dato'
                               ? `${selectedStep.energia.valor.toLocaleString('es-AR', { minimumFractionDigits: 2 })} ${selectedStep.energia.unidad}`
                               : 'Sin datos'}

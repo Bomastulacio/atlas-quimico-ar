@@ -133,7 +133,7 @@ export function EmpresasExplorer({
         {/* Barra de tipo de cambio (CCL por defecto / MEP / Oficial) para valuación en ARS y USD */}
         <div className="flex flex-wrap items-center justify-between gap-4 border border-rule bg-stone-surface px-5 py-4">
           <div className="flex flex-wrap items-center gap-3">
-            <span className="text-[13px] font-semibold text-ink">
+            <span className="text-[13px] font-medium text-ink">
               Conversión bursátil ARS / USD:
             </span>
             <div
@@ -304,9 +304,9 @@ export function EmpresasExplorer({
 
             <div className="flex items-center gap-3 tabular-nums text-ink-muted">
               <span>
-                Mostrando <strong className="font-semibold text-ink">{filtered.length}</strong> de{' '}
+                Mostrando <strong className="font-medium text-ink">{filtered.length}</strong> de{' '}
                 {empresas.length} empresas ·{' '}
-                <strong className="font-semibold text-ink">{totalPlantasFiltradas}</strong> plantas
+                <strong className="font-medium text-ink">{totalPlantasFiltradas}</strong> plantas
               </span>
               {hasFilters && (
                 <button
@@ -349,7 +349,7 @@ export function EmpresasExplorer({
                       <div>
                         <div className="flex flex-wrap items-start justify-between gap-3">
                           <div>
-                            <h2 className="font-display text-[22px] font-bold leading-snug tracking-[-0.02em] text-ink">
+                            <h2 className="font-display text-[19px] font-medium leading-[1.2] tracking-[-0.018em] text-ink">
                               {empresa.razon_social}
                             </h2>
                             <p className="mt-1 text-[13px] text-ink-muted">
@@ -395,10 +395,10 @@ export function EmpresasExplorer({
 
                         {/* Hechos verificables (sin facturación ni cuotas inventadas) */}
                         <div className="mt-5 border-t border-rule pt-4">
-                          <p className="text-[13px] font-medium text-ink-muted">
+                          <p className="text-[12px] font-medium text-ink-muted">
                             Hechos verificables registrados
                           </p>
-                          <p className="mt-1.5 text-[15px] leading-relaxed text-ink">
+                          <p className="mt-1.5 text-[14px] font-normal leading-relaxed text-ink">
                             {empresa.hechos_verificables}
                           </p>
                         </div>
@@ -446,7 +446,7 @@ export function EmpresasExplorer({
                     {/* Columna derecha: tabla/lista de plantas georreferenciadas */}
                     <div className="p-6 lg:col-span-7">
                       <div className="flex items-center justify-between gap-2 border-b border-rule pb-3">
-                        <div className="flex items-center gap-2 text-[14px] font-semibold text-ink">
+                        <div className="flex items-center gap-2 text-[14px] font-medium text-ink">
                           <Building2 className="h-4 w-4 text-ink-muted" />
                           <span>Plantas e instalaciones verificadas ({plantas.length})</span>
                         </div>
@@ -466,7 +466,7 @@ export function EmpresasExplorer({
                             <div key={pl.planta_id} className="py-4 first:pt-0 last:pb-0">
                               <div className="flex flex-wrap items-start justify-between gap-3">
                                 <div>
-                                  <h3 className="text-[16px] font-semibold text-ink">{pl.nombre}</h3>
+                                  <h3 className="font-display text-[15px] font-medium leading-snug tracking-[-0.01em] text-ink">{pl.nombre}</h3>
                                   <p className="mt-1 text-[13px] text-ink-muted tabular-nums">
                                     {pl.localidad}
                                     {pl.departamento ? `, Depto. ${pl.departamento.nombre}` : ''},{' '}
@@ -490,7 +490,7 @@ export function EmpresasExplorer({
                                 <div>
                                   <dt className="text-ink-muted">Capacidad declarada</dt>
                                   <dd
-                                    className={`mt-0.5 font-semibold ${
+                                    className={`mt-0.5 font-medium ${
                                       pl.capacidad.estado === 'dato'
                                         ? 'text-cobalt'
                                         : 'text-ink-muted'

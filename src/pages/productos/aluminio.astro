@@ -128,11 +128,11 @@ const TIPO_FUENTE_LABEL: Record<string, string> = {
           </span>
           <div>
             <div class="flex flex-wrap items-baseline gap-3">
-              <h1 class="font-display text-[clamp(2rem,3.4vw,3rem)] font-bold leading-[1.06] tracking-[-0.03em] text-ink">
+              <h1 class="font-display text-[clamp(1.85rem,3vw,2.6rem)] font-medium leading-[1.06] tracking-[-0.032em] text-ink">
                 {ficha.producto.nombre}
               </h1>
               {ficha.producto.formula_quimica && (
-                <span class="font-display text-[22px] font-semibold text-cobalt tabular-nums">
+                <span class="font-display text-[19px] font-medium text-cobalt tabular-nums">
                   {ficha.producto.formula_quimica}
                 </span>
               )}
@@ -156,7 +156,7 @@ const TIPO_FUENTE_LABEL: Record<string, string> = {
       <dl class="mt-8 grid gap-6 border-t border-rule pt-6 sm:grid-cols-2 lg:grid-cols-4 tabular-nums">
         <div>
           <dt class="text-[13px] text-ink-muted">Producción en electrólisis (FY 2024-25)</dt>
-          <dd class="mt-1 font-display text-[28px] font-bold leading-tight text-ink">
+          <dd class="mt-1 font-display text-[24px] font-medium leading-tight tracking-[-0.02em] text-ink">
             {ultimaProduccion?.medicion.estado === 'dato'
               ? `${ultimaProduccion.medicion.valor.toLocaleString('es-AR')} t`
               : 'Sin datos'}
@@ -168,7 +168,7 @@ const TIPO_FUENTE_LABEL: Record<string, string> = {
 
         <div>
           <dt class="text-[13px] text-ink-muted">Energía eléctrica en cubas</dt>
-          <dd class="mt-1 font-display text-[28px] font-bold leading-tight text-cobalt">
+          <dd class="mt-1 font-display text-[24px] font-medium leading-tight tracking-[-0.02em] text-cobalt">
             {procesoPrincipal.proceso.energia_especifica.estado === 'dato'
               ? `${procesoPrincipal.proceso.energia_especifica.valor.toLocaleString('es-AR', { minimumFractionDigits: 2 })} ${procesoPrincipal.proceso.energia_especifica.unidad}`
               : 'Sin datos'}
@@ -180,7 +180,7 @@ const TIPO_FUENTE_LABEL: Record<string, string> = {
 
         <div>
           <dt class="text-[13px] text-ink-muted">Saldo comercial Cap. 76 NCM ({ultimoComex?.anio})</dt>
-          <dd class="mt-1 font-display text-[28px] font-bold leading-tight text-emerald-react">
+          <dd class="mt-1 font-display text-[24px] font-medium leading-tight tracking-[-0.02em] text-emerald-react">
             {ultimoComex?.saldo_comercial.estado === 'dato'
               ? `+USD ${ultimoComex.saldo_comercial.valor.toLocaleString('es-AR', { minimumFractionDigits: 2 })} M`
               : 'Sin datos'}
@@ -193,7 +193,7 @@ const TIPO_FUENTE_LABEL: Record<string, string> = {
 
         <div>
           <dt class="text-[13px] text-ink-muted">Alúmina importada HS 2818.20 ({ultimaAluminaVol?.anio})</dt>
-          <dd class="mt-1 font-display text-[28px] font-bold leading-tight text-ochre-metal">
+          <dd class="mt-1 font-display text-[24px] font-medium leading-tight tracking-[-0.02em] text-ochre-metal">
             {ultimaAluminaVol?.importacion.estado === 'dato'
               ? `${Math.round(ultimaAluminaVol.importacion.valor).toLocaleString('es-AR')} t`
               : 'Sin datos'}
@@ -209,10 +209,10 @@ const TIPO_FUENTE_LABEL: Record<string, string> = {
     </section>
 
     {/* Sección 1: Anatomía física isométrica del proceso en Aluar Puerto Madryn */}
-    <section id="anatomia" class="scroll-mt-20 pt-12">
+    <section id="anatomia" class="scroll-mt-24 pt-16">
       <div class="mb-5 flex flex-wrap items-end justify-between gap-4">
         <div class="max-w-3xl">
-          <h2 class="font-display text-[24px] font-bold tracking-tight text-ink">
+          <h2 class="font-display text-[23px] font-medium leading-[1.15] tracking-[-0.022em] text-ink">
             Anatomía del proceso en Aluar (Puerto Madryn)
           </h2>
           <p class="mt-1.5 text-[15px] text-ink-muted">
@@ -244,10 +244,10 @@ const TIPO_FUENTE_LABEL: Record<string, string> = {
     </section>
 
     {/* Sección 2: Diagrama de proceso químico interactivo (React Flow desde JSON) */}
-    <section id="diagrama" class="scroll-mt-20 pt-16">
+    <section id="diagrama" class="scroll-mt-24 pt-20">
       <div class="mb-5 flex flex-wrap items-end justify-between gap-4">
         <div class="max-w-3xl">
-          <h2 class="font-display text-[24px] font-bold tracking-tight text-ink">
+          <h2 class="font-display text-[23px] font-medium leading-[1.15] tracking-[-0.022em] text-ink">
             Diagrama interactivo del proceso Hall-Héroult
           </h2>
           <p class="mt-1.5 text-[15px] text-ink-muted">
@@ -258,7 +258,7 @@ const TIPO_FUENTE_LABEL: Record<string, string> = {
         {ratioAluminaAl !== null && (
           <p class="text-[13px] text-ink-muted tabular-nums">
             Cruce estequiométrico real:{' '}
-            <strong class="font-semibold text-ink">
+            <strong class="font-medium text-ink">
               {ratioAluminaAl.toLocaleString('es-AR', { minimumFractionDigits: 2, maximumFractionDigits: 2 })} t Al2O3/t Al
             </strong>{' '}
             (mínimo teórico: 1,89 t/t)
@@ -270,9 +270,9 @@ const TIPO_FUENTE_LABEL: Record<string, string> = {
     </section>
 
     {/* Sección 2: Series históricas de Producción y Comercio Exterior */}
-    <section id="datos" class="scroll-mt-20 pt-16">
+    <section id="datos" class="scroll-mt-24 pt-20">
       <div class="border-b border-rule pb-4">
-        <h2 class="font-display text-[24px] font-bold tracking-tight text-ink">
+        <h2 class="font-display text-[23px] font-medium leading-[1.15] tracking-[-0.022em] text-ink">
           Producción física y comercio exterior verificados
         </h2>
         <p class="mt-1.5 max-w-[70ch] text-[15px] text-ink-muted">
@@ -286,7 +286,7 @@ const TIPO_FUENTE_LABEL: Record<string, string> = {
         {/* Producción 5 ejercicios */}
         <div class="border border-rule bg-stone-surface p-6 lg:col-span-5">
           <div class="flex items-baseline justify-between gap-2">
-            <h3 class="font-display text-[20px] font-semibold text-ink">
+            <h3 class="font-display text-[17px] font-medium leading-[1.24] tracking-[-0.015em] text-ink">
               Producción de aluminio líquido
             </h3>
             <span class="text-[13px] text-ink-muted">Ejercicios jul-jun</span>
@@ -305,7 +305,7 @@ const TIPO_FUENTE_LABEL: Record<string, string> = {
                     <span class="font-medium text-ink">
                       Ej. {reg.anio - 1}-{String(reg.anio).slice(-2)}
                     </span>
-                    <span class="font-semibold text-ink">
+                    <span class="font-medium text-ink">
                       {reg.medicion.estado === 'dato'
                         ? `${reg.medicion.valor.toLocaleString('es-AR')} t`
                         : 'Sin datos'}
@@ -324,7 +324,7 @@ const TIPO_FUENTE_LABEL: Record<string, string> = {
 
           {/* Desglose de productos solidificados + despacho líquido FY 2024-25 */}
           <div class="mt-6 border-t border-rule pt-5">
-            <h4 class="text-[13px] font-semibold text-ink">
+            <h4 class="text-[13px] font-medium text-ink">
               Desglose de producción solidificada y líquida (FY 2024-25: 442.437 t)
             </h4>
             <ul class="mt-2.5 divide-y divide-rule text-[13px] tabular-nums">
@@ -342,7 +342,7 @@ const TIPO_FUENTE_LABEL: Record<string, string> = {
         <div class="space-y-6 lg:col-span-7">
           <div class="border border-rule bg-stone-surface p-6">
             <div class="flex flex-wrap items-baseline justify-between gap-2">
-              <h3 class="font-display text-[20px] font-semibold text-ink">
+              <h3 class="font-display text-[17px] font-medium leading-[1.24] tracking-[-0.015em] text-ink">
                 Comercio exterior de aluminio y manufacturas (Cap. 76 NCM)
               </h3>
               <span class="text-[13px] text-ink-muted">Millones de USD · INDEC</span>
@@ -361,7 +361,7 @@ const TIPO_FUENTE_LABEL: Record<string, string> = {
                 <tbody class="divide-y divide-rule">
                   {comexCap76.map((row) => (
                     <tr>
-                      <td class="py-2.5 pr-4 font-semibold text-ink">{row.anio}</td>
+                      <td class="py-2.5 pr-4 font-medium text-ink">{row.anio}</td>
                       <td class="px-4 py-2.5 text-right text-ink">
                         {row.exportacion.estado === 'dato'
                           ? `USD ${row.exportacion.valor.toLocaleString('es-AR', { minimumFractionDigits: 2 })} M`
@@ -372,7 +372,7 @@ const TIPO_FUENTE_LABEL: Record<string, string> = {
                           ? `USD ${row.importacion.valor.toLocaleString('es-AR', { minimumFractionDigits: 2 })} M`
                           : 'Sin datos'}
                       </td>
-                      <td class="py-2.5 pl-4 text-right font-semibold text-emerald-react">
+                      <td class="py-2.5 pl-4 text-right font-medium text-emerald-react">
                         {row.saldo_comercial.estado === 'dato'
                           ? `+USD ${row.saldo_comercial.valor.toLocaleString('es-AR', { minimumFractionDigits: 2 })} M`
                           : 'Sin datos'}
@@ -394,7 +394,7 @@ const TIPO_FUENTE_LABEL: Record<string, string> = {
           {/* Bloque de insumo crítico importado: Alúmina HS 2818.20 */}
           <div class="border border-rule bg-stone-surface p-6">
             <div class="flex flex-wrap items-baseline justify-between gap-2">
-              <h3 class="font-display text-[20px] font-semibold text-ink">
+              <h3 class="font-display text-[17px] font-medium leading-[1.24] tracking-[-0.015em] text-ink">
                 Insumo crítico importado: alúmina calcinada (HS 2818.20)
               </h3>
               <span class="text-[13px] text-ink-muted">UN Comtrade (Argentina, reporterCode 32)</span>
@@ -420,7 +420,7 @@ const TIPO_FUENTE_LABEL: Record<string, string> = {
                     const usdRow = comexAluminaUsd.find((u) => u.anio === volRow.anio);
                     return (
                       <tr>
-                        <td class="py-2.5 pr-4 font-semibold text-ink">{volRow.anio}</td>
+                        <td class="py-2.5 pr-4 font-medium text-ink">{volRow.anio}</td>
                         <td class="px-4 py-2.5 text-right font-medium text-ochre-metal">
                           {volRow.importacion.estado === 'dato'
                             ? `${Math.round(volRow.importacion.valor).toLocaleString('es-AR')} t`
@@ -444,9 +444,9 @@ const TIPO_FUENTE_LABEL: Record<string, string> = {
     </section>
 
     {/* Sección 3: Empresa y planta verificables + Matriz eléctrica */}
-    <section id="empresas" class="scroll-mt-20 pt-16">
+    <section id="empresas" class="scroll-mt-24 pt-20">
       <div class="border-b border-rule pb-4">
-        <h2 class="font-display text-[24px] font-bold tracking-tight text-ink">
+        <h2 class="font-display text-[23px] font-medium leading-[1.15] tracking-[-0.022em] text-ink">
           Empresa predominante, planta e infraestructura eléctrica
         </h2>
         <p class="mt-1.5 max-w-[70ch] text-[15px] text-ink-muted">
@@ -459,7 +459,7 @@ const TIPO_FUENTE_LABEL: Record<string, string> = {
         {empresaPrincipal && plantaPrincipal && (
           <div class="border border-rule bg-stone-surface p-6 lg:col-span-7">
             <div class="flex flex-wrap items-baseline justify-between gap-2">
-              <h3 class="font-display text-[20px] font-semibold text-ink">
+              <h3 class="font-display text-[17px] font-medium leading-[1.24] tracking-[-0.015em] text-ink">
                 {empresaPrincipal.razon_social}
               </h3>
               <span class="text-[13px] text-ink-muted">
@@ -473,7 +473,7 @@ const TIPO_FUENTE_LABEL: Record<string, string> = {
             <dl class="mt-6 grid gap-4 border-t border-rule pt-5 sm:grid-cols-2 tabular-nums">
               <div>
                 <dt class="text-[13px] text-ink-muted">Planta registrada</dt>
-                <dd class="mt-0.5 text-[15px] font-semibold text-ink">{plantaPrincipal.nombre}</dd>
+                <dd class="mt-0.5 text-[15px] font-medium text-ink">{plantaPrincipal.nombre}</dd>
               </div>
               <div>
                 <dt class="text-[13px] text-ink-muted">Localidad y coordenadas</dt>
@@ -483,7 +483,7 @@ const TIPO_FUENTE_LABEL: Record<string, string> = {
               </div>
               <div>
                 <dt class="text-[13px] text-ink-muted">Capacidad instalada declarada</dt>
-                <dd class="mt-0.5 text-[15px] font-semibold text-cobalt">
+                <dd class="mt-0.5 text-[15px] font-medium text-cobalt">
                   {plantaPrincipal.capacidad.estado === 'dato'
                     ? `${plantaPrincipal.capacidad.valor.toLocaleString('es-AR')} ${plantaPrincipal.capacidad.unidad}`
                     : 'Sin datos'}
@@ -521,7 +521,7 @@ const TIPO_FUENTE_LABEL: Record<string, string> = {
 
         {/* Matriz eléctrica real FY 2024-25 */}
         <div class="border border-rule bg-stone-surface p-6 lg:col-span-5">
-          <h3 class="font-display text-[20px] font-semibold text-ink">
+          <h3 class="font-display text-[17px] font-medium leading-[1.24] tracking-[-0.015em] text-ink">
             Suministro eléctrico real (FY 2024-25)
           </h3>
           <p class="mt-1 text-[13px] text-ink-muted tabular-nums">
@@ -535,7 +535,7 @@ const TIPO_FUENTE_LABEL: Record<string, string> = {
                 <div>
                   <div class="flex items-baseline justify-between gap-3 text-[14px]">
                     <span class="text-ink">{fuente.origen}</span>
-                    <span class="shrink-0 font-semibold text-ink">{fuente.pct.toLocaleString('es-AR')}%</span>
+                    <span class="shrink-0 font-medium text-ink">{fuente.pct.toLocaleString('es-AR')}%</span>
                   </div>
                   <div class="mt-1.5 h-2 w-full bg-stone-subtle">
                     <div
@@ -559,7 +559,7 @@ const TIPO_FUENTE_LABEL: Record<string, string> = {
     </section>
 
     {/* Sección 4: Ensayo de ingeniería química (MDX) */}
-    <section class="pt-16">
+    <section class="pt-20">
       <div class="border border-rule bg-stone-surface p-6 sm:p-8 lg:p-10">
         <div class="atlas-prose max-w-[74ch]">
           <AluminioEssay />
@@ -568,9 +568,9 @@ const TIPO_FUENTE_LABEL: Record<string, string> = {
     </section>
 
     {/* Sección 5: Registro auditable de fuentes y hashes SHA-256 */}
-    <section id="fuentes" class="scroll-mt-20 pt-16">
+    <section id="fuentes" class="scroll-mt-24 pt-20">
       <div class="border-b border-rule pb-4">
-        <h2 class="font-display text-[24px] font-bold tracking-tight text-ink">
+        <h2 class="font-display text-[23px] font-medium leading-[1.15] tracking-[-0.022em] text-ink">
           Registro de fuentes oficiales y verificación SHA-256
         </h2>
         <p class="mt-1.5 text-[15px] text-ink-muted">

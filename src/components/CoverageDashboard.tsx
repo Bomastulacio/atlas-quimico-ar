@@ -70,7 +70,7 @@ export function CoverageDashboard({ cobertura }: CoverageDashboardProps) {
             <div>
               <h2
                 id="cobertura-regional-heading"
-                className="font-display text-[22px] font-bold tracking-[-0.02em] text-ink"
+                className="font-display text-[22px] font-medium leading-[1.15] tracking-[-0.022em] text-ink"
               >
                 Cobertura por región argentina
               </h2>
@@ -111,9 +111,9 @@ export function CoverageDashboard({ cobertura }: CoverageDashboardProps) {
                 >
                   <div>
                     <div className="flex items-baseline justify-between gap-2 tabular-nums">
-                      <span className="font-display text-[18px] font-bold">{reg.region}</span>
+                      <span className="font-display text-[16px] font-medium tracking-[-0.015em]">{reg.region}</span>
                       <span
-                        className={`text-[13px] font-semibold ${
+                        className={`text-[13px] font-medium ${
                           isSelected
                             ? 'text-white/90'
                             : isEmpty
@@ -164,7 +164,7 @@ export function CoverageDashboard({ cobertura }: CoverageDashboardProps) {
             <div>
               <h2
                 id="tabla-jurisdicciones-heading"
-                className="font-display text-[22px] font-bold tracking-[-0.02em] text-ink"
+                className="font-display text-[22px] font-medium leading-[1.15] tracking-[-0.022em] text-ink"
               >
                 Estado por jurisdicción (24 códigos Georef)
               </h2>
@@ -234,7 +234,7 @@ export function CoverageDashboard({ cobertura }: CoverageDashboardProps) {
                     return (
                       <tr key={item.provincia.provincia_id} className="align-top">
                         <td className="px-4 py-3.5">
-                          <p className="font-semibold text-ink">{item.provincia.nombre}</p>
+                          <p className="font-medium text-ink">{item.provincia.nombre}</p>
                           <p className="mt-0.5 text-[12px] text-ink-muted tabular-nums">
                             Georef {item.provincia.provincia_id} · {item.provincia.iso_3166_2}
                           </p>
@@ -300,9 +300,11 @@ export function CoverageDashboard({ cobertura }: CoverageDashboardProps) {
         {/* 3. Transparencia de vacíos y auditoría de datos faltantes */}
         <section className="grid gap-6 lg:grid-cols-2">
           <div className="border border-rule bg-stone-surface p-6">
-            <div className="flex items-center gap-2 text-[15px] font-semibold text-ink">
+            <div className="flex items-center gap-2">
               <AlertCircle className="h-4 w-4 text-ochre-metal" />
-              <h3>Faltantes declarados explícitamente como sin datos</h3>
+              <h3 className="font-display text-[16px] font-medium tracking-[-0.015em] text-ink">
+                Faltantes declarados explícitamente como sin datos
+              </h3>
             </div>
             <p className="mt-2 text-[14px] text-ink-muted">
               Por regla de integridad del proyecto, ningún algoritmo ni editor estima cifras
@@ -312,20 +314,20 @@ export function CoverageDashboard({ cobertura }: CoverageDashboardProps) {
             <ul className="mt-4 divide-y divide-rule text-[14px] tabular-nums">
               <li className="flex items-center justify-between gap-3 py-2.5">
                 <span className="text-ink-muted">Jurisdicciones todavía sin cadenas relevadas</span>
-                <span className="font-semibold text-ink">
+                <span className="font-medium text-ink">
                   {cobertura.totales.provinciasSinDatos} de {cobertura.totales.totalProvincias}
                 </span>
               </li>
               <li className="flex items-center justify-between gap-3 py-2.5">
                 <span className="text-ink-muted">Plantas sin capacidad nominal pública oficial</span>
-                <span className="font-semibold text-ink">
+                <span className="font-medium text-ink">
                   {cobertura.totales.plantasSinCapacidadPublica} de{' '}
                   {cobertura.totales.plantasGeorreferenciadas}
                 </span>
               </li>
               <li className="flex items-center justify-between gap-3 py-2.5">
                 <span className="text-ink-muted">Series de producción sin reporte público oficial</span>
-                <span className="font-semibold text-ink">
+                <span className="font-medium text-ink">
                   {cobertura.totales.seriesProduccionSinDatos} registros
                 </span>
               </li>
@@ -333,7 +335,7 @@ export function CoverageDashboard({ cobertura }: CoverageDashboardProps) {
                 <span className="text-ink-muted">
                   Series de comercio exterior con algún componente sin reporte
                 </span>
-                <span className="font-semibold text-ink">
+                <span className="font-medium text-ink">
                   {cobertura.totales.seriesComexParciales} registros
                 </span>
               </li>
@@ -342,9 +344,11 @@ export function CoverageDashboard({ cobertura }: CoverageDashboardProps) {
 
           <div className="flex flex-col justify-between border border-rule bg-stone-surface p-6">
             <div>
-              <div className="flex items-center gap-2 text-[15px] font-semibold text-ink">
+              <div className="flex items-center gap-2">
                 <ShieldCheck className="h-4 w-4 text-emerald-react" />
-                <h3>Criterio para pasar una zona a cobertura verificada</h3>
+                <h3 className="font-display text-[16px] font-medium tracking-[-0.015em] text-ink">
+                  Criterio para pasar una zona a cobertura verificada
+                </h3>
               </div>
               <ul className="mt-3 space-y-2.5 text-[14px] text-ink-muted">
                 <li className="flex items-start gap-2.5">
@@ -372,13 +376,13 @@ export function CoverageDashboard({ cobertura }: CoverageDashboardProps) {
               </ul>
             </div>
 
-            <div className="mt-6 flex flex-wrap items-center gap-4 border-t border-rule pt-4 text-[14px]">
+            <div className="mt-6 flex flex-wrap items-center gap-4 border-t border-rule pt-4 text-[13px]">
               <a
                 href="/empresas"
                 className="inline-flex items-center gap-2 bg-ink px-4 py-2 font-medium text-white transition-colors duration-150 hover:bg-cobalt"
               >
                 <span>Ver directorio de empresas</span>
-                <ArrowRight className="h-4 w-4" />
+                <ArrowRight className="h-3.5 w-3.5" />
               </a>
               <a href="/#mapa" className="font-medium text-ink hover:text-cobalt">
                 Explorar en el mapa territorial →

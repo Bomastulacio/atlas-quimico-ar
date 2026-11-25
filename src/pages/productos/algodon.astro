@@ -98,11 +98,11 @@ const TIPO_FUENTE_LABEL: Record<string, string> = {
           </span>
           <div>
             <div class="flex flex-wrap items-baseline gap-3">
-              <h1 class="font-display text-[clamp(2rem,3.4vw,3rem)] font-bold leading-[1.06] tracking-[-0.03em] text-ink">
+              <h1 class="font-display text-[clamp(1.85rem,3vw,2.6rem)] font-medium leading-[1.06] tracking-[-0.032em] text-ink">
                 {ficha.producto.nombre}
               </h1>
               {ficha.producto.formula_quimica && (
-                <span class="font-display text-[22px] font-semibold text-ochre-metal tabular-nums">
+                <span class="font-display text-[19px] font-medium text-ochre-metal tabular-nums">
                   {ficha.producto.formula_quimica}
                 </span>
               )}
@@ -126,7 +126,7 @@ const TIPO_FUENTE_LABEL: Record<string, string> = {
       <dl class="mt-8 grid gap-6 border-t border-rule pt-6 sm:grid-cols-2 lg:grid-cols-4 tabular-nums">
         <div>
           <dt class="text-[13px] text-ink-muted">Producción Chaco (camp. 2024/25)</dt>
-          <dd class="mt-1 font-display text-[28px] font-bold leading-tight text-ink">
+          <dd class="mt-1 font-display text-[24px] font-medium leading-tight tracking-[-0.02em] text-ink">
             {ultimoChaco?.medicion.estado === 'dato'
               ? `${ultimoChaco.medicion.valor.toLocaleString('es-AR')} t`
               : 'Sin datos'}
@@ -136,7 +136,7 @@ const TIPO_FUENTE_LABEL: Record<string, string> = {
 
         <div>
           <dt class="text-[13px] text-ink-muted">Total país (camp. 2024/25)</dt>
-          <dd class="mt-1 font-display text-[28px] font-bold leading-tight text-ochre-metal">
+          <dd class="mt-1 font-display text-[24px] font-medium leading-tight tracking-[-0.02em] text-ochre-metal">
             {ultimoNacional?.medicion.estado === 'dato'
               ? `${ultimoNacional.medicion.valor.toLocaleString('es-AR')} t`
               : 'Sin datos'}
@@ -146,7 +146,7 @@ const TIPO_FUENTE_LABEL: Record<string, string> = {
 
         <div>
           <dt class="text-[13px] text-ink-muted">Exportación fibra HS 5201.00 ({ultimoComexVol?.anio})</dt>
-          <dd class="mt-1 font-display text-[28px] font-bold leading-tight text-emerald-react">
+          <dd class="mt-1 font-display text-[24px] font-medium leading-tight tracking-[-0.02em] text-emerald-react">
             {ultimoComexVol?.exportacion.estado === 'dato'
               ? `${Math.round(ultimoComexVol.exportacion.valor).toLocaleString('es-AR')} t`
               : 'Sin datos'}
@@ -158,7 +158,7 @@ const TIPO_FUENTE_LABEL: Record<string, string> = {
 
         <div>
           <dt class="text-[13px] text-ink-muted">Energía específica declarada</dt>
-          <dd class="mt-1 font-display text-[28px] font-bold leading-tight text-ink-muted">
+          <dd class="mt-1 font-display text-[24px] font-medium leading-tight tracking-[-0.02em] text-ink-muted">
             {procesoPrincipal.proceso.energia_especifica.estado === 'dato'
               ? `${procesoPrincipal.proceso.energia_especifica.valor.toLocaleString('es-AR')} ${procesoPrincipal.proceso.energia_especifica.unidad}`
               : 'Sin datos'}
@@ -168,10 +168,10 @@ const TIPO_FUENTE_LABEL: Record<string, string> = {
       </dl>
     </section>
 
-    <section id="diagrama" class="scroll-mt-20 pt-12">
+    <section id="diagrama" class="scroll-mt-24 pt-16">
       <div class="mb-5 flex flex-wrap items-end justify-between gap-4">
         <div class="max-w-3xl">
-          <h2 class="font-display text-[24px] font-bold tracking-tight text-ink">
+          <h2 class="font-display text-[23px] font-medium leading-[1.15] tracking-[-0.022em] text-ink">
             Diagrama interactivo de desmote y refinación de celulosa
           </h2>
           <p class="mt-1.5 text-[15px] text-ink-muted">
@@ -182,7 +182,7 @@ const TIPO_FUENTE_LABEL: Record<string, string> = {
         {procesoPrincipal.proceso.reaccion_global && (
           <p class="text-[13px] text-ink-muted tabular-nums">
             Blanqueo oxidativo:{' '}
-            <strong class="font-semibold text-ink">{procesoPrincipal.proceso.reaccion_global}</strong>
+            <strong class="font-medium text-ink">{procesoPrincipal.proceso.reaccion_global}</strong>
           </p>
         )}
       </div>
@@ -190,9 +190,9 @@ const TIPO_FUENTE_LABEL: Record<string, string> = {
       <ProcessFlowDiagram client:load procesoCompleto={procesoPrincipal} />
     </section>
 
-    <section id="datos" class="scroll-mt-20 pt-16">
+    <section id="datos" class="scroll-mt-24 pt-20">
       <div class="border-b border-rule pb-4">
-        <h2 class="font-display text-[24px] font-bold tracking-tight text-ink">
+        <h2 class="font-display text-[23px] font-medium leading-[1.15] tracking-[-0.022em] text-ink">
           Producción primaria y comercio exterior verificados
         </h2>
         <p class="mt-1.5 max-w-[70ch] text-[15px] text-ink-muted">
@@ -204,7 +204,7 @@ const TIPO_FUENTE_LABEL: Record<string, string> = {
       <div class="mt-8 grid gap-8 lg:grid-cols-12">
         <div class="border border-rule bg-stone-surface p-6 lg:col-span-5">
           <div class="flex items-baseline justify-between gap-2">
-            <h3 class="font-display text-[20px] font-semibold text-ink">
+            <h3 class="font-display text-[17px] font-medium leading-[1.24] tracking-[-0.015em] text-ink">
               Producción en Chaco (algodón bruto)
             </h3>
             <span class="text-[13px] text-ink-muted">Campañas agrícolas</span>
@@ -223,7 +223,7 @@ const TIPO_FUENTE_LABEL: Record<string, string> = {
                     <span class="font-medium text-ink">
                       Camp. {reg.anio - 1}/{String(reg.anio).slice(-2)}
                     </span>
-                    <span class="font-semibold text-ink">
+                    <span class="font-medium text-ink">
                       {reg.medicion.estado === 'dato'
                         ? `${reg.medicion.valor.toLocaleString('es-AR')} t`
                         : 'Sin datos'}
@@ -241,7 +241,7 @@ const TIPO_FUENTE_LABEL: Record<string, string> = {
           </div>
 
           <div class="mt-6 border-t border-rule pt-5 text-[13px] tabular-nums">
-            <p class="font-semibold text-ink">Referencia nacional (algodón en bruto)</p>
+            <p class="font-medium text-ink">Referencia nacional (algodón en bruto)</p>
             <ul class="mt-2 divide-y divide-rule">
               {prodNacional.map((reg) => (
                 <li class="flex justify-between py-1.5">
@@ -262,7 +262,7 @@ const TIPO_FUENTE_LABEL: Record<string, string> = {
         <div class="space-y-6 lg:col-span-7">
           <div class="border border-rule bg-stone-surface p-6">
             <div class="flex flex-wrap items-baseline justify-between gap-2">
-              <h3 class="font-display text-[20px] font-semibold text-ink">
+              <h3 class="font-display text-[17px] font-medium leading-[1.24] tracking-[-0.015em] text-ink">
                 Comercio exterior de fibra en valor (HS 5201.00)
               </h3>
               <span class="text-[13px] text-ink-muted">Millones de USD · UN Comtrade</span>
@@ -280,7 +280,7 @@ const TIPO_FUENTE_LABEL: Record<string, string> = {
                 <tbody class="divide-y divide-rule">
                   {comexUsd.map((row) => (
                     <tr>
-                      <td class="py-2.5 pr-4 font-semibold text-ink">{row.anio}</td>
+                      <td class="py-2.5 pr-4 font-medium text-ink">{row.anio}</td>
                       <td class="px-4 py-2.5 text-right text-ink">
                         {row.exportacion.estado === 'dato'
                           ? `USD ${row.exportacion.valor.toLocaleString('es-AR', { minimumFractionDigits: 2 })} M`
@@ -291,7 +291,7 @@ const TIPO_FUENTE_LABEL: Record<string, string> = {
                           ? `USD ${row.importacion.valor.toLocaleString('es-AR', { minimumFractionDigits: 2 })} M`
                           : 'Sin datos'}
                       </td>
-                      <td class="py-2.5 pl-4 text-right font-semibold text-emerald-react">
+                      <td class="py-2.5 pl-4 text-right font-medium text-emerald-react">
                         {row.saldo_comercial.estado === 'dato'
                           ? `+USD ${row.saldo_comercial.valor.toLocaleString('es-AR', { minimumFractionDigits: 2 })} M`
                           : 'Sin datos'}
@@ -305,7 +305,7 @@ const TIPO_FUENTE_LABEL: Record<string, string> = {
 
           <div class="border border-rule bg-stone-surface p-6">
             <div class="flex flex-wrap items-baseline justify-between gap-2">
-              <h3 class="font-display text-[20px] font-semibold text-ink">
+              <h3 class="font-display text-[17px] font-medium leading-[1.24] tracking-[-0.015em] text-ink">
                 Volumen físico comercializado (HS 5201.00)
               </h3>
               <span class="text-[13px] text-ink-muted">Toneladas de fibra · UN Comtrade</span>
@@ -323,7 +323,7 @@ const TIPO_FUENTE_LABEL: Record<string, string> = {
                 <tbody class="divide-y divide-rule">
                   {comexVol.map((row) => (
                     <tr>
-                      <td class="py-2.5 pr-4 font-semibold text-ink">{row.anio}</td>
+                      <td class="py-2.5 pr-4 font-medium text-ink">{row.anio}</td>
                       <td class="px-4 py-2.5 text-right font-medium text-emerald-react">
                         {row.exportacion.estado === 'dato'
                           ? `${row.exportacion.valor.toLocaleString('es-AR', { minimumFractionDigits: 1 })} t`
@@ -334,7 +334,7 @@ const TIPO_FUENTE_LABEL: Record<string, string> = {
                           ? `${row.importacion.valor.toLocaleString('es-AR', { minimumFractionDigits: 1 })} t`
                           : 'Sin datos'}
                       </td>
-                      <td class="py-2.5 pl-4 text-right font-semibold text-ink">
+                      <td class="py-2.5 pl-4 text-right font-medium text-ink">
                         {row.saldo_comercial.estado === 'dato'
                           ? `${row.saldo_comercial.valor.toLocaleString('es-AR', { minimumFractionDigits: 1 })} t`
                           : 'Sin datos'}
@@ -349,16 +349,16 @@ const TIPO_FUENTE_LABEL: Record<string, string> = {
       </div>
     </section>
 
-    <section id="empresas" class="scroll-mt-20 pt-16">
+    <section id="empresas" class="scroll-mt-24 pt-20">
       <div class="border-b border-rule pb-4">
-        <h2 class="font-display text-[24px] font-bold tracking-tight text-ink">
+        <h2 class="font-display text-[23px] font-medium leading-[1.15] tracking-[-0.022em] text-ink">
           Complejo desmotador registrado en Chaco
         </h2>
       </div>
       <div class="mt-8 grid gap-6 md:grid-cols-2">
         {ficha.plantas.map((pl) => (
           <article class="border border-rule bg-stone-surface p-6">
-            <h3 class="font-display text-[20px] font-semibold text-ink">{pl.nombre}</h3>
+            <h3 class="font-display text-[17px] font-medium leading-[1.24] tracking-[-0.015em] text-ink">{pl.nombre}</h3>
             <p class="mt-1 text-[13px] text-ink-muted tabular-nums">
               {pl.localidad}, {pl.provincia?.nombre ?? pl.provincia_id} ({pl.lat.toFixed(3)}, {pl.lon.toFixed(3)})
             </p>
@@ -394,7 +394,7 @@ const TIPO_FUENTE_LABEL: Record<string, string> = {
       </div>
     </section>
 
-    <section class="pt-16">
+    <section class="pt-20">
       <div class="border border-rule bg-stone-surface p-6 sm:p-8 lg:p-10">
         <div class="atlas-prose max-w-[74ch]">
           <AlgodonEssay />
@@ -402,9 +402,9 @@ const TIPO_FUENTE_LABEL: Record<string, string> = {
       </div>
     </section>
 
-    <section id="fuentes" class="scroll-mt-20 pt-16">
+    <section id="fuentes" class="scroll-mt-24 pt-20">
       <div class="border-b border-rule pb-4">
-        <h2 class="font-display text-[24px] font-bold tracking-tight text-ink">
+        <h2 class="font-display text-[23px] font-medium leading-[1.15] tracking-[-0.022em] text-ink">
           Registro de fuentes oficiales y verificación SHA-256
         </h2>
       </div>
