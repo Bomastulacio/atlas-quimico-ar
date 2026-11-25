@@ -1,9 +1,9 @@
 {
-  "fuente": "API Georef — División político-territorial de Provincias (IGN / datos.gob.ar)",
+  "fuente": "API Georef - División político-territorial de Provincias (IGN / datos.gob.ar)",
   "organismo": "IGN / Secretaría de Innovación, Ciencia y Tecnología",
   "url": "https://apis.datos.gob.ar/georef/api/v2.0/provincias.geojson",
-  "fecha_descarga": "2026-11-24",
-  "archivo_raw": "data/raw/georef_provincias.geojson",
+  "fecha_descarga": "2026-11-25",
+  "archivo_raw": "storage://atlas-raw-sources/georef-ar/provincias.geojson",
   "hash_raw": "sha256:b086852064c26813d9f607c82c91b4e74e18ea83fd21993ddedd473cf8495af5",
   "proyeccion_recomendada": {
     "continental_malvinas": "Transverse Mercator centrada en 64°O (familia Gauss-Krüger IGN)",
@@ -12,18 +12,18 @@
   "archivos_validados": {
     "provincias_continental.geojson": {
       "jurisdicciones": 24,
-      "bytes": 83408,
-      "hash": "sha256:5c9f75321078462ceb3a7f4b66817fea3d45b652e7d0f9ed201a587b95b8155e"
+      "bytes": 146171,
+      "hash": "sha256:26fb805f57307361ee9e274eef37787143a793349f53ae6749968a88c8fb60a0"
     },
     "antartida_islas.geojson": {
       "features": 1,
-      "bytes": 25508,
-      "hash": "sha256:b489e42e275f223267c555b31a91ba5c5d6ba6f4b1cf5cf85358161c8cfad57c"
+      "bytes": 28380,
+      "hash": "sha256:fc8120130c0a3468a6a573c4c16ed11dd28c6f22292c9993627b25ba068d0860"
     },
     "departamentos_activos.geojson": {
       "departamentos": 10,
-      "bytes": 11214,
-      "hash": "sha256:a3db576d51968bc185000a15bc4aa9fb246fa817b570f9a0ee48bdc0b83ef91e"
+      "bytes": 12148,
+      "hash": "sha256:a50d4c2aecd0c254de0486b67cadf9de1712a040158f729e360bcee72763ee61"
     }
   },
   "departamentos_oficial": {
