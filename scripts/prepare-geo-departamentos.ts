@@ -53,7 +53,7 @@ function sha256(content: string | Buffer): string {
 }
 
 function roundCoord(n: number): number {
-  return Math.round(n * 10000) / 10000;
+  return Math.round(n * 100000) / 100000;
 }
 
 function ringArea(ring: Ring): number {
@@ -160,12 +160,12 @@ async function main() {
         ? [feat.geometry.coordinates]
         : feat.geometry.coordinates;
 
-    // Tolerancia fina (0.0035°) para que los límites departamentales encajen con nitidez al hacer zoom
+    // Tolerancia de alta precisión (0.0008°, ~80m) para zoom profundo de hasta 18x sin perder costas ni bordes
     const sorted = [...rawPolys].sort((a, b) => ringArea(b[0]!) - ringArea(a[0]!));
     const kept: MultiPolygonCoords = [];
     sorted.forEach((poly, idx) => {
-      if (idx === 0 || ringArea(poly[0]!) >= 0.001) {
-        const simp = simplifyPolygon(poly, 0.0035);
+      if (idx === 0 || ringArea(poly[0]!) >= 0.0004) {
+        const simp = simplifyPolygon(poly, 0.0008);
         if (simp) kept.push(simp);
       }
     });

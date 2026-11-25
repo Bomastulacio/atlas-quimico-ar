@@ -33,7 +33,7 @@ function sha256(content: string | Buffer): string {
 }
 
 function roundCoord(n: number): number {
-  return Math.round(n * 1000) / 1000;
+  return Math.round(n * 10000) / 10000;
 }
 
 function ringArea(ring: Ring): number {
@@ -119,8 +119,23 @@ function polyBounds(poly: PolygonCoords) {
   return { minLon, maxLon, minLat, maxLat };
 }
 
+async function loadRawProvinciasBuffer(): Promise<Buffer> {
+  try {
+    return await fs.readFile(RAW_PATH);
+  } catch {
+    console.log(`[geo:prepare] Descargando en memoria ${OFFICIAL_URL}...`);
+    const res = await fetch(OFFICIAL_URL, {
+      headers: { 'User-Agent': 'atlas-quimico-ar/0.1 (georef-sync)' },
+    });
+    if (!res.ok) {
+      throw new Error(`HTTP ${res.status} al descargar ${OFFICIAL_URL}`);
+    }
+    return Buffer.from(await res.arrayBuffer());
+  }
+}
+
 async function main() {
-  const rawBuffer = await fs.readFile(RAW_PATH);
+  const rawBuffer = await loadRawProvinciasBuffer();
   const rawHash = sha256(rawBuffer);
   const rawGeo = JSON.parse(rawBuffer.toString('utf-8')) as GeoFeatureCollection;
 
@@ -131,9 +146,9 @@ async function main() {
     const id = String(feat.properties.id).padStart(2, '0');
     const nombre = feat.properties.nombre;
 
-    // CABA es muy pequeña: tolerancia mínima para conservar su contorno real
-    const tol = id === '02' ? 0.002 : 0.025;
-    const minArea = id === '02' ? 0 : 0.015;
+    // Tolerancia fina (0.006°, ~600m) para conservar riberas y límites en zoom departamental profundo
+    const tol = id === '02' ? 0.0015 : 0.006;
+    const minArea = id === '02' ? 0 : 0.008;
 
     const rawPolys: MultiPolygonCoords =
       feat.geometry.type === 'Polygon'
@@ -215,18 +230,30 @@ async function main() {
     features: antartidaIslasFeatures,
   });
 
-  const manifestGeo = {
-    fuente: 'API Georef — División político-territorial de Provincias (IGN / datos.gob.ar)',
+  let existingManifest: Record<string, unknown> = {};
+  try {
+    existingManifest = JSON.parse(
+      await fs.readFile(path.join(OUT_DIR, 'manifest.geo.json'), 'utf-8')
+    ) as Record<string, unknown>;
+  } catch {
+    existingManifest = {};
+  }
+  const existingValidated = (existingManifest.archivos_validados ?? {}) as Record<string, unknown>;
+
+  const manifestGeo: Record<string, unknown> = {
+    ...existingManifest,
+    fuente: 'API Georef - División político-territorial de Provincias (IGN / datos.gob.ar)',
     organismo: 'IGN / Secretaría de Innovación, Ciencia y Tecnología',
     url: OFFICIAL_URL,
-    fecha_descarga: '2026-11-24',
-    archivo_raw: 'data/raw/georef_provincias.geojson',
+    fecha_descarga: new Date().toISOString().slice(0, 10),
+    archivo_raw: 'storage://atlas-raw-sources/georef-ar/provincias.geojson',
     hash_raw: rawHash,
     proyeccion_recomendada: {
       continental_malvinas: 'Transverse Mercator centrada en 64°O (familia Gauss-Krüger IGN)',
       antartida_islas: 'Stereographic Polar centrada en Polo Sur / 50°O (recuadro bicontinental IGN)',
     },
     archivos_validados: {
+      ...existingValidated,
       'provincias_continental.geojson': {
         jurisdicciones: continentalFeatures.length,
         bytes: Buffer.byteLength(continentalJson, 'utf-8'),
