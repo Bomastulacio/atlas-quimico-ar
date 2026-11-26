@@ -190,22 +190,33 @@ const ESTADO_PLANTA_LABEL: Record<string, string> = {
       <div class="mb-5 flex flex-wrap items-end justify-between gap-4">
         <div class="max-w-3xl">
           <h2 class="font-display text-[23px] font-medium leading-[1.15] tracking-[-0.022em] text-ink">
-            Diagrama interactivo de extracción y carbonatación
+            Diagramas interactivos de extracción y carbonatación
           </h2>
           <p class="mt-1.5 text-[15px] text-ink-muted">
-            Generado desde las tablas validadas en Supabase. Seleccioná cada etapa para inspeccionar
-            reactivos, balance estequiométrico, temperatura, presión y reciclo de licor madre.
+            Argentina opera dos rutas tecnológicas verificadas para Li2CO3: evaporación solar en
+            piletas (Salar de Olaroz, Jujuy) y Extracción Directa de Litio por adsorción (Fénix en
+            Catamarca y Rincón en Salta). Alterná la ruta y seleccioná cada equipo o corriente.
           </p>
         </div>
         <p class="text-[13px] text-ink-muted tabular-nums">
-          Reacción global:{' '}
-          <strong class="font-medium text-ink">
-            {procesoPrincipal.proceso.reaccion_global}
-          </strong>
+          Rutas verificadas: <strong class="font-medium text-ink">{ficha.procesos.length}</strong> (Solar + DLE)
         </p>
       </div>
 
-      <ProcessFlowDiagram client:load procesoCompleto={procesoPrincipal} />
+      <ProcessFlowDiagram
+        client:load
+        procesos={ficha.procesos}
+        procesoMetaById={{
+          'litio-salmuera-carbonatacion': {
+            etiqueta: 'Evaporación solar + carbonatación (Olaroz)',
+            ubicacion: 'Salar de Olaroz, Susques (Jujuy)',
+          },
+          'litio-dle-adsorcion': {
+            etiqueta: 'Extracción Directa de Litio por adsorción (DLE)',
+            ubicacion: 'Fénix (Catamarca) y Rincón (Salta)',
+          },
+        }}
+      />
     </section>
 
     {/* Sección 2: Producción física y comercio exterior */}

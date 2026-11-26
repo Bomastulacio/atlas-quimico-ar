@@ -288,11 +288,84 @@ export {
   type ProvinciasFeatureCollection,
 } from './geo';
 
+export interface RutaTerritorialResumen {
+  procesoId: string;
+  etiquetaCorta: string;
+  detalle: string;
+}
+
+const RUTA_TERRITORIAL_FALLBACK: Record<string, Record<string, string[]>> = {
+  litio: {
+    '38': ['litio-salmuera-carbonatacion'], // Jujuy (Olaroz)
+    '10': ['litio-dle-adsorcion'], // Catamarca (Fénix)
+    '66': ['litio-dle-adsorcion'], // Salta (Rincón)
+  },
+  petroquimica: {
+    '06': ['petroquimica-steam-cracking-polietileno', 'petroquimica-cloro-alcali-pvc'],
+  },
+};
+
+function resolveRutasTerritorialesPorProducto(
+  ds: AtlasDataset,
+  provinciaId: string,
+  plantasLocales: Planta[],
+  productoIds: string[]
+): Record<string, RutaTerritorialResumen[]> {
+  const procById = new Map(ds.procesos.map((p) => [p.proceso_id, p]));
+  const plantIds = new Set(plantasLocales.map((p) => p.planta_id));
+  const resultado: Record<string, RutaTerritorialResumen[]> = {};
+
+  for (const prodId of productoIds) {
+    const procesosProd = ds.procesos.filter((p) => p.producto_id === prodId);
+    if (procesosProd.length === 0) continue;
+
+    let procesoIdsSeleccionados: string[] = [];
+
+    if (prodId === 'litio') {
+      if (plantIds.has('fenix-hombre-muerto') || plantIds.has('rincon-salta')) {
+        procesoIdsSeleccionados.push('litio-dle-adsorcion');
+      }
+      if (plantIds.has('olaroz-sales-de-jujuy')) {
+        procesoIdsSeleccionados.push('litio-salmuera-carbonatacion');
+      }
+      if (procesoIdsSeleccionados.length === 0) {
+        procesoIdsSeleccionados = RUTA_TERRITORIAL_FALLBACK.litio[provinciaId] ?? [procesosProd[0].proceso_id];
+      }
+    } else if (prodId === 'petroquimica') {
+      if (plantIds.has('dow-polo-bahia-blanca')) {
+        procesoIdsSeleccionados.push('petroquimica-steam-cracking-polietileno');
+      }
+      if (plantIds.has('unipar-indupa-bahia-blanca')) {
+        procesoIdsSeleccionados.push('petroquimica-cloro-alcali-pvc');
+      }
+      if (procesoIdsSeleccionados.length === 0) {
+        procesoIdsSeleccionados =
+          RUTA_TERRITORIAL_FALLBACK.petroquimica[provinciaId] ?? procesosProd.map((p) => p.proceso_id);
+      }
+    } else {
+      procesoIdsSeleccionados = procesosProd.map((p) => p.proceso_id);
+    }
+
+    const dedupIds = [...new Set(procesoIdsSeleccionados)];
+    resultado[prodId] = dedupIds
+      .map((id) => procById.get(id))
+      .filter((p): p is Proceso => Boolean(p))
+      .map((p) => ({
+        procesoId: p.proceso_id,
+        etiquetaCorta: p.nombre,
+        detalle: p.ruta_tecnologica,
+      }));
+  }
+
+  return resultado;
+}
+
 export interface MapaDepartamentoResumen {
   departamento: Departamento;
   provincia: Provincia;
   productos: Producto[];
   plantas: Array<Planta & { empresaNombre: string | null }>;
+  rutasPorProducto: Record<string, RutaTerritorialResumen[]>;
 }
 
 export function getMapaDepartamentosData(): MapaDepartamentoResumen[] {
@@ -330,7 +403,14 @@ export function getMapaDepartamentosData(): MapaDepartamentoResumen[] {
         .map((id) => prodMap.get(id))
         .filter((p): p is Producto => Boolean(p));
 
-      return [{ departamento, provincia, productos, plantas }];
+      const rutasPorProducto = resolveRutasTerritorialesPorProducto(
+        ds,
+        provincia.provincia_id,
+        plantas,
+        productos.map((p) => p.producto_id)
+      );
+
+      return [{ departamento, provincia, productos, plantas, rutasPorProducto }];
     });
 }
 
@@ -341,6 +421,7 @@ export interface MapaProvinciaResumen {
   relaciones: ProductoZona[];
   plantas: Array<Planta & { empresaNombre: string | null }>;
   departamentosConfiables: Departamento[];
+  rutasPorProducto: Record<string, RutaTerritorialResumen[]>;
 }
 
 export function getMapaProvinciasData(): MapaProvinciaResumen[] {
@@ -358,6 +439,13 @@ export function getMapaProvinciasData(): MapaProvinciaResumen[] {
     const departamentosConfiables = ds.departamentos.filter(
       (d) => d.provincia_id === provincia.provincia_id && d.tiene_datos_confiables
     );
+    const prodsProvincia = [dominante, ...secundarios].filter((p): p is Producto => Boolean(p));
+    const rutasPorProducto = resolveRutasTerritorialesPorProducto(
+      ds,
+      provincia.provincia_id,
+      plantas,
+      prodsProvincia.map((p) => p.producto_id)
+    );
 
     return {
       provincia,
@@ -366,6 +454,7 @@ export function getMapaProvinciasData(): MapaProvinciaResumen[] {
       relaciones,
       plantas,
       departamentosConfiables,
+      rutasPorProducto,
     };
   });
 }

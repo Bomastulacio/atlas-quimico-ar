@@ -214,15 +214,55 @@ export function ProvinceSidePanel({
                               <p className="mt-1 text-[14px] text-ink-muted">
                                 {prod.descripcion_corta}
                               </p>
-                              {prod.estado_mvp === 'validado' && (
-                                <a
-                                  href={`/productos/${prod.producto_id}`}
-                                  className="mt-3 inline-flex items-center gap-2 bg-ink px-3.5 py-2 text-[13px] font-medium text-white transition-colors duration-150 hover:bg-cobalt"
-                                >
-                                  <span>Abrir ficha completa y diagrama</span>
-                                  <ArrowRight className="h-3.5 w-3.5" />
-                                </a>
+                              {(selectedDepartamento.rutasPorProducto?.[prod.producto_id]?.length ?? 0) > 0 && (
+                                <div className="mt-2.5 border border-rule bg-stone-bg px-3 py-2">
+                                  <p className="text-[11px] font-medium tracking-[0.06em] text-ink-muted uppercase">
+                                    Ruta tecnológica en este departamento
+                                  </p>
+                                  <ul className="mt-1.5 space-y-1.5">
+                                    {selectedDepartamento.rutasPorProducto[prod.producto_id].map((ruta) => (
+                                      <li key={ruta.procesoId} className="text-[12px] text-ink">
+                                        <span className="font-medium">{ruta.etiquetaCorta}</span>
+                                        <span className="block text-[11px] text-ink-muted">
+                                          {ruta.detalle}
+                                        </span>
+                                      </li>
+                                    ))}
+                                  </ul>
+                                </div>
                               )}
+                              {prod.estado_mvp === 'validado' && (() => {
+                                const rutas = selectedDepartamento.rutasPorProducto?.[prod.producto_id] ?? [];
+                                const firstRuta = rutas[0]?.procesoId;
+                                const targetHref = firstRuta
+                                  ? `/productos/${prod.producto_id}?ruta=${firstRuta}#diagrama`
+                                  : `/productos/${prod.producto_id}`;
+                                return (
+                                  <div className="mt-3 flex flex-wrap gap-2">
+                                    <a
+                                      href={targetHref}
+                                      className="bencho-press inline-flex items-center gap-2 bg-ink px-3.5 py-2 text-[13px] font-medium text-white transition-colors duration-150 hover:bg-cobalt"
+                                    >
+                                      <span>
+                                        {rutas.length > 1
+                                          ? 'Explorar rutas y PFDs'
+                                          : 'Abrir ficha completa y diagrama'}
+                                      </span>
+                                      <ArrowRight className="h-3.5 w-3.5" />
+                                    </a>
+                                    {rutas.length > 1 &&
+                                      rutas.map((ruta) => (
+                                        <a
+                                          key={ruta.procesoId}
+                                          href={`/productos/${prod.producto_id}?ruta=${ruta.procesoId}#diagrama`}
+                                          className="bencho-press inline-flex items-center border border-rule bg-stone-surface px-2.5 py-2 text-[12px] font-medium text-ink transition-colors duration-150 hover:border-cobalt hover:text-cobalt"
+                                        >
+                                          {ruta.etiquetaCorta}
+                                        </a>
+                                      ))}
+                                  </div>
+                                );
+                              })()}
                             </div>
                           </div>
                         </li>
@@ -443,15 +483,55 @@ export function ProvinceSidePanel({
                                     {rel.procedencia.anio}
                                   </p>
                                 )}
-                                {prod.estado_mvp === 'validado' && (
-                                  <a
-                                    href={`/productos/${prod.producto_id}`}
-                                    className="mt-3 inline-flex items-center gap-2 bg-ink px-3.5 py-2 text-[13px] font-medium text-white transition-colors duration-150 hover:bg-cobalt"
-                                  >
-                                    <span>Abrir ficha completa y diagrama</span>
-                                    <ArrowRight className="h-3.5 w-3.5" />
-                                  </a>
+                                {(selected.rutasPorProducto?.[prod.producto_id]?.length ?? 0) > 0 && (
+                                  <div className="mt-2.5 border border-rule bg-stone-bg px-3 py-2">
+                                    <p className="text-[11px] font-medium tracking-[0.06em] text-ink-muted uppercase">
+                                      Ruta tecnológica en {selected.provincia.nombre}
+                                    </p>
+                                    <ul className="mt-1.5 space-y-1.5">
+                                      {selected.rutasPorProducto[prod.producto_id].map((ruta) => (
+                                        <li key={ruta.procesoId} className="text-[12px] text-ink">
+                                          <span className="font-medium">{ruta.etiquetaCorta}</span>
+                                          <span className="block text-[11px] text-ink-muted">
+                                            {ruta.detalle}
+                                          </span>
+                                        </li>
+                                      ))}
+                                    </ul>
+                                  </div>
                                 )}
+                                {prod.estado_mvp === 'validado' && (() => {
+                                  const rutas = selected.rutasPorProducto?.[prod.producto_id] ?? [];
+                                  const firstRuta = rutas[0]?.procesoId;
+                                  const targetHref = firstRuta
+                                    ? `/productos/${prod.producto_id}?ruta=${firstRuta}#diagrama`
+                                    : `/productos/${prod.producto_id}`;
+                                  return (
+                                    <div className="mt-3 flex flex-wrap gap-2">
+                                      <a
+                                        href={targetHref}
+                                        className="bencho-press inline-flex items-center gap-2 bg-ink px-3.5 py-2 text-[13px] font-medium text-white transition-colors duration-150 hover:bg-cobalt"
+                                      >
+                                        <span>
+                                          {rutas.length > 1
+                                            ? 'Explorar rutas y PFDs'
+                                            : 'Abrir ficha completa y diagrama'}
+                                        </span>
+                                        <ArrowRight className="h-3.5 w-3.5" />
+                                      </a>
+                                      {rutas.length > 1 &&
+                                        rutas.map((ruta) => (
+                                          <a
+                                            key={ruta.procesoId}
+                                            href={`/productos/${prod.producto_id}?ruta=${ruta.procesoId}#diagrama`}
+                                            className="bencho-press inline-flex items-center border border-rule bg-stone-surface px-2.5 py-2 text-[12px] font-medium text-ink transition-colors duration-150 hover:border-cobalt hover:text-cobalt"
+                                          >
+                                            {ruta.etiquetaCorta}
+                                          </a>
+                                        ))}
+                                    </div>
+                                  );
+                                })()}
                               </div>
                             </div>
                           </li>

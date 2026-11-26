@@ -64,11 +64,20 @@ describe('Capa única de acceso a datos (src/data)', () => {
       const ficha = getFichaProducto(id);
       expect(ficha).toBeDefined();
       expect(ficha?.producto.estado_mvp).toBe('validado');
-      expect(ficha?.procesos).toHaveLength(1);
+      expect(ficha?.procesos.length).toBeGreaterThanOrEqual(1);
       expect(ficha?.procesos[0].pasos.length).toBeGreaterThanOrEqual(5);
       expect(ficha?.plantas.length).toBeGreaterThanOrEqual(1);
       expect(ficha?.comercioExterior.length).toBeGreaterThanOrEqual(3);
     }
+
+    expect(getFichaProducto('litio')?.procesos.map((p) => p.proceso.proceso_id)).toEqual([
+      'litio-salmuera-carbonatacion',
+      'litio-dle-adsorcion',
+    ]);
+    expect(getFichaProducto('petroquimica')?.procesos.map((p) => p.proceso.proceso_id)).toEqual([
+      'petroquimica-steam-cracking-polietileno',
+      'petroquimica-cloro-alcali-pvc',
+    ]);
 
     expect(getProceso('aluminio-hall-heroult')?.pasos).toHaveLength(6);
     expect(getProduccion('aluminio')).toHaveLength(5);
@@ -232,16 +241,33 @@ describe('Capa única de acceso a datos (src/data)', () => {
     ).toBe(true);
   });
 
-  it('valida los 7 PFDs ISO 10628 completos con equipos, corrientes, limites de bateria y referencias verificadas', () => {
+  it('valida los 9 PFDs ISO 10628 completos y rutas territoriales diferenciadas por provincia/depto', () => {
     const pfds = getPfdProcesos();
-    expect(pfds).toHaveLength(7);
+    expect(pfds).toHaveLength(9);
 
     for (const pfd of pfds) {
-      expect(pfd.equipos.length).toBeGreaterThanOrEqual(8);
-      expect(pfd.corrientes.length).toBeGreaterThanOrEqual(10);
+      expect(pfd.equipos.length).toBeGreaterThanOrEqual(7);
+      expect(pfd.corrientes.length).toBeGreaterThanOrEqual(9);
       expect(pfd.limites_bateria.some((l) => l.lado === 'entrada')).toBe(true);
       expect(pfd.limites_bateria.some((l) => l.lado === 'salida')).toBe(true);
     }
+
+    const provincias = getMapaProvinciasData();
+    const jujuy = provincias.find((p) => p.provincia.provincia_id === '38')!;
+    const catamarca = provincias.find((p) => p.provincia.provincia_id === '10')!;
+    const buenosAires = provincias.find((p) => p.provincia.provincia_id === '06')!;
+    expect(jujuy.rutasPorProducto.litio.map((r) => r.procesoId)).toEqual(['litio-salmuera-carbonatacion']);
+    expect(catamarca.rutasPorProducto.litio.map((r) => r.procesoId)).toEqual(['litio-dle-adsorcion']);
+    expect(buenosAires.rutasPorProducto.petroquimica.map((r) => r.procesoId)).toEqual([
+      'petroquimica-steam-cracking-polietileno',
+      'petroquimica-cloro-alcali-pvc',
+    ]);
+
+    const deptos = getMapaDepartamentosData();
+    const susques = deptos.find((d) => d.departamento.departamento_id === '38084')!;
+    const antofagasta = deptos.find((d) => d.departamento.departamento_id === '10028')!;
+    expect(susques.rutasPorProducto.litio[0].procesoId).toBe('litio-salmuera-carbonatacion');
+    expect(antofagasta.rutasPorProducto.litio[0].procesoId).toBe('litio-dle-adsorcion');
 
     const pfdPetro = getPfdPorProceso('petroquimica-steam-cracking-polietileno')!;
     expect(pfdPetro.corrientes.some((c) => c.tipo === 'reciclo')).toBe(true);

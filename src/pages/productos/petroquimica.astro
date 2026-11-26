@@ -224,15 +224,28 @@ const TIPO_FUENTE_LABEL: Record<string, string> = {
           </p>
         </div>
         <p class="text-[13px] text-ink-muted tabular-nums">
-          Reacción global:{" "}
-          <strong class="font-semibold text-ink">
-            {procesoPrincipal.proceso.reaccion_global}
+          Rutas en Bahía Blanca:{" "}
+          <strong class="font-medium text-ink">
+            {ficha.procesos.length} complejos
           </strong>{" "}
-          (mín. teórico 1,072 t C2H6/t C2H4)
+          (Dow PE + Unipar PVC)
         </p>
       </div>
 
-      <ProcessFlowDiagram client:load procesoCompleto={procesoPrincipal} />
+      <ProcessFlowDiagram
+        client:load
+        procesos={ficha.procesos}
+        procesoMetaById={{
+          'petroquimica-steam-cracking-polietileno': {
+            etiqueta: 'Steam Cracking de etano a Polietileno',
+            ubicacion: 'Complejo Dow Bahía Blanca (LDPE / LLDPE / HDPE)',
+          },
+          'petroquimica-cloro-alcali-pvc': {
+            etiqueta: 'Cloro-Álcali membrana a EDC / MVC / PVC',
+            ubicacion: 'Complejo Unipar Indupa Bahía Blanca (NaOH + PVC)',
+          },
+        }}
+      />
     </section>
 
     <section id="datos" class="scroll-mt-20 pt-16">
