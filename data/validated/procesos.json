@@ -559,5 +559,137 @@
       "cita_ubicacion": "arauco.com + AFCP Proceso Kraft al sulfato con recuperación química cerrada",
       "confianza": "alta"
     }
+  },
+  {
+    "proceso_id": "glp-fraccionamiento-austral",
+    "producto_id": "glp-gas-natural",
+    "nombre": "Acondicionamiento criogénico de gas y fraccionamiento de GLP (Cuenca Austral)",
+    "ruta_tecnologica": "Separación bifásica + deshidratación TEG/tamices + turbo-expansor (-95 °C) + tren desetanizadora/despropanizadora/desbutanizadora",
+    "reaccion_global": "Gas húmedo (C1-C6+) -> CH4 (gasoducto) + C3H8 + C4H10 + C5+ (gasolina natural)",
+    "energia_especifica": {
+      "estado": "sin_datos",
+      "valor": null,
+      "unidad": null,
+      "procedencia": {
+        "anio": 2026,
+        "fuente_id": "eu-bref-ref",
+        "fuente": "Reference Document on Best Available Techniques for the Refining of Mineral Oil and Gas (REF BREF)",
+        "url": "https://bureau-industrial-transformation.jrc.ec.europa.eu/reference/refining-mineral-oil-and-gas",
+        "fecha_descarga": "2026-11-26",
+        "hash": "sha256:682ce5d7c61e02b0442cdb38770c98735dd7406ddb30321e2338b5bdcf05a1c7",
+        "cita_ubicacion": "EU REF BREF Gas Treatment & Cryogenic NGL Fractionation + ENARGAS",
+        "confianza": "alta"
+      }
+    },
+    "descripcion": "Separación física y criogénica de líquidos del gas natural (LGN) en cabecera terrestre de Tierra del Fuego para inyectar metano seco al Gasoducto San Martín y fraccionar propano, butano y gasolina estabilizada.",
+    "procedencia": {
+      "anio": 2026,
+      "fuente_id": "eu-bref-ref",
+      "fuente": "Reference Document on Best Available Techniques for the Refining of Mineral Oil and Gas (REF BREF)",
+      "url": "https://bureau-industrial-transformation.jrc.ec.europa.eu/reference/refining-mineral-oil-and-gas",
+      "fecha_descarga": "2026-11-26",
+      "hash": "sha256:682ce5d7c61e02b0442cdb38770c98735dd7406ddb30321e2338b5bdcf05a1c7",
+      "cita_ubicacion": "EU REF BREF Gas Treatment & Cryogenic NGL Fractionation + ENARGAS",
+      "confianza": "alta"
+    }
+  },
+  {
+    "proceso_id": "sal-evaporitica-refinacion",
+    "producto_id": "sal-industrial",
+    "nombre": "Cosecha evaporítica, lavado contracorriente y refinación de NaCl (La Pampa)",
+    "ruta_tecnologica": "Cosecha estacional de salina + molienda húmeda + lavado contracorriente en salmuera saturada + centrifugación + secado en lecho fluido",
+    "reaccion_global": "Sal bruta (NaCl + CaSO4/MgCl2) -> NaCl (>99,3% base seca) + purga de salmuera amarga",
+    "energia_especifica": {
+      "estado": "sin_datos",
+      "valor": null,
+      "unidad": null,
+      "procedencia": {
+        "anio": 2025,
+        "fuente_id": "usgs-mcs-2025-salt",
+        "fuente": "USGS Mineral Commodity Summaries 2025: Salt (Sodium Chloride)",
+        "url": "https://pubs.usgs.gov/periodicals/mcs2025/mcs2025-salt.pdf",
+        "fecha_descarga": "2026-11-26",
+        "hash": "sha256:2c5bbbdd435f1fd29f1acbc2806bcf2b2f80eb1490a72f4f08af3583f0b8cd0d",
+        "cita_ubicacion": "USGS MCS 2025 Salt + dosanclas.com.ar Proceso de lavado y refinación de sal",
+        "confianza": "alta"
+      }
+    },
+    "descripcion": "Beneficio físico-químico de cloruro de sodio natural desde salinas evaporíticas pampeanas mediante lavado selectivo en salmuera saturada que remueve sulfatos de calcio y sales de magnesio.",
+    "procedencia": {
+      "anio": 2025,
+      "fuente_id": "usgs-mcs-2025-salt",
+      "fuente": "USGS Mineral Commodity Summaries 2025: Salt (Sodium Chloride)",
+      "url": "https://pubs.usgs.gov/periodicals/mcs2025/mcs2025-salt.pdf",
+      "fecha_descarga": "2026-11-26",
+      "hash": "sha256:2c5bbbdd435f1fd29f1acbc2806bcf2b2f80eb1490a72f4f08af3583f0b8cd0d",
+      "cita_ubicacion": "USGS MCS 2025 Salt + dosanclas.com.ar Proceso de lavado y refinación de sal",
+      "confianza": "alta"
+    }
+  },
+  {
+    "proceso_id": "cemento-horno-seco-san-luis",
+    "producto_id": "cemento-clinker",
+    "nombre": "Clinkerización vía seca con torre precalcinadora (La Calera, San Luis)",
+    "ruta_tecnologica": "Molienda de crudo caliza/arcilla + torre ciclónica precalcinadora (900 °C) + horno rotativo (1.450 °C) + enfriador de parrilla + molienda con yeso",
+    "reaccion_global": "3 CaCO3 + SiO2 -> Ca3SiO5 (alita) + 3 CO2",
+    "energia_especifica": {
+      "estado": "sin_datos",
+      "valor": null,
+      "unidad": null,
+      "procedencia": {
+        "anio": 2006,
+        "fuente_id": "ipcc-2006-mineral-cap2",
+        "fuente": "IPCC 2006 Guidelines Vol. 3 Chapter 2: Mineral Industry Emissions (Lime & Soda Ash)",
+        "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/pdf/3_Volume3/V3_2_Ch2_Mineral_Industry.pdf",
+        "fecha_descarga": "2026-11-26",
+        "hash": "sha256:f76b756a812afeb3da0c6824cf3747d2d11002a386e1885b374138796c4e1240",
+        "cita_ubicacion": "IPCC 2006 Vol. 3 Cap. 2.2 Cement Production (0,52 t CO2/t clínker) + EU CLM BREF",
+        "confianza": "alta"
+      }
+    },
+    "descripcion": "Síntesis pirometalúrgica continua de silicatos hidráulicos de calcio (clínker) a 1.450 °C con 90% de descarbonatación en precalcinador y molienda final con 4-5% de yeso para cemento Portland.",
+    "procedencia": {
+      "anio": 2006,
+      "fuente_id": "ipcc-2006-mineral-cap2",
+      "fuente": "IPCC 2006 Guidelines Vol. 3 Chapter 2: Mineral Industry Emissions (Lime & Soda Ash)",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/pdf/3_Volume3/V3_2_Ch2_Mineral_Industry.pdf",
+      "fecha_descarga": "2026-11-26",
+      "hash": "sha256:f76b756a812afeb3da0c6824cf3747d2d11002a386e1885b374138796c4e1240",
+      "cita_ubicacion": "IPCC 2006 Vol. 3 Cap. 2.2 Cement Production (0,52 t CO2/t clínker) + EU CLM BREF",
+      "confianza": "alta"
+    }
+  },
+  {
+    "proceso_id": "citricos-aceite-jugo-concordia",
+    "producto_id": "citricos-limoneno",
+    "nombre": "Extracción en frío de D-limoneno y evaporación TASTE de jugo cítrico (Entre Ríos)",
+    "ruta_tecnologica": "Lavado y extracción simultánea de jugo y emulsión de cáscara + centrifugación trifásica de aceite esencial + evaporación TASTE al vacío + secado de cáscara",
+    "reaccion_global": "Fruta cítrica fresca -> Jugo concentrado (65 °Brix) + Aceite esencial (D-limoneno C10H16) + Cáscara deshidratada",
+    "energia_especifica": {
+      "estado": "sin_datos",
+      "valor": null,
+      "unidad": null,
+      "procedencia": {
+        "anio": 2026,
+        "fuente_id": "eu-bref-fdm",
+        "fuente": "Reference Document on Best Available Techniques in the Food, Drink and Milk Industries (FDM BREF)",
+        "url": "https://bureau-industrial-transformation.jrc.ec.europa.eu/reference/food-drink-and-milk-industries",
+        "fecha_descarga": "2026-11-26",
+        "hash": "sha256:5c44b5656510d12b3e8bd7c74f2095b18f1f106e949fa98b392429ac0847851b",
+        "cita_ubicacion": "EU FDM BREF Fruit Juice Evaporation & Essential Oil Recovery + FeCiER",
+        "confianza": "alta"
+      }
+    },
+    "descripcion": "Procesamiento integral de naranjas y mandarinas en Concordia separando mecánicamente el aceite esencial rico en D-limoneno (>90%), concentrando el jugo al vacío a baja temperatura y valorizando la cáscara seca.",
+    "procedencia": {
+      "anio": 2026,
+      "fuente_id": "eu-bref-fdm",
+      "fuente": "Reference Document on Best Available Techniques in the Food, Drink and Milk Industries (FDM BREF)",
+      "url": "https://bureau-industrial-transformation.jrc.ec.europa.eu/reference/food-drink-and-milk-industries",
+      "fecha_descarga": "2026-11-26",
+      "hash": "sha256:5c44b5656510d12b3e8bd7c74f2095b18f1f106e949fa98b392429ac0847851b",
+      "cita_ubicacion": "EU FDM BREF Fruit Juice Evaporation & Essential Oil Recovery + FeCiER",
+      "confianza": "alta"
+    }
   }
 ]

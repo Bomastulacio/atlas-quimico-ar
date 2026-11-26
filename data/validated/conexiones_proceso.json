@@ -3034,5 +3034,698 @@
       "cita_ubicacion": "arauco.com + AFCP Proceso Kraft al sulfato con recuperación química cerrada",
       "confianza": "alta"
     }
+  },
+  {
+    "conexion_id": "glp-c1",
+    "proceso_id": "glp-fraccionamiento-austral",
+    "origen_paso_id": "glp-p1-recepcion-separacion",
+    "destino_paso_id": "glp-p2-deshidratacion",
+    "corriente_nombre": "Gas húmedo C1-C5 a 70 bar",
+    "tipo_corriente": "principal",
+    "flujo": {
+      "estado": "sin_datos",
+      "valor": null,
+      "unidad": null,
+      "procedencia": {
+        "anio": 2026,
+        "fuente_id": "eu-bref-ref",
+        "fuente": "Reference Document on Best Available Techniques for the Refining of Mineral Oil and Gas (REF BREF)",
+        "url": "https://bureau-industrial-transformation.jrc.ec.europa.eu/reference/refining-mineral-oil-and-gas",
+        "fecha_descarga": "2026-11-26",
+        "hash": "sha256:682ce5d7c61e02b0442cdb38770c98735dd7406ddb30321e2338b5bdcf05a1c7",
+        "cita_ubicacion": "EU REF BREF",
+        "confianza": "alta"
+      }
+    },
+    "procedencia": {
+      "anio": 2026,
+      "fuente_id": "eu-bref-ref",
+      "fuente": "Reference Document on Best Available Techniques for the Refining of Mineral Oil and Gas (REF BREF)",
+      "url": "https://bureau-industrial-transformation.jrc.ec.europa.eu/reference/refining-mineral-oil-and-gas",
+      "fecha_descarga": "2026-11-26",
+      "hash": "sha256:682ce5d7c61e02b0442cdb38770c98735dd7406ddb30321e2338b5bdcf05a1c7",
+      "cita_ubicacion": "EU REF BREF",
+      "confianza": "alta"
+    }
+  },
+  {
+    "conexion_id": "glp-c2",
+    "proceso_id": "glp-fraccionamiento-austral",
+    "origen_paso_id": "glp-p2-deshidratacion",
+    "destino_paso_id": "glp-p3-turboexpansion",
+    "corriente_nombre": "Gas deshidratado (<0,1 ppmv H2O)",
+    "tipo_corriente": "principal",
+    "flujo": {
+      "estado": "sin_datos",
+      "valor": null,
+      "unidad": null,
+      "procedencia": {
+        "anio": 2026,
+        "fuente_id": "eu-bref-ref",
+        "fuente": "Reference Document on Best Available Techniques for the Refining of Mineral Oil and Gas (REF BREF)",
+        "url": "https://bureau-industrial-transformation.jrc.ec.europa.eu/reference/refining-mineral-oil-and-gas",
+        "fecha_descarga": "2026-11-26",
+        "hash": "sha256:682ce5d7c61e02b0442cdb38770c98735dd7406ddb30321e2338b5bdcf05a1c7",
+        "cita_ubicacion": "EU REF BREF",
+        "confianza": "alta"
+      }
+    },
+    "procedencia": {
+      "anio": 2026,
+      "fuente_id": "eu-bref-ref",
+      "fuente": "Reference Document on Best Available Techniques for the Refining of Mineral Oil and Gas (REF BREF)",
+      "url": "https://bureau-industrial-transformation.jrc.ec.europa.eu/reference/refining-mineral-oil-and-gas",
+      "fecha_descarga": "2026-11-26",
+      "hash": "sha256:682ce5d7c61e02b0442cdb38770c98735dd7406ddb30321e2338b5bdcf05a1c7",
+      "cita_ubicacion": "EU REF BREF",
+      "confianza": "alta"
+    }
+  },
+  {
+    "conexion_id": "glp-c3",
+    "proceso_id": "glp-fraccionamiento-austral",
+    "origen_paso_id": "glp-p3-turboexpansion",
+    "destino_paso_id": "glp-p4-fraccionamiento",
+    "corriente_nombre": "LGN condensado criogénico (C2-C5+)",
+    "tipo_corriente": "principal",
+    "flujo": {
+      "estado": "sin_datos",
+      "valor": null,
+      "unidad": null,
+      "procedencia": {
+        "anio": 2026,
+        "fuente_id": "eu-bref-ref",
+        "fuente": "Reference Document on Best Available Techniques for the Refining of Mineral Oil and Gas (REF BREF)",
+        "url": "https://bureau-industrial-transformation.jrc.ec.europa.eu/reference/refining-mineral-oil-and-gas",
+        "fecha_descarga": "2026-11-26",
+        "hash": "sha256:682ce5d7c61e02b0442cdb38770c98735dd7406ddb30321e2338b5bdcf05a1c7",
+        "cita_ubicacion": "EU REF BREF",
+        "confianza": "alta"
+      }
+    },
+    "procedencia": {
+      "anio": 2026,
+      "fuente_id": "eu-bref-ref",
+      "fuente": "Reference Document on Best Available Techniques for the Refining of Mineral Oil and Gas (REF BREF)",
+      "url": "https://bureau-industrial-transformation.jrc.ec.europa.eu/reference/refining-mineral-oil-and-gas",
+      "fecha_descarga": "2026-11-26",
+      "hash": "sha256:682ce5d7c61e02b0442cdb38770c98735dd7406ddb30321e2338b5bdcf05a1c7",
+      "cita_ubicacion": "EU REF BREF",
+      "confianza": "alta"
+    }
+  },
+  {
+    "conexion_id": "glp-c4",
+    "proceso_id": "glp-fraccionamiento-austral",
+    "origen_paso_id": "glp-p1-recepcion-separacion",
+    "destino_paso_id": "glp-p4-fraccionamiento",
+    "corriente_nombre": "Condensado primario C5+",
+    "tipo_corriente": "subproducto",
+    "flujo": {
+      "estado": "sin_datos",
+      "valor": null,
+      "unidad": null,
+      "procedencia": {
+        "anio": 2026,
+        "fuente_id": "eu-bref-ref",
+        "fuente": "Reference Document on Best Available Techniques for the Refining of Mineral Oil and Gas (REF BREF)",
+        "url": "https://bureau-industrial-transformation.jrc.ec.europa.eu/reference/refining-mineral-oil-and-gas",
+        "fecha_descarga": "2026-11-26",
+        "hash": "sha256:682ce5d7c61e02b0442cdb38770c98735dd7406ddb30321e2338b5bdcf05a1c7",
+        "cita_ubicacion": "EU REF BREF",
+        "confianza": "alta"
+      }
+    },
+    "procedencia": {
+      "anio": 2026,
+      "fuente_id": "eu-bref-ref",
+      "fuente": "Reference Document on Best Available Techniques for the Refining of Mineral Oil and Gas (REF BREF)",
+      "url": "https://bureau-industrial-transformation.jrc.ec.europa.eu/reference/refining-mineral-oil-and-gas",
+      "fecha_descarga": "2026-11-26",
+      "hash": "sha256:682ce5d7c61e02b0442cdb38770c98735dd7406ddb30321e2338b5bdcf05a1c7",
+      "cita_ubicacion": "EU REF BREF",
+      "confianza": "alta"
+    }
+  },
+  {
+    "conexion_id": "glp-c5",
+    "proceso_id": "glp-fraccionamiento-austral",
+    "origen_paso_id": "glp-p4-fraccionamiento",
+    "destino_paso_id": "glp-p5-esferas-despacho",
+    "corriente_nombre": "Propano C3H8 y Butano C4H10",
+    "tipo_corriente": "principal",
+    "flujo": {
+      "estado": "sin_datos",
+      "valor": null,
+      "unidad": null,
+      "procedencia": {
+        "anio": 2026,
+        "fuente_id": "enargas-web-2026",
+        "fuente": "Ente Nacional Regulador del Gas (ENARGAS): especificaciones de gas natural y GLP",
+        "url": "https://www.enargas.gob.ar/",
+        "fecha_descarga": "2026-11-26",
+        "hash": "sha256:348c0397955f862040024be7428db528ba23952b4dec6c360c53f8ae6b9411e4",
+        "cita_ubicacion": "ENARGAS",
+        "confianza": "alta"
+      }
+    },
+    "procedencia": {
+      "anio": 2026,
+      "fuente_id": "enargas-web-2026",
+      "fuente": "Ente Nacional Regulador del Gas (ENARGAS): especificaciones de gas natural y GLP",
+      "url": "https://www.enargas.gob.ar/",
+      "fecha_descarga": "2026-11-26",
+      "hash": "sha256:348c0397955f862040024be7428db528ba23952b4dec6c360c53f8ae6b9411e4",
+      "cita_ubicacion": "ENARGAS",
+      "confianza": "alta"
+    }
+  },
+  {
+    "conexion_id": "glp-c6",
+    "proceso_id": "glp-fraccionamiento-austral",
+    "origen_paso_id": "glp-p4-fraccionamiento",
+    "destino_paso_id": "glp-p3-turboexpansion",
+    "corriente_nombre": "Reciclo de gas liviano (C1/C2)",
+    "tipo_corriente": "reciclo",
+    "flujo": {
+      "estado": "sin_datos",
+      "valor": null,
+      "unidad": null,
+      "procedencia": {
+        "anio": 2026,
+        "fuente_id": "eu-bref-ref",
+        "fuente": "Reference Document on Best Available Techniques for the Refining of Mineral Oil and Gas (REF BREF)",
+        "url": "https://bureau-industrial-transformation.jrc.ec.europa.eu/reference/refining-mineral-oil-and-gas",
+        "fecha_descarga": "2026-11-26",
+        "hash": "sha256:682ce5d7c61e02b0442cdb38770c98735dd7406ddb30321e2338b5bdcf05a1c7",
+        "cita_ubicacion": "EU REF BREF",
+        "confianza": "alta"
+      }
+    },
+    "procedencia": {
+      "anio": 2026,
+      "fuente_id": "eu-bref-ref",
+      "fuente": "Reference Document on Best Available Techniques for the Refining of Mineral Oil and Gas (REF BREF)",
+      "url": "https://bureau-industrial-transformation.jrc.ec.europa.eu/reference/refining-mineral-oil-and-gas",
+      "fecha_descarga": "2026-11-26",
+      "hash": "sha256:682ce5d7c61e02b0442cdb38770c98735dd7406ddb30321e2338b5bdcf05a1c7",
+      "cita_ubicacion": "EU REF BREF",
+      "confianza": "alta"
+    }
+  },
+  {
+    "conexion_id": "sal-c1",
+    "proceso_id": "sal-evaporitica-refinacion",
+    "origen_paso_id": "sal-p1-cosecha",
+    "destino_paso_id": "sal-p2-molienda-lavado",
+    "corriente_nombre": "Sal bruta cosechada en salina",
+    "tipo_corriente": "principal",
+    "flujo": {
+      "estado": "dato",
+      "valor": 1.15,
+      "unidad": "t/t NaCl",
+      "procedencia": {
+        "anio": 2026,
+        "fuente_id": "dosanclas-web-2026",
+        "fuente": "Portal institucional Dos Anclas (Compañía Introductora de Buenos Aires S.A. · Salinas Grandes de Hidalgo)",
+        "url": "https://www.dosanclas.com.ar/",
+        "fecha_descarga": "2026-11-26",
+        "hash": "sha256:2024b46d4239f25130cfc5a4a539b039db0c3a16c9e9cd2e5535e2fbc41e4f9b",
+        "cita_ubicacion": "dosanclas.com.ar",
+        "confianza": "alta"
+      }
+    },
+    "procedencia": {
+      "anio": 2026,
+      "fuente_id": "dosanclas-web-2026",
+      "fuente": "Portal institucional Dos Anclas (Compañía Introductora de Buenos Aires S.A. · Salinas Grandes de Hidalgo)",
+      "url": "https://www.dosanclas.com.ar/",
+      "fecha_descarga": "2026-11-26",
+      "hash": "sha256:2024b46d4239f25130cfc5a4a539b039db0c3a16c9e9cd2e5535e2fbc41e4f9b",
+      "cita_ubicacion": "dosanclas.com.ar",
+      "confianza": "alta"
+    }
+  },
+  {
+    "conexion_id": "sal-c2",
+    "proceso_id": "sal-evaporitica-refinacion",
+    "origen_paso_id": "sal-p2-molienda-lavado",
+    "destino_paso_id": "sal-p3-centrifugacion",
+    "corriente_nombre": "Suspensión NaCl lavado (>99,3%)",
+    "tipo_corriente": "principal",
+    "flujo": {
+      "estado": "dato",
+      "valor": 1.02,
+      "unidad": "t/t NaCl",
+      "procedencia": {
+        "anio": 2025,
+        "fuente_id": "usgs-mcs-2025-salt",
+        "fuente": "USGS Mineral Commodity Summaries 2025: Salt (Sodium Chloride)",
+        "url": "https://pubs.usgs.gov/periodicals/mcs2025/mcs2025-salt.pdf",
+        "fecha_descarga": "2026-11-26",
+        "hash": "sha256:2c5bbbdd435f1fd29f1acbc2806bcf2b2f80eb1490a72f4f08af3583f0b8cd0d",
+        "cita_ubicacion": "USGS MCS 2025 Salt",
+        "confianza": "alta"
+      }
+    },
+    "procedencia": {
+      "anio": 2025,
+      "fuente_id": "usgs-mcs-2025-salt",
+      "fuente": "USGS Mineral Commodity Summaries 2025: Salt (Sodium Chloride)",
+      "url": "https://pubs.usgs.gov/periodicals/mcs2025/mcs2025-salt.pdf",
+      "fecha_descarga": "2026-11-26",
+      "hash": "sha256:2c5bbbdd435f1fd29f1acbc2806bcf2b2f80eb1490a72f4f08af3583f0b8cd0d",
+      "cita_ubicacion": "USGS MCS 2025 Salt",
+      "confianza": "alta"
+    }
+  },
+  {
+    "conexion_id": "sal-c3",
+    "proceso_id": "sal-evaporitica-refinacion",
+    "origen_paso_id": "sal-p3-centrifugacion",
+    "destino_paso_id": "sal-p2-molienda-lavado",
+    "corriente_nombre": "Reciclo salmuera saturada clarificada",
+    "tipo_corriente": "reciclo",
+    "flujo": {
+      "estado": "sin_datos",
+      "valor": null,
+      "unidad": null,
+      "procedencia": {
+        "anio": 2026,
+        "fuente_id": "dosanclas-web-2026",
+        "fuente": "Portal institucional Dos Anclas (Compañía Introductora de Buenos Aires S.A. · Salinas Grandes de Hidalgo)",
+        "url": "https://www.dosanclas.com.ar/",
+        "fecha_descarga": "2026-11-26",
+        "hash": "sha256:2024b46d4239f25130cfc5a4a539b039db0c3a16c9e9cd2e5535e2fbc41e4f9b",
+        "cita_ubicacion": "dosanclas.com.ar",
+        "confianza": "alta"
+      }
+    },
+    "procedencia": {
+      "anio": 2026,
+      "fuente_id": "dosanclas-web-2026",
+      "fuente": "Portal institucional Dos Anclas (Compañía Introductora de Buenos Aires S.A. · Salinas Grandes de Hidalgo)",
+      "url": "https://www.dosanclas.com.ar/",
+      "fecha_descarga": "2026-11-26",
+      "hash": "sha256:2024b46d4239f25130cfc5a4a539b039db0c3a16c9e9cd2e5535e2fbc41e4f9b",
+      "cita_ubicacion": "dosanclas.com.ar",
+      "confianza": "alta"
+    }
+  },
+  {
+    "conexion_id": "sal-c4",
+    "proceso_id": "sal-evaporitica-refinacion",
+    "origen_paso_id": "sal-p3-centrifugacion",
+    "destino_paso_id": "sal-p4-secado-lecho-fluido",
+    "corriente_nombre": "Cristales centrifugados (3% H2O)",
+    "tipo_corriente": "principal",
+    "flujo": {
+      "estado": "dato",
+      "valor": 1.01,
+      "unidad": "t/t NaCl",
+      "procedencia": {
+        "anio": 2026,
+        "fuente_id": "dosanclas-web-2026",
+        "fuente": "Portal institucional Dos Anclas (Compañía Introductora de Buenos Aires S.A. · Salinas Grandes de Hidalgo)",
+        "url": "https://www.dosanclas.com.ar/",
+        "fecha_descarga": "2026-11-26",
+        "hash": "sha256:2024b46d4239f25130cfc5a4a539b039db0c3a16c9e9cd2e5535e2fbc41e4f9b",
+        "cita_ubicacion": "dosanclas.com.ar",
+        "confianza": "alta"
+      }
+    },
+    "procedencia": {
+      "anio": 2026,
+      "fuente_id": "dosanclas-web-2026",
+      "fuente": "Portal institucional Dos Anclas (Compañía Introductora de Buenos Aires S.A. · Salinas Grandes de Hidalgo)",
+      "url": "https://www.dosanclas.com.ar/",
+      "fecha_descarga": "2026-11-26",
+      "hash": "sha256:2024b46d4239f25130cfc5a4a539b039db0c3a16c9e9cd2e5535e2fbc41e4f9b",
+      "cita_ubicacion": "dosanclas.com.ar",
+      "confianza": "alta"
+    }
+  },
+  {
+    "conexion_id": "sal-c5",
+    "proceso_id": "sal-evaporitica-refinacion",
+    "origen_paso_id": "sal-p4-secado-lecho-fluido",
+    "destino_paso_id": "sal-p5-clasificacion-despacho",
+    "corriente_nombre": "NaCl seco purificado (<0,15% H2O)",
+    "tipo_corriente": "principal",
+    "flujo": {
+      "estado": "dato",
+      "valor": 1,
+      "unidad": "t/t NaCl",
+      "procedencia": {
+        "anio": 2026,
+        "fuente_id": "dosanclas-web-2026",
+        "fuente": "Portal institucional Dos Anclas (Compañía Introductora de Buenos Aires S.A. · Salinas Grandes de Hidalgo)",
+        "url": "https://www.dosanclas.com.ar/",
+        "fecha_descarga": "2026-11-26",
+        "hash": "sha256:2024b46d4239f25130cfc5a4a539b039db0c3a16c9e9cd2e5535e2fbc41e4f9b",
+        "cita_ubicacion": "dosanclas.com.ar",
+        "confianza": "alta"
+      }
+    },
+    "procedencia": {
+      "anio": 2026,
+      "fuente_id": "dosanclas-web-2026",
+      "fuente": "Portal institucional Dos Anclas (Compañía Introductora de Buenos Aires S.A. · Salinas Grandes de Hidalgo)",
+      "url": "https://www.dosanclas.com.ar/",
+      "fecha_descarga": "2026-11-26",
+      "hash": "sha256:2024b46d4239f25130cfc5a4a539b039db0c3a16c9e9cd2e5535e2fbc41e4f9b",
+      "cita_ubicacion": "dosanclas.com.ar",
+      "confianza": "alta"
+    }
+  },
+  {
+    "conexion_id": "cem-c1",
+    "proceso_id": "cemento-horno-seco-san-luis",
+    "origen_paso_id": "cem-p1-crudo",
+    "destino_paso_id": "cem-p2-precalcinador",
+    "corriente_nombre": "Harina cruda homogeneizada",
+    "tipo_corriente": "principal",
+    "flujo": {
+      "estado": "dato",
+      "valor": 1.55,
+      "unidad": "t/t clínker",
+      "procedencia": {
+        "anio": 2006,
+        "fuente_id": "ipcc-2006-mineral-cap2",
+        "fuente": "IPCC 2006 Guidelines Vol. 3 Chapter 2: Mineral Industry Emissions (Lime & Soda Ash)",
+        "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/pdf/3_Volume3/V3_2_Ch2_Mineral_Industry.pdf",
+        "fecha_descarga": "2026-11-26",
+        "hash": "sha256:f76b756a812afeb3da0c6824cf3747d2d11002a386e1885b374138796c4e1240",
+        "cita_ubicacion": "IPCC Cap. 2.2",
+        "confianza": "alta"
+      }
+    },
+    "procedencia": {
+      "anio": 2006,
+      "fuente_id": "ipcc-2006-mineral-cap2",
+      "fuente": "IPCC 2006 Guidelines Vol. 3 Chapter 2: Mineral Industry Emissions (Lime & Soda Ash)",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/pdf/3_Volume3/V3_2_Ch2_Mineral_Industry.pdf",
+      "fecha_descarga": "2026-11-26",
+      "hash": "sha256:f76b756a812afeb3da0c6824cf3747d2d11002a386e1885b374138796c4e1240",
+      "cita_ubicacion": "IPCC Cap. 2.2",
+      "confianza": "alta"
+    }
+  },
+  {
+    "conexion_id": "cem-c2",
+    "proceso_id": "cemento-horno-seco-san-luis",
+    "origen_paso_id": "cem-p2-precalcinador",
+    "destino_paso_id": "cem-p3-horno-rotativo",
+    "corriente_nombre": "Harina precalcinada (~90% CaO)",
+    "tipo_corriente": "principal",
+    "flujo": {
+      "estado": "dato",
+      "valor": 1.05,
+      "unidad": "t/t clínker",
+      "procedencia": {
+        "anio": 2006,
+        "fuente_id": "ipcc-2006-mineral-cap2",
+        "fuente": "IPCC 2006 Guidelines Vol. 3 Chapter 2: Mineral Industry Emissions (Lime & Soda Ash)",
+        "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/pdf/3_Volume3/V3_2_Ch2_Mineral_Industry.pdf",
+        "fecha_descarga": "2026-11-26",
+        "hash": "sha256:f76b756a812afeb3da0c6824cf3747d2d11002a386e1885b374138796c4e1240",
+        "cita_ubicacion": "IPCC Cap. 2.2",
+        "confianza": "alta"
+      }
+    },
+    "procedencia": {
+      "anio": 2006,
+      "fuente_id": "ipcc-2006-mineral-cap2",
+      "fuente": "IPCC 2006 Guidelines Vol. 3 Chapter 2: Mineral Industry Emissions (Lime & Soda Ash)",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/pdf/3_Volume3/V3_2_Ch2_Mineral_Industry.pdf",
+      "fecha_descarga": "2026-11-26",
+      "hash": "sha256:f76b756a812afeb3da0c6824cf3747d2d11002a386e1885b374138796c4e1240",
+      "cita_ubicacion": "IPCC Cap. 2.2",
+      "confianza": "alta"
+    }
+  },
+  {
+    "conexion_id": "cem-c3",
+    "proceso_id": "cemento-horno-seco-san-luis",
+    "origen_paso_id": "cem-p3-horno-rotativo",
+    "destino_paso_id": "cem-p4-enfriador-parrilla",
+    "corriente_nombre": "Clínker incandescente (1.450 °C)",
+    "tipo_corriente": "principal",
+    "flujo": {
+      "estado": "dato",
+      "valor": 1,
+      "unidad": "t/t clínker",
+      "procedencia": {
+        "anio": 2006,
+        "fuente_id": "eu-bref-clm",
+        "fuente": "Reference Document on Best Available Techniques in the Production of Cement, Lime and Magnesium Oxide (CLM BREF)",
+        "url": "https://bureau-industrial-transformation.jrc.ec.europa.eu/reference/production-cement-lime-and-magnesium-oxide",
+        "fecha_descarga": "2026-11-26",
+        "hash": "sha256:fed8ff63a571396d268f29915414c344745065ecfda832ca9c5a53650ca1f2d6",
+        "cita_ubicacion": "EU CLM BREF",
+        "confianza": "alta"
+      }
+    },
+    "procedencia": {
+      "anio": 2006,
+      "fuente_id": "eu-bref-clm",
+      "fuente": "Reference Document on Best Available Techniques in the Production of Cement, Lime and Magnesium Oxide (CLM BREF)",
+      "url": "https://bureau-industrial-transformation.jrc.ec.europa.eu/reference/production-cement-lime-and-magnesium-oxide",
+      "fecha_descarga": "2026-11-26",
+      "hash": "sha256:fed8ff63a571396d268f29915414c344745065ecfda832ca9c5a53650ca1f2d6",
+      "cita_ubicacion": "EU CLM BREF",
+      "confianza": "alta"
+    }
+  },
+  {
+    "conexion_id": "cem-c4",
+    "proceso_id": "cemento-horno-seco-san-luis",
+    "origen_paso_id": "cem-p4-enfriador-parrilla",
+    "destino_paso_id": "cem-p2-precalcinador",
+    "corriente_nombre": "Aire terciario caliente (900 °C)",
+    "tipo_corriente": "reciclo",
+    "flujo": {
+      "estado": "sin_datos",
+      "valor": null,
+      "unidad": null,
+      "procedencia": {
+        "anio": 2006,
+        "fuente_id": "eu-bref-clm",
+        "fuente": "Reference Document on Best Available Techniques in the Production of Cement, Lime and Magnesium Oxide (CLM BREF)",
+        "url": "https://bureau-industrial-transformation.jrc.ec.europa.eu/reference/production-cement-lime-and-magnesium-oxide",
+        "fecha_descarga": "2026-11-26",
+        "hash": "sha256:fed8ff63a571396d268f29915414c344745065ecfda832ca9c5a53650ca1f2d6",
+        "cita_ubicacion": "EU CLM BREF",
+        "confianza": "alta"
+      }
+    },
+    "procedencia": {
+      "anio": 2006,
+      "fuente_id": "eu-bref-clm",
+      "fuente": "Reference Document on Best Available Techniques in the Production of Cement, Lime and Magnesium Oxide (CLM BREF)",
+      "url": "https://bureau-industrial-transformation.jrc.ec.europa.eu/reference/production-cement-lime-and-magnesium-oxide",
+      "fecha_descarga": "2026-11-26",
+      "hash": "sha256:fed8ff63a571396d268f29915414c344745065ecfda832ca9c5a53650ca1f2d6",
+      "cita_ubicacion": "EU CLM BREF",
+      "confianza": "alta"
+    }
+  },
+  {
+    "conexion_id": "cem-c5",
+    "proceso_id": "cemento-horno-seco-san-luis",
+    "origen_paso_id": "cem-p4-enfriador-parrilla",
+    "destino_paso_id": "cem-p5-molienda-cemento",
+    "corriente_nombre": "Clínker enfriado a molienda con yeso",
+    "tipo_corriente": "principal",
+    "flujo": {
+      "estado": "dato",
+      "valor": 0.85,
+      "unidad": "t/t cemento",
+      "procedencia": {
+        "anio": 2026,
+        "fuente_id": "cementos-avellaneda-web-2026",
+        "fuente": "Portal institucional Cementos Avellaneda S.A. (Planta La Calera, San Luis)",
+        "url": "https://www.cementosavellaneda.com.ar/",
+        "fecha_descarga": "2026-11-26",
+        "hash": "sha256:1e5dd8b7e2990f3005f2d7f14bf1385951d074e8d2e46ac8b1e895e5e18cc061",
+        "cita_ubicacion": "cementosavellaneda.com.ar",
+        "confianza": "alta"
+      }
+    },
+    "procedencia": {
+      "anio": 2026,
+      "fuente_id": "cementos-avellaneda-web-2026",
+      "fuente": "Portal institucional Cementos Avellaneda S.A. (Planta La Calera, San Luis)",
+      "url": "https://www.cementosavellaneda.com.ar/",
+      "fecha_descarga": "2026-11-26",
+      "hash": "sha256:1e5dd8b7e2990f3005f2d7f14bf1385951d074e8d2e46ac8b1e895e5e18cc061",
+      "cita_ubicacion": "cementosavellaneda.com.ar",
+      "confianza": "alta"
+    }
+  },
+  {
+    "conexion_id": "cit-c1",
+    "proceso_id": "citricos-aceite-jugo-concordia",
+    "origen_paso_id": "cit-p1-lavado-extraccion",
+    "destino_paso_id": "cit-p2-centrifugacion-aceite",
+    "corriente_nombre": "Emulsión fría de aceite de cáscara",
+    "tipo_corriente": "principal",
+    "flujo": {
+      "estado": "sin_datos",
+      "valor": null,
+      "unidad": null,
+      "procedencia": {
+        "anio": 2026,
+        "fuente_id": "eu-bref-fdm",
+        "fuente": "Reference Document on Best Available Techniques in the Food, Drink and Milk Industries (FDM BREF)",
+        "url": "https://bureau-industrial-transformation.jrc.ec.europa.eu/reference/food-drink-and-milk-industries",
+        "fecha_descarga": "2026-11-26",
+        "hash": "sha256:5c44b5656510d12b3e8bd7c74f2095b18f1f106e949fa98b392429ac0847851b",
+        "cita_ubicacion": "EU FDM BREF",
+        "confianza": "alta"
+      }
+    },
+    "procedencia": {
+      "anio": 2026,
+      "fuente_id": "eu-bref-fdm",
+      "fuente": "Reference Document on Best Available Techniques in the Food, Drink and Milk Industries (FDM BREF)",
+      "url": "https://bureau-industrial-transformation.jrc.ec.europa.eu/reference/food-drink-and-milk-industries",
+      "fecha_descarga": "2026-11-26",
+      "hash": "sha256:5c44b5656510d12b3e8bd7c74f2095b18f1f106e949fa98b392429ac0847851b",
+      "cita_ubicacion": "EU FDM BREF",
+      "confianza": "alta"
+    }
+  },
+  {
+    "conexion_id": "cit-c2",
+    "proceso_id": "citricos-aceite-jugo-concordia",
+    "origen_paso_id": "cit-p2-centrifugacion-aceite",
+    "destino_paso_id": "cit-p3-descerado-limoneno",
+    "corriente_nombre": "Aceite esencial frío centrifugado",
+    "tipo_corriente": "principal",
+    "flujo": {
+      "estado": "dato",
+      "valor": 0.045,
+      "unidad": "t/t concentrado",
+      "procedencia": {
+        "anio": 2026,
+        "fuente_id": "eu-bref-fdm",
+        "fuente": "Reference Document on Best Available Techniques in the Food, Drink and Milk Industries (FDM BREF)",
+        "url": "https://bureau-industrial-transformation.jrc.ec.europa.eu/reference/food-drink-and-milk-industries",
+        "fecha_descarga": "2026-11-26",
+        "hash": "sha256:5c44b5656510d12b3e8bd7c74f2095b18f1f106e949fa98b392429ac0847851b",
+        "cita_ubicacion": "EU FDM BREF",
+        "confianza": "alta"
+      }
+    },
+    "procedencia": {
+      "anio": 2026,
+      "fuente_id": "eu-bref-fdm",
+      "fuente": "Reference Document on Best Available Techniques in the Food, Drink and Milk Industries (FDM BREF)",
+      "url": "https://bureau-industrial-transformation.jrc.ec.europa.eu/reference/food-drink-and-milk-industries",
+      "fecha_descarga": "2026-11-26",
+      "hash": "sha256:5c44b5656510d12b3e8bd7c74f2095b18f1f106e949fa98b392429ac0847851b",
+      "cita_ubicacion": "EU FDM BREF",
+      "confianza": "alta"
+    }
+  },
+  {
+    "conexion_id": "cit-c3",
+    "proceso_id": "citricos-aceite-jugo-concordia",
+    "origen_paso_id": "cit-p1-lavado-extraccion",
+    "destino_paso_id": "cit-p4-evaporacion-taste",
+    "corriente_nombre": "Jugo simple filtrado (11-12 °Brix)",
+    "tipo_corriente": "principal",
+    "flujo": {
+      "estado": "dato",
+      "valor": 6.2,
+      "unidad": "t/t concentrado",
+      "procedencia": {
+        "anio": 2026,
+        "fuente_id": "eu-bref-fdm",
+        "fuente": "Reference Document on Best Available Techniques in the Food, Drink and Milk Industries (FDM BREF)",
+        "url": "https://bureau-industrial-transformation.jrc.ec.europa.eu/reference/food-drink-and-milk-industries",
+        "fecha_descarga": "2026-11-26",
+        "hash": "sha256:5c44b5656510d12b3e8bd7c74f2095b18f1f106e949fa98b392429ac0847851b",
+        "cita_ubicacion": "EU FDM BREF",
+        "confianza": "alta"
+      }
+    },
+    "procedencia": {
+      "anio": 2026,
+      "fuente_id": "eu-bref-fdm",
+      "fuente": "Reference Document on Best Available Techniques in the Food, Drink and Milk Industries (FDM BREF)",
+      "url": "https://bureau-industrial-transformation.jrc.ec.europa.eu/reference/food-drink-and-milk-industries",
+      "fecha_descarga": "2026-11-26",
+      "hash": "sha256:5c44b5656510d12b3e8bd7c74f2095b18f1f106e949fa98b392429ac0847851b",
+      "cita_ubicacion": "EU FDM BREF",
+      "confianza": "alta"
+    }
+  },
+  {
+    "conexion_id": "cit-c4",
+    "proceso_id": "citricos-aceite-jugo-concordia",
+    "origen_paso_id": "cit-p1-lavado-extraccion",
+    "destino_paso_id": "cit-p5-secado-cascara",
+    "corriente_nombre": "Cáscara húmeda y pulpa prensada",
+    "tipo_corriente": "subproducto",
+    "flujo": {
+      "estado": "dato",
+      "valor": 6.8,
+      "unidad": "t/t concentrado",
+      "procedencia": {
+        "anio": 2026,
+        "fuente_id": "fecier-web-2026",
+        "fuente": "Federación del Citrus de Entre Ríos (FeCiER): polo citrícola e industrialización en Concordia y Federación",
+        "url": "https://www.fecier.org.ar/",
+        "fecha_descarga": "2026-11-26",
+        "hash": "sha256:8acb03caa8d432a636771bc3a0d27bec96086245e1344850401beee9b3d91094",
+        "cita_ubicacion": "FeCiER",
+        "confianza": "alta"
+      }
+    },
+    "procedencia": {
+      "anio": 2026,
+      "fuente_id": "fecier-web-2026",
+      "fuente": "Federación del Citrus de Entre Ríos (FeCiER): polo citrícola e industrialización en Concordia y Federación",
+      "url": "https://www.fecier.org.ar/",
+      "fecha_descarga": "2026-11-26",
+      "hash": "sha256:8acb03caa8d432a636771bc3a0d27bec96086245e1344850401beee9b3d91094",
+      "cita_ubicacion": "FeCiER",
+      "confianza": "alta"
+    }
+  },
+  {
+    "conexion_id": "cit-c5",
+    "proceso_id": "citricos-aceite-jugo-concordia",
+    "origen_paso_id": "cit-p2-centrifugacion-aceite",
+    "destino_paso_id": "cit-p1-lavado-extraccion",
+    "corriente_nombre": "Reciclo agua clarificada de emulsión",
+    "tipo_corriente": "reciclo",
+    "flujo": {
+      "estado": "sin_datos",
+      "valor": null,
+      "unidad": null,
+      "procedencia": {
+        "anio": 2026,
+        "fuente_id": "eu-bref-fdm",
+        "fuente": "Reference Document on Best Available Techniques in the Food, Drink and Milk Industries (FDM BREF)",
+        "url": "https://bureau-industrial-transformation.jrc.ec.europa.eu/reference/food-drink-and-milk-industries",
+        "fecha_descarga": "2026-11-26",
+        "hash": "sha256:5c44b5656510d12b3e8bd7c74f2095b18f1f106e949fa98b392429ac0847851b",
+        "cita_ubicacion": "EU FDM BREF",
+        "confianza": "alta"
+      }
+    },
+    "procedencia": {
+      "anio": 2026,
+      "fuente_id": "eu-bref-fdm",
+      "fuente": "Reference Document on Best Available Techniques in the Food, Drink and Milk Industries (FDM BREF)",
+      "url": "https://bureau-industrial-transformation.jrc.ec.europa.eu/reference/food-drink-and-milk-industries",
+      "fecha_descarga": "2026-11-26",
+      "hash": "sha256:5c44b5656510d12b3e8bd7c74f2095b18f1f106e949fa98b392429ac0847851b",
+      "cita_ubicacion": "EU FDM BREF",
+      "confianza": "alta"
+    }
   }
 ]

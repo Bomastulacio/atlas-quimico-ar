@@ -812,5 +812,190 @@
       "cita_ubicacion": "arauco.com Planta de celulosa fibra larga, Depto. Iguazú (Misiones)",
       "confianza": "alta"
     }
+  },
+  {
+    "planta_id": "totalenergies-rio-cullen-tdf",
+    "empresa_id": "totalenergies-austral",
+    "producto_id": "glp-gas-natural",
+    "provincia_id": "94",
+    "departamento_id": "94008",
+    "nombre": "Planta de Tratamiento y GLP Río Cullen / Cañadón Alfa",
+    "localidad": "Río Grande (Cuenca Austral)",
+    "lat": -52.874,
+    "lon": -68.421,
+    "estado_operativo": "operativa",
+    "capacidad": {
+      "estado": "sin_datos",
+      "valor": null,
+      "unidad": null,
+      "procedencia": {
+        "anio": 2026,
+        "fuente_id": "totalenergies-ar-web-2026",
+        "fuente": "Portal institucional TotalEnergies Argentina (Operaciones Cuenca Austral / Tierra del Fuego)",
+        "url": "https://totalenergies.com.ar/",
+        "fecha_descarga": "2026-11-26",
+        "hash": "sha256:10802742a4141ca4c8839e0901730e56ad931514ade0f59217d355a2f4a41e75",
+        "cita_ubicacion": "totalenergies.com.ar Complejo terrestre Cuenca Marina Austral 1 (Depto. Río Grande, Tierra del Fuego)",
+        "confianza": "alta"
+      }
+    },
+    "procedencia": {
+      "anio": 2026,
+      "fuente_id": "totalenergies-ar-web-2026",
+      "fuente": "Portal institucional TotalEnergies Argentina (Operaciones Cuenca Austral / Tierra del Fuego)",
+      "url": "https://totalenergies.com.ar/",
+      "fecha_descarga": "2026-11-26",
+      "hash": "sha256:10802742a4141ca4c8839e0901730e56ad931514ade0f59217d355a2f4a41e75",
+      "cita_ubicacion": "totalenergies.com.ar Complejo terrestre Cuenca Marina Austral 1 (Depto. Río Grande, Tierra del Fuego)",
+      "confianza": "alta"
+    }
+  },
+  {
+    "planta_id": "dos-anclas-salinas-grandes-lp",
+    "empresa_id": "dos-anclas-ciba",
+    "producto_id": "sal-industrial",
+    "provincia_id": "42",
+    "departamento_id": "42007",
+    "nombre": "Complejo Salinero y Refinería Salinas Grandes de Hidalgo",
+    "localidad": "Hidalgo / Macachín",
+    "lat": -37.216,
+    "lon": -63.591,
+    "estado_operativo": "operativa",
+    "capacidad": {
+      "estado": "sin_datos",
+      "valor": null,
+      "unidad": null,
+      "procedencia": {
+        "anio": 2026,
+        "fuente_id": "dosanclas-web-2026",
+        "fuente": "Portal institucional Dos Anclas (Compañía Introductora de Buenos Aires S.A. · Salinas Grandes de Hidalgo)",
+        "url": "https://www.dosanclas.com.ar/",
+        "fecha_descarga": "2026-11-26",
+        "hash": "sha256:2024b46d4239f25130cfc5a4a539b039db0c3a16c9e9cd2e5535e2fbc41e4f9b",
+        "cita_ubicacion": "dosanclas.com.ar Planta Salinas Grandes de Hidalgo (Depto. Atreucó, La Pampa)",
+        "confianza": "alta"
+      }
+    },
+    "procedencia": {
+      "anio": 2026,
+      "fuente_id": "dosanclas-web-2026",
+      "fuente": "Portal institucional Dos Anclas (Compañía Introductora de Buenos Aires S.A. · Salinas Grandes de Hidalgo)",
+      "url": "https://www.dosanclas.com.ar/",
+      "fecha_descarga": "2026-11-26",
+      "hash": "sha256:2024b46d4239f25130cfc5a4a539b039db0c3a16c9e9cd2e5535e2fbc41e4f9b",
+      "cita_ubicacion": "dosanclas.com.ar Planta Salinas Grandes de Hidalgo (Depto. Atreucó, La Pampa)",
+      "confianza": "alta"
+    }
+  },
+  {
+    "planta_id": "salina-colorada-grande-lp",
+    "empresa_id": "dos-anclas-ciba",
+    "producto_id": "sal-industrial",
+    "provincia_id": "42",
+    "departamento_id": "42077",
+    "nombre": "Cuenca Salinera Colorada Grande (General San Martín)",
+    "localidad": "General San Martín",
+    "lat": -38.234,
+    "lon": -63.726,
+    "estado_operativo": "operativa",
+    "capacidad": {
+      "estado": "sin_datos",
+      "valor": null,
+      "unidad": null,
+      "procedencia": {
+        "anio": 2025,
+        "fuente_id": "usgs-mcs-2025-salt",
+        "fuente": "USGS Mineral Commodity Summaries 2025: Salt (Sodium Chloride)",
+        "url": "https://pubs.usgs.gov/periodicals/mcs2025/mcs2025-salt.pdf",
+        "fecha_descarga": "2026-11-26",
+        "hash": "sha256:2c5bbbdd435f1fd29f1acbc2806bcf2b2f80eb1490a72f4f08af3583f0b8cd0d",
+        "cita_ubicacion": "USGS MCS 2025 Salt + explotación evaporítica Salina Colorada Grande (Depto. Hucal, La Pampa)",
+        "confianza": "alta"
+      }
+    },
+    "procedencia": {
+      "anio": 2025,
+      "fuente_id": "usgs-mcs-2025-salt",
+      "fuente": "USGS Mineral Commodity Summaries 2025: Salt (Sodium Chloride)",
+      "url": "https://pubs.usgs.gov/periodicals/mcs2025/mcs2025-salt.pdf",
+      "fecha_descarga": "2026-11-26",
+      "hash": "sha256:2c5bbbdd435f1fd29f1acbc2806bcf2b2f80eb1490a72f4f08af3583f0b8cd0d",
+      "cita_ubicacion": "USGS MCS 2025 Salt + explotación evaporítica Salina Colorada Grande (Depto. Hucal, La Pampa)",
+      "confianza": "alta"
+    }
+  },
+  {
+    "planta_id": "cementos-avellaneda-la-calera-sl",
+    "empresa_id": "cementos-avellaneda-sa",
+    "producto_id": "cemento-clinker",
+    "provincia_id": "74",
+    "departamento_id": "74014",
+    "nombre": "Planta Cementera Integrada La Calera",
+    "localidad": "La Calera",
+    "lat": -32.863,
+    "lon": -66.982,
+    "estado_operativo": "operativa",
+    "capacidad": {
+      "estado": "sin_datos",
+      "valor": null,
+      "unidad": null,
+      "procedencia": {
+        "anio": 2026,
+        "fuente_id": "cementos-avellaneda-web-2026",
+        "fuente": "Portal institucional Cementos Avellaneda S.A. (Planta La Calera, San Luis)",
+        "url": "https://www.cementosavellaneda.com.ar/",
+        "fecha_descarga": "2026-11-26",
+        "hash": "sha256:1e5dd8b7e2990f3005f2d7f14bf1385951d074e8d2e46ac8b1e895e5e18cc061",
+        "cita_ubicacion": "cementosavellaneda.com.ar Planta La Calera (Depto. Belgrano, San Luis)",
+        "confianza": "alta"
+      }
+    },
+    "procedencia": {
+      "anio": 2026,
+      "fuente_id": "cementos-avellaneda-web-2026",
+      "fuente": "Portal institucional Cementos Avellaneda S.A. (Planta La Calera, San Luis)",
+      "url": "https://www.cementosavellaneda.com.ar/",
+      "fecha_descarga": "2026-11-26",
+      "hash": "sha256:1e5dd8b7e2990f3005f2d7f14bf1385951d074e8d2e46ac8b1e895e5e18cc061",
+      "cita_ubicacion": "cementosavellaneda.com.ar Planta La Calera (Depto. Belgrano, San Luis)",
+      "confianza": "alta"
+    }
+  },
+  {
+    "planta_id": "polo-citricola-concordia-er",
+    "empresa_id": "polo-citricola-concordia",
+    "producto_id": "citricos-limoneno",
+    "provincia_id": "30",
+    "departamento_id": "30015",
+    "nombre": "Polo Agroindustrial Citrícola de Concordia",
+    "localidad": "Concordia",
+    "lat": -31.392,
+    "lon": -58.021,
+    "estado_operativo": "operativa",
+    "capacidad": {
+      "estado": "sin_datos",
+      "valor": null,
+      "unidad": null,
+      "procedencia": {
+        "anio": 2026,
+        "fuente_id": "fecier-web-2026",
+        "fuente": "Federación del Citrus de Entre Ríos (FeCiER): polo citrícola e industrialización en Concordia y Federación",
+        "url": "https://www.fecier.org.ar/",
+        "fecha_descarga": "2026-11-26",
+        "hash": "sha256:8acb03caa8d432a636771bc3a0d27bec96086245e1344850401beee9b3d91094",
+        "cita_ubicacion": "fecier.org.ar Complejo de jugos concentrados y aceites esenciales (Depto. Concordia, Entre Ríos)",
+        "confianza": "alta"
+      }
+    },
+    "procedencia": {
+      "anio": 2026,
+      "fuente_id": "fecier-web-2026",
+      "fuente": "Federación del Citrus de Entre Ríos (FeCiER): polo citrícola e industrialización en Concordia y Federación",
+      "url": "https://www.fecier.org.ar/",
+      "fecha_descarga": "2026-11-26",
+      "hash": "sha256:8acb03caa8d432a636771bc3a0d27bec96086245e1344850401beee9b3d91094",
+      "cita_ubicacion": "fecier.org.ar Complejo de jugos concentrados y aceites esenciales (Depto. Concordia, Entre Ríos)",
+      "confianza": "alta"
+    }
   }
 ]

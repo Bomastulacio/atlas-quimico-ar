@@ -11733,5 +11733,2375 @@
         "fuente_id": "arauco-web-2026"
       }
     ]
+  },
+  {
+    "proceso_id": "glp-fraccionamiento-austral",
+    "producto_id": "glp-gas-natural",
+    "titulo": "PFD ISO 10628: Procesamiento Criogénico de Gas y Fraccionamiento de GLP (Cuenca Austral, TDF)",
+    "norma_simbologia": "ISO 10628 / ASME",
+    "base_calculo": "Gas húmedo de Cuenca Austral (EU REF BREF + ENARGAS)",
+    "resumen_tecnico": "Separación multifásica a 75 bar, deshidratación con tamices moleculares, turbo-expansión criogénica a -95 °C y fraccionamiento en columnas para propano (C3), butano (C4) y gasolina natural (C5+).",
+    "nota_metodologica": "Esquema estándar de planta criogénica de recuperación de LGN en cabecera terrestre de Tierra del Fuego (Río Cullen / Cañadón Alfa).",
+    "canvas_width": 1880,
+    "canvas_height": 760,
+    "secciones": [
+      {
+        "area_id": "s1",
+        "titulo": "ÁREA 100 · RECEPCIÓN Y DESHIDRATACIÓN",
+        "x": 224,
+        "y": 74,
+        "width": 345,
+        "height": 612
+      },
+      {
+        "area_id": "s2",
+        "titulo": "ÁREA 200 · EXPANSIÓN CRIOGÉNICA (-95 °C)",
+        "x": 585,
+        "y": 74,
+        "width": 345,
+        "height": 612
+      },
+      {
+        "area_id": "s3",
+        "titulo": "ÁREA 300 · TREN DE FRACCIONAMIENTO C3/C4",
+        "x": 946,
+        "y": 74,
+        "width": 365,
+        "height": 612
+      },
+      {
+        "area_id": "s4",
+        "titulo": "ÁREA 400 · ESFERAS GLP Y DESPACHO",
+        "x": 1327,
+        "y": 74,
+        "width": 329,
+        "height": 612
+      }
+    ],
+    "equipos": [
+      {
+        "tag": "V-101",
+        "nombre": "Slug catcher / Separador bifásico",
+        "simbolo": "separator",
+        "area_id": "s1",
+        "x": 325,
+        "y": 270,
+        "temperatura_op": "15 °C",
+        "presion_op": "75 bar",
+        "reaccion": null,
+        "condicion_critica": "Remoción de agua libre y condensado C5+",
+        "descripcion": "Amortigua baches líquidos del gasoducto offshore.",
+        "fuente_id": "eu-bref-ref",
+        "cita_ubicacion": "EU REF BREF Gas Reception"
+      },
+      {
+        "tag": "C-102",
+        "nombre": "Lechos tamices moleculares 4A",
+        "simbolo": "column",
+        "area_id": "s1",
+        "x": 485,
+        "y": 270,
+        "temperatura_op": "25 °C",
+        "presion_op": "70 bar",
+        "reaccion": null,
+        "condicion_critica": "Punto de rocío < -100 °C (<0,1 ppmv H2O)",
+        "descripcion": "Deshidratación profunda previa a sección criogénica.",
+        "fuente_id": "eu-bref-ref",
+        "cita_ubicacion": "EU REF BREF Dehydration"
+      },
+      {
+        "tag": "E-201",
+        "nombre": "Intercambiador criogénico gas-gas",
+        "simbolo": "heat_exchanger",
+        "area_id": "s2",
+        "x": 685,
+        "y": 250,
+        "temperatura_op": "-65 °C",
+        "presion_op": "68 bar",
+        "reaccion": null,
+        "condicion_critica": null,
+        "descripcion": "Pre-enfría gas de entrada contra gas residual frío.",
+        "fuente_id": "eu-bref-ref",
+        "cita_ubicacion": "EU REF BREF Cold Box"
+      },
+      {
+        "tag": "K-202",
+        "nombre": "Turbo-expansor / recompresor",
+        "simbolo": "compressor",
+        "area_id": "s2",
+        "x": 835,
+        "y": 250,
+        "temperatura_op": "-95 °C",
+        "presion_op": "30 bar",
+        "reaccion": null,
+        "condicion_critica": "Expansión isoentrópica con recuperación de eje",
+        "descripcion": "Condensa C3+ y recompensa presión de metano seco.",
+        "fuente_id": "eu-bref-ref",
+        "cita_ubicacion": "EU REF BREF Turbo-Expander"
+      },
+      {
+        "tag": "C-301",
+        "nombre": "Torre desetanizadora",
+        "simbolo": "column",
+        "area_id": "s3",
+        "x": 1030,
+        "y": 310,
+        "temperatura_op": "-35 a 90 °C",
+        "presion_op": "26 bar",
+        "reaccion": null,
+        "condicion_critica": null,
+        "descripcion": "Separa C1/C2 livianos por tope hacia gasoducto.",
+        "fuente_id": "eu-bref-ref",
+        "cita_ubicacion": "EU REF BREF Deethanizer"
+      },
+      {
+        "tag": "C-302",
+        "nombre": "Torre despropanizadora (C3)",
+        "simbolo": "column",
+        "area_id": "s3",
+        "x": 1150,
+        "y": 230,
+        "temperatura_op": "55-105 °C",
+        "presion_op": "18 bar",
+        "reaccion": null,
+        "condicion_critica": "Pureza C3H8 >95% vol",
+        "descripcion": "Destila propano comercial por cabeza.",
+        "fuente_id": "eu-bref-ref",
+        "cita_ubicacion": "EU REF BREF Depropanizer"
+      },
+      {
+        "tag": "C-303",
+        "nombre": "Torre desbutanizadora (C4/C5+)",
+        "simbolo": "column",
+        "area_id": "s3",
+        "x": 1250,
+        "y": 410,
+        "temperatura_op": "65-135 °C",
+        "presion_op": "8 bar",
+        "reaccion": null,
+        "condicion_critica": null,
+        "descripcion": "Separa butano comercial (tope) y gasolina natural (fondo).",
+        "fuente_id": "eu-bref-ref",
+        "cita_ubicacion": "EU REF BREF Debutanizer"
+      },
+      {
+        "tag": "T-401",
+        "nombre": "Esferas presurizadas GLP (C3/C4)",
+        "simbolo": "tank",
+        "area_id": "s4",
+        "x": 1495,
+        "y": 290,
+        "temperatura_op": "12 °C",
+        "presion_op": "10 bar",
+        "reaccion": null,
+        "condicion_critica": null,
+        "descripcion": "Acopio para embarque marítimo y mercado interno.",
+        "fuente_id": "enargas-web-2026",
+        "cita_ubicacion": "ENARGAS + UN Comtrade HS 2711.12/2711.13"
+      }
+    ],
+    "corrientes": [
+      {
+        "numero": 1,
+        "nombre": "Gas húmedo Cuenca Austral",
+        "tipo": "proceso",
+        "origen_tag": null,
+        "destino_tag": "V-101",
+        "puntos": [
+          [
+            208,
+            270
+          ],
+          [
+            285,
+            270
+          ]
+        ],
+        "flag_pos": [
+          245,
+          252
+        ],
+        "especies": "CH4 + C2-C6+ + H2O",
+        "fase": "Bifásico",
+        "temperatura_c": "15",
+        "presion_bar": "75",
+        "flujo_especifico": {
+          "estado": "sin_datos",
+          "valor": null,
+          "unidad": "MMm3/d"
+        },
+        "nota_tecnica": "Ingreso multifásico desde plataformas CMA-1.",
+        "fuente_id": "totalenergies-ar-web-2026",
+        "cita_ubicacion": "totalenergies.com.ar"
+      },
+      {
+        "numero": 2,
+        "nombre": "Gas sin condensado libre",
+        "tipo": "proceso",
+        "origen_tag": "V-101",
+        "destino_tag": "C-102",
+        "puntos": [
+          [
+            365,
+            270
+          ],
+          [
+            450,
+            270
+          ]
+        ],
+        "flag_pos": [
+          405,
+          252
+        ],
+        "especies": "C1-C5 saturado H2O",
+        "fase": "Gas",
+        "temperatura_c": "20",
+        "presion_bar": "72",
+        "flujo_especifico": {
+          "estado": "sin_datos",
+          "valor": null,
+          "unidad": "MMm3/d"
+        },
+        "nota_tecnica": "Alimentación a lechos de zeolita 4A.",
+        "fuente_id": "eu-bref-ref",
+        "cita_ubicacion": "EU REF BREF"
+      },
+      {
+        "numero": 3,
+        "nombre": "Gas seco criogénico",
+        "tipo": "proceso",
+        "origen_tag": "C-102",
+        "destino_tag": "E-201",
+        "puntos": [
+          [
+            520,
+            270
+          ],
+          [
+            645,
+            250
+          ]
+        ],
+        "flag_pos": [
+          580,
+          240
+        ],
+        "especies": "C1-C5 (<0,1 ppmv H2O)",
+        "fase": "Gas",
+        "temperatura_c": "25",
+        "presion_bar": "70",
+        "flujo_especifico": {
+          "estado": "sin_datos",
+          "valor": null,
+          "unidad": "MMm3/d"
+        },
+        "nota_tecnica": "Libre de agua para operar a -95 °C.",
+        "fuente_id": "eu-bref-ref",
+        "cita_ubicacion": "EU REF BREF"
+      },
+      {
+        "numero": 4,
+        "nombre": "Corriente fría a expansor",
+        "tipo": "proceso",
+        "origen_tag": "E-201",
+        "destino_tag": "K-202",
+        "puntos": [
+          [
+            725,
+            250
+          ],
+          [
+            795,
+            250
+          ]
+        ],
+        "flag_pos": [
+          760,
+          232
+        ],
+        "especies": "Gas parcialmente condensado",
+        "fase": "Bifásico",
+        "temperatura_c": "-65",
+        "presion_bar": "68",
+        "flujo_especifico": {
+          "estado": "sin_datos",
+          "valor": null,
+          "unidad": "MMm3/d"
+        },
+        "nota_tecnica": "Ingreso a turbina expansora.",
+        "fuente_id": "eu-bref-ref",
+        "cita_ubicacion": "EU REF BREF"
+      },
+      {
+        "numero": 5,
+        "nombre": "Metano seco a Gasoducto San Martín",
+        "tipo": "subproducto",
+        "origen_tag": "K-202",
+        "destino_tag": null,
+        "puntos": [
+          [
+            835,
+            195
+          ],
+          [
+            835,
+            130
+          ],
+          [
+            1672,
+            130
+          ]
+        ],
+        "flag_pos": [
+          1255,
+          114
+        ],
+        "especies": "CH4 >94%",
+        "fase": "Gas",
+        "temperatura_c": "15",
+        "presion_bar": "65",
+        "flujo_especifico": {
+          "estado": "sin_datos",
+          "valor": null,
+          "unidad": "MMm3/d"
+        },
+        "nota_tecnica": "Gas residual comercial inyectado al troncal.",
+        "fuente_id": "enargas-web-2026",
+        "cita_ubicacion": "ENARGAS"
+      },
+      {
+        "numero": 6,
+        "nombre": "Líquidos LGN a desetanizadora",
+        "tipo": "proceso",
+        "origen_tag": "K-202",
+        "destino_tag": "C-301",
+        "puntos": [
+          [
+            875,
+            265
+          ],
+          [
+            995,
+            310
+          ]
+        ],
+        "flag_pos": [
+          935,
+          272
+        ],
+        "especies": "C2 + C3 + C4 + C5+",
+        "fase": "Líquido",
+        "temperatura_c": "-85",
+        "presion_bar": "28",
+        "flujo_especifico": {
+          "estado": "sin_datos",
+          "valor": null,
+          "unidad": "t/d"
+        },
+        "nota_tecnica": "Líquidos condensados en cold box.",
+        "fuente_id": "eu-bref-ref",
+        "cita_ubicacion": "EU REF BREF"
+      },
+      {
+        "numero": 7,
+        "nombre": "Fondo C3+ a despropanizadora",
+        "tipo": "proceso",
+        "origen_tag": "C-301",
+        "destino_tag": "C-302",
+        "puntos": [
+          [
+            1065,
+            290
+          ],
+          [
+            1115,
+            230
+          ]
+        ],
+        "flag_pos": [
+          1085,
+          240
+        ],
+        "especies": "C3H8 + C4H10 + C5+",
+        "fase": "Líquido",
+        "temperatura_c": "85",
+        "presion_bar": "20",
+        "flujo_especifico": {
+          "estado": "sin_datos",
+          "valor": null,
+          "unidad": "t/d"
+        },
+        "nota_tecnica": "Libre de metano y etano liviano.",
+        "fuente_id": "eu-bref-ref",
+        "cita_ubicacion": "EU REF BREF"
+      },
+      {
+        "numero": 8,
+        "nombre": "Propano comercial C3H8",
+        "tipo": "proceso",
+        "origen_tag": "C-302",
+        "destino_tag": "T-401",
+        "puntos": [
+          [
+            1185,
+            230
+          ],
+          [
+            1455,
+            270
+          ],
+          [
+            1672,
+            270
+          ]
+        ],
+        "flag_pos": [
+          1345,
+          236
+        ],
+        "especies": "C3H8 >95%",
+        "fase": "Líquido",
+        "temperatura_c": "15",
+        "presion_bar": "12",
+        "flujo_especifico": {
+          "estado": "sin_datos",
+          "valor": null,
+          "unidad": "t/d"
+        },
+        "nota_tecnica": "Exportación país 2024: 363,8 kt (HS 2711.12).",
+        "fuente_id": "uncomtrade-ar-lote5-2024",
+        "cita_ubicacion": "UN Comtrade 2024 HS 271112"
+      },
+      {
+        "numero": 9,
+        "nombre": "Fondo C4/C5+ a desbutanizadora",
+        "tipo": "proceso",
+        "origen_tag": "C-302",
+        "destino_tag": "C-303",
+        "puntos": [
+          [
+            1150,
+            295
+          ],
+          [
+            1150,
+            410
+          ],
+          [
+            1215,
+            410
+          ]
+        ],
+        "flag_pos": [
+          1180,
+          392
+        ],
+        "especies": "C4H10 + C5+",
+        "fase": "Líquido",
+        "temperatura_c": "105",
+        "presion_bar": "10",
+        "flujo_especifico": {
+          "estado": "sin_datos",
+          "valor": null,
+          "unidad": "t/d"
+        },
+        "nota_tecnica": "Alimentación a última columna fraccionadora.",
+        "fuente_id": "eu-bref-ref",
+        "cita_ubicacion": "EU REF BREF"
+      },
+      {
+        "numero": 10,
+        "nombre": "Butano comercial C4H10",
+        "tipo": "proceso",
+        "origen_tag": "C-303",
+        "destino_tag": "T-401",
+        "puntos": [
+          [
+            1285,
+            380
+          ],
+          [
+            1455,
+            320
+          ],
+          [
+            1672,
+            320
+          ]
+        ],
+        "flag_pos": [
+          1380,
+          340
+        ],
+        "especies": "n-C4 + i-C4",
+        "fase": "Líquido",
+        "temperatura_c": "15",
+        "presion_bar": "6",
+        "flujo_especifico": {
+          "estado": "sin_datos",
+          "valor": null,
+          "unidad": "t/d"
+        },
+        "nota_tecnica": "Exportación país 2024: 352,7 kt (HS 2711.13).",
+        "fuente_id": "uncomtrade-ar-lote5-2024",
+        "cita_ubicacion": "UN Comtrade 2024 HS 271113"
+      },
+      {
+        "numero": 11,
+        "nombre": "Gasolina natural C5+",
+        "tipo": "subproducto",
+        "origen_tag": "C-303",
+        "destino_tag": null,
+        "puntos": [
+          [
+            1285,
+            455
+          ],
+          [
+            1672,
+            455
+          ]
+        ],
+        "flag_pos": [
+          1495,
+          437
+        ],
+        "especies": "Hidrocarburos C5+",
+        "fase": "Líquido",
+        "temperatura_c": "40",
+        "presion_bar": "3",
+        "flujo_especifico": {
+          "estado": "sin_datos",
+          "valor": null,
+          "unidad": "m3/d"
+        },
+        "nota_tecnica": "Nafta estabilizada para refinerías y petroquímica.",
+        "fuente_id": "eu-bref-ref",
+        "cita_ubicacion": "EU REF BREF"
+      },
+      {
+        "numero": 12,
+        "nombre": "Reciclo livianos C1/C2",
+        "tipo": "reciclo",
+        "origen_tag": "C-301",
+        "destino_tag": "K-202",
+        "puntos": [
+          [
+            1030,
+            380
+          ],
+          [
+            1030,
+            560
+          ],
+          [
+            835,
+            560
+          ],
+          [
+            835,
+            305
+          ]
+        ],
+        "flag_pos": [
+          935,
+          542
+        ],
+        "especies": "CH4 + C2H6",
+        "fase": "Gas",
+        "temperatura_c": "-35",
+        "presion_bar": "26",
+        "flujo_especifico": {
+          "estado": "sin_datos",
+          "valor": null,
+          "unidad": "reciclo"
+        },
+        "nota_tecnica": "Retorno de gases livianos hacia corriente residual.",
+        "fuente_id": "eu-bref-ref",
+        "cita_ubicacion": "EU REF BREF"
+      }
+    ],
+    "servicios": [
+      {
+        "id": "u1",
+        "equipo_tag": "C-302",
+        "etiqueta": "Aceite térmico",
+        "direccion": "entrada",
+        "x": 1150,
+        "y": 175,
+        "dx": 0,
+        "dy": -26
+      },
+      {
+        "id": "u2",
+        "equipo_tag": "C-102",
+        "etiqueta": "Gas regen.",
+        "direccion": "entrada",
+        "x": 485,
+        "y": 205,
+        "dx": 0,
+        "dy": -26
+      }
+    ],
+    "limites_bateria": [
+      {
+        "id": "lb-in-1",
+        "lado": "entrada",
+        "categoria": "materia_prima",
+        "nombre": "Gas húmedo austral",
+        "formula": "CH4 + C2-C6+",
+        "cantidad_masa": "sin_datos",
+        "cantidad_molar": null,
+        "fraccion_pureza": "75 bar offshore",
+        "corriente_num": 1,
+        "y": 270,
+        "nota": "Cuenca Marina Austral 1 (Río Grande).",
+        "fuente_id": "totalenergies-ar-web-2026"
+      },
+      {
+        "id": "lb-out-1",
+        "lado": "salida",
+        "categoria": "subproducto",
+        "nombre": "Gas seco a gasoducto",
+        "formula": "CH4",
+        "cantidad_masa": "sin_datos",
+        "cantidad_molar": null,
+        "fraccion_pureza": ">94% CH4",
+        "corriente_num": 5,
+        "y": 130,
+        "nota": "Inyección al Gasoducto Gral. San Martín.",
+        "fuente_id": "enargas-web-2026"
+      },
+      {
+        "id": "lb-out-2",
+        "lado": "salida",
+        "categoria": "producto",
+        "nombre": "GLP Propano y Butano",
+        "formula": "C3H8 / C4H10",
+        "cantidad_masa": "716 kt exp. país (24)",
+        "cantidad_molar": null,
+        "fraccion_pureza": "Grado comercial",
+        "corriente_num": 8,
+        "y": 270,
+        "nota": "Exp. 2024: USD 348,6 M (C3+C4 Comtrade).",
+        "fuente_id": "uncomtrade-ar-lote5-2024"
+      },
+      {
+        "id": "lb-out-3",
+        "lado": "salida",
+        "categoria": "subproducto",
+        "nombre": "Gasolina natural",
+        "formula": "C5+",
+        "cantidad_masa": "sin_datos",
+        "cantidad_molar": null,
+        "fraccion_pureza": "Estabilizada",
+        "corriente_num": 11,
+        "y": 455,
+        "nota": "Corte líquido pesado C5+.",
+        "fuente_id": "eu-bref-ref"
+      }
+    ]
+  },
+  {
+    "proceso_id": "sal-evaporitica-refinacion",
+    "producto_id": "sal-industrial",
+    "titulo": "PFD ISO 10628: Beneficio y Refinación de Sal Industrial (Salinas Grandes, La Pampa)",
+    "norma_simbologia": "ISO 10628 / ASME",
+    "base_calculo": "1,00 t NaCl seco purificado (>99,3% base seca)",
+    "resumen_tecnico": "Molienda húmeda de sal bruta evaporítica (1,15 t/t), lavado selectivo contracorriente en salmuera saturada en ciclo cerrado, centrifugación continua, secado en lecho fluido y clasificación granulométrica.",
+    "nota_metodologica": "Esquema de planta refinadora de sal de salinas pampeanas (Atreucó / Hucal) con recirculación integral de salmuera clarificada.",
+    "canvas_width": 1880,
+    "canvas_height": 760,
+    "secciones": [
+      {
+        "area_id": "s1",
+        "titulo": "ÁREA 100 · COSECHA Y MOLIENDA HÚMEDA",
+        "x": 224,
+        "y": 74,
+        "width": 345,
+        "height": 612
+      },
+      {
+        "area_id": "s2",
+        "titulo": "ÁREA 200 · LAVADO Y CENTRIFUGACIÓN",
+        "x": 585,
+        "y": 74,
+        "width": 350,
+        "height": 612
+      },
+      {
+        "area_id": "s3",
+        "titulo": "ÁREA 300 · SECADO EN LECHO FLUIDO",
+        "x": 951,
+        "y": 74,
+        "width": 345,
+        "height": 612
+      },
+      {
+        "area_id": "s4",
+        "titulo": "ÁREA 400 · TAMIZADO, YODADO Y SILOS",
+        "x": 1312,
+        "y": 74,
+        "width": 344,
+        "height": 612
+      }
+    ],
+    "equipos": [
+      {
+        "tag": "M-101",
+        "nombre": "Tolva y molino húmedo de sal bruta",
+        "simbolo": "mill_gin",
+        "area_id": "s1",
+        "x": 355,
+        "y": 280,
+        "temperatura_op": "20 °C",
+        "presion_op": "1 bar",
+        "reaccion": null,
+        "condicion_critica": "Trituración sumergida en salmuera saturada",
+        "descripcion": "Reduce terrones de costra evaporítica exponiendo impurezas.",
+        "fuente_id": "dosanclas-web-2026",
+        "cita_ubicacion": "dosanclas.com.ar"
+      },
+      {
+        "tag": "W-201",
+        "nombre": "Lavador contracorriente + hidrociclón",
+        "simbolo": "separator",
+        "area_id": "s2",
+        "x": 690,
+        "y": 280,
+        "temperatura_op": "20 °C",
+        "presion_op": "1,8 bar",
+        "reaccion": null,
+        "condicion_critica": "Remueve CaSO4, MgCl2 y arcillas sin disolver NaCl",
+        "descripcion": "Purifica cristales sobre 99,3% NaCl base seca.",
+        "fuente_id": "usgs-mcs-2025-salt",
+        "cita_ubicacion": "USGS MCS 2025 Salt"
+      },
+      {
+        "tag": "S-202",
+        "nombre": "Centrífuga continua pusher",
+        "simbolo": "filter_baghouse",
+        "area_id": "s2",
+        "x": 855,
+        "y": 280,
+        "temperatura_op": "20 °C",
+        "presion_op": "1 bar",
+        "reaccion": null,
+        "condicion_critica": "Humedad final <3%",
+        "descripcion": "Deshidrata mecánicamente los cristales lavados.",
+        "fuente_id": "dosanclas-web-2026",
+        "cita_ubicacion": "dosanclas.com.ar"
+      },
+      {
+        "tag": "T-203",
+        "nombre": "Espesador / Clarificador de salmuera",
+        "simbolo": "tank",
+        "area_id": "s2",
+        "x": 760,
+        "y": 495,
+        "temperatura_op": "20 °C",
+        "presion_op": "1 bar",
+        "reaccion": null,
+        "condicion_critica": null,
+        "descripcion": "Decanta arcillas y devuelve salmuera saturada al lavador.",
+        "fuente_id": "dosanclas-web-2026",
+        "cita_ubicacion": "dosanclas.com.ar"
+      },
+      {
+        "tag": "D-301",
+        "nombre": "Secador térmico de lecho fluido",
+        "simbolo": "dryer_bed",
+        "area_id": "s3",
+        "x": 1085,
+        "y": 280,
+        "temperatura_op": "140 °C",
+        "presion_op": "1 bar",
+        "reaccion": null,
+        "condicion_critica": "Humedad de salida <0,15%",
+        "descripcion": "Secado homogéneo y enfriamiento de cristales.",
+        "fuente_id": "dosanclas-web-2026",
+        "cita_ubicacion": "dosanclas.com.ar"
+      },
+      {
+        "tag": "F-302",
+        "nombre": "Ciclón y filtro de polvos salinos",
+        "simbolo": "filter_baghouse",
+        "area_id": "s3",
+        "x": 1205,
+        "y": 450,
+        "temperatura_op": "95 °C",
+        "presion_op": "1 bar",
+        "reaccion": null,
+        "condicion_critica": null,
+        "descripcion": "Recupera finos de NaCl de los gases de secado.",
+        "fuente_id": "dosanclas-web-2026",
+        "cita_ubicacion": "dosanclas.com.ar"
+      },
+      {
+        "tag": "V-401",
+        "nombre": "Zarandas, dosificador KIO3 y silos",
+        "simbolo": "tank",
+        "area_id": "s4",
+        "x": 1485,
+        "y": 280,
+        "temperatura_op": "35 °C",
+        "presion_op": "1 bar",
+        "reaccion": null,
+        "condicion_critica": null,
+        "descripcion": "Clasifica fracciones industrial (cloro-soda) y alimentaria.",
+        "fuente_id": "usgs-mcs-2025-salt",
+        "cita_ubicacion": "USGS MCS 2025 Salt"
+      }
+    ],
+    "corrientes": [
+      {
+        "numero": 1,
+        "nombre": "Sal bruta de salina",
+        "tipo": "proceso",
+        "origen_tag": null,
+        "destino_tag": "M-101",
+        "puntos": [
+          [
+            208,
+            280
+          ],
+          [
+            315,
+            280
+          ]
+        ],
+        "flag_pos": [
+          258,
+          262
+        ],
+        "especies": "NaCl 96-97% + insolubles",
+        "fase": "Sólido",
+        "temperatura_c": "20",
+        "presion_bar": "1",
+        "flujo_especifico": {
+          "estado": "dato",
+          "valor": 1.15,
+          "unidad": "t/t NaCl"
+        },
+        "nota_tecnica": "Cosecha de Salinas Grandes de Hidalgo.",
+        "fuente_id": "dosanclas-web-2026",
+        "cita_ubicacion": "dosanclas.com.ar"
+      },
+      {
+        "numero": 2,
+        "nombre": "Pulpa salina molida",
+        "tipo": "proceso",
+        "origen_tag": "M-101",
+        "destino_tag": "W-201",
+        "puntos": [
+          [
+            395,
+            280
+          ],
+          [
+            650,
+            280
+          ]
+        ],
+        "flag_pos": [
+          520,
+          262
+        ],
+        "especies": "NaCl en salmuera saturada",
+        "fase": "Bifásico",
+        "temperatura_c": "20",
+        "presion_bar": "1,8",
+        "flujo_especifico": {
+          "estado": "dato",
+          "valor": 1.15,
+          "unidad": "t/t NaCl"
+        },
+        "nota_tecnica": "Ingreso a lavado selectivo contracorriente.",
+        "fuente_id": "dosanclas-web-2026",
+        "cita_ubicacion": "dosanclas.com.ar"
+      },
+      {
+        "numero": 3,
+        "nombre": "Cristales lavados >99,3%",
+        "tipo": "proceso",
+        "origen_tag": "W-201",
+        "destino_tag": "S-202",
+        "puntos": [
+          [
+            730,
+            280
+          ],
+          [
+            815,
+            280
+          ]
+        ],
+        "flag_pos": [
+          772,
+          262
+        ],
+        "especies": "NaCl purificado + salmuera",
+        "fase": "Bifásico",
+        "temperatura_c": "20",
+        "presion_bar": "1",
+        "flujo_especifico": {
+          "estado": "dato",
+          "valor": 1.02,
+          "unidad": "t/t NaCl"
+        },
+        "nota_tecnica": "Ingreso a centrífuga pusher.",
+        "fuente_id": "dosanclas-web-2026",
+        "cita_ubicacion": "dosanclas.com.ar"
+      },
+      {
+        "numero": 4,
+        "nombre": "Sal húmeda centrifugada",
+        "tipo": "proceso",
+        "origen_tag": "S-202",
+        "destino_tag": "D-301",
+        "puntos": [
+          [
+            895,
+            280
+          ],
+          [
+            1040,
+            280
+          ]
+        ],
+        "flag_pos": [
+          965,
+          262
+        ],
+        "especies": "NaCl (3% humedad)",
+        "fase": "Sólido",
+        "temperatura_c": "20",
+        "presion_bar": "1",
+        "flujo_especifico": {
+          "estado": "dato",
+          "valor": 1.01,
+          "unidad": "t/t NaCl"
+        },
+        "nota_tecnica": "Carga al lecho fluidizado térmico.",
+        "fuente_id": "dosanclas-web-2026",
+        "cita_ubicacion": "dosanclas.com.ar"
+      },
+      {
+        "numero": 5,
+        "nombre": "Salmuera de lavado usada",
+        "tipo": "subproducto",
+        "origen_tag": "S-202",
+        "destino_tag": "T-203",
+        "puntos": [
+          [
+            855,
+            325
+          ],
+          [
+            855,
+            495
+          ],
+          [
+            800,
+            495
+          ]
+        ],
+        "flag_pos": [
+          855,
+          415
+        ],
+        "especies": "Salmuera + finos CaSO4",
+        "fase": "Líquido",
+        "temperatura_c": "20",
+        "presion_bar": "1",
+        "flujo_especifico": {
+          "estado": "sin_datos",
+          "valor": null,
+          "unidad": "m3/t"
+        },
+        "nota_tecnica": "Drenaje hacia clarificador de salmuera.",
+        "fuente_id": "dosanclas-web-2026",
+        "cita_ubicacion": "dosanclas.com.ar"
+      },
+      {
+        "numero": 6,
+        "nombre": "Reciclo salmuera saturada",
+        "tipo": "reciclo",
+        "origen_tag": "T-203",
+        "destino_tag": "W-201",
+        "puntos": [
+          [
+            720,
+            495
+          ],
+          [
+            690,
+            495
+          ],
+          [
+            690,
+            325
+          ]
+        ],
+        "flag_pos": [
+          670,
+          415
+        ],
+        "especies": "NaCl 26% clarificada",
+        "fase": "Líquido",
+        "temperatura_c": "20",
+        "presion_bar": "2",
+        "flujo_especifico": {
+          "estado": "sin_datos",
+          "valor": null,
+          "unidad": "reciclo cerrado"
+        },
+        "nota_tecnica": "Retorno limpio para lavado sin pérdida de NaCl.",
+        "fuente_id": "dosanclas-web-2026",
+        "cita_ubicacion": "dosanclas.com.ar"
+      },
+      {
+        "numero": 7,
+        "nombre": "Purga de lodos y sales Mg/Ca",
+        "tipo": "emision",
+        "origen_tag": "T-203",
+        "destino_tag": null,
+        "puntos": [
+          [
+            760,
+            545
+          ],
+          [
+            760,
+            610
+          ],
+          [
+            1672,
+            610
+          ]
+        ],
+        "flag_pos": [
+          1220,
+          592
+        ],
+        "especies": "Arcillas + CaSO4 + MgCl2",
+        "fase": "Bifásico",
+        "temperatura_c": "20",
+        "presion_bar": "1",
+        "flujo_especifico": {
+          "estado": "dato",
+          "valor": 0.13,
+          "unidad": "t/t NaCl"
+        },
+        "nota_tecnica": "Retorno controlado a piletas de decantación.",
+        "fuente_id": "usgs-mcs-2025-salt",
+        "cita_ubicacion": "USGS MCS 2025 Salt"
+      },
+      {
+        "numero": 8,
+        "nombre": "NaCl seco a clasificación",
+        "tipo": "proceso",
+        "origen_tag": "D-301",
+        "destino_tag": "V-401",
+        "puntos": [
+          [
+            1130,
+            280
+          ],
+          [
+            1445,
+            280
+          ]
+        ],
+        "flag_pos": [
+          1285,
+          262
+        ],
+        "especies": "NaCl >99,3% (<0,15% H2O)",
+        "fase": "Sólido",
+        "temperatura_c": "45",
+        "presion_bar": "1",
+        "flujo_especifico": {
+          "estado": "dato",
+          "valor": 1,
+          "unidad": "t/t NaCl"
+        },
+        "nota_tecnica": "Sal seca enfriada hacia tamices.",
+        "fuente_id": "dosanclas-web-2026",
+        "cita_ubicacion": "dosanclas.com.ar"
+      },
+      {
+        "numero": 9,
+        "nombre": "Sal industrial y refinada",
+        "tipo": "proceso",
+        "origen_tag": "V-401",
+        "destino_tag": null,
+        "puntos": [
+          [
+            1525,
+            280
+          ],
+          [
+            1672,
+            280
+          ]
+        ],
+        "flag_pos": [
+          1600,
+          262
+        ],
+        "especies": "NaCl clasificado",
+        "fase": "Sólido",
+        "temperatura_c": "35",
+        "presion_bar": "1",
+        "flujo_especifico": {
+          "estado": "dato",
+          "valor": 1,
+          "unidad": "t/t NaCl"
+        },
+        "nota_tecnica": "Despacho a industria química (cloro-soda) y consumo.",
+        "fuente_id": "usgs-mcs-2025-salt",
+        "cita_ubicacion": "USGS MCS 2025 Salt"
+      },
+      {
+        "numero": 10,
+        "nombre": "Vahos húmedos abatidos",
+        "tipo": "emision",
+        "origen_tag": "D-301",
+        "destino_tag": "F-302",
+        "puntos": [
+          [
+            1085,
+            325
+          ],
+          [
+            1085,
+            450
+          ],
+          [
+            1165,
+            450
+          ]
+        ],
+        "flag_pos": [
+          1120,
+          432
+        ],
+        "especies": "Aire + vapor H2O",
+        "fase": "Gas",
+        "temperatura_c": "95",
+        "presion_bar": "1",
+        "flujo_especifico": {
+          "estado": "sin_datos",
+          "valor": null,
+          "unidad": "Nm3/t"
+        },
+        "nota_tecnica": "Filtrado de polvo salino previo a chimenea.",
+        "fuente_id": "dosanclas-web-2026",
+        "cita_ubicacion": "dosanclas.com.ar"
+      }
+    ],
+    "servicios": [
+      {
+        "id": "u1",
+        "equipo_tag": "D-301",
+        "etiqueta": "Gas natural",
+        "direccion": "entrada",
+        "x": 1085,
+        "y": 235,
+        "dx": 0,
+        "dy": -26
+      },
+      {
+        "id": "u2",
+        "equipo_tag": "V-401",
+        "etiqueta": "KIO3 (alim.)",
+        "direccion": "entrada",
+        "x": 1485,
+        "y": 225,
+        "dx": 0,
+        "dy": -26
+      }
+    ],
+    "limites_bateria": [
+      {
+        "id": "lb-in-1",
+        "lado": "entrada",
+        "categoria": "materia_prima",
+        "nombre": "Sal bruta evaporítica",
+        "formula": "NaCl (~96%)",
+        "cantidad_masa": "1,15 t/t",
+        "cantidad_molar": "19,7 kmol/t",
+        "fraccion_pureza": "Salinas Grandes LP",
+        "corriente_num": 1,
+        "y": 280,
+        "nota": "Cosecha solar estacional en Atreucó/Hucal.",
+        "fuente_id": "dosanclas-web-2026"
+      },
+      {
+        "id": "lb-out-1",
+        "lado": "salida",
+        "categoria": "producto",
+        "nombre": "Sal industrial NaCl",
+        "formula": "NaCl",
+        "cantidad_masa": "1,00 t/t",
+        "cantidad_molar": "17,1 kmol/t",
+        "fraccion_pureza": ">99,3% base seca",
+        "corriente_num": 9,
+        "y": 280,
+        "nota": "Exp. país 2024: 97,5 kt (UN Comtrade HS 2501.00).",
+        "fuente_id": "uncomtrade-ar-lote5-2024"
+      },
+      {
+        "id": "lb-out-2",
+        "lado": "salida",
+        "categoria": "emision",
+        "nombre": "Insolubles CaSO4/Mg",
+        "formula": "CaSO4 / MgCl2",
+        "cantidad_masa": "0,13 t/t",
+        "cantidad_molar": null,
+        "fraccion_pureza": "Lodo decantado",
+        "corriente_num": 7,
+        "y": 610,
+        "nota": "Impurezas separadas por lavado contracorriente.",
+        "fuente_id": "usgs-mcs-2025-salt"
+      }
+    ]
+  },
+  {
+    "proceso_id": "cemento-horno-seco-san-luis",
+    "producto_id": "cemento-clinker",
+    "titulo": "PFD ISO 10628: Cemento Portland vía Seca con Precalcinador (La Calera, San Luis)",
+    "norma_simbologia": "ISO 10628 / ASME",
+    "base_calculo": "1,00 t de clínker Portland (IPCC 2006 Cap. 2.2 y EU CLM BREF)",
+    "resumen_tecnico": "Molienda vertical de crudo (1,55 t/t clínker), precalentamiento y descarbonatación en torre ciclónica de 5 etapas (900 °C), clinkerización en horno rotativo a 1.450 °C, enfriador de parrilla y molienda con yeso.",
+    "nota_metodologica": "Factor estequiométrico de emisión de proceso según IPCC 2006 Vol. 3 Cap. 2.2 (0,52 t CO2/t clínker por descarbonatación de CaCO3).",
+    "canvas_width": 1880,
+    "canvas_height": 760,
+    "secciones": [
+      {
+        "area_id": "s1",
+        "titulo": "ÁREA 100 · MOLIENDA DE CRUDO",
+        "x": 224,
+        "y": 74,
+        "width": 340,
+        "height": 612
+      },
+      {
+        "area_id": "s2",
+        "titulo": "ÁREA 200 · PRECALCINADOR Y HORNO",
+        "x": 580,
+        "y": 74,
+        "width": 365,
+        "height": 612
+      },
+      {
+        "area_id": "s3",
+        "titulo": "ÁREA 300 · ENFRIADOR Y FILTROS",
+        "x": 961,
+        "y": 74,
+        "width": 335,
+        "height": 612
+      },
+      {
+        "area_id": "s4",
+        "titulo": "ÁREA 400 · MOLIENDA CEMENTO Y SILOS",
+        "x": 1312,
+        "y": 74,
+        "width": 344,
+        "height": 612
+      }
+    ],
+    "equipos": [
+      {
+        "tag": "M-101",
+        "nombre": "Molino vertical de crudo",
+        "simbolo": "mill_gin",
+        "area_id": "s1",
+        "x": 350,
+        "y": 280,
+        "temperatura_op": "80 °C",
+        "presion_op": "1 bar",
+        "reaccion": null,
+        "condicion_critica": "Secado integrado con gases de torre",
+        "descripcion": "Muele caliza, arcilla y hierro a harina homogénea (<90 µm).",
+        "fuente_id": "eu-bref-clm",
+        "cita_ubicacion": "EU CLM BREF Raw Mill"
+      },
+      {
+        "tag": "C-201",
+        "nombre": "Torre de 5 ciclones + precalcinador",
+        "simbolo": "column",
+        "area_id": "s2",
+        "x": 675,
+        "y": 230,
+        "temperatura_op": "900 °C",
+        "presion_op": "1 bar",
+        "reaccion": "CaCO3 -> CaO + CO2",
+        "condicion_critica": "~90% descarbonatación previa al horno",
+        "descripcion": "Recupera entalpía de gases y descarbonata la harina cruda.",
+        "fuente_id": "ipcc-2006-mineral-cap2",
+        "cita_ubicacion": "IPCC 2006 Cap. 2.2"
+      },
+      {
+        "tag": "K-202",
+        "nombre": "Horno rotativo vía seca",
+        "simbolo": "furnace",
+        "area_id": "s2",
+        "x": 855,
+        "y": 340,
+        "temperatura_op": "1450 °C",
+        "presion_op": "1 bar",
+        "reaccion": "3 CaO + SiO2 -> Ca3SiO5 (alita)",
+        "condicion_critica": "Llama principal a 2.000 °C",
+        "descripcion": "Sinteriza clínker hidráulico en nódulos.",
+        "fuente_id": "eu-bref-clm",
+        "cita_ubicacion": "EU CLM BREF Rotary Kiln"
+      },
+      {
+        "tag": "E-301",
+        "nombre": "Enfriador de parrilla + aire terciario",
+        "simbolo": "heat_exchanger",
+        "area_id": "s3",
+        "x": 1085,
+        "y": 340,
+        "temperatura_op": "100 °C",
+        "presion_op": "1 bar",
+        "reaccion": null,
+        "condicion_critica": "Templado rápido para estabilizar C3S",
+        "descripcion": "Enfría clínker y devuelve aire a 900 °C al precalcinador.",
+        "fuente_id": "eu-bref-clm",
+        "cita_ubicacion": "EU CLM BREF Grate Cooler"
+      },
+      {
+        "tag": "F-302",
+        "nombre": "Filtro de mangas principal",
+        "simbolo": "filter_baghouse",
+        "area_id": "s3",
+        "x": 1105,
+        "y": 155,
+        "temperatura_op": "130 °C",
+        "presion_op": "1 bar",
+        "reaccion": null,
+        "condicion_critica": "Emisiones particuladas <10 mg/Nm3",
+        "descripcion": "Abate polvo mineral antes de chimenea.",
+        "fuente_id": "eu-bref-clm",
+        "cita_ubicacion": "EU CLM BREF Baghouse"
+      },
+      {
+        "tag": "M-401",
+        "nombre": "Molino de cemento (clínker + yeso)",
+        "simbolo": "mill_gin",
+        "area_id": "s4",
+        "x": 1410,
+        "y": 340,
+        "temperatura_op": "95 °C",
+        "presion_op": "1 bar",
+        "reaccion": null,
+        "condicion_critica": "4-5% yeso regulador de fragüe",
+        "descripcion": "Muele clínker con yeso y adiciones minerales.",
+        "fuente_id": "cementos-avellaneda-web-2026",
+        "cita_ubicacion": "cementosavellaneda.com.ar"
+      },
+      {
+        "tag": "V-402",
+        "nombre": "Silos de cemento Portland",
+        "simbolo": "tank",
+        "area_id": "s4",
+        "x": 1565,
+        "y": 240,
+        "temperatura_op": "55 °C",
+        "presion_op": "1 bar",
+        "reaccion": null,
+        "condicion_critica": null,
+        "descripcion": "Almacenamiento y despacho granel/bolsas (La Calera).",
+        "fuente_id": "afcp-cemento-web-2026",
+        "cita_ubicacion": "afcp.org.ar"
+      }
+    ],
+    "corrientes": [
+      {
+        "numero": 1,
+        "nombre": "Caliza + arcilla + hierro",
+        "tipo": "proceso",
+        "origen_tag": null,
+        "destino_tag": "M-101",
+        "puntos": [
+          [
+            208,
+            280
+          ],
+          [
+            310,
+            280
+          ]
+        ],
+        "flag_pos": [
+          255,
+          262
+        ],
+        "especies": "CaCO3 80% + SiO2/Al2O3",
+        "fase": "Sólido",
+        "temperatura_c": "25",
+        "presion_bar": "1",
+        "flujo_especifico": {
+          "estado": "dato",
+          "valor": 1.56,
+          "unidad": "t/t clínker"
+        },
+        "nota_tecnica": "Cantera de La Calera (San Luis).",
+        "fuente_id": "ipcc-2006-mineral-cap2",
+        "cita_ubicacion": "IPCC Cap. 2.2"
+      },
+      {
+        "numero": 2,
+        "nombre": "Harina cruda homogeneizada",
+        "tipo": "proceso",
+        "origen_tag": "M-101",
+        "destino_tag": "C-201",
+        "puntos": [
+          [
+            390,
+            280
+          ],
+          [
+            640,
+            230
+          ]
+        ],
+        "flag_pos": [
+          515,
+          236
+        ],
+        "especies": "Harina cruda <90 µm",
+        "fase": "Sólido",
+        "temperatura_c": "80",
+        "presion_bar": "1",
+        "flujo_especifico": {
+          "estado": "dato",
+          "valor": 1.55,
+          "unidad": "t/t clínker"
+        },
+        "nota_tecnica": "Elevación neumática al tope de torre ciclónica.",
+        "fuente_id": "eu-bref-clm",
+        "cita_ubicacion": "EU CLM BREF"
+      },
+      {
+        "numero": 3,
+        "nombre": "Harina precalcinada",
+        "tipo": "proceso",
+        "origen_tag": "C-201",
+        "destino_tag": "K-202",
+        "puntos": [
+          [
+            710,
+            270
+          ],
+          [
+            815,
+            340
+          ]
+        ],
+        "flag_pos": [
+          765,
+          285
+        ],
+        "especies": "CaO + SiO2 + Al2O3",
+        "fase": "Sólido",
+        "temperatura_c": "900",
+        "presion_bar": "1",
+        "flujo_especifico": {
+          "estado": "dato",
+          "valor": 1.05,
+          "unidad": "t/t clínker"
+        },
+        "nota_tecnica": "Ingreso descarbonatado al horno rotativo.",
+        "fuente_id": "ipcc-2006-mineral-cap2",
+        "cita_ubicacion": "IPCC Cap. 2.2"
+      },
+      {
+        "numero": 4,
+        "nombre": "Gases de torre (CO2 proceso)",
+        "tipo": "emision",
+        "origen_tag": "C-201",
+        "destino_tag": "F-302",
+        "puntos": [
+          [
+            675,
+            165
+          ],
+          [
+            675,
+            155
+          ],
+          [
+            1065,
+            155
+          ],
+          [
+            1672,
+            155
+          ]
+        ],
+        "flag_pos": [
+          1370,
+          138
+        ],
+        "especies": "CO2 + N2 + H2O",
+        "fase": "Gas",
+        "temperatura_c": "130",
+        "presion_bar": "1",
+        "flujo_especifico": {
+          "estado": "dato",
+          "valor": 0.52,
+          "unidad": "t/t clínker"
+        },
+        "nota_tecnica": "Factor IPCC Cap. 2.2 de descarbonatación (sin combustión).",
+        "fuente_id": "ipcc-2006-mineral-cap2",
+        "cita_ubicacion": "IPCC Cap. 2.2"
+      },
+      {
+        "numero": 5,
+        "nombre": "Clínker incandescente",
+        "tipo": "proceso",
+        "origen_tag": "K-202",
+        "destino_tag": "E-301",
+        "puntos": [
+          [
+            895,
+            340
+          ],
+          [
+            1045,
+            340
+          ]
+        ],
+        "flag_pos": [
+          970,
+          322
+        ],
+        "especies": "C3S + C2S + C3A + C4AF",
+        "fase": "Sólido",
+        "temperatura_c": "1350",
+        "presion_bar": "1",
+        "flujo_especifico": {
+          "estado": "dato",
+          "valor": 1,
+          "unidad": "t/t clínker"
+        },
+        "nota_tecnica": "Descarga del horno hacia enfriador de parrilla.",
+        "fuente_id": "eu-bref-clm",
+        "cita_ubicacion": "EU CLM BREF"
+      },
+      {
+        "numero": 6,
+        "nombre": "Reciclo aire terciario",
+        "tipo": "reciclo",
+        "origen_tag": "E-301",
+        "destino_tag": "C-201",
+        "puntos": [
+          [
+            1085,
+            390
+          ],
+          [
+            1085,
+            515
+          ],
+          [
+            675,
+            515
+          ],
+          [
+            675,
+            295
+          ]
+        ],
+        "flag_pos": [
+          880,
+          497
+        ],
+        "especies": "Aire caliente",
+        "fase": "Gas",
+        "temperatura_c": "900",
+        "presion_bar": "1",
+        "flujo_especifico": {
+          "estado": "sin_datos",
+          "valor": null,
+          "unidad": "reciclo térmico"
+        },
+        "nota_tecnica": "Recuperación de calor sensible hacia el precalcinador.",
+        "fuente_id": "eu-bref-clm",
+        "cita_ubicacion": "EU CLM BREF"
+      },
+      {
+        "numero": 7,
+        "nombre": "Clínker enfriado",
+        "tipo": "proceso",
+        "origen_tag": "E-301",
+        "destino_tag": "M-401",
+        "puntos": [
+          [
+            1125,
+            340
+          ],
+          [
+            1370,
+            340
+          ]
+        ],
+        "flag_pos": [
+          1245,
+          322
+        ],
+        "especies": "Nódulos de clínker",
+        "fase": "Sólido",
+        "temperatura_c": "90",
+        "presion_bar": "1",
+        "flujo_especifico": {
+          "estado": "dato",
+          "valor": 0.85,
+          "unidad": "t/t cemento"
+        },
+        "nota_tecnica": "Alimentación principal al molino de cemento.",
+        "fuente_id": "cementos-avellaneda-web-2026",
+        "cita_ubicacion": "cementosavellaneda.com.ar"
+      },
+      {
+        "numero": 8,
+        "nombre": "Yeso y adiciones minerales",
+        "tipo": "proceso",
+        "origen_tag": null,
+        "destino_tag": "M-401",
+        "puntos": [
+          [
+            208,
+            600
+          ],
+          [
+            1410,
+            600
+          ],
+          [
+            1410,
+            390
+          ]
+        ],
+        "flag_pos": [
+          810,
+          582
+        ],
+        "especies": "CaSO4·2H2O + caliza",
+        "fase": "Sólido",
+        "temperatura_c": "25",
+        "presion_bar": "1",
+        "flujo_especifico": {
+          "estado": "dato",
+          "valor": 0.15,
+          "unidad": "t/t cemento"
+        },
+        "nota_tecnica": "Regulador de fragüe y adiciones hidráulicas.",
+        "fuente_id": "afcp-cemento-web-2026",
+        "cita_ubicacion": "afcp.org.ar"
+      },
+      {
+        "numero": 9,
+        "nombre": "Cemento Portland terminado",
+        "tipo": "proceso",
+        "origen_tag": "M-401",
+        "destino_tag": "V-402",
+        "puntos": [
+          [
+            1450,
+            320
+          ],
+          [
+            1525,
+            240
+          ],
+          [
+            1672,
+            240
+          ]
+        ],
+        "flag_pos": [
+          1595,
+          222
+        ],
+        "especies": "Cemento CPC/CPN",
+        "fase": "Sólido",
+        "temperatura_c": "55",
+        "presion_bar": "1",
+        "flujo_especifico": {
+          "estado": "dato",
+          "valor": 1,
+          "unidad": "t/t cemento"
+        },
+        "nota_tecnica": "Producto final ensilado en La Calera.",
+        "fuente_id": "cementos-avellaneda-web-2026",
+        "cita_ubicacion": "cementosavellaneda.com.ar"
+      }
+    ],
+    "servicios": [
+      {
+        "id": "u1",
+        "equipo_tag": "K-202",
+        "etiqueta": "Gas / combustible",
+        "direccion": "entrada",
+        "x": 855,
+        "y": 295,
+        "dx": 0,
+        "dy": -26
+      },
+      {
+        "id": "u2",
+        "equipo_tag": "E-301",
+        "etiqueta": "Aire frío",
+        "direccion": "entrada",
+        "x": 1085,
+        "y": 295,
+        "dx": 0,
+        "dy": -26
+      }
+    ],
+    "limites_bateria": [
+      {
+        "id": "lb-in-1",
+        "lado": "entrada",
+        "categoria": "materia_prima",
+        "nombre": "Caliza y arcilla (crudo)",
+        "formula": "CaCO3 / SiO2",
+        "cantidad_masa": "1,56 t/t clínker",
+        "cantidad_molar": null,
+        "fraccion_pureza": "Cantera La Calera",
+        "corriente_num": 1,
+        "y": 280,
+        "nota": "Aporta CaO, SiO2, Al2O3 y Fe2O3.",
+        "fuente_id": "ipcc-2006-mineral-cap2"
+      },
+      {
+        "id": "lb-in-2",
+        "lado": "entrada",
+        "categoria": "materia_prima",
+        "nombre": "Yeso y filler",
+        "formula": "CaSO4·2H2O",
+        "cantidad_masa": "0,15 t/t cemento",
+        "cantidad_molar": null,
+        "fraccion_pureza": "4-5% yeso",
+        "corriente_num": 8,
+        "y": 600,
+        "nota": "Control de fraguado del cemento.",
+        "fuente_id": "afcp-cemento-web-2026"
+      },
+      {
+        "id": "lb-out-1",
+        "lado": "salida",
+        "categoria": "producto",
+        "nombre": "Cemento Portland",
+        "formula": "C3S / C2S",
+        "cantidad_masa": "1,00 t/t cemento",
+        "cantidad_molar": null,
+        "fraccion_pureza": "Blaine >3.200",
+        "corriente_num": 9,
+        "y": 240,
+        "nota": "Abastecimiento regional y nacional.",
+        "fuente_id": "cementos-avellaneda-web-2026"
+      },
+      {
+        "id": "lb-out-2",
+        "lado": "salida",
+        "categoria": "emision",
+        "nombre": "CO2 descarbonatación",
+        "formula": "CO2",
+        "cantidad_masa": "0,52 t/t clínker",
+        "cantidad_molar": "11,8 kmol/t",
+        "fraccion_pureza": "IPCC Cap. 2.2",
+        "corriente_num": 4,
+        "y": 155,
+        "nota": "Emisión estequiométrica de proceso.",
+        "fuente_id": "ipcc-2006-mineral-cap2"
+      }
+    ]
+  },
+  {
+    "proceso_id": "citricos-aceite-jugo-concordia",
+    "producto_id": "citricos-limoneno",
+    "titulo": "PFD ISO 10628: Aceite Esencial Cítrico (D-Limoneno) y Jugo Concentrado TASTE (Entre Ríos)",
+    "norma_simbologia": "ISO 10628 / ASME",
+    "base_calculo": "1,00 t de jugo concentrado (65 °Brix) desde ~14 t de cítricos dulces",
+    "resumen_tecnico": "Extracción integral en frío separando emulsión de cáscara (centrifugada y descerada a D-limoneno C10H16 >90%), jugo simple (concentrado al vacío en evaporador TASTE) y cáscara húmeda secada a pellets.",
+    "nota_metodologica": "Balance referencial de planta citrícola moderna del corredor Concordia-Federación (EU FDM BREF + FeCiER + Federcitrus).",
+    "canvas_width": 1880,
+    "canvas_height": 760,
+    "secciones": [
+      {
+        "area_id": "s1",
+        "titulo": "ÁREA 100 · LAVADO Y EXTRACCIÓN",
+        "x": 224,
+        "y": 74,
+        "width": 340,
+        "height": 612
+      },
+      {
+        "area_id": "s2",
+        "titulo": "ÁREA 200 · ACEITE ESENCIAL D-LIMONENO",
+        "x": 580,
+        "y": 74,
+        "width": 350,
+        "height": 612
+      },
+      {
+        "area_id": "s3",
+        "titulo": "ÁREA 300 · EVAPORACIÓN TASTE AL VACÍO",
+        "x": 946,
+        "y": 74,
+        "width": 350,
+        "height": 612
+      },
+      {
+        "area_id": "s4",
+        "titulo": "ÁREA 400 · CÁSCARA SECA Y CÁMARA FRÍA",
+        "x": 1312,
+        "y": 74,
+        "width": 344,
+        "height": 612
+      }
+    ],
+    "equipos": [
+      {
+        "tag": "M-101",
+        "nombre": "Lavadora y extractores en línea",
+        "simbolo": "mill_gin",
+        "area_id": "s1",
+        "x": 355,
+        "y": 300,
+        "temperatura_op": "20 °C",
+        "presion_op": "1 bar",
+        "reaccion": null,
+        "condicion_critica": "Extracción separada de jugo y emulsión de cáscara",
+        "descripcion": "Procesa naranja y mandarina evitando amargor de albedo.",
+        "fuente_id": "eu-bref-fdm",
+        "cita_ubicacion": "EU FDM BREF Citrus Extraction"
+      },
+      {
+        "tag": "S-201",
+        "nombre": "Centrífuga desfangadora de emulsión",
+        "simbolo": "separator",
+        "area_id": "s2",
+        "x": 685,
+        "y": 185,
+        "temperatura_op": "18 °C",
+        "presion_op": "1 bar",
+        "reaccion": null,
+        "condicion_critica": "Concentra crema oleosa al 75-85%",
+        "descripcion": "Primera etapa de separación de aceite esencial.",
+        "fuente_id": "eu-bref-fdm",
+        "cita_ubicacion": "EU FDM BREF Oil Recovery"
+      },
+      {
+        "tag": "S-202",
+        "nombre": "Centrífuga pulidora + winterizador",
+        "simbolo": "tank",
+        "area_id": "s2",
+        "x": 845,
+        "y": 185,
+        "temperatura_op": "-18 °C",
+        "presion_op": "1 bar",
+        "reaccion": null,
+        "condicion_critica": "Descerado en frío sin degradación térmica",
+        "descripcion": "Obtiene aceite esencial cristalino rico en D-limoneno C10H16.",
+        "fuente_id": "federcitrus-web-2026",
+        "cita_ubicacion": "federcitrus.org"
+      },
+      {
+        "tag": "F-301",
+        "nombre": "Finisher y clarificador de jugo",
+        "simbolo": "filter_baghouse",
+        "area_id": "s3",
+        "x": 1035,
+        "y": 310,
+        "temperatura_op": "18 °C",
+        "presion_op": "1 bar",
+        "reaccion": null,
+        "condicion_critica": "Ajuste de pulpa flotante",
+        "descripcion": "Separa semillas y exceso de pulpa previo a evaporación.",
+        "fuente_id": "eu-bref-fdm",
+        "cita_ubicacion": "EU FDM BREF"
+      },
+      {
+        "tag": "C-302",
+        "nombre": "Evaporador multiefecto TASTE (vacío)",
+        "simbolo": "column",
+        "area_id": "s3",
+        "x": 1195,
+        "y": 310,
+        "temperatura_op": "45-92 °C",
+        "presion_op": "0,2 bar",
+        "reaccion": null,
+        "condicion_critica": "Residencia corta (<3 min) preservando vitamina C y aroma",
+        "descripcion": "Concentra el jugo de 11 °Brix a 65 °Brix al vacío.",
+        "fuente_id": "eu-bref-fdm",
+        "cita_ubicacion": "EU FDM BREF TASTE Evaporator"
+      },
+      {
+        "tag": "D-401",
+        "nombre": "Prensa con cal y secador de cáscara",
+        "simbolo": "dryer_bed",
+        "area_id": "s4",
+        "x": 1445,
+        "y": 495,
+        "temperatura_op": "110 °C",
+        "presion_op": "1 bar",
+        "reaccion": null,
+        "condicion_critica": "Valorización integral de cáscara agotada",
+        "descripcion": "Deshidrata cáscara prensada a pellets para pectina y forraje.",
+        "fuente_id": "fecier-web-2026",
+        "cita_ubicacion": "fecier.org.ar"
+      },
+      {
+        "tag": "T-402",
+        "nombre": "Tanques asépticos / cámara -18 °C",
+        "simbolo": "tank",
+        "area_id": "s4",
+        "x": 1555,
+        "y": 310,
+        "temperatura_op": "-18 °C",
+        "presion_op": "1 bar",
+        "reaccion": null,
+        "condicion_critica": null,
+        "descripcion": "Almacenamiento en tambores de jugo 65 °Brix para exportación.",
+        "fuente_id": "fecier-web-2026",
+        "cita_ubicacion": "fecier.org.ar"
+      }
+    ],
+    "corrientes": [
+      {
+        "numero": 1,
+        "nombre": "Cítricos dulces frescos",
+        "tipo": "proceso",
+        "origen_tag": null,
+        "destino_tag": "M-101",
+        "puntos": [
+          [
+            208,
+            300
+          ],
+          [
+            315,
+            300
+          ]
+        ],
+        "flag_pos": [
+          258,
+          282
+        ],
+        "especies": "Naranja / mandarina",
+        "fase": "Sólido",
+        "temperatura_c": "20",
+        "presion_bar": "1",
+        "flujo_especifico": {
+          "estado": "dato",
+          "valor": 14,
+          "unidad": "t/t concentrado"
+        },
+        "nota_tecnica": "Cuenca Concordia y Federación (Entre Ríos).",
+        "fuente_id": "fecier-web-2026",
+        "cita_ubicacion": "fecier.org.ar"
+      },
+      {
+        "numero": 2,
+        "nombre": "Emulsión fría de cáscara",
+        "tipo": "proceso",
+        "origen_tag": "M-101",
+        "destino_tag": "S-201",
+        "puntos": [
+          [
+            395,
+            260
+          ],
+          [
+            645,
+            185
+          ]
+        ],
+        "flag_pos": [
+          520,
+          204
+        ],
+        "especies": "Agua + C10H16",
+        "fase": "Líquido",
+        "temperatura_c": "18",
+        "presion_bar": "1",
+        "flujo_especifico": {
+          "estado": "sin_datos",
+          "valor": null,
+          "unidad": "m3/t"
+        },
+        "nota_tecnica": "Emulsión acuosa desde raspado del flavedo.",
+        "fuente_id": "eu-bref-fdm",
+        "cita_ubicacion": "EU FDM BREF"
+      },
+      {
+        "numero": 3,
+        "nombre": "Crema oleosa concentrada",
+        "tipo": "proceso",
+        "origen_tag": "S-201",
+        "destino_tag": "S-202",
+        "puntos": [
+          [
+            725,
+            185
+          ],
+          [
+            805,
+            185
+          ]
+        ],
+        "flag_pos": [
+          765,
+          167
+        ],
+        "especies": "D-limoneno + ceras",
+        "fase": "Líquido",
+        "temperatura_c": "18",
+        "presion_bar": "1",
+        "flujo_especifico": {
+          "estado": "dato",
+          "valor": 0.045,
+          "unidad": "t/t concentrado"
+        },
+        "nota_tecnica": "Ingreso a pulidora y winterización en frío.",
+        "fuente_id": "eu-bref-fdm",
+        "cita_ubicacion": "EU FDM BREF"
+      },
+      {
+        "numero": 4,
+        "nombre": "Aceite esencial D-limoneno",
+        "tipo": "proceso",
+        "origen_tag": "S-202",
+        "destino_tag": null,
+        "puntos": [
+          [
+            885,
+            185
+          ],
+          [
+            1672,
+            185
+          ]
+        ],
+        "flag_pos": [
+          1280,
+          167
+        ],
+        "especies": "C10H16 (>90% D-limoneno)",
+        "fase": "Líquido",
+        "temperatura_c": "5",
+        "presion_bar": "1",
+        "flujo_especifico": {
+          "estado": "dato",
+          "valor": 0.043,
+          "unidad": "t/t concentrado"
+        },
+        "nota_tecnica": "Comercio exterior HS 3301.12 (aromas y solventes).",
+        "fuente_id": "uncomtrade-ar-lote5-2024",
+        "cita_ubicacion": "UN Comtrade HS 330112"
+      },
+      {
+        "numero": 5,
+        "nombre": "Reciclo agua clarificada",
+        "tipo": "reciclo",
+        "origen_tag": "S-201",
+        "destino_tag": "M-101",
+        "puntos": [
+          [
+            685,
+            140
+          ],
+          [
+            685,
+            105
+          ],
+          [
+            355,
+            105
+          ],
+          [
+            355,
+            250
+          ]
+        ],
+        "flag_pos": [
+          520,
+          90
+        ],
+        "especies": "Agua de emulsión",
+        "fase": "Líquido",
+        "temperatura_c": "18",
+        "presion_bar": "2",
+        "flujo_especifico": {
+          "estado": "sin_datos",
+          "valor": null,
+          "unidad": "reciclo cerrado"
+        },
+        "nota_tecnica": "Reduce consumo de agua fresca en extracción.",
+        "fuente_id": "eu-bref-fdm",
+        "cita_ubicacion": "EU FDM BREF"
+      },
+      {
+        "numero": 6,
+        "nombre": "Jugo simple crudo",
+        "tipo": "proceso",
+        "origen_tag": "M-101",
+        "destino_tag": "F-301",
+        "puntos": [
+          [
+            395,
+            310
+          ],
+          [
+            995,
+            310
+          ]
+        ],
+        "flag_pos": [
+          695,
+          292
+        ],
+        "especies": "Jugo 11-12 °Brix",
+        "fase": "Líquido",
+        "temperatura_c": "18",
+        "presion_bar": "1",
+        "flujo_especifico": {
+          "estado": "dato",
+          "valor": 6.2,
+          "unidad": "t/t concentrado"
+        },
+        "nota_tecnica": "Corriente principal hacia clarificación.",
+        "fuente_id": "eu-bref-fdm",
+        "cita_ubicacion": "EU FDM BREF"
+      },
+      {
+        "numero": 7,
+        "nombre": "Jugo filtrado a TASTE",
+        "tipo": "proceso",
+        "origen_tag": "F-301",
+        "destino_tag": "C-302",
+        "puntos": [
+          [
+            1075,
+            310
+          ],
+          [
+            1155,
+            310
+          ]
+        ],
+        "flag_pos": [
+          1115,
+          292
+        ],
+        "especies": "Jugo clarificado",
+        "fase": "Líquido",
+        "temperatura_c": "20",
+        "presion_bar": "1,5",
+        "flujo_especifico": {
+          "estado": "dato",
+          "valor": 6.2,
+          "unidad": "t/t concentrado"
+        },
+        "nota_tecnica": "Alimentación a evaporador de 5-7 efectos.",
+        "fuente_id": "eu-bref-fdm",
+        "cita_ubicacion": "EU FDM BREF"
+      },
+      {
+        "numero": 8,
+        "nombre": "Jugo concentrado 65 °Brix",
+        "tipo": "proceso",
+        "origen_tag": "C-302",
+        "destino_tag": "T-402",
+        "puntos": [
+          [
+            1235,
+            310
+          ],
+          [
+            1515,
+            310
+          ],
+          [
+            1672,
+            310
+          ]
+        ],
+        "flag_pos": [
+          1375,
+          292
+        ],
+        "especies": "Concentrado 65 °Brix",
+        "fase": "Líquido",
+        "temperatura_c": "-18",
+        "presion_bar": "1",
+        "flujo_especifico": {
+          "estado": "dato",
+          "valor": 1,
+          "unidad": "t/t concentrado"
+        },
+        "nota_tecnica": "Exp. país 2024: 9.778 t / USD 35,2 M (HS 2009.11).",
+        "fuente_id": "uncomtrade-ar-lote5-2024",
+        "cita_ubicacion": "UN Comtrade 2024 HS 200911"
+      },
+      {
+        "numero": 9,
+        "nombre": "Cáscara húmeda a secado",
+        "tipo": "subproducto",
+        "origen_tag": "M-101",
+        "destino_tag": "D-401",
+        "puntos": [
+          [
+            355,
+            355
+          ],
+          [
+            355,
+            495
+          ],
+          [
+            1400,
+            495
+          ]
+        ],
+        "flag_pos": [
+          880,
+          477
+        ],
+        "especies": "Cáscara + pulpa húmeda",
+        "fase": "Sólido",
+        "temperatura_c": "20",
+        "presion_bar": "1",
+        "flujo_especifico": {
+          "estado": "dato",
+          "valor": 6.8,
+          "unidad": "t/t concentrado"
+        },
+        "nota_tecnica": "Biomasa húmeda hacia prensado con cal.",
+        "fuente_id": "fecier-web-2026",
+        "cita_ubicacion": "fecier.org.ar"
+      },
+      {
+        "numero": 10,
+        "nombre": "Pellets de cáscara deshidratada",
+        "tipo": "subproducto",
+        "origen_tag": "D-401",
+        "destino_tag": null,
+        "puntos": [
+          [
+            1490,
+            495
+          ],
+          [
+            1672,
+            495
+          ]
+        ],
+        "flag_pos": [
+          1585,
+          477
+        ],
+        "especies": "Cáscara seca (pectina/fibra)",
+        "fase": "Sólido",
+        "temperatura_c": "40",
+        "presion_bar": "1",
+        "flujo_especifico": {
+          "estado": "dato",
+          "valor": 1.35,
+          "unidad": "t/t concentrado"
+        },
+        "nota_tecnica": "Subproducto comercial de aprovechamiento integral.",
+        "fuente_id": "fecier-web-2026",
+        "cita_ubicacion": "fecier.org.ar"
+      }
+    ],
+    "servicios": [
+      {
+        "id": "u1",
+        "equipo_tag": "C-302",
+        "etiqueta": "Vapor + Vacío",
+        "direccion": "entrada",
+        "x": 1195,
+        "y": 245,
+        "dx": 0,
+        "dy": -26
+      },
+      {
+        "id": "u2",
+        "equipo_tag": "D-401",
+        "etiqueta": "Ca(OH)2 + Gas",
+        "direccion": "entrada",
+        "x": 1445,
+        "y": 450,
+        "dx": 0,
+        "dy": -26
+      }
+    ],
+    "limites_bateria": [
+      {
+        "id": "lb-in-1",
+        "lado": "entrada",
+        "categoria": "materia_prima",
+        "nombre": "Cítricos frescos",
+        "formula": "Fruta fresca",
+        "cantidad_masa": "14,0 t/t conc.",
+        "cantidad_molar": null,
+        "fraccion_pureza": "11-12 °Brix",
+        "corriente_num": 1,
+        "y": 300,
+        "nota": "Naranja y mandarina de Entre Ríos.",
+        "fuente_id": "fecier-web-2026"
+      },
+      {
+        "id": "lb-out-1",
+        "lado": "salida",
+        "categoria": "producto",
+        "nombre": "Aceite esencial D-limoneno",
+        "formula": "C10H16",
+        "cantidad_masa": "0,043 t/t conc.",
+        "cantidad_molar": "0,32 kmol/t",
+        "fraccion_pureza": ">90% D-limoneno",
+        "corriente_num": 4,
+        "y": 185,
+        "nota": "Aromas, química fina y solvente bio.",
+        "fuente_id": "federcitrus-web-2026"
+      },
+      {
+        "id": "lb-out-2",
+        "lado": "salida",
+        "categoria": "producto",
+        "nombre": "Jugo concentrado 65 °Brix",
+        "formula": "Concentrado",
+        "cantidad_masa": "1,00 t/t",
+        "cantidad_molar": null,
+        "fraccion_pureza": "65 °Brix (-18 °C)",
+        "corriente_num": 8,
+        "y": 310,
+        "nota": "Exp. 2024: USD 35,2 M (HS 2009.11).",
+        "fuente_id": "uncomtrade-ar-lote5-2024"
+      },
+      {
+        "id": "lb-out-3",
+        "lado": "salida",
+        "categoria": "subproducto",
+        "nombre": "Cáscara seca / pectina",
+        "formula": "Fibra cítrica",
+        "cantidad_masa": "1,35 t/t conc.",
+        "cantidad_molar": null,
+        "fraccion_pureza": "<10% humedad",
+        "corriente_num": 10,
+        "y": 495,
+        "nota": "Aprovechamiento integral de cáscara.",
+        "fuente_id": "fecier-web-2026"
+      }
+    ]
   }
 ]

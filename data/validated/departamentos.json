@@ -187,5 +187,59 @@
     "tiene_datos_confiables": true,
     "cobertura_datos": "completa",
     "nota_cobertura": "Corredor foresto-industrial del Alto Paraná misionero (abastecimiento de madera de pino y pasta Kraft)."
+  },
+  {
+    "departamento_id": "94008",
+    "provincia_id": "94",
+    "nombre": "Río Grande",
+    "tipo_zona": "polo_industrial",
+    "tiene_datos_confiables": true,
+    "cobertura_datos": "completa",
+    "nota_cobertura": "Cabecera terrestre de la Cuenca Austral (Río Cullen / Cañadón Alfa): acondicionamiento de gas natural y fraccionamiento de GLP y gasolina natural."
+  },
+  {
+    "departamento_id": "42007",
+    "provincia_id": "42",
+    "nombre": "Atreucó",
+    "tipo_zona": "minero",
+    "tiene_datos_confiables": true,
+    "cobertura_datos": "completa",
+    "nota_cobertura": "Salinas Grandes de Hidalgo (área Macachín / Hidalgo), mayor centro histórico de cosecha y refinación de sal industrial NaCl de Argentina."
+  },
+  {
+    "departamento_id": "42077",
+    "provincia_id": "42",
+    "nombre": "Hucal",
+    "tipo_zona": "minero",
+    "tiene_datos_confiables": true,
+    "cobertura_datos": "completa",
+    "nota_cobertura": "Salina Colorada Grande (General San Martín), cuenca evaporítica pampeana de cloruro de sodio para industria química y ganadera."
+  },
+  {
+    "departamento_id": "74014",
+    "provincia_id": "74",
+    "nombre": "Belgrano",
+    "tipo_zona": "minero",
+    "tiene_datos_confiables": true,
+    "cobertura_datos": "completa",
+    "nota_cobertura": "Localidad de La Calera, sede de la planta integrada de clínker y cemento Portland vía seca de Cementos Avellaneda S.A."
+  },
+  {
+    "departamento_id": "30015",
+    "provincia_id": "30",
+    "nombre": "Concordia",
+    "tipo_zona": "agro",
+    "tiene_datos_confiables": true,
+    "cobertura_datos": "completa",
+    "nota_cobertura": "Eje industrial citrícola de Entre Ríos para extracción en frío de aceite esencial D-limoneno y evaporación de jugo concentrado."
+  },
+  {
+    "departamento_id": "30028",
+    "provincia_id": "30",
+    "nombre": "Federación",
+    "tipo_zona": "agro",
+    "tiene_datos_confiables": true,
+    "cobertura_datos": "completa",
+    "nota_cobertura": "Cuenca productora primaria de naranjas y mandarinas que abastece a las plantas de jugos concentrados y aceites esenciales de Entre Ríos."
   }
 ]

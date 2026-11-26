@@ -4338,5 +4338,1245 @@
       "cita_ubicacion": "UN Comtrade 2024 HS 283620 netWgt=null (volumen físico no reportado)",
       "confianza": "alta"
     }
+  },
+  {
+    "registro_id": "comex-glp-271112-2023-usd",
+    "producto_id": "glp-gas-natural",
+    "anio": 2023,
+    "ncm_codigo": "2711.12",
+    "metrica": "valor_usd",
+    "exportacion": {
+      "estado": "dato",
+      "valor": 233.95,
+      "unidad": "millones USD",
+      "procedencia": {
+        "anio": 2023,
+        "fuente_id": "uncomtrade-ar-lote5-2023",
+        "fuente": "UN Comtrade: comercio exterior de Argentina HS 271112/271113 (GLP), 250100 (Sal), 252329/252310 (Cemento) y 200911/330112 (Cítricos) 2023",
+        "url": "https://comtradeapi.un.org/public/v1/preview/C/A/HS?reporterCode=32&period=2023&partnerCode=0&partner2Code=0&customsCode=C00&motCode=0&cmdCode=271112,271113,250100,252329,252310,330112,200911",
+        "fecha_descarga": "2026-11-26",
+        "hash": "sha256:152b35f834d173a2e80f4bdfdce05aa6aca4744f05dba87186bd14d0465c680b",
+        "cita_ubicacion": "UN Comtrade 2023 Argentina HS 271112 (Propano licuado)",
+        "confianza": "alta"
+      }
+    },
+    "importacion": {
+      "estado": "dato",
+      "valor": 0.12,
+      "unidad": "millones USD",
+      "procedencia": {
+        "anio": 2023,
+        "fuente_id": "uncomtrade-ar-lote5-2023",
+        "fuente": "UN Comtrade: comercio exterior de Argentina HS 271112/271113 (GLP), 250100 (Sal), 252329/252310 (Cemento) y 200911/330112 (Cítricos) 2023",
+        "url": "https://comtradeapi.un.org/public/v1/preview/C/A/HS?reporterCode=32&period=2023&partnerCode=0&partner2Code=0&customsCode=C00&motCode=0&cmdCode=271112,271113,250100,252329,252310,330112,200911",
+        "fecha_descarga": "2026-11-26",
+        "hash": "sha256:152b35f834d173a2e80f4bdfdce05aa6aca4744f05dba87186bd14d0465c680b",
+        "cita_ubicacion": "UN Comtrade 2023 Argentina HS 271112 (Propano licuado)",
+        "confianza": "alta"
+      }
+    },
+    "saldo_comercial": {
+      "estado": "dato",
+      "valor": 233.83,
+      "unidad": "millones USD",
+      "procedencia": {
+        "anio": 2023,
+        "fuente_id": "uncomtrade-ar-lote5-2023",
+        "fuente": "UN Comtrade: comercio exterior de Argentina HS 271112/271113 (GLP), 250100 (Sal), 252329/252310 (Cemento) y 200911/330112 (Cítricos) 2023",
+        "url": "https://comtradeapi.un.org/public/v1/preview/C/A/HS?reporterCode=32&period=2023&partnerCode=0&partner2Code=0&customsCode=C00&motCode=0&cmdCode=271112,271113,250100,252329,252310,330112,200911",
+        "fecha_descarga": "2026-11-26",
+        "hash": "sha256:152b35f834d173a2e80f4bdfdce05aa6aca4744f05dba87186bd14d0465c680b",
+        "cita_ubicacion": "UN Comtrade 2023 Argentina HS 271112 (Propano licuado)",
+        "confianza": "alta"
+      }
+    },
+    "procedencia": {
+      "anio": 2023,
+      "fuente_id": "uncomtrade-ar-lote5-2023",
+      "fuente": "UN Comtrade: comercio exterior de Argentina HS 271112/271113 (GLP), 250100 (Sal), 252329/252310 (Cemento) y 200911/330112 (Cítricos) 2023",
+      "url": "https://comtradeapi.un.org/public/v1/preview/C/A/HS?reporterCode=32&period=2023&partnerCode=0&partner2Code=0&customsCode=C00&motCode=0&cmdCode=271112,271113,250100,252329,252310,330112,200911",
+      "fecha_descarga": "2026-11-26",
+      "hash": "sha256:152b35f834d173a2e80f4bdfdce05aa6aca4744f05dba87186bd14d0465c680b",
+      "cita_ubicacion": "UN Comtrade 2023 Argentina HS 271112 (Propano licuado)",
+      "confianza": "alta"
+    }
+  },
+  {
+    "registro_id": "comex-glp-271112-2023-t",
+    "producto_id": "glp-gas-natural",
+    "anio": 2023,
+    "ncm_codigo": "2711.12",
+    "metrica": "volumen_t",
+    "exportacion": {
+      "estado": "dato",
+      "valor": 532551.6,
+      "unidad": "t",
+      "procedencia": {
+        "anio": 2023,
+        "fuente_id": "uncomtrade-ar-lote5-2023",
+        "fuente": "UN Comtrade: comercio exterior de Argentina HS 271112/271113 (GLP), 250100 (Sal), 252329/252310 (Cemento) y 200911/330112 (Cítricos) 2023",
+        "url": "https://comtradeapi.un.org/public/v1/preview/C/A/HS?reporterCode=32&period=2023&partnerCode=0&partner2Code=0&customsCode=C00&motCode=0&cmdCode=271112,271113,250100,252329,252310,330112,200911",
+        "fecha_descarga": "2026-11-26",
+        "hash": "sha256:152b35f834d173a2e80f4bdfdce05aa6aca4744f05dba87186bd14d0465c680b",
+        "cita_ubicacion": "UN Comtrade 2023 Argentina HS 271112 volumen físico",
+        "confianza": "alta"
+      }
+    },
+    "importacion": {
+      "estado": "dato",
+      "valor": 29.1,
+      "unidad": "t",
+      "procedencia": {
+        "anio": 2023,
+        "fuente_id": "uncomtrade-ar-lote5-2023",
+        "fuente": "UN Comtrade: comercio exterior de Argentina HS 271112/271113 (GLP), 250100 (Sal), 252329/252310 (Cemento) y 200911/330112 (Cítricos) 2023",
+        "url": "https://comtradeapi.un.org/public/v1/preview/C/A/HS?reporterCode=32&period=2023&partnerCode=0&partner2Code=0&customsCode=C00&motCode=0&cmdCode=271112,271113,250100,252329,252310,330112,200911",
+        "fecha_descarga": "2026-11-26",
+        "hash": "sha256:152b35f834d173a2e80f4bdfdce05aa6aca4744f05dba87186bd14d0465c680b",
+        "cita_ubicacion": "UN Comtrade 2023 Argentina HS 271112 volumen físico",
+        "confianza": "alta"
+      }
+    },
+    "saldo_comercial": {
+      "estado": "dato",
+      "valor": 532522.5,
+      "unidad": "t",
+      "procedencia": {
+        "anio": 2023,
+        "fuente_id": "uncomtrade-ar-lote5-2023",
+        "fuente": "UN Comtrade: comercio exterior de Argentina HS 271112/271113 (GLP), 250100 (Sal), 252329/252310 (Cemento) y 200911/330112 (Cítricos) 2023",
+        "url": "https://comtradeapi.un.org/public/v1/preview/C/A/HS?reporterCode=32&period=2023&partnerCode=0&partner2Code=0&customsCode=C00&motCode=0&cmdCode=271112,271113,250100,252329,252310,330112,200911",
+        "fecha_descarga": "2026-11-26",
+        "hash": "sha256:152b35f834d173a2e80f4bdfdce05aa6aca4744f05dba87186bd14d0465c680b",
+        "cita_ubicacion": "UN Comtrade 2023 Argentina HS 271112 volumen físico",
+        "confianza": "alta"
+      }
+    },
+    "procedencia": {
+      "anio": 2023,
+      "fuente_id": "uncomtrade-ar-lote5-2023",
+      "fuente": "UN Comtrade: comercio exterior de Argentina HS 271112/271113 (GLP), 250100 (Sal), 252329/252310 (Cemento) y 200911/330112 (Cítricos) 2023",
+      "url": "https://comtradeapi.un.org/public/v1/preview/C/A/HS?reporterCode=32&period=2023&partnerCode=0&partner2Code=0&customsCode=C00&motCode=0&cmdCode=271112,271113,250100,252329,252310,330112,200911",
+      "fecha_descarga": "2026-11-26",
+      "hash": "sha256:152b35f834d173a2e80f4bdfdce05aa6aca4744f05dba87186bd14d0465c680b",
+      "cita_ubicacion": "UN Comtrade 2023 Argentina HS 271112 volumen físico",
+      "confianza": "alta"
+    }
+  },
+  {
+    "registro_id": "comex-glp-271112-2024-usd",
+    "producto_id": "glp-gas-natural",
+    "anio": 2024,
+    "ncm_codigo": "2711.12",
+    "metrica": "valor_usd",
+    "exportacion": {
+      "estado": "dato",
+      "valor": 173.47,
+      "unidad": "millones USD",
+      "procedencia": {
+        "anio": 2024,
+        "fuente_id": "uncomtrade-ar-lote5-2024",
+        "fuente": "UN Comtrade: comercio exterior de Argentina HS 271112/271113 (GLP), 250100 (Sal), 252329/252310 (Cemento) y 200911/330112 (Cítricos) 2024",
+        "url": "https://comtradeapi.un.org/public/v1/preview/C/A/HS?reporterCode=32&period=2024&partnerCode=0&partner2Code=0&customsCode=C00&motCode=0&cmdCode=271112,271113,250100,252329,252310,330112,200911",
+        "fecha_descarga": "2026-11-26",
+        "hash": "sha256:098fe2d108f3db3731180e391466d2f01165deeb00598d2acf652372d4611ec1",
+        "cita_ubicacion": "UN Comtrade 2024 Argentina HS 271112 (Propano licuado)",
+        "confianza": "alta"
+      }
+    },
+    "importacion": {
+      "estado": "dato",
+      "valor": 0.22,
+      "unidad": "millones USD",
+      "procedencia": {
+        "anio": 2024,
+        "fuente_id": "uncomtrade-ar-lote5-2024",
+        "fuente": "UN Comtrade: comercio exterior de Argentina HS 271112/271113 (GLP), 250100 (Sal), 252329/252310 (Cemento) y 200911/330112 (Cítricos) 2024",
+        "url": "https://comtradeapi.un.org/public/v1/preview/C/A/HS?reporterCode=32&period=2024&partnerCode=0&partner2Code=0&customsCode=C00&motCode=0&cmdCode=271112,271113,250100,252329,252310,330112,200911",
+        "fecha_descarga": "2026-11-26",
+        "hash": "sha256:098fe2d108f3db3731180e391466d2f01165deeb00598d2acf652372d4611ec1",
+        "cita_ubicacion": "UN Comtrade 2024 Argentina HS 271112 (Propano licuado)",
+        "confianza": "alta"
+      }
+    },
+    "saldo_comercial": {
+      "estado": "dato",
+      "valor": 173.25,
+      "unidad": "millones USD",
+      "procedencia": {
+        "anio": 2024,
+        "fuente_id": "uncomtrade-ar-lote5-2024",
+        "fuente": "UN Comtrade: comercio exterior de Argentina HS 271112/271113 (GLP), 250100 (Sal), 252329/252310 (Cemento) y 200911/330112 (Cítricos) 2024",
+        "url": "https://comtradeapi.un.org/public/v1/preview/C/A/HS?reporterCode=32&period=2024&partnerCode=0&partner2Code=0&customsCode=C00&motCode=0&cmdCode=271112,271113,250100,252329,252310,330112,200911",
+        "fecha_descarga": "2026-11-26",
+        "hash": "sha256:098fe2d108f3db3731180e391466d2f01165deeb00598d2acf652372d4611ec1",
+        "cita_ubicacion": "UN Comtrade 2024 Argentina HS 271112 (Propano licuado)",
+        "confianza": "alta"
+      }
+    },
+    "procedencia": {
+      "anio": 2024,
+      "fuente_id": "uncomtrade-ar-lote5-2024",
+      "fuente": "UN Comtrade: comercio exterior de Argentina HS 271112/271113 (GLP), 250100 (Sal), 252329/252310 (Cemento) y 200911/330112 (Cítricos) 2024",
+      "url": "https://comtradeapi.un.org/public/v1/preview/C/A/HS?reporterCode=32&period=2024&partnerCode=0&partner2Code=0&customsCode=C00&motCode=0&cmdCode=271112,271113,250100,252329,252310,330112,200911",
+      "fecha_descarga": "2026-11-26",
+      "hash": "sha256:098fe2d108f3db3731180e391466d2f01165deeb00598d2acf652372d4611ec1",
+      "cita_ubicacion": "UN Comtrade 2024 Argentina HS 271112 (Propano licuado)",
+      "confianza": "alta"
+    }
+  },
+  {
+    "registro_id": "comex-glp-271112-2024-t",
+    "producto_id": "glp-gas-natural",
+    "anio": 2024,
+    "ncm_codigo": "2711.12",
+    "metrica": "volumen_t",
+    "exportacion": {
+      "estado": "dato",
+      "valor": 363776.1,
+      "unidad": "t",
+      "procedencia": {
+        "anio": 2024,
+        "fuente_id": "uncomtrade-ar-lote5-2024",
+        "fuente": "UN Comtrade: comercio exterior de Argentina HS 271112/271113 (GLP), 250100 (Sal), 252329/252310 (Cemento) y 200911/330112 (Cítricos) 2024",
+        "url": "https://comtradeapi.un.org/public/v1/preview/C/A/HS?reporterCode=32&period=2024&partnerCode=0&partner2Code=0&customsCode=C00&motCode=0&cmdCode=271112,271113,250100,252329,252310,330112,200911",
+        "fecha_descarga": "2026-11-26",
+        "hash": "sha256:098fe2d108f3db3731180e391466d2f01165deeb00598d2acf652372d4611ec1",
+        "cita_ubicacion": "UN Comtrade 2024 Argentina HS 271112 volumen físico (imp. netWgt=null)",
+        "confianza": "alta"
+      }
+    },
+    "importacion": {
+      "estado": "sin_datos",
+      "valor": null,
+      "unidad": null,
+      "procedencia": {
+        "anio": 2024,
+        "fuente_id": "uncomtrade-ar-lote5-2024",
+        "fuente": "UN Comtrade: comercio exterior de Argentina HS 271112/271113 (GLP), 250100 (Sal), 252329/252310 (Cemento) y 200911/330112 (Cítricos) 2024",
+        "url": "https://comtradeapi.un.org/public/v1/preview/C/A/HS?reporterCode=32&period=2024&partnerCode=0&partner2Code=0&customsCode=C00&motCode=0&cmdCode=271112,271113,250100,252329,252310,330112,200911",
+        "fecha_descarga": "2026-11-26",
+        "hash": "sha256:098fe2d108f3db3731180e391466d2f01165deeb00598d2acf652372d4611ec1",
+        "cita_ubicacion": "UN Comtrade 2024 Argentina HS 271112 volumen físico (imp. netWgt=null)",
+        "confianza": "alta"
+      }
+    },
+    "saldo_comercial": {
+      "estado": "sin_datos",
+      "valor": null,
+      "unidad": null,
+      "procedencia": {
+        "anio": 2024,
+        "fuente_id": "uncomtrade-ar-lote5-2024",
+        "fuente": "UN Comtrade: comercio exterior de Argentina HS 271112/271113 (GLP), 250100 (Sal), 252329/252310 (Cemento) y 200911/330112 (Cítricos) 2024",
+        "url": "https://comtradeapi.un.org/public/v1/preview/C/A/HS?reporterCode=32&period=2024&partnerCode=0&partner2Code=0&customsCode=C00&motCode=0&cmdCode=271112,271113,250100,252329,252310,330112,200911",
+        "fecha_descarga": "2026-11-26",
+        "hash": "sha256:098fe2d108f3db3731180e391466d2f01165deeb00598d2acf652372d4611ec1",
+        "cita_ubicacion": "UN Comtrade 2024 Argentina HS 271112 volumen físico (imp. netWgt=null)",
+        "confianza": "alta"
+      }
+    },
+    "procedencia": {
+      "anio": 2024,
+      "fuente_id": "uncomtrade-ar-lote5-2024",
+      "fuente": "UN Comtrade: comercio exterior de Argentina HS 271112/271113 (GLP), 250100 (Sal), 252329/252310 (Cemento) y 200911/330112 (Cítricos) 2024",
+      "url": "https://comtradeapi.un.org/public/v1/preview/C/A/HS?reporterCode=32&period=2024&partnerCode=0&partner2Code=0&customsCode=C00&motCode=0&cmdCode=271112,271113,250100,252329,252310,330112,200911",
+      "fecha_descarga": "2026-11-26",
+      "hash": "sha256:098fe2d108f3db3731180e391466d2f01165deeb00598d2acf652372d4611ec1",
+      "cita_ubicacion": "UN Comtrade 2024 Argentina HS 271112 volumen físico (imp. netWgt=null)",
+      "confianza": "alta"
+    }
+  },
+  {
+    "registro_id": "comex-glp-271113-2023-usd",
+    "producto_id": "glp-gas-natural",
+    "anio": 2023,
+    "ncm_codigo": "2711.13",
+    "metrica": "valor_usd",
+    "exportacion": {
+      "estado": "dato",
+      "valor": 182.71,
+      "unidad": "millones USD",
+      "procedencia": {
+        "anio": 2023,
+        "fuente_id": "uncomtrade-ar-lote5-2023",
+        "fuente": "UN Comtrade: comercio exterior de Argentina HS 271112/271113 (GLP), 250100 (Sal), 252329/252310 (Cemento) y 200911/330112 (Cítricos) 2023",
+        "url": "https://comtradeapi.un.org/public/v1/preview/C/A/HS?reporterCode=32&period=2023&partnerCode=0&partner2Code=0&customsCode=C00&motCode=0&cmdCode=271112,271113,250100,252329,252310,330112,200911",
+        "fecha_descarga": "2026-11-26",
+        "hash": "sha256:152b35f834d173a2e80f4bdfdce05aa6aca4744f05dba87186bd14d0465c680b",
+        "cita_ubicacion": "UN Comtrade 2023 Argentina HS 271113 (Butanos licuados)",
+        "confianza": "alta"
+      }
+    },
+    "importacion": {
+      "estado": "dato",
+      "valor": 1.53,
+      "unidad": "millones USD",
+      "procedencia": {
+        "anio": 2023,
+        "fuente_id": "uncomtrade-ar-lote5-2023",
+        "fuente": "UN Comtrade: comercio exterior de Argentina HS 271112/271113 (GLP), 250100 (Sal), 252329/252310 (Cemento) y 200911/330112 (Cítricos) 2023",
+        "url": "https://comtradeapi.un.org/public/v1/preview/C/A/HS?reporterCode=32&period=2023&partnerCode=0&partner2Code=0&customsCode=C00&motCode=0&cmdCode=271112,271113,250100,252329,252310,330112,200911",
+        "fecha_descarga": "2026-11-26",
+        "hash": "sha256:152b35f834d173a2e80f4bdfdce05aa6aca4744f05dba87186bd14d0465c680b",
+        "cita_ubicacion": "UN Comtrade 2023 Argentina HS 271113 (Butanos licuados)",
+        "confianza": "alta"
+      }
+    },
+    "saldo_comercial": {
+      "estado": "dato",
+      "valor": 181.18,
+      "unidad": "millones USD",
+      "procedencia": {
+        "anio": 2023,
+        "fuente_id": "uncomtrade-ar-lote5-2023",
+        "fuente": "UN Comtrade: comercio exterior de Argentina HS 271112/271113 (GLP), 250100 (Sal), 252329/252310 (Cemento) y 200911/330112 (Cítricos) 2023",
+        "url": "https://comtradeapi.un.org/public/v1/preview/C/A/HS?reporterCode=32&period=2023&partnerCode=0&partner2Code=0&customsCode=C00&motCode=0&cmdCode=271112,271113,250100,252329,252310,330112,200911",
+        "fecha_descarga": "2026-11-26",
+        "hash": "sha256:152b35f834d173a2e80f4bdfdce05aa6aca4744f05dba87186bd14d0465c680b",
+        "cita_ubicacion": "UN Comtrade 2023 Argentina HS 271113 (Butanos licuados)",
+        "confianza": "alta"
+      }
+    },
+    "procedencia": {
+      "anio": 2023,
+      "fuente_id": "uncomtrade-ar-lote5-2023",
+      "fuente": "UN Comtrade: comercio exterior de Argentina HS 271112/271113 (GLP), 250100 (Sal), 252329/252310 (Cemento) y 200911/330112 (Cítricos) 2023",
+      "url": "https://comtradeapi.un.org/public/v1/preview/C/A/HS?reporterCode=32&period=2023&partnerCode=0&partner2Code=0&customsCode=C00&motCode=0&cmdCode=271112,271113,250100,252329,252310,330112,200911",
+      "fecha_descarga": "2026-11-26",
+      "hash": "sha256:152b35f834d173a2e80f4bdfdce05aa6aca4744f05dba87186bd14d0465c680b",
+      "cita_ubicacion": "UN Comtrade 2023 Argentina HS 271113 (Butanos licuados)",
+      "confianza": "alta"
+    }
+  },
+  {
+    "registro_id": "comex-glp-271113-2024-usd",
+    "producto_id": "glp-gas-natural",
+    "anio": 2024,
+    "ncm_codigo": "2711.13",
+    "metrica": "valor_usd",
+    "exportacion": {
+      "estado": "dato",
+      "valor": 175.1,
+      "unidad": "millones USD",
+      "procedencia": {
+        "anio": 2024,
+        "fuente_id": "uncomtrade-ar-lote5-2024",
+        "fuente": "UN Comtrade: comercio exterior de Argentina HS 271112/271113 (GLP), 250100 (Sal), 252329/252310 (Cemento) y 200911/330112 (Cítricos) 2024",
+        "url": "https://comtradeapi.un.org/public/v1/preview/C/A/HS?reporterCode=32&period=2024&partnerCode=0&partner2Code=0&customsCode=C00&motCode=0&cmdCode=271112,271113,250100,252329,252310,330112,200911",
+        "fecha_descarga": "2026-11-26",
+        "hash": "sha256:098fe2d108f3db3731180e391466d2f01165deeb00598d2acf652372d4611ec1",
+        "cita_ubicacion": "UN Comtrade 2024 Argentina HS 271113 (Butanos licuados)",
+        "confianza": "alta"
+      }
+    },
+    "importacion": {
+      "estado": "dato",
+      "valor": 1.34,
+      "unidad": "millones USD",
+      "procedencia": {
+        "anio": 2024,
+        "fuente_id": "uncomtrade-ar-lote5-2024",
+        "fuente": "UN Comtrade: comercio exterior de Argentina HS 271112/271113 (GLP), 250100 (Sal), 252329/252310 (Cemento) y 200911/330112 (Cítricos) 2024",
+        "url": "https://comtradeapi.un.org/public/v1/preview/C/A/HS?reporterCode=32&period=2024&partnerCode=0&partner2Code=0&customsCode=C00&motCode=0&cmdCode=271112,271113,250100,252329,252310,330112,200911",
+        "fecha_descarga": "2026-11-26",
+        "hash": "sha256:098fe2d108f3db3731180e391466d2f01165deeb00598d2acf652372d4611ec1",
+        "cita_ubicacion": "UN Comtrade 2024 Argentina HS 271113 (Butanos licuados)",
+        "confianza": "alta"
+      }
+    },
+    "saldo_comercial": {
+      "estado": "dato",
+      "valor": 173.76,
+      "unidad": "millones USD",
+      "procedencia": {
+        "anio": 2024,
+        "fuente_id": "uncomtrade-ar-lote5-2024",
+        "fuente": "UN Comtrade: comercio exterior de Argentina HS 271112/271113 (GLP), 250100 (Sal), 252329/252310 (Cemento) y 200911/330112 (Cítricos) 2024",
+        "url": "https://comtradeapi.un.org/public/v1/preview/C/A/HS?reporterCode=32&period=2024&partnerCode=0&partner2Code=0&customsCode=C00&motCode=0&cmdCode=271112,271113,250100,252329,252310,330112,200911",
+        "fecha_descarga": "2026-11-26",
+        "hash": "sha256:098fe2d108f3db3731180e391466d2f01165deeb00598d2acf652372d4611ec1",
+        "cita_ubicacion": "UN Comtrade 2024 Argentina HS 271113 (Butanos licuados)",
+        "confianza": "alta"
+      }
+    },
+    "procedencia": {
+      "anio": 2024,
+      "fuente_id": "uncomtrade-ar-lote5-2024",
+      "fuente": "UN Comtrade: comercio exterior de Argentina HS 271112/271113 (GLP), 250100 (Sal), 252329/252310 (Cemento) y 200911/330112 (Cítricos) 2024",
+      "url": "https://comtradeapi.un.org/public/v1/preview/C/A/HS?reporterCode=32&period=2024&partnerCode=0&partner2Code=0&customsCode=C00&motCode=0&cmdCode=271112,271113,250100,252329,252310,330112,200911",
+      "fecha_descarga": "2026-11-26",
+      "hash": "sha256:098fe2d108f3db3731180e391466d2f01165deeb00598d2acf652372d4611ec1",
+      "cita_ubicacion": "UN Comtrade 2024 Argentina HS 271113 (Butanos licuados)",
+      "confianza": "alta"
+    }
+  },
+  {
+    "registro_id": "comex-glp-271113-2024-t",
+    "producto_id": "glp-gas-natural",
+    "anio": 2024,
+    "ncm_codigo": "2711.13",
+    "metrica": "volumen_t",
+    "exportacion": {
+      "estado": "dato",
+      "valor": 352733.2,
+      "unidad": "t",
+      "procedencia": {
+        "anio": 2024,
+        "fuente_id": "uncomtrade-ar-lote5-2024",
+        "fuente": "UN Comtrade: comercio exterior de Argentina HS 271112/271113 (GLP), 250100 (Sal), 252329/252310 (Cemento) y 200911/330112 (Cítricos) 2024",
+        "url": "https://comtradeapi.un.org/public/v1/preview/C/A/HS?reporterCode=32&period=2024&partnerCode=0&partner2Code=0&customsCode=C00&motCode=0&cmdCode=271112,271113,250100,252329,252310,330112,200911",
+        "fecha_descarga": "2026-11-26",
+        "hash": "sha256:098fe2d108f3db3731180e391466d2f01165deeb00598d2acf652372d4611ec1",
+        "cita_ubicacion": "UN Comtrade 2024 Argentina HS 271113 volumen físico",
+        "confianza": "alta"
+      }
+    },
+    "importacion": {
+      "estado": "dato",
+      "valor": 419.4,
+      "unidad": "t",
+      "procedencia": {
+        "anio": 2024,
+        "fuente_id": "uncomtrade-ar-lote5-2024",
+        "fuente": "UN Comtrade: comercio exterior de Argentina HS 271112/271113 (GLP), 250100 (Sal), 252329/252310 (Cemento) y 200911/330112 (Cítricos) 2024",
+        "url": "https://comtradeapi.un.org/public/v1/preview/C/A/HS?reporterCode=32&period=2024&partnerCode=0&partner2Code=0&customsCode=C00&motCode=0&cmdCode=271112,271113,250100,252329,252310,330112,200911",
+        "fecha_descarga": "2026-11-26",
+        "hash": "sha256:098fe2d108f3db3731180e391466d2f01165deeb00598d2acf652372d4611ec1",
+        "cita_ubicacion": "UN Comtrade 2024 Argentina HS 271113 volumen físico",
+        "confianza": "alta"
+      }
+    },
+    "saldo_comercial": {
+      "estado": "dato",
+      "valor": 352313.8,
+      "unidad": "t",
+      "procedencia": {
+        "anio": 2024,
+        "fuente_id": "uncomtrade-ar-lote5-2024",
+        "fuente": "UN Comtrade: comercio exterior de Argentina HS 271112/271113 (GLP), 250100 (Sal), 252329/252310 (Cemento) y 200911/330112 (Cítricos) 2024",
+        "url": "https://comtradeapi.un.org/public/v1/preview/C/A/HS?reporterCode=32&period=2024&partnerCode=0&partner2Code=0&customsCode=C00&motCode=0&cmdCode=271112,271113,250100,252329,252310,330112,200911",
+        "fecha_descarga": "2026-11-26",
+        "hash": "sha256:098fe2d108f3db3731180e391466d2f01165deeb00598d2acf652372d4611ec1",
+        "cita_ubicacion": "UN Comtrade 2024 Argentina HS 271113 volumen físico",
+        "confianza": "alta"
+      }
+    },
+    "procedencia": {
+      "anio": 2024,
+      "fuente_id": "uncomtrade-ar-lote5-2024",
+      "fuente": "UN Comtrade: comercio exterior de Argentina HS 271112/271113 (GLP), 250100 (Sal), 252329/252310 (Cemento) y 200911/330112 (Cítricos) 2024",
+      "url": "https://comtradeapi.un.org/public/v1/preview/C/A/HS?reporterCode=32&period=2024&partnerCode=0&partner2Code=0&customsCode=C00&motCode=0&cmdCode=271112,271113,250100,252329,252310,330112,200911",
+      "fecha_descarga": "2026-11-26",
+      "hash": "sha256:098fe2d108f3db3731180e391466d2f01165deeb00598d2acf652372d4611ec1",
+      "cita_ubicacion": "UN Comtrade 2024 Argentina HS 271113 volumen físico",
+      "confianza": "alta"
+    }
+  },
+  {
+    "registro_id": "comex-sal-250100-2023-usd",
+    "producto_id": "sal-industrial",
+    "anio": 2023,
+    "ncm_codigo": "2501.00",
+    "metrica": "valor_usd",
+    "exportacion": {
+      "estado": "dato",
+      "valor": 2.35,
+      "unidad": "millones USD",
+      "procedencia": {
+        "anio": 2023,
+        "fuente_id": "uncomtrade-ar-lote5-2023",
+        "fuente": "UN Comtrade: comercio exterior de Argentina HS 271112/271113 (GLP), 250100 (Sal), 252329/252310 (Cemento) y 200911/330112 (Cítricos) 2023",
+        "url": "https://comtradeapi.un.org/public/v1/preview/C/A/HS?reporterCode=32&period=2023&partnerCode=0&partner2Code=0&customsCode=C00&motCode=0&cmdCode=271112,271113,250100,252329,252310,330112,200911",
+        "fecha_descarga": "2026-11-26",
+        "hash": "sha256:152b35f834d173a2e80f4bdfdce05aa6aca4744f05dba87186bd14d0465c680b",
+        "cita_ubicacion": "UN Comtrade 2023 Argentina HS 250100 (Sal y NaCl puro)",
+        "confianza": "alta"
+      }
+    },
+    "importacion": {
+      "estado": "dato",
+      "valor": 6.41,
+      "unidad": "millones USD",
+      "procedencia": {
+        "anio": 2023,
+        "fuente_id": "uncomtrade-ar-lote5-2023",
+        "fuente": "UN Comtrade: comercio exterior de Argentina HS 271112/271113 (GLP), 250100 (Sal), 252329/252310 (Cemento) y 200911/330112 (Cítricos) 2023",
+        "url": "https://comtradeapi.un.org/public/v1/preview/C/A/HS?reporterCode=32&period=2023&partnerCode=0&partner2Code=0&customsCode=C00&motCode=0&cmdCode=271112,271113,250100,252329,252310,330112,200911",
+        "fecha_descarga": "2026-11-26",
+        "hash": "sha256:152b35f834d173a2e80f4bdfdce05aa6aca4744f05dba87186bd14d0465c680b",
+        "cita_ubicacion": "UN Comtrade 2023 Argentina HS 250100 (Sal y NaCl puro)",
+        "confianza": "alta"
+      }
+    },
+    "saldo_comercial": {
+      "estado": "dato",
+      "valor": -4.06,
+      "unidad": "millones USD",
+      "procedencia": {
+        "anio": 2023,
+        "fuente_id": "uncomtrade-ar-lote5-2023",
+        "fuente": "UN Comtrade: comercio exterior de Argentina HS 271112/271113 (GLP), 250100 (Sal), 252329/252310 (Cemento) y 200911/330112 (Cítricos) 2023",
+        "url": "https://comtradeapi.un.org/public/v1/preview/C/A/HS?reporterCode=32&period=2023&partnerCode=0&partner2Code=0&customsCode=C00&motCode=0&cmdCode=271112,271113,250100,252329,252310,330112,200911",
+        "fecha_descarga": "2026-11-26",
+        "hash": "sha256:152b35f834d173a2e80f4bdfdce05aa6aca4744f05dba87186bd14d0465c680b",
+        "cita_ubicacion": "UN Comtrade 2023 Argentina HS 250100 (Sal y NaCl puro)",
+        "confianza": "alta"
+      }
+    },
+    "procedencia": {
+      "anio": 2023,
+      "fuente_id": "uncomtrade-ar-lote5-2023",
+      "fuente": "UN Comtrade: comercio exterior de Argentina HS 271112/271113 (GLP), 250100 (Sal), 252329/252310 (Cemento) y 200911/330112 (Cítricos) 2023",
+      "url": "https://comtradeapi.un.org/public/v1/preview/C/A/HS?reporterCode=32&period=2023&partnerCode=0&partner2Code=0&customsCode=C00&motCode=0&cmdCode=271112,271113,250100,252329,252310,330112,200911",
+      "fecha_descarga": "2026-11-26",
+      "hash": "sha256:152b35f834d173a2e80f4bdfdce05aa6aca4744f05dba87186bd14d0465c680b",
+      "cita_ubicacion": "UN Comtrade 2023 Argentina HS 250100 (Sal y NaCl puro)",
+      "confianza": "alta"
+    }
+  },
+  {
+    "registro_id": "comex-sal-250100-2023-t",
+    "producto_id": "sal-industrial",
+    "anio": 2023,
+    "ncm_codigo": "2501.00",
+    "metrica": "volumen_t",
+    "exportacion": {
+      "estado": "dato",
+      "valor": 51104.3,
+      "unidad": "t",
+      "procedencia": {
+        "anio": 2023,
+        "fuente_id": "uncomtrade-ar-lote5-2023",
+        "fuente": "UN Comtrade: comercio exterior de Argentina HS 271112/271113 (GLP), 250100 (Sal), 252329/252310 (Cemento) y 200911/330112 (Cítricos) 2023",
+        "url": "https://comtradeapi.un.org/public/v1/preview/C/A/HS?reporterCode=32&period=2023&partnerCode=0&partner2Code=0&customsCode=C00&motCode=0&cmdCode=271112,271113,250100,252329,252310,330112,200911",
+        "fecha_descarga": "2026-11-26",
+        "hash": "sha256:152b35f834d173a2e80f4bdfdce05aa6aca4744f05dba87186bd14d0465c680b",
+        "cita_ubicacion": "UN Comtrade 2023 Argentina HS 250100 volumen físico",
+        "confianza": "alta"
+      }
+    },
+    "importacion": {
+      "estado": "dato",
+      "valor": 82054.1,
+      "unidad": "t",
+      "procedencia": {
+        "anio": 2023,
+        "fuente_id": "uncomtrade-ar-lote5-2023",
+        "fuente": "UN Comtrade: comercio exterior de Argentina HS 271112/271113 (GLP), 250100 (Sal), 252329/252310 (Cemento) y 200911/330112 (Cítricos) 2023",
+        "url": "https://comtradeapi.un.org/public/v1/preview/C/A/HS?reporterCode=32&period=2023&partnerCode=0&partner2Code=0&customsCode=C00&motCode=0&cmdCode=271112,271113,250100,252329,252310,330112,200911",
+        "fecha_descarga": "2026-11-26",
+        "hash": "sha256:152b35f834d173a2e80f4bdfdce05aa6aca4744f05dba87186bd14d0465c680b",
+        "cita_ubicacion": "UN Comtrade 2023 Argentina HS 250100 volumen físico",
+        "confianza": "alta"
+      }
+    },
+    "saldo_comercial": {
+      "estado": "dato",
+      "valor": -30949.8,
+      "unidad": "t",
+      "procedencia": {
+        "anio": 2023,
+        "fuente_id": "uncomtrade-ar-lote5-2023",
+        "fuente": "UN Comtrade: comercio exterior de Argentina HS 271112/271113 (GLP), 250100 (Sal), 252329/252310 (Cemento) y 200911/330112 (Cítricos) 2023",
+        "url": "https://comtradeapi.un.org/public/v1/preview/C/A/HS?reporterCode=32&period=2023&partnerCode=0&partner2Code=0&customsCode=C00&motCode=0&cmdCode=271112,271113,250100,252329,252310,330112,200911",
+        "fecha_descarga": "2026-11-26",
+        "hash": "sha256:152b35f834d173a2e80f4bdfdce05aa6aca4744f05dba87186bd14d0465c680b",
+        "cita_ubicacion": "UN Comtrade 2023 Argentina HS 250100 volumen físico",
+        "confianza": "alta"
+      }
+    },
+    "procedencia": {
+      "anio": 2023,
+      "fuente_id": "uncomtrade-ar-lote5-2023",
+      "fuente": "UN Comtrade: comercio exterior de Argentina HS 271112/271113 (GLP), 250100 (Sal), 252329/252310 (Cemento) y 200911/330112 (Cítricos) 2023",
+      "url": "https://comtradeapi.un.org/public/v1/preview/C/A/HS?reporterCode=32&period=2023&partnerCode=0&partner2Code=0&customsCode=C00&motCode=0&cmdCode=271112,271113,250100,252329,252310,330112,200911",
+      "fecha_descarga": "2026-11-26",
+      "hash": "sha256:152b35f834d173a2e80f4bdfdce05aa6aca4744f05dba87186bd14d0465c680b",
+      "cita_ubicacion": "UN Comtrade 2023 Argentina HS 250100 volumen físico",
+      "confianza": "alta"
+    }
+  },
+  {
+    "registro_id": "comex-sal-250100-2024-usd",
+    "producto_id": "sal-industrial",
+    "anio": 2024,
+    "ncm_codigo": "2501.00",
+    "metrica": "valor_usd",
+    "exportacion": {
+      "estado": "dato",
+      "valor": 2.05,
+      "unidad": "millones USD",
+      "procedencia": {
+        "anio": 2024,
+        "fuente_id": "uncomtrade-ar-lote5-2024",
+        "fuente": "UN Comtrade: comercio exterior de Argentina HS 271112/271113 (GLP), 250100 (Sal), 252329/252310 (Cemento) y 200911/330112 (Cítricos) 2024",
+        "url": "https://comtradeapi.un.org/public/v1/preview/C/A/HS?reporterCode=32&period=2024&partnerCode=0&partner2Code=0&customsCode=C00&motCode=0&cmdCode=271112,271113,250100,252329,252310,330112,200911",
+        "fecha_descarga": "2026-11-26",
+        "hash": "sha256:098fe2d108f3db3731180e391466d2f01165deeb00598d2acf652372d4611ec1",
+        "cita_ubicacion": "UN Comtrade 2024 Argentina HS 250100 (Sal y NaCl puro)",
+        "confianza": "alta"
+      }
+    },
+    "importacion": {
+      "estado": "dato",
+      "valor": 8.38,
+      "unidad": "millones USD",
+      "procedencia": {
+        "anio": 2024,
+        "fuente_id": "uncomtrade-ar-lote5-2024",
+        "fuente": "UN Comtrade: comercio exterior de Argentina HS 271112/271113 (GLP), 250100 (Sal), 252329/252310 (Cemento) y 200911/330112 (Cítricos) 2024",
+        "url": "https://comtradeapi.un.org/public/v1/preview/C/A/HS?reporterCode=32&period=2024&partnerCode=0&partner2Code=0&customsCode=C00&motCode=0&cmdCode=271112,271113,250100,252329,252310,330112,200911",
+        "fecha_descarga": "2026-11-26",
+        "hash": "sha256:098fe2d108f3db3731180e391466d2f01165deeb00598d2acf652372d4611ec1",
+        "cita_ubicacion": "UN Comtrade 2024 Argentina HS 250100 (Sal y NaCl puro)",
+        "confianza": "alta"
+      }
+    },
+    "saldo_comercial": {
+      "estado": "dato",
+      "valor": -6.33,
+      "unidad": "millones USD",
+      "procedencia": {
+        "anio": 2024,
+        "fuente_id": "uncomtrade-ar-lote5-2024",
+        "fuente": "UN Comtrade: comercio exterior de Argentina HS 271112/271113 (GLP), 250100 (Sal), 252329/252310 (Cemento) y 200911/330112 (Cítricos) 2024",
+        "url": "https://comtradeapi.un.org/public/v1/preview/C/A/HS?reporterCode=32&period=2024&partnerCode=0&partner2Code=0&customsCode=C00&motCode=0&cmdCode=271112,271113,250100,252329,252310,330112,200911",
+        "fecha_descarga": "2026-11-26",
+        "hash": "sha256:098fe2d108f3db3731180e391466d2f01165deeb00598d2acf652372d4611ec1",
+        "cita_ubicacion": "UN Comtrade 2024 Argentina HS 250100 (Sal y NaCl puro)",
+        "confianza": "alta"
+      }
+    },
+    "procedencia": {
+      "anio": 2024,
+      "fuente_id": "uncomtrade-ar-lote5-2024",
+      "fuente": "UN Comtrade: comercio exterior de Argentina HS 271112/271113 (GLP), 250100 (Sal), 252329/252310 (Cemento) y 200911/330112 (Cítricos) 2024",
+      "url": "https://comtradeapi.un.org/public/v1/preview/C/A/HS?reporterCode=32&period=2024&partnerCode=0&partner2Code=0&customsCode=C00&motCode=0&cmdCode=271112,271113,250100,252329,252310,330112,200911",
+      "fecha_descarga": "2026-11-26",
+      "hash": "sha256:098fe2d108f3db3731180e391466d2f01165deeb00598d2acf652372d4611ec1",
+      "cita_ubicacion": "UN Comtrade 2024 Argentina HS 250100 (Sal y NaCl puro)",
+      "confianza": "alta"
+    }
+  },
+  {
+    "registro_id": "comex-sal-250100-2024-t",
+    "producto_id": "sal-industrial",
+    "anio": 2024,
+    "ncm_codigo": "2501.00",
+    "metrica": "volumen_t",
+    "exportacion": {
+      "estado": "dato",
+      "valor": 97499,
+      "unidad": "t",
+      "procedencia": {
+        "anio": 2024,
+        "fuente_id": "uncomtrade-ar-lote5-2024",
+        "fuente": "UN Comtrade: comercio exterior de Argentina HS 271112/271113 (GLP), 250100 (Sal), 252329/252310 (Cemento) y 200911/330112 (Cítricos) 2024",
+        "url": "https://comtradeapi.un.org/public/v1/preview/C/A/HS?reporterCode=32&period=2024&partnerCode=0&partner2Code=0&customsCode=C00&motCode=0&cmdCode=271112,271113,250100,252329,252310,330112,200911",
+        "fecha_descarga": "2026-11-26",
+        "hash": "sha256:098fe2d108f3db3731180e391466d2f01165deeb00598d2acf652372d4611ec1",
+        "cita_ubicacion": "UN Comtrade 2024 Argentina HS 250100 volumen físico",
+        "confianza": "alta"
+      }
+    },
+    "importacion": {
+      "estado": "dato",
+      "valor": 126770.2,
+      "unidad": "t",
+      "procedencia": {
+        "anio": 2024,
+        "fuente_id": "uncomtrade-ar-lote5-2024",
+        "fuente": "UN Comtrade: comercio exterior de Argentina HS 271112/271113 (GLP), 250100 (Sal), 252329/252310 (Cemento) y 200911/330112 (Cítricos) 2024",
+        "url": "https://comtradeapi.un.org/public/v1/preview/C/A/HS?reporterCode=32&period=2024&partnerCode=0&partner2Code=0&customsCode=C00&motCode=0&cmdCode=271112,271113,250100,252329,252310,330112,200911",
+        "fecha_descarga": "2026-11-26",
+        "hash": "sha256:098fe2d108f3db3731180e391466d2f01165deeb00598d2acf652372d4611ec1",
+        "cita_ubicacion": "UN Comtrade 2024 Argentina HS 250100 volumen físico",
+        "confianza": "alta"
+      }
+    },
+    "saldo_comercial": {
+      "estado": "dato",
+      "valor": -29271.2,
+      "unidad": "t",
+      "procedencia": {
+        "anio": 2024,
+        "fuente_id": "uncomtrade-ar-lote5-2024",
+        "fuente": "UN Comtrade: comercio exterior de Argentina HS 271112/271113 (GLP), 250100 (Sal), 252329/252310 (Cemento) y 200911/330112 (Cítricos) 2024",
+        "url": "https://comtradeapi.un.org/public/v1/preview/C/A/HS?reporterCode=32&period=2024&partnerCode=0&partner2Code=0&customsCode=C00&motCode=0&cmdCode=271112,271113,250100,252329,252310,330112,200911",
+        "fecha_descarga": "2026-11-26",
+        "hash": "sha256:098fe2d108f3db3731180e391466d2f01165deeb00598d2acf652372d4611ec1",
+        "cita_ubicacion": "UN Comtrade 2024 Argentina HS 250100 volumen físico",
+        "confianza": "alta"
+      }
+    },
+    "procedencia": {
+      "anio": 2024,
+      "fuente_id": "uncomtrade-ar-lote5-2024",
+      "fuente": "UN Comtrade: comercio exterior de Argentina HS 271112/271113 (GLP), 250100 (Sal), 252329/252310 (Cemento) y 200911/330112 (Cítricos) 2024",
+      "url": "https://comtradeapi.un.org/public/v1/preview/C/A/HS?reporterCode=32&period=2024&partnerCode=0&partner2Code=0&customsCode=C00&motCode=0&cmdCode=271112,271113,250100,252329,252310,330112,200911",
+      "fecha_descarga": "2026-11-26",
+      "hash": "sha256:098fe2d108f3db3731180e391466d2f01165deeb00598d2acf652372d4611ec1",
+      "cita_ubicacion": "UN Comtrade 2024 Argentina HS 250100 volumen físico",
+      "confianza": "alta"
+    }
+  },
+  {
+    "registro_id": "comex-cemento-252329-2023-usd",
+    "producto_id": "cemento-clinker",
+    "anio": 2023,
+    "ncm_codigo": "2523.29",
+    "metrica": "valor_usd",
+    "exportacion": {
+      "estado": "sin_datos",
+      "valor": null,
+      "unidad": null,
+      "procedencia": {
+        "anio": 2023,
+        "fuente_id": "uncomtrade-ar-lote5-2023",
+        "fuente": "UN Comtrade: comercio exterior de Argentina HS 271112/271113 (GLP), 250100 (Sal), 252329/252310 (Cemento) y 200911/330112 (Cítricos) 2023",
+        "url": "https://comtradeapi.un.org/public/v1/preview/C/A/HS?reporterCode=32&period=2023&partnerCode=0&partner2Code=0&customsCode=C00&motCode=0&cmdCode=271112,271113,250100,252329,252310,330112,200911",
+        "fecha_descarga": "2026-11-26",
+        "hash": "sha256:152b35f834d173a2e80f4bdfdce05aa6aca4744f05dba87186bd14d0465c680b",
+        "cita_ubicacion": "UN Comtrade 2023 Argentina HS 252329 (Cemento Portland; imp. USD 731, sin flujo X en preview)",
+        "confianza": "alta"
+      }
+    },
+    "importacion": {
+      "estado": "dato",
+      "valor": 0.001,
+      "unidad": "millones USD",
+      "procedencia": {
+        "anio": 2023,
+        "fuente_id": "uncomtrade-ar-lote5-2023",
+        "fuente": "UN Comtrade: comercio exterior de Argentina HS 271112/271113 (GLP), 250100 (Sal), 252329/252310 (Cemento) y 200911/330112 (Cítricos) 2023",
+        "url": "https://comtradeapi.un.org/public/v1/preview/C/A/HS?reporterCode=32&period=2023&partnerCode=0&partner2Code=0&customsCode=C00&motCode=0&cmdCode=271112,271113,250100,252329,252310,330112,200911",
+        "fecha_descarga": "2026-11-26",
+        "hash": "sha256:152b35f834d173a2e80f4bdfdce05aa6aca4744f05dba87186bd14d0465c680b",
+        "cita_ubicacion": "UN Comtrade 2023 Argentina HS 252329 (Cemento Portland; imp. USD 731, sin flujo X en preview)",
+        "confianza": "alta"
+      }
+    },
+    "saldo_comercial": {
+      "estado": "sin_datos",
+      "valor": null,
+      "unidad": null,
+      "procedencia": {
+        "anio": 2023,
+        "fuente_id": "uncomtrade-ar-lote5-2023",
+        "fuente": "UN Comtrade: comercio exterior de Argentina HS 271112/271113 (GLP), 250100 (Sal), 252329/252310 (Cemento) y 200911/330112 (Cítricos) 2023",
+        "url": "https://comtradeapi.un.org/public/v1/preview/C/A/HS?reporterCode=32&period=2023&partnerCode=0&partner2Code=0&customsCode=C00&motCode=0&cmdCode=271112,271113,250100,252329,252310,330112,200911",
+        "fecha_descarga": "2026-11-26",
+        "hash": "sha256:152b35f834d173a2e80f4bdfdce05aa6aca4744f05dba87186bd14d0465c680b",
+        "cita_ubicacion": "UN Comtrade 2023 Argentina HS 252329 (Cemento Portland; imp. USD 731, sin flujo X en preview)",
+        "confianza": "alta"
+      }
+    },
+    "procedencia": {
+      "anio": 2023,
+      "fuente_id": "uncomtrade-ar-lote5-2023",
+      "fuente": "UN Comtrade: comercio exterior de Argentina HS 271112/271113 (GLP), 250100 (Sal), 252329/252310 (Cemento) y 200911/330112 (Cítricos) 2023",
+      "url": "https://comtradeapi.un.org/public/v1/preview/C/A/HS?reporterCode=32&period=2023&partnerCode=0&partner2Code=0&customsCode=C00&motCode=0&cmdCode=271112,271113,250100,252329,252310,330112,200911",
+      "fecha_descarga": "2026-11-26",
+      "hash": "sha256:152b35f834d173a2e80f4bdfdce05aa6aca4744f05dba87186bd14d0465c680b",
+      "cita_ubicacion": "UN Comtrade 2023 Argentina HS 252329 (Cemento Portland; imp. USD 731, sin flujo X en preview)",
+      "confianza": "alta"
+    }
+  },
+  {
+    "registro_id": "comex-cemento-252329-2024-usd",
+    "producto_id": "cemento-clinker",
+    "anio": 2024,
+    "ncm_codigo": "2523.29",
+    "metrica": "valor_usd",
+    "exportacion": {
+      "estado": "sin_datos",
+      "valor": null,
+      "unidad": null,
+      "procedencia": {
+        "anio": 2024,
+        "fuente_id": "uncomtrade-ar-lote5-2024",
+        "fuente": "UN Comtrade: comercio exterior de Argentina HS 271112/271113 (GLP), 250100 (Sal), 252329/252310 (Cemento) y 200911/330112 (Cítricos) 2024",
+        "url": "https://comtradeapi.un.org/public/v1/preview/C/A/HS?reporterCode=32&period=2024&partnerCode=0&partner2Code=0&customsCode=C00&motCode=0&cmdCode=271112,271113,250100,252329,252310,330112,200911",
+        "fecha_descarga": "2026-11-26",
+        "hash": "sha256:098fe2d108f3db3731180e391466d2f01165deeb00598d2acf652372d4611ec1",
+        "cita_ubicacion": "UN Comtrade 2024 Argentina HS 252329 (Cemento Portland; imp. USD 15.677, abasto mayoritario local)",
+        "confianza": "alta"
+      }
+    },
+    "importacion": {
+      "estado": "dato",
+      "valor": 0.02,
+      "unidad": "millones USD",
+      "procedencia": {
+        "anio": 2024,
+        "fuente_id": "uncomtrade-ar-lote5-2024",
+        "fuente": "UN Comtrade: comercio exterior de Argentina HS 271112/271113 (GLP), 250100 (Sal), 252329/252310 (Cemento) y 200911/330112 (Cítricos) 2024",
+        "url": "https://comtradeapi.un.org/public/v1/preview/C/A/HS?reporterCode=32&period=2024&partnerCode=0&partner2Code=0&customsCode=C00&motCode=0&cmdCode=271112,271113,250100,252329,252310,330112,200911",
+        "fecha_descarga": "2026-11-26",
+        "hash": "sha256:098fe2d108f3db3731180e391466d2f01165deeb00598d2acf652372d4611ec1",
+        "cita_ubicacion": "UN Comtrade 2024 Argentina HS 252329 (Cemento Portland; imp. USD 15.677, abasto mayoritario local)",
+        "confianza": "alta"
+      }
+    },
+    "saldo_comercial": {
+      "estado": "sin_datos",
+      "valor": null,
+      "unidad": null,
+      "procedencia": {
+        "anio": 2024,
+        "fuente_id": "uncomtrade-ar-lote5-2024",
+        "fuente": "UN Comtrade: comercio exterior de Argentina HS 271112/271113 (GLP), 250100 (Sal), 252329/252310 (Cemento) y 200911/330112 (Cítricos) 2024",
+        "url": "https://comtradeapi.un.org/public/v1/preview/C/A/HS?reporterCode=32&period=2024&partnerCode=0&partner2Code=0&customsCode=C00&motCode=0&cmdCode=271112,271113,250100,252329,252310,330112,200911",
+        "fecha_descarga": "2026-11-26",
+        "hash": "sha256:098fe2d108f3db3731180e391466d2f01165deeb00598d2acf652372d4611ec1",
+        "cita_ubicacion": "UN Comtrade 2024 Argentina HS 252329 (Cemento Portland; imp. USD 15.677, abasto mayoritario local)",
+        "confianza": "alta"
+      }
+    },
+    "procedencia": {
+      "anio": 2024,
+      "fuente_id": "uncomtrade-ar-lote5-2024",
+      "fuente": "UN Comtrade: comercio exterior de Argentina HS 271112/271113 (GLP), 250100 (Sal), 252329/252310 (Cemento) y 200911/330112 (Cítricos) 2024",
+      "url": "https://comtradeapi.un.org/public/v1/preview/C/A/HS?reporterCode=32&period=2024&partnerCode=0&partner2Code=0&customsCode=C00&motCode=0&cmdCode=271112,271113,250100,252329,252310,330112,200911",
+      "fecha_descarga": "2026-11-26",
+      "hash": "sha256:098fe2d108f3db3731180e391466d2f01165deeb00598d2acf652372d4611ec1",
+      "cita_ubicacion": "UN Comtrade 2024 Argentina HS 252329 (Cemento Portland; imp. USD 15.677, abasto mayoritario local)",
+      "confianza": "alta"
+    }
+  },
+  {
+    "registro_id": "comex-cemento-252310-2024-usd",
+    "producto_id": "cemento-clinker",
+    "anio": 2024,
+    "ncm_codigo": "2523.10",
+    "metrica": "valor_usd",
+    "exportacion": {
+      "estado": "sin_datos",
+      "valor": null,
+      "unidad": null,
+      "procedencia": {
+        "anio": 2024,
+        "fuente_id": "uncomtrade-ar-lote5-2024",
+        "fuente": "UN Comtrade: comercio exterior de Argentina HS 271112/271113 (GLP), 250100 (Sal), 252329/252310 (Cemento) y 200911/330112 (Cítricos) 2024",
+        "url": "https://comtradeapi.un.org/public/v1/preview/C/A/HS?reporterCode=32&period=2024&partnerCode=0&partner2Code=0&customsCode=C00&motCode=0&cmdCode=271112,271113,250100,252329,252310,330112,200911",
+        "fecha_descarga": "2026-11-26",
+        "hash": "sha256:098fe2d108f3db3731180e391466d2f01165deeb00598d2acf652372d4611ec1",
+        "cita_ubicacion": "UN Comtrade 2024 Argentina HS 252310 (Clínker de cemento; imp. USD 3.456)",
+        "confianza": "alta"
+      }
+    },
+    "importacion": {
+      "estado": "dato",
+      "valor": 0.003,
+      "unidad": "millones USD",
+      "procedencia": {
+        "anio": 2024,
+        "fuente_id": "uncomtrade-ar-lote5-2024",
+        "fuente": "UN Comtrade: comercio exterior de Argentina HS 271112/271113 (GLP), 250100 (Sal), 252329/252310 (Cemento) y 200911/330112 (Cítricos) 2024",
+        "url": "https://comtradeapi.un.org/public/v1/preview/C/A/HS?reporterCode=32&period=2024&partnerCode=0&partner2Code=0&customsCode=C00&motCode=0&cmdCode=271112,271113,250100,252329,252310,330112,200911",
+        "fecha_descarga": "2026-11-26",
+        "hash": "sha256:098fe2d108f3db3731180e391466d2f01165deeb00598d2acf652372d4611ec1",
+        "cita_ubicacion": "UN Comtrade 2024 Argentina HS 252310 (Clínker de cemento; imp. USD 3.456)",
+        "confianza": "alta"
+      }
+    },
+    "saldo_comercial": {
+      "estado": "sin_datos",
+      "valor": null,
+      "unidad": null,
+      "procedencia": {
+        "anio": 2024,
+        "fuente_id": "uncomtrade-ar-lote5-2024",
+        "fuente": "UN Comtrade: comercio exterior de Argentina HS 271112/271113 (GLP), 250100 (Sal), 252329/252310 (Cemento) y 200911/330112 (Cítricos) 2024",
+        "url": "https://comtradeapi.un.org/public/v1/preview/C/A/HS?reporterCode=32&period=2024&partnerCode=0&partner2Code=0&customsCode=C00&motCode=0&cmdCode=271112,271113,250100,252329,252310,330112,200911",
+        "fecha_descarga": "2026-11-26",
+        "hash": "sha256:098fe2d108f3db3731180e391466d2f01165deeb00598d2acf652372d4611ec1",
+        "cita_ubicacion": "UN Comtrade 2024 Argentina HS 252310 (Clínker de cemento; imp. USD 3.456)",
+        "confianza": "alta"
+      }
+    },
+    "procedencia": {
+      "anio": 2024,
+      "fuente_id": "uncomtrade-ar-lote5-2024",
+      "fuente": "UN Comtrade: comercio exterior de Argentina HS 271112/271113 (GLP), 250100 (Sal), 252329/252310 (Cemento) y 200911/330112 (Cítricos) 2024",
+      "url": "https://comtradeapi.un.org/public/v1/preview/C/A/HS?reporterCode=32&period=2024&partnerCode=0&partner2Code=0&customsCode=C00&motCode=0&cmdCode=271112,271113,250100,252329,252310,330112,200911",
+      "fecha_descarga": "2026-11-26",
+      "hash": "sha256:098fe2d108f3db3731180e391466d2f01165deeb00598d2acf652372d4611ec1",
+      "cita_ubicacion": "UN Comtrade 2024 Argentina HS 252310 (Clínker de cemento; imp. USD 3.456)",
+      "confianza": "alta"
+    }
+  },
+  {
+    "registro_id": "comex-cemento-252310-2024-t",
+    "producto_id": "cemento-clinker",
+    "anio": 2024,
+    "ncm_codigo": "2523.10",
+    "metrica": "volumen_t",
+    "exportacion": {
+      "estado": "sin_datos",
+      "valor": null,
+      "unidad": null,
+      "procedencia": {
+        "anio": 2024,
+        "fuente_id": "uncomtrade-ar-lote5-2024",
+        "fuente": "UN Comtrade: comercio exterior de Argentina HS 271112/271113 (GLP), 250100 (Sal), 252329/252310 (Cemento) y 200911/330112 (Cítricos) 2024",
+        "url": "https://comtradeapi.un.org/public/v1/preview/C/A/HS?reporterCode=32&period=2024&partnerCode=0&partner2Code=0&customsCode=C00&motCode=0&cmdCode=271112,271113,250100,252329,252310,330112,200911",
+        "fecha_descarga": "2026-11-26",
+        "hash": "sha256:098fe2d108f3db3731180e391466d2f01165deeb00598d2acf652372d4611ec1",
+        "cita_ubicacion": "UN Comtrade 2024 Argentina HS 252310 volumen físico (90 kg muestras/lote)",
+        "confianza": "alta"
+      }
+    },
+    "importacion": {
+      "estado": "dato",
+      "valor": 0.1,
+      "unidad": "t",
+      "procedencia": {
+        "anio": 2024,
+        "fuente_id": "uncomtrade-ar-lote5-2024",
+        "fuente": "UN Comtrade: comercio exterior de Argentina HS 271112/271113 (GLP), 250100 (Sal), 252329/252310 (Cemento) y 200911/330112 (Cítricos) 2024",
+        "url": "https://comtradeapi.un.org/public/v1/preview/C/A/HS?reporterCode=32&period=2024&partnerCode=0&partner2Code=0&customsCode=C00&motCode=0&cmdCode=271112,271113,250100,252329,252310,330112,200911",
+        "fecha_descarga": "2026-11-26",
+        "hash": "sha256:098fe2d108f3db3731180e391466d2f01165deeb00598d2acf652372d4611ec1",
+        "cita_ubicacion": "UN Comtrade 2024 Argentina HS 252310 volumen físico (90 kg muestras/lote)",
+        "confianza": "alta"
+      }
+    },
+    "saldo_comercial": {
+      "estado": "sin_datos",
+      "valor": null,
+      "unidad": null,
+      "procedencia": {
+        "anio": 2024,
+        "fuente_id": "uncomtrade-ar-lote5-2024",
+        "fuente": "UN Comtrade: comercio exterior de Argentina HS 271112/271113 (GLP), 250100 (Sal), 252329/252310 (Cemento) y 200911/330112 (Cítricos) 2024",
+        "url": "https://comtradeapi.un.org/public/v1/preview/C/A/HS?reporterCode=32&period=2024&partnerCode=0&partner2Code=0&customsCode=C00&motCode=0&cmdCode=271112,271113,250100,252329,252310,330112,200911",
+        "fecha_descarga": "2026-11-26",
+        "hash": "sha256:098fe2d108f3db3731180e391466d2f01165deeb00598d2acf652372d4611ec1",
+        "cita_ubicacion": "UN Comtrade 2024 Argentina HS 252310 volumen físico (90 kg muestras/lote)",
+        "confianza": "alta"
+      }
+    },
+    "procedencia": {
+      "anio": 2024,
+      "fuente_id": "uncomtrade-ar-lote5-2024",
+      "fuente": "UN Comtrade: comercio exterior de Argentina HS 271112/271113 (GLP), 250100 (Sal), 252329/252310 (Cemento) y 200911/330112 (Cítricos) 2024",
+      "url": "https://comtradeapi.un.org/public/v1/preview/C/A/HS?reporterCode=32&period=2024&partnerCode=0&partner2Code=0&customsCode=C00&motCode=0&cmdCode=271112,271113,250100,252329,252310,330112,200911",
+      "fecha_descarga": "2026-11-26",
+      "hash": "sha256:098fe2d108f3db3731180e391466d2f01165deeb00598d2acf652372d4611ec1",
+      "cita_ubicacion": "UN Comtrade 2024 Argentina HS 252310 volumen físico (90 kg muestras/lote)",
+      "confianza": "alta"
+    }
+  },
+  {
+    "registro_id": "comex-citricos-200911-2023-usd",
+    "producto_id": "citricos-limoneno",
+    "anio": 2023,
+    "ncm_codigo": "2009.11",
+    "metrica": "valor_usd",
+    "exportacion": {
+      "estado": "dato",
+      "valor": 11.17,
+      "unidad": "millones USD",
+      "procedencia": {
+        "anio": 2023,
+        "fuente_id": "uncomtrade-ar-lote5-2023",
+        "fuente": "UN Comtrade: comercio exterior de Argentina HS 271112/271113 (GLP), 250100 (Sal), 252329/252310 (Cemento) y 200911/330112 (Cítricos) 2023",
+        "url": "https://comtradeapi.un.org/public/v1/preview/C/A/HS?reporterCode=32&period=2023&partnerCode=0&partner2Code=0&customsCode=C00&motCode=0&cmdCode=271112,271113,250100,252329,252310,330112,200911",
+        "fecha_descarga": "2026-11-26",
+        "hash": "sha256:152b35f834d173a2e80f4bdfdce05aa6aca4744f05dba87186bd14d0465c680b",
+        "cita_ubicacion": "UN Comtrade 2023 Argentina HS 200911 (Jugo de naranja congelado/concentrado)",
+        "confianza": "alta"
+      }
+    },
+    "importacion": {
+      "estado": "dato",
+      "valor": 0.32,
+      "unidad": "millones USD",
+      "procedencia": {
+        "anio": 2023,
+        "fuente_id": "uncomtrade-ar-lote5-2023",
+        "fuente": "UN Comtrade: comercio exterior de Argentina HS 271112/271113 (GLP), 250100 (Sal), 252329/252310 (Cemento) y 200911/330112 (Cítricos) 2023",
+        "url": "https://comtradeapi.un.org/public/v1/preview/C/A/HS?reporterCode=32&period=2023&partnerCode=0&partner2Code=0&customsCode=C00&motCode=0&cmdCode=271112,271113,250100,252329,252310,330112,200911",
+        "fecha_descarga": "2026-11-26",
+        "hash": "sha256:152b35f834d173a2e80f4bdfdce05aa6aca4744f05dba87186bd14d0465c680b",
+        "cita_ubicacion": "UN Comtrade 2023 Argentina HS 200911 (Jugo de naranja congelado/concentrado)",
+        "confianza": "alta"
+      }
+    },
+    "saldo_comercial": {
+      "estado": "dato",
+      "valor": 10.85,
+      "unidad": "millones USD",
+      "procedencia": {
+        "anio": 2023,
+        "fuente_id": "uncomtrade-ar-lote5-2023",
+        "fuente": "UN Comtrade: comercio exterior de Argentina HS 271112/271113 (GLP), 250100 (Sal), 252329/252310 (Cemento) y 200911/330112 (Cítricos) 2023",
+        "url": "https://comtradeapi.un.org/public/v1/preview/C/A/HS?reporterCode=32&period=2023&partnerCode=0&partner2Code=0&customsCode=C00&motCode=0&cmdCode=271112,271113,250100,252329,252310,330112,200911",
+        "fecha_descarga": "2026-11-26",
+        "hash": "sha256:152b35f834d173a2e80f4bdfdce05aa6aca4744f05dba87186bd14d0465c680b",
+        "cita_ubicacion": "UN Comtrade 2023 Argentina HS 200911 (Jugo de naranja congelado/concentrado)",
+        "confianza": "alta"
+      }
+    },
+    "procedencia": {
+      "anio": 2023,
+      "fuente_id": "uncomtrade-ar-lote5-2023",
+      "fuente": "UN Comtrade: comercio exterior de Argentina HS 271112/271113 (GLP), 250100 (Sal), 252329/252310 (Cemento) y 200911/330112 (Cítricos) 2023",
+      "url": "https://comtradeapi.un.org/public/v1/preview/C/A/HS?reporterCode=32&period=2023&partnerCode=0&partner2Code=0&customsCode=C00&motCode=0&cmdCode=271112,271113,250100,252329,252310,330112,200911",
+      "fecha_descarga": "2026-11-26",
+      "hash": "sha256:152b35f834d173a2e80f4bdfdce05aa6aca4744f05dba87186bd14d0465c680b",
+      "cita_ubicacion": "UN Comtrade 2023 Argentina HS 200911 (Jugo de naranja congelado/concentrado)",
+      "confianza": "alta"
+    }
+  },
+  {
+    "registro_id": "comex-citricos-200911-2024-usd",
+    "producto_id": "citricos-limoneno",
+    "anio": 2024,
+    "ncm_codigo": "2009.11",
+    "metrica": "valor_usd",
+    "exportacion": {
+      "estado": "dato",
+      "valor": 35.22,
+      "unidad": "millones USD",
+      "procedencia": {
+        "anio": 2024,
+        "fuente_id": "uncomtrade-ar-lote5-2024",
+        "fuente": "UN Comtrade: comercio exterior de Argentina HS 271112/271113 (GLP), 250100 (Sal), 252329/252310 (Cemento) y 200911/330112 (Cítricos) 2024",
+        "url": "https://comtradeapi.un.org/public/v1/preview/C/A/HS?reporterCode=32&period=2024&partnerCode=0&partner2Code=0&customsCode=C00&motCode=0&cmdCode=271112,271113,250100,252329,252310,330112,200911",
+        "fecha_descarga": "2026-11-26",
+        "hash": "sha256:098fe2d108f3db3731180e391466d2f01165deeb00598d2acf652372d4611ec1",
+        "cita_ubicacion": "UN Comtrade 2024 Argentina HS 200911 (Jugo de naranja congelado/concentrado)",
+        "confianza": "alta"
+      }
+    },
+    "importacion": {
+      "estado": "dato",
+      "valor": 0.29,
+      "unidad": "millones USD",
+      "procedencia": {
+        "anio": 2024,
+        "fuente_id": "uncomtrade-ar-lote5-2024",
+        "fuente": "UN Comtrade: comercio exterior de Argentina HS 271112/271113 (GLP), 250100 (Sal), 252329/252310 (Cemento) y 200911/330112 (Cítricos) 2024",
+        "url": "https://comtradeapi.un.org/public/v1/preview/C/A/HS?reporterCode=32&period=2024&partnerCode=0&partner2Code=0&customsCode=C00&motCode=0&cmdCode=271112,271113,250100,252329,252310,330112,200911",
+        "fecha_descarga": "2026-11-26",
+        "hash": "sha256:098fe2d108f3db3731180e391466d2f01165deeb00598d2acf652372d4611ec1",
+        "cita_ubicacion": "UN Comtrade 2024 Argentina HS 200911 (Jugo de naranja congelado/concentrado)",
+        "confianza": "alta"
+      }
+    },
+    "saldo_comercial": {
+      "estado": "dato",
+      "valor": 34.94,
+      "unidad": "millones USD",
+      "procedencia": {
+        "anio": 2024,
+        "fuente_id": "uncomtrade-ar-lote5-2024",
+        "fuente": "UN Comtrade: comercio exterior de Argentina HS 271112/271113 (GLP), 250100 (Sal), 252329/252310 (Cemento) y 200911/330112 (Cítricos) 2024",
+        "url": "https://comtradeapi.un.org/public/v1/preview/C/A/HS?reporterCode=32&period=2024&partnerCode=0&partner2Code=0&customsCode=C00&motCode=0&cmdCode=271112,271113,250100,252329,252310,330112,200911",
+        "fecha_descarga": "2026-11-26",
+        "hash": "sha256:098fe2d108f3db3731180e391466d2f01165deeb00598d2acf652372d4611ec1",
+        "cita_ubicacion": "UN Comtrade 2024 Argentina HS 200911 (Jugo de naranja congelado/concentrado)",
+        "confianza": "alta"
+      }
+    },
+    "procedencia": {
+      "anio": 2024,
+      "fuente_id": "uncomtrade-ar-lote5-2024",
+      "fuente": "UN Comtrade: comercio exterior de Argentina HS 271112/271113 (GLP), 250100 (Sal), 252329/252310 (Cemento) y 200911/330112 (Cítricos) 2024",
+      "url": "https://comtradeapi.un.org/public/v1/preview/C/A/HS?reporterCode=32&period=2024&partnerCode=0&partner2Code=0&customsCode=C00&motCode=0&cmdCode=271112,271113,250100,252329,252310,330112,200911",
+      "fecha_descarga": "2026-11-26",
+      "hash": "sha256:098fe2d108f3db3731180e391466d2f01165deeb00598d2acf652372d4611ec1",
+      "cita_ubicacion": "UN Comtrade 2024 Argentina HS 200911 (Jugo de naranja congelado/concentrado)",
+      "confianza": "alta"
+    }
+  },
+  {
+    "registro_id": "comex-citricos-200911-2024-t",
+    "producto_id": "citricos-limoneno",
+    "anio": 2024,
+    "ncm_codigo": "2009.11",
+    "metrica": "volumen_t",
+    "exportacion": {
+      "estado": "dato",
+      "valor": 9778.5,
+      "unidad": "t",
+      "procedencia": {
+        "anio": 2024,
+        "fuente_id": "uncomtrade-ar-lote5-2024",
+        "fuente": "UN Comtrade: comercio exterior de Argentina HS 271112/271113 (GLP), 250100 (Sal), 252329/252310 (Cemento) y 200911/330112 (Cítricos) 2024",
+        "url": "https://comtradeapi.un.org/public/v1/preview/C/A/HS?reporterCode=32&period=2024&partnerCode=0&partner2Code=0&customsCode=C00&motCode=0&cmdCode=271112,271113,250100,252329,252310,330112,200911",
+        "fecha_descarga": "2026-11-26",
+        "hash": "sha256:098fe2d108f3db3731180e391466d2f01165deeb00598d2acf652372d4611ec1",
+        "cita_ubicacion": "UN Comtrade 2024 Argentina HS 200911 volumen físico",
+        "confianza": "alta"
+      }
+    },
+    "importacion": {
+      "estado": "dato",
+      "valor": 110.3,
+      "unidad": "t",
+      "procedencia": {
+        "anio": 2024,
+        "fuente_id": "uncomtrade-ar-lote5-2024",
+        "fuente": "UN Comtrade: comercio exterior de Argentina HS 271112/271113 (GLP), 250100 (Sal), 252329/252310 (Cemento) y 200911/330112 (Cítricos) 2024",
+        "url": "https://comtradeapi.un.org/public/v1/preview/C/A/HS?reporterCode=32&period=2024&partnerCode=0&partner2Code=0&customsCode=C00&motCode=0&cmdCode=271112,271113,250100,252329,252310,330112,200911",
+        "fecha_descarga": "2026-11-26",
+        "hash": "sha256:098fe2d108f3db3731180e391466d2f01165deeb00598d2acf652372d4611ec1",
+        "cita_ubicacion": "UN Comtrade 2024 Argentina HS 200911 volumen físico",
+        "confianza": "alta"
+      }
+    },
+    "saldo_comercial": {
+      "estado": "dato",
+      "valor": 9668.2,
+      "unidad": "t",
+      "procedencia": {
+        "anio": 2024,
+        "fuente_id": "uncomtrade-ar-lote5-2024",
+        "fuente": "UN Comtrade: comercio exterior de Argentina HS 271112/271113 (GLP), 250100 (Sal), 252329/252310 (Cemento) y 200911/330112 (Cítricos) 2024",
+        "url": "https://comtradeapi.un.org/public/v1/preview/C/A/HS?reporterCode=32&period=2024&partnerCode=0&partner2Code=0&customsCode=C00&motCode=0&cmdCode=271112,271113,250100,252329,252310,330112,200911",
+        "fecha_descarga": "2026-11-26",
+        "hash": "sha256:098fe2d108f3db3731180e391466d2f01165deeb00598d2acf652372d4611ec1",
+        "cita_ubicacion": "UN Comtrade 2024 Argentina HS 200911 volumen físico",
+        "confianza": "alta"
+      }
+    },
+    "procedencia": {
+      "anio": 2024,
+      "fuente_id": "uncomtrade-ar-lote5-2024",
+      "fuente": "UN Comtrade: comercio exterior de Argentina HS 271112/271113 (GLP), 250100 (Sal), 252329/252310 (Cemento) y 200911/330112 (Cítricos) 2024",
+      "url": "https://comtradeapi.un.org/public/v1/preview/C/A/HS?reporterCode=32&period=2024&partnerCode=0&partner2Code=0&customsCode=C00&motCode=0&cmdCode=271112,271113,250100,252329,252310,330112,200911",
+      "fecha_descarga": "2026-11-26",
+      "hash": "sha256:098fe2d108f3db3731180e391466d2f01165deeb00598d2acf652372d4611ec1",
+      "cita_ubicacion": "UN Comtrade 2024 Argentina HS 200911 volumen físico",
+      "confianza": "alta"
+    }
+  },
+  {
+    "registro_id": "comex-citricos-330112-2023-usd",
+    "producto_id": "citricos-limoneno",
+    "anio": 2023,
+    "ncm_codigo": "3301.12",
+    "metrica": "valor_usd",
+    "exportacion": {
+      "estado": "dato",
+      "valor": 5.57,
+      "unidad": "millones USD",
+      "procedencia": {
+        "anio": 2023,
+        "fuente_id": "uncomtrade-ar-lote5-2023",
+        "fuente": "UN Comtrade: comercio exterior de Argentina HS 271112/271113 (GLP), 250100 (Sal), 252329/252310 (Cemento) y 200911/330112 (Cítricos) 2023",
+        "url": "https://comtradeapi.un.org/public/v1/preview/C/A/HS?reporterCode=32&period=2023&partnerCode=0&partner2Code=0&customsCode=C00&motCode=0&cmdCode=271112,271113,250100,252329,252310,330112,200911",
+        "fecha_descarga": "2026-11-26",
+        "hash": "sha256:152b35f834d173a2e80f4bdfdce05aa6aca4744f05dba87186bd14d0465c680b",
+        "cita_ubicacion": "UN Comtrade 2023 Argentina HS 330112 (Aceite esencial de naranja / D-limoneno)",
+        "confianza": "alta"
+      }
+    },
+    "importacion": {
+      "estado": "dato",
+      "valor": 8.15,
+      "unidad": "millones USD",
+      "procedencia": {
+        "anio": 2023,
+        "fuente_id": "uncomtrade-ar-lote5-2023",
+        "fuente": "UN Comtrade: comercio exterior de Argentina HS 271112/271113 (GLP), 250100 (Sal), 252329/252310 (Cemento) y 200911/330112 (Cítricos) 2023",
+        "url": "https://comtradeapi.un.org/public/v1/preview/C/A/HS?reporterCode=32&period=2023&partnerCode=0&partner2Code=0&customsCode=C00&motCode=0&cmdCode=271112,271113,250100,252329,252310,330112,200911",
+        "fecha_descarga": "2026-11-26",
+        "hash": "sha256:152b35f834d173a2e80f4bdfdce05aa6aca4744f05dba87186bd14d0465c680b",
+        "cita_ubicacion": "UN Comtrade 2023 Argentina HS 330112 (Aceite esencial de naranja / D-limoneno)",
+        "confianza": "alta"
+      }
+    },
+    "saldo_comercial": {
+      "estado": "dato",
+      "valor": -2.58,
+      "unidad": "millones USD",
+      "procedencia": {
+        "anio": 2023,
+        "fuente_id": "uncomtrade-ar-lote5-2023",
+        "fuente": "UN Comtrade: comercio exterior de Argentina HS 271112/271113 (GLP), 250100 (Sal), 252329/252310 (Cemento) y 200911/330112 (Cítricos) 2023",
+        "url": "https://comtradeapi.un.org/public/v1/preview/C/A/HS?reporterCode=32&period=2023&partnerCode=0&partner2Code=0&customsCode=C00&motCode=0&cmdCode=271112,271113,250100,252329,252310,330112,200911",
+        "fecha_descarga": "2026-11-26",
+        "hash": "sha256:152b35f834d173a2e80f4bdfdce05aa6aca4744f05dba87186bd14d0465c680b",
+        "cita_ubicacion": "UN Comtrade 2023 Argentina HS 330112 (Aceite esencial de naranja / D-limoneno)",
+        "confianza": "alta"
+      }
+    },
+    "procedencia": {
+      "anio": 2023,
+      "fuente_id": "uncomtrade-ar-lote5-2023",
+      "fuente": "UN Comtrade: comercio exterior de Argentina HS 271112/271113 (GLP), 250100 (Sal), 252329/252310 (Cemento) y 200911/330112 (Cítricos) 2023",
+      "url": "https://comtradeapi.un.org/public/v1/preview/C/A/HS?reporterCode=32&period=2023&partnerCode=0&partner2Code=0&customsCode=C00&motCode=0&cmdCode=271112,271113,250100,252329,252310,330112,200911",
+      "fecha_descarga": "2026-11-26",
+      "hash": "sha256:152b35f834d173a2e80f4bdfdce05aa6aca4744f05dba87186bd14d0465c680b",
+      "cita_ubicacion": "UN Comtrade 2023 Argentina HS 330112 (Aceite esencial de naranja / D-limoneno)",
+      "confianza": "alta"
+    }
+  },
+  {
+    "registro_id": "comex-citricos-330112-2024-usd",
+    "producto_id": "citricos-limoneno",
+    "anio": 2024,
+    "ncm_codigo": "3301.12",
+    "metrica": "valor_usd",
+    "exportacion": {
+      "estado": "dato",
+      "valor": 0.99,
+      "unidad": "millones USD",
+      "procedencia": {
+        "anio": 2024,
+        "fuente_id": "uncomtrade-ar-lote5-2024",
+        "fuente": "UN Comtrade: comercio exterior de Argentina HS 271112/271113 (GLP), 250100 (Sal), 252329/252310 (Cemento) y 200911/330112 (Cítricos) 2024",
+        "url": "https://comtradeapi.un.org/public/v1/preview/C/A/HS?reporterCode=32&period=2024&partnerCode=0&partner2Code=0&customsCode=C00&motCode=0&cmdCode=271112,271113,250100,252329,252310,330112,200911",
+        "fecha_descarga": "2026-11-26",
+        "hash": "sha256:098fe2d108f3db3731180e391466d2f01165deeb00598d2acf652372d4611ec1",
+        "cita_ubicacion": "UN Comtrade 2024 Argentina HS 330112 (Aceite esencial de naranja / D-limoneno)",
+        "confianza": "alta"
+      }
+    },
+    "importacion": {
+      "estado": "dato",
+      "valor": 9.05,
+      "unidad": "millones USD",
+      "procedencia": {
+        "anio": 2024,
+        "fuente_id": "uncomtrade-ar-lote5-2024",
+        "fuente": "UN Comtrade: comercio exterior de Argentina HS 271112/271113 (GLP), 250100 (Sal), 252329/252310 (Cemento) y 200911/330112 (Cítricos) 2024",
+        "url": "https://comtradeapi.un.org/public/v1/preview/C/A/HS?reporterCode=32&period=2024&partnerCode=0&partner2Code=0&customsCode=C00&motCode=0&cmdCode=271112,271113,250100,252329,252310,330112,200911",
+        "fecha_descarga": "2026-11-26",
+        "hash": "sha256:098fe2d108f3db3731180e391466d2f01165deeb00598d2acf652372d4611ec1",
+        "cita_ubicacion": "UN Comtrade 2024 Argentina HS 330112 (Aceite esencial de naranja / D-limoneno)",
+        "confianza": "alta"
+      }
+    },
+    "saldo_comercial": {
+      "estado": "dato",
+      "valor": -8.05,
+      "unidad": "millones USD",
+      "procedencia": {
+        "anio": 2024,
+        "fuente_id": "uncomtrade-ar-lote5-2024",
+        "fuente": "UN Comtrade: comercio exterior de Argentina HS 271112/271113 (GLP), 250100 (Sal), 252329/252310 (Cemento) y 200911/330112 (Cítricos) 2024",
+        "url": "https://comtradeapi.un.org/public/v1/preview/C/A/HS?reporterCode=32&period=2024&partnerCode=0&partner2Code=0&customsCode=C00&motCode=0&cmdCode=271112,271113,250100,252329,252310,330112,200911",
+        "fecha_descarga": "2026-11-26",
+        "hash": "sha256:098fe2d108f3db3731180e391466d2f01165deeb00598d2acf652372d4611ec1",
+        "cita_ubicacion": "UN Comtrade 2024 Argentina HS 330112 (Aceite esencial de naranja / D-limoneno)",
+        "confianza": "alta"
+      }
+    },
+    "procedencia": {
+      "anio": 2024,
+      "fuente_id": "uncomtrade-ar-lote5-2024",
+      "fuente": "UN Comtrade: comercio exterior de Argentina HS 271112/271113 (GLP), 250100 (Sal), 252329/252310 (Cemento) y 200911/330112 (Cítricos) 2024",
+      "url": "https://comtradeapi.un.org/public/v1/preview/C/A/HS?reporterCode=32&period=2024&partnerCode=0&partner2Code=0&customsCode=C00&motCode=0&cmdCode=271112,271113,250100,252329,252310,330112,200911",
+      "fecha_descarga": "2026-11-26",
+      "hash": "sha256:098fe2d108f3db3731180e391466d2f01165deeb00598d2acf652372d4611ec1",
+      "cita_ubicacion": "UN Comtrade 2024 Argentina HS 330112 (Aceite esencial de naranja / D-limoneno)",
+      "confianza": "alta"
+    }
   }
 ]

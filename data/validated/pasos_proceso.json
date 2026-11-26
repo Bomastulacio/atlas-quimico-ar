@@ -5666,5 +5666,1334 @@
       "cita_ubicacion": "arauco.com + AFCP Proceso Kraft al sulfato con recuperación química cerrada",
       "confianza": "alta"
     }
+  },
+  {
+    "paso_id": "glp-p1-recepcion-separacion",
+    "proceso_id": "glp-fraccionamiento-austral",
+    "orden": 1,
+    "nombre": "Recepción offshore y separación primaria (slug catcher)",
+    "tipo_paso": "preparacion",
+    "reaccion_balanceada": null,
+    "temperatura_c": "10-25",
+    "presion_bar": "70-85",
+    "reactivos": [
+      {
+        "especie": "Gas natural húmedo Cuenca Austral",
+        "cantidad": 1,
+        "unidad": "base flujo"
+      }
+    ],
+    "productos": [
+      {
+        "especie": "Gas húmedo libre de condensado",
+        "cantidad": null,
+        "unidad": "MMm3/d"
+      },
+      {
+        "especie": "Condensado crudo C5+",
+        "cantidad": null,
+        "unidad": "m3/d"
+      }
+    ],
+    "insumos": [
+      {
+        "especie": "Inhibidor de hidratos (MEG)",
+        "cantidad": null,
+        "unidad": "kg/MMm3"
+      }
+    ],
+    "subproductos": [
+      {
+        "especie": "Agua de formación a tratamiento",
+        "cantidad": null,
+        "unidad": "m3/d"
+      }
+    ],
+    "energia": {
+      "estado": "sin_datos",
+      "valor": null,
+      "unidad": null,
+      "procedencia": {
+        "anio": 2026,
+        "fuente_id": "eu-bref-ref",
+        "fuente": "Reference Document on Best Available Techniques for the Refining of Mineral Oil and Gas (REF BREF)",
+        "url": "https://bureau-industrial-transformation.jrc.ec.europa.eu/reference/refining-mineral-oil-and-gas",
+        "fecha_descarga": "2026-11-26",
+        "hash": "sha256:682ce5d7c61e02b0442cdb38770c98735dd7406ddb30321e2338b5bdcf05a1c7",
+        "cita_ubicacion": "EU REF BREF Gas Reception & Primary Separation",
+        "confianza": "alta"
+      }
+    },
+    "descripcion": "El gas multifásico de yacimientos offshore y costeros ingresa al slug catcher donde se separan agua libre y condensados líquidos pesados a alta presión.",
+    "pos_x": 80,
+    "pos_y": 180,
+    "procedencia": {
+      "anio": 2026,
+      "fuente_id": "eu-bref-ref",
+      "fuente": "Reference Document on Best Available Techniques for the Refining of Mineral Oil and Gas (REF BREF)",
+      "url": "https://bureau-industrial-transformation.jrc.ec.europa.eu/reference/refining-mineral-oil-and-gas",
+      "fecha_descarga": "2026-11-26",
+      "hash": "sha256:682ce5d7c61e02b0442cdb38770c98735dd7406ddb30321e2338b5bdcf05a1c7",
+      "cita_ubicacion": "EU REF BREF Gas Reception & Primary Separation",
+      "confianza": "alta"
+    }
+  },
+  {
+    "paso_id": "glp-p2-deshidratacion",
+    "proceso_id": "glp-fraccionamiento-austral",
+    "orden": 2,
+    "nombre": "Deshidratación profunda con tamices moleculares",
+    "tipo_paso": "preparacion",
+    "reaccion_balanceada": null,
+    "temperatura_c": "20-30",
+    "presion_bar": "70",
+    "reactivos": [
+      {
+        "especie": "Gas húmedo C1-C5",
+        "cantidad": null,
+        "unidad": "MMm3/d"
+      }
+    ],
+    "productos": [
+      {
+        "especie": "Gas seco (<0,1 ppmv H2O)",
+        "cantidad": null,
+        "unidad": "MMm3/d"
+      }
+    ],
+    "insumos": [
+      {
+        "especie": "Zeolita 4A (tamices regenerables)",
+        "cantidad": null,
+        "unidad": "ciclo térmico"
+      }
+    ],
+    "subproductos": [
+      {
+        "especie": "Vapor de agua de regeneración",
+        "cantidad": null,
+        "unidad": "kg/h"
+      }
+    ],
+    "energia": {
+      "estado": "sin_datos",
+      "valor": null,
+      "unidad": null,
+      "procedencia": {
+        "anio": 2026,
+        "fuente_id": "eu-bref-ref",
+        "fuente": "Reference Document on Best Available Techniques for the Refining of Mineral Oil and Gas (REF BREF)",
+        "url": "https://bureau-industrial-transformation.jrc.ec.europa.eu/reference/refining-mineral-oil-and-gas",
+        "fecha_descarga": "2026-11-26",
+        "hash": "sha256:682ce5d7c61e02b0442cdb38770c98735dd7406ddb30321e2338b5bdcf05a1c7",
+        "cita_ubicacion": "EU REF BREF Molecular Sieve Dehydration",
+        "confianza": "alta"
+      }
+    },
+    "descripcion": "Lechos adsorbentes de zeolitas remueven trazas de humedad por debajo de 0,1 ppmv para evitar congelamiento de hidratos en la etapa criogénica.",
+    "pos_x": 340,
+    "pos_y": 180,
+    "procedencia": {
+      "anio": 2026,
+      "fuente_id": "eu-bref-ref",
+      "fuente": "Reference Document on Best Available Techniques for the Refining of Mineral Oil and Gas (REF BREF)",
+      "url": "https://bureau-industrial-transformation.jrc.ec.europa.eu/reference/refining-mineral-oil-and-gas",
+      "fecha_descarga": "2026-11-26",
+      "hash": "sha256:682ce5d7c61e02b0442cdb38770c98735dd7406ddb30321e2338b5bdcf05a1c7",
+      "cita_ubicacion": "EU REF BREF Molecular Sieve Dehydration",
+      "confianza": "alta"
+    }
+  },
+  {
+    "paso_id": "glp-p3-turboexpansion",
+    "proceso_id": "glp-fraccionamiento-austral",
+    "orden": 3,
+    "nombre": "Enfriamiento criogénico y turbo-expansión (-95 °C)",
+    "tipo_paso": "separacion",
+    "reaccion_balanceada": null,
+    "temperatura_c": "-95 a -40",
+    "presion_bar": "28-35",
+    "reactivos": [
+      {
+        "especie": "Gas seco C1-C5 a 70 bar",
+        "cantidad": null,
+        "unidad": "MMm3/d"
+      }
+    ],
+    "productos": [
+      {
+        "especie": "Gas residual CH4 seco (a gasoducto)",
+        "cantidad": null,
+        "unidad": "MMm3/d"
+      },
+      {
+        "especie": "Corriente LGN condensada (C2-C5+)",
+        "cantidad": null,
+        "unidad": "t/d"
+      }
+    ],
+    "insumos": [
+      {
+        "especie": "Recuperación mecánica eje turbo-compresor",
+        "cantidad": null,
+        "unidad": "MW"
+      }
+    ],
+    "subproductos": [],
+    "energia": {
+      "estado": "sin_datos",
+      "valor": null,
+      "unidad": null,
+      "procedencia": {
+        "anio": 2026,
+        "fuente_id": "eu-bref-ref",
+        "fuente": "Reference Document on Best Available Techniques for the Refining of Mineral Oil and Gas (REF BREF)",
+        "url": "https://bureau-industrial-transformation.jrc.ec.europa.eu/reference/refining-mineral-oil-and-gas",
+        "fecha_descarga": "2026-11-26",
+        "hash": "sha256:682ce5d7c61e02b0442cdb38770c98735dd7406ddb30321e2338b5bdcf05a1c7",
+        "cita_ubicacion": "EU REF BREF Cryogenic Turbo-Expander NGL Recovery",
+        "confianza": "alta"
+      }
+    },
+    "descripcion": "La expansión isoentrópica en el turbo-expansor enfría el gas hasta -95 °C condensando propano, butanos y gasolina mientras el metano seco retorna al gasoducto troncal.",
+    "pos_x": 620,
+    "pos_y": 180,
+    "procedencia": {
+      "anio": 2026,
+      "fuente_id": "eu-bref-ref",
+      "fuente": "Reference Document on Best Available Techniques for the Refining of Mineral Oil and Gas (REF BREF)",
+      "url": "https://bureau-industrial-transformation.jrc.ec.europa.eu/reference/refining-mineral-oil-and-gas",
+      "fecha_descarga": "2026-11-26",
+      "hash": "sha256:682ce5d7c61e02b0442cdb38770c98735dd7406ddb30321e2338b5bdcf05a1c7",
+      "cita_ubicacion": "EU REF BREF Cryogenic Turbo-Expander NGL Recovery",
+      "confianza": "alta"
+    }
+  },
+  {
+    "paso_id": "glp-p4-fraccionamiento",
+    "proceso_id": "glp-fraccionamiento-austral",
+    "orden": 4,
+    "nombre": "Tren de fraccionamiento (desetanizadora, C3 y C4)",
+    "tipo_paso": "refinacion",
+    "reaccion_balanceada": null,
+    "temperatura_c": "40-135",
+    "presion_bar": "12-26",
+    "reactivos": [
+      {
+        "especie": "Líquidos del gas natural (LGN)",
+        "cantidad": null,
+        "unidad": "t/d"
+      }
+    ],
+    "productos": [
+      {
+        "especie": "Propano comercial (C3H8 >95%)",
+        "cantidad": null,
+        "unidad": "t/d"
+      },
+      {
+        "especie": "Butano comercial (C4H10)",
+        "cantidad": null,
+        "unidad": "t/d"
+      },
+      {
+        "especie": "Gasolina natural estabilizada (C5+)",
+        "cantidad": null,
+        "unidad": "t/d"
+      }
+    ],
+    "insumos": [
+      {
+        "especie": "Aceite térmico en rehervidores",
+        "cantidad": null,
+        "unidad": "GJ/t"
+      }
+    ],
+    "subproductos": [
+      {
+        "especie": "Etano liviano reinyectado a gas residual",
+        "cantidad": null,
+        "unidad": "t/d"
+      }
+    ],
+    "energia": {
+      "estado": "sin_datos",
+      "valor": null,
+      "unidad": null,
+      "procedencia": {
+        "anio": 2026,
+        "fuente_id": "eu-bref-ref",
+        "fuente": "Reference Document on Best Available Techniques for the Refining of Mineral Oil and Gas (REF BREF)",
+        "url": "https://bureau-industrial-transformation.jrc.ec.europa.eu/reference/refining-mineral-oil-and-gas",
+        "fecha_descarga": "2026-11-26",
+        "hash": "sha256:682ce5d7c61e02b0442cdb38770c98735dd7406ddb30321e2338b5bdcf05a1c7",
+        "cita_ubicacion": "EU REF BREF NGL Distillation Train",
+        "confianza": "alta"
+      }
+    },
+    "descripcion": "Tres columnas de destilación en serie separan por punto de ebullición el etano liviano, el propano (C3), el butano (C4) y la gasolina natural estabilizada (C5+).",
+    "pos_x": 920,
+    "pos_y": 140,
+    "procedencia": {
+      "anio": 2026,
+      "fuente_id": "eu-bref-ref",
+      "fuente": "Reference Document on Best Available Techniques for the Refining of Mineral Oil and Gas (REF BREF)",
+      "url": "https://bureau-industrial-transformation.jrc.ec.europa.eu/reference/refining-mineral-oil-and-gas",
+      "fecha_descarga": "2026-11-26",
+      "hash": "sha256:682ce5d7c61e02b0442cdb38770c98735dd7406ddb30321e2338b5bdcf05a1c7",
+      "cita_ubicacion": "EU REF BREF NGL Distillation Train",
+      "confianza": "alta"
+    }
+  },
+  {
+    "paso_id": "glp-p5-esferas-despacho",
+    "proceso_id": "glp-fraccionamiento-austral",
+    "orden": 5,
+    "nombre": "Almacenamiento presurizado y despacho marítimo/gasoducto",
+    "tipo_paso": "producto",
+    "reaccion_balanceada": null,
+    "temperatura_c": "5-20",
+    "presion_bar": "6-14",
+    "reactivos": [
+      {
+        "especie": "Propano C3H8 + Butano C4H10 en especificación",
+        "cantidad": 1,
+        "unidad": "t GLP"
+      }
+    ],
+    "productos": [
+      {
+        "especie": "GLP licuado grado exportación y consumo interno",
+        "cantidad": 1,
+        "unidad": "t GLP"
+      }
+    ],
+    "insumos": [
+      {
+        "especie": "Compresión de gas de inyección al Gasoducto San Martín",
+        "cantidad": null,
+        "unidad": "MW"
+      }
+    ],
+    "subproductos": [],
+    "energia": {
+      "estado": "sin_datos",
+      "valor": null,
+      "unidad": null,
+      "procedencia": {
+        "anio": 2026,
+        "fuente_id": "enargas-web-2026",
+        "fuente": "Ente Nacional Regulador del Gas (ENARGAS): especificaciones de gas natural y GLP",
+        "url": "https://www.enargas.gob.ar/",
+        "fecha_descarga": "2026-11-26",
+        "hash": "sha256:348c0397955f862040024be7428db528ba23952b4dec6c360c53f8ae6b9411e4",
+        "cita_ubicacion": "enargas.gob.ar + UN Comtrade HS 2711.12/2711.13",
+        "confianza": "alta"
+      }
+    },
+    "descripcion": "El propano y butano se almacenan en esferas presurizadas para embarque por monoboya costera y abastecimiento nacional (exportación país 2024: 716 kt combinadas de C3 y C4).",
+    "pos_x": 1200,
+    "pos_y": 180,
+    "procedencia": {
+      "anio": 2026,
+      "fuente_id": "enargas-web-2026",
+      "fuente": "Ente Nacional Regulador del Gas (ENARGAS): especificaciones de gas natural y GLP",
+      "url": "https://www.enargas.gob.ar/",
+      "fecha_descarga": "2026-11-26",
+      "hash": "sha256:348c0397955f862040024be7428db528ba23952b4dec6c360c53f8ae6b9411e4",
+      "cita_ubicacion": "enargas.gob.ar + UN Comtrade HS 2711.12/2711.13",
+      "confianza": "alta"
+    }
+  },
+  {
+    "paso_id": "sal-p1-cosecha",
+    "proceso_id": "sal-evaporitica-refinacion",
+    "orden": 1,
+    "nombre": "Cristalización solar y cosecha en Salinas Grandes",
+    "tipo_paso": "materia_prima",
+    "reaccion_balanceada": null,
+    "temperatura_c": "Ambiente (5-35)",
+    "presion_bar": "1,0",
+    "reactivos": [
+      {
+        "especie": "Costra evaporítica de NaCl en salina",
+        "cantidad": 1.18,
+        "unidad": "t/t NaCl refinado"
+      }
+    ],
+    "productos": [
+      {
+        "especie": "Sal bruta cosechada en parvas de escurrido",
+        "cantidad": 1.15,
+        "unidad": "t/t"
+      }
+    ],
+    "insumos": [
+      {
+        "especie": "Evaporación solar natural pampeana",
+        "cantidad": null,
+        "unidad": "renovable"
+      }
+    ],
+    "subproductos": [
+      {
+        "especie": "Salmuera residual de drenaje en salina",
+        "cantidad": null,
+        "unidad": "m3/t"
+      }
+    ],
+    "energia": {
+      "estado": "sin_datos",
+      "valor": null,
+      "unidad": null,
+      "procedencia": {
+        "anio": 2026,
+        "fuente_id": "dosanclas-web-2026",
+        "fuente": "Portal institucional Dos Anclas (Compañía Introductora de Buenos Aires S.A. · Salinas Grandes de Hidalgo)",
+        "url": "https://www.dosanclas.com.ar/",
+        "fecha_descarga": "2026-11-26",
+        "hash": "sha256:2024b46d4239f25130cfc5a4a539b039db0c3a16c9e9cd2e5535e2fbc41e4f9b",
+        "cita_ubicacion": "dosanclas.com.ar Cosecha estacional Salinas Grandes de Hidalgo",
+        "confianza": "alta"
+      }
+    },
+    "descripcion": "Durante el verano se cosecha la capa cristalizada anual de NaCl sobre el piso firme de la salina y se apila en parvas para drenar humedad e insolubles.",
+    "pos_x": 80,
+    "pos_y": 180,
+    "procedencia": {
+      "anio": 2026,
+      "fuente_id": "dosanclas-web-2026",
+      "fuente": "Portal institucional Dos Anclas (Compañía Introductora de Buenos Aires S.A. · Salinas Grandes de Hidalgo)",
+      "url": "https://www.dosanclas.com.ar/",
+      "fecha_descarga": "2026-11-26",
+      "hash": "sha256:2024b46d4239f25130cfc5a4a539b039db0c3a16c9e9cd2e5535e2fbc41e4f9b",
+      "cita_ubicacion": "dosanclas.com.ar Cosecha estacional Salinas Grandes de Hidalgo",
+      "confianza": "alta"
+    }
+  },
+  {
+    "paso_id": "sal-p2-molienda-lavado",
+    "proceso_id": "sal-evaporitica-refinacion",
+    "orden": 2,
+    "nombre": "Molienda húmeda y lavado contracorriente en salmuera",
+    "tipo_paso": "separacion",
+    "reaccion_balanceada": null,
+    "temperatura_c": "15-25",
+    "presion_bar": "1,0",
+    "reactivos": [
+      {
+        "especie": "Sal bruta (NaCl ~96-97%)",
+        "cantidad": 1.15,
+        "unidad": "t/t"
+      },
+      {
+        "especie": "Salmuera saturada de lavado",
+        "cantidad": null,
+        "unidad": "m3/t"
+      }
+    ],
+    "productos": [
+      {
+        "especie": "Cristales lavados de NaCl (>99,3% base seca)",
+        "cantidad": 1.02,
+        "unidad": "t/t"
+      }
+    ],
+    "insumos": [
+      {
+        "especie": "Circuito cerrado de decantación de salmuera",
+        "cantidad": null,
+        "unidad": "m3/t"
+      }
+    ],
+    "subproductos": [
+      {
+        "especie": "Lodos insolubles (arcillas y yeso CaSO4) + sales de Mg",
+        "cantidad": 0.13,
+        "unidad": "t/t"
+      }
+    ],
+    "energia": {
+      "estado": "sin_datos",
+      "valor": null,
+      "unidad": null,
+      "procedencia": {
+        "anio": 2025,
+        "fuente_id": "usgs-mcs-2025-salt",
+        "fuente": "USGS Mineral Commodity Summaries 2025: Salt (Sodium Chloride)",
+        "url": "https://pubs.usgs.gov/periodicals/mcs2025/mcs2025-salt.pdf",
+        "fecha_descarga": "2026-11-26",
+        "hash": "sha256:2c5bbbdd435f1fd29f1acbc2806bcf2b2f80eb1490a72f4f08af3583f0b8cd0d",
+        "cita_ubicacion": "USGS MCS 2025 Salt + dosanclas.com.ar Beneficio hidromecánico",
+        "confianza": "alta"
+      }
+    },
+    "descripcion": "La sal bruta se lava con salmuera saturada que no disuelve el NaCl pero arrastra arcillas insolubles, sulfato de calcio y cloruros de magnesio.",
+    "pos_x": 340,
+    "pos_y": 180,
+    "procedencia": {
+      "anio": 2025,
+      "fuente_id": "usgs-mcs-2025-salt",
+      "fuente": "USGS Mineral Commodity Summaries 2025: Salt (Sodium Chloride)",
+      "url": "https://pubs.usgs.gov/periodicals/mcs2025/mcs2025-salt.pdf",
+      "fecha_descarga": "2026-11-26",
+      "hash": "sha256:2c5bbbdd435f1fd29f1acbc2806bcf2b2f80eb1490a72f4f08af3583f0b8cd0d",
+      "cita_ubicacion": "USGS MCS 2025 Salt + dosanclas.com.ar Beneficio hidromecánico",
+      "confianza": "alta"
+    }
+  },
+  {
+    "paso_id": "sal-p3-centrifugacion",
+    "proceso_id": "sal-evaporitica-refinacion",
+    "orden": 3,
+    "nombre": "Escurrido y centrifugación continua de cristales",
+    "tipo_paso": "separacion",
+    "reaccion_balanceada": null,
+    "temperatura_c": "20",
+    "presion_bar": "1,0",
+    "reactivos": [
+      {
+        "especie": "Suspensión de cristales lavados de NaCl",
+        "cantidad": 1.02,
+        "unidad": "t/t"
+      }
+    ],
+    "productos": [
+      {
+        "especie": "Sal húmeda centrifugada (3% humedad)",
+        "cantidad": 1.01,
+        "unidad": "t/t"
+      }
+    ],
+    "insumos": [
+      {
+        "especie": "Energía eléctrica centrífuga pusher",
+        "cantidad": null,
+        "unidad": "kWh/t"
+      }
+    ],
+    "subproductos": [
+      {
+        "especie": "Salmuera clarificada reciclada al lavador",
+        "cantidad": null,
+        "unidad": "m3/t"
+      }
+    ],
+    "energia": {
+      "estado": "sin_datos",
+      "valor": null,
+      "unidad": null,
+      "procedencia": {
+        "anio": 2026,
+        "fuente_id": "dosanclas-web-2026",
+        "fuente": "Portal institucional Dos Anclas (Compañía Introductora de Buenos Aires S.A. · Salinas Grandes de Hidalgo)",
+        "url": "https://www.dosanclas.com.ar/",
+        "fecha_descarga": "2026-11-26",
+        "hash": "sha256:2024b46d4239f25130cfc5a4a539b039db0c3a16c9e9cd2e5535e2fbc41e4f9b",
+        "cita_ubicacion": "dosanclas.com.ar Centrifugación industrial de NaCl",
+        "confianza": "alta"
+      }
+    },
+    "descripcion": "Centrífugas de empuje continuo reducen la humedad del 25% a menos del 3% devolviendo la salmuera limpia al circuito cerrado de lavado.",
+    "pos_x": 620,
+    "pos_y": 180,
+    "procedencia": {
+      "anio": 2026,
+      "fuente_id": "dosanclas-web-2026",
+      "fuente": "Portal institucional Dos Anclas (Compañía Introductora de Buenos Aires S.A. · Salinas Grandes de Hidalgo)",
+      "url": "https://www.dosanclas.com.ar/",
+      "fecha_descarga": "2026-11-26",
+      "hash": "sha256:2024b46d4239f25130cfc5a4a539b039db0c3a16c9e9cd2e5535e2fbc41e4f9b",
+      "cita_ubicacion": "dosanclas.com.ar Centrifugación industrial de NaCl",
+      "confianza": "alta"
+    }
+  },
+  {
+    "paso_id": "sal-p4-secado-lecho-fluido",
+    "proceso_id": "sal-evaporitica-refinacion",
+    "orden": 4,
+    "nombre": "Secado térmico en lecho fluido y enfriamiento",
+    "tipo_paso": "refinacion",
+    "reaccion_balanceada": null,
+    "temperatura_c": "120-160",
+    "presion_bar": "1,0",
+    "reactivos": [
+      {
+        "especie": "Sal centrifugada (3% H2O)",
+        "cantidad": 1.01,
+        "unidad": "t/t"
+      }
+    ],
+    "productos": [
+      {
+        "especie": "NaCl seco (<0,15% humedad)",
+        "cantidad": 1,
+        "unidad": "t/t"
+      }
+    ],
+    "insumos": [
+      {
+        "especie": "Aire caliente por gas natural",
+        "cantidad": null,
+        "unidad": "GJ/t"
+      }
+    ],
+    "subproductos": [
+      {
+        "especie": "Aire húmedo filtrado en ciclones",
+        "cantidad": null,
+        "unidad": "Nm3/t"
+      }
+    ],
+    "energia": {
+      "estado": "sin_datos",
+      "valor": null,
+      "unidad": null,
+      "procedencia": {
+        "anio": 2026,
+        "fuente_id": "dosanclas-web-2026",
+        "fuente": "Portal institucional Dos Anclas (Compañía Introductora de Buenos Aires S.A. · Salinas Grandes de Hidalgo)",
+        "url": "https://www.dosanclas.com.ar/",
+        "fecha_descarga": "2026-11-26",
+        "hash": "sha256:2024b46d4239f25130cfc5a4a539b039db0c3a16c9e9cd2e5535e2fbc41e4f9b",
+        "cita_ubicacion": "dosanclas.com.ar Secado térmico de sal refinada",
+        "confianza": "alta"
+      }
+    },
+    "descripcion": "El secador de lecho fluido evapora la humedad residual asegurando fluidez sin apelmazamiento para molienda fina, uso químico y dosificación.",
+    "pos_x": 900,
+    "pos_y": 180,
+    "procedencia": {
+      "anio": 2026,
+      "fuente_id": "dosanclas-web-2026",
+      "fuente": "Portal institucional Dos Anclas (Compañía Introductora de Buenos Aires S.A. · Salinas Grandes de Hidalgo)",
+      "url": "https://www.dosanclas.com.ar/",
+      "fecha_descarga": "2026-11-26",
+      "hash": "sha256:2024b46d4239f25130cfc5a4a539b039db0c3a16c9e9cd2e5535e2fbc41e4f9b",
+      "cita_ubicacion": "dosanclas.com.ar Secado térmico de sal refinada",
+      "confianza": "alta"
+    }
+  },
+  {
+    "paso_id": "sal-p5-clasificacion-despacho",
+    "proceso_id": "sal-evaporitica-refinacion",
+    "orden": 5,
+    "nombre": "Tamizado granulométrico, yodación (KIO3) y despacho",
+    "tipo_paso": "producto",
+    "reaccion_balanceada": null,
+    "temperatura_c": "35-45",
+    "presion_bar": "1,0",
+    "reactivos": [
+      {
+        "especie": "NaCl seco purificado",
+        "cantidad": 1,
+        "unidad": "t/t"
+      }
+    ],
+    "productos": [
+      {
+        "especie": "Sal industrial (cloro-soda/curtiembre) y alimentaria",
+        "cantidad": 1,
+        "unidad": "t/t"
+      }
+    ],
+    "insumos": [
+      {
+        "especie": "Yodato de potasio KIO3 (grado alimentario) / antiaglutinante",
+        "cantidad": null,
+        "unidad": "ppm"
+      }
+    ],
+    "subproductos": [],
+    "energia": {
+      "estado": "sin_datos",
+      "valor": null,
+      "unidad": null,
+      "procedencia": {
+        "anio": 2025,
+        "fuente_id": "usgs-mcs-2025-salt",
+        "fuente": "USGS Mineral Commodity Summaries 2025: Salt (Sodium Chloride)",
+        "url": "https://pubs.usgs.gov/periodicals/mcs2025/mcs2025-salt.pdf",
+        "fecha_descarga": "2026-11-26",
+        "hash": "sha256:2c5bbbdd435f1fd29f1acbc2806bcf2b2f80eb1490a72f4f08af3583f0b8cd0d",
+        "cita_ubicacion": "USGS MCS 2025 Salt + UN Comtrade HS 2501.00",
+        "confianza": "alta"
+      }
+    },
+    "descripcion": "Zarandas clasifican fracciones gruesa, entrefina e impalpable destinadas a química básica (electrólisis cloro-soda y soda solvay), tratamiento de aguas y consumo.",
+    "pos_x": 1180,
+    "pos_y": 180,
+    "procedencia": {
+      "anio": 2025,
+      "fuente_id": "usgs-mcs-2025-salt",
+      "fuente": "USGS Mineral Commodity Summaries 2025: Salt (Sodium Chloride)",
+      "url": "https://pubs.usgs.gov/periodicals/mcs2025/mcs2025-salt.pdf",
+      "fecha_descarga": "2026-11-26",
+      "hash": "sha256:2c5bbbdd435f1fd29f1acbc2806bcf2b2f80eb1490a72f4f08af3583f0b8cd0d",
+      "cita_ubicacion": "USGS MCS 2025 Salt + UN Comtrade HS 2501.00",
+      "confianza": "alta"
+    }
+  },
+  {
+    "paso_id": "cem-p1-crudo",
+    "proceso_id": "cemento-horno-seco-san-luis",
+    "orden": 1,
+    "nombre": "Trituración, prehomogeneización y molienda de crudo",
+    "tipo_paso": "materia_prima",
+    "reaccion_balanceada": null,
+    "temperatura_c": "Ambiente-80",
+    "presion_bar": "1,0",
+    "reactivos": [
+      {
+        "especie": "Caliza CaCO3 (~80%) + arcilla/pizarra (~18%) + mineral de hierro",
+        "cantidad": 1.56,
+        "unidad": "t/t clínker"
+      }
+    ],
+    "productos": [
+      {
+        "especie": "Harina cruda homogeneizada (<90 micras)",
+        "cantidad": 1.55,
+        "unidad": "t/t clínker"
+      }
+    ],
+    "insumos": [
+      {
+        "especie": "Energía eléctrica molino vertical de rodillos",
+        "cantidad": null,
+        "unidad": "kWh/t"
+      }
+    ],
+    "subproductos": [],
+    "energia": {
+      "estado": "sin_datos",
+      "valor": null,
+      "unidad": null,
+      "procedencia": {
+        "anio": 2006,
+        "fuente_id": "ipcc-2006-mineral-cap2",
+        "fuente": "IPCC 2006 Guidelines Vol. 3 Chapter 2: Mineral Industry Emissions (Lime & Soda Ash)",
+        "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/pdf/3_Volume3/V3_2_Ch2_Mineral_Industry.pdf",
+        "fecha_descarga": "2026-11-26",
+        "hash": "sha256:f76b756a812afeb3da0c6824cf3747d2d11002a386e1885b374138796c4e1240",
+        "cita_ubicacion": "IPCC 2006 Vol. 3 Cap. 2.2 + EU CLM BREF Raw Meal Preparation",
+        "confianza": "alta"
+      }
+    },
+    "descripcion": "Las materias primas calcáreas y silíceo-aluminosas de La Calera se dosifican con precisión química (módulo de saturación de cal) y se muelen en molino vertical.",
+    "pos_x": 80,
+    "pos_y": 180,
+    "procedencia": {
+      "anio": 2006,
+      "fuente_id": "ipcc-2006-mineral-cap2",
+      "fuente": "IPCC 2006 Guidelines Vol. 3 Chapter 2: Mineral Industry Emissions (Lime & Soda Ash)",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/pdf/3_Volume3/V3_2_Ch2_Mineral_Industry.pdf",
+      "fecha_descarga": "2026-11-26",
+      "hash": "sha256:f76b756a812afeb3da0c6824cf3747d2d11002a386e1885b374138796c4e1240",
+      "cita_ubicacion": "IPCC 2006 Vol. 3 Cap. 2.2 + EU CLM BREF Raw Meal Preparation",
+      "confianza": "alta"
+    }
+  },
+  {
+    "paso_id": "cem-p2-precalcinador",
+    "proceso_id": "cemento-horno-seco-san-luis",
+    "orden": 2,
+    "nombre": "Torre intercambiadora de ciclones y precalcinador",
+    "tipo_paso": "reaccion",
+    "reaccion_balanceada": "CaCO3 -> CaO + CO2",
+    "temperatura_c": "850-920",
+    "presion_bar": "1,0",
+    "reactivos": [
+      {
+        "especie": "Harina cruda seca",
+        "cantidad": 1.55,
+        "unidad": "t/t clínker"
+      }
+    ],
+    "productos": [
+      {
+        "especie": "Harina descarbonatada (~90% calcinada)",
+        "cantidad": 1.05,
+        "unidad": "t/t clínker"
+      },
+      {
+        "especie": "CO2 de descarbonatación",
+        "cantidad": 0.52,
+        "unidad": "t/t clínker"
+      }
+    ],
+    "insumos": [
+      {
+        "especie": "Combustible secundario / gas natural en precalcinador",
+        "cantidad": null,
+        "unidad": "GJ/t"
+      }
+    ],
+    "subproductos": [
+      {
+        "especie": "Gases de escape a filtros de mangas",
+        "cantidad": null,
+        "unidad": "Nm3/t"
+      }
+    ],
+    "energia": {
+      "estado": "sin_datos",
+      "valor": null,
+      "unidad": null,
+      "procedencia": {
+        "anio": 2006,
+        "fuente_id": "ipcc-2006-mineral-cap2",
+        "fuente": "IPCC 2006 Guidelines Vol. 3 Chapter 2: Mineral Industry Emissions (Lime & Soda Ash)",
+        "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/pdf/3_Volume3/V3_2_Ch2_Mineral_Industry.pdf",
+        "fecha_descarga": "2026-11-26",
+        "hash": "sha256:f76b756a812afeb3da0c6824cf3747d2d11002a386e1885b374138796c4e1240",
+        "cita_ubicacion": "IPCC 2006 Vol. 3 Cap. 2.2 Cement Production (EF 0,52 t CO2/t clínker)",
+        "confianza": "alta"
+      }
+    },
+    "descripcion": "La harina desciende en contracorriente por 5 etapas de ciclones alcanzando 900 °C donde se completa ~90% de la descarbonatación de la caliza (0,52 t CO2/t clínker, IPCC Cap. 2.2).",
+    "pos_x": 340,
+    "pos_y": 180,
+    "procedencia": {
+      "anio": 2006,
+      "fuente_id": "ipcc-2006-mineral-cap2",
+      "fuente": "IPCC 2006 Guidelines Vol. 3 Chapter 2: Mineral Industry Emissions (Lime & Soda Ash)",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/pdf/3_Volume3/V3_2_Ch2_Mineral_Industry.pdf",
+      "fecha_descarga": "2026-11-26",
+      "hash": "sha256:f76b756a812afeb3da0c6824cf3747d2d11002a386e1885b374138796c4e1240",
+      "cita_ubicacion": "IPCC 2006 Vol. 3 Cap. 2.2 Cement Production (EF 0,52 t CO2/t clínker)",
+      "confianza": "alta"
+    }
+  },
+  {
+    "paso_id": "cem-p3-horno-rotativo",
+    "proceso_id": "cemento-horno-seco-san-luis",
+    "orden": 3,
+    "nombre": "Clinkerización en horno rotativo a 1.450 °C",
+    "tipo_paso": "reaccion",
+    "reaccion_balanceada": "3 CaO + SiO2 -> Ca3SiO5 (C3S alita)",
+    "temperatura_c": "1400-1450",
+    "presion_bar": "1,0",
+    "reactivos": [
+      {
+        "especie": "Harina precalcinada (CaO + SiO2 + Al2O3 + Fe2O3)",
+        "cantidad": 1.05,
+        "unidad": "t/t clínker"
+      }
+    ],
+    "productos": [
+      {
+        "especie": "Clínker incandescente (C3S, C2S, C3A, C4AF)",
+        "cantidad": 1,
+        "unidad": "t/t clínker"
+      }
+    ],
+    "insumos": [
+      {
+        "especie": "Gas natural / coque de petróleo / coprocesamiento",
+        "cantidad": null,
+        "unidad": "GJ/t"
+      }
+    ],
+    "subproductos": [
+      {
+        "especie": "Gases calientes hacia torre precalcinadora",
+        "cantidad": null,
+        "unidad": "Nm3/t"
+      }
+    ],
+    "energia": {
+      "estado": "sin_datos",
+      "valor": null,
+      "unidad": null,
+      "procedencia": {
+        "anio": 2006,
+        "fuente_id": "eu-bref-clm",
+        "fuente": "Reference Document on Best Available Techniques in the Production of Cement, Lime and Magnesium Oxide (CLM BREF)",
+        "url": "https://bureau-industrial-transformation.jrc.ec.europa.eu/reference/production-cement-lime-and-magnesium-oxide",
+        "fecha_descarga": "2026-11-26",
+        "hash": "sha256:fed8ff63a571396d268f29915414c344745065ecfda832ca9c5a53650ca1f2d6",
+        "cita_ubicacion": "EU CLM BREF Dry Rotary Kiln Clinker Burning",
+        "confianza": "alta"
+      }
+    },
+    "descripcion": "En la zona de sinterización a 1.450 °C se forman la fase líquida ferrito-aluminosa y los cristales de silicato tricálcico (alita) que confieren resistencia hidráulica al cemento.",
+    "pos_x": 620,
+    "pos_y": 180,
+    "procedencia": {
+      "anio": 2006,
+      "fuente_id": "eu-bref-clm",
+      "fuente": "Reference Document on Best Available Techniques in the Production of Cement, Lime and Magnesium Oxide (CLM BREF)",
+      "url": "https://bureau-industrial-transformation.jrc.ec.europa.eu/reference/production-cement-lime-and-magnesium-oxide",
+      "fecha_descarga": "2026-11-26",
+      "hash": "sha256:fed8ff63a571396d268f29915414c344745065ecfda832ca9c5a53650ca1f2d6",
+      "cita_ubicacion": "EU CLM BREF Dry Rotary Kiln Clinker Burning",
+      "confianza": "alta"
+    }
+  },
+  {
+    "paso_id": "cem-p4-enfriador-parrilla",
+    "proceso_id": "cemento-horno-seco-san-luis",
+    "orden": 4,
+    "nombre": "Enfriamiento rápido en parrilla y recuperación térmica",
+    "tipo_paso": "preparacion",
+    "reaccion_balanceada": null,
+    "temperatura_c": "1350 a 100",
+    "presion_bar": "1,0",
+    "reactivos": [
+      {
+        "especie": "Clínker a 1.350 °C",
+        "cantidad": 1,
+        "unidad": "t/t clínker"
+      }
+    ],
+    "productos": [
+      {
+        "especie": "Clínker estabilizado en nódulos (<100 °C)",
+        "cantidad": 1,
+        "unidad": "t/t clínker"
+      }
+    ],
+    "insumos": [
+      {
+        "especie": "Aire de enfriamiento insuflado",
+        "cantidad": null,
+        "unidad": "Nm3/t"
+      }
+    ],
+    "subproductos": [
+      {
+        "especie": "Aire secundario y terciario caliente (800-1.000 °C) al horno",
+        "cantidad": null,
+        "unidad": "reciclo térmico"
+      }
+    ],
+    "energia": {
+      "estado": "sin_datos",
+      "valor": null,
+      "unidad": null,
+      "procedencia": {
+        "anio": 2006,
+        "fuente_id": "eu-bref-clm",
+        "fuente": "Reference Document on Best Available Techniques in the Production of Cement, Lime and Magnesium Oxide (CLM BREF)",
+        "url": "https://bureau-industrial-transformation.jrc.ec.europa.eu/reference/production-cement-lime-and-magnesium-oxide",
+        "fecha_descarga": "2026-11-26",
+        "hash": "sha256:fed8ff63a571396d268f29915414c344745065ecfda832ca9c5a53650ca1f2d6",
+        "cita_ubicacion": "EU CLM BREF Grate Cooler & Tertiary Air Recovery",
+        "confianza": "alta"
+      }
+    },
+    "descripcion": "El templado brusco sobre parrillas móviles congela la microestructura reactiva de la alita (C3S) y recupera calor hacia los quemadores del horno y precalcinador.",
+    "pos_x": 900,
+    "pos_y": 180,
+    "procedencia": {
+      "anio": 2006,
+      "fuente_id": "eu-bref-clm",
+      "fuente": "Reference Document on Best Available Techniques in the Production of Cement, Lime and Magnesium Oxide (CLM BREF)",
+      "url": "https://bureau-industrial-transformation.jrc.ec.europa.eu/reference/production-cement-lime-and-magnesium-oxide",
+      "fecha_descarga": "2026-11-26",
+      "hash": "sha256:fed8ff63a571396d268f29915414c344745065ecfda832ca9c5a53650ca1f2d6",
+      "cita_ubicacion": "EU CLM BREF Grate Cooler & Tertiary Air Recovery",
+      "confianza": "alta"
+    }
+  },
+  {
+    "paso_id": "cem-p5-molienda-cemento",
+    "proceso_id": "cemento-horno-seco-san-luis",
+    "orden": 5,
+    "nombre": "Molienda conjunta con yeso y adiciones (Cemento Portland)",
+    "tipo_paso": "producto",
+    "reaccion_balanceada": null,
+    "temperatura_c": "85-105",
+    "presion_bar": "1,0",
+    "reactivos": [
+      {
+        "especie": "Clínker Portland",
+        "cantidad": 0.85,
+        "unidad": "t/t cemento"
+      },
+      {
+        "especie": "Yeso CaSO4·2H2O (regulador de fragüe) + filler calizo",
+        "cantidad": 0.15,
+        "unidad": "t/t cemento"
+      }
+    ],
+    "productos": [
+      {
+        "especie": "Cemento Portland CPC/CPN (Blaine >3.200 cm2/g)",
+        "cantidad": 1,
+        "unidad": "t/t cemento"
+      }
+    ],
+    "insumos": [
+      {
+        "especie": "Energía eléctrica molino de cemento + separador dinámico",
+        "cantidad": null,
+        "unidad": "kWh/t"
+      }
+    ],
+    "subproductos": [],
+    "energia": {
+      "estado": "sin_datos",
+      "valor": null,
+      "unidad": null,
+      "procedencia": {
+        "anio": 2026,
+        "fuente_id": "cementos-avellaneda-web-2026",
+        "fuente": "Portal institucional Cementos Avellaneda S.A. (Planta La Calera, San Luis)",
+        "url": "https://www.cementosavellaneda.com.ar/",
+        "fecha_descarga": "2026-11-26",
+        "hash": "sha256:1e5dd8b7e2990f3005f2d7f14bf1385951d074e8d2e46ac8b1e895e5e18cc061",
+        "cita_ubicacion": "cementosavellaneda.com.ar + AFCP Cemento Portland",
+        "confianza": "alta"
+      }
+    },
+    "descripcion": "El clínker se muele con 4-5% de yeso para regular el tiempo de fragüe y adiciones minerales calizas, almacenándose en silos para despacho a granel y bolsas.",
+    "pos_x": 1180,
+    "pos_y": 180,
+    "procedencia": {
+      "anio": 2026,
+      "fuente_id": "cementos-avellaneda-web-2026",
+      "fuente": "Portal institucional Cementos Avellaneda S.A. (Planta La Calera, San Luis)",
+      "url": "https://www.cementosavellaneda.com.ar/",
+      "fecha_descarga": "2026-11-26",
+      "hash": "sha256:1e5dd8b7e2990f3005f2d7f14bf1385951d074e8d2e46ac8b1e895e5e18cc061",
+      "cita_ubicacion": "cementosavellaneda.com.ar + AFCP Cemento Portland",
+      "confianza": "alta"
+    }
+  },
+  {
+    "paso_id": "cit-p1-lavado-extraccion",
+    "proceso_id": "citricos-aceite-jugo-concordia",
+    "orden": 1,
+    "nombre": "Lavado, clasificación y extracción integral de fruta",
+    "tipo_paso": "materia_prima",
+    "reaccion_balanceada": null,
+    "temperatura_c": "Ambiente (18-25)",
+    "presion_bar": "1,0",
+    "reactivos": [
+      {
+        "especie": "Naranja y mandarina fresca de Concordia/Federación",
+        "cantidad": 14,
+        "unidad": "t fruta/t jugo 65°Brix"
+      }
+    ],
+    "productos": [
+      {
+        "especie": "Jugo simple crudo (11-12 °Brix)",
+        "cantidad": 6.2,
+        "unidad": "t/t concentrado"
+      },
+      {
+        "especie": "Emulsión acuosa de aceite esencial de cáscara",
+        "cantidad": null,
+        "unidad": "m3/t"
+      },
+      {
+        "especie": "Cáscara húmeda y pulpa prensada",
+        "cantidad": 6.8,
+        "unidad": "t/t"
+      }
+    ],
+    "insumos": [
+      {
+        "especie": "Agua de lavado en recirculación",
+        "cantidad": null,
+        "unidad": "m3/t"
+      }
+    ],
+    "subproductos": [],
+    "energia": {
+      "estado": "sin_datos",
+      "valor": null,
+      "unidad": null,
+      "procedencia": {
+        "anio": 2026,
+        "fuente_id": "eu-bref-fdm",
+        "fuente": "Reference Document on Best Available Techniques in the Food, Drink and Milk Industries (FDM BREF)",
+        "url": "https://bureau-industrial-transformation.jrc.ec.europa.eu/reference/food-drink-and-milk-industries",
+        "fecha_descarga": "2026-11-26",
+        "hash": "sha256:5c44b5656510d12b3e8bd7c74f2095b18f1f106e949fa98b392429ac0847851b",
+        "cita_ubicacion": "EU FDM BREF Citrus Fruit Extraction + FeCiER",
+        "confianza": "alta"
+      }
+    },
+    "descripcion": "Extractores en línea separan sin mezclar el jugo interior de la fruta y la emulsión de aceites esenciales alojados en los sacos oleíferos del flavedo.",
+    "pos_x": 80,
+    "pos_y": 180,
+    "procedencia": {
+      "anio": 2026,
+      "fuente_id": "eu-bref-fdm",
+      "fuente": "Reference Document on Best Available Techniques in the Food, Drink and Milk Industries (FDM BREF)",
+      "url": "https://bureau-industrial-transformation.jrc.ec.europa.eu/reference/food-drink-and-milk-industries",
+      "fecha_descarga": "2026-11-26",
+      "hash": "sha256:5c44b5656510d12b3e8bd7c74f2095b18f1f106e949fa98b392429ac0847851b",
+      "cita_ubicacion": "EU FDM BREF Citrus Fruit Extraction + FeCiER",
+      "confianza": "alta"
+    }
+  },
+  {
+    "paso_id": "cit-p2-centrifugacion-aceite",
+    "proceso_id": "citricos-aceite-jugo-concordia",
+    "orden": 2,
+    "nombre": "Centrifugación en 2 etapas de aceite esencial (D-limoneno)",
+    "tipo_paso": "separacion",
+    "reaccion_balanceada": null,
+    "temperatura_c": "15-22",
+    "presion_bar": "1,0",
+    "reactivos": [
+      {
+        "especie": "Emulsión agua-aceite de cáscara",
+        "cantidad": null,
+        "unidad": "m3/t"
+      }
+    ],
+    "productos": [
+      {
+        "especie": "Aceite esencial frío prensado (>90% D-limoneno C10H16)",
+        "cantidad": 0.045,
+        "unidad": "t/t concentrado"
+      }
+    ],
+    "insumos": [
+      {
+        "especie": "Centrífuga desfangadora + pulidora de discos",
+        "cantidad": null,
+        "unidad": "kWh/t"
+      }
+    ],
+    "subproductos": [
+      {
+        "especie": "Agua de emulsión clarificada reciclada",
+        "cantidad": null,
+        "unidad": "m3/t"
+      }
+    ],
+    "energia": {
+      "estado": "sin_datos",
+      "valor": null,
+      "unidad": null,
+      "procedencia": {
+        "anio": 2026,
+        "fuente_id": "eu-bref-fdm",
+        "fuente": "Reference Document on Best Available Techniques in the Food, Drink and Milk Industries (FDM BREF)",
+        "url": "https://bureau-industrial-transformation.jrc.ec.europa.eu/reference/food-drink-and-milk-industries",
+        "fecha_descarga": "2026-11-26",
+        "hash": "sha256:5c44b5656510d12b3e8bd7c74f2095b18f1f106e949fa98b392429ac0847851b",
+        "cita_ubicacion": "EU FDM BREF Cold-Pressed Citrus Essential Oil Recovery",
+        "confianza": "alta"
+      }
+    },
+    "descripcion": "Dos centrífugas de alta velocidad rompen la emulsión en frío recuperando aceite esencial natural rico en D-limoneno sin degradación térmica de aromas.",
+    "pos_x": 360,
+    "pos_y": 120,
+    "procedencia": {
+      "anio": 2026,
+      "fuente_id": "eu-bref-fdm",
+      "fuente": "Reference Document on Best Available Techniques in the Food, Drink and Milk Industries (FDM BREF)",
+      "url": "https://bureau-industrial-transformation.jrc.ec.europa.eu/reference/food-drink-and-milk-industries",
+      "fecha_descarga": "2026-11-26",
+      "hash": "sha256:5c44b5656510d12b3e8bd7c74f2095b18f1f106e949fa98b392429ac0847851b",
+      "cita_ubicacion": "EU FDM BREF Cold-Pressed Citrus Essential Oil Recovery",
+      "confianza": "alta"
+    }
+  },
+  {
+    "paso_id": "cit-p3-descerado-limoneno",
+    "proceso_id": "citricos-aceite-jugo-concordia",
+    "orden": 3,
+    "nombre": "Winterización (descerado en frío) y envasado de aceite",
+    "tipo_paso": "refinacion",
+    "reaccion_balanceada": null,
+    "temperatura_c": "-18 a 0",
+    "presion_bar": "1,0",
+    "reactivos": [
+      {
+        "especie": "Aceite esencial crudo de naranja/mandarina",
+        "cantidad": 0.045,
+        "unidad": "t/t concentrado"
+      }
+    ],
+    "productos": [
+      {
+        "especie": "Aceite esencial descerado y terpeno D-limoneno (C10H16)",
+        "cantidad": 0.043,
+        "unidad": "t/t concentrado"
+      }
+    ],
+    "insumos": [
+      {
+        "especie": "Frío mecánico (-18 °C) + inertización con N2",
+        "cantidad": null,
+        "unidad": "kWh/t"
+      }
+    ],
+    "subproductos": [
+      {
+        "especie": "Ceras naturales de cáscara filtradas",
+        "cantidad": 0.002,
+        "unidad": "t/t"
+      }
+    ],
+    "energia": {
+      "estado": "sin_datos",
+      "valor": null,
+      "unidad": null,
+      "procedencia": {
+        "anio": 2026,
+        "fuente_id": "federcitrus-web-2026",
+        "fuente": "Federación Argentina del Citrus (Federcitrus): industrialización de jugos y aceites esenciales",
+        "url": "https://www.federcitrus.org/",
+        "fecha_descarga": "2026-11-26",
+        "hash": "sha256:61025f78ba4210e751d23e1a27cad605fe6b7a69036b3524586d71efb9466878",
+        "cita_ubicacion": "federcitrus.org + UN Comtrade HS 3301.12",
+        "confianza": "alta"
+      }
+    },
+    "descripcion": "El enfriamiento prolongado precipita las ceras cuticulares permitiendo obtener aceite esencial cristalino grado alimentario, perfumería y solvente verde.",
+    "pos_x": 680,
+    "pos_y": 100,
+    "procedencia": {
+      "anio": 2026,
+      "fuente_id": "federcitrus-web-2026",
+      "fuente": "Federación Argentina del Citrus (Federcitrus): industrialización de jugos y aceites esenciales",
+      "url": "https://www.federcitrus.org/",
+      "fecha_descarga": "2026-11-26",
+      "hash": "sha256:61025f78ba4210e751d23e1a27cad605fe6b7a69036b3524586d71efb9466878",
+      "cita_ubicacion": "federcitrus.org + UN Comtrade HS 3301.12",
+      "confianza": "alta"
+    }
+  },
+  {
+    "paso_id": "cit-p4-evaporacion-taste",
+    "proceso_id": "citricos-aceite-jugo-concordia",
+    "orden": 4,
+    "nombre": "Pasteurización y evaporación multiefecto TASTE al vacío",
+    "tipo_paso": "refinacion",
+    "reaccion_balanceada": null,
+    "temperatura_c": "45-92",
+    "presion_bar": "0,15-0,8 (vacío)",
+    "reactivos": [
+      {
+        "especie": "Jugo simple filtrado (11-12 °Brix)",
+        "cantidad": 6.2,
+        "unidad": "t/t concentrado"
+      }
+    ],
+    "productos": [
+      {
+        "especie": "Jugo concentrado congelado (65 °Brix)",
+        "cantidad": 1,
+        "unidad": "t/t concentrado"
+      }
+    ],
+    "insumos": [
+      {
+        "especie": "Vapor de calentamiento en 5-7 efectos",
+        "cantidad": null,
+        "unidad": "t vapor/t"
+      }
+    ],
+    "subproductos": [
+      {
+        "especie": "Condensado de agua vegetal + fase acuosa aromática",
+        "cantidad": 5.2,
+        "unidad": "t/t"
+      }
+    ],
+    "energia": {
+      "estado": "sin_datos",
+      "valor": null,
+      "unidad": null,
+      "procedencia": {
+        "anio": 2026,
+        "fuente_id": "eu-bref-fdm",
+        "fuente": "Reference Document on Best Available Techniques in the Food, Drink and Milk Industries (FDM BREF)",
+        "url": "https://bureau-industrial-transformation.jrc.ec.europa.eu/reference/food-drink-and-milk-industries",
+        "fecha_descarga": "2026-11-26",
+        "hash": "sha256:5c44b5656510d12b3e8bd7c74f2095b18f1f106e949fa98b392429ac0847851b",
+        "cita_ubicacion": "EU FDM BREF TASTE Vacuum Multi-Effect Evaporation",
+        "confianza": "alta"
+      }
+    },
+    "descripcion": "El evaporador de película descendente TASTE concentra el jugo en segundos bajo vacío reduciendo 6 veces su volumen para cámara frigorífica y exportación (HS 2009.11).",
+    "pos_x": 680,
+    "pos_y": 260,
+    "procedencia": {
+      "anio": 2026,
+      "fuente_id": "eu-bref-fdm",
+      "fuente": "Reference Document on Best Available Techniques in the Food, Drink and Milk Industries (FDM BREF)",
+      "url": "https://bureau-industrial-transformation.jrc.ec.europa.eu/reference/food-drink-and-milk-industries",
+      "fecha_descarga": "2026-11-26",
+      "hash": "sha256:5c44b5656510d12b3e8bd7c74f2095b18f1f106e949fa98b392429ac0847851b",
+      "cita_ubicacion": "EU FDM BREF TASTE Vacuum Multi-Effect Evaporation",
+      "confianza": "alta"
+    }
+  },
+  {
+    "paso_id": "cit-p5-secado-cascara",
+    "proceso_id": "citricos-aceite-jugo-concordia",
+    "orden": 5,
+    "nombre": "Tratamiento con cal, prensado y secado de cáscara",
+    "tipo_paso": "producto",
+    "reaccion_balanceada": null,
+    "temperatura_c": "90-120",
+    "presion_bar": "1,0",
+    "reactivos": [
+      {
+        "especie": "Cáscara húmeda y pulpa residual",
+        "cantidad": 6.8,
+        "unidad": "t/t concentrado"
+      }
+    ],
+    "productos": [
+      {
+        "especie": "Cáscara deshidratada / pellets para pectina y nutrición",
+        "cantidad": 1.35,
+        "unidad": "t/t concentrado"
+      }
+    ],
+    "insumos": [
+      {
+        "especie": "Cal hidratada Ca(OH)2 (despectinización para prensado)",
+        "cantidad": null,
+        "unidad": "kg/t"
+      }
+    ],
+    "subproductos": [
+      {
+        "especie": "Licor de prensa a melaza cítrica / recuperación de terpenos",
+        "cantidad": null,
+        "unidad": "t/t"
+      }
+    ],
+    "energia": {
+      "estado": "sin_datos",
+      "valor": null,
+      "unidad": null,
+      "procedencia": {
+        "anio": 2026,
+        "fuente_id": "fecier-web-2026",
+        "fuente": "Federación del Citrus de Entre Ríos (FeCiER): polo citrícola e industrialización en Concordia y Federación",
+        "url": "https://www.fecier.org.ar/",
+        "fecha_descarga": "2026-11-26",
+        "hash": "sha256:8acb03caa8d432a636771bc3a0d27bec96086245e1344850401beee9b3d91094",
+        "cita_ubicacion": "fecier.org.ar Aprovechamiento integral de subproductos cítricos",
+        "confianza": "alta"
+      }
+    },
+    "descripcion": "La cáscara agotada se acondiciona con cal, se prensa y seca en tambores rotativos logrando aprovechamiento integral cercano al 100% de la fruta procesada.",
+    "pos_x": 1020,
+    "pos_y": 220,
+    "procedencia": {
+      "anio": 2026,
+      "fuente_id": "fecier-web-2026",
+      "fuente": "Federación del Citrus de Entre Ríos (FeCiER): polo citrícola e industrialización en Concordia y Federación",
+      "url": "https://www.fecier.org.ar/",
+      "fecha_descarga": "2026-11-26",
+      "hash": "sha256:8acb03caa8d432a636771bc3a0d27bec96086245e1344850401beee9b3d91094",
+      "cita_ubicacion": "fecier.org.ar Aprovechamiento integral de subproductos cítricos",
+      "confianza": "alta"
+    }
   }
 ]

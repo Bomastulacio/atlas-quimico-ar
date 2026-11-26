@@ -673,12 +673,155 @@
   {
     "fuente_id": "afcp-web-2026",
     "nombre": "Asociación de Fabricantes de Celulosa y Papel de Argentina (AFCP)",
-    "organismo": "AFCP Argentina",
+    "organismo": "AFCP Celulosa y Papel Argentina",
+    "tipo": "tecnica",
+    "url": "https://www.afcparg.org.ar/",
+    "fecha_descarga": "2026-11-26",
+    "hash": "sha256:73ffa42bcdafb3b30bd402b9926346d165be4aee30f6585843701da9fdd3862a",
+    "archivo_raw": null,
+    "notas": "Entidad sectorial de la industria celulósico-papelera argentina con eje de pulpa Kraft química en Misiones."
+  },
+  {
+    "fuente_id": "uncomtrade-ar-lote5-2023",
+    "nombre": "UN Comtrade: comercio exterior de Argentina HS 271112/271113 (GLP), 250100 (Sal), 252329/252310 (Cemento) y 200911/330112 (Cítricos) 2023",
+    "organismo": "UN Comtrade (Naciones Unidas)",
+    "tipo": "oficial",
+    "url": "https://comtradeapi.un.org/public/v1/preview/C/A/HS?reporterCode=32&period=2023&partnerCode=0&partner2Code=0&customsCode=C00&motCode=0&cmdCode=271112,271113,250100,252329,252310,330112,200911",
+    "fecha_descarga": "2026-11-26",
+    "hash": "sha256:152b35f834d173a2e80f4bdfdce05aa6aca4744f05dba87186bd14d0465c680b",
+    "archivo_raw": null,
+    "notas": "Flujos oficiales 2023 de propano/butano licuados (GLP), sal industrial NaCl, cemento Portland y jugo/aceite esencial cítrico."
+  },
+  {
+    "fuente_id": "uncomtrade-ar-lote5-2024",
+    "nombre": "UN Comtrade: comercio exterior de Argentina HS 271112/271113 (GLP), 250100 (Sal), 252329/252310 (Cemento) y 200911/330112 (Cítricos) 2024",
+    "organismo": "UN Comtrade (Naciones Unidas)",
+    "tipo": "oficial",
+    "url": "https://comtradeapi.un.org/public/v1/preview/C/A/HS?reporterCode=32&period=2024&partnerCode=0&partner2Code=0&customsCode=C00&motCode=0&cmdCode=271112,271113,250100,252329,252310,330112,200911",
+    "fecha_descarga": "2026-11-26",
+    "hash": "sha256:098fe2d108f3db3731180e391466d2f01165deeb00598d2acf652372d4611ec1",
+    "archivo_raw": null,
+    "notas": "Flujos oficiales 2024 de propano/butano licuados (GLP), sal industrial NaCl, cemento Portland y jugo/aceite esencial cítrico."
+  },
+  {
+    "fuente_id": "usgs-mcs-2025-salt",
+    "nombre": "USGS Mineral Commodity Summaries 2025: Salt (Sodium Chloride)",
+    "organismo": "U.S. Geological Survey (USGS)",
+    "tipo": "oficial",
+    "url": "https://pubs.usgs.gov/periodicals/mcs2025/mcs2025-salt.pdf",
+    "fecha_descarga": "2026-11-26",
+    "hash": "sha256:2c5bbbdd435f1fd29f1acbc2806bcf2b2f80eb1490a72f4f08af3583f0b8cd0d",
+    "archivo_raw": null,
+    "notas": "Referencia mineral internacional sobre cloruro de sodio industrial y su rol como materia prima de cloro-soda y carbonato de sodio."
+  },
+  {
+    "fuente_id": "usgs-mcs-2025-cement",
+    "nombre": "USGS Mineral Commodity Summaries 2025: Cement (Portland & Clinker)",
+    "organismo": "U.S. Geological Survey (USGS)",
+    "tipo": "oficial",
+    "url": "https://pubs.usgs.gov/periodicals/mcs2025/mcs2025-cement.pdf",
+    "fecha_descarga": "2026-11-26",
+    "hash": "sha256:57560e2e5eea8cfcdd1fdbd59fd8833add1097f9d53aec2a9c0f2d87cfaac334",
+    "archivo_raw": null,
+    "notas": "Referencia mineral global sobre clínker hidráulico y cemento Portland en procesos de calcinación vía seca."
+  },
+  {
+    "fuente_id": "eu-bref-ref",
+    "nombre": "Reference Document on Best Available Techniques for the Refining of Mineral Oil and Gas (REF BREF)",
+    "organismo": "Comisión Europea · Joint Research Centre (JRC / EU-BRITE)",
+    "tipo": "tecnica",
+    "url": "https://bureau-industrial-transformation.jrc.ec.europa.eu/reference/refining-mineral-oil-and-gas",
+    "fecha_descarga": "2026-11-26",
+    "hash": "sha256:682ce5d7c61e02b0442cdb38770c98735dd7406ddb30321e2338b5bdcf05a1c7",
+    "archivo_raw": null,
+    "notas": "Referencia BAT para tratamiento de gas natural, deshidratación con glicol, recuperación criogénica de LGN y fraccionamiento de GLP."
+  },
+  {
+    "fuente_id": "eu-bref-fdm",
+    "nombre": "Reference Document on Best Available Techniques in the Food, Drink and Milk Industries (FDM BREF)",
+    "organismo": "Comisión Europea · Joint Research Centre (JRC / EU-BRITE)",
+    "tipo": "tecnica",
+    "url": "https://bureau-industrial-transformation.jrc.ec.europa.eu/reference/food-drink-and-milk-industries",
+    "fecha_descarga": "2026-11-26",
+    "hash": "sha256:5c44b5656510d12b3e8bd7c74f2095b18f1f106e949fa98b392429ac0847851b",
+    "archivo_raw": null,
+    "notas": "Referencia técnica BAT para extracción en frío de aceites esenciales cítricos, evaporación multiefecto de jugos y secado de subproductos."
+  },
+  {
+    "fuente_id": "totalenergies-ar-web-2026",
+    "nombre": "Portal institucional TotalEnergies Argentina (Operaciones Cuenca Austral / Tierra del Fuego)",
+    "organismo": "TotalEnergies Argentina",
+    "tipo": "empresa",
+    "url": "https://totalenergies.com.ar/",
+    "fecha_descarga": "2026-11-26",
+    "hash": "sha256:10802742a4141ca4c8839e0901730e56ad931514ade0f59217d355a2f4a41e75",
+    "archivo_raw": null,
+    "notas": "Operador de plantas de tratamiento de gas natural y líquidos (Río Cullen / Cañadón Alfa) en el Depto. Río Grande, Tierra del Fuego."
+  },
+  {
+    "fuente_id": "enargas-web-2026",
+    "nombre": "Ente Nacional Regulador del Gas (ENARGAS): especificaciones de gas natural y GLP",
+    "organismo": "ENARGAS (República Argentina)",
+    "tipo": "oficial",
+    "url": "https://www.enargas.gob.ar/",
+    "fecha_descarga": "2026-11-26",
+    "hash": "sha256:348c0397955f862040024be7428db528ba23952b4dec6c360c53f8ae6b9411e4",
+    "archivo_raw": null,
+    "notas": "Marco regulatorio oficial del acondicionamiento de gas natural de cabecera en Cuenca Austral e inyección al Gasoducto San Martín."
+  },
+  {
+    "fuente_id": "dosanclas-web-2026",
+    "nombre": "Portal institucional Dos Anclas (Compañía Introductora de Buenos Aires S.A. · Salinas Grandes de Hidalgo)",
+    "organismo": "Dos Anclas / CIBA S.A.",
+    "tipo": "empresa",
+    "url": "https://www.dosanclas.com.ar/",
+    "fecha_descarga": "2026-11-26",
+    "hash": "sha256:2024b46d4239f25130cfc5a4a539b039db0c3a16c9e9cd2e5535e2fbc41e4f9b",
+    "archivo_raw": null,
+    "notas": "Complejo salinero y planta refinadora en Salinas Grandes de Hidalgo (Depto. Atreucó, La Pampa) para sal industrial y alimentaria."
+  },
+  {
+    "fuente_id": "cementos-avellaneda-web-2026",
+    "nombre": "Portal institucional Cementos Avellaneda S.A. (Planta La Calera, San Luis)",
+    "organismo": "Cementos Avellaneda S.A.",
+    "tipo": "empresa",
+    "url": "https://www.cementosavellaneda.com.ar/",
+    "fecha_descarga": "2026-11-26",
+    "hash": "sha256:1e5dd8b7e2990f3005f2d7f14bf1385951d074e8d2e46ac8b1e895e5e18cc061",
+    "archivo_raw": null,
+    "notas": "Planta integrada de clínker y cemento Portland vía seca en La Calera (Depto. Belgrano, San Luis)."
+  },
+  {
+    "fuente_id": "afcp-cemento-web-2026",
+    "nombre": "Asociación de Fabricantes de Cemento Portland (AFCP Argentina)",
+    "organismo": "AFCP Cemento Portland",
     "tipo": "tecnica",
     "url": "https://www.afcp.org.ar/",
     "fecha_descarga": "2026-11-26",
-    "hash": "sha256:462042ba5213b3fdad74a435117b636267ed23d4077c2a71032f5e1d1eeec509",
+    "hash": "sha256:9a2585fc19c269860040c759aeda4211e17e39aa62082fd650c5748c16b3ae21",
     "archivo_raw": null,
-    "notas": "Entidad sectorial de la industria celulósico-papelera argentina con eje de pulpa Kraft química en Misiones."
+    "notas": "Entidad sectorial de la industria cementera argentina (clínker y cemento Portland en San Luis y complejos del país)."
+  },
+  {
+    "fuente_id": "fecier-web-2026",
+    "nombre": "Federación del Citrus de Entre Ríos (FeCiER): polo citrícola e industrialización en Concordia y Federación",
+    "organismo": "FeCiER (Entre Ríos)",
+    "tipo": "tecnica",
+    "url": "https://www.fecier.org.ar/",
+    "fecha_descarga": "2026-11-26",
+    "hash": "sha256:8acb03caa8d432a636771bc3a0d27bec96086245e1344850401beee9b3d91094",
+    "archivo_raw": null,
+    "notas": "Entidad regional del cinturón citrícola entrerriano (Concordia y Federación), eje de jugos concentrados y aceite esencial D-limoneno."
+  },
+  {
+    "fuente_id": "federcitrus-web-2026",
+    "nombre": "Federación Argentina del Citrus (Federcitrus): industrialización de jugos y aceites esenciales",
+    "organismo": "Federcitrus",
+    "tipo": "tecnica",
+    "url": "https://www.federcitrus.org/",
+    "fecha_descarga": "2026-11-26",
+    "hash": "sha256:61025f78ba4210e751d23e1a27cad605fe6b7a69036b3524586d71efb9466878",
+    "archivo_raw": null,
+    "notas": "Cámara nacional citrícola que documenta el complejo agroindustrial de cítricos dulces de Entre Ríos."
   }
 ]

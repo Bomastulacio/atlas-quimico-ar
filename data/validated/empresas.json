@@ -304,5 +304,73 @@
       "cita_ubicacion": "arauco.com Operaciones Industriales Argentina / Celulosa Puerto Esperanza",
       "confianza": "alta"
     }
+  },
+  {
+    "empresa_id": "totalenergies-austral",
+    "razon_social": "Total Austral S.A. (TotalEnergies Argentina · Consorcio CMA-1)",
+    "tipo_capital": "extranjero",
+    "sitio_web_oficial": "https://totalenergies.com.ar/",
+    "hechos_verificables": "Operador del consorcio Cuenca Marina Austral 1 (CMA-1) en Tierra del Fuego con plantas de tratamiento y fraccionamiento de gas natural y GLP en Río Cullen y Cañadón Alfa (Depto. Río Grande).",
+    "procedencia": {
+      "anio": 2026,
+      "fuente_id": "totalenergies-ar-web-2026",
+      "fuente": "Portal institucional TotalEnergies Argentina (Operaciones Cuenca Austral / Tierra del Fuego)",
+      "url": "https://totalenergies.com.ar/",
+      "fecha_descarga": "2026-11-26",
+      "hash": "sha256:10802742a4141ca4c8839e0901730e56ad931514ade0f59217d355a2f4a41e75",
+      "cita_ubicacion": "totalenergies.com.ar Operaciones Cuenca Austral (Tierra del Fuego)",
+      "confianza": "alta"
+    }
+  },
+  {
+    "empresa_id": "dos-anclas-ciba",
+    "razon_social": "Compañía Introductora de Buenos Aires S.A. (Dos Anclas)",
+    "tipo_capital": "nacional",
+    "sitio_web_oficial": "https://www.dosanclas.com.ar/",
+    "hechos_verificables": "Principal complejo salinero argentino con cosecha evaporítica y planta de lavado y refinación de cloruro de sodio en Salinas Grandes de Hidalgo (Depto. Atreucó, La Pampa).",
+    "procedencia": {
+      "anio": 2026,
+      "fuente_id": "dosanclas-web-2026",
+      "fuente": "Portal institucional Dos Anclas (Compañía Introductora de Buenos Aires S.A. · Salinas Grandes de Hidalgo)",
+      "url": "https://www.dosanclas.com.ar/",
+      "fecha_descarga": "2026-11-26",
+      "hash": "sha256:2024b46d4239f25130cfc5a4a539b039db0c3a16c9e9cd2e5535e2fbc41e4f9b",
+      "cita_ubicacion": "dosanclas.com.ar Planta Industrial Salinas Grandes de Hidalgo (La Pampa)",
+      "confianza": "alta"
+    }
+  },
+  {
+    "empresa_id": "cementos-avellaneda-sa",
+    "razon_social": "Cementos Avellaneda S.A.",
+    "tipo_capital": "mixto",
+    "sitio_web_oficial": "https://www.cementosavellaneda.com.ar/",
+    "hechos_verificables": "Productor integrado de clínker y cemento Portland con planta vía seca de alta eficiencia en La Calera (Depto. Belgrano, San Luis), abasteciendo a Cuyo y el Centro argentino.",
+    "procedencia": {
+      "anio": 2026,
+      "fuente_id": "cementos-avellaneda-web-2026",
+      "fuente": "Portal institucional Cementos Avellaneda S.A. (Planta La Calera, San Luis)",
+      "url": "https://www.cementosavellaneda.com.ar/",
+      "fecha_descarga": "2026-11-26",
+      "hash": "sha256:1e5dd8b7e2990f3005f2d7f14bf1385951d074e8d2e46ac8b1e895e5e18cc061",
+      "cita_ubicacion": "cementosavellaneda.com.ar Planta Industrial La Calera (San Luis)",
+      "confianza": "alta"
+    }
+  },
+  {
+    "empresa_id": "polo-citricola-concordia",
+    "razon_social": "Complejos Citrícolas Industriales de Concordia (FeCiER)",
+    "tipo_capital": "nacional",
+    "sitio_web_oficial": "https://www.fecier.org.ar/",
+    "hechos_verificables": "Agrupamiento agroindustrial del noreste entrerriano (Concordia y Federación) dedicado a la extracción de aceites esenciales cítricos (D-limoneno), jugos concentrados y derivados de cáscara.",
+    "procedencia": {
+      "anio": 2026,
+      "fuente_id": "fecier-web-2026",
+      "fuente": "Federación del Citrus de Entre Ríos (FeCiER): polo citrícola e industrialización en Concordia y Federación",
+      "url": "https://www.fecier.org.ar/",
+      "fecha_descarga": "2026-11-26",
+      "hash": "sha256:8acb03caa8d432a636771bc3a0d27bec96086245e1344850401beee9b3d91094",
+      "cita_ubicacion": "fecier.org.ar + federcitrus.org Industrialización Citrícola de Entre Ríos",
+      "confianza": "alta"
+    }
   }
 ]

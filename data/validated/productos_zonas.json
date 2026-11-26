@@ -334,10 +334,118 @@
       "anio": 2026,
       "fuente_id": "afcp-web-2026",
       "fuente": "Asociación de Fabricantes de Celulosa y Papel de Argentina (AFCP)",
-      "url": "https://www.afcp.org.ar/",
+      "url": "https://www.afcparg.org.ar/",
       "fecha_descarga": "2026-11-26",
-      "hash": "sha256:462042ba5213b3fdad74a435117b636267ed23d4077c2a71032f5e1d1eeec509",
+      "hash": "sha256:73ffa42bcdafb3b30bd402b9926346d165be4aee30f6585843701da9fdd3862a",
       "cita_ubicacion": "afcp.org.ar Cuenca foresto-industrial Alto Paraná (Depto. Lib. Gral. San Martín, Misiones)",
+      "confianza": "alta"
+    }
+  },
+  {
+    "relacion_id": "glp-gas-natural-94-94008",
+    "producto_id": "glp-gas-natural",
+    "provincia_id": "94",
+    "departamento_id": "94008",
+    "es_dominante": true,
+    "rol_en_cadena": "procesamiento",
+    "procedencia": {
+      "anio": 2026,
+      "fuente_id": "totalenergies-ar-web-2026",
+      "fuente": "Portal institucional TotalEnergies Argentina (Operaciones Cuenca Austral / Tierra del Fuego)",
+      "url": "https://totalenergies.com.ar/",
+      "fecha_descarga": "2026-11-26",
+      "hash": "sha256:10802742a4141ca4c8839e0901730e56ad931514ade0f59217d355a2f4a41e75",
+      "cita_ubicacion": "totalenergies.com.ar + ENARGAS Plantas Río Cullen y Cañadón Alfa (Depto. Río Grande, Tierra del Fuego)",
+      "confianza": "alta"
+    }
+  },
+  {
+    "relacion_id": "sal-industrial-42-42007",
+    "producto_id": "sal-industrial",
+    "provincia_id": "42",
+    "departamento_id": "42007",
+    "es_dominante": true,
+    "rol_en_cadena": "refinacion",
+    "procedencia": {
+      "anio": 2026,
+      "fuente_id": "dosanclas-web-2026",
+      "fuente": "Portal institucional Dos Anclas (Compañía Introductora de Buenos Aires S.A. · Salinas Grandes de Hidalgo)",
+      "url": "https://www.dosanclas.com.ar/",
+      "fecha_descarga": "2026-11-26",
+      "hash": "sha256:2024b46d4239f25130cfc5a4a539b039db0c3a16c9e9cd2e5535e2fbc41e4f9b",
+      "cita_ubicacion": "dosanclas.com.ar Salinas Grandes de Hidalgo (Depto. Atreucó, La Pampa)",
+      "confianza": "alta"
+    }
+  },
+  {
+    "relacion_id": "sal-industrial-42-42077",
+    "producto_id": "sal-industrial",
+    "provincia_id": "42",
+    "departamento_id": "42077",
+    "es_dominante": false,
+    "rol_en_cadena": "extraccion",
+    "procedencia": {
+      "anio": 2025,
+      "fuente_id": "usgs-mcs-2025-salt",
+      "fuente": "USGS Mineral Commodity Summaries 2025: Salt (Sodium Chloride)",
+      "url": "https://pubs.usgs.gov/periodicals/mcs2025/mcs2025-salt.pdf",
+      "fecha_descarga": "2026-11-26",
+      "hash": "sha256:2c5bbbdd435f1fd29f1acbc2806bcf2b2f80eb1490a72f4f08af3583f0b8cd0d",
+      "cita_ubicacion": "USGS MCS 2025 Salt + cuenca evaporítica Salina Colorada Grande (Depto. Hucal, La Pampa)",
+      "confianza": "alta"
+    }
+  },
+  {
+    "relacion_id": "cemento-clinker-74-74014",
+    "producto_id": "cemento-clinker",
+    "provincia_id": "74",
+    "departamento_id": "74014",
+    "es_dominante": true,
+    "rol_en_cadena": "sintesis",
+    "procedencia": {
+      "anio": 2026,
+      "fuente_id": "cementos-avellaneda-web-2026",
+      "fuente": "Portal institucional Cementos Avellaneda S.A. (Planta La Calera, San Luis)",
+      "url": "https://www.cementosavellaneda.com.ar/",
+      "fecha_descarga": "2026-11-26",
+      "hash": "sha256:1e5dd8b7e2990f3005f2d7f14bf1385951d074e8d2e46ac8b1e895e5e18cc061",
+      "cita_ubicacion": "cementosavellaneda.com.ar Planta La Calera (Depto. Belgrano, San Luis)",
+      "confianza": "alta"
+    }
+  },
+  {
+    "relacion_id": "citricos-limoneno-30-30015",
+    "producto_id": "citricos-limoneno",
+    "provincia_id": "30",
+    "departamento_id": "30015",
+    "es_dominante": true,
+    "rol_en_cadena": "procesamiento",
+    "procedencia": {
+      "anio": 2026,
+      "fuente_id": "fecier-web-2026",
+      "fuente": "Federación del Citrus de Entre Ríos (FeCiER): polo citrícola e industrialización en Concordia y Federación",
+      "url": "https://www.fecier.org.ar/",
+      "fecha_descarga": "2026-11-26",
+      "hash": "sha256:8acb03caa8d432a636771bc3a0d27bec96086245e1344850401beee9b3d91094",
+      "cita_ubicacion": "fecier.org.ar Polo industrial citrícola de jugos y aceites esenciales (Depto. Concordia, Entre Ríos)",
+      "confianza": "alta"
+    }
+  },
+  {
+    "relacion_id": "citricos-limoneno-30-30028",
+    "producto_id": "citricos-limoneno",
+    "provincia_id": "30",
+    "departamento_id": "30028",
+    "es_dominante": false,
+    "rol_en_cadena": "extraccion",
+    "procedencia": {
+      "anio": 2026,
+      "fuente_id": "federcitrus-web-2026",
+      "fuente": "Federación Argentina del Citrus (Federcitrus): industrialización de jugos y aceites esenciales",
+      "url": "https://www.federcitrus.org/",
+      "fecha_descarga": "2026-11-26",
+      "hash": "sha256:61025f78ba4210e751d23e1a27cad605fe6b7a69036b3524586d71efb9466878",
+      "cita_ubicacion": "federcitrus.org Cuenca productora de cítricos dulces (Depto. Federación, Entre Ríos)",
       "confianza": "alta"
     }
   }

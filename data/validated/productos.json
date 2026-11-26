@@ -148,5 +148,45 @@
     "descripcion_corta": "Pulpa química de fibra larga de pino obtenida por cocción Kraft al sulfato, blanqueo ECF y ciclo cerrado de recuperación en Misiones.",
     "mdx_slug": "celulosa-kraft",
     "estado_mvp": "validado"
+  },
+  {
+    "producto_id": "glp-gas-natural",
+    "nombre": "Gas licuado de petróleo (GLP)",
+    "categoria": "petroquimica",
+    "formula_quimica": "C3H8 / C4H10",
+    "icono_id": "glp-gas-natural",
+    "descripcion_corta": "Propano, butano y gasolina natural recuperados por expansión criogénica desde gas húmedo de la Cuenca Austral en Río Grande (Tierra del Fuego).",
+    "mdx_slug": "glp-gas-natural",
+    "estado_mvp": "validado"
+  },
+  {
+    "producto_id": "sal-industrial",
+    "nombre": "Sal industrial (NaCl)",
+    "categoria": "mineria_quimica",
+    "formula_quimica": "NaCl",
+    "icono_id": "sal-industrial",
+    "descripcion_corta": "Cloruro de sodio de alta pureza cosechado en las salinas evaporíticas de La Pampa, lavado contracorriente y refinado para química cloro-soda y alimentación.",
+    "mdx_slug": "sal-industrial",
+    "estado_mvp": "validado"
+  },
+  {
+    "producto_id": "cemento-clinker",
+    "nombre": "Cemento Portland (clínker)",
+    "categoria": "mineria_quimica",
+    "formula_quimica": "Ca3SiO5 / Ca2SiO4",
+    "icono_id": "cemento-clinker",
+    "descripcion_corta": "Clínker hidráulico producido por calcinación a 1.450 °C en horno rotativo vía seca con precalcinador en La Calera (San Luis) y molienda final con yeso.",
+    "mdx_slug": "cemento-clinker",
+    "estado_mvp": "validado"
+  },
+  {
+    "producto_id": "citricos-limoneno",
+    "nombre": "Aceite esencial cítrico y jugo concentrado",
+    "categoria": "agroindustria",
+    "formula_quimica": "C10H16",
+    "icono_id": "citricos-limoneno",
+    "descripcion_corta": "Extracción en frío de D-limoneno desde cáscara cítrica, evaporación multiefecto TASTE de jugos y secado de pectinas en Concordia (Entre Ríos).",
+    "mdx_slug": "citricos-limoneno",
+    "estado_mvp": "validado"
   }
 ]
