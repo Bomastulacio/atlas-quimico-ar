@@ -306,5 +306,49 @@
     "hash": "sha256:7f9e25e1da5fd7163415c3d5b08c73b5a2d1b577b93b10de4dca14cc16395e01",
     "archivo_raw": null,
     "notas": "Operación de desmote y procesamiento de semilla de algodón en Las Breñas (Chaco) y Reconquista (Santa Fe)."
+  },
+  {
+    "fuente_id": "eu-bref-lvoc-2017",
+    "nombre": "Best Available Techniques (BAT) Reference Document for the Production of Large Volume Organic Chemicals (LVOC BREF)",
+    "organismo": "Comisión Europea · Joint Research Centre (JRC / EU-BRITE)",
+    "tipo": "tecnica",
+    "url": "https://bureau-industrial-transformation.jrc.ec.europa.eu/reference/production-large-volume-organic-chemicals",
+    "fecha_descarga": "2026-11-26",
+    "hash": "sha256:fb75a48a3620f76be5994c385048921a27c0dffdfad33ab595aac4654cfe8a34",
+    "archivo_raw": null,
+    "notas": "Referencia internacional de ingeniería de procesos para Lower Olefins (steam cracking de etano, TLE quench, compresión a 30 bar, lavado cáustico, secado y fraccionamiento criogénico)."
+  },
+  {
+    "fuente_id": "eu-bref-lvic-aaf-2007",
+    "nombre": "Reference Document on Best Available Techniques for the Manufacture of Large Volume Inorganic Chemicals: Ammonia, Acids and Fertilisers (LVIC-AAF BREF)",
+    "organismo": "Comisión Europea · Joint Research Centre (JRC / EU-BRITE)",
+    "tipo": "tecnica",
+    "url": "https://bureau-industrial-transformation.jrc.ec.europa.eu/reference/large-volume-inorganic-chemicals-ammonia-acids-and-fertilisers",
+    "fecha_descarga": "2026-11-26",
+    "hash": "sha256:a7c0fd7b6b6df630910ccefa7cd00bafdc5023f3046a5b667209022d8cedce84",
+    "archivo_raw": null,
+    "notas": "Referencia internacional de ingeniería de procesos para reformado de gas natural (SMR), conversión de CO, síntesis Haber-Bosch (100-250 bar, 400-500 °C), síntesis de urea (140-180 bar, 180-210 °C), stripping y reciclo de carbamato."
+  },
+  {
+    "fuente_id": "epa-ap42-ch8-inorganic",
+    "nombre": "AP-42 Compilation of Air Pollutant Emissions Factors (Vol. I, Cap. 8: Inorganic Chemical Industry, 8.1 Synthetic Ammonia & 8.2 Urea)",
+    "organismo": "U.S. Environmental Protection Agency (US EPA)",
+    "tipo": "tecnica",
+    "url": "https://www.epa.gov/air-emissions-factors-and-quantification/ap-42-fifth-edition-volume-i-chapter-8-inorganic-chemical-0",
+    "fecha_descarga": "2026-11-26",
+    "hash": "sha256:01dd66c7d2f7bdae219eb0cf1041d13552afa9efef1d7e3697f2e67a21a5cd62",
+    "archivo_raw": null,
+    "notas": "Diagramas de flujo de proceso (PFD) y puntos de emisión de plantas integradas de amoníaco sintético, concentración al vacío y granulación de urea."
+  },
+  {
+    "fuente_id": "inti-argentina-portal",
+    "nombre": "Instituto Nacional de Tecnología Industrial (INTI): asistencia en química, polímeros, metrología y efluentes industriales",
+    "organismo": "INTI · Secretaría de Industria y Comercio de la Nación",
+    "tipo": "oficial",
+    "url": "https://www.argentina.gob.ar/inti",
+    "fecha_descarga": "2026-11-26",
+    "hash": "sha256:71af49965c73a89292d2bff7be43077b91572905d0cfbb18c9ee78981a0b7a0a",
+    "archivo_raw": null,
+    "notas": "Referente técnico nacional en caracterización de polietilenos, metrología industrial y control ambiental de complejos químicos en Argentina."
   }
 ]

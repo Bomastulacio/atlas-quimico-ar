@@ -6,8 +6,8 @@
   "nota": "Dataset oficial sincronizado íntegramente desde Supabase.",
   "tablas": {
     "fuentes": {
-      "registros": 28,
-      "hash": "sha256:12ee485935619f65017a78c9e361c072ed1c668e33cc38b9011e5cc6deec88e1"
+      "registros": 32,
+      "hash": "sha256:5334b13a3e3bc34e8ce994bc7e35929be93d1805ab4c916179909cefe4ba5a1f"
     },
     "provincias": {
       "registros": 24,
