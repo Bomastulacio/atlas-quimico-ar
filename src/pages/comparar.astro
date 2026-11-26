@@ -1,0 +1,138 @@
+---
+import BaseLayout from '@/layouts/BaseLayout.astro';
+import { SiteHeader } from '@/components/SiteHeader';
+import { ValueChainComparator } from '@/components/ValueChainComparator';
+import {
+  getCadenaValorTransversalData,
+  getCoberturaDetallada,
+  getComparadorProductosData,
+  getComparadorProvinciasData,
+  getMercadoSnapshot,
+  getSearchIndex,
+} from '@/data';
+
+const productos = getComparadorProductosData();
+const provincias = getComparadorProvinciasData();
+const cadenaValor = getCadenaValorTransversalData();
+const mercadoSnapshot = getMercadoSnapshot();
+const cobertura = getCoberturaDetallada();
+const searchItems = getSearchIndex();
+
+const encadenamientosDirectos = cadenaValor.troncos.reduce(
+  (acc, t) =>
+    acc + t.vinculos.filter((v) => v.tipo === 'encadenamiento_aguas_abajo').length,
+  0
+);
+---
+
+<BaseLayout
+  title="Cadena de valor y comparador | Atlas Químico Argentino"
+  description="Compará lado a lado cadenas industriales y provincias argentinas: producción verificada, saldo comercial en USD, energía específica, empresas, valuación bursátil y mapa transversal de insumos."
+>
+  <SiteHeader client:load variant="solid" searchItems={searchItems} currentPath="/comparar" />
+
+  <main class="mx-auto max-w-[1600px] px-5 pb-20 pt-8 sm:px-8 lg:px-10">
+    {/* Navegación contextual */}
+    <nav
+      aria-label="Ruta de navegación"
+      class="mb-7 flex flex-wrap items-center justify-between gap-3 border-b border-rule pb-3 text-[13px] text-ink-muted"
+    >
+      <a href="/#mapa" class="font-medium text-ink transition-colors duration-150 hover:text-cobalt">
+        ← Volver al mapa territorial
+      </a>
+      <div class="flex flex-wrap items-center gap-4">
+        <a href="#cadena-de-valor" class="transition-colors duration-150 hover:text-ink">
+          Ir a cadena de valor transversal
+        </a>
+        <a href="/empresas" class="transition-colors duration-150 hover:text-ink">
+          Empresas ({cobertura.totales.empresasVerificadas})
+        </a>
+        <a href="/cobertura" class="transition-colors duration-150 hover:text-ink">
+          Cobertura ({cobertura.totales.provinciasConDatos}/24)
+        </a>
+      </div>
+    </nav>
+
+    {/* Cabecera editorial */}
+    <section class="border-b border-rule pb-10">
+      <div class="max-w-3xl">
+        <h1 class="font-display text-[clamp(1.85rem,3vw,2.6rem)] font-medium leading-[1.06] tracking-[-0.032em] text-ink">
+          Cadena de valor y comparador territorial
+        </h1>
+        <p class="mt-3 text-[15px] font-normal leading-relaxed text-ink-muted">
+          Contrastá entre 2 y 3 productos o provincias con cifras verificadas de Supabase, y
+          recorré cómo se conectan los insumos básicos, la energía y las transformaciones químicas
+          entre regiones del país.
+        </p>
+      </div>
+
+      {/* 4 indicadores resumen 100% reales */}
+      <dl class="mt-8 grid gap-6 border-t border-rule pt-6 sm:grid-cols-2 lg:grid-cols-4 tabular-nums">
+        <div>
+          <dt class="text-[13px] text-ink-muted">Cadenas comparables</dt>
+          <dd class="mt-1 font-display text-[24px] font-medium leading-tight tracking-[-0.02em] text-ink">
+            {productos.length}
+          </dd>
+          <p class="mt-1 text-[13px] text-ink-muted">
+            Con proceso balanceado y comercio exterior
+          </p>
+        </div>
+
+        <div>
+          <dt class="text-[13px] text-ink-muted">Troncos de insumos</dt>
+          <dd class="mt-1 font-display text-[24px] font-medium leading-tight tracking-[-0.02em] text-cobalt">
+            {cadenaValor.troncos.length}
+          </dd>
+          <p class="mt-1 text-[13px] text-ink-muted">
+            Gas, soja, electrometalurgia, Puna y NEA ({encadenamientosDirectos} encadenamiento vertical)
+          </p>
+        </div>
+
+        <div>
+          <dt class="text-[13px] text-ink-muted">Jurisdicciones disponibles</dt>
+          <dd class="mt-1 font-display text-[24px] font-medium leading-tight tracking-[-0.02em] text-emerald-react">
+            {cobertura.totales.provinciasConDatos} completas · {cobertura.totales.totalProvincias} total
+          </dd>
+          <p class="mt-1 text-[13px] text-ink-muted">
+            {cobertura.totales.departamentosConDatos} departamentos con datos confiables
+          </p>
+        </div>
+
+        <div>
+          <dt class="text-[13px] text-ink-muted">Empresas y cotización</dt>
+          <dd class="mt-1 font-display text-[24px] font-medium leading-tight tracking-[-0.02em] text-ink">
+            {cobertura.totales.empresasVerificadas} operadoras
+          </dd>
+          <p class="mt-1 text-[13px] text-ink-muted">
+            Valuación ARS/USD en vivo o declaración sin cotización
+          </p>
+        </div>
+      </dl>
+    </section>
+
+    {/* Comparador interactivo + Mapa transversal de cadenas */}
+    <section class="pt-14">
+      <ValueChainComparator
+        client:load
+        productos={productos}
+        provincias={provincias}
+        cadenaValor={cadenaValor}
+        mercadoSnapshot={mercadoSnapshot}
+      />
+    </section>
+  </main>
+
+  <footer class="border-t border-rule bg-stone-surface">
+    <div class="mx-auto flex max-w-[1600px] flex-wrap items-center justify-between gap-4 px-5 py-6 text-[13px] text-ink-muted sm:px-8 lg:px-10">
+      <p>
+        Atlas Químico Argentino. Comparaciones generadas exclusivamente desde el snapshot validado
+        de Supabase; los faltantes figuran explícitamente como sin datos.
+      </p>
+      <div class="flex items-center gap-5">
+        <a href="/empresas" class="hover:text-cobalt">Empresas</a>
+        <a href="/cobertura" class="hover:text-cobalt">Cobertura</a>
+        <a href="/" class="font-medium text-ink hover:text-cobalt">← Volver al mapa</a>
+      </div>
+    </div>
+  </footer>
+</BaseLayout>

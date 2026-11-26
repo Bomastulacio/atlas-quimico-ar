@@ -28,9 +28,14 @@ const pctNacional = Math.round(
       <a href="/#mapa" class="font-medium text-ink transition-colors duration-150 hover:text-cobalt">
         ← Volver al mapa territorial
       </a>
-      <a href="/empresas" class="transition-colors duration-150 hover:text-ink">
-        Directorio de empresas ({cobertura.totales.empresasVerificadas})
-      </a>
+      <div class="flex items-center gap-4">
+        <a href="/comparar" class="transition-colors duration-150 hover:text-ink">
+          Comparar cadenas y provincias
+        </a>
+        <a href="/empresas" class="transition-colors duration-150 hover:text-ink">
+          Directorio de empresas ({cobertura.totales.empresasVerificadas})
+        </a>
+      </div>
     </nav>
 
     {/* Cabecera editorial */}

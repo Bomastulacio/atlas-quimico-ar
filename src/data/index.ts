@@ -732,3 +732,396 @@ export function getCoberturaDetallada(): CoberturaDetallada {
     provincias,
   };
 }
+
+/* ============================================================================
+   ETAPA 9: COMPARADOR DE PRODUCTOS / PROVINCIAS Y CADENA DE VALOR TRANSVERSAL
+   ============================================================================ */
+
+export interface ComparadorEmpresaResumen {
+  empresa_id: string;
+  razon_social: string;
+  tipo_capital: Empresa['tipo_capital'];
+  mercado: EmpresaMercado | null;
+}
+
+export interface ComparadorProductoItem {
+  producto: Producto;
+  proceso: {
+    proceso_id: string;
+    nombre: string;
+    ruta_tecnologica: string;
+    reaccion_global: string | null;
+    energia_especifica: Proceso['energia_especifica'];
+    pasosCount: number;
+    fuente: string;
+    anio: number;
+  } | null;
+  ultimoProduccion: ProduccionRegistro | null;
+  ultimoComexUsd: ComercioExteriorRegistro | null;
+  provincias: Array<{ provincia_id: string; nombre: string; region: Provincia['region'] }>;
+  departamentos: Array<{
+    departamento_id: string;
+    provincia_id: string;
+    nombre: string;
+    provinciaNombre: string;
+  }>;
+  plantasCount: number;
+  plantasConCapacidad: number;
+  plantasDetalle: Array<{
+    planta_id: string;
+    nombre: string;
+    localidad: string;
+    provinciaNombre: string;
+    empresaNombre: string;
+    capacidad: Planta['capacidad'];
+  }>;
+  empresas: ComparadorEmpresaResumen[];
+}
+
+export function getComparadorProductosData(): ComparadorProductoItem[] {
+  const ds = loadDataset();
+  const mercadoMap = new Map(getMercadoSnapshot().empresas.map((m) => [m.empresa_id, m]));
+  const deptMap = new Map(ds.departamentos.map((d) => [d.departamento_id, d]));
+  const provMap = new Map(ds.provincias.map((p) => [p.provincia_id, p]));
+
+  return ds.productos.map((producto) => {
+    const ficha = getFichaProducto(producto.producto_id)!;
+    const procCompleto = ficha.procesos[0] ?? null;
+
+    // Prioriza el año más reciente con dato verificado; si todos son sin_datos, devuelve el más reciente explícito
+    const ultimoProduccion =
+      ficha.produccion.find((r) => r.medicion.estado === 'dato') ?? ficha.produccion[0] ?? null;
+
+    const comexUsdList = ficha.comercioExterior.filter((c) => c.metrica === 'valor_usd');
+    const ultimoComexUsd =
+      comexUsdList.find(
+        (c) =>
+          c.saldo_comercial.estado === 'dato' ||
+          c.exportacion.estado === 'dato' ||
+          c.importacion.estado === 'dato'
+      ) ??
+      comexUsdList[0] ??
+      null;
+
+    const provSeen = new Set<string>();
+    const provincias: ComparadorProductoItem['provincias'] = [];
+    for (const z of ficha.zonas) {
+      if (provSeen.has(z.provincia.provincia_id)) continue;
+      provSeen.add(z.provincia.provincia_id);
+      provincias.push({
+        provincia_id: z.provincia.provincia_id,
+        nombre: z.provincia.nombre,
+        region: z.provincia.region,
+      });
+    }
+
+    const deptSeen = new Set<string>();
+    const departamentos: ComparadorProductoItem['departamentos'] = [];
+    for (const pl of ficha.plantas) {
+      if (!pl.departamento_id || deptSeen.has(pl.departamento_id)) continue;
+      const d = deptMap.get(pl.departamento_id);
+      if (!d || !d.tiene_datos_confiables) continue;
+      deptSeen.add(d.departamento_id);
+      departamentos.push({
+        departamento_id: d.departamento_id,
+        provincia_id: d.provincia_id,
+        nombre: d.nombre,
+        provinciaNombre: provMap.get(d.provincia_id)?.nombre ?? d.provincia_id,
+      });
+    }
+
+    const empSeen = new Set<string>();
+    const empresas: ComparadorEmpresaResumen[] = [];
+    for (const pl of ficha.plantas) {
+      if (!pl.empresa || empSeen.has(pl.empresa.empresa_id)) continue;
+      empSeen.add(pl.empresa.empresa_id);
+      empresas.push({
+        empresa_id: pl.empresa.empresa_id,
+        razon_social: pl.empresa.razon_social,
+        tipo_capital: pl.empresa.tipo_capital,
+        mercado: mercadoMap.get(pl.empresa.empresa_id) ?? null,
+      });
+    }
+
+    const plantasDetalle = ficha.plantas.map((pl) => ({
+      planta_id: pl.planta_id,
+      nombre: pl.nombre,
+      localidad: pl.localidad,
+      provinciaNombre: pl.provincia?.nombre ?? pl.provincia_id,
+      empresaNombre: pl.empresa?.razon_social ?? pl.empresa_id,
+      capacidad: pl.capacidad,
+    }));
+
+    return {
+      producto,
+      proceso: procCompleto
+        ? {
+            proceso_id: procCompleto.proceso.proceso_id,
+            nombre: procCompleto.proceso.nombre,
+            ruta_tecnologica: procCompleto.proceso.ruta_tecnologica,
+            reaccion_global: procCompleto.proceso.reaccion_global,
+            energia_especifica: procCompleto.proceso.energia_especifica,
+            pasosCount: procCompleto.pasos.length,
+            fuente: procCompleto.proceso.procedencia.fuente,
+            anio: procCompleto.proceso.procedencia.anio,
+          }
+        : null,
+      ultimoProduccion,
+      ultimoComexUsd,
+      provincias,
+      departamentos,
+      plantasCount: ficha.plantas.length,
+      plantasConCapacidad: ficha.plantas.filter((p) => p.capacidad.estado === 'dato').length,
+      plantasDetalle,
+      empresas,
+    };
+  });
+}
+
+export interface ComparadorProvinciaItem {
+  provincia: Provincia;
+  dominante: Producto | null;
+  secundarios: Producto[];
+  departamentosConfiables: Departamento[];
+  plantas: Array<{
+    planta_id: string;
+    nombre: string;
+    localidad: string;
+    producto_id: string;
+    productoNombre: string;
+    empresaNombre: string;
+    capacidad: Planta['capacidad'];
+  }>;
+  empresas: ComparadorEmpresaResumen[];
+  ultimoAnioDato: number | null;
+  fuentesCount: number;
+}
+
+export function getComparadorProvinciasData(): ComparadorProvinciaItem[] {
+  const ds = loadDataset();
+  const mercadoMap = new Map(getMercadoSnapshot().empresas.map((m) => [m.empresa_id, m]));
+  const empMap = new Map(ds.empresas.map((e) => [e.empresa_id, e]));
+  const prodMap = new Map(ds.productos.map((p) => [p.producto_id, p]));
+
+  return [...ds.provincias]
+    .sort((a, b) => {
+      const aHas = a.cobertura_datos !== 'sin_datos' ? 0 : 1;
+      const bHas = b.cobertura_datos !== 'sin_datos' ? 0 : 1;
+      if (aHas !== bHas) return aHas - bHas;
+      return a.nombre.localeCompare(b.nombre, 'es');
+    })
+    .map((provincia) => {
+      const { dominante, secundarios, relaciones } = getProductosPorProvincia(
+        provincia.provincia_id
+      );
+      const departamentosConfiables = ds.departamentos.filter(
+        (d) => d.provincia_id === provincia.provincia_id && d.tiene_datos_confiables
+      );
+      const rawPlantas = ds.plantas.filter((pl) => pl.provincia_id === provincia.provincia_id);
+
+      const empSeen = new Set<string>();
+      const empresas: ComparadorEmpresaResumen[] = [];
+      const fuenteIds = new Set<string>(relaciones.map((r) => r.procedencia.fuente_id));
+      const anios: number[] = relaciones.map((r) => r.procedencia.anio);
+
+      const plantas = rawPlantas.map((pl) => {
+        fuenteIds.add(pl.procedencia.fuente_id);
+        anios.push(pl.procedencia.anio);
+        const emp = empMap.get(pl.empresa_id);
+        if (emp && !empSeen.has(emp.empresa_id)) {
+          empSeen.add(emp.empresa_id);
+          empresas.push({
+            empresa_id: emp.empresa_id,
+            razon_social: emp.razon_social,
+            tipo_capital: emp.tipo_capital,
+            mercado: mercadoMap.get(emp.empresa_id) ?? null,
+          });
+        }
+        return {
+          planta_id: pl.planta_id,
+          nombre: pl.nombre,
+          localidad: pl.localidad,
+          producto_id: pl.producto_id,
+          productoNombre: prodMap.get(pl.producto_id)?.nombre ?? pl.producto_id,
+          empresaNombre: emp?.razon_social ?? pl.empresa_id,
+          capacidad: pl.capacidad,
+        };
+      });
+
+      return {
+        provincia,
+        dominante,
+        secundarios,
+        departamentosConfiables,
+        plantas,
+        empresas,
+        ultimoAnioDato: anios.length > 0 ? Math.max(...anios) : null,
+        fuentesCount: fuenteIds.size,
+      };
+    });
+}
+
+export interface CadenaValorLink {
+  id: string;
+  desdeProductoId: string | null;
+  desdeEtiqueta: string;
+  haciaProductoId: string;
+  flujoQuimico: string;
+  nodoTerritorial: string;
+  tipo: 'insumo_primario' | 'encadenamiento_aguas_abajo';
+}
+
+export interface TroncoCadenaValor {
+  troncoId: string;
+  titulo: string;
+  regionClave: string;
+  insumoBase: string;
+  formulaInsumo: string;
+  acento: 'cobalt' | 'emerald' | 'ochre' | 'red';
+  resumen: string;
+  productoIds: string[];
+  vinculos: CadenaValorLink[];
+}
+
+export interface CadenaValorTransversalData {
+  troncos: TroncoCadenaValor[];
+  productos: ComparadorProductoItem[];
+}
+
+export function getCadenaValorTransversalData(): CadenaValorTransversalData {
+  const productos = getComparadorProductosData();
+  const validIds = new Set(productos.map((p) => p.producto.producto_id));
+
+  const troncos: TroncoCadenaValor[] = [
+    {
+      troncoId: 'gas-bahia-blanca',
+      titulo: 'Tronco Gas Natural · Polo Bahía Blanca',
+      regionClave: 'Buenos Aires (Bahía Blanca / Ing. White)',
+      insumoBase: 'Gas natural (metano y etano separado)',
+      formulaInsumo: 'CH4 + C2H6',
+      acento: 'cobalt',
+      resumen:
+        'Un mismo nodo gasífero y portuario abastece dos grandes cadenas químicas independientes: la fracción metano sintetiza amoníaco y urea; la fracción etano alimenta el craqueo con vapor para etileno, polietileno y PVC.',
+      productoIds: ['urea', 'petroquimica'].filter((id) => validIds.has(id)),
+      vinculos: [
+        {
+          id: 'gas-a-urea',
+          desdeProductoId: null,
+          desdeEtiqueta: 'Metano (CH4) + aire + vapor',
+          haciaProductoId: 'urea',
+          flujoQuimico: 'Reformado catalítico + Haber-Bosch -> NH3 + CO2 -> CO(NH2)2',
+          nodoTerritorial: 'Ingeniero White, Bahía Blanca',
+          tipo: 'insumo_primario',
+        },
+        {
+          id: 'gas-a-petroquimica',
+          desdeProductoId: null,
+          desdeEtiqueta: 'Etano (C2H6) de gas natural',
+          haciaProductoId: 'petroquimica',
+          flujoQuimico: 'Steam cracking (800-850 °C) -> C2H4 + H2 -> polietilenos y PVC',
+          nodoTerritorial: 'Polo Petroquímico Bahía Blanca',
+          tipo: 'insumo_primario',
+        },
+      ],
+    },
+    {
+      troncoId: 'oleaginoso-up-river',
+      titulo: 'Tronco Oleaginoso · Corredor Up-River',
+      regionClave: 'Santa Fe (San Lorenzo, Timbúes y Rosario)',
+      insumoBase: 'Poroto de soja + solvente hexano y metanol',
+      formulaInsumo: 'Triglicéridos + CH4O',
+      acento: 'ochre',
+      resumen:
+        'Encadenamiento vertical directo en el mismo cordón portuario del Paraná: la molienda de soja extrae harina proteica y aceite crudo; parte de ese aceite se transesterifica aguas abajo con metanol para producir biodiésel FAME y glicerina.',
+      productoIds: ['soja', 'biodiesel'].filter((id) => validIds.has(id)),
+      vinculos: [
+        {
+          id: 'poroto-a-soja',
+          desdeProductoId: null,
+          desdeEtiqueta: 'Poroto de soja + hexano (reciclo cerrado)',
+          haciaProductoId: 'soja',
+          flujoQuimico: 'Molienda y extracción continua -> harina proteica + aceite crudo',
+          nodoTerritorial: 'Timbúes y San Lorenzo (Santa Fe)',
+          tipo: 'insumo_primario',
+        },
+        {
+          id: 'soja-a-biodiesel',
+          desdeProductoId: 'soja',
+          desdeEtiqueta: 'Aceite crudo de soja + metanol (CH4O)',
+          haciaProductoId: 'biodiesel',
+          flujoQuimico: 'Transesterificación alcalina -> biodiésel FAME (B100) + glicerina',
+          nodoTerritorial: 'San Lorenzo y Gran Rosario (Santa Fe)',
+          tipo: 'encadenamiento_aguas_abajo',
+        },
+      ],
+    },
+    {
+      troncoId: 'electrometalurgia-patagonia',
+      titulo: 'Tronco Electrometalúrgico · Golfo Nuevo',
+      regionClave: 'Chubut (Puerto Madryn, Biedma)',
+      insumoBase: 'Alúmina importada + energía eléctrica + carbono',
+      formulaInsumo: 'Al2O3 + C + electricidad',
+      acento: 'cobalt',
+      resumen:
+        'Cadena electro-intensiva de enclave portuario: la alúmina llega por buque al Muelle Storni y se reduce en cubas Hall-Héroult con energía hidroeléctrica, térmica y eólica hacia lingotes, barrotes y alambrón.',
+      productoIds: ['aluminio'].filter((id) => validIds.has(id)),
+      vinculos: [
+        {
+          id: 'alumina-a-aluminio',
+          desdeProductoId: null,
+          desdeEtiqueta: 'Alúmina calcinada (Al2O3) + ánodos de C',
+          haciaProductoId: 'aluminio',
+          flujoQuimico: 'Reducción electrolítica a 960 °C (14,2 MWh/t Al) -> Al primario',
+          nodoTerritorial: 'Puerto Madryn (Chubut)',
+          tipo: 'insumo_primario',
+        },
+      ],
+    },
+    {
+      troncoId: 'puna-litio',
+      titulo: 'Tronco Evaporítico · Puna Argentina',
+      regionClave: 'Jujuy, Catamarca y Salta',
+      insumoBase: 'Salmuera de salar de altura + ceniza de soda',
+      formulaInsumo: 'LiCl + Na2CO3',
+      acento: 'emerald',
+      resumen:
+        'Salmueras ricas en litio bombeadas en salares de la Puna (Olaroz, Fénix, Caucharí-Olaroz y Centenario-Ratones) se concentran por evaporación solar o extracción directa y precipitan carbonato de litio grado batería.',
+      productoIds: ['litio'].filter((id) => validIds.has(id)),
+      vinculos: [
+        {
+          id: 'salmuera-a-litio',
+          desdeProductoId: null,
+          desdeEtiqueta: 'Salmuera de salar (LiCl) + Na2CO3',
+          haciaProductoId: 'litio',
+          flujoQuimico: 'Concentración + purificación + carbonatación -> Li2CO3',
+          nodoTerritorial: 'Susques, Antofagasta de la Sierra y Los Andes',
+          tipo: 'insumo_primario',
+        },
+      ],
+    },
+    {
+      troncoId: 'celulosa-nea',
+      titulo: 'Tronco Fibra Celulósica · NEA',
+      regionClave: 'Chaco (9 de Julio / Las Breñas)',
+      insumoBase: 'Algodón en bruto cosechado',
+      formulaInsumo: '(C6H10O5)n + H2O2',
+      acento: 'ochre',
+      resumen:
+        'El algodón en bruto pasa por desmote mecánico (separación de fibra y semilla oleaginosa) y refinación química húmeda con descrudado alcalino y blanqueo con peróxido de hidrógeno hacia fibra textil.',
+      productoIds: ['algodon'].filter((id) => validIds.has(id)),
+      vinculos: [
+        {
+          id: 'bruto-a-algodon',
+          desdeProductoId: null,
+          desdeEtiqueta: 'Algodón en bruto + NaOH / H2O2',
+          haciaProductoId: 'algodon',
+          flujoQuimico: 'Desmote industrial + blanqueo -> fibra de celulosa + semilla',
+          nodoTerritorial: 'Las Breñas, 9 de Julio (Chaco)',
+          tipo: 'insumo_primario',
+        },
+      ],
+    },
+  ];
+
+  return { troncos, productos };
+}

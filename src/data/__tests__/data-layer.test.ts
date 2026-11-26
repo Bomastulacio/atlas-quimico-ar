@@ -1,7 +1,10 @@
 import { describe, expect, it } from 'vitest';
 import {
+  getCadenaValorTransversalData,
   getCoberturaDetallada,
   getComercioExterior,
+  getComparadorProductosData,
+  getComparadorProvinciasData,
   getDepartamentos,
   getEmpresaMercado,
   getEmpresasConPlantas,
@@ -193,5 +196,37 @@ describe('Capa única de acceso a datos (src/data)', () => {
     const profertil = getEmpresaMercado('profertil-sa')!;
     expect(profertil.tipo_cotizacion).toBe('no_cotiza');
     expect(computeValuationArsUsd(profertil, snap.tipos_cambio, 'contadoconliqui')).toBeNull();
+  });
+
+  it('construye los datos del comparador de productos, provincias y cadena de valor transversal (Etapa 9)', () => {
+    const prodComp = getComparadorProductosData();
+    expect(prodComp).toHaveLength(7);
+    const al = prodComp.find((p) => p.producto.producto_id === 'aluminio')!;
+    expect(al.proceso?.energia_especifica.estado).toBe('dato');
+    expect(al.ultimoComexUsd?.saldo_comercial.estado).toBe('dato');
+    expect(al.empresas.some((e) => e.mercado?.ticker === 'ALUA')).toBe(true);
+
+    // Petroquímica mantiene producción sin_datos explícitamente
+    const petro = prodComp.find((p) => p.producto.producto_id === 'petroquimica')!;
+    expect(petro.ultimoProduccion?.medicion.estado).toBe('sin_datos');
+
+    const provComp = getComparadorProvinciasData();
+    expect(provComp).toHaveLength(24);
+    // Primeras 7 deben ser las jurisdicciones con cobertura completa
+    expect(provComp.slice(0, 7).every((p) => p.provincia.cobertura_datos === 'completa')).toBe(true);
+    expect(provComp.slice(7).every((p) => p.provincia.cobertura_datos === 'sin_datos')).toBe(true);
+
+    const cadena = getCadenaValorTransversalData();
+    expect(cadena.troncos).toHaveLength(5);
+    const upRiver = cadena.troncos.find((t) => t.troncoId === 'oleaginoso-up-river')!;
+    expect(upRiver.productoIds).toEqual(['soja', 'biodiesel']);
+    expect(
+      upRiver.vinculos.some(
+        (v) =>
+          v.tipo === 'encadenamiento_aguas_abajo' &&
+          v.desdeProductoId === 'soja' &&
+          v.haciaProductoId === 'biodiesel'
+      )
+    ).toBe(true);
   });
 });

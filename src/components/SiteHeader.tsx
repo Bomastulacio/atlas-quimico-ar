@@ -190,11 +190,10 @@ export function SiteHeader({
   return (
     <MotionConfig reducedMotion="user">
       <header
-        className={`${positionClass} z-40 transition-colors duration-200 ${
-          isHeroTop
-            ? 'border-b border-transparent bg-transparent text-white'
-            : 'border-b border-rule/90 bg-stone-surface/95 text-ink backdrop-blur-md shadow-[0_1px_12px_rgba(17,18,20,0.06)]'
-        }`}
+        className={`${positionClass} z-40 transition-colors duration-200 ${isHeroTop
+          ? 'border-b border-transparent bg-transparent text-white'
+          : 'border-b border-rule/90 bg-stone-surface/95 text-ink backdrop-blur-md shadow-[0_1px_12px_rgba(17,18,20,0.06)]'
+          }`}
       >
         <div className="mx-auto flex h-16 max-w-[1600px] items-center justify-between gap-3 px-4 sm:gap-4 sm:px-8 lg:px-10">
           {/* Identidad tipográfica sobria sin elementos decorativos */}
@@ -212,24 +211,22 @@ export function SiteHeader({
           >
             <a
               href={currentPath === '/' ? '#mapa' : '/#mapa'}
-              className={`transition-colors duration-150 ${
-                isHeroTop ? 'text-white/85 hover:text-white' : 'text-ink-muted hover:text-ink'
-              }`}
+              className={`transition-colors duration-150 ${isHeroTop ? 'text-white/85 hover:text-white' : 'text-ink-muted hover:text-ink'
+                }`}
             >
               Mapa territorial
             </a>
             <a
               href={currentPath === '/' ? '#procesos' : '/#procesos'}
-              className={`transition-colors duration-150 ${
-                isHeroTop ? 'text-white/85 hover:text-white' : 'text-ink-muted hover:text-ink'
-              }`}
+              className={`transition-colors duration-150 ${isHeroTop ? 'text-white/85 hover:text-white' : 'text-ink-muted hover:text-ink'
+                }`}
             >
               Procesos
             </a>
             <a
-              href="/empresas"
+              href="/comparar"
               className={`transition-colors duration-150 ${
-                currentPath === '/empresas'
+                currentPath === '/comparar'
                   ? isHeroTop
                     ? 'font-medium text-white'
                     : 'font-medium text-cobalt'
@@ -237,28 +234,39 @@ export function SiteHeader({
                     ? 'text-white/85 hover:text-white'
                     : 'text-ink-muted hover:text-ink'
               }`}
+            >
+              Comparar
+            </a>
+            <a
+              href="/empresas"
+              className={`transition-colors duration-150 ${currentPath === '/empresas'
+                ? isHeroTop
+                  ? 'font-medium text-white'
+                  : 'font-medium text-cobalt'
+                : isHeroTop
+                  ? 'text-white/85 hover:text-white'
+                  : 'text-ink-muted hover:text-ink'
+                }`}
             >
               Empresas
             </a>
             <a
               href="/cobertura"
-              className={`transition-colors duration-150 ${
-                currentPath === '/cobertura'
-                  ? isHeroTop
-                    ? 'font-medium text-white'
-                    : 'font-medium text-cobalt'
-                  : isHeroTop
-                    ? 'text-white/85 hover:text-white'
-                    : 'text-ink-muted hover:text-ink'
-              }`}
+              className={`transition-colors duration-150 ${currentPath === '/cobertura'
+                ? isHeroTop
+                  ? 'font-medium text-white'
+                  : 'font-medium text-cobalt'
+                : isHeroTop
+                  ? 'text-white/85 hover:text-white'
+                  : 'text-ink-muted hover:text-ink'
+                }`}
             >
               Cobertura
             </a>
 
             <span
-              className={`hidden h-4 w-px lg:inline-block ${
-                isHeroTop ? 'bg-white/25' : 'bg-rule'
-              }`}
+              className={`hidden h-4 w-px lg:inline-block ${isHeroTop ? 'bg-white/25' : 'bg-rule'
+                }`}
               aria-hidden="true"
             />
 
@@ -269,15 +277,14 @@ export function SiteHeader({
                   <a
                     key={link.href}
                     href={link.href}
-                    className={`transition-colors duration-150 ${
-                      isCurrent
-                        ? isHeroTop
-                          ? 'font-medium text-white'
-                          : 'font-medium text-cobalt'
-                        : isHeroTop
-                          ? 'text-white/80 hover:text-white'
-                          : 'text-ink-muted hover:text-ink'
-                    }`}
+                    className={`transition-colors duration-150 ${isCurrent
+                      ? isHeroTop
+                        ? 'font-medium text-white'
+                        : 'font-medium text-cobalt'
+                      : isHeroTop
+                        ? 'text-white/80 hover:text-white'
+                        : 'text-ink-muted hover:text-ink'
+                      }`}
                   >
                     {link.label}
                   </a>
@@ -290,11 +297,10 @@ export function SiteHeader({
               type="button"
               onClick={() => setSearchOpen(true)}
               aria-label="Buscar cadenas, provincias o plantas (Ctrl+K)"
-              className={`inline-flex cursor-pointer items-center gap-1.5 rounded-full px-3.5 py-1.5 text-[13px] font-medium transition-colors duration-150 ${
-                isHeroTop
-                  ? 'bg-white text-ink hover:bg-stone-bg'
-                  : 'bg-ink text-white hover:bg-cobalt'
-              }`}
+              className={`inline-flex cursor-pointer items-center gap-1.5 rounded-full px-3.5 py-1.5 text-[13px] font-medium transition-colors duration-150 ${isHeroTop
+                ? 'bg-white text-ink hover:bg-stone-bg'
+                : 'bg-ink text-white hover:bg-cobalt'
+                }`}
             >
               <span>Buscar</span>
               <ArrowRight className="h-3.5 w-3.5" />
@@ -310,11 +316,10 @@ export function SiteHeader({
                 setSearchOpen(true);
               }}
               aria-label="Abrir buscador"
-              className={`inline-flex cursor-pointer items-center gap-1.5 rounded-full px-3 py-1.5 text-[13px] font-medium transition-colors duration-150 ${
-                isHeroTop
-                  ? 'bg-white text-ink'
-                  : 'bg-ink text-white'
-              }`}
+              className={`inline-flex cursor-pointer items-center gap-1.5 rounded-full px-3 py-1.5 text-[13px] font-medium transition-colors duration-150 ${isHeroTop
+                ? 'bg-white text-ink'
+                : 'bg-ink text-white'
+                }`}
             >
               <Search className="h-3.5 w-3.5" />
               <span>Buscar</span>
@@ -324,11 +329,10 @@ export function SiteHeader({
               onClick={() => setMobileMenuOpen((prev) => !prev)}
               aria-label={mobileMenuOpen ? 'Cerrar menú' : 'Abrir menú'}
               aria-expanded={mobileMenuOpen}
-              className={`inline-flex h-9 w-9 cursor-pointer items-center justify-center transition-colors duration-150 ${
-                isHeroTop
-                  ? 'text-white hover:bg-white/10'
-                  : 'text-ink hover:bg-stone-subtle'
-              }`}
+              className={`inline-flex h-9 w-9 cursor-pointer items-center justify-center transition-colors duration-150 ${isHeroTop
+                ? 'text-white hover:bg-white/10'
+                : 'text-ink hover:bg-stone-subtle'
+                }`}
             >
               {mobileMenuOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
             </button>
@@ -362,20 +366,27 @@ export function SiteHeader({
                     Procesos químicos
                   </a>
                   <a
-                    href="/empresas"
+                    href="/comparar"
                     onClick={() => setMobileMenuOpen(false)}
                     className={`py-1 ${
-                      currentPath === '/empresas' ? 'font-medium text-cobalt' : 'text-ink hover:text-cobalt'
+                      currentPath === '/comparar' ? 'font-medium text-cobalt' : 'text-ink hover:text-cobalt'
                     }`}
+                  >
+                    Cadena de valor y comparador
+                  </a>
+                  <a
+                    href="/empresas"
+                    onClick={() => setMobileMenuOpen(false)}
+                    className={`py-1 ${currentPath === '/empresas' ? 'font-medium text-cobalt' : 'text-ink hover:text-cobalt'
+                      }`}
                   >
                     Empresas y plantas
                   </a>
                   <a
                     href="/cobertura"
                     onClick={() => setMobileMenuOpen(false)}
-                    className={`py-1 ${
-                      currentPath === '/cobertura' ? 'font-medium text-cobalt' : 'text-ink hover:text-cobalt'
-                    }`}
+                    className={`py-1 ${currentPath === '/cobertura' ? 'font-medium text-cobalt' : 'text-ink hover:text-cobalt'
+                      }`}
                   >
                     Cobertura de datos
                   </a>
@@ -391,11 +402,10 @@ export function SiteHeader({
                         key={item.href}
                         href={item.href}
                         onClick={() => setMobileMenuOpen(false)}
-                        className={`border px-3 py-2 font-medium transition-colors duration-150 ${
-                          currentPath === item.href
-                            ? 'border-ink bg-ink text-white'
-                            : 'border-rule bg-stone-bg text-ink hover:border-ink'
-                        }`}
+                        className={`border px-3 py-2 font-medium transition-colors duration-150 ${currentPath === item.href
+                          ? 'border-ink bg-ink text-white'
+                          : 'border-rule bg-stone-bg text-ink hover:border-ink'
+                          }`}
                       >
                         {item.label}
                       </a>
@@ -466,24 +476,21 @@ export function SiteHeader({
                         type="button"
                         onMouseEnter={() => setActiveIdx(idx)}
                         onClick={() => navigateToItem(item)}
-                        className={`flex w-full cursor-pointer items-center justify-between gap-3 px-4 py-3 text-left transition-colors duration-100 ${
-                          isSelected ? 'bg-ink text-white' : 'bg-stone-surface text-ink hover:bg-stone-bg'
-                        }`}
+                        className={`flex w-full cursor-pointer items-center justify-between gap-3 px-4 py-3 text-left transition-colors duration-100 ${isSelected ? 'bg-ink text-white' : 'bg-stone-surface text-ink hover:bg-stone-bg'
+                          }`}
                       >
                         <div className="flex min-w-0 items-center gap-3">
                           <span
-                            className={`flex h-8 w-8 shrink-0 items-center justify-center ${
-                              isSelected ? 'bg-white/15 text-white' : 'bg-stone-subtle text-ink'
-                            }`}
+                            className={`flex h-8 w-8 shrink-0 items-center justify-center ${isSelected ? 'bg-white/15 text-white' : 'bg-stone-subtle text-ink'
+                              }`}
                           >
                             {renderKindIcon(item)}
                           </span>
                           <div className="min-w-0">
                             <p className="truncate text-[14px] font-medium">{item.title}</p>
                             <p
-                              className={`truncate text-[13px] ${
-                                isSelected ? 'text-white/75' : 'text-ink-muted'
-                              }`}
+                              className={`truncate text-[13px] ${isSelected ? 'text-white/75' : 'text-ink-muted'
+                                }`}
                             >
                               {item.subtitle}
                             </p>
@@ -491,9 +498,8 @@ export function SiteHeader({
                         </div>
 
                         <span
-                          className={`shrink-0 text-[13px] font-medium ${
-                            isSelected ? 'text-white/85' : 'text-ink-muted'
-                          }`}
+                          className={`shrink-0 text-[13px] font-medium ${isSelected ? 'text-white/85' : 'text-ink-muted'
+                            }`}
                         >
                           {KIND_LABEL[item.kind]}
                         </span>
