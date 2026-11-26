@@ -107,6 +107,23 @@ export const PfdFuenteRefSchema = z.object({
 
 export type PfdFuenteRef = z.infer<typeof PfdFuenteRefSchema>;
 
+export const PfdLimiteBateriaSchema = z.object({
+  id: NonEmptyString,
+  lado: z.enum(['entrada', 'salida']),
+  categoria: z.enum(['materia_prima', 'servicio', 'producto', 'subproducto', 'emision']),
+  nombre: NonEmptyString,
+  formula: NonEmptyString,
+  cantidad_masa: NonEmptyString,
+  cantidad_molar: NonEmptyString.nullable(),
+  fraccion_pureza: NonEmptyString.nullable(),
+  corriente_num: z.number().int().positive().nullable(),
+  y: z.number(),
+  nota: NonEmptyString,
+  fuente_id: NonEmptyString,
+});
+
+export type PfdLimiteBateria = z.infer<typeof PfdLimiteBateriaSchema>;
+
 export const PfdProcesoSchema = z.object({
   proceso_id: NonEmptyString,
   producto_id: NonEmptyString,
@@ -121,6 +138,7 @@ export const PfdProcesoSchema = z.object({
   equipos: z.array(PfdEquipoSchema).min(4),
   corrientes: z.array(PfdCorrienteSchema).min(4),
   servicios: z.array(PfdServicioSchema),
+  limites_bateria: z.array(PfdLimiteBateriaSchema).min(2),
 });
 
 export type PfdProceso = z.infer<typeof PfdProcesoSchema>;

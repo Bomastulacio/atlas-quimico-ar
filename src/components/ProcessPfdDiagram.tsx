@@ -1,5 +1,7 @@
 import { useMemo, useRef, useState } from 'react';
 import {
+  ArrowDownToLine,
+  ArrowUpFromLine,
   Camera,
   ExternalLink,
   Flame,
@@ -10,7 +12,7 @@ import {
   ZoomIn,
   ZoomOut,
 } from 'lucide-react';
-import type { Fuente, PfdCorriente, PfdEquipo, PfdProceso } from '@/schemas';
+import type { Fuente, PfdCorriente, PfdEquipo, PfdLimiteBateria, PfdProceso } from '@/schemas';
 import { PfdEquipmentSymbol } from './pfd/PfdEquipmentSymbol';
 
 interface ProcessPfdDiagramProps {
@@ -28,10 +30,18 @@ const STREAM_STYLE: Record<
   PfdCorriente['tipo'],
   { label: string; color: string; dashed: boolean; width: number }
 > = {
-  proceso: { label: 'Proceso principal', color: '#111214', dashed: false, width: 2.1 },
-  reciclo: { label: 'Reciclo cerrado', color: '#0B7A53', dashed: true, width: 2.1 },
-  subproducto: { label: 'Subproducto / purga', color: '#C86A11', dashed: false, width: 1.7 },
+  proceso: { label: 'Proceso principal', color: '#111214', dashed: false, width: 2.2 },
+  reciclo: { label: 'Reciclo cerrado', color: '#0B7A53', dashed: true, width: 2.2 },
+  subproducto: { label: 'Subproducto / condensado', color: '#C86A11', dashed: false, width: 1.8 },
   emision: { label: 'Emisión / gases', color: '#D93025', dashed: true, width: 1.8 },
+};
+
+const LIMITE_ACCENT: Record<PfdLimiteBateria['categoria'], string> = {
+  materia_prima: '#0A42E0',
+  servicio: '#52555E',
+  producto: '#0B7A53',
+  subproducto: '#C86A11',
+  emision: '#D93025',
 };
 
 function pointsToPolyline(points: Array<[number, number]>): string {
@@ -46,6 +56,25 @@ function formatFlujo(flujo: PfdCorriente['flujo_especifico']): string {
   })} ${flujo.unidad}`;
 }
 
+/** Divide títulos de equipos en máximo 2 líneas limpias (~18 chars) para evitar cualquier superposición */
+function wrapSvgLines(text: string, maxChars = 19): string[] {
+  const words = text.split(' ');
+  const lines: string[] = [];
+  let current = '';
+  for (const w of words) {
+    const candidate = current ? `${current} ${w}` : w;
+    if (candidate.length <= maxChars || !current) {
+      current = candidate;
+    } else {
+      lines.push(current);
+      current = w;
+    }
+  }
+  if (current) lines.push(current);
+  if (lines.length <= 2) return lines;
+  return [lines[0]!, lines.slice(1).join(' ')];
+}
+
 export function ProcessPfdDiagram({ pfd, fuentesMap }: ProcessPfdDiagramProps) {
   const defaultEquipmentTag = pfd.equipos[0]?.tag ?? '';
   const [selection, setSelection] = useState<SelectionState>({
@@ -58,10 +87,15 @@ export function ProcessPfdDiagram({ pfd, fuentesMap }: ProcessPfdDiagramProps) {
   const [streamFilter, setStreamFilter] = useState<StreamFilter>('todas');
   const [expanded, setExpanded] = useState(false);
 
-  // Estado de cámara SVG (zoom + paneo suave por arrastre)
   const [zoom, setZoom] = useState(1);
   const [pan, setPan] = useState({ x: 0, y: 0 });
-  const dragRef = useRef<{ active: boolean; startX: number; startY: number; origX: number; origY: number }>({
+  const dragRef = useRef<{
+    active: boolean;
+    startX: number;
+    startY: number;
+    origX: number;
+    origY: number;
+  }>({
     active: false,
     startX: 0,
     startY: 0,
@@ -73,6 +107,15 @@ export function ProcessPfdDiagram({ pfd, fuentesMap }: ProcessPfdDiagramProps) {
   const equipoMap = useMemo(
     () => new Map(pfd.equipos.map((e) => [e.tag, e])),
     [pfd.equipos]
+  );
+
+  const entradasBateria = useMemo(
+    () => pfd.limites_bateria.filter((l) => l.lado === 'entrada'),
+    [pfd.limites_bateria]
+  );
+  const salidasBateria = useMemo(
+    () => pfd.limites_bateria.filter((l) => l.lado === 'salida'),
+    [pfd.limites_bateria]
   );
 
   const selectedEquipo: PfdEquipo | null =
@@ -138,8 +181,8 @@ export function ProcessPfdDiagram({ pfd, fuentesMap }: ProcessPfdDiagramProps) {
     const dx = (e.clientX - dragRef.current.startX) / zoom;
     const dy = (e.clientY - dragRef.current.startY) / zoom;
     setPan({
-      x: Math.max(-420, Math.min(420, dragRef.current.origX + dx)),
-      y: Math.max(-240, Math.min(240, dragRef.current.origY + dy)),
+      x: Math.max(-520, Math.min(520, dragRef.current.origX + dx)),
+      y: Math.max(-260, Math.min(260, dragRef.current.origY + dy)),
     });
   };
 
@@ -178,7 +221,6 @@ export function ProcessPfdDiagram({ pfd, fuentesMap }: ProcessPfdDiagramProps) {
     img.src = url;
   };
 
-  // Cálculo del viewBox reactivo para zoom y paneo nítido vectorial
   const vbW = pfd.canvas_width / zoom;
   const vbH = pfd.canvas_height / zoom;
   const vbX = (pfd.canvas_width - vbW) / 2 - pan.x;
@@ -193,7 +235,7 @@ export function ProcessPfdDiagram({ pfd, fuentesMap }: ProcessPfdDiagramProps) {
 
   return (
     <div className="space-y-6">
-      {/* Cabecera técnica del PFD */}
+      {/* Barra superior técnica */}
       <div className="flex flex-wrap items-center justify-between gap-3 border border-rule bg-stone-bg px-4 py-3 text-[12px]">
         <div className="flex flex-wrap items-center gap-3">
           <span className="bg-ink px-2 py-0.5 font-medium text-white">
@@ -233,7 +275,7 @@ export function ProcessPfdDiagram({ pfd, fuentesMap }: ProcessPfdDiagramProps) {
 
           <button
             type="button"
-            onClick={() => setZoom((z) => Math.min(2.2, Number((z + 0.25).toFixed(2))))}
+            onClick={() => setZoom((z) => Math.min(2.4, Number((z + 0.25).toFixed(2))))}
             aria-label="Acercar PFD"
             className="inline-flex cursor-pointer items-center border border-rule bg-stone-surface px-2 py-1 text-ink hover:border-ink"
           >
@@ -262,7 +304,7 @@ export function ProcessPfdDiagram({ pfd, fuentesMap }: ProcessPfdDiagramProps) {
             className="inline-flex cursor-pointer items-center gap-1 border border-rule bg-stone-surface px-2.5 py-1 font-medium text-ink hover:border-ink"
           >
             {expanded ? <Minimize2 className="h-3.5 w-3.5" /> : <Maximize2 className="h-3.5 w-3.5" />}
-            <span>{expanded ? 'Vista normal' : 'Ampliar plano'}</span>
+            <span>{expanded ? 'Alto normal' : 'Ampliar alto'}</span>
           </button>
 
           <button
@@ -276,355 +318,666 @@ export function ProcessPfdDiagram({ pfd, fuentesMap }: ProcessPfdDiagramProps) {
         </div>
       </div>
 
-      {/* Plano PFD vectorial + Inspector lateral de equipo o corriente */}
-      <div className={`grid gap-5 ${expanded ? 'lg:grid-cols-1' : 'lg:grid-cols-12'}`}>
+      {/* Plano PFD a ancho completo con columnas de ENTRADAS (izquierda) y SALIDAS (derecha) integradas */}
+      <div className="flex flex-col border border-rule bg-stone-surface">
         <div
-          className={`flex flex-col border border-rule bg-stone-surface ${
-            expanded ? '' : 'lg:col-span-9'
+          className={`relative w-full overflow-hidden ${
+            expanded ? 'h-[680px]' : 'h-[480px] sm:h-[560px] lg:h-[600px]'
           }`}
         >
-          <div className={`relative w-full overflow-hidden ${expanded ? 'h-[620px]' : 'h-[470px] sm:h-[520px]'}`}>
-            <svg
-              ref={svgRef}
-              viewBox={`${vbX} ${vbY} ${vbW} ${vbH}`}
-              onPointerDown={handlePointerDown}
-              onPointerMove={handlePointerMove}
-              onPointerUp={handlePointerUp}
-              onPointerLeave={handlePointerUp}
-              role="img"
-              aria-label={pfd.titulo}
-              className="h-full w-full cursor-grab select-none bg-[#F7F7F5] active:cursor-grabbing"
-            >
-              <defs>
-                <pattern id={`pfd-grid-${pfd.producto_id}`} width="24" height="24" patternUnits="userSpaceOnUse">
-                  <path
-                    d="M 24 0 L 0 0 0 24"
-                    fill="none"
-                    stroke="rgba(17,18,20,0.045)"
-                    strokeWidth="1"
-                  />
-                </pattern>
-                <marker
-                  id={`arrow-proceso-${pfd.producto_id}`}
-                  viewBox="0 0 10 10"
-                  refX="8.5"
-                  refY="5"
-                  markerWidth="6.5"
-                  markerHeight="6.5"
-                  orient="auto-start-reverse"
-                >
-                  <path d="M 0 1.5 L 10 5 L 0 8.5 z" fill="#111214" />
-                </marker>
-                <marker
-                  id={`arrow-active-${pfd.producto_id}`}
-                  viewBox="0 0 10 10"
-                  refX="8.5"
-                  refY="5"
-                  markerWidth="7"
-                  markerHeight="7"
-                  orient="auto-start-reverse"
-                >
-                  <path d="M 0 1.5 L 10 5 L 0 8.5 z" fill="#0A42E0" />
-                </marker>
-                <marker
-                  id={`arrow-reciclo-${pfd.producto_id}`}
-                  viewBox="0 0 10 10"
-                  refX="8.5"
-                  refY="5"
-                  markerWidth="6.5"
-                  markerHeight="6.5"
-                  orient="auto-start-reverse"
-                >
-                  <path d="M 0 1.5 L 10 5 L 0 8.5 z" fill="#0B7A53" />
-                </marker>
-                <marker
-                  id={`arrow-subproducto-${pfd.producto_id}`}
-                  viewBox="0 0 10 10"
-                  refX="8.5"
-                  refY="5"
-                  markerWidth="6.5"
-                  markerHeight="6.5"
-                  orient="auto-start-reverse"
-                >
-                  <path d="M 0 1.5 L 10 5 L 0 8.5 z" fill="#C86A11" />
-                </marker>
-                <marker
-                  id={`arrow-util-${pfd.producto_id}`}
-                  viewBox="0 0 10 10"
-                  refX="8"
-                  refY="5"
-                  markerWidth="5.5"
-                  markerHeight="5.5"
-                  orient="auto-start-reverse"
-                >
-                  <path d="M 0 2 L 9 5 L 0 8 z" fill="#8B5A18" />
-                </marker>
-              </defs>
+          <svg
+            ref={svgRef}
+            viewBox={`${vbX} ${vbY} ${vbW} ${vbH}`}
+            onPointerDown={handlePointerDown}
+            onPointerMove={handlePointerMove}
+            onPointerUp={handlePointerUp}
+            onPointerLeave={handlePointerUp}
+            role="img"
+            aria-label={pfd.titulo}
+            className="h-full w-full cursor-grab select-none bg-[#F7F7F5] active:cursor-grabbing"
+          >
+            <defs>
+              <pattern
+                id={`pfd-grid-${pfd.producto_id}`}
+                width="24"
+                height="24"
+                patternUnits="userSpaceOnUse"
+              >
+                <path
+                  d="M 24 0 L 0 0 0 24"
+                  fill="none"
+                  stroke="rgba(17,18,20,0.042)"
+                  strokeWidth="1"
+                />
+              </pattern>
+              <marker
+                id={`arrow-proceso-${pfd.producto_id}`}
+                viewBox="0 0 10 10"
+                refX="8.5"
+                refY="5"
+                markerWidth="6.5"
+                markerHeight="6.5"
+                orient="auto-start-reverse"
+              >
+                <path d="M 0 1.5 L 10 5 L 0 8.5 z" fill="#111214" />
+              </marker>
+              <marker
+                id={`arrow-active-${pfd.producto_id}`}
+                viewBox="0 0 10 10"
+                refX="8.5"
+                refY="5"
+                markerWidth="7"
+                markerHeight="7"
+                orient="auto-start-reverse"
+              >
+                <path d="M 0 1.5 L 10 5 L 0 8.5 z" fill="#0A42E0" />
+              </marker>
+              <marker
+                id={`arrow-reciclo-${pfd.producto_id}`}
+                viewBox="0 0 10 10"
+                refX="8.5"
+                refY="5"
+                markerWidth="6.5"
+                markerHeight="6.5"
+                orient="auto-start-reverse"
+              >
+                <path d="M 0 1.5 L 10 5 L 0 8.5 z" fill="#0B7A53" />
+              </marker>
+              <marker
+                id={`arrow-subproducto-${pfd.producto_id}`}
+                viewBox="0 0 10 10"
+                refX="8.5"
+                refY="5"
+                markerWidth="6.5"
+                markerHeight="6.5"
+                orient="auto-start-reverse"
+              >
+                <path d="M 0 1.5 L 10 5 L 0 8.5 z" fill="#C86A11" />
+              </marker>
+              <marker
+                id={`arrow-util-${pfd.producto_id}`}
+                viewBox="0 0 10 10"
+                refX="8"
+                refY="5"
+                markerWidth="5.5"
+                markerHeight="5.5"
+                orient="auto-start-reverse"
+              >
+                <path d="M 0 2 L 9 5 L 0 8 z" fill="#8B5A18" />
+              </marker>
+            </defs>
 
-              {/* Fondo milimetrado de plano de ingeniería */}
+            {/* Fondo milimetrado de plano técnico */}
+            <rect
+              x={0}
+              y={0}
+              width={pfd.canvas_width}
+              height={pfd.canvas_height}
+              fill={`url(#pfd-grid-${pfd.producto_id})`}
+            />
+
+            {/* Columna izquierda integrada: ENTRADAS AL PROCESO (Límite de batería) */}
+            <g>
               <rect
-                x={0}
-                y={0}
-                width={pfd.canvas_width}
-                height={pfd.canvas_height}
-                fill={`url(#pfd-grid-${pfd.producto_id})`}
+                x={14}
+                y={40}
+                width={194}
+                height={665}
+                fill="#ECECE9"
+                fillOpacity={0.7}
+                stroke="#D2D4D8"
+                strokeWidth={1.1}
               />
+              <rect x={14} y={40} width={194} height={28} fill="#111214" />
+              <text
+                x={26}
+                y={58}
+                fill="#FFFFFF"
+                fontSize={12}
+                fontFamily="Space Grotesk, sans-serif"
+                fontWeight={500}
+              >
+                ENTRADAS (LÍMITE BAT.)
+              </text>
 
-              {/* Áreas de proceso (Áreas 100..400) */}
-              {pfd.secciones.map((sec) => (
-                <g key={sec.area_id}>
-                  <rect
-                    x={sec.x}
-                    y={sec.y}
-                    width={sec.width}
-                    height={sec.height}
-                    fill="rgba(255,255,255,0.42)"
-                    stroke="#D2D4D8"
-                    strokeWidth={1.1}
-                    strokeDasharray="6 4"
-                  />
-                  <text
-                    x={sec.x + 12}
-                    y={sec.y + 20}
-                    fill="#52555E"
-                    fontSize={12}
-                    fontFamily="Space Grotesk, sans-serif"
-                    fontWeight={500}
-                  >
-                    {sec.titulo}
-                  </text>
-                </g>
-              ))}
-
-              {/* Servicios auxiliares (Utilities) */}
-              {showUtilities &&
-                pfd.servicios.map((srv) => {
-                  const x1 = srv.direccion === 'entrada' ? srv.x + srv.dx : srv.x;
-                  const y1 = srv.direccion === 'entrada' ? srv.y + srv.dy : srv.y;
-                  const x2 = srv.direccion === 'entrada' ? srv.x : srv.x + srv.dx;
-                  const y2 = srv.direccion === 'entrada' ? srv.y : srv.y + srv.dy;
-                  const labelX = srv.x + srv.dx;
-                  const labelY = srv.y + srv.dy + (srv.dy < 0 ? -7 : srv.dy > 0 ? 13 : -7);
-
-                  return (
-                    <g key={srv.id}>
-                      <line
-                        x1={x1}
-                        y1={y1}
-                        x2={x2}
-                        y2={y2}
-                        stroke="#8B5A18"
-                        strokeWidth={1.25}
-                        strokeDasharray="3 2.5"
-                        markerEnd={`url(#arrow-util-${pfd.producto_id})`}
-                      />
-                      <text
-                        x={labelX}
-                        y={labelY}
-                        textAnchor={srv.dx > 10 ? 'start' : srv.dx < -10 ? 'end' : 'middle'}
-                        fill="#7A4D10"
-                        fontSize={10.5}
-                        fontFamily="Inter, sans-serif"
-                        fontWeight={500}
-                      >
-                        {srv.etiqueta}
-                      </text>
-                    </g>
-                  );
-                })}
-
-              {/* Corrientes numeradas ortogonales */}
-              {pfd.corrientes.map((cor) => {
-                const st = STREAM_STYLE[cor.tipo];
-                const isSelected =
-                  selection.kind === 'corriente' && selection.numero === cor.numero;
-                const isHighlighted = connectedStreamNums.has(cor.numero);
-                const strokeColor = isSelected ? '#0A42E0' : st.color;
-                const markerId = isSelected
-                  ? `arrow-active-${pfd.producto_id}`
-                  : cor.tipo === 'reciclo'
-                    ? `arrow-reciclo-${pfd.producto_id}`
-                    : cor.tipo === 'subproducto'
-                      ? `arrow-subproducto-${pfd.producto_id}`
-                      : `arrow-proceso-${pfd.producto_id}`;
-                const [fx, fy] = cor.flag_pos;
+              {entradasBateria.map((lb) => {
+                const accent = LIMITE_ACCENT[lb.categoria];
+                const isLinked =
+                  lb.corriente_num !== null &&
+                  selection.kind === 'corriente' &&
+                  selection.numero === lb.corriente_num;
+                const titleLines = wrapSvgLines(lb.nombre, 22);
 
                 return (
                   <g
-                    key={cor.numero}
+                    key={lb.id}
+                    transform={`translate(22, ${lb.y})`}
                     data-pfd-interactive="true"
-                    className="cursor-pointer"
-                    onMouseEnter={() => setHoveredStream(cor.numero)}
-                    onMouseLeave={() => setHoveredStream(null)}
-                    onClick={() => setSelection({ kind: 'corriente', numero: cor.numero })}
+                    className={lb.corriente_num ? 'cursor-pointer' : ''}
+                    onClick={() => {
+                      if (lb.corriente_num) {
+                        setSelection({ kind: 'corriente', numero: lb.corriente_num });
+                      }
+                    }}
                   >
-                    {/* Área invisible ancha para facilitar el click sobre la cañería */}
-                    <polyline
-                      points={pointsToPolyline(cor.puntos)}
-                      fill="none"
-                      stroke="transparent"
-                      strokeWidth={14}
+                    <rect
+                      x={0}
+                      y={0}
+                      width={178}
+                      height={118}
+                      fill={isLinked ? '#EEF3FE' : '#F7F7F5'}
+                      stroke={isLinked ? '#0A42E0' : '#D2D4D8'}
+                      strokeWidth={isLinked ? 1.6 : 1}
                     />
-                    <polyline
-                      points={pointsToPolyline(cor.puntos)}
-                      fill="none"
-                      stroke={strokeColor}
-                      strokeWidth={isSelected ? st.width + 1.2 : isHighlighted ? st.width + 0.5 : st.width}
-                      strokeDasharray={st.dashed ? '6 4' : undefined}
-                      opacity={isHighlighted || isSelected ? 1 : 0.72}
-                      markerEnd={`url(#${markerId})`}
-                    />
+                    <rect x={0} y={0} width={4} height={118} fill={accent} />
 
-                    {/* Rombo / escudo numerado estándar PFD (<1>, <2>, ...) */}
-                    <g transform={`translate(${fx}, ${fy})`}>
-                      <polygon
-                        points="0,-12 13,0 0,12 -13,0"
-                        fill={isSelected ? '#0A42E0' : '#F7F7F5'}
-                        stroke={strokeColor}
-                        strokeWidth={isSelected ? 1.8 : 1.3}
-                      />
+                    <text
+                      x={12}
+                      y={18}
+                      fill="#111214"
+                      fontSize={11.5}
+                      fontFamily="Inter, sans-serif"
+                      fontWeight={500}
+                    >
+                      {titleLines[0]}
+                    </text>
+                    {titleLines[1] && (
                       <text
-                        x={0}
-                        y={3.8}
-                        textAnchor="middle"
-                        fill={isSelected ? '#FFFFFF' : '#111214'}
-                        fontSize={10.5}
+                        x={12}
+                        y={32}
+                        fill="#111214"
+                        fontSize={11.5}
                         fontFamily="Inter, sans-serif"
                         fontWeight={500}
                       >
-                        {cor.numero}
+                        {titleLines[1]}
                       </text>
-                    </g>
+                    )}
+
+                    <text
+                      x={12}
+                      y={titleLines[1] ? 49 : 36}
+                      fill={accent}
+                      fontSize={11}
+                      fontFamily="Inter, sans-serif"
+                      fontWeight={500}
+                    >
+                      {lb.formula}
+                    </text>
+
+                    <line x1={12} y1={58} x2={166} y2={58} stroke="#E2E3E0" strokeWidth={1} />
+
+                    <text
+                      x={12}
+                      y={75}
+                      fill="#111214"
+                      fontSize={11.5}
+                      fontFamily="Inter, sans-serif"
+                      fontWeight={500}
+                    >
+                      {lb.cantidad_masa}
+                    </text>
+                    {lb.cantidad_molar && (
+                      <text
+                        x={12}
+                        y={91}
+                        fill="#52555E"
+                        fontSize={10.5}
+                        fontFamily="Inter, sans-serif"
+                      >
+                        {lb.cantidad_molar}
+                      </text>
+                    )}
+                    {lb.fraccion_pureza && (
+                      <text
+                        x={12}
+                        y={107}
+                        fill="#52555E"
+                        fontSize={10}
+                        fontFamily="Inter, sans-serif"
+                      >
+                        {lb.fraccion_pureza}
+                      </text>
+                    )}
+                  </g>
+                );
+              })}
+            </g>
+
+            {/* Columna derecha integrada: SALIDAS, PRODUCTOS Y EMISIONES */}
+            <g>
+              <rect
+                x={1672}
+                y={40}
+                width={194}
+                height={665}
+                fill="#ECECE9"
+                fillOpacity={0.7}
+                stroke="#D2D4D8"
+                strokeWidth={1.1}
+              />
+              <rect x={1672} y={40} width={194} height={28} fill="#111214" />
+              <text
+                x={1684}
+                y={58}
+                fill="#FFFFFF"
+                fontSize={12}
+                fontFamily="Space Grotesk, sans-serif"
+                fontWeight={500}
+              >
+                SALIDAS Y PRODUCTOS
+              </text>
+
+              {salidasBateria.map((lb) => {
+                const accent = LIMITE_ACCENT[lb.categoria];
+                const isLinked =
+                  lb.corriente_num !== null &&
+                  selection.kind === 'corriente' &&
+                  selection.numero === lb.corriente_num;
+                const titleLines = wrapSvgLines(lb.nombre, 22);
+
+                return (
+                  <g
+                    key={lb.id}
+                    transform={`translate(1680, ${lb.y})`}
+                    data-pfd-interactive="true"
+                    className={lb.corriente_num ? 'cursor-pointer' : ''}
+                    onClick={() => {
+                      if (lb.corriente_num) {
+                        setSelection({ kind: 'corriente', numero: lb.corriente_num });
+                      }
+                    }}
+                  >
+                    <rect
+                      x={0}
+                      y={0}
+                      width={178}
+                      height={118}
+                      fill={isLinked ? '#EEF3FE' : '#F7F7F5'}
+                      stroke={isLinked ? '#0A42E0' : '#D2D4D8'}
+                      strokeWidth={isLinked ? 1.6 : 1}
+                    />
+                    <rect x={0} y={0} width={4} height={118} fill={accent} />
+
+                    <text
+                      x={12}
+                      y={18}
+                      fill="#111214"
+                      fontSize={11.5}
+                      fontFamily="Inter, sans-serif"
+                      fontWeight={500}
+                    >
+                      {titleLines[0]}
+                    </text>
+                    {titleLines[1] && (
+                      <text
+                        x={12}
+                        y={32}
+                        fill="#111214"
+                        fontSize={11.5}
+                        fontFamily="Inter, sans-serif"
+                        fontWeight={500}
+                      >
+                        {titleLines[1]}
+                      </text>
+                    )}
+
+                    <text
+                      x={12}
+                      y={titleLines[1] ? 49 : 36}
+                      fill={accent}
+                      fontSize={11}
+                      fontFamily="Inter, sans-serif"
+                      fontWeight={500}
+                    >
+                      {lb.formula}
+                    </text>
+
+                    <line x1={12} y1={58} x2={166} y2={58} stroke="#E2E3E0" strokeWidth={1} />
+
+                    <text
+                      x={12}
+                      y={75}
+                      fill="#111214"
+                      fontSize={11.5}
+                      fontFamily="Inter, sans-serif"
+                      fontWeight={500}
+                    >
+                      {lb.cantidad_masa}
+                    </text>
+                    {lb.cantidad_molar && (
+                      <text
+                        x={12}
+                        y={91}
+                        fill="#52555E"
+                        fontSize={10.5}
+                        fontFamily="Inter, sans-serif"
+                      >
+                        {lb.cantidad_molar}
+                      </text>
+                    )}
+                    {lb.fraccion_pureza && (
+                      <text
+                        x={12}
+                        y={107}
+                        fill="#52555E"
+                        fontSize={10}
+                        fontFamily="Inter, sans-serif"
+                      >
+                        {lb.fraccion_pureza}
+                      </text>
+                    )}
+                  </g>
+                );
+              })}
+            </g>
+
+            {/* Áreas de proceso (Áreas 100..400) */}
+            {pfd.secciones.map((sec) => (
+              <g key={sec.area_id}>
+                <rect
+                  x={sec.x}
+                  y={sec.y}
+                  width={sec.width}
+                  height={sec.height}
+                  fill="rgba(255,255,255,0.45)"
+                  stroke="#D2D4D8"
+                  strokeWidth={1.1}
+                  strokeDasharray="6 4"
+                />
+                <text
+                  x={sec.x + 14}
+                  y={sec.y + 22}
+                  fill="#52555E"
+                  fontSize={12.5}
+                  fontFamily="Space Grotesk, sans-serif"
+                  fontWeight={500}
+                >
+                  {sec.titulo}
+                </text>
+              </g>
+            ))}
+
+            {/* Servicios auxiliares (Utilities) con separación limpia */}
+            {showUtilities &&
+              pfd.servicios.map((srv) => {
+                const x1 = srv.direccion === 'entrada' ? srv.x + srv.dx : srv.x;
+                const y1 = srv.direccion === 'entrada' ? srv.y + srv.dy : srv.y;
+                const x2 = srv.direccion === 'entrada' ? srv.x : srv.x + srv.dx;
+                const y2 = srv.direccion === 'entrada' ? srv.y : srv.y + srv.dy;
+                const labelX = srv.x + srv.dx;
+                const labelY = srv.y + srv.dy + (srv.dy < 0 ? -8 : srv.dy > 0 ? 15 : -8);
+                const anchor = srv.dx > 12 ? 'start' : srv.dx < -12 ? 'end' : 'middle';
+
+                return (
+                  <g key={srv.id}>
+                    <line
+                      x1={x1}
+                      y1={y1}
+                      x2={x2}
+                      y2={y2}
+                      stroke="#8B5A18"
+                      strokeWidth={1.3}
+                      strokeDasharray="3 2.5"
+                      markerEnd={`url(#arrow-util-${pfd.producto_id})`}
+                    />
+                    <text
+                      x={labelX}
+                      y={labelY}
+                      textAnchor={anchor}
+                      fill="#7A4D10"
+                      fontSize={11}
+                      fontFamily="Inter, sans-serif"
+                      fontWeight={500}
+                    >
+                      {srv.etiqueta}
+                    </text>
                   </g>
                 );
               })}
 
-              {/* Equipos principales ISO 10628 */}
-              {pfd.equipos.map((eq) => {
-                const isSelected = selection.kind === 'equipo' && selection.tag === eq.tag;
-                const isConnected = connectedEquipmentTags.has(eq.tag);
+            {/* Corrientes numeradas ortogonales */}
+            {pfd.corrientes.map((cor) => {
+              const st = STREAM_STYLE[cor.tipo];
+              const isSelected =
+                selection.kind === 'corriente' && selection.numero === cor.numero;
+              const isHighlighted = connectedStreamNums.has(cor.numero);
+              const strokeColor = isSelected ? '#0A42E0' : st.color;
+              const markerId = isSelected
+                ? `arrow-active-${pfd.producto_id}`
+                : cor.tipo === 'reciclo'
+                  ? `arrow-reciclo-${pfd.producto_id}`
+                  : cor.tipo === 'subproducto'
+                    ? `arrow-subproducto-${pfd.producto_id}`
+                    : `arrow-proceso-${pfd.producto_id}`;
+              const [fx, fy] = cor.flag_pos;
 
-                return (
-                  <g
-                    key={eq.tag}
-                    transform={`translate(${eq.x}, ${eq.y})`}
-                    data-pfd-interactive="true"
-                    className="cursor-pointer"
-                    onClick={() => setSelection({ kind: 'equipo', tag: eq.tag })}
-                  >
-                    <PfdEquipmentSymbol
-                      simbolo={eq.simbolo}
-                      selected={isSelected}
-                      connected={isConnected}
-                    />
+              return (
+                <g
+                  key={cor.numero}
+                  data-pfd-interactive="true"
+                  className="cursor-pointer"
+                  onMouseEnter={() => setHoveredStream(cor.numero)}
+                  onMouseLeave={() => setHoveredStream(null)}
+                  onClick={() => setSelection({ kind: 'corriente', numero: cor.numero })}
+                >
+                  <polyline
+                    points={pointsToPolyline(cor.puntos)}
+                    fill="none"
+                    stroke="transparent"
+                    strokeWidth={16}
+                  />
+                  <polyline
+                    points={pointsToPolyline(cor.puntos)}
+                    fill="none"
+                    stroke={strokeColor}
+                    strokeWidth={
+                      isSelected ? st.width + 1.3 : isHighlighted ? st.width + 0.5 : st.width
+                    }
+                    strokeDasharray={st.dashed ? '6 4' : undefined}
+                    opacity={isHighlighted || isSelected ? 1 : 0.76}
+                    markerEnd={`url(#${markerId})`}
+                  />
 
-                    {/* Tag oficial de equipo (F-101, R-201, T-302...) */}
-                    <rect
-                      x={-26}
-                      y={-64}
-                      width={52}
-                      height={17}
-                      fill={isSelected ? '#0A42E0' : '#111214'}
+                  {/* Rombo numerado estándar PFD (<1>, <2>, ...) */}
+                  <g transform={`translate(${fx}, ${fy})`}>
+                    <polygon
+                      points="0,-13 14,0 0,13 -14,0"
+                      fill={isSelected ? '#0A42E0' : '#F7F7F5'}
+                      stroke={strokeColor}
+                      strokeWidth={isSelected ? 1.8 : 1.35}
                     />
                     <text
                       x={0}
-                      y={-52}
+                      y={4}
                       textAnchor="middle"
-                      fill="#FFFFFF"
-                      fontSize={10.5}
+                      fill={isSelected ? '#FFFFFF' : '#111214'}
+                      fontSize={11}
                       fontFamily="Inter, sans-serif"
                       fontWeight={500}
                     >
-                      {eq.tag}
+                      {cor.numero}
                     </text>
+                  </g>
+                </g>
+              );
+            })}
 
-                    {/* Nombre descriptivo del equipo debajo del símbolo */}
+            {/* Equipos principales ISO 10628 con nombres envueltos en 2 líneas y fondo opaco anti-colisión */}
+            {pfd.equipos.map((eq) => {
+              const isSelected = selection.kind === 'equipo' && selection.tag === eq.tag;
+              const isConnected = connectedEquipmentTags.has(eq.tag);
+              const lines = wrapSvgLines(eq.nombre, 19);
+              const boxHeight = lines.length === 2 ? 32 : 20;
+              const boxWidth = 148;
+
+              return (
+                <g
+                  key={eq.tag}
+                  transform={`translate(${eq.x}, ${eq.y})`}
+                  data-pfd-interactive="true"
+                  className="cursor-pointer"
+                  onClick={() => setSelection({ kind: 'equipo', tag: eq.tag })}
+                >
+                  <PfdEquipmentSymbol
+                    simbolo={eq.simbolo}
+                    selected={isSelected}
+                    connected={isConnected}
+                  />
+
+                  {/* Tag oficial de equipo (F-101, R-201, T-302...) */}
+                  <rect
+                    x={-28}
+                    y={-68}
+                    width={56}
+                    height={19}
+                    fill={isSelected ? '#0A42E0' : '#111214'}
+                  />
+                  <text
+                    x={0}
+                    y={-55}
+                    textAnchor="middle"
+                    fill="#FFFFFF"
+                    fontSize={11}
+                    fontFamily="Inter, sans-serif"
+                    fontWeight={500}
+                  >
+                    {eq.tag}
+                  </text>
+
+                  {/* Cartucho opaco con el nombre en 1 o 2 líneas (nunca choca con cañerías ni equipos vecinos) */}
+                  <rect
+                    x={-boxWidth / 2}
+                    y={52}
+                    width={boxWidth}
+                    height={boxHeight}
+                    fill="#F7F7F5"
+                    fillOpacity={0.96}
+                    stroke={isSelected ? '#0A42E0' : '#E2E3E0'}
+                    strokeWidth={isSelected ? 1.2 : 0.9}
+                  />
+                  <text
+                    x={0}
+                    y={lines.length === 2 ? 65 : 66}
+                    textAnchor="middle"
+                    fill={isSelected ? '#0A42E0' : '#111214'}
+                    fontSize={11}
+                    fontFamily="Inter, sans-serif"
+                    fontWeight={500}
+                  >
+                    {lines[0]}
+                  </text>
+                  {lines[1] && (
                     <text
                       x={0}
-                      y={60}
+                      y={79}
                       textAnchor="middle"
                       fill={isSelected ? '#0A42E0' : '#111214'}
                       fontSize={11}
                       fontFamily="Inter, sans-serif"
                       fontWeight={500}
                     >
-                      {eq.nombre}
+                      {lines[1]}
                     </text>
+                  )}
 
-                    {/* Bandera de condición crítica T / P (opcional) */}
-                    {showCritFlags && eq.condicion_critica && (
-                      <g transform="translate(0, 75)">
-                        <rect
-                          x={-36}
-                          y={-10}
-                          width={72}
-                          height={15}
-                          fill="#ECECE9"
-                          stroke="#D2D4D8"
-                          strokeWidth={0.9}
-                        />
-                        <text
-                          x={0}
-                          y={1}
-                          textAnchor="middle"
-                          fill="#52555E"
-                          fontSize={9.5}
-                          fontFamily="Inter, sans-serif"
-                          fontWeight={500}
-                        >
-                          {eq.condicion_critica}
-                        </text>
-                      </g>
-                    )}
-                  </g>
-                );
-              })}
+                  {/* Bandera de condición crítica T / P */}
+                  {showCritFlags && eq.condicion_critica && (
+                    <g transform={`translate(0, ${52 + boxHeight + 13})`}>
+                      <rect
+                        x={-44}
+                        y={-10}
+                        width={88}
+                        height={17}
+                        fill="#ECECE9"
+                        stroke="#D2D4D8"
+                        strokeWidth={0.9}
+                      />
+                      <text
+                        x={0}
+                        y={2}
+                        textAnchor="middle"
+                        fill="#52555E"
+                        fontSize={10}
+                        fontFamily="Inter, sans-serif"
+                        fontWeight={500}
+                      >
+                        {eq.condicion_critica}
+                      </text>
+                    </g>
+                  )}
+                </g>
+              );
+            })}
 
-              {/* Leyenda compacta inferior dentro del plano técnico */}
-              <g transform={`translate(24, ${pfd.canvas_height - 24})`}>
-                <line x1={0} y1={0} x2={22} y2={0} stroke="#111214" strokeWidth={2.1} />
-                <text x={28} y={3.5} fill="#52555E" fontSize={11} fontFamily="Inter, sans-serif">
-                  Corriente de proceso
-                </text>
+            {/* Leyenda inferior del plano */}
+            <g transform={`translate(226, ${pfd.canvas_height - 22})`}>
+              <line x1={0} y1={0} x2={24} y2={0} stroke="#111214" strokeWidth={2.2} />
+              <text x={30} y={4} fill="#52555E" fontSize={12} fontFamily="Inter, sans-serif">
+                Corriente de proceso
+              </text>
 
-                <line x1={165} y1={0} x2={187} y2={0} stroke="#0B7A53" strokeWidth={2.1} strokeDasharray="5 3" />
-                <text x={193} y={3.5} fill="#52555E" fontSize={11} fontFamily="Inter, sans-serif">
-                  Reciclo cerrado
-                </text>
+              <line
+                x1={182}
+                y1={0}
+                x2={206}
+                y2={0}
+                stroke="#0B7A53"
+                strokeWidth={2.2}
+                strokeDasharray="6 4"
+              />
+              <text x={212} y={4} fill="#52555E" fontSize={12} fontFamily="Inter, sans-serif">
+                Reciclo cerrado
+              </text>
 
-                <line x1={305} y1={0} x2={327} y2={0} stroke="#C86A11" strokeWidth={1.8} />
-                <text x={333} y={3.5} fill="#52555E" fontSize={11} fontFamily="Inter, sans-serif">
-                  Subproducto / condensado
-                </text>
+              <line x1={340} y1={0} x2={364} y2={0} stroke="#C86A11" strokeWidth={1.8} />
+              <text x={370} y={4} fill="#52555E" fontSize={12} fontFamily="Inter, sans-serif">
+                Subproducto / condensado
+              </text>
 
-                <line x1={490} y1={0} x2={512} y2={0} stroke="#8B5A18" strokeWidth={1.3} strokeDasharray="3 2.5" />
-                <text x={518} y={3.5} fill="#52555E" fontSize={11} fontFamily="Inter, sans-serif">
-                  Servicios auxiliares (utilities)
-                </text>
+              <line
+                x1={556}
+                y1={0}
+                x2={580}
+                y2={0}
+                stroke="#8B5A18"
+                strokeWidth={1.3}
+                strokeDasharray="3 2.5"
+              />
+              <text x={586} y={4} fill="#52555E" fontSize={12} fontFamily="Inter, sans-serif">
+                Servicios auxiliares (utilities)
+              </text>
 
-                <polygon points="710,-7 719,0 710,7 701,0" fill="#F7F7F5" stroke="#111214" strokeWidth={1.2} />
-                <text x={726} y={3.5} fill="#52555E" fontSize={11} fontFamily="Inter, sans-serif">
-                  N° de corriente (ver Tabla de Corrientes abajo)
-                </text>
-              </g>
-            </svg>
-          </div>
-
-          <div className="flex flex-wrap items-center justify-between gap-2 border-t border-rule bg-stone-bg px-4 py-2 text-[12px] text-ink-muted">
-            <span>Tocá cualquier equipo (ej. F-101) o rombo numerado para inspeccionar su balance</span>
-            <span className="tabular-nums">
-              {pfd.equipos.length} equipos ISO · {pfd.corrientes.length} corrientes numeradas · Zoom{' '}
-              {Math.round(zoom * 100)}%
-            </span>
-          </div>
+              <polygon
+                points="795,-8 805,0 795,8 785,0"
+                fill="#F7F7F5"
+                stroke="#111214"
+                strokeWidth={1.2}
+              />
+              <text x={814} y={4} fill="#52555E" fontSize={12} fontFamily="Inter, sans-serif">
+                N° de corriente (tocá para inspeccionar)
+              </text>
+            </g>
+          </svg>
         </div>
 
-        {/* Panel inspector lateral */}
+        <div className="flex flex-wrap items-center justify-between gap-2 border-t border-rule bg-stone-bg px-4 py-2 text-[12px] text-ink-muted">
+          <span>
+            Arrastrá para mover el plano · Tocá cualquier equipo, entrada/salida o rombo numerado
+          </span>
+          <span className="tabular-nums">
+            {pfd.equipos.length} equipos ISO · {pfd.corrientes.length} corrientes · Zoom{' '}
+            {Math.round(zoom * 100)}%
+          </span>
+        </div>
+      </div>
+
+      {/* Bloque inferior balanceado: Inspector detallado + Resumen de Balance de Materia (Entradas vs Salidas) */}
+      <div className="grid gap-5 lg:grid-cols-12">
+        {/* Inspector del equipo o corriente seleccionada */}
         <aside
           aria-live="polite"
-          className={`flex flex-col border border-rule bg-stone-surface p-5 ${
-            expanded ? '' : 'lg:col-span-3'
-          }`}
+          className="flex flex-col border border-rule bg-stone-surface p-5 lg:col-span-5"
         >
           {selection.kind === 'equipo' && selectedEquipo ? (
             <div className="space-y-4">
@@ -673,7 +1026,6 @@ export function ProcessPfdDiagram({ pfd, fuentesMap }: ProcessPfdDiagramProps) {
                 </div>
               </dl>
 
-              {/* Corrientes conectadas a este equipo */}
               <div className="space-y-2 border-t border-rule pt-3 text-[12px]">
                 <p className="font-medium text-ink">Corrientes vinculadas</p>
                 <div className="flex flex-wrap gap-1.5">
@@ -696,7 +1048,6 @@ export function ProcessPfdDiagram({ pfd, fuentesMap }: ProcessPfdDiagramProps) {
                 </div>
               </div>
 
-              {/* Fuente técnica */}
               <div className="border-t border-rule pt-3 text-[12px] text-ink-muted">
                 <p className="font-medium text-ink">Referencia técnica</p>
                 <p className="mt-1">{selectedEquipo.cita_ubicacion}</p>
@@ -804,6 +1155,74 @@ export function ProcessPfdDiagram({ pfd, fuentesMap }: ProcessPfdDiagramProps) {
             </div>
           ) : null}
         </aside>
+
+        {/* Resumen estructurado de Balance Global de Materia (Entradas vs Salidas en t/t, kmol/t y %) */}
+        <div className="grid gap-4 border border-rule bg-stone-surface p-5 sm:grid-cols-2 lg:col-span-7">
+          <div>
+            <div className="flex items-center gap-2 border-b border-rule pb-2.5">
+              <ArrowDownToLine className="h-4 w-4 text-cobalt" />
+              <h3 className="font-display text-[16px] font-medium tracking-[-0.015em] text-ink">
+                Entradas al proceso
+              </h3>
+            </div>
+            <ul className="mt-3 divide-y divide-rule text-[13px]">
+              {entradasBateria.map((lb) => (
+                <li key={lb.id} className="py-2.5 first:pt-0">
+                  <div className="flex items-baseline justify-between gap-2">
+                    <span className="font-medium text-ink">{lb.nombre}</span>
+                    <span className="shrink-0 text-[12px] font-medium text-cobalt tabular-nums">
+                      {lb.formula}
+                    </span>
+                  </div>
+                  <p className="mt-1 text-[12px] font-medium text-ink tabular-nums">
+                    {lb.cantidad_masa}
+                    {lb.cantidad_molar ? ` · ${lb.cantidad_molar}` : ''}
+                  </p>
+                  {lb.fraccion_pureza && (
+                    <p className="mt-0.5 text-[12px] text-ink-muted tabular-nums">
+                      {lb.fraccion_pureza}
+                    </p>
+                  )}
+                  <p className="mt-0.5 text-[12px] text-ink-muted">{lb.nota}</p>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          <div className="border-t border-rule pt-4 sm:border-l sm:border-t-0 sm:pl-5 sm:pt-0">
+            <div className="flex items-center gap-2 border-b border-rule pb-2.5">
+              <ArrowUpFromLine className="h-4 w-4 text-emerald-react" />
+              <h3 className="font-display text-[16px] font-medium tracking-[-0.015em] text-ink">
+                Salidas, productos y emisiones
+              </h3>
+            </div>
+            <ul className="mt-3 divide-y divide-rule text-[13px]">
+              {salidasBateria.map((lb) => (
+                <li key={lb.id} className="py-2.5 first:pt-0">
+                  <div className="flex items-baseline justify-between gap-2">
+                    <span className="font-medium text-ink">{lb.nombre}</span>
+                    <span
+                      className="shrink-0 text-[12px] font-medium tabular-nums"
+                      style={{ color: LIMITE_ACCENT[lb.categoria] }}
+                    >
+                      {lb.formula}
+                    </span>
+                  </div>
+                  <p className="mt-1 text-[12px] font-medium text-ink tabular-nums">
+                    {lb.cantidad_masa}
+                    {lb.cantidad_molar ? ` · ${lb.cantidad_molar}` : ''}
+                  </p>
+                  {lb.fraccion_pureza && (
+                    <p className="mt-0.5 text-[12px] text-ink-muted tabular-nums">
+                      {lb.fraccion_pureza}
+                    </p>
+                  )}
+                  <p className="mt-0.5 text-[12px] text-ink-muted">{lb.nota}</p>
+                </li>
+              ))}
+            </ul>
+          </div>
+        </div>
       </div>
 
       {/* Tabla de Corrientes (Stream Table) sincronizada bidireccionalmente con el PFD */}
@@ -813,9 +1232,7 @@ export function ProcessPfdDiagram({ pfd, fuentesMap }: ProcessPfdDiagramProps) {
             <h3 className="font-display text-[16px] font-medium tracking-[-0.015em] text-ink">
               Tabla de corrientes (Stream Table)
             </h3>
-            <p className="mt-0.5 text-[12px] text-ink-muted">
-              {pfd.nota_metodologica}
-            </p>
+            <p className="mt-0.5 text-[12px] text-ink-muted">{pfd.nota_metodologica}</p>
           </div>
 
           <div className="flex flex-wrap items-center gap-1 text-[12px]">

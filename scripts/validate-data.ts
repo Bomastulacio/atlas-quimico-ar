@@ -111,6 +111,11 @@ async function main() {
         pfdErrors.push(`PFD ${pfd.proceso_id} corriente <${cor.numero}>: fuente_id inexistente "${cor.fuente_id}"`);
       }
     }
+    for (const lb of pfd.limites_bateria) {
+      if (!fuenteIds.has(lb.fuente_id)) {
+        pfdErrors.push(`PFD ${pfd.proceso_id} limite ${lb.id}: fuente_id inexistente "${lb.fuente_id}"`);
+      }
+    }
   }
   if (pfdErrors.length > 0) {
     console.error('[data:validate] ERROR de integridad referencial en pfd_procesos.json:');
