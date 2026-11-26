@@ -16,6 +16,7 @@ CREATE TABLE IF NOT EXISTS public.pfd_procesos (
   equipos JSONB NOT NULL DEFAULT '[]'::jsonb,
   corrientes JSONB NOT NULL DEFAULT '[]'::jsonb,
   servicios JSONB NOT NULL DEFAULT '[]'::jsonb,
+  limites_bateria JSONB NOT NULL DEFAULT '[]'::jsonb,
   updated_at TIMESTAMPTZ NOT NULL DEFAULT now()
 );
 
