@@ -1,6 +1,7 @@
 ---
 import BaseLayout from '@/layouts/BaseLayout.astro';
 import { SiteHeader } from '@/components/SiteHeader';
+import { AlgodonProcessAnatomy } from '@/components/AlgodonProcessAnatomy';
 import { StandaloneCompanyMarket } from '@/components/CompanyMarketCard';
 import { ProcessFlowDiagram } from '@/components/ProcessFlowDiagram';
 import { ProductIcon } from '@/components/ProductIcon';
@@ -83,6 +84,7 @@ const TIPO_FUENTE_LABEL: Record<string, string> = {
         ← Volver al mapa territorial
       </a>
       <div class="flex flex-wrap items-center gap-4">
+        <a href="#anatomia" class="transition-colors duration-150 hover:text-ink">Planta 3D</a>
         <a href="#diagrama" class="transition-colors duration-150 hover:text-ink">Diagrama</a>
         <a href="#datos" class="transition-colors duration-150 hover:text-ink">Producción y comercio</a>
         <a href="#empresas" class="transition-colors duration-150 hover:text-ink">Plantas</a>
@@ -169,7 +171,38 @@ const TIPO_FUENTE_LABEL: Record<string, string> = {
       </dl>
     </section>
 
-    <section id="diagrama" class="scroll-mt-24 pt-16">
+    {/* Sección 1: Simulación 3D en movimiento del desmote y refinación de algodón en Chaco */}
+    <section id="anatomia" class="scroll-mt-24 pt-16">
+      <div class="mb-5 flex flex-wrap items-end justify-between gap-4">
+        <div class="max-w-3xl">
+          <h2 class="font-display text-[23px] font-medium leading-[1.15] tracking-[-0.022em] text-ink">
+            Circuito 3D en movimiento en Chaco (Las Breñas y polo algodonero)
+          </h2>
+          <p class="mt-1.5 text-[15px] text-ink-muted">
+            Lámina técnica interactiva en 3D desde los módulos de algodón en bruto hasta la hilatura
+            textil: muestra la succión neumática y secado, el banco de sierras desmotadoras que
+            separa fibra (1,0 t) y semilla (1,7 t), la prensa hidráulica HVI y el blanqueo libre de
+            cloro con H2O2.
+          </p>
+        </div>
+        <p class="text-[13px] text-ink-muted tabular-nums">
+          Orbitá en 3D, cambiá de paso o grabá un clip WebM a 60 fps
+        </p>
+      </div>
+
+      <AlgodonProcessAnatomy
+        client:load
+        pasos={procesoPrincipal.pasos}
+        produccionChacoT={
+          ultimoChaco?.medicion.estado === 'dato' ? ultimoChaco.medicion.valor : null
+        }
+        exportacionFibraT={
+          ultimoComexVol?.exportacion.estado === 'dato' ? ultimoComexVol.exportacion.valor : null
+        }
+      />
+    </section>
+
+    <section id="diagrama" class="scroll-mt-24 pt-20">
       <div class="mb-5 flex flex-wrap items-end justify-between gap-4">
         <div class="max-w-3xl">
           <h2 class="font-display text-[23px] font-medium leading-[1.15] tracking-[-0.022em] text-ink">
