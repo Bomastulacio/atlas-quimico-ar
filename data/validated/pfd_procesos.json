@@ -217,13 +217,29 @@
         "tipo": "proceso",
         "origen_tag": null,
         "destino_tag": "F-101",
-        "puntos": [[206, 240], [272, 240]],
-        "flag_pos": [238, 240],
+        "puntos": [
+          [
+            206,
+            240
+          ],
+          [
+            272,
+            240
+          ]
+        ],
+        "flag_pos": [
+          238,
+          240
+        ],
         "especies": "C2H6 (>95% mol)",
         "fase": "Gas",
         "temperatura_c": "20-35",
         "presion_bar": "5-10",
-        "flujo_especifico": { "estado": "dato", "valor": 1.245, "unidad": "t/t C2H4" },
+        "flujo_especifico": {
+          "estado": "dato",
+          "valor": 1.245,
+          "unidad": "t/t C2H4"
+        },
         "nota_tecnica": "Equivalente exacto a 41,40 kmol C2H6/t C2H4 (803 kg de etileno por tonelada de etano según IPCC 2006 Table 3.25).",
         "fuente_id": "ipcc-2006-v3-ch3-amoniaco-urea",
         "cita_ubicacion": "IPCC 2006 Vol. 3 Cap. 3.9 Table 3.25 pág. 3.82 (803 kg C2H4/t C2H6)"
@@ -234,13 +250,29 @@
         "tipo": "proceso",
         "origen_tag": "F-101",
         "destino_tag": "E-101",
-        "puntos": [[364, 240], [468, 240]],
-        "flag_pos": [416, 240],
+        "puntos": [
+          [
+            364,
+            240
+          ],
+          [
+            468,
+            240
+          ]
+        ],
+        "flag_pos": [
+          416,
+          240
+        ],
         "especies": "C2H4, C2H6, H2, CH4, H2O vapor",
         "fase": "Gas",
         "temperatura_c": "800-850",
         "presion_bar": "1,5-2,0",
-        "flujo_especifico": { "estado": "sin_datos", "valor": null, "unidad": "t/t C2H4" },
+        "flujo_especifico": {
+          "estado": "sin_datos",
+          "valor": null,
+          "unidad": "t/t C2H4"
+        },
         "nota_tecnica": "Incluye etano sin convertir (conversión típica por paso ~60-65%) y vapor de dilución.",
         "fuente_id": "eu-bref-lvoc-2017",
         "cita_ubicacion": "EU LVOC BREF (2017) Lower Olefins: furnace outlet & TLE quench"
@@ -251,13 +283,29 @@
         "tipo": "proceso",
         "origen_tag": "E-101",
         "destino_tag": "T-101",
-        "puntos": [[502, 276], [502, 456]],
-        "flag_pos": [502, 396],
+        "puntos": [
+          [
+            502,
+            276
+          ],
+          [
+            502,
+            456
+          ]
+        ],
+        "flag_pos": [
+          502,
+          396
+        ],
         "especies": "C2H4, C2H6, H2, CH4, H2O vapor",
         "fase": "Gas",
         "temperatura_c": "350-550",
         "presion_bar": "1,4-1,7",
-        "flujo_especifico": { "estado": "sin_datos", "valor": null, "unidad": "t/t C2H4" },
+        "flujo_especifico": {
+          "estado": "sin_datos",
+          "valor": null,
+          "unidad": "t/t C2H4"
+        },
         "nota_tecnica": "Temperatura reducida rápidamente para inhibir polimerización y coquificación secundaria.",
         "fuente_id": "eu-bref-lvoc-2017",
         "cita_ubicacion": "EU LVOC BREF (2017) Lower Olefins: TLE rapid cooling"
@@ -268,13 +316,33 @@
         "tipo": "subproducto",
         "origen_tag": "T-101",
         "destino_tag": null,
-        "puntos": [[502, 572], [502, 622], [566, 622]],
-        "flag_pos": [536, 622],
+        "puntos": [
+          [
+            502,
+            572
+          ],
+          [
+            502,
+            622
+          ],
+          [
+            566,
+            622
+          ]
+        ],
+        "flag_pos": [
+          536,
+          622
+        ],
         "especies": "H2O + trazas de hidrocarburos",
         "fase": "Líquido",
         "temperatura_c": "40-50",
         "presion_bar": "1,2-1,5",
-        "flujo_especifico": { "estado": "sin_datos", "valor": null, "unidad": "t/t C2H4" },
+        "flujo_especifico": {
+          "estado": "sin_datos",
+          "valor": null,
+          "unidad": "t/t C2H4"
+        },
         "nota_tecnica": "Se decanta, se despoja de hidrocarburos y se reutiliza para generar vapor de dilución.",
         "fuente_id": "eu-bref-lvoc-2017",
         "cita_ubicacion": "EU LVOC BREF (2017) Lower Olefins: dilution steam recovery loop"
@@ -285,13 +353,37 @@
         "tipo": "proceso",
         "origen_tag": "T-101",
         "destino_tag": "K-201",
-        "puntos": [[526, 480], [585, 480], [585, 240], [644, 240]],
-        "flag_pos": [585, 368],
+        "puntos": [
+          [
+            526,
+            480
+          ],
+          [
+            585,
+            480
+          ],
+          [
+            585,
+            240
+          ],
+          [
+            644,
+            240
+          ]
+        ],
+        "flag_pos": [
+          585,
+          368
+        ],
         "especies": "C2H4, C2H6, H2, CH4, trazas CO2/H2S",
         "fase": "Gas",
         "temperatura_c": "35-45",
         "presion_bar": "1,2-1,5",
-        "flujo_especifico": { "estado": "sin_datos", "valor": null, "unidad": "t/t C2H4" },
+        "flujo_especifico": {
+          "estado": "sin_datos",
+          "valor": null,
+          "unidad": "t/t C2H4"
+        },
         "nota_tecnica": "Alimentación libre de agua condensada hacia el primer cuerpo del compresor centrífugo.",
         "fuente_id": "eu-bref-lvoc-2017",
         "cita_ubicacion": "EU LVOC BREF (2017) Lower Olefins: compression inlet"
@@ -302,13 +394,29 @@
         "tipo": "proceso",
         "origen_tag": "K-201",
         "destino_tag": "T-201",
-        "puntos": [[724, 240], [834, 240]],
-        "flag_pos": [779, 240],
+        "puntos": [
+          [
+            724,
+            240
+          ],
+          [
+            834,
+            240
+          ]
+        ],
+        "flag_pos": [
+          779,
+          240
+        ],
         "especies": "C2H4, C2H6, H2, CH4, CO2, H2S",
         "fase": "Gas",
         "temperatura_c": "35-50",
         "presion_bar": "10-15",
-        "flujo_especifico": { "estado": "sin_datos", "valor": null, "unidad": "t/t C2H4" },
+        "flujo_especifico": {
+          "estado": "sin_datos",
+          "valor": null,
+          "unidad": "t/t C2H4"
+        },
         "nota_tecnica": "El lavado se ubica en etapa intermedia de compresión para optimizar absorción con NaOH.",
         "fuente_id": "eu-bref-lvoc-2017",
         "cita_ubicacion": "EU LVOC BREF (2017) Lower Olefins: interstage caustic scrubbing"
@@ -319,13 +427,29 @@
         "tipo": "proceso",
         "origen_tag": "T-201",
         "destino_tag": "D-201",
-        "puntos": [[858, 296], [858, 476]],
-        "flag_pos": [858, 396],
+        "puntos": [
+          [
+            858,
+            296
+          ],
+          [
+            858,
+            476
+          ]
+        ],
+        "flag_pos": [
+          858,
+          396
+        ],
         "especies": "C2H4, C2H6, H2, CH4, H2O saturada",
         "fase": "Gas",
         "temperatura_c": "20-35",
         "presion_bar": "30-35",
-        "flujo_especifico": { "estado": "sin_datos", "valor": null, "unidad": "t/t C2H4" },
+        "flujo_especifico": {
+          "estado": "sin_datos",
+          "valor": null,
+          "unidad": "t/t C2H4"
+        },
         "nota_tecnica": "Tras la última etapa de compresión, el gas saturado entra a los tamices moleculares.",
         "fuente_id": "eu-bref-lvoc-2017",
         "cita_ubicacion": "EU LVOC BREF (2017) Lower Olefins: compression & drying"
@@ -336,13 +460,37 @@
         "tipo": "proceso",
         "origen_tag": "D-201",
         "destino_tag": "T-301",
-        "puntos": [[892, 515], [940, 515], [940, 240], [1020, 240]],
-        "flag_pos": [940, 384],
+        "puntos": [
+          [
+            892,
+            515
+          ],
+          [
+            940,
+            515
+          ],
+          [
+            940,
+            240
+          ],
+          [
+            1020,
+            240
+          ]
+        ],
+        "flag_pos": [
+          940,
+          384
+        ],
         "especies": "C2H4, C2H6, H2, CH4 (<1 ppm H2O)",
         "fase": "Gas",
         "temperatura_c": "15-25",
         "presion_bar": "30-35",
-        "flujo_especifico": { "estado": "sin_datos", "valor": null, "unidad": "t/t C2H4" },
+        "flujo_especifico": {
+          "estado": "sin_datos",
+          "valor": null,
+          "unidad": "t/t C2H4"
+        },
         "nota_tecnica": "Ingresa al tren de enfriamiento criogénico previo a la torre desmetanizadora.",
         "fuente_id": "eu-bref-lvoc-2017",
         "cita_ubicacion": "EU LVOC BREF (2017) Lower Olefins: chilling train feed"
@@ -353,13 +501,33 @@
         "tipo": "subproducto",
         "origen_tag": "T-301",
         "destino_tag": null,
-        "puntos": [[1044, 183], [1044, 108], [1672, 108]],
-        "flag_pos": [1175, 108],
+        "puntos": [
+          [
+            1044,
+            183
+          ],
+          [
+            1044,
+            108
+          ],
+          [
+            1672,
+            108
+          ]
+        ],
+        "flag_pos": [
+          1175,
+          108
+        ],
         "especies": "H2, CH4 (fuel gas)",
         "fase": "Gas",
         "temperatura_c": "-100 a -90",
         "presion_bar": "30",
-        "flujo_especifico": { "estado": "sin_datos", "valor": null, "unidad": "t/t C2H4" },
+        "flujo_especifico": {
+          "estado": "sin_datos",
+          "valor": null,
+          "unidad": "t/t C2H4"
+        },
         "nota_tecnica": "Se recupera hidrógeno de proceso y el remanente alimenta los quemadores del horno F-101.",
         "fuente_id": "eu-bref-lvoc-2017",
         "cita_ubicacion": "EU LVOC BREF (2017) Lower Olefins: demethaniser overhead fuel gas"
@@ -370,13 +538,29 @@
         "tipo": "proceso",
         "origen_tag": "T-301",
         "destino_tag": "R-301",
-        "puntos": [[1044, 296], [1044, 466]],
-        "flag_pos": [1044, 396],
+        "puntos": [
+          [
+            1044,
+            296
+          ],
+          [
+            1044,
+            466
+          ]
+        ],
+        "flag_pos": [
+          1044,
+          396
+        ],
         "especies": "C2H4, C2H6, trazas C2H2",
         "fase": "Gas",
         "temperatura_c": "-30 a 50",
         "presion_bar": "20-25",
-        "flujo_especifico": { "estado": "sin_datos", "valor": null, "unidad": "t/t C2H4" },
+        "flujo_especifico": {
+          "estado": "sin_datos",
+          "valor": null,
+          "unidad": "t/t C2H4"
+        },
         "nota_tecnica": "El fondo de desmetanizadora contiene la mezcla C2 antes de remover trazas de acetileno.",
         "fuente_id": "eu-bref-lvoc-2017",
         "cita_ubicacion": "EU LVOC BREF (2017) Lower Olefins: C2 stream to acetylene converter"
@@ -387,13 +571,37 @@
         "tipo": "proceso",
         "origen_tag": "R-301",
         "destino_tag": "T-302",
-        "puntos": [[1078, 515], [1144, 515], [1144, 295], [1204, 295]],
-        "flag_pos": [1144, 412],
+        "puntos": [
+          [
+            1078,
+            515
+          ],
+          [
+            1144,
+            515
+          ],
+          [
+            1144,
+            295
+          ],
+          [
+            1204,
+            295
+          ]
+        ],
+        "flag_pos": [
+          1144,
+          412
+        ],
         "especies": "C2H4, C2H6 (<1 ppm C2H2)",
         "fase": "Bifásico",
         "temperatura_c": "-20 a 10",
         "presion_bar": "18-22",
-        "flujo_especifico": { "estado": "sin_datos", "valor": null, "unidad": "t/t C2H4" },
+        "flujo_especifico": {
+          "estado": "sin_datos",
+          "valor": null,
+          "unidad": "t/t C2H4"
+        },
         "nota_tecnica": "Alimenta el splitter C2 donde se separan etileno y etano por destilación criogénica.",
         "fuente_id": "eu-bref-lvoc-2017",
         "cita_ubicacion": "EU LVOC BREF (2017) Lower Olefins: C2 splitter feed"
@@ -404,13 +612,37 @@
         "tipo": "reciclo",
         "origen_tag": "T-302",
         "destino_tag": "F-101",
-        "puntos": [[1228, 352], [1228, 668], [318, 668], [318, 286]],
-        "flag_pos": [772, 668],
+        "puntos": [
+          [
+            1228,
+            352
+          ],
+          [
+            1228,
+            668
+          ],
+          [
+            318,
+            668
+          ],
+          [
+            318,
+            286
+          ]
+        ],
+        "flag_pos": [
+          772,
+          668
+        ],
         "especies": "C2H6 (>98% mol)",
         "fase": "Gas",
         "temperatura_c": "-10 a 25",
         "presion_bar": "5-18",
-        "flujo_especifico": { "estado": "sin_datos", "valor": null, "unidad": "t/t C2H4" },
+        "flujo_especifico": {
+          "estado": "sin_datos",
+          "valor": null,
+          "unidad": "t/t C2H4"
+        },
         "nota_tecnica": "Vaporizado y retornado a los hornos de pirólisis para elevar la conversión global por encima del 98%.",
         "fuente_id": "eu-bref-lvoc-2017",
         "cita_ubicacion": "EU LVOC BREF (2017) Lower Olefins: unreacted ethane recycle to cracking furnaces"
@@ -421,13 +653,37 @@
         "tipo": "proceso",
         "origen_tag": "T-302",
         "destino_tag": "R-401",
-        "puntos": [[1228, 238], [1228, 152], [1418, 152], [1418, 188]],
-        "flag_pos": [1322, 152],
+        "puntos": [
+          [
+            1228,
+            238
+          ],
+          [
+            1228,
+            152
+          ],
+          [
+            1418,
+            152
+          ],
+          [
+            1418,
+            188
+          ]
+        ],
+        "flag_pos": [
+          1322,
+          152
+        ],
         "especies": "C2H4 (>99,9% mol)",
         "fase": "Gas",
         "temperatura_c": "-30 a 20",
         "presion_bar": "18-22",
-        "flujo_especifico": { "estado": "dato", "valor": 1.0, "unidad": "t/t C2H4" },
+        "flujo_especifico": {
+          "estado": "dato",
+          "valor": 1,
+          "unidad": "t/t C2H4"
+        },
         "nota_tecnica": "Base de cálculo del balance: 1,00 t (35,65 kmol) de etileno grado polímero transferido a las líneas de PE.",
         "fuente_id": "ipcc-2006-v3-ch3-amoniaco-urea",
         "cita_ubicacion": "IPCC 2006 Vol. 3 Cap. 3.9 Table 3.25 pág. 3.82 (base 1,00 t C2H4)"
@@ -438,13 +694,33 @@
         "tipo": "proceso",
         "origen_tag": "R-401",
         "destino_tag": "EX-401",
-        "puntos": [[1418, 290], [1418, 515], [1510, 515]],
-        "flag_pos": [1418, 412],
+        "puntos": [
+          [
+            1418,
+            290
+          ],
+          [
+            1418,
+            515
+          ],
+          [
+            1510,
+            515
+          ]
+        ],
+        "flag_pos": [
+          1418,
+          412
+        ],
         "especies": "-(CH2-CH2)n- + aditivos",
         "fase": "Sólido",
         "temperatura_c": "80-200",
         "presion_bar": "1-5",
-        "flujo_especifico": { "estado": "sin_datos", "valor": null, "unidad": "t/t C2H4" },
+        "flujo_especifico": {
+          "estado": "sin_datos",
+          "valor": null,
+          "unidad": "t/t C2H4"
+        },
         "nota_tecnica": "Desgasificado de monómero residual antes de ingresar a la extrusora peletizadora.",
         "fuente_id": "dow-argentina-web-2026",
         "cita_ubicacion": "Dow Argentina Complejo Bahía Blanca (líneas de polietileno)"
@@ -455,25 +731,95 @@
         "tipo": "proceso",
         "origen_tag": "EX-401",
         "destino_tag": null,
-        "puntos": [[1610, 515], [1672, 515]],
-        "flag_pos": [1642, 515],
+        "puntos": [
+          [
+            1610,
+            515
+          ],
+          [
+            1672,
+            515
+          ]
+        ],
+        "flag_pos": [
+          1642,
+          515
+        ],
         "especies": "Polietileno en pellets",
         "fase": "Sólido",
         "temperatura_c": "40-50",
         "presion_bar": "1",
-        "flujo_especifico": { "estado": "dato", "valor": 0.99, "unidad": "t/t C2H4" },
+        "flujo_especifico": {
+          "estado": "dato",
+          "valor": 0.99,
+          "unidad": "t/t C2H4"
+        },
         "nota_tecnica": "Rendimiento típico de polimerización ~99% en masa sobre etileno alimentado.",
         "fuente_id": "ipcc-2006-v3-ch3-amoniaco-urea",
         "cita_ubicacion": "IPCC 2006 Vol. 3 Cap. 3.9 (conversión etileno a polietileno)"
       }
     ],
     "servicios": [
-      { "id": "u-steam-dil", "equipo_tag": "F-101", "etiqueta": "Vapor dilución (H2O)", "direccion": "entrada", "x": 292, "y": 195, "dx": -10, "dy": -72 },
-      { "id": "u-flue-co2", "equipo_tag": "F-101", "etiqueta": "CO2 hornos (0,95 t/t)", "direccion": "salida", "x": 344, "y": 195, "dx": 22, "dy": -36 },
-      { "id": "u-hp-steam", "equipo_tag": "E-101", "etiqueta": "Vapor HP recup.", "direccion": "salida", "x": 502, "y": 204, "dx": 0, "dy": -52 },
-      { "id": "u-cw-quench", "equipo_tag": "T-101", "etiqueta": "Agua enf. (CW)", "direccion": "entrada", "x": 476, "y": 515, "dx": -48, "dy": 0 },
-      { "id": "u-naoh", "equipo_tag": "T-201", "etiqueta": "NaOH ac.", "direccion": "entrada", "x": 858, "y": 182, "dx": 0, "dy": -46 },
-      { "id": "u-cat-pe", "equipo_tag": "R-401", "etiqueta": "Catalizador + comon.", "direccion": "entrada", "x": 1452, "y": 240, "dx": 52, "dy": 0 }
+      {
+        "id": "u-steam-dil",
+        "equipo_tag": "F-101",
+        "etiqueta": "Vapor dilución (H2O)",
+        "direccion": "entrada",
+        "x": 292,
+        "y": 195,
+        "dx": -10,
+        "dy": -72
+      },
+      {
+        "id": "u-flue-co2",
+        "equipo_tag": "F-101",
+        "etiqueta": "CO2 hornos (0,95 t/t)",
+        "direccion": "salida",
+        "x": 344,
+        "y": 195,
+        "dx": 22,
+        "dy": -36
+      },
+      {
+        "id": "u-hp-steam",
+        "equipo_tag": "E-101",
+        "etiqueta": "Vapor HP recup.",
+        "direccion": "salida",
+        "x": 502,
+        "y": 204,
+        "dx": 0,
+        "dy": -52
+      },
+      {
+        "id": "u-cw-quench",
+        "equipo_tag": "T-101",
+        "etiqueta": "Agua enf. (CW)",
+        "direccion": "entrada",
+        "x": 476,
+        "y": 515,
+        "dx": -48,
+        "dy": 0
+      },
+      {
+        "id": "u-naoh",
+        "equipo_tag": "T-201",
+        "etiqueta": "NaOH ac.",
+        "direccion": "entrada",
+        "x": 858,
+        "y": 182,
+        "dx": 0,
+        "dy": -46
+      },
+      {
+        "id": "u-cat-pe",
+        "equipo_tag": "R-401",
+        "etiqueta": "Catalizador + comon.",
+        "direccion": "entrada",
+        "x": 1452,
+        "y": 240,
+        "dx": 52,
+        "dy": 0
+      }
     ],
     "limites_bateria": [
       {
@@ -809,13 +1155,29 @@
         "tipo": "proceso",
         "origen_tag": null,
         "destino_tag": "F-101",
-        "puntos": [[206, 240], [272, 240]],
-        "flag_pos": [238, 240],
+        "puntos": [
+          [
+            206,
+            240
+          ],
+          [
+            272,
+            240
+          ]
+        ],
+        "flag_pos": [
+          238,
+          240
+        ],
         "especies": "CH4 (>90% mol), C2H6",
         "fase": "Gas",
         "temperatura_c": "350-400",
         "presion_bar": "30-35",
-        "flujo_especifico": { "estado": "sin_datos", "valor": null, "unidad": "t/t urea" },
+        "flujo_especifico": {
+          "estado": "sin_datos",
+          "valor": null,
+          "unidad": "t/t urea"
+        },
         "nota_tecnica": "Aporta hidrógeno de proceso y energía térmica (referencia IPCC: 17,46 GJ/t urea = 30,2 GJ/t NH3).",
         "fuente_id": "ipcc-2006-v3-ch3-amoniaco-urea",
         "cita_ubicacion": "IPCC 2006 Vol. 3 Cap. 3.2 Table 3.1 (30,2 GJ/t NH3 = 17,46 GJ/t urea)"
@@ -826,13 +1188,29 @@
         "tipo": "proceso",
         "origen_tag": "F-101",
         "destino_tag": "R-101",
-        "puntos": [[364, 240], [468, 240]],
-        "flag_pos": [416, 240],
+        "puntos": [
+          [
+            364,
+            240
+          ],
+          [
+            468,
+            240
+          ]
+        ],
+        "flag_pos": [
+          416,
+          240
+        ],
         "especies": "H2, CO, CO2, CH4 residual, H2O",
         "fase": "Gas",
         "temperatura_c": "780-850",
         "presion_bar": "25-35",
-        "flujo_especifico": { "estado": "sin_datos", "valor": null, "unidad": "t/t urea" },
+        "flujo_especifico": {
+          "estado": "sin_datos",
+          "valor": null,
+          "unidad": "t/t urea"
+        },
         "nota_tecnica": "Sale del horno tubular hacia el reformador secundario con inyección controlada de aire.",
         "fuente_id": "eu-bref-lvic-aaf-2007",
         "cita_ubicacion": "EU LVIC-AAF BREF (2007) Ammonia: primary to secondary reformer"
@@ -843,13 +1221,29 @@
         "tipo": "proceso",
         "origen_tag": "R-101",
         "destino_tag": "T-101",
-        "puntos": [[502, 290], [502, 456]],
-        "flag_pos": [502, 396],
+        "puntos": [
+          [
+            502,
+            290
+          ],
+          [
+            502,
+            456
+          ]
+        ],
+        "flag_pos": [
+          502,
+          396
+        ],
         "especies": "H2, N2, CO2, H2O",
         "fase": "Gas",
         "temperatura_c": "200-230",
         "presion_bar": "25-30",
-        "flujo_especifico": { "estado": "sin_datos", "valor": null, "unidad": "t/t urea" },
+        "flujo_especifico": {
+          "estado": "sin_datos",
+          "valor": null,
+          "unidad": "t/t urea"
+        },
         "nota_tecnica": "Tras conversión de alta y baja temperatura, casi todo el CO se transformó en CO2 + H2.",
         "fuente_id": "eu-bref-lvic-aaf-2007",
         "cita_ubicacion": "EU LVIC-AAF BREF (2007) Ammonia: shift conversion outlet"
@@ -860,13 +1254,37 @@
         "tipo": "proceso",
         "origen_tag": "T-101",
         "destino_tag": "K-201",
-        "puntos": [[526, 480], [585, 480], [585, 240], [644, 240]],
-        "flag_pos": [585, 368],
+        "puntos": [
+          [
+            526,
+            480
+          ],
+          [
+            585,
+            480
+          ],
+          [
+            585,
+            240
+          ],
+          [
+            644,
+            240
+          ]
+        ],
+        "flag_pos": [
+          585,
+          368
+        ],
         "especies": "H2 (75% mol), N2 (25% mol)",
         "fase": "Gas",
         "temperatura_c": "40-50",
         "presion_bar": "25-28",
-        "flujo_especifico": { "estado": "sin_datos", "valor": null, "unidad": "t/t urea" },
+        "flujo_especifico": {
+          "estado": "sin_datos",
+          "valor": null,
+          "unidad": "t/t urea"
+        },
         "nota_tecnica": "Libre de CO y CO2 (<10 ppm tras metanación) para proteger el catalizador de hierro.",
         "fuente_id": "eu-bref-lvic-aaf-2007",
         "cita_ubicacion": "EU LVIC-AAF BREF (2007) Ammonia: purified makeup syngas"
@@ -877,13 +1295,41 @@
         "tipo": "proceso",
         "origen_tag": "T-101",
         "destino_tag": "T-301",
-        "puntos": [[502, 572], [502, 668], [1282, 668], [1282, 265], [1252, 265]],
-        "flag_pos": [864, 668],
+        "puntos": [
+          [
+            502,
+            572
+          ],
+          [
+            502,
+            668
+          ],
+          [
+            1282,
+            668
+          ],
+          [
+            1282,
+            265
+          ],
+          [
+            1252,
+            265
+          ]
+        ],
+        "flag_pos": [
+          864,
+          668
+        ],
         "especies": "CO2 (>99% mol)",
         "fase": "Gas",
         "temperatura_c": "40-120",
         "presion_bar": "140-180 (comp.)",
-        "flujo_especifico": { "estado": "dato", "valor": 0.733, "unidad": "t/t urea" },
+        "flujo_especifico": {
+          "estado": "dato",
+          "valor": 0.733,
+          "unidad": "t/t urea"
+        },
         "nota_tecnica": "Consumo estequiométrico exacto: 16,65 kmol CO2/t urea (44,01 / 60,06 = 0,733 t/t urea).",
         "fuente_id": "ipcc-2006-v3-ch3-amoniaco-urea",
         "cita_ubicacion": "IPCC 2006 Vol. 3 Cap. 3.2 (44/60 = 0,733 t CO2 capturado por t urea)"
@@ -894,13 +1340,29 @@
         "tipo": "proceso",
         "origen_tag": "K-201",
         "destino_tag": "R-201",
-        "puntos": [[724, 240], [824, 240]],
-        "flag_pos": [774, 240],
+        "puntos": [
+          [
+            724,
+            240
+          ],
+          [
+            824,
+            240
+          ]
+        ],
+        "flag_pos": [
+          774,
+          240
+        ],
         "especies": "H2, N2 + gas de reciclo",
         "fase": "Gas",
         "temperatura_c": "120-200",
         "presion_bar": "150-220",
-        "flujo_especifico": { "estado": "sin_datos", "valor": null, "unidad": "t/t urea" },
+        "flujo_especifico": {
+          "estado": "sin_datos",
+          "valor": null,
+          "unidad": "t/t urea"
+        },
         "nota_tecnica": "Mezcla de syngas fresco y reciclo comprimido a presión del lazo Haber-Bosch.",
         "fuente_id": "eu-bref-lvic-aaf-2007",
         "cita_ubicacion": "EU LVIC-AAF BREF (2007) Ammonia: synthesis converter feed"
@@ -911,13 +1373,29 @@
         "tipo": "proceso",
         "origen_tag": "R-201",
         "destino_tag": "V-201",
-        "puntos": [[858, 290], [858, 466]],
-        "flag_pos": [858, 396],
+        "puntos": [
+          [
+            858,
+            290
+          ],
+          [
+            858,
+            466
+          ]
+        ],
+        "flag_pos": [
+          858,
+          396
+        ],
         "especies": "NH3 (~15-20% mol), H2, N2",
         "fase": "Gas",
         "temperatura_c": "400-500 -> 20",
         "presion_bar": "150-200",
-        "flujo_especifico": { "estado": "sin_datos", "valor": null, "unidad": "t/t urea" },
+        "flujo_especifico": {
+          "estado": "sin_datos",
+          "valor": null,
+          "unidad": "t/t urea"
+        },
         "nota_tecnica": "Cede calor para generar vapor HP antes de condensar el amoníaco líquido en el separador.",
         "fuente_id": "eu-bref-lvic-aaf-2007",
         "cita_ubicacion": "EU LVIC-AAF BREF (2007) Ammonia: converter effluent cooling"
@@ -928,13 +1406,33 @@
         "tipo": "reciclo",
         "origen_tag": "V-201",
         "destino_tag": "K-201",
-        "puntos": [[830, 492], [684, 492], [684, 276]],
-        "flag_pos": [748, 492],
+        "puntos": [
+          [
+            830,
+            492
+          ],
+          [
+            684,
+            492
+          ],
+          [
+            684,
+            276
+          ]
+        ],
+        "flag_pos": [
+          748,
+          492
+        ],
         "especies": "H2, N2, trazas NH3/Ar",
         "fase": "Gas",
         "temperatura_c": "10-30",
         "presion_bar": "150-200",
-        "flujo_especifico": { "estado": "sin_datos", "valor": null, "unidad": "t/t urea" },
+        "flujo_especifico": {
+          "estado": "sin_datos",
+          "valor": null,
+          "unidad": "t/t urea"
+        },
         "nota_tecnica": "Retorna el gas no reaccionado al cuerpo de recirculación de K-201 (con purga menor de inertes).",
         "fuente_id": "eu-bref-lvic-aaf-2007",
         "cita_ubicacion": "EU LVIC-AAF BREF (2007) Ammonia: synthesis loop gas recycle"
@@ -945,13 +1443,41 @@
         "tipo": "proceso",
         "origen_tag": "V-201",
         "destino_tag": "R-301",
-        "puntos": [[886, 515], [982, 515], [1004, 493], [1004, 240], [1020, 240]],
-        "flag_pos": [940, 515],
+        "puntos": [
+          [
+            886,
+            515
+          ],
+          [
+            982,
+            515
+          ],
+          [
+            1004,
+            493
+          ],
+          [
+            1004,
+            240
+          ],
+          [
+            1020,
+            240
+          ]
+        ],
+        "flag_pos": [
+          940,
+          515
+        ],
         "especies": "NH3 (>99,8% masa)",
         "fase": "Líquido",
         "temperatura_c": "20-35",
         "presion_bar": "140-180 (tras P-301)",
-        "flujo_especifico": { "estado": "dato", "valor": 0.578, "unidad": "t/t urea" },
+        "flujo_especifico": {
+          "estado": "dato",
+          "valor": 0.578,
+          "unidad": "t/t urea"
+        },
         "nota_tecnica": "Equivale a 33,94 kmol NH3/t urea medido real en Profertil 2024 (770.033 t NH3 / 1.331.495 t urea).",
         "fuente_id": "profertil-eecc-2025",
         "cita_ubicacion": "Profertil EECC 2025 pág. 88 (770.033 t NH3 / 1.331.495 t urea = 0,578 t/t)"
@@ -962,13 +1488,29 @@
         "tipo": "proceso",
         "origen_tag": "R-301",
         "destino_tag": "T-301",
-        "puntos": [[1088, 240], [1204, 240]],
-        "flag_pos": [1146, 240],
+        "puntos": [
+          [
+            1088,
+            240
+          ],
+          [
+            1204,
+            240
+          ]
+        ],
+        "flag_pos": [
+          1146,
+          240
+        ],
         "especies": "CO(NH2)2, NH2COONH4, NH3, H2O",
         "fase": "Bifásico",
         "temperatura_c": "180-210",
         "presion_bar": "140-180",
-        "flujo_especifico": { "estado": "sin_datos", "valor": null, "unidad": "t/t urea" },
+        "flujo_especifico": {
+          "estado": "sin_datos",
+          "valor": null,
+          "unidad": "t/t urea"
+        },
         "nota_tecnica": "Conversión por paso limitada por equilibrio; el carbamato remanente pasa al stripper HP.",
         "fuente_id": "eu-bref-lvic-aaf-2007",
         "cita_ubicacion": "EU LVIC-AAF BREF (2007) Urea: reactor effluent to HP stripper"
@@ -979,13 +1521,29 @@
         "tipo": "reciclo",
         "origen_tag": "T-301",
         "destino_tag": "E-301",
-        "puntos": [[1228, 296], [1228, 478]],
-        "flag_pos": [1228, 396],
+        "puntos": [
+          [
+            1228,
+            296
+          ],
+          [
+            1228,
+            478
+          ]
+        ],
+        "flag_pos": [
+          1228,
+          396
+        ],
         "especies": "NH3, CO2, H2O vapor",
         "fase": "Gas",
         "temperatura_c": "175-190",
         "presion_bar": "140-150",
-        "flujo_especifico": { "estado": "sin_datos", "valor": null, "unidad": "t/t urea" },
+        "flujo_especifico": {
+          "estado": "sin_datos",
+          "valor": null,
+          "unidad": "t/t urea"
+        },
         "nota_tecnica": "Producto de la descomposición térmica/CO2 del carbamato en el stripper T-301.",
         "fuente_id": "eu-bref-lvic-aaf-2007",
         "cita_ubicacion": "EU LVIC-AAF BREF (2007) Urea: stripper overhead gases"
@@ -996,13 +1554,33 @@
         "tipo": "reciclo",
         "origen_tag": "E-301",
         "destino_tag": "R-301",
-        "puntos": [[1192, 515], [1054, 515], [1054, 290]],
-        "flag_pos": [1124, 515],
+        "puntos": [
+          [
+            1192,
+            515
+          ],
+          [
+            1054,
+            515
+          ],
+          [
+            1054,
+            290
+          ]
+        ],
+        "flag_pos": [
+          1124,
+          515
+        ],
         "especies": "NH2COONH4, NH3, H2O",
         "fase": "Líquido",
         "temperatura_c": "165-175",
         "presion_bar": "140-150",
-        "flujo_especifico": { "estado": "sin_datos", "valor": null, "unidad": "t/t urea" },
+        "flujo_especifico": {
+          "estado": "sin_datos",
+          "valor": null,
+          "unidad": "t/t urea"
+        },
         "nota_tecnica": "Cierra el lazo de alta presión elevando la conversión global de NH3 y CO2 por encima del 99%.",
         "fuente_id": "eu-bref-lvic-aaf-2007",
         "cita_ubicacion": "EU LVIC-AAF BREF (2007) Urea: carbamate recycle loop"
@@ -1013,13 +1591,37 @@
         "tipo": "proceso",
         "origen_tag": "T-301",
         "destino_tag": "V-401",
-        "puntos": [[1228, 183], [1228, 146], [1418, 146], [1418, 188]],
-        "flag_pos": [1322, 146],
+        "puntos": [
+          [
+            1228,
+            183
+          ],
+          [
+            1228,
+            146
+          ],
+          [
+            1418,
+            146
+          ],
+          [
+            1418,
+            188
+          ]
+        ],
+        "flag_pos": [
+          1322,
+          146
+        ],
         "especies": "CO(NH2)2 (~72% masa), H2O (~28%)",
         "fase": "Líquido",
         "temperatura_c": "130-150",
         "presion_bar": "1-18",
-        "flujo_especifico": { "estado": "sin_datos", "valor": null, "unidad": "t/t urea" },
+        "flujo_especifico": {
+          "estado": "sin_datos",
+          "valor": null,
+          "unidad": "t/t urea"
+        },
         "nota_tecnica": "Despresurizada en etapas LP antes de ingresar a los evaporadores al vacío.",
         "fuente_id": "epa-ap42-ch8-inorganic",
         "cita_ubicacion": "US EPA AP-42 Cap. 8.2 Urea: solution concentration feed"
@@ -1030,13 +1632,29 @@
         "tipo": "subproducto",
         "origen_tag": "V-401",
         "destino_tag": null,
-        "puntos": [[1448, 224], [1672, 224]],
-        "flag_pos": [1556, 224],
+        "puntos": [
+          [
+            1448,
+            224
+          ],
+          [
+            1672,
+            224
+          ]
+        ],
+        "flag_pos": [
+          1556,
+          224
+        ],
         "especies": "H2O + trazas de NH3 / urea",
         "fase": "Líquido",
         "temperatura_c": "60-80",
         "presion_bar": "0,03-1",
-        "flujo_especifico": { "estado": "dato", "valor": 0.3, "unidad": "t/t urea" },
+        "flujo_especifico": {
+          "estado": "dato",
+          "valor": 0.3,
+          "unidad": "t/t urea"
+        },
         "nota_tecnica": "Agua de reacción exacta: 16,65 kmol H2O/t urea (18,02 / 60,06 = 0,300 t/t); se trata en hidrolizador/desorbedor.",
         "fuente_id": "eu-bref-lvic-aaf-2007",
         "cita_ubicacion": "EU LVIC-AAF BREF (2007) Urea: process condensate hydrolysis & desorption"
@@ -1047,13 +1665,33 @@
         "tipo": "proceso",
         "origen_tag": "V-401",
         "destino_tag": "G-401",
-        "puntos": [[1418, 288], [1418, 515], [1512, 515]],
-        "flag_pos": [1418, 412],
+        "puntos": [
+          [
+            1418,
+            288
+          ],
+          [
+            1418,
+            515
+          ],
+          [
+            1512,
+            515
+          ]
+        ],
+        "flag_pos": [
+          1418,
+          412
+        ],
         "especies": "CO(NH2)2 (>99,5% masa), H2O (<0,5%)",
         "fase": "Líquido",
         "temperatura_c": "135-140",
         "presion_bar": "1-3",
-        "flujo_especifico": { "estado": "sin_datos", "valor": null, "unidad": "t/t urea" },
+        "flujo_especifico": {
+          "estado": "sin_datos",
+          "valor": null,
+          "unidad": "t/t urea"
+        },
         "nota_tecnica": "Se bombea por encima de su punto de fusión (132,7 °C) directo a las boquillas del granulador.",
         "fuente_id": "epa-ap42-ch8-inorganic",
         "cita_ubicacion": "US EPA AP-42 Cap. 8.2 Urea: molten urea to granulation"
@@ -1064,25 +1702,95 @@
         "tipo": "proceso",
         "origen_tag": "G-401",
         "destino_tag": null,
-        "puntos": [[1608, 515], [1672, 515]],
-        "flag_pos": [1640, 515],
+        "puntos": [
+          [
+            1608,
+            515
+          ],
+          [
+            1672,
+            515
+          ]
+        ],
+        "flag_pos": [
+          1640,
+          515
+        ],
         "especies": "CO(NH2)2 sólida (46% N masa)",
         "fase": "Sólido",
         "temperatura_c": "40-50",
         "presion_bar": "1",
-        "flujo_especifico": { "estado": "dato", "valor": 1.0, "unidad": "t/t urea" },
+        "flujo_especifico": {
+          "estado": "dato",
+          "valor": 1,
+          "unidad": "t/t urea"
+        },
         "nota_tecnica": "Base de cálculo: 1,00 t (16,65 kmol) de urea granulada apta para fertilización agrícola y exportación.",
         "fuente_id": "profertil-eecc-2025",
         "cita_ubicacion": "Profertil EECC 2025 pág. 88 (producción auditada 2022-2025)"
       }
     ],
     "servicios": [
-      { "id": "u-vapor-smr", "equipo_tag": "F-101", "etiqueta": "Vapor proceso (H2O)", "direccion": "entrada", "x": 318, "y": 192, "dx": 0, "dy": -48 },
-      { "id": "u-aire-sec", "equipo_tag": "R-101", "etiqueta": "Aire comp. (N2+O2)", "direccion": "entrada", "x": 502, "y": 188, "dx": 0, "dy": -48 },
-      { "id": "u-cw-v201", "equipo_tag": "V-201", "etiqueta": "Refrig. / CW", "direccion": "entrada", "x": 858, "y": 572, "dx": 0, "dy": 42 },
-      { "id": "u-lp-steam", "equipo_tag": "E-301", "etiqueta": "Vapor LP recup.", "direccion": "salida", "x": 1228, "y": 552, "dx": 0, "dy": 50 },
-      { "id": "u-vac-v401", "equipo_tag": "V-401", "etiqueta": "Vapor + vacío", "direccion": "entrada", "x": 1418, "y": 188, "dx": 0, "dy": -48 },
-      { "id": "u-aire-gran", "equipo_tag": "G-401", "etiqueta": "Aire fluidización", "direccion": "entrada", "x": 1560, "y": 556, "dx": 0, "dy": 46 }
+      {
+        "id": "u-vapor-smr",
+        "equipo_tag": "F-101",
+        "etiqueta": "Vapor proceso (H2O)",
+        "direccion": "entrada",
+        "x": 318,
+        "y": 192,
+        "dx": 0,
+        "dy": -48
+      },
+      {
+        "id": "u-aire-sec",
+        "equipo_tag": "R-101",
+        "etiqueta": "Aire comp. (N2+O2)",
+        "direccion": "entrada",
+        "x": 502,
+        "y": 188,
+        "dx": 0,
+        "dy": -48
+      },
+      {
+        "id": "u-cw-v201",
+        "equipo_tag": "V-201",
+        "etiqueta": "Refrig. / CW",
+        "direccion": "entrada",
+        "x": 858,
+        "y": 572,
+        "dx": 0,
+        "dy": 42
+      },
+      {
+        "id": "u-lp-steam",
+        "equipo_tag": "E-301",
+        "etiqueta": "Vapor LP recup.",
+        "direccion": "salida",
+        "x": 1228,
+        "y": 552,
+        "dx": 0,
+        "dy": 50
+      },
+      {
+        "id": "u-vac-v401",
+        "equipo_tag": "V-401",
+        "etiqueta": "Vapor + vacío",
+        "direccion": "entrada",
+        "x": 1418,
+        "y": 188,
+        "dx": 0,
+        "dy": -48
+      },
+      {
+        "id": "u-aire-gran",
+        "equipo_tag": "G-401",
+        "etiqueta": "Aire fluidización",
+        "direccion": "entrada",
+        "x": 1560,
+        "y": 556,
+        "dx": 0,
+        "dy": 46
+      }
     ],
     "limites_bateria": [
       {
@@ -1168,6 +1876,3748 @@
         "y": 488,
         "nota": "Producto final sólido (capacidad nominal 1,32 Mt/año en Ing. White).",
         "fuente_id": "profertil-eecc-2025"
+      }
+    ]
+  },
+  {
+    "proceso_id": "aluminio-hall-heroult",
+    "producto_id": "aluminio",
+    "titulo": "PFD: Planta de Ánodos, Electrólisis Hall-Héroult, Centro GTC y Colada (Aluar Puerto Madryn)",
+    "norma_simbologia": "ISO 10628 / ASME",
+    "base_calculo": "1,00 t de aluminio primario (37,06 kmol Al) en Aluar Puerto Madryn",
+    "resumen_tecnico": "Circuito industrial integrado desde la descarga portuaria en Muelle Storni: fabricación y cocción de ánodos precocidos de carbono a 1.150 °C, reducción electrolítica Hall-Héroult de alúmina en criolita fundida a 960 °C (14,20 MWh/t Al), adsorción seca de fluoruros HF en torre GTC con retorno de alúmina fluorada (>99% captura) y colada de lingotes, barrotes y alambrón.",
+    "nota_metodologica": "Energía específica real medida en electrólisis (6.324.443 MWh / 445.327 t Al = 14,20 MWh/t Al) según Memoria Aluar 56° Ejercicio (CNV 2025 pág. 3). Estequiometría según IPCC 2006 Vol. 3 Cap. 4.4 y condiciones de GTC según EU NFM BREF. Caudales internos sin cifra pública figuran como s/d.",
+    "canvas_width": 1880,
+    "canvas_height": 760,
+    "secciones": [
+      {
+        "area_id": "area-100",
+        "titulo": "Área 100 · Silos Storni y Ánodos",
+        "x": 224,
+        "y": 40,
+        "width": 352,
+        "height": 665
+      },
+      {
+        "area_id": "area-200",
+        "titulo": "Área 200 · Electrólisis Hall-Héroult",
+        "x": 594,
+        "y": 40,
+        "width": 338,
+        "height": 665
+      },
+      {
+        "area_id": "area-300",
+        "titulo": "Área 300 · Centro de Tratamiento GTC",
+        "x": 950,
+        "y": 40,
+        "width": 356,
+        "height": 665
+      },
+      {
+        "area_id": "area-400",
+        "titulo": "Área 400 · Refusión y Colada",
+        "x": 1324,
+        "y": 40,
+        "width": 332,
+        "height": 665
+      }
+    ],
+    "equipos": [
+      {
+        "tag": "T-101",
+        "nombre": "Silos alúmina y coque",
+        "simbolo": "tank",
+        "area_id": "area-100",
+        "x": 318,
+        "y": 240,
+        "temperatura_op": "15-30 °C",
+        "presion_op": "1,0 bar",
+        "reaccion": null,
+        "condicion_critica": "Muelle Storni",
+        "descripcion": "Recepción neumática por cinta cerrada desde buque granelero en Sitio 1 del Muelle Storni; almacena alúmina calcinada importada y coque de petróleo.",
+        "fuente_id": "aluar-como-producimos",
+        "cita_ubicacion": "aluar.com.ar/aluminio/como-producimos paso 1 y Memoria 2025 pág. 7"
+      },
+      {
+        "tag": "M-101",
+        "nombre": "Mezclador y prensa ánodos",
+        "simbolo": "mill_gin",
+        "area_id": "area-100",
+        "x": 502,
+        "y": 240,
+        "temperatura_op": "140-160 °C",
+        "presion_op": "1,0 bar",
+        "reaccion": null,
+        "condicion_critica": null,
+        "descripcion": "Molienda, dosificación de coque calcinado con brea de alquitrán y vibrocompactación en bloques verdes de carbono.",
+        "fuente_id": "eu-bref-nfm-2017",
+        "cita_ubicacion": "EU NFM BREF (2017) Carbon and graphite anode production"
+      },
+      {
+        "tag": "F-101",
+        "nombre": "Horno de cocción de ánodos",
+        "simbolo": "furnace",
+        "area_id": "area-100",
+        "x": 502,
+        "y": 515,
+        "temperatura_op": "1.100-1.200 °C",
+        "presion_op": "1,0 bar",
+        "reaccion": "Brea + coque -> ánodo C precocido",
+        "condicion_critica": "TC 1.150 °C",
+        "descripcion": "Horno de fosas en anillo con gas natural donde los bloques se carbonizan durante días y luego se les sellan varillas conductoras hacia las cubas.",
+        "fuente_id": "eu-bref-nfm-2017",
+        "cita_ubicacion": "EU NFM BREF (2017) Anode baking ring furnaces"
+      },
+      {
+        "tag": "C-201",
+        "nombre": "Cubas Hall-Héroult (DC)",
+        "simbolo": "electrolytic_cell",
+        "area_id": "area-200",
+        "x": 760,
+        "y": 240,
+        "temperatura_op": "955-965 °C",
+        "presion_op": "1,0 bar",
+        "reaccion": "2 Al2O3 + 3 C -> 4 Al + 3 CO2",
+        "condicion_critica": "14,20 MWh/t Al",
+        "descripcion": "Celdas electrolíticas en serie con baño de criolita (Na3AlF6) fundida: los pistones dosifican alúmina, el O2 oxida los ánodos a CO2 y el aluminio líquido decanta al cátodo.",
+        "fuente_id": "aluar-eeff-2025",
+        "cita_ubicacion": "Memoria Aluar 2025 pág. 3 (6.324.443 MWh / 445.327 t Al líquido)"
+      },
+      {
+        "tag": "V-201",
+        "nombre": "Crisol de sifonado al vacío",
+        "simbolo": "separator",
+        "area_id": "area-200",
+        "x": 760,
+        "y": 515,
+        "temperatura_op": "930-950 °C",
+        "presion_op": "0,4-0,8 bar",
+        "reaccion": null,
+        "condicion_critica": "99,7% Al",
+        "descripcion": "Succiona periódicamente por vacío el metal líquido del fondo de cada cuba sin extraer criolita y lo traslada en puente grúa a hornos de colada.",
+        "fuente_id": "aluar-como-producimos",
+        "cita_ubicacion": "aluar.com.ar/aluminio/como-producimos paso 3"
+      },
+      {
+        "tag": "F-301",
+        "nombre": "Reactor seco GTC (alúmina)",
+        "simbolo": "reactor",
+        "area_id": "area-300",
+        "x": 1128,
+        "y": 240,
+        "temperatura_op": "110-130 °C",
+        "presion_op": "1,0 bar",
+        "reaccion": "Al2O3 + x HF (adsorción seca)",
+        "condicion_critica": ">99% capt. HF",
+        "descripcion": "Contacto directo de gases aspirados de las cubas con alúmina fresca importada para fijar químicamente más del 99% del fluoruro de hidrógeno.",
+        "fuente_id": "eu-bref-nfm-2017",
+        "cita_ubicacion": "EU NFM BREF (2017) Primary aluminium: GTC dry scrubbing (<0,5 mg/Nm3 HF)"
+      },
+      {
+        "tag": "S-301",
+        "nombre": "Filtro de mangas GTC",
+        "simbolo": "filter_baghouse",
+        "area_id": "area-300",
+        "x": 1128,
+        "y": 515,
+        "temperatura_op": "100-120 °C",
+        "presion_op": "1,0 bar",
+        "reaccion": null,
+        "condicion_critica": "Polvo < 5 mg/Nm3",
+        "descripcion": "Separa la alúmina fluorada para reinyectarla en circuito cerrado a las cubas C-201 y libera gases tratados de bajo contenido particulado.",
+        "fuente_id": "eu-bref-nfm-2017",
+        "cita_ubicacion": "EU NFM BREF (2017) Fabric filters & fluorinated alumina recycle"
+      },
+      {
+        "tag": "F-401",
+        "nombre": "Horno de mantenimiento",
+        "simbolo": "furnace",
+        "area_id": "area-400",
+        "x": 1418,
+        "y": 240,
+        "temperatura_op": "710-740 °C",
+        "presion_op": "1,0 bar",
+        "reaccion": null,
+        "condicion_critica": "TC 720 °C",
+        "descripcion": "Homogeneización térmica, aleación con silicio/magnesio según norma de cliente, desgasificado con argón/cloro y filtrado cerámico.",
+        "fuente_id": "aluar-eeff-2025",
+        "cita_ubicacion": "Memoria Aluar 2025 pág. 3 y 8 (desglose de productos fundidos)"
+      },
+      {
+        "tag": "EX-401",
+        "nombre": "Colada continua y moldeo",
+        "simbolo": "extruder",
+        "area_id": "area-400",
+        "x": 1560,
+        "y": 515,
+        "temperatura_op": "660 -> 45 °C",
+        "presion_op": "1,0 bar",
+        "reaccion": null,
+        "condicion_critica": "442 kt solidif.",
+        "descripcion": "Solidificación en frío directo y ruedas Properzi hacia lingotes puros, lingotes T, barrotes de extrusión (billets), placas y alambrón.",
+        "fuente_id": "aluar-eeff-2025",
+        "cita_ubicacion": "Memoria Aluar 2025 pág. 8 (productos elaborados FY 2024-25)"
+      }
+    ],
+    "corrientes": [
+      {
+        "numero": 1,
+        "nombre": "Alúmina calcinada fresca (Muelle Storni)",
+        "tipo": "proceso",
+        "origen_tag": null,
+        "destino_tag": "T-101",
+        "puntos": [
+          [
+            206,
+            240
+          ],
+          [
+            284,
+            240
+          ]
+        ],
+        "flag_pos": [
+          244,
+          240
+        ],
+        "especies": "Al2O3 (>98,5% masa)",
+        "fase": "Sólido",
+        "temperatura_c": "15-30",
+        "presion_bar": "1,0",
+        "flujo_especifico": {
+          "estado": "dato",
+          "valor": 1.96,
+          "unidad": "t/t Al"
+        },
+        "nota_tecnica": "Equivale a 19,22 kmol Al2O3/t Al (871.523 t importadas en 2024 / 445.327 t Al líquido = 1,957 t/t).",
+        "fuente_id": "uncomtrade-ar-alumina-2024",
+        "cita_ubicacion": "UN Comtrade HS 281820 (2024) y Memoria Aluar 2025 pág. 3"
+      },
+      {
+        "numero": 2,
+        "nombre": "Coque de petróleo y brea a ánodos",
+        "tipo": "proceso",
+        "origen_tag": "T-101",
+        "destino_tag": "M-101",
+        "puntos": [
+          [
+            352,
+            240
+          ],
+          [
+            466,
+            240
+          ]
+        ],
+        "flag_pos": [
+          408,
+          240
+        ],
+        "especies": "Coque calcinado (C) + brea (~16%)",
+        "fase": "Sólido",
+        "temperatura_c": "25-60",
+        "presion_bar": "1,0",
+        "flujo_especifico": {
+          "estado": "dato",
+          "valor": 0.45,
+          "unidad": "t/t Al"
+        },
+        "nota_tecnica": "Carga bruta de pasta anódica antes de volatilización parcial durante la cocción.",
+        "fuente_id": "ipcc-2006-v3-ch4-aluminio",
+        "cita_ubicacion": "IPCC 2006 Vol. 3 Cap. 4.4 Table 4.10 (consumo específico neto 0,41-0,45 t/t Al)"
+      },
+      {
+        "numero": 3,
+        "nombre": "Ánodos verdes prensados",
+        "tipo": "proceso",
+        "origen_tag": "M-101",
+        "destino_tag": "F-101",
+        "puntos": [
+          [
+            502,
+            270
+          ],
+          [
+            502,
+            464
+          ]
+        ],
+        "flag_pos": [
+          502,
+          392
+        ],
+        "especies": "Bloques C + brea ligante",
+        "fase": "Sólido",
+        "temperatura_c": "140 -> 40",
+        "presion_bar": "1,0",
+        "flujo_especifico": {
+          "estado": "sin_datos",
+          "valor": null,
+          "unidad": "t/t Al"
+        },
+        "nota_tecnica": "Enfriados y apilados en hornos de fosas refractarias.",
+        "fuente_id": "eu-bref-nfm-2017",
+        "cita_ubicacion": "EU NFM BREF (2017) Green anode forming & cooling"
+      },
+      {
+        "numero": 4,
+        "nombre": "Ánodos precocidos envarillados",
+        "tipo": "proceso",
+        "origen_tag": "F-101",
+        "destino_tag": "C-201",
+        "puntos": [
+          [
+            542,
+            515
+          ],
+          [
+            608,
+            515
+          ],
+          [
+            608,
+            260
+          ],
+          [
+            714,
+            260
+          ]
+        ],
+        "flag_pos": [
+          608,
+          392
+        ],
+        "especies": "C (>97% masa) con vástago Al-Fe",
+        "fase": "Sólido",
+        "temperatura_c": "25-40",
+        "presion_bar": "1,0",
+        "flujo_especifico": {
+          "estado": "dato",
+          "valor": 0.43,
+          "unidad": "t/t Al"
+        },
+        "nota_tecnica": "Equivale a 35,80 kmol C/t Al (estequiometría IPCC: 33,4 kmol mínimo + oxidación por aire).",
+        "fuente_id": "ipcc-2006-v3-ch4-aluminio",
+        "cita_ubicacion": "IPCC 2006 Vol. 3 Cap. 4.4 (consumo neto de carbono Prebake)"
+      },
+      {
+        "numero": 5,
+        "nombre": "Alúmina fresca hacia reactores GTC (y cuba)",
+        "tipo": "proceso",
+        "origen_tag": "T-101",
+        "destino_tag": "F-301",
+        "puntos": [
+          [
+            318,
+            196
+          ],
+          [
+            318,
+            138
+          ],
+          [
+            1128,
+            138
+          ],
+          [
+            1128,
+            190
+          ]
+        ],
+        "flag_pos": [
+          715,
+          138
+        ],
+        "especies": "Al2O3 fresca (>98,5%)",
+        "fase": "Sólido",
+        "temperatura_c": "20-35",
+        "presion_bar": "1,0",
+        "flujo_especifico": {
+          "estado": "dato",
+          "valor": 1.96,
+          "unidad": "t/t Al"
+        },
+        "nota_tecnica": "El circuito seco usa la alúmina fresca entrante como adsorbente de fluoruros antes de dosificarla a cubas.",
+        "fuente_id": "eu-bref-nfm-2017",
+        "cita_ubicacion": "EU NFM BREF (2017) Dry alumina scrubbing in GTC"
+      },
+      {
+        "numero": 6,
+        "nombre": "Gases crudos de cuba (CO2 + HF + CO)",
+        "tipo": "emision",
+        "origen_tag": "C-201",
+        "destino_tag": "F-301",
+        "puntos": [
+          [
+            806,
+            240
+          ],
+          [
+            1094,
+            240
+          ]
+        ],
+        "flag_pos": [
+          950,
+          240
+        ],
+        "especies": "CO2, CO, HF, fluoruros particulados",
+        "fase": "Gas",
+        "temperatura_c": "110-140",
+        "presion_bar": "0,98",
+        "flujo_especifico": {
+          "estado": "dato",
+          "valor": 1.6,
+          "unidad": "t/t Al"
+        },
+        "nota_tecnica": "1,60 t CO2/t Al (36,36 kmol CO2/t) por oxidación de ánodos según IPCC 2006 Table 4.10.",
+        "fuente_id": "ipcc-2006-v3-ch4-aluminio",
+        "cita_ubicacion": "IPCC 2006 Vol. 3 Cap. 4.4 Table 4.10 (Prebake CWPB CO2 factor)"
+      },
+      {
+        "numero": 7,
+        "nombre": "Polvo y alúmina cargada de HF",
+        "tipo": "proceso",
+        "origen_tag": "F-301",
+        "destino_tag": "S-301",
+        "puntos": [
+          [
+            1128,
+            290
+          ],
+          [
+            1128,
+            476
+          ]
+        ],
+        "flag_pos": [
+          1128,
+          396
+        ],
+        "especies": "Al2O3 + AlF3/HF adsorbido + aire",
+        "fase": "Bifásico",
+        "temperatura_c": "105-125",
+        "presion_bar": "1,0",
+        "flujo_especifico": {
+          "estado": "sin_datos",
+          "valor": null,
+          "unidad": "t/t Al"
+        },
+        "nota_tecnica": "Arrastre sólido-gas hacia las mangas filtrantes del GTC.",
+        "fuente_id": "eu-bref-nfm-2017",
+        "cita_ubicacion": "EU NFM BREF (2017) GTC baghouse inlet"
+      },
+      {
+        "numero": 8,
+        "nombre": "Reciclo cerrado de alúmina fluorada",
+        "tipo": "reciclo",
+        "origen_tag": "S-301",
+        "destino_tag": "C-201",
+        "puntos": [
+          [
+            1128,
+            554
+          ],
+          [
+            1128,
+            668
+          ],
+          [
+            760,
+            668
+          ],
+          [
+            760,
+            276
+          ]
+        ],
+        "flag_pos": [
+          950,
+          668
+        ],
+        "especies": "Al2O3 enriquecida con fluoruros (>99% F)",
+        "fase": "Sólido",
+        "temperatura_c": "90-110",
+        "presion_bar": "1,0",
+        "flujo_especifico": {
+          "estado": "dato",
+          "valor": 1.96,
+          "unidad": "t/t Al"
+        },
+        "nota_tecnica": "Reingresa en tolva central de cubas reponiendo Al2O3 y fluoruros al baño fundido.",
+        "fuente_id": "eu-bref-nfm-2017",
+        "cita_ubicacion": "EU NFM BREF (2017) Fluorinated alumina feed recycle"
+      },
+      {
+        "numero": 9,
+        "nombre": "Gas depurado a chimenea GTC",
+        "tipo": "subproducto",
+        "origen_tag": "S-301",
+        "destino_tag": null,
+        "puntos": [
+          [
+            1162,
+            515
+          ],
+          [
+            1672,
+            515
+          ]
+        ],
+        "flag_pos": [
+          1305,
+          515
+        ],
+        "especies": "N2, O2, CO2, HF < 0,5 mg/Nm3",
+        "fase": "Gas",
+        "temperatura_c": "95-115",
+        "presion_bar": "1,0",
+        "flujo_especifico": {
+          "estado": "dato",
+          "valor": 1.6,
+          "unidad": "t/t Al"
+        },
+        "nota_tecnica": "Cumple límites BAT de fluoruro y material particulado (<5 mg/Nm3).",
+        "fuente_id": "eu-bref-nfm-2017",
+        "cita_ubicacion": "EU NFM BREF (2017) GTC stack BAT-AELs"
+      },
+      {
+        "numero": 10,
+        "nombre": "Aluminio líquido sifonado (99,7%)",
+        "tipo": "proceso",
+        "origen_tag": "C-201",
+        "destino_tag": "V-201",
+        "puntos": [
+          [
+            760,
+            276
+          ],
+          [
+            760,
+            476
+          ]
+        ],
+        "flag_pos": [
+          760,
+          396
+        ],
+        "especies": "Al líquido (99,7% masa)",
+        "fase": "Líquido",
+        "temperatura_c": "940-960",
+        "presion_bar": "0,6-1,0",
+        "flujo_especifico": {
+          "estado": "dato",
+          "valor": 1,
+          "unidad": "t/t Al"
+        },
+        "nota_tecnica": "Base 1,00 t Al (445.327 t producidas en Aluar FY 2024-25).",
+        "fuente_id": "aluar-eeff-2025",
+        "cita_ubicacion": "Memoria Aluar 2025 pág. 3"
+      },
+      {
+        "numero": 11,
+        "nombre": "Trasvase líquido a hornos de colada",
+        "tipo": "proceso",
+        "origen_tag": "V-201",
+        "destino_tag": "F-401",
+        "puntos": [
+          [
+            790,
+            502
+          ],
+          [
+            1345,
+            502
+          ],
+          [
+            1345,
+            240
+          ],
+          [
+            1378,
+            240
+          ]
+        ],
+        "flag_pos": [
+          1062,
+          502
+        ],
+        "especies": "Al líquido (99,7% Al)",
+        "fase": "Líquido",
+        "temperatura_c": "900-930",
+        "presion_bar": "1,0",
+        "flujo_especifico": {
+          "estado": "dato",
+          "valor": 1,
+          "unidad": "t/t Al"
+        },
+        "nota_tecnica": "Se vierte directo al horno de mantenimiento evitando refusión desde frío.",
+        "fuente_id": "aluar-como-producimos",
+        "cita_ubicacion": "aluar.com.ar/aluminio/como-producimos paso 4"
+      },
+      {
+        "numero": 12,
+        "nombre": "Aluminio aleado y filtrado a colada",
+        "tipo": "proceso",
+        "origen_tag": "F-401",
+        "destino_tag": "EX-401",
+        "puntos": [
+          [
+            1418,
+            286
+          ],
+          [
+            1418,
+            460
+          ],
+          [
+            1560,
+            460
+          ],
+          [
+            1560,
+            492
+          ]
+        ],
+        "flag_pos": [
+          1488,
+          460
+        ],
+        "especies": "Al líquido + aleantes (Si/Mg)",
+        "fase": "Líquido",
+        "temperatura_c": "700-730",
+        "presion_bar": "1,0",
+        "flujo_especifico": {
+          "estado": "dato",
+          "valor": 0.993,
+          "unidad": "t/t Al"
+        },
+        "nota_tecnica": "442.437 t de productos sólidos + líquido despachado sobre 445.327 t producidas (Memoria 2025 pág. 8).",
+        "fuente_id": "aluar-eeff-2025",
+        "cita_ubicacion": "Memoria Aluar 2025 pág. 8"
+      },
+      {
+        "numero": 13,
+        "nombre": "Lingotes, barrotes, placas y alambrón",
+        "tipo": "proceso",
+        "origen_tag": "EX-401",
+        "destino_tag": null,
+        "puntos": [
+          [
+            1610,
+            515
+          ],
+          [
+            1672,
+            515
+          ]
+        ],
+        "flag_pos": [
+          1642,
+          515
+        ],
+        "especies": "Al primario y aleado sólido",
+        "fase": "Sólido",
+        "temperatura_c": "40-50",
+        "presion_bar": "1,0",
+        "flujo_especifico": {
+          "estado": "dato",
+          "valor": 0.993,
+          "unidad": "t/t Al"
+        },
+        "nota_tecnica": "Exportación principal desde Muelle Storni (~70-80%) y despacho al mercado local.",
+        "fuente_id": "aluar-eeff-2025",
+        "cita_ubicacion": "Memoria Aluar 2025 pág. 8"
+      }
+    ],
+    "servicios": [
+      {
+        "id": "al-gas-f101",
+        "equipo_tag": "F-101",
+        "etiqueta": "Gas natural hornos",
+        "direccion": "entrada",
+        "x": 466,
+        "y": 515,
+        "dx": -52,
+        "dy": 0
+      },
+      {
+        "id": "al-dc-c201",
+        "equipo_tag": "C-201",
+        "etiqueta": "14,20 MWh/t (DC)",
+        "direccion": "entrada",
+        "x": 760,
+        "y": 204,
+        "dx": 0,
+        "dy": -46
+      },
+      {
+        "id": "al-cw-colada",
+        "equipo_tag": "EX-401",
+        "etiqueta": "Agua refrigeración",
+        "direccion": "entrada",
+        "x": 1560,
+        "y": 545,
+        "dx": 0,
+        "dy": 44
+      }
+    ],
+    "limites_bateria": [
+      {
+        "id": "al-in-alumina",
+        "lado": "entrada",
+        "categoria": "materia_prima",
+        "nombre": "Alúmina calcinada",
+        "formula": "Al2O3 (>98,5%)",
+        "cantidad_masa": "1,960 t / t Al",
+        "cantidad_molar": "19,22 kmol / t Al",
+        "fraccion_pureza": "HS 2818.20 (871 kt 2024)",
+        "corriente_num": 1,
+        "y": 196,
+        "nota": "Importada de Australia/Brasil al Muelle Almirante Storni.",
+        "fuente_id": "uncomtrade-ar-alumina-2024"
+      },
+      {
+        "id": "al-in-anodos",
+        "lado": "entrada",
+        "categoria": "materia_prima",
+        "nombre": "Coque y brea (ánodos C)",
+        "formula": "C precocido",
+        "cantidad_masa": "0,430 t neto / t Al",
+        "cantidad_molar": "35,80 kmol C / t Al",
+        "fraccion_pureza": "4,8% p/p exceso oxid.",
+        "corriente_num": 4,
+        "y": 356,
+        "nota": "Moldeados y cocidos a 1.150 °C en planta propia de Aluar.",
+        "fuente_id": "ipcc-2006-v3-ch4-aluminio"
+      },
+      {
+        "id": "al-in-elec",
+        "lado": "entrada",
+        "categoria": "servicio",
+        "nombre": "Energía eléctrica (DC)",
+        "formula": "Hidro + Térm. + Eólica",
+        "cantidad_masa": "14,20 MWh / t Al",
+        "cantidad_molar": "15,06 MWh total planta",
+        "fraccion_pureza": "Futaleufú + ciclo + parque",
+        "corriente_num": null,
+        "y": 516,
+        "nota": "Medición real ejercicio 2024-25 sobre 445.327 t de Al líquido.",
+        "fuente_id": "aluar-eeff-2025"
+      },
+      {
+        "id": "al-out-co2",
+        "lado": "salida",
+        "categoria": "emision",
+        "nombre": "CO2 proceso electrolítico",
+        "formula": "CO2 (ánodos C)",
+        "cantidad_masa": "1,600 t / t Al",
+        "cantidad_molar": "36,36 kmol CO2 / t",
+        "fraccion_pureza": "HF depurado <0,5 mg/Nm3",
+        "corriente_num": 6,
+        "y": 196,
+        "nota": "Factor IPCC Prebake CWPB + retención seca GTC >99%.",
+        "fuente_id": "ipcc-2006-v3-ch4-aluminio"
+      },
+      {
+        "id": "al-out-al",
+        "lado": "salida",
+        "categoria": "producto",
+        "nombre": "Aluminio primario y aleado",
+        "formula": "Al (>=99,7%)",
+        "cantidad_masa": "1,000 t / t Al",
+        "cantidad_molar": "37,06 kmol Al / t",
+        "fraccion_pureza": "Lingotes, billets, alambrón",
+        "corriente_num": 13,
+        "y": 440,
+        "nota": "Capacidad nominal 460.000 t/año; 445.327 t producidas FY 2024-25.",
+        "fuente_id": "aluar-eeff-2025"
+      }
+    ]
+  },
+  {
+    "proceso_id": "litio-salmuera-carbonatacion",
+    "producto_id": "litio",
+    "titulo": "PFD: Evaporación Solar de Salmueras, Purificación y Precipitación de Carbonato de Litio (Puna)",
+    "norma_simbologia": "ISO 10628 / ASME",
+    "base_calculo": "1,00 t de Li2CO3 grado batería (13,53 kmol Li2CO3; 0,188 t Li)",
+    "resumen_tecnico": "Ruta evaporítica de la Puna argentina (Salar de Olaroz, Hombre Muerto y Rincón): bombeo desde acuífero hipersalino (~4.000 msnm), concentración solar con precipitación fraccionada de halita/silvita, remoción química de magnesio, calcio y boro, carbonatación con ceniza de soda (Na2CO3) en caliente, centrifugación y secado.",
+    "nota_metodologica": "Factor metalúrgico oficial USGS MCS 2025 (1 t Li contenido = 5,323 t LCE; Li2CO3 = 18,79% Li). Operaciones verificadas en fichas oficiales de Olaroz (Jujuy), Fénix (Catamarca) y Rincón (Salta). Caudales hídricos variables por salar figuran como s/d.",
+    "canvas_width": 1880,
+    "canvas_height": 760,
+    "secciones": [
+      {
+        "area_id": "area-100",
+        "titulo": "Área 100 · Bombeo y Evaporación Solar",
+        "x": 224,
+        "y": 40,
+        "width": 352,
+        "height": 665
+      },
+      {
+        "area_id": "area-200",
+        "titulo": "Área 200 · Purificación (Mg / Ca / B)",
+        "x": 594,
+        "y": 40,
+        "width": 338,
+        "height": 665
+      },
+      {
+        "area_id": "area-300",
+        "titulo": "Área 300 · Carbonatación con Na2CO3",
+        "x": 950,
+        "y": 40,
+        "width": 356,
+        "height": 665
+      },
+      {
+        "area_id": "area-400",
+        "titulo": "Área 400 · Secado y Grado Batería",
+        "x": 1324,
+        "y": 40,
+        "width": 332,
+        "height": 665
+      }
+    ],
+    "equipos": [
+      {
+        "tag": "P-101",
+        "nombre": "Bombeo acuífero de salar",
+        "simbolo": "pump",
+        "area_id": "area-100",
+        "x": 318,
+        "y": 240,
+        "temperatura_op": "10-20 °C",
+        "presion_op": "0,65 bar atm.",
+        "reaccion": null,
+        "condicion_critica": "4.000 msnm",
+        "descripcion": "Extracción profunda de salmuera rica en LiCl, NaCl, KCl y MgCl2 desde cuencas cerradas de la Puna jujeña, catamarqueña y salteña.",
+        "fuente_id": "riotinto-olaroz-2026",
+        "cita_ubicacion": "riotinto.com/en/operations/south-america/olaroz"
+      },
+      {
+        "tag": "B-101",
+        "nombre": "Piletas de evaporación solar",
+        "simbolo": "solar_pond",
+        "area_id": "area-100",
+        "x": 502,
+        "y": 240,
+        "temperatura_op": "15-35 °C",
+        "presion_op": "0,65 bar",
+        "reaccion": null,
+        "condicion_critica": "Li ~0,05 -> 6%",
+        "descripcion": "Concentración solar escalonada durante meses utilizando radiación UV y viento seco andino; cosecha periódica de sales descartadas.",
+        "fuente_id": "riotinto-olaroz-2026",
+        "cita_ubicacion": "riotinto.com/en/operations/south-america/olaroz"
+      },
+      {
+        "tag": "S-101",
+        "nombre": "Cosecha de halita y sales K/Mg",
+        "simbolo": "separator",
+        "area_id": "area-100",
+        "x": 502,
+        "y": 515,
+        "temperatura_op": "15-25 °C",
+        "presion_op": "0,65 bar",
+        "reaccion": null,
+        "condicion_critica": null,
+        "descripcion": "Precipitación secuencial de NaCl (halita) y silvinita/carnalita antes del envío de salmuera concentrada (~6% Li) a planta química.",
+        "fuente_id": "riotinto-olaroz-2026",
+        "cita_ubicacion": "riotinto.com/en/operations/south-america/olaroz"
+      },
+      {
+        "tag": "R-201",
+        "nombre": "Purificación química Mg y Ca",
+        "simbolo": "reactor",
+        "area_id": "area-200",
+        "x": 684,
+        "y": 240,
+        "temperatura_op": "40-70 °C",
+        "presion_op": "1,0 bar",
+        "reaccion": "MgCl2 + Ca(OH)2 -> Mg(OH)2 + CaCl2",
+        "condicion_critica": "Cal + Soda",
+        "descripcion": "Agregado de lechada de cal y carbonato para precipitar hidróxido de magnesio y carbonato de calcio que contaminarían el litio.",
+        "fuente_id": "riotinto-fenix-2026",
+        "cita_ubicacion": "riotinto.com/en/operations/south-america/fenix"
+      },
+      {
+        "tag": "V-201",
+        "nombre": "Filtro prensa tortas Mg/Ca",
+        "simbolo": "filter_baghouse",
+        "area_id": "area-200",
+        "x": 858,
+        "y": 515,
+        "temperatura_op": "30-50 °C",
+        "presion_op": "3-5 bar",
+        "reaccion": null,
+        "condicion_critica": null,
+        "descripcion": "Separación sólido-líquido con lavado para minimizar oclusión de litio en la torta descartada de magnesio y calcio.",
+        "fuente_id": "riotinto-fenix-2026",
+        "cita_ubicacion": "riotinto.com/en/operations/south-america/fenix"
+      },
+      {
+        "tag": "T-201",
+        "nombre": "Pulido e intercambio iónico (B)",
+        "simbolo": "column",
+        "area_id": "area-200",
+        "x": 858,
+        "y": 240,
+        "temperatura_op": "25-45 °C",
+        "presion_op": "2-3 bar",
+        "reaccion": null,
+        "condicion_critica": "Mg/Ca < 50 ppm",
+        "descripcion": "Resinas selectivas que remueven trazas finales de calcio, magnesio y boro previo a la reacción de carbonatación.",
+        "fuente_id": "riotinto-olaroz-2026",
+        "cita_ubicacion": "riotinto.com/en/operations/south-america/olaroz"
+      },
+      {
+        "tag": "R-301",
+        "nombre": "Reactor de carbonatación",
+        "simbolo": "reactor",
+        "area_id": "area-300",
+        "x": 1044,
+        "y": 240,
+        "temperatura_op": "85-95 °C",
+        "presion_op": "1,0 bar",
+        "reaccion": "2 LiCl + Na2CO3 -> Li2CO3 + 2 NaCl",
+        "condicion_critica": "TC 90 °C",
+        "descripcion": "Inyección de solución caliente de ceniza de soda (Na2CO3); al subir T baja la solubilidad del Li2CO3 y precipita cristalino.",
+        "fuente_id": "usgs-mcs-2025-litio",
+        "cita_ubicacion": "USGS MCS 2025 pág. 110 y Olaroz (carbonatación caliente)"
+      },
+      {
+        "tag": "D-301",
+        "nombre": "Centrífuga y lavado caliente",
+        "simbolo": "centrifuge",
+        "area_id": "area-300",
+        "x": 1228,
+        "y": 240,
+        "temperatura_op": "80-90 °C",
+        "presion_op": "1,0 bar",
+        "reaccion": null,
+        "condicion_critica": "Lavado >= 85 °C",
+        "descripcion": "Separación centrífuga de cristales de carbonato de litio y lavado con agua desmineralizada caliente para disolver NaCl adherido.",
+        "fuente_id": "riotinto-olaroz-2026",
+        "cita_ubicacion": "riotinto.com/en/operations/south-america/olaroz"
+      },
+      {
+        "tag": "T-301",
+        "nombre": "Reciclo aguas madres (Li)",
+        "simbolo": "tank",
+        "area_id": "area-300",
+        "x": 1228,
+        "y": 515,
+        "temperatura_op": "40-60 °C",
+        "presion_op": "1,0 bar",
+        "reaccion": null,
+        "condicion_critica": null,
+        "descripcion": "Recupera aguas madres ricas en litio remanente y carbonato disuelto retornándolas al frente del proceso para elevar recuperación global.",
+        "fuente_id": "riotinto-olaroz-2026",
+        "cita_ubicacion": "riotinto.com/en/operations/south-america/olaroz"
+      },
+      {
+        "tag": "F-401",
+        "nombre": "Secador rotatorio indirecto",
+        "simbolo": "dryer_bed",
+        "area_id": "area-400",
+        "x": 1418,
+        "y": 240,
+        "temperatura_op": "120-160 °C",
+        "presion_op": "1,0 bar",
+        "reaccion": null,
+        "condicion_critica": "H2O < 0,2%",
+        "descripcion": "Eliminación térmica controlada de humedad residual para alcanzar especificación de transporte y pureza batería.",
+        "fuente_id": "riotinto-fenix-2026",
+        "cita_ubicacion": "riotinto.com/en/operations/south-america/fenix"
+      },
+      {
+        "tag": "G-401",
+        "nombre": "Micronizado y envasado LCE",
+        "simbolo": "granulator",
+        "area_id": "area-400",
+        "x": 1560,
+        "y": 515,
+        "temperatura_op": "25-35 °C",
+        "presion_op": "1,0 bar",
+        "reaccion": null,
+        "condicion_critica": "Li2CO3 >= 99,5%",
+        "descripcion": "Clasificación granulométrica y embolsado en big-bags (HS 2836.91, 47.609 t exportadas por Argentina en 2024 según UN Comtrade).",
+        "fuente_id": "uncomtrade-ar-litio-urea-2024",
+        "cita_ubicacion": "UN Comtrade HS 283691 (2024) y fichas Olaroz/Fénix"
+      }
+    ],
+    "corrientes": [
+      {
+        "numero": 1,
+        "nombre": "Salmuera cruda subterránea",
+        "tipo": "proceso",
+        "origen_tag": null,
+        "destino_tag": "P-101",
+        "puntos": [
+          [
+            206,
+            240
+          ],
+          [
+            292,
+            240
+          ]
+        ],
+        "flag_pos": [
+          246,
+          240
+        ],
+        "especies": "LiCl (~0,05% Li), NaCl, MgCl2, KCl, H2O",
+        "fase": "Líquido",
+        "temperatura_c": "10-20",
+        "presion_bar": "0,65",
+        "flujo_especifico": {
+          "estado": "sin_datos",
+          "valor": null,
+          "unidad": "m3/t LCE"
+        },
+        "nota_tecnica": "El contenido de litio y relación Mg/Li varían por salar (Olaroz, Hombre Muerto, Rincón).",
+        "fuente_id": "riotinto-olaroz-2026",
+        "cita_ubicacion": "riotinto.com/en/operations/south-america/olaroz"
+      },
+      {
+        "numero": 2,
+        "nombre": "Salmuera hacia piletas solares",
+        "tipo": "proceso",
+        "origen_tag": "P-101",
+        "destino_tag": "B-101",
+        "puntos": [
+          [
+            344,
+            240
+          ],
+          [
+            456,
+            240
+          ]
+        ],
+        "flag_pos": [
+          400,
+          240
+        ],
+        "especies": "LiCl + sales disueltas",
+        "fase": "Líquido",
+        "temperatura_c": "15-30",
+        "presion_bar": "0,65",
+        "flujo_especifico": {
+          "estado": "sin_datos",
+          "valor": null,
+          "unidad": "m3/t LCE"
+        },
+        "nota_tecnica": "Distribuye salmuera fresca en batería de evaporación.",
+        "fuente_id": "riotinto-olaroz-2026",
+        "cita_ubicacion": "riotinto.com/en/operations/south-america/olaroz"
+      },
+      {
+        "numero": 3,
+        "nombre": "Sales evaporíticas precipitadas",
+        "tipo": "subproducto",
+        "origen_tag": "B-101",
+        "destino_tag": "S-101",
+        "puntos": [
+          [
+            502,
+            270
+          ],
+          [
+            502,
+            476
+          ]
+        ],
+        "flag_pos": [
+          502,
+          388
+        ],
+        "especies": "NaCl (halita), KCl, sales Mg + salmuera",
+        "fase": "Bifásico",
+        "temperatura_c": "15-30",
+        "presion_bar": "0,65",
+        "flujo_especifico": {
+          "estado": "sin_datos",
+          "valor": null,
+          "unidad": "t/t LCE"
+        },
+        "nota_tecnica": "Descarte sólido de sales cosechadas en fondo de piletas.",
+        "fuente_id": "riotinto-olaroz-2026",
+        "cita_ubicacion": "riotinto.com/en/operations/south-america/olaroz"
+      },
+      {
+        "numero": 4,
+        "nombre": "Salmuera concentrada en LiCl",
+        "tipo": "proceso",
+        "origen_tag": "B-101",
+        "destino_tag": "R-201",
+        "puntos": [
+          [
+            548,
+            240
+          ],
+          [
+            650,
+            240
+          ]
+        ],
+        "flag_pos": [
+          599,
+          240
+        ],
+        "especies": "LiCl (~6% Li masa), Mg, Ca, B",
+        "fase": "Líquido",
+        "temperatura_c": "20-35",
+        "presion_bar": "1,0",
+        "flujo_especifico": {
+          "estado": "dato",
+          "valor": 1.25,
+          "unidad": "t/t LCE"
+        },
+        "nota_tecnica": "Contiene >= 27,06 kmol LiCl/t LCE (1,15 t LiCl estequiométrico + pérdida de proceso).",
+        "fuente_id": "riotinto-olaroz-2026",
+        "cita_ubicacion": "riotinto.com/en/operations/south-america/olaroz y USGS MCS 2025 pág. 110"
+      },
+      {
+        "numero": 5,
+        "nombre": "Salmuera con precipitados de Mg/Ca",
+        "tipo": "proceso",
+        "origen_tag": "R-201",
+        "destino_tag": "V-201",
+        "puntos": [
+          [
+            684,
+            286
+          ],
+          [
+            684,
+            515
+          ],
+          [
+            824,
+            515
+          ]
+        ],
+        "flag_pos": [
+          748,
+          515
+        ],
+        "especies": "LiCl en solución + Mg(OH)2/CaCO3 sólidos",
+        "fase": "Bifásico",
+        "temperatura_c": "40-65",
+        "presion_bar": "2-3",
+        "flujo_especifico": {
+          "estado": "sin_datos",
+          "valor": null,
+          "unidad": "t/t LCE"
+        },
+        "nota_tecnica": "Suspensión hacia filtros prensa.",
+        "fuente_id": "riotinto-fenix-2026",
+        "cita_ubicacion": "riotinto.com/en/operations/south-america/fenix"
+      },
+      {
+        "numero": 6,
+        "nombre": "Salmuera filtrada libre de Mg/Ca",
+        "tipo": "proceso",
+        "origen_tag": "V-201",
+        "destino_tag": "T-201",
+        "puntos": [
+          [
+            858,
+            476
+          ],
+          [
+            858,
+            296
+          ]
+        ],
+        "flag_pos": [
+          858,
+          392
+        ],
+        "especies": "LiCl purificado + trazas B/Ca/Mg",
+        "fase": "Líquido",
+        "temperatura_c": "30-45",
+        "presion_bar": "2-3",
+        "flujo_especifico": {
+          "estado": "sin_datos",
+          "valor": null,
+          "unidad": "t/t LCE"
+        },
+        "nota_tecnica": "Torta sólida de Mg/Ca se dispone como residuo seco; líquido pasa a pulido IX.",
+        "fuente_id": "riotinto-fenix-2026",
+        "cita_ubicacion": "riotinto.com/en/operations/south-america/fenix"
+      },
+      {
+        "numero": 7,
+        "nombre": "Salmuera LiCl grado síntesis",
+        "tipo": "proceso",
+        "origen_tag": "T-201",
+        "destino_tag": "R-301",
+        "puntos": [
+          [
+            884,
+            240
+          ],
+          [
+            1010,
+            240
+          ]
+        ],
+        "flag_pos": [
+          947,
+          240
+        ],
+        "especies": "LiCl (>99% cationes Li/Na)",
+        "fase": "Líquido",
+        "temperatura_c": "50-70",
+        "presion_bar": "1,0",
+        "flujo_especifico": {
+          "estado": "dato",
+          "valor": 1.15,
+          "unidad": "t/t LCE"
+        },
+        "nota_tecnica": "27,06 kmol LiCl estequiométrico para precipitar 13,53 kmol Li2CO3.",
+        "fuente_id": "riotinto-olaroz-2026",
+        "cita_ubicacion": "riotinto.com/en/operations/south-america/olaroz"
+      },
+      {
+        "numero": 8,
+        "nombre": "Pulpa de cristales Li2CO3 + salmuera NaCl",
+        "tipo": "proceso",
+        "origen_tag": "R-301",
+        "destino_tag": "D-301",
+        "puntos": [
+          [
+            1078,
+            240
+          ],
+          [
+            1188,
+            240
+          ]
+        ],
+        "flag_pos": [
+          1133,
+          240
+        ],
+        "especies": "Li2CO3 (s) + NaCl (ac) + Li remanente",
+        "fase": "Bifásico",
+        "temperatura_c": "85-95",
+        "presion_bar": "1,0",
+        "flujo_especifico": {
+          "estado": "sin_datos",
+          "valor": null,
+          "unidad": "t/t LCE"
+        },
+        "nota_tecnica": "Suspensión caliente enviada directamente a centrifugación.",
+        "fuente_id": "riotinto-olaroz-2026",
+        "cita_ubicacion": "riotinto.com/en/operations/south-america/olaroz"
+      },
+      {
+        "numero": 9,
+        "nombre": "Aguas madres con litio remanente",
+        "tipo": "reciclo",
+        "origen_tag": "D-301",
+        "destino_tag": "T-301",
+        "puntos": [
+          [
+            1228,
+            266
+          ],
+          [
+            1228,
+            480
+          ]
+        ],
+        "flag_pos": [
+          1228,
+          392
+        ],
+        "especies": "NaCl, Li+ residual (~1-2 g/L), H2O",
+        "fase": "Líquido",
+        "temperatura_c": "60-80",
+        "presion_bar": "1,0",
+        "flujo_especifico": {
+          "estado": "sin_datos",
+          "valor": null,
+          "unidad": "m3/t LCE"
+        },
+        "nota_tecnica": "Centrifugado líquido retornado al frente de planta química para recuperar litio.",
+        "fuente_id": "riotinto-olaroz-2026",
+        "cita_ubicacion": "riotinto.com/en/operations/south-america/olaroz"
+      },
+      {
+        "numero": 10,
+        "nombre": "Reciclo líquido hacia purificación",
+        "tipo": "reciclo",
+        "origen_tag": "T-301",
+        "destino_tag": "R-201",
+        "puntos": [
+          [
+            1228,
+            550
+          ],
+          [
+            1228,
+            668
+          ],
+          [
+            684,
+            668
+          ],
+          [
+            684,
+            515
+          ]
+        ],
+        "flag_pos": [
+          956,
+          668
+        ],
+        "especies": "Solución rica en Li reciclada",
+        "fase": "Líquido",
+        "temperatura_c": "35-55",
+        "presion_bar": "1,0",
+        "flujo_especifico": {
+          "estado": "sin_datos",
+          "valor": null,
+          "unidad": "m3/t LCE"
+        },
+        "nota_tecnica": "Minimiza pérdidas de litio en aguas madres y purga controlada de NaCl.",
+        "fuente_id": "riotinto-olaroz-2026",
+        "cita_ubicacion": "riotinto.com/en/operations/south-america/olaroz"
+      },
+      {
+        "numero": 11,
+        "nombre": "Torta húmeda de Li2CO3 lavada",
+        "tipo": "proceso",
+        "origen_tag": "D-301",
+        "destino_tag": "F-401",
+        "puntos": [
+          [
+            1272,
+            240
+          ],
+          [
+            1382,
+            240
+          ]
+        ],
+        "flag_pos": [
+          1327,
+          240
+        ],
+        "especies": "Li2CO3 (>99% b.s.) + H2O (~6-8%)",
+        "fase": "Sólido",
+        "temperatura_c": "70-85",
+        "presion_bar": "1,0",
+        "flujo_especifico": {
+          "estado": "dato",
+          "valor": 1.07,
+          "unidad": "t/t LCE"
+        },
+        "nota_tecnica": "Alimenta el secador indirecto para eliminar humedad superficial.",
+        "fuente_id": "riotinto-fenix-2026",
+        "cita_ubicacion": "riotinto.com/en/operations/south-america/fenix"
+      },
+      {
+        "numero": 12,
+        "nombre": "Carbonato de litio seco",
+        "tipo": "proceso",
+        "origen_tag": "F-401",
+        "destino_tag": "G-401",
+        "puntos": [
+          [
+            1418,
+            276
+          ],
+          [
+            1418,
+            515
+          ],
+          [
+            1512,
+            515
+          ]
+        ],
+        "flag_pos": [
+          1418,
+          405
+        ],
+        "especies": "Li2CO3 (>=99,5% masa)",
+        "fase": "Sólido",
+        "temperatura_c": "80 -> 30",
+        "presion_bar": "1,0",
+        "flujo_especifico": {
+          "estado": "dato",
+          "valor": 1,
+          "unidad": "t/t LCE"
+        },
+        "nota_tecnica": "1,00 t LCE = 13,53 kmol Li2CO3.",
+        "fuente_id": "usgs-mcs-2025-litio",
+        "cita_ubicacion": "USGS MCS 2025 pág. 110"
+      },
+      {
+        "numero": 13,
+        "nombre": "Li2CO3 grado batería / técnico",
+        "tipo": "proceso",
+        "origen_tag": "G-401",
+        "destino_tag": null,
+        "puntos": [
+          [
+            1608,
+            515
+          ],
+          [
+            1672,
+            515
+          ]
+        ],
+        "flag_pos": [
+          1640,
+          515
+        ],
+        "especies": "Li2CO3 en big-bags (18,79% Li)",
+        "fase": "Sólido",
+        "temperatura_c": "25",
+        "presion_bar": "1,0",
+        "flujo_especifico": {
+          "estado": "dato",
+          "valor": 1,
+          "unidad": "t/t LCE"
+        },
+        "nota_tecnica": "HS 2836.91: exportación argentina verificada 47.609 t en 2024.",
+        "fuente_id": "uncomtrade-ar-litio-urea-2024",
+        "cita_ubicacion": "UN Comtrade HS 283691 (2024)"
+      }
+    ],
+    "servicios": [
+      {
+        "id": "li-sol-b101",
+        "equipo_tag": "B-101",
+        "etiqueta": "Evap. H2O solar",
+        "direccion": "salida",
+        "x": 502,
+        "y": 204,
+        "dx": 0,
+        "dy": -46
+      },
+      {
+        "id": "li-cal-r201",
+        "equipo_tag": "R-201",
+        "etiqueta": "Ca(OH)2 + Na2CO3",
+        "direccion": "entrada",
+        "x": 684,
+        "y": 192,
+        "dx": 0,
+        "dy": -44
+      },
+      {
+        "id": "li-soda-r301",
+        "equipo_tag": "R-301",
+        "etiqueta": "Na2CO3 (1,434 t/t)",
+        "direccion": "entrada",
+        "x": 1044,
+        "y": 192,
+        "dx": 0,
+        "dy": -44
+      },
+      {
+        "id": "li-agua-d301",
+        "equipo_tag": "D-301",
+        "etiqueta": "Agua desmin. 85 °C",
+        "direccion": "entrada",
+        "x": 1228,
+        "y": 204,
+        "dx": 0,
+        "dy": -44
+      }
+    ],
+    "limites_bateria": [
+      {
+        "id": "li-in-salmuera",
+        "lado": "entrada",
+        "categoria": "materia_prima",
+        "nombre": "Salmuera continental de salar",
+        "formula": "LiCl (en NaCl/MgCl2)",
+        "cantidad_masa": "s/d m3 / t LCE",
+        "cantidad_molar": "27,06 kmol Li+ / t",
+        "fraccion_pureza": "18,0 kt Li AR (USGS 2024)",
+        "corriente_num": 1,
+        "y": 196,
+        "nota": "Contenido mínimo estequiométrico de litio 0,188 t Li/t LCE.",
+        "fuente_id": "usgs-mcs-2025-litio"
+      },
+      {
+        "id": "li-in-soda",
+        "lado": "entrada",
+        "categoria": "materia_prima",
+        "nombre": "Ceniza de soda (carbonatación)",
+        "formula": "Na2CO3",
+        "cantidad_masa": ">= 1,434 t / t LCE",
+        "cantidad_molar": ">= 13,53 kmol / t LCE",
+        "fraccion_pureza": "Estequiométrico + purga",
+        "corriente_num": 7,
+        "y": 356,
+        "nota": "Mínimo teórico (105,99 / 73,89 = 1,434 t Na2CO3/t LCE).",
+        "fuente_id": "eu-bref-lvic-aaf-2007"
+      },
+      {
+        "id": "li-in-cal",
+        "lado": "entrada",
+        "categoria": "servicio",
+        "nombre": "Cal hidratada, vapor y agua",
+        "formula": "Ca(OH)2 + H2O",
+        "cantidad_masa": "s/d",
+        "cantidad_molar": null,
+        "fraccion_pureza": "Según ratio Mg/Li",
+        "corriente_num": null,
+        "y": 516,
+        "nota": "Reactivos de purificación y lavado térmico de cristales.",
+        "fuente_id": "riotinto-fenix-2026"
+      },
+      {
+        "id": "li-out-sales",
+        "lado": "salida",
+        "categoria": "subproducto",
+        "nombre": "Halita y sales descartadas",
+        "formula": "NaCl + Mg(OH)2/CaCO3",
+        "cantidad_masa": ">= 1,58 t NaCl / t",
+        "cantidad_molar": ">= 27,06 kmol NaCl / t",
+        "fraccion_pureza": "Sales piletas + tortas",
+        "corriente_num": 3,
+        "y": 196,
+        "nota": "Incluye sal coproducida en reacción 2 LiCl + Na2CO3 y halita solar.",
+        "fuente_id": "riotinto-olaroz-2026"
+      },
+      {
+        "id": "li-out-lce",
+        "lado": "salida",
+        "categoria": "producto",
+        "nombre": "Carbonato de litio LCE",
+        "formula": "Li2CO3",
+        "cantidad_masa": "1,000 t / t LCE",
+        "cantidad_molar": "13,53 kmol / t LCE",
+        "fraccion_pureza": "18,79% Li · >=99,5% LCE",
+        "corriente_num": 13,
+        "y": 440,
+        "nota": "Exportado desde Jujuy, Catamarca y Salta (47.609 t HS 283691 en 2024).",
+        "fuente_id": "uncomtrade-ar-litio-urea-2024"
+      }
+    ]
+  },
+  {
+    "proceso_id": "soja-molienda-extraccion-solvente",
+    "producto_id": "soja",
+    "titulo": "PFD: Molienda de Soja, Extracción Continua por Hexano y Recuperación de Solvente (Up-River)",
+    "norma_simbologia": "ISO 10628 / ASME",
+    "base_calculo": "1,00 t de poroto de soja procesada (nodo Timbúes / San Lorenzo)",
+    "resumen_tecnico": "Esquema estándar del complejo oleaginoso santafesino: limpieza, descascarado y laminado del grano (0,3 mm), lixiviación continua líquido-sólido con hexano (C6H14), desolventizado-tostado (DT) de la harina proteica con vapor, destilación multietapa de miscela, condensación y absorción en aceite mineral del solvente para cierre de lazo y desgomado de aceite crudo.",
+    "nota_metodologica": "Topología de equipos y lazos de control VOC según US EPA AP-42 Section 9.11.1 (Vegetable Oil Processing) y balances industriales Up-River verificados en Renova (Timbúes 32.400 t/día) y Molinos Agro (6 Mt/año).",
+    "canvas_width": 1880,
+    "canvas_height": 760,
+    "secciones": [
+      {
+        "area_id": "area-100",
+        "titulo": "Área 100 · Preparación y Laminado",
+        "x": 224,
+        "y": 40,
+        "width": 352,
+        "height": 665
+      },
+      {
+        "area_id": "area-200",
+        "titulo": "Área 200 · Extracción Hexano y DT",
+        "x": 594,
+        "y": 40,
+        "width": 338,
+        "height": 665
+      },
+      {
+        "area_id": "area-300",
+        "titulo": "Área 300 · Destilación Miscela y Reciclo",
+        "x": 950,
+        "y": 40,
+        "width": 356,
+        "height": 665
+      },
+      {
+        "area_id": "area-400",
+        "titulo": "Área 400 · Desgomado y Despacho",
+        "x": 1324,
+        "y": 40,
+        "width": 332,
+        "height": 665
+      }
+    ],
+    "equipos": [
+      {
+        "tag": "M-101",
+        "nombre": "Limpieza y quebrado de grano",
+        "simbolo": "mill_gin",
+        "area_id": "area-100",
+        "x": 318,
+        "y": 240,
+        "temperatura_op": "20-30 °C",
+        "presion_op": "1,0 bar",
+        "reaccion": null,
+        "condicion_critica": null,
+        "descripcion": "Zarandas, imanes y molinos de rodillos corrugados que parten cada poroto en 4 a 8 trozos para liberar la cáscara.",
+        "fuente_id": "epa-ap42-ch9-oil",
+        "cita_ubicacion": "US EPA AP-42 9.11.1 Vegetable Oil Processing: seed preparation"
+      },
+      {
+        "tag": "M-102",
+        "nombre": "Acondicionador y laminador",
+        "simbolo": "mill_gin",
+        "area_id": "area-100",
+        "x": 502,
+        "y": 240,
+        "temperatura_op": "60-65 °C",
+        "presion_op": "1,0 bar",
+        "reaccion": null,
+        "condicion_critica": "Lámina 0,3 mm",
+        "descripcion": "Laminado en rodillos lisos a ~0,3 mm de espesor para romper paredes celulares y maximizar área de difusión al hexano.",
+        "fuente_id": "epa-ap42-ch9-oil",
+        "cita_ubicacion": "US EPA AP-42 9.11.1 Vegetable Oil Processing: conditioning & flaking"
+      },
+      {
+        "tag": "V-101",
+        "nombre": "Separación y pelletizado cáscara",
+        "simbolo": "separator",
+        "area_id": "area-100",
+        "x": 502,
+        "y": 515,
+        "temperatura_op": "35-45 °C",
+        "presion_op": "1,0 bar",
+        "reaccion": null,
+        "condicion_critica": "0,03 t/t soja",
+        "descripcion": "Aspiración neumática de la cáscara celulósica (pellets de cáscara de soja) para concentrar proteína en la harina final.",
+        "fuente_id": "epa-ap42-ch9-oil",
+        "cita_ubicacion": "US EPA AP-42 9.11.1: hull removal aspirators"
+      },
+      {
+        "tag": "X-201",
+        "nombre": "Extractor continuo con hexano",
+        "simbolo": "extractor",
+        "area_id": "area-200",
+        "x": 760,
+        "y": 240,
+        "temperatura_op": "55-60 °C",
+        "presion_op": "1,0 bar",
+        "reaccion": null,
+        "condicion_critica": "Aceite res. < 1%",
+        "descripcion": "Lavado sólido-líquido en contracorriente de láminas de soja con n-hexano; genera miscela (~25-30% aceite) y harina húmeda en solvente.",
+        "fuente_id": "epa-ap42-ch9-oil",
+        "cita_ubicacion": "US EPA AP-42 9.11.1 Fig. 9.11.1-1: continuous solvent extractor"
+      },
+      {
+        "tag": "T-201",
+        "nombre": "Desolventizador-Tostador (DT)",
+        "simbolo": "column",
+        "area_id": "area-200",
+        "x": 760,
+        "y": 515,
+        "temperatura_op": "105-110 °C",
+        "presion_op": "1,0 bar",
+        "reaccion": null,
+        "condicion_critica": "Vapor vivo",
+        "descripcion": "Platos calefaccionados con vapor directo e indirecto: evapora todo el hexano retenido en la harina e inactiva factores antinutricionales.",
+        "fuente_id": "epa-ap42-ch9-oil",
+        "cita_ubicacion": "US EPA AP-42 9.11.1: desolventizer-toaster (DT) & dryers"
+      },
+      {
+        "tag": "V-301",
+        "nombre": "Evaporadores y stripper miscela",
+        "simbolo": "separator",
+        "area_id": "area-300",
+        "x": 1044,
+        "y": 240,
+        "temperatura_op": "75-115 °C",
+        "presion_op": "0,3-1,0 bar",
+        "reaccion": null,
+        "condicion_critica": "2 etapas + vacío",
+        "descripcion": "Destilación al vacío y agotamiento con vapor de la miscela hasta recuperar aceite crudo libre de solvente (<50 ppm hexano).",
+        "fuente_id": "epa-ap42-ch9-oil",
+        "cita_ubicacion": "US EPA AP-42 9.11.1: miscella distillation & oil stripping"
+      },
+      {
+        "tag": "E-301",
+        "nombre": "Condensador y decantador C6H14",
+        "simbolo": "condenser",
+        "area_id": "area-300",
+        "x": 1044,
+        "y": 515,
+        "temperatura_op": "25-40 °C",
+        "presion_op": "1,0 bar",
+        "reaccion": null,
+        "condicion_critica": "Reciclo 99,8%",
+        "descripcion": "Condensa vapores de hexano/agua provenientes de DT y destilación de miscela, decanta el agua y devuelve hexano líquido al extractor.",
+        "fuente_id": "epa-ap42-ch9-oil",
+        "cita_ubicacion": "US EPA AP-42 9.11.1: hexane condenser & water separator"
+      },
+      {
+        "tag": "T-301",
+        "nombre": "Absorbedor de aceite mineral",
+        "simbolo": "column",
+        "area_id": "area-300",
+        "x": 1228,
+        "y": 240,
+        "temperatura_op": "20-35 °C",
+        "presion_op": "1,0 bar",
+        "reaccion": null,
+        "condicion_critica": "Control VOC",
+        "descripcion": "Torre empacada de lavado final de gases inertes con aceite mineral refrigerado que recupera vapores residuales de hexano antes del venteo.",
+        "fuente_id": "epa-ap42-ch9-oil",
+        "cita_ubicacion": "US EPA AP-42 9.11.1: mineral oil scrubber (>90% VOC capture)"
+      },
+      {
+        "tag": "R-401",
+        "nombre": "Desgomado de aceite crudo",
+        "simbolo": "reactor",
+        "area_id": "area-400",
+        "x": 1418,
+        "y": 240,
+        "temperatura_op": "65-80 °C",
+        "presion_op": "1,0 bar",
+        "reaccion": "Hidratación fosfolípidos -> gomas/lecitina",
+        "condicion_critica": "0,19 t aceite/t",
+        "descripcion": "Hidratación controlada y centrifugación de fosfátidos para obtener aceite crudo desgomado exportable o apto para biodiésel y lecitina.",
+        "fuente_id": "renova-web-2026",
+        "cita_ubicacion": "renova.com.ar (Timbúes 32.400 t/día molienda; lecitina y aceite crudo)"
+      },
+      {
+        "tag": "D-401",
+        "nombre": "Enfriado harina y despacho",
+        "simbolo": "dryer_bed",
+        "area_id": "area-400",
+        "x": 1560,
+        "y": 515,
+        "temperatura_op": "105 -> 35 °C",
+        "presion_op": "1,0 bar",
+        "reaccion": null,
+        "condicion_critica": "0,76 t harina/t",
+        "descripcion": "Secado-enfriado, molienda y pelletizado de harina proteica Hi-Pro (~46-47% proteína) hacia embarque fluvial en Up-River.",
+        "fuente_id": "molinosagro-web-2026",
+        "cita_ubicacion": "molinosagro.com.ar (6 Mt/año San Lorenzo) y UN Comtrade HS 230400"
+      }
+    ],
+    "corrientes": [
+      {
+        "numero": 1,
+        "nombre": "Poroto de soja limpio (base)",
+        "tipo": "proceso",
+        "origen_tag": null,
+        "destino_tag": "M-101",
+        "puntos": [
+          [
+            206,
+            240
+          ],
+          [
+            284,
+            240
+          ]
+        ],
+        "flag_pos": [
+          244,
+          240
+        ],
+        "especies": "Soja (proteína ~37%, aceite ~19,5%, H2O ~12%)",
+        "fase": "Sólido",
+        "temperatura_c": "20-25",
+        "presion_bar": "1,0",
+        "flujo_especifico": {
+          "estado": "dato",
+          "valor": 1,
+          "unidad": "t/t soja"
+        },
+        "nota_tecnica": "Base de cálculo: 1,00 t de grano ingresado desde acopio Up-River.",
+        "fuente_id": "renova-web-2026",
+        "cita_ubicacion": "renova.com.ar (Timbúes 32.400 t/día molienda)"
+      },
+      {
+        "numero": 2,
+        "nombre": "Soja quebrada a laminación",
+        "tipo": "proceso",
+        "origen_tag": "M-101",
+        "destino_tag": "M-102",
+        "puntos": [
+          [
+            352,
+            240
+          ],
+          [
+            468,
+            240
+          ]
+        ],
+        "flag_pos": [
+          410,
+          240
+        ],
+        "especies": "Grits de soja + cáscara liberada",
+        "fase": "Sólido",
+        "temperatura_c": "25-40",
+        "presion_bar": "1,0",
+        "flujo_especifico": {
+          "estado": "dato",
+          "valor": 1,
+          "unidad": "t/t soja"
+        },
+        "nota_tecnica": "El flujo pasa por separación neumática de cáscara y luego acondicionador.",
+        "fuente_id": "epa-ap42-ch9-oil",
+        "cita_ubicacion": "US EPA AP-42 9.11.1: cracking & dehulling"
+      },
+      {
+        "numero": 3,
+        "nombre": "Cáscara e impurezas separadas",
+        "tipo": "subproducto",
+        "origen_tag": "M-102",
+        "destino_tag": "V-101",
+        "puntos": [
+          [
+            502,
+            270
+          ],
+          [
+            502,
+            480
+          ]
+        ],
+        "flag_pos": [
+          502,
+          392
+        ],
+        "especies": "Cáscara celulósica (pelletizable)",
+        "fase": "Sólido",
+        "temperatura_c": "35-45",
+        "presion_bar": "1,0",
+        "flujo_especifico": {
+          "estado": "dato",
+          "valor": 0.03,
+          "unidad": "t/t soja"
+        },
+        "nota_tecnica": "Valorizado como pellet de cáscara o remezclado según proteína objetivo.",
+        "fuente_id": "epa-ap42-ch9-oil",
+        "cita_ubicacion": "US EPA AP-42 9.11.1"
+      },
+      {
+        "numero": 4,
+        "nombre": "Láminas acondicionadas (0,3 mm)",
+        "tipo": "proceso",
+        "origen_tag": "M-102",
+        "destino_tag": "X-201",
+        "puntos": [
+          [
+            536,
+            240
+          ],
+          [
+            716,
+            240
+          ]
+        ],
+        "flag_pos": [
+          626,
+          240
+        ],
+        "especies": "Láminas de soja (~10,5% humedad)",
+        "fase": "Sólido",
+        "temperatura_c": "55-62",
+        "presion_bar": "1,0",
+        "flujo_especifico": {
+          "estado": "dato",
+          "valor": 0.97,
+          "unidad": "t/t soja"
+        },
+        "nota_tecnica": "Ingresan al lecho móvil del extractor continuo.",
+        "fuente_id": "epa-ap42-ch9-oil",
+        "cita_ubicacion": "US EPA AP-42 9.11.1: flaked beans to extractor"
+      },
+      {
+        "numero": 5,
+        "nombre": "Harina húmeda impregnada en hexano",
+        "tipo": "proceso",
+        "origen_tag": "X-201",
+        "destino_tag": "T-201",
+        "puntos": [
+          [
+            760,
+            266
+          ],
+          [
+            760,
+            464
+          ]
+        ],
+        "flag_pos": [
+          760,
+          388
+        ],
+        "especies": "Harina proteica + ~28-32% C6H14 retenido",
+        "fase": "Sólido",
+        "temperatura_c": "55-60",
+        "presion_bar": "1,0",
+        "flujo_especifico": {
+          "estado": "dato",
+          "valor": 0.78,
+          "unidad": "t/t soja"
+        },
+        "nota_tecnica": "Pasa por esclusa hermética hacia el Desolventizador-Tostador.",
+        "fuente_id": "epa-ap42-ch9-oil",
+        "cita_ubicacion": "US EPA AP-42 9.11.1: spent flakes to DT"
+      },
+      {
+        "numero": 6,
+        "nombre": "Miscela aceite-hexano (~25-30%)",
+        "tipo": "proceso",
+        "origen_tag": "X-201",
+        "destino_tag": "V-301",
+        "puntos": [
+          [
+            804,
+            240
+          ],
+          [
+            1014,
+            240
+          ]
+        ],
+        "flag_pos": [
+          909,
+          240
+        ],
+        "especies": "Aceite de soja + n-hexano (C6H14)",
+        "fase": "Líquido",
+        "temperatura_c": "55-60",
+        "presion_bar": "1,0",
+        "flujo_especifico": {
+          "estado": "dato",
+          "valor": 1.16,
+          "unidad": "t/t soja"
+        },
+        "nota_tecnica": "Filtrada de finos antes de los evaporadores al vacío.",
+        "fuente_id": "epa-ap42-ch9-oil",
+        "cita_ubicacion": "US EPA AP-42 9.11.1: full miscella stream"
+      },
+      {
+        "numero": 7,
+        "nombre": "Vapores hexano-vapor (DT + Miscela)",
+        "tipo": "reciclo",
+        "origen_tag": "V-301",
+        "destino_tag": "E-301",
+        "puntos": [
+          [
+            1044,
+            286
+          ],
+          [
+            1044,
+            480
+          ]
+        ],
+        "flag_pos": [
+          1044,
+          392
+        ],
+        "especies": "C6H14 vapor + vapor H2O + incondensables",
+        "fase": "Gas",
+        "temperatura_c": "65-85",
+        "presion_bar": "0,4-1,0",
+        "flujo_especifico": {
+          "estado": "dato",
+          "valor": 0.97,
+          "unidad": "t/t soja"
+        },
+        "nota_tecnica": "Se condensan recuperando calor en el primer evaporador de miscela.",
+        "fuente_id": "epa-ap42-ch9-oil",
+        "cita_ubicacion": "US EPA AP-42 9.11.1: solvent vapor condensation"
+      },
+      {
+        "numero": 8,
+        "nombre": "Reciclo cerrado de n-hexano líquido",
+        "tipo": "reciclo",
+        "origen_tag": "E-301",
+        "destino_tag": "X-201",
+        "puntos": [
+          [
+            1044,
+            550
+          ],
+          [
+            1044,
+            668
+          ],
+          [
+            642,
+            668
+          ],
+          [
+            642,
+            260
+          ],
+          [
+            716,
+            260
+          ]
+        ],
+        "flag_pos": [
+          855,
+          668
+        ],
+        "especies": "C6H14 (>99% masa)",
+        "fase": "Líquido",
+        "temperatura_c": "45-55",
+        "presion_bar": "1,2",
+        "flujo_especifico": {
+          "estado": "dato",
+          "valor": 0.97,
+          "unidad": "t/t soja"
+        },
+        "nota_tecnica": "Tasa de recuperación >99,8%; solo se repone pérdida menor en venteos/aceite/harina.",
+        "fuente_id": "epa-ap42-ch9-oil",
+        "cita_ubicacion": "US EPA AP-42 9.11.1: recycled hexane stream"
+      },
+      {
+        "numero": 9,
+        "nombre": "Incondensables al absorbedor VOC",
+        "tipo": "emision",
+        "origen_tag": "V-301",
+        "destino_tag": "T-301",
+        "puntos": [
+          [
+            1074,
+            224
+          ],
+          [
+            1204,
+            224
+          ]
+        ],
+        "flag_pos": [
+          1139,
+          224
+        ],
+        "especies": "Aire + trazas C6H14 vapor",
+        "fase": "Gas",
+        "temperatura_c": "25-35",
+        "presion_bar": "1,0",
+        "flujo_especifico": {
+          "estado": "sin_datos",
+          "valor": null,
+          "unidad": "kg/t soja"
+        },
+        "nota_tecnica": "Lavado con aceite mineral en T-301 y reenvío de hexano absorbido al stripper.",
+        "fuente_id": "epa-ap42-ch9-oil",
+        "cita_ubicacion": "US EPA AP-42 9.11.1: mineral oil VOC scrubber"
+      },
+      {
+        "numero": 10,
+        "nombre": "Aceite crudo desolventizado",
+        "tipo": "proceso",
+        "origen_tag": "V-301",
+        "destino_tag": "R-401",
+        "puntos": [
+          [
+            1044,
+            190
+          ],
+          [
+            1044,
+            146
+          ],
+          [
+            1418,
+            146
+          ],
+          [
+            1418,
+            190
+          ]
+        ],
+        "flag_pos": [
+          1232,
+          146
+        ],
+        "especies": "Triglicéridos + fosfátidos (~2%)",
+        "fase": "Líquido",
+        "temperatura_c": "70-85",
+        "presion_bar": "1,0",
+        "flujo_especifico": {
+          "estado": "dato",
+          "valor": 0.195,
+          "unidad": "t/t soja"
+        },
+        "nota_tecnica": "Libre de hexano residual antes del desgomado húmedo.",
+        "fuente_id": "renova-web-2026",
+        "cita_ubicacion": "renova.com.ar y EPA AP-42 9.11.1"
+      },
+      {
+        "numero": 11,
+        "nombre": "Harina tostada desolventizada",
+        "tipo": "proceso",
+        "origen_tag": "T-201",
+        "destino_tag": "D-401",
+        "puntos": [
+          [
+            784,
+            515
+          ],
+          [
+            1512,
+            515
+          ]
+        ],
+        "flag_pos": [
+          1172,
+          515
+        ],
+        "especies": "Harina de soja desgrasada (~17-18% H2O)",
+        "fase": "Sólido",
+        "temperatura_c": "105-110",
+        "presion_bar": "1,0",
+        "flujo_especifico": {
+          "estado": "dato",
+          "valor": 0.76,
+          "unidad": "t/t soja"
+        },
+        "nota_tecnica": "Tras secado-enfriado a ~12% humedad queda lista para embarque fluvial.",
+        "fuente_id": "epa-ap42-ch9-oil",
+        "cita_ubicacion": "US EPA AP-42 9.11.1: DT meal to dryer-cooler"
+      },
+      {
+        "numero": 12,
+        "nombre": "Aceite crudo desgomado (y lecitina)",
+        "tipo": "proceso",
+        "origen_tag": "R-401",
+        "destino_tag": null,
+        "puntos": [
+          [
+            1450,
+            240
+          ],
+          [
+            1672,
+            240
+          ]
+        ],
+        "flag_pos": [
+          1565,
+          240
+        ],
+        "especies": "Aceite crudo (0,19 t) + lecitina (0,01 t)",
+        "fase": "Líquido",
+        "temperatura_c": "40-50",
+        "presion_bar": "1,0",
+        "flujo_especifico": {
+          "estado": "dato",
+          "valor": 0.19,
+          "unidad": "t/t soja"
+        },
+        "nota_tecnica": "HS 1507.10; abastece exportación portuaria y plantas locales de biodiésel FAME.",
+        "fuente_id": "uncomtrade-ar-lote2-agro-2024",
+        "cita_ubicacion": "UN Comtrade HS 150710 (2024) y Renova Timbúes"
+      },
+      {
+        "numero": 13,
+        "nombre": "Harina y pellets de soja (HS 2304)",
+        "tipo": "proceso",
+        "origen_tag": "D-401",
+        "destino_tag": null,
+        "puntos": [
+          [
+            1608,
+            515
+          ],
+          [
+            1672,
+            515
+          ]
+        ],
+        "flag_pos": [
+          1640,
+          515
+        ],
+        "especies": "Harina proteica (46-47% proteína)",
+        "fase": "Sólido",
+        "temperatura_c": "30-35",
+        "presion_bar": "1,0",
+        "flujo_especifico": {
+          "estado": "dato",
+          "valor": 0.76,
+          "unidad": "t/t soja"
+        },
+        "nota_tecnica": "Principal complejo exportador argentino (HS 2304.00, 20,8 Mt exportadas en 2023).",
+        "fuente_id": "uncomtrade-ar-lote2-agro-2024",
+        "cita_ubicacion": "UN Comtrade HS 230400 y Molinos Agro San Lorenzo"
+      }
+    ],
+    "servicios": [
+      {
+        "id": "soj-hex-reponer",
+        "equipo_tag": "X-201",
+        "etiqueta": "Hexano repos. (s/d)",
+        "direccion": "entrada",
+        "x": 760,
+        "y": 214,
+        "dx": 0,
+        "dy": -46
+      },
+      {
+        "id": "soj-vap-dt",
+        "equipo_tag": "T-201",
+        "etiqueta": "Vapor vivo + indirecto",
+        "direccion": "entrada",
+        "x": 728,
+        "y": 515,
+        "dx": -52,
+        "dy": 0
+      },
+      {
+        "id": "soj-h2o-desg",
+        "equipo_tag": "R-401",
+        "etiqueta": "Agua + ác. cítrico",
+        "direccion": "entrada",
+        "x": 1418,
+        "y": 190,
+        "dx": 0,
+        "dy": -44
+      },
+      {
+        "id": "soj-aire-d401",
+        "equipo_tag": "D-401",
+        "etiqueta": "Aire secado/enfr.",
+        "direccion": "entrada",
+        "x": 1560,
+        "y": 545,
+        "dx": 0,
+        "dy": 44
+      }
+    ],
+    "limites_bateria": [
+      {
+        "id": "soj-in-poroto",
+        "lado": "entrada",
+        "categoria": "materia_prima",
+        "nombre": "Poroto de soja (Glycine max)",
+        "formula": "Triglicéridos + Proteína",
+        "cantidad_masa": "1,000 t / t soja",
+        "cantidad_molar": null,
+        "fraccion_pureza": "~19,5% aceite · ~37% prot.",
+        "corriente_num": 1,
+        "y": 196,
+        "nota": "Procesado en el corredor fluvial Up-River santafesino.",
+        "fuente_id": "renova-web-2026"
+      },
+      {
+        "id": "soj-in-hexano",
+        "lado": "entrada",
+        "categoria": "servicio",
+        "nombre": "Hexano comercial (lazo cerrado)",
+        "formula": "C6H14 (86,18 kg/kmol)",
+        "cantidad_masa": "0,970 t circ. (repos. s/d)",
+        "cantidad_molar": "11,26 kmol recirc. / t",
+        "fraccion_pureza": "Recup. >99,8% interno",
+        "corriente_num": 8,
+        "y": 356,
+        "nota": "Solo se repone el arrastre mínimo (EPA ref. <0,7 kg/t).",
+        "fuente_id": "epa-ap42-ch9-oil"
+      },
+      {
+        "id": "soj-out-harina",
+        "lado": "salida",
+        "categoria": "producto",
+        "nombre": "Harina proteica de soja",
+        "formula": "Hi-Pro / Pellets",
+        "cantidad_masa": "0,760 t / t soja",
+        "cantidad_molar": null,
+        "fraccion_pureza": "76% masa · 46-47% prot.",
+        "corriente_num": 13,
+        "y": 196,
+        "nota": "Coproducto mayoritario en masa hacia exportación global (HS 2304.00).",
+        "fuente_id": "uncomtrade-ar-lote2-agro-2024"
+      },
+      {
+        "id": "soj-out-aceite",
+        "lado": "salida",
+        "categoria": "producto",
+        "nombre": "Aceite crudo desgomado",
+        "formula": "C57H104O6 (base)",
+        "cantidad_masa": "0,190 t / t soja",
+        "cantidad_molar": "~0,215 kmol triglic. / t",
+        "fraccion_pureza": "19% masa · a biodiésel/exp.",
+        "corriente_num": 12,
+        "y": 356,
+        "nota": "Insumo directo aguas abajo para plantas FAME de San Lorenzo.",
+        "fuente_id": "renova-web-2026"
+      },
+      {
+        "id": "soj-out-sub",
+        "lado": "salida",
+        "categoria": "subproducto",
+        "nombre": "Cáscara + lecitina",
+        "formula": "Fibra + fosfolípidos",
+        "cantidad_masa": "0,030 t cáscara + 0,010 t lec.",
+        "cantidad_molar": null,
+        "fraccion_pureza": "4% masa agregada",
+        "corriente_num": 3,
+        "y": 516,
+        "nota": "Subproductos comercializados para nutrición animal y emulsificantes.",
+        "fuente_id": "epa-ap42-ch9-oil"
+      }
+    ]
+  },
+  {
+    "proceso_id": "biodiesel-transesterificacion-soja",
+    "producto_id": "biodiesel",
+    "titulo": "PFD: Refinación de Aceite, Transesterificación Alcalina, Reciclo de Metanol y Glicerina (Santa Fe)",
+    "norma_simbologia": "ISO 10628 / ASME",
+    "base_calculo": "1,00 t de biodiésel FAME B100 (3,37 kmol éster metílico) en San Lorenzo",
+    "resumen_tecnico": "Proceso continuo representativo del polo San Lorenzo / Gran Rosario: neutralización de acidez libre y secado al vacío de aceite de soja, doble etapa de transesterificación alcalina a 60-65 °C con metanol (exceso molar 6:1) y NaOCH3, separación centrífuga de ésteres y glicerina cruda, columnas de recuperación y rectificación cerrada de metanol, lavado-secado B100 y destilación al vacío de glicerina refinada (99,5%).",
+    "nota_metodologica": "Esquema basado en US DOE AFDC / NREL y capacidades declaradas de Renova San Lorenzo (1.450 t/día biodiésel, 900 t/día refinado, 270 t/día glicerina). Estequiometría exacta base trioleína (885,43; metanol 32,04; FAME 296,49; glicerina 92,09 kg/kmol).",
+    "canvas_width": 1880,
+    "canvas_height": 760,
+    "secciones": [
+      {
+        "area_id": "area-100",
+        "titulo": "Área 100 · Neutralización y Secado",
+        "x": 224,
+        "y": 40,
+        "width": 352,
+        "height": 665
+      },
+      {
+        "area_id": "area-200",
+        "titulo": "Área 200 · Transesterificación y Centrífuga",
+        "x": 594,
+        "y": 40,
+        "width": 338,
+        "height": 665
+      },
+      {
+        "area_id": "area-300",
+        "titulo": "Área 300 · Reciclo Metanol y Lavado B100",
+        "x": 950,
+        "y": 40,
+        "width": 356,
+        "height": 665
+      },
+      {
+        "area_id": "area-400",
+        "titulo": "Área 400 · Refinación de Glicerina",
+        "x": 1324,
+        "y": 40,
+        "width": 332,
+        "height": 665
+      }
+    ],
+    "equipos": [
+      {
+        "tag": "R-101",
+        "nombre": "Neutralización de aceite crudo",
+        "simbolo": "reactor",
+        "area_id": "area-100",
+        "x": 318,
+        "y": 240,
+        "temperatura_op": "70-90 °C",
+        "presion_op": "1,0 bar",
+        "reaccion": "AGL + NaOH -> jabón + H2O",
+        "condicion_critica": "Acidez < 0,1%",
+        "descripcion": "Dosificación de ácido fosfórico y soda cáustica para remover gomas y ácidos grasos libres antes de entrar a catálisis básica.",
+        "fuente_id": "renova-web-2026",
+        "cita_ubicacion": "renova.com.ar (Planta San Lorenzo refinado 900 t/día)"
+      },
+      {
+        "tag": "V-101",
+        "nombre": "Secador al vacío de aceite",
+        "simbolo": "separator",
+        "area_id": "area-100",
+        "x": 502,
+        "y": 240,
+        "temperatura_op": "85-95 °C",
+        "presion_op": "0,08 bar",
+        "reaccion": null,
+        "condicion_critica": "H2O < 0,05%",
+        "descripcion": "Deshidratación al vacío del aceite neutro para impedir hidrólisis del catalizador NaOCH3 durante la síntesis.",
+        "fuente_id": "afdc-biodiesel-doe",
+        "cita_ubicacion": "US DOE AFDC Biodiesel Production: feedstock drying pretreatment"
+      },
+      {
+        "tag": "R-201",
+        "nombre": "Reactores transesterificación",
+        "simbolo": "reactor",
+        "area_id": "area-200",
+        "x": 760,
+        "y": 240,
+        "temperatura_op": "60-65 °C",
+        "presion_op": "1,5 bar",
+        "reaccion": "C57H104O6 + 3 CH4O -> 3 C19H36O2 + C3H8O3",
+        "condicion_critica": "Exceso MeOH 6:1",
+        "descripcion": "Dos etapas continuas en serie con metanol y metilato de sodio para superar conversión >99% hacia ésteres metílicos FAME.",
+        "fuente_id": "afdc-biodiesel-doe",
+        "cita_ubicacion": "US DOE AFDC Biodiesel Production: base-catalyzed transesterification"
+      },
+      {
+        "tag": "S-201",
+        "nombre": "Centrífuga de fases FAME/Glic.",
+        "simbolo": "centrifuge",
+        "area_id": "area-200",
+        "x": 760,
+        "y": 515,
+        "temperatura_op": "55-60 °C",
+        "presion_op": "1,2 bar",
+        "reaccion": null,
+        "condicion_critica": "Doble densidad",
+        "descripcion": "Separa continuamente la fase liviana rica en FAME (0,88 g/cm3) de la fase pesada de glicerina cruda (1,05-1,15 g/cm3).",
+        "fuente_id": "afdc-biodiesel-doe",
+        "cita_ubicacion": "US DOE AFDC Biodiesel Production: phase separation"
+      },
+      {
+        "tag": "T-301",
+        "nombre": "Columna flash recup. metanol",
+        "simbolo": "column",
+        "area_id": "area-300",
+        "x": 1044,
+        "y": 240,
+        "temperatura_op": "80-110 °C",
+        "presion_op": "0,2-0,4 bar",
+        "reaccion": null,
+        "condicion_critica": "Reciclo MeOH",
+        "descripcion": "Despoja al vacío el exceso de metanol (3:1 molar excedente) disuelto en la fase éster y en la glicerina cruda.",
+        "fuente_id": "afdc-biodiesel-doe",
+        "cita_ubicacion": "US DOE AFDC Biodiesel Production: methanol recovery"
+      },
+      {
+        "tag": "T-302",
+        "nombre": "Rectificadora de metanol",
+        "simbolo": "column",
+        "area_id": "area-300",
+        "x": 1044,
+        "y": 515,
+        "temperatura_op": "65-75 °C",
+        "presion_op": "1,0 bar",
+        "reaccion": null,
+        "condicion_critica": "MeOH > 99%",
+        "descripcion": "Separa el metanol anhidro por cabeza devolviéndolo al reactor R-201 en circuito cerrado.",
+        "fuente_id": "afdc-biodiesel-doe",
+        "cita_ubicacion": "US DOE AFDC Biodiesel Production: methanol rectification & reuse"
+      },
+      {
+        "tag": "V-301",
+        "nombre": "Lavado y secado al vacío B100",
+        "simbolo": "separator",
+        "area_id": "area-300",
+        "x": 1228,
+        "y": 240,
+        "temperatura_op": "55-90 °C",
+        "presion_op": "0,1-1,0 bar",
+        "reaccion": null,
+        "condicion_critica": "FAME > 96,5%",
+        "descripcion": "Neutralización, lavado suave (resinas/agua) y secado flash para cumplir norma EN 14214 / ASTM D6751 (<500 ppm H2O) hacia despacho B100.",
+        "fuente_id": "afdc-biodiesel-doe",
+        "cita_ubicacion": "US DOE AFDC: biodiesel washing, drying & ASTM D6751 / EN 14214"
+      },
+      {
+        "tag": "R-401",
+        "nombre": "Acidulación de glicerina cruda",
+        "simbolo": "reactor",
+        "area_id": "area-400",
+        "x": 1418,
+        "y": 240,
+        "temperatura_op": "50-65 °C",
+        "presion_op": "1,0 bar",
+        "reaccion": "Jabones + HCl -> AGL + NaCl",
+        "condicion_critica": "Glic. 80%",
+        "descripcion": "Neutraliza el catalizador remanente y rompe jabones recuperando ácidos grasos libres antes de purificar glicerol.",
+        "fuente_id": "renova-web-2026",
+        "cita_ubicacion": "renova.com.ar (San Lorenzo 270 t/día glicerina refinada)"
+      },
+      {
+        "tag": "V-401",
+        "nombre": "Destilación al vacío glicerina",
+        "simbolo": "separator",
+        "area_id": "area-400",
+        "x": 1560,
+        "y": 515,
+        "temperatura_op": "150-175 °C",
+        "presion_op": "0,01-0,03 bar",
+        "reaccion": null,
+        "condicion_critica": "USP >= 99,5%",
+        "descripcion": "Evaporación de película delgada en alto vacío para evitar descomposición térmica (>200 °C) y pulido con carbón activado.",
+        "fuente_id": "renova-web-2026",
+        "cita_ubicacion": "renova.com.ar (Planta San Lorenzo glicerina refinada 270 t/día)"
+      }
+    ],
+    "corrientes": [
+      {
+        "numero": 1,
+        "nombre": "Aceite crudo desgomado (de soja)",
+        "tipo": "proceso",
+        "origen_tag": null,
+        "destino_tag": "R-101",
+        "puntos": [
+          [
+            206,
+            240
+          ],
+          [
+            286,
+            240
+          ]
+        ],
+        "flag_pos": [
+          244,
+          240
+        ],
+        "especies": "Triglicéridos + AGL (<1%) + fosfátidos",
+        "fase": "Líquido",
+        "temperatura_c": "35-45",
+        "presion_bar": "1,0",
+        "flujo_especifico": {
+          "estado": "dato",
+          "valor": 1.02,
+          "unidad": "t/t FAME"
+        },
+        "nota_tecnica": "Proviene directamente de plantas de crushing del cordón Up-River.",
+        "fuente_id": "renova-web-2026",
+        "cita_ubicacion": "renova.com.ar"
+      },
+      {
+        "numero": 2,
+        "nombre": "Aceite neutralizado húmedo",
+        "tipo": "proceso",
+        "origen_tag": "R-101",
+        "destino_tag": "V-101",
+        "puntos": [
+          [
+            350,
+            240
+          ],
+          [
+            474,
+            240
+          ]
+        ],
+        "flag_pos": [
+          412,
+          240
+        ],
+        "especies": "Triglicéridos neutros + trazas H2O",
+        "fase": "Líquido",
+        "temperatura_c": "75-85",
+        "presion_bar": "1,0",
+        "flujo_especifico": {
+          "estado": "dato",
+          "valor": 1.005,
+          "unidad": "t/t FAME"
+        },
+        "nota_tecnica": "Descuenta ~0,015 t/t de borras/AGL separados.",
+        "fuente_id": "renova-web-2026",
+        "cita_ubicacion": "renova.com.ar (refinado 900 t/día)"
+      },
+      {
+        "numero": 3,
+        "nombre": "Aceite neutro y seco (<0,05% H2O)",
+        "tipo": "proceso",
+        "origen_tag": "V-101",
+        "destino_tag": "R-201",
+        "puntos": [
+          [
+            530,
+            240
+          ],
+          [
+            728,
+            240
+          ]
+        ],
+        "flag_pos": [
+          629,
+          240
+        ],
+        "especies": "C57H104O6 (1,13 kmol/t FAME)",
+        "fase": "Líquido",
+        "temperatura_c": "60-65",
+        "presion_bar": "1,5",
+        "flujo_especifico": {
+          "estado": "dato",
+          "valor": 1.005,
+          "unidad": "t/t FAME"
+        },
+        "nota_tecnica": "Relación estequiométrica teórica base trioleína: 0,996 t/t.",
+        "fuente_id": "afdc-biodiesel-doe",
+        "cita_ubicacion": "US DOE AFDC Biodiesel Production"
+      },
+      {
+        "numero": 4,
+        "nombre": "Efluente de reacción FAME + glicerina",
+        "tipo": "proceso",
+        "origen_tag": "R-201",
+        "destino_tag": "S-201",
+        "puntos": [
+          [
+            760,
+            286
+          ],
+          [
+            760,
+            480
+          ]
+        ],
+        "flag_pos": [
+          760,
+          392
+        ],
+        "especies": "FAME, C3H8O3, MeOH exceso, NaOCH3",
+        "fase": "Bifásico",
+        "temperatura_c": "60-65",
+        "presion_bar": "1,2",
+        "flujo_especifico": {
+          "estado": "dato",
+          "valor": 1.22,
+          "unidad": "t/t FAME"
+        },
+        "nota_tecnica": "Incluye el metanol en exceso que se recupera en T-301.",
+        "fuente_id": "afdc-biodiesel-doe",
+        "cita_ubicacion": "US DOE AFDC Biodiesel Production"
+      },
+      {
+        "numero": 5,
+        "nombre": "Fase liviana FAME crudo + MeOH",
+        "tipo": "proceso",
+        "origen_tag": "S-201",
+        "destino_tag": "T-301",
+        "puntos": [
+          [
+            800,
+            515
+          ],
+          [
+            970,
+            515
+          ],
+          [
+            970,
+            240
+          ],
+          [
+            1020,
+            240
+          ]
+        ],
+        "flag_pos": [
+          970,
+          388
+        ],
+        "especies": "C19H36O2 + MeOH disuelto (~6-8%)",
+        "fase": "Líquido",
+        "temperatura_c": "60",
+        "presion_bar": "1,0",
+        "flujo_especifico": {
+          "estado": "dato",
+          "valor": 1.07,
+          "unidad": "t/t FAME"
+        },
+        "nota_tecnica": "Entra al flash de despojamiento de alcohol.",
+        "fuente_id": "afdc-biodiesel-doe",
+        "cita_ubicacion": "US DOE AFDC Biodiesel Production"
+      },
+      {
+        "numero": 6,
+        "nombre": "Metanol flash vapor hacia rectificación",
+        "tipo": "reciclo",
+        "origen_tag": "T-301",
+        "destino_tag": "T-302",
+        "puntos": [
+          [
+            1044,
+            296
+          ],
+          [
+            1044,
+            464
+          ]
+        ],
+        "flag_pos": [
+          1044,
+          388
+        ],
+        "especies": "CH4O + trazas H2O",
+        "fase": "Gas",
+        "temperatura_c": "75-95",
+        "presion_bar": "0,4-1,0",
+        "flujo_especifico": {
+          "estado": "dato",
+          "valor": 0.11,
+          "unidad": "t/t FAME"
+        },
+        "nota_tecnica": "Exceso molar de metanol recuperado entre ambas fases.",
+        "fuente_id": "afdc-biodiesel-doe",
+        "cita_ubicacion": "US DOE AFDC: methanol flash"
+      },
+      {
+        "numero": 7,
+        "nombre": "Reciclo cerrado de metanol seco (>99%)",
+        "tipo": "reciclo",
+        "origen_tag": "T-302",
+        "destino_tag": "R-201",
+        "puntos": [
+          [
+            1044,
+            572
+          ],
+          [
+            1044,
+            668
+          ],
+          [
+            678,
+            668
+          ],
+          [
+            678,
+            260
+          ],
+          [
+            728,
+            260
+          ]
+        ],
+        "flag_pos": [
+          860,
+          668
+        ],
+        "especies": "CH4O (>99% masa)",
+        "fase": "Líquido",
+        "temperatura_c": "35-45",
+        "presion_bar": "1,5",
+        "flujo_especifico": {
+          "estado": "dato",
+          "valor": 0.11,
+          "unidad": "t/t FAME"
+        },
+        "nota_tecnica": "Cierra la relación 6:1 en reactor limitando reposición al consumo neto estequiométrico (0,110 t/t = 3,43 kmol/t).",
+        "fuente_id": "afdc-biodiesel-doe",
+        "cita_ubicacion": "US DOE AFDC: methanol recycle"
+      },
+      {
+        "numero": 8,
+        "nombre": "FAME desmetanolizado a lavado/secado",
+        "tipo": "proceso",
+        "origen_tag": "T-301",
+        "destino_tag": "V-301",
+        "puntos": [
+          [
+            1068,
+            240
+          ],
+          [
+            1200,
+            240
+          ]
+        ],
+        "flag_pos": [
+          1134,
+          240
+        ],
+        "especies": "Ésteres metílicos FAME + trazas jabón",
+        "fase": "Líquido",
+        "temperatura_c": "70-85",
+        "presion_bar": "0,4",
+        "flujo_especifico": {
+          "estado": "dato",
+          "valor": 1,
+          "unidad": "t/t FAME"
+        },
+        "nota_tecnica": "Libre de metanol antes de lavado y secado al vacío.",
+        "fuente_id": "afdc-biodiesel-doe",
+        "cita_ubicacion": "US DOE AFDC"
+      },
+      {
+        "numero": 9,
+        "nombre": "Biodiésel B100 terminado (HS 3826.00)",
+        "tipo": "proceso",
+        "origen_tag": "V-301",
+        "destino_tag": null,
+        "puntos": [
+          [
+            1256,
+            240
+          ],
+          [
+            1672,
+            240
+          ]
+        ],
+        "flag_pos": [
+          1488,
+          240
+        ],
+        "especies": "C19H36O2 base (>96,5% FAME)",
+        "fase": "Líquido",
+        "temperatura_c": "35-40",
+        "presion_bar": "1,0",
+        "flujo_especifico": {
+          "estado": "dato",
+          "valor": 1,
+          "unidad": "t/t FAME"
+        },
+        "nota_tecnica": "Base 1,00 t = 3,37 kmol FAME; 1,16 Mt producidas en Argentina en 2024 (Sec. Energía).",
+        "fuente_id": "se-biocombustibles-2026",
+        "cita_ubicacion": "Secretaría de Energía RESUMEN BIODIESEL (1.162.697 t en 2024)"
+      },
+      {
+        "numero": 10,
+        "nombre": "Fase pesada glicerina cruda (~80%)",
+        "tipo": "subproducto",
+        "origen_tag": "S-201",
+        "destino_tag": "R-401",
+        "puntos": [
+          [
+            760,
+            535
+          ],
+          [
+            760,
+            610
+          ],
+          [
+            1370,
+            610
+          ],
+          [
+            1370,
+            260
+          ],
+          [
+            1386,
+            260
+          ]
+        ],
+        "flag_pos": [
+          1172,
+          610
+        ],
+        "especies": "C3H8O3 (~80%), jabones, sales, H2O",
+        "fase": "Líquido",
+        "temperatura_c": "50-60",
+        "presion_bar": "1,0",
+        "flujo_especifico": {
+          "estado": "dato",
+          "valor": 0.115,
+          "unidad": "t/t FAME"
+        },
+        "nota_tecnica": "Rendimiento teórico puro de glicerina: 0,104 t/t (1,13 kmol C3H8O3/t).",
+        "fuente_id": "renova-web-2026",
+        "cita_ubicacion": "renova.com.ar (San Lorenzo glicerina refinada 270 t/día)"
+      },
+      {
+        "numero": 11,
+        "nombre": "Glicerina acidulada a destilación",
+        "tipo": "subproducto",
+        "origen_tag": "R-401",
+        "destino_tag": "V-401",
+        "puntos": [
+          [
+            1418,
+            286
+          ],
+          [
+            1418,
+            515
+          ],
+          [
+            1532,
+            515
+          ]
+        ],
+        "flag_pos": [
+          1418,
+          405
+        ],
+        "especies": "C3H8O3 concentrada + H2O/NaCl",
+        "fase": "Líquido",
+        "temperatura_c": "60-80",
+        "presion_bar": "1,0",
+        "flujo_especifico": {
+          "estado": "dato",
+          "valor": 0.104,
+          "unidad": "t/t FAME"
+        },
+        "nota_tecnica": "Los AGL recuperados se retornan a pre-esterificación o calderas.",
+        "fuente_id": "renova-web-2026",
+        "cita_ubicacion": "renova.com.ar"
+      },
+      {
+        "numero": 12,
+        "nombre": "Glicerina refinada grado técnico / USP",
+        "tipo": "subproducto",
+        "origen_tag": "V-401",
+        "destino_tag": null,
+        "puntos": [
+          [
+            1588,
+            515
+          ],
+          [
+            1672,
+            515
+          ]
+        ],
+        "flag_pos": [
+          1630,
+          515
+        ],
+        "especies": "C3H8O3 (>=99,5% masa)",
+        "fase": "Líquido",
+        "temperatura_c": "40-50",
+        "presion_bar": "1,0",
+        "flujo_especifico": {
+          "estado": "dato",
+          "valor": 0.104,
+          "unidad": "t/t FAME"
+        },
+        "nota_tecnica": "Equivale a 1,13 kmol de glicerina por tonelada de biodiésel.",
+        "fuente_id": "renova-web-2026",
+        "cita_ubicacion": "renova.com.ar (San Lorenzo 270 t/día glicerina)"
+      }
+    ],
+    "servicios": [
+      {
+        "id": "bio-soda-r101",
+        "equipo_tag": "R-101",
+        "etiqueta": "H3PO4 + NaOH ac.",
+        "direccion": "entrada",
+        "x": 318,
+        "y": 192,
+        "dx": 0,
+        "dy": -46
+      },
+      {
+        "id": "bio-meoh-r201",
+        "equipo_tag": "R-201",
+        "etiqueta": "MeOH (0,11 t/t) + NaOCH3",
+        "direccion": "entrada",
+        "x": 760,
+        "y": 192,
+        "dx": 0,
+        "dy": -46
+      },
+      {
+        "id": "bio-hcl-r401",
+        "equipo_tag": "R-401",
+        "etiqueta": "HCl / H2SO4",
+        "direccion": "entrada",
+        "x": 1418,
+        "y": 192,
+        "dx": 0,
+        "dy": -46
+      },
+      {
+        "id": "bio-vac-v401",
+        "equipo_tag": "V-401",
+        "etiqueta": "Alto vacío (0,02 bar)",
+        "direccion": "entrada",
+        "x": 1560,
+        "y": 476,
+        "dx": 0,
+        "dy": -44
+      }
+    ],
+    "limites_bateria": [
+      {
+        "id": "bio-in-aceite",
+        "lado": "entrada",
+        "categoria": "materia_prima",
+        "nombre": "Aceite crudo de soja",
+        "formula": "C57H104O6 (base)",
+        "cantidad_masa": "1,020 t / t FAME",
+        "cantidad_molar": "1,13 kmol triglic. / t",
+        "fraccion_pureza": "1,005 t neutro post-ref.",
+        "corriente_num": 1,
+        "y": 196,
+        "nota": "Abastecido por crushing de Santa Fe (Timbúes / San Lorenzo).",
+        "fuente_id": "renova-web-2026"
+      },
+      {
+        "id": "bio-in-meoh",
+        "lado": "entrada",
+        "categoria": "materia_prima",
+        "nombre": "Metanol neto y catalizador",
+        "formula": "CH4O + NaOCH3",
+        "cantidad_masa": "0,110 t MeOH / t FAME",
+        "cantidad_molar": "3,43 kmol MeOH / t",
+        "fraccion_pureza": "Exceso 6:1 reciclado",
+        "corriente_num": 7,
+        "y": 356,
+        "nota": "Estequiometría exacta: 3,37 kmol/t + margen operativo.",
+        "fuente_id": "afdc-biodiesel-doe"
+      },
+      {
+        "id": "bio-out-b100",
+        "lado": "salida",
+        "categoria": "producto",
+        "nombre": "Biodiésel FAME B100",
+        "formula": "C19H36O2 (base)",
+        "cantidad_masa": "1,000 t / t FAME",
+        "cantidad_molar": "3,37 kmol éster / t",
+        "fraccion_pureza": ">96,5% FAME · HS 3826",
+        "corriente_num": 9,
+        "y": 196,
+        "nota": "Cumple corte obligatorio argentino y exportación.",
+        "fuente_id": "se-biocombustibles-2026"
+      },
+      {
+        "id": "bio-out-glic",
+        "lado": "salida",
+        "categoria": "subproducto",
+        "nombre": "Glicerina refinada USP/técnica",
+        "formula": "C3H8O3",
+        "cantidad_masa": "0,104 t pura (0,115 cruda)",
+        "cantidad_molar": "1,13 kmol / t FAME",
+        "fraccion_pureza": "Glic. destilada >=99,5%",
+        "corriente_num": 12,
+        "y": 356,
+        "nota": "Valorización farmacéutica, cosmética e industrial en San Lorenzo.",
+        "fuente_id": "renova-web-2026"
+      },
+      {
+        "id": "bio-out-borras",
+        "lado": "salida",
+        "categoria": "subproducto",
+        "nombre": "Borras y ácidos grasos",
+        "formula": "AGL + fosfátidos",
+        "cantidad_masa": "0,015 t / t FAME",
+        "cantidad_molar": null,
+        "fraccion_pureza": "Subproducto refinación",
+        "corriente_num": null,
+        "y": 516,
+        "nota": "Separados en neutralización previa R-101.",
+        "fuente_id": "renova-web-2026"
+      }
+    ]
+  },
+  {
+    "proceso_id": "algodon-desmote-refinacion-celulosa",
+    "producto_id": "algodon",
+    "titulo": "PFD: Desmote Industrial, Descrudado Alcalino y Blanqueo con Peróxido de Celulosa (Chaco / NEA)",
+    "norma_simbologia": "ISO 10628 / ASME",
+    "base_calculo": "1,00 t de fibra cruda desmotada -> 0,92 t de celulosa blanqueada (5,67 kmol C6H10O5)",
+    "resumen_tecnico": "Cadena agroquímica del algodón chaqueño (Las Breñas / Sáenz Peña): secado neumático de algodón en bruto, desmote mecánico por sierras (1 t fibra + 1,7 t semilla oleaginosa), limpieza HVI, descrudado alcalino con soda cáustica (NaOH a 95 °C) para saponificar ceras y pectinas, blanqueo libre de cloro con peróxido de hidrógeno (H2O2), recuperación de soda débil y secado textil.",
+    "nota_metodologica": "Rendimiento de campo y desmote verificado con SAGyP (Chaco 2024/25) y Buyatti S.A.I.C.A. Química húmeda y recuperación de soda alineadas con EU Textiles BREF (2023) y asesoramiento técnico INTI Textiles. Consumos específicos de agua/NaOH sin reporte público figuran como s/d.",
+    "canvas_width": 1880,
+    "canvas_height": 760,
+    "secciones": [
+      {
+        "area_id": "area-100",
+        "titulo": "Área 100 · Secado y Desmote Mecánico",
+        "x": 224,
+        "y": 40,
+        "width": 352,
+        "height": 665
+      },
+      {
+        "area_id": "area-200",
+        "titulo": "Área 200 · Descrudado NaOH y Blanqueo H2O2",
+        "x": 594,
+        "y": 40,
+        "width": 338,
+        "height": 665
+      },
+      {
+        "area_id": "area-300",
+        "titulo": "Área 300 · Lavado y Recup. de Soda",
+        "x": 950,
+        "y": 40,
+        "width": 356,
+        "height": 665
+      },
+      {
+        "area_id": "area-400",
+        "titulo": "Área 400 · Secado e Hilatura Textil",
+        "x": 1324,
+        "y": 40,
+        "width": 332,
+        "height": 665
+      }
+    ],
+    "equipos": [
+      {
+        "tag": "V-101",
+        "nombre": "Torre de secado y prelimpieza",
+        "simbolo": "separator",
+        "area_id": "area-100",
+        "x": 318,
+        "y": 240,
+        "temperatura_op": "60-80 °C",
+        "presion_op": "1,0 bar",
+        "reaccion": null,
+        "condicion_critica": "H2O ~5-7%",
+        "descripcion": "Secado neumático rápido de algodón en bruto y remoción de brácteas, hojas y polvo antes de las sierras de desmote.",
+        "fuente_id": "buyatti-web-2026",
+        "cita_ubicacion": "buyatti.com.ar (desmotadora Las Breñas, Chaco)"
+      },
+      {
+        "tag": "M-101",
+        "nombre": "Bancos de sierras de desmote",
+        "simbolo": "mill_gin",
+        "area_id": "area-100",
+        "x": 502,
+        "y": 240,
+        "temperatura_op": "25-35 °C",
+        "presion_op": "1,0 bar",
+        "reaccion": null,
+        "condicion_critica": "1,00 t fibra + 1,70 t sem.",
+        "descripcion": "Separa mecánicamente la fibra larga de celulosa (~94% pureza cruda) de la semilla oleaginosa destinada a molienda de aceite y linter.",
+        "fuente_id": "buyatti-web-2026",
+        "cita_ubicacion": "buyatti.com.ar (desmote y semilla oleaginosa)"
+      },
+      {
+        "tag": "S-101",
+        "nombre": "Limpieza neumática y fardos HVI",
+        "simbolo": "filter_baghouse",
+        "area_id": "area-100",
+        "x": 502,
+        "y": 515,
+        "temperatura_op": "20-30 °C",
+        "presion_op": "1,0 bar",
+        "reaccion": null,
+        "condicion_critica": null,
+        "descripcion": "Limpiadores centrífugos de fibra, prensado en fardos de ~220 kg y tipificación instrumental HVI (longitud, resistencia, micronaire).",
+        "fuente_id": "sagyp-estimaciones-2026-03",
+        "cita_ubicacion": "SAGyP Chaco (algodón en bruto y fibra)"
+      },
+      {
+        "tag": "X-201",
+        "nombre": "Reactor de descrudado (NaOH)",
+        "simbolo": "extractor",
+        "area_id": "area-200",
+        "x": 760,
+        "y": 240,
+        "temperatura_op": "90-100 °C",
+        "presion_op": "1,0 bar",
+        "reaccion": "Ceras + NaOH -> jabones solubles (saponif.)",
+        "condicion_critica": "pH 12-13",
+        "descripcion": "Extracción alcalina que saponifica ceras naturales, pectinas y proteínas (~3-5% peso) volviendo hidrófila la fibra de celulosa.",
+        "fuente_id": "eu-bref-textiles-2023",
+        "cita_ubicacion": "EU Textiles BREF (2023): cotton alkaline scouring"
+      },
+      {
+        "tag": "R-201",
+        "nombre": "Blanqueo oxidativo (H2O2)",
+        "simbolo": "reactor",
+        "area_id": "area-200",
+        "x": 760,
+        "y": 515,
+        "temperatura_op": "90-95 °C",
+        "presion_op": "1,0 bar",
+        "reaccion": "2 H2O2 -> 2 H2O + O2 (destrucción pigmentos)",
+        "condicion_critica": "TCF sin cloro",
+        "descripcion": "Blanqueo con peróxido de hidrógeno estabilizado (tecnología TCF libre de compuestos clorados AOX según BAT textil e INTI).",
+        "fuente_id": "eu-bref-textiles-2023",
+        "cita_ubicacion": "EU Textiles BREF (2023): hydrogen peroxide bleaching & INTI Textiles"
+      },
+      {
+        "tag": "T-301",
+        "nombre": "Lavado contracorriente y neutr.",
+        "simbolo": "column",
+        "area_id": "area-300",
+        "x": 1044,
+        "y": 240,
+        "temperatura_op": "60-85 °C",
+        "presion_op": "1,0 bar",
+        "reaccion": null,
+        "condicion_critica": "pH final 6,5-7,5",
+        "descripcion": "Enjuague multietapa en contracorriente con reutilización de agua y neutralización suave de álcali residual.",
+        "fuente_id": "eu-bref-textiles-2023",
+        "cita_ubicacion": "EU Textiles BREF (2023): counter-current washing"
+      },
+      {
+        "tag": "V-301",
+        "nombre": "Recuperación de soda (evap.)",
+        "simbolo": "separator",
+        "area_id": "area-300",
+        "x": 1044,
+        "y": 515,
+        "temperatura_op": "80-110 °C",
+        "presion_op": "0,2-0,5 bar",
+        "reaccion": null,
+        "condicion_critica": "BAT reciclo NaOH",
+        "descripcion": "Concentración al vacío de lejías débiles alcalinas para reutilizar NaOH y reducir carga orgánica/alcalina del efluente según INTI.",
+        "fuente_id": "eu-bref-textiles-2023",
+        "cita_ubicacion": "EU Textiles BREF (2023): caustic recovery plant & INTI efluentes"
+      },
+      {
+        "tag": "D-401",
+        "nombre": "Secado térmico de celulosa",
+        "simbolo": "dryer_bed",
+        "area_id": "area-400",
+        "x": 1418,
+        "y": 240,
+        "temperatura_op": "95-115 °C",
+        "presion_op": "1,0 bar",
+        "reaccion": null,
+        "condicion_critica": "H2O ~7-8%",
+        "descripcion": "Secado en tambores/túnel con recuperación de calor para fijar humedad comercial estándar de celulosa.",
+        "fuente_id": "eu-bref-textiles-2023",
+        "cita_ubicacion": "EU Textiles BREF (2023): thermal drying"
+      },
+      {
+        "tag": "EX-401",
+        "nombre": "Hilatura y despacho textil",
+        "simbolo": "extruder",
+        "area_id": "area-400",
+        "x": 1560,
+        "y": 515,
+        "temperatura_op": "20-25 °C",
+        "presion_op": "1,0 bar",
+        "reaccion": null,
+        "condicion_critica": "~99% alfa-celulosa",
+        "descripcion": "Cardado, estirado, hilatura Open-End/Anillos y despacho en conos hacia industria textil o celulosa química (HS 5201.00).",
+        "fuente_id": "inti-argentina-portal",
+        "cita_ubicacion": "INTI Textiles y UN Comtrade HS 520100 (2024)"
+      }
+    ],
+    "corrientes": [
+      {
+        "numero": 1,
+        "nombre": "Algodón en bruto cosechado",
+        "tipo": "proceso",
+        "origen_tag": null,
+        "destino_tag": "V-101",
+        "puntos": [
+          [
+            206,
+            240
+          ],
+          [
+            286,
+            240
+          ]
+        ],
+        "flag_pos": [
+          244,
+          240
+        ],
+        "especies": "Algodón rama (fibra + semilla + brácteas)",
+        "fase": "Sólido",
+        "temperatura_c": "20-35",
+        "presion_bar": "1,0",
+        "flujo_especifico": {
+          "estado": "dato",
+          "valor": 3,
+          "unidad": "t/t fibra"
+        },
+        "nota_tecnica": "Proporción industrial NEA: ~3 t algodón en bruto -> 1 t fibra + 1,7 t semilla + 0,3 t impurezas.",
+        "fuente_id": "sagyp-estimaciones-2026-03",
+        "cita_ubicacion": "SAGyP Chaco 2024/25"
+      },
+      {
+        "numero": 2,
+        "nombre": "Algodón seco y prelimpio",
+        "tipo": "proceso",
+        "origen_tag": "V-101",
+        "destino_tag": "M-101",
+        "puntos": [
+          [
+            350,
+            240
+          ],
+          [
+            464,
+            240
+          ]
+        ],
+        "flag_pos": [
+          407,
+          240
+        ],
+        "especies": "Fibra adherida a semilla (humedad 6%)",
+        "fase": "Sólido",
+        "temperatura_c": "50-70",
+        "presion_bar": "1,0",
+        "flujo_especifico": {
+          "estado": "dato",
+          "valor": 2.7,
+          "unidad": "t/t fibra"
+        },
+        "nota_tecnica": "Descuenta 0,30 t de restos vegetales y polvo removidos.",
+        "fuente_id": "buyatti-web-2026",
+        "cita_ubicacion": "buyatti.com.ar"
+      },
+      {
+        "numero": 3,
+        "nombre": "Semilla oleaginosa separada",
+        "tipo": "subproducto",
+        "origen_tag": "M-101",
+        "destino_tag": null,
+        "puntos": [
+          [
+            540,
+            224
+          ],
+          [
+            628,
+            224
+          ],
+          [
+            628,
+            128
+          ],
+          [
+            1672,
+            128
+          ]
+        ],
+        "flag_pos": [
+          855,
+          128
+        ],
+        "especies": "Semilla de algodón (aceite ~18% + proteína)",
+        "fase": "Sólido",
+        "temperatura_c": "25-35",
+        "presion_bar": "1,0",
+        "flujo_especifico": {
+          "estado": "dato",
+          "valor": 1.7,
+          "unidad": "t/t fibra"
+        },
+        "nota_tecnica": "Coproducto destinado a extracción de aceite y expeller proteico.",
+        "fuente_id": "buyatti-web-2026",
+        "cita_ubicacion": "buyatti.com.ar (procesamiento semilla de algodón)"
+      },
+      {
+        "numero": 4,
+        "nombre": "Fibra desmotada hacia limpieza",
+        "tipo": "proceso",
+        "origen_tag": "M-101",
+        "destino_tag": "S-101",
+        "puntos": [
+          [
+            502,
+            272
+          ],
+          [
+            502,
+            476
+          ]
+        ],
+        "flag_pos": [
+          502,
+          388
+        ],
+        "especies": "Celulosa cruda (~94% masa)",
+        "fase": "Sólido",
+        "temperatura_c": "25-35",
+        "presion_bar": "1,0",
+        "flujo_especifico": {
+          "estado": "dato",
+          "valor": 1,
+          "unidad": "t/t fibra"
+        },
+        "nota_tecnica": "Base 1,00 t de fibra cruda de desmote.",
+        "fuente_id": "buyatti-web-2026",
+        "cita_ubicacion": "buyatti.com.ar"
+      },
+      {
+        "numero": 5,
+        "nombre": "Fardos HVI a química húmeda",
+        "tipo": "proceso",
+        "origen_tag": "S-101",
+        "destino_tag": "X-201",
+        "puntos": [
+          [
+            536,
+            515
+          ],
+          [
+            642,
+            515
+          ],
+          [
+            642,
+            240
+          ],
+          [
+            716,
+            240
+          ]
+        ],
+        "flag_pos": [
+          642,
+          388
+        ],
+        "especies": "Fibra limpia (~94% celulosa, 3% pectinas/ceras)",
+        "fase": "Sólido",
+        "temperatura_c": "25",
+        "presion_bar": "1,0",
+        "flujo_especifico": {
+          "estado": "dato",
+          "valor": 0.97,
+          "unidad": "t/t fibra"
+        },
+        "nota_tecnica": "Descuenta ~3% de fibrilla corta/motas en limpieza.",
+        "fuente_id": "eu-bref-textiles-2023",
+        "cita_ubicacion": "EU Textiles BREF (2023)"
+      },
+      {
+        "numero": 6,
+        "nombre": "Fibra descrudada hidrófila",
+        "tipo": "proceso",
+        "origen_tag": "X-201",
+        "destino_tag": "R-201",
+        "puntos": [
+          [
+            760,
+            266
+          ],
+          [
+            760,
+            480
+          ]
+        ],
+        "flag_pos": [
+          760,
+          388
+        ],
+        "especies": "Celulosa descerada húmeda",
+        "fase": "Bifásico",
+        "temperatura_c": "90-95",
+        "presion_bar": "1,0",
+        "flujo_especifico": {
+          "estado": "dato",
+          "valor": 0.94,
+          "unidad": "t/t fibra"
+        },
+        "nota_tecnica": "Ceras y pectinas removidas en baño alcalino.",
+        "fuente_id": "eu-bref-textiles-2023",
+        "cita_ubicacion": "EU Textiles BREF (2023)"
+      },
+      {
+        "numero": 7,
+        "nombre": "Fibra blanqueada húmeda a lavado",
+        "tipo": "proceso",
+        "origen_tag": "R-201",
+        "destino_tag": "T-301",
+        "puntos": [
+          [
+            794,
+            515
+          ],
+          [
+            964,
+            515
+          ],
+          [
+            964,
+            240
+          ],
+          [
+            1020,
+            240
+          ]
+        ],
+        "flag_pos": [
+          964,
+          388
+        ],
+        "especies": "Celulosa blanca + baño peróxido agotado",
+        "fase": "Bifásico",
+        "temperatura_c": "85-95",
+        "presion_bar": "1,0",
+        "flujo_especifico": {
+          "estado": "dato",
+          "valor": 0.92,
+          "unidad": "t/t fibra"
+        },
+        "nota_tecnica": "~5,67 kmol unidad anhidroglucosa (C6H10O5).",
+        "fuente_id": "eu-bref-textiles-2023",
+        "cita_ubicacion": "EU Textiles BREF (2023)"
+      },
+      {
+        "numero": 8,
+        "nombre": "Lejía alcalina débil a concentración",
+        "tipo": "reciclo",
+        "origen_tag": "T-301",
+        "destino_tag": "V-301",
+        "puntos": [
+          [
+            1044,
+            296
+          ],
+          [
+            1044,
+            476
+          ]
+        ],
+        "flag_pos": [
+          1044,
+          388
+        ],
+        "especies": "NaOH diluido (4-6%) + H2O",
+        "fase": "Líquido",
+        "temperatura_c": "65-80",
+        "presion_bar": "1,0",
+        "flujo_especifico": {
+          "estado": "sin_datos",
+          "valor": null,
+          "unidad": "m3/t fibra"
+        },
+        "nota_tecnica": "Recuperación térmica de soda en plantas BAT.",
+        "fuente_id": "eu-bref-textiles-2023",
+        "cita_ubicacion": "EU Textiles BREF (2023): caustic recovery"
+      },
+      {
+        "numero": 9,
+        "nombre": "Reciclo de soda concentrada al descrudado",
+        "tipo": "reciclo",
+        "origen_tag": "V-301",
+        "destino_tag": "X-201",
+        "puntos": [
+          [
+            1044,
+            550
+          ],
+          [
+            1044,
+            668
+          ],
+          [
+            692,
+            668
+          ],
+          [
+            692,
+            260
+          ],
+          [
+            716,
+            260
+          ]
+        ],
+        "flag_pos": [
+          868,
+          668
+        ],
+        "especies": "NaOH recuperado (~30-40%)",
+        "fase": "Líquido",
+        "temperatura_c": "40-60",
+        "presion_bar": "1,0",
+        "flujo_especifico": {
+          "estado": "sin_datos",
+          "valor": null,
+          "unidad": "t/t fibra"
+        },
+        "nota_tecnica": "Reduce compra de soda fresca y carga alcalina en efluentes.",
+        "fuente_id": "eu-bref-textiles-2023",
+        "cita_ubicacion": "EU Textiles BREF (2023)"
+      },
+      {
+        "numero": 10,
+        "nombre": "Celulosa lavada y neutralizada",
+        "tipo": "proceso",
+        "origen_tag": "T-301",
+        "destino_tag": "D-401",
+        "puntos": [
+          [
+            1068,
+            240
+          ],
+          [
+            1382,
+            240
+          ]
+        ],
+        "flag_pos": [
+          1225,
+          240
+        ],
+        "especies": "(C6H10O5)n limpia (humedad ~45%)",
+        "fase": "Sólido",
+        "temperatura_c": "50-65",
+        "presion_bar": "1,0",
+        "flujo_especifico": {
+          "estado": "dato",
+          "valor": 0.92,
+          "unidad": "t/t fibra"
+        },
+        "nota_tecnica": "Alimenta la sección de secado final.",
+        "fuente_id": "eu-bref-textiles-2023",
+        "cita_ubicacion": "EU Textiles BREF (2023)"
+      },
+      {
+        "numero": 11,
+        "nombre": "Celulosa textil seca (8% humedad)",
+        "tipo": "proceso",
+        "origen_tag": "D-401",
+        "destino_tag": "EX-401",
+        "puntos": [
+          [
+            1418,
+            276
+          ],
+          [
+            1418,
+            515
+          ],
+          [
+            1512,
+            515
+          ]
+        ],
+        "flag_pos": [
+          1418,
+          405
+        ],
+        "especies": "Celulosa alfa (>98,5% b.s.)",
+        "fase": "Sólido",
+        "temperatura_c": "35-45",
+        "presion_bar": "1,0",
+        "flujo_especifico": {
+          "estado": "dato",
+          "valor": 0.92,
+          "unidad": "t/t fibra"
+        },
+        "nota_tecnica": "Lista para hilatura o procesamiento químico.",
+        "fuente_id": "inti-argentina-portal",
+        "cita_ubicacion": "INTI Textiles"
+      },
+      {
+        "numero": 12,
+        "nombre": "Hilado y fibra de celulosa terminada",
+        "tipo": "proceso",
+        "origen_tag": "EX-401",
+        "destino_tag": null,
+        "puntos": [
+          [
+            1610,
+            515
+          ],
+          [
+            1672,
+            515
+          ]
+        ],
+        "flag_pos": [
+          1642,
+          515
+        ],
+        "especies": "Fibra e hilado (C6H10O5)n",
+        "fase": "Sólido",
+        "temperatura_c": "25",
+        "presion_bar": "1,0",
+        "flujo_especifico": {
+          "estado": "dato",
+          "valor": 0.92,
+          "unidad": "t/t fibra"
+        },
+        "nota_tecnica": "Equivale a 5,67 kmol de unidad anhidroglucosa (162,14 kg/kmol).",
+        "fuente_id": "uncomtrade-ar-lote2-agro-2024",
+        "cita_ubicacion": "UN Comtrade HS 520100 (2024)"
+      }
+    ],
+    "servicios": [
+      {
+        "id": "alg-aire-v101",
+        "equipo_tag": "V-101",
+        "etiqueta": "Aire caliente 70 °C",
+        "direccion": "entrada",
+        "x": 318,
+        "y": 204,
+        "dx": 0,
+        "dy": -46
+      },
+      {
+        "id": "alg-naoh-x201",
+        "equipo_tag": "X-201",
+        "etiqueta": "NaOH ac. (s/d)",
+        "direccion": "entrada",
+        "x": 760,
+        "y": 214,
+        "dx": 0,
+        "dy": -46
+      },
+      {
+        "id": "alg-h2o2-r201",
+        "equipo_tag": "R-201",
+        "etiqueta": "H2O2 + estabil.",
+        "direccion": "entrada",
+        "x": 726,
+        "y": 515,
+        "dx": -54,
+        "dy": 0
+      },
+      {
+        "id": "alg-h2o-t301",
+        "equipo_tag": "T-301",
+        "etiqueta": "Agua lavado (s/d)",
+        "direccion": "entrada",
+        "x": 1044,
+        "y": 184,
+        "dx": 0,
+        "dy": -44
+      }
+    ],
+    "limites_bateria": [
+      {
+        "id": "alg-in-bruto",
+        "lado": "entrada",
+        "categoria": "materia_prima",
+        "nombre": "Algodón en bruto cosechado",
+        "formula": "Fibra + Semilla",
+        "cantidad_masa": "3,000 t / t fibra",
+        "cantidad_molar": null,
+        "fraccion_pureza": "~33% fibra · ~57% sem.",
+        "corriente_num": 1,
+        "y": 196,
+        "nota": "Producción líder provincial en Chaco (SAGyP 2024/25).",
+        "fuente_id": "sagyp-estimaciones-2026-03"
+      },
+      {
+        "id": "alg-in-reactivos",
+        "lado": "entrada",
+        "categoria": "servicio",
+        "nombre": "Soda cáustica + peróxido",
+        "formula": "NaOH + H2O2 (TCF)",
+        "cantidad_masa": "s/d (depende de tejido)",
+        "cantidad_molar": null,
+        "fraccion_pureza": "Blanqueo libre de cloro",
+        "corriente_num": 6,
+        "y": 356,
+        "nota": "Soda parcialmente recuperada en evaporador V-301 (BAT).",
+        "fuente_id": "eu-bref-textiles-2023"
+      },
+      {
+        "id": "alg-out-semilla",
+        "lado": "salida",
+        "categoria": "subproducto",
+        "nombre": "Semilla de algodón y restos",
+        "formula": "Aceite + Forraje",
+        "cantidad_masa": "1,700 t sem. + 0,300 t imp.",
+        "cantidad_molar": null,
+        "fraccion_pureza": "67% masa bruta salida",
+        "corriente_num": 3,
+        "y": 196,
+        "nota": "La semilla se procesa en plantas aceiteras del NEA.",
+        "fuente_id": "buyatti-web-2026"
+      },
+      {
+        "id": "alg-out-fibra",
+        "lado": "salida",
+        "categoria": "producto",
+        "nombre": "Celulosa textil blanqueada",
+        "formula": "(C6H10O5)n",
+        "cantidad_masa": "0,920 t / t fibra cruda",
+        "cantidad_molar": "5,67 kmol C6H10O5 / t",
+        "fraccion_pureza": "~99% alfa-celulosa",
+        "corriente_num": 12,
+        "y": 440,
+        "nota": "Despacho como fibra en fardos e hilado textil (HS 5201.00).",
+        "fuente_id": "uncomtrade-ar-lote2-agro-2024"
       }
     ]
   }

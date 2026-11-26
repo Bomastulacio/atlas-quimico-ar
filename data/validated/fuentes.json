@@ -350,5 +350,49 @@
     "hash": "sha256:71af49965c73a89292d2bff7be43077b91572905d0cfbb18c9ee78981a0b7a0a",
     "archivo_raw": null,
     "notas": "Referente técnico nacional en caracterización de polietilenos, metrología industrial y control ambiental de complejos químicos en Argentina."
+  },
+  {
+    "fuente_id": "eu-bref-nfm-2017",
+    "nombre": "Best Available Techniques (BAT) Reference Document for the Non-Ferrous Metals Industries (NFM BREF)",
+    "organismo": "Comisión Europea · Joint Research Centre (JRC / EU-BRITE)",
+    "tipo": "tecnica",
+    "url": "https://bureau-industrial-transformation.jrc.ec.europa.eu/reference/non-ferrous-metals-industries",
+    "fecha_descarga": "2026-11-26",
+    "hash": "sha256:8baa3084a6a932b26732bd1ceda6c461278a6a5ed0b3afb667580c6600ca03a0",
+    "archivo_raw": null,
+    "notas": "Referencia internacional para aluminio primario Hall-Héroult (ánodos precocidos), hornos de cocción de ánodos y centros de tratamiento seco de gases GTC con adsorción en alúmina y filtros de mangas."
+  },
+  {
+    "fuente_id": "epa-ap42-ch9-oil",
+    "nombre": "AP-42 Section 9.11.1 Vegetable Oil Processing (Solvent Extraction, Desolventizer-Toaster & Distillation)",
+    "organismo": "U.S. Environmental Protection Agency (US EPA)",
+    "tipo": "tecnica",
+    "url": "https://www.epa.gov/sites/default/files/2020-10/documents/c9s11-1.pdf",
+    "fecha_descarga": "2026-11-26",
+    "hash": "sha256:8ccdc7a75267e53bc9a54b7c2f59f75f892dfe8cfebf417ac55dc73387aa4ec0",
+    "archivo_raw": null,
+    "notas": "Diagrama de flujo estándar y balance de extracción de aceite vegetal por solvente hexano, desolventizado-tostado de harina, destilación de miscela y absorbedores de aceite mineral."
+  },
+  {
+    "fuente_id": "afdc-biodiesel-doe",
+    "nombre": "Biodiesel Production and Distribution (Transesterification, Methanol Recovery & Glycerin Refining)",
+    "organismo": "U.S. Department of Energy (AFDC / NREL)",
+    "tipo": "tecnica",
+    "url": "https://afdc.energy.gov/fuels/biodiesel-production",
+    "fecha_descarga": "2026-11-26",
+    "hash": "sha256:2ae2b1ba2f7d7c10eb947fe62586b2ddd6ae57f5bef2db1f25a7c22e63a310fd",
+    "archivo_raw": null,
+    "notas": "Proceso continuo de transesterificación catalítica con metanol, separación FAME/glicerina, recuperación de metanol en exceso y secado al vacío de biodiésel."
+  },
+  {
+    "fuente_id": "eu-bref-textiles-2023",
+    "nombre": "Best Available Techniques (BAT) Reference Document for the Textiles Industry (TXT BREF)",
+    "organismo": "Comisión Europea · Joint Research Centre (JRC / EU-BRITE)",
+    "tipo": "tecnica",
+    "url": "https://bureau-industrial-transformation.jrc.ec.europa.eu/reference/textiles-industry",
+    "fecha_descarga": "2026-11-26",
+    "hash": "sha256:95a85ff34aed08721925bc5918789d8422a4790da67db399cd5da328305b5491",
+    "archivo_raw": null,
+    "notas": "Referencia BAT internacional para pretratamiento químico de algodón: descrudado alcalino con NaOH, blanqueo con peróxido de hidrógeno (H2O2) libre de cloro y recuperación de soda."
   }
 ]
