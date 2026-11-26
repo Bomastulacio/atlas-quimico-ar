@@ -251,7 +251,7 @@ export function ProcessPfdDiagram({ pfd, fuentesMap }: ProcessPfdDiagramProps) {
             type="button"
             aria-pressed={showUtilities}
             onClick={() => setShowUtilities((v) => !v)}
-            className={`cursor-pointer border px-2.5 py-1 font-medium transition-colors duration-150 ${
+            className={`bencho-press cursor-pointer border px-2.5 py-1 font-medium ${
               showUtilities
                 ? 'border-ink bg-ink text-white'
                 : 'border-rule bg-stone-surface text-ink-muted hover:border-ink hover:text-ink'
@@ -264,7 +264,7 @@ export function ProcessPfdDiagram({ pfd, fuentesMap }: ProcessPfdDiagramProps) {
             type="button"
             aria-pressed={showCritFlags}
             onClick={() => setShowCritFlags((v) => !v)}
-            className={`cursor-pointer border px-2.5 py-1 font-medium transition-colors duration-150 ${
+            className={`bencho-press cursor-pointer border px-2.5 py-1 font-medium ${
               showCritFlags
                 ? 'border-ink bg-ink text-white'
                 : 'border-rule bg-stone-surface text-ink-muted hover:border-ink hover:text-ink'
@@ -277,7 +277,7 @@ export function ProcessPfdDiagram({ pfd, fuentesMap }: ProcessPfdDiagramProps) {
             type="button"
             onClick={() => setZoom((z) => Math.min(2.4, Number((z + 0.25).toFixed(2))))}
             aria-label="Acercar PFD"
-            className="inline-flex cursor-pointer items-center border border-rule bg-stone-surface px-2 py-1 text-ink hover:border-ink"
+            className="bencho-press inline-flex cursor-pointer items-center border border-rule bg-stone-surface px-2 py-1 text-ink hover:border-ink"
           >
             <ZoomIn className="h-3.5 w-3.5" />
           </button>
@@ -285,7 +285,7 @@ export function ProcessPfdDiagram({ pfd, fuentesMap }: ProcessPfdDiagramProps) {
             type="button"
             onClick={() => setZoom((z) => Math.max(0.85, Number((z - 0.25).toFixed(2))))}
             aria-label="Alejar PFD"
-            className="inline-flex cursor-pointer items-center border border-rule bg-stone-surface px-2 py-1 text-ink hover:border-ink"
+            className="bencho-press inline-flex cursor-pointer items-center border border-rule bg-stone-surface px-2 py-1 text-ink hover:border-ink"
           >
             <ZoomOut className="h-3.5 w-3.5" />
           </button>
@@ -293,7 +293,7 @@ export function ProcessPfdDiagram({ pfd, fuentesMap }: ProcessPfdDiagramProps) {
             type="button"
             onClick={handleResetView}
             aria-label="Restablecer vista PFD"
-            className="inline-flex cursor-pointer items-center gap-1 border border-rule bg-stone-surface px-2 py-1 text-ink hover:border-ink"
+            className="bencho-press inline-flex cursor-pointer items-center gap-1 border border-rule bg-stone-surface px-2 py-1 text-ink hover:border-ink"
           >
             <RotateCcw className="h-3.5 w-3.5" />
           </button>
@@ -301,16 +301,16 @@ export function ProcessPfdDiagram({ pfd, fuentesMap }: ProcessPfdDiagramProps) {
           <button
             type="button"
             onClick={() => setExpanded((v) => !v)}
-            className="inline-flex cursor-pointer items-center gap-1 border border-rule bg-stone-surface px-2.5 py-1 font-medium text-ink hover:border-ink"
+            className="bencho-press inline-flex cursor-pointer items-center gap-1 border border-rule bg-stone-surface px-2.5 py-1 font-medium text-ink hover:border-ink"
           >
             {expanded ? <Minimize2 className="h-3.5 w-3.5" /> : <Maximize2 className="h-3.5 w-3.5" />}
-            <span>{expanded ? 'Alto normal' : 'Ampliar alto'}</span>
+            <span>{expanded ? 'Ver con panel lateral' : 'Ampliar plano'}</span>
           </button>
 
           <button
             type="button"
             onClick={handleDownloadPng}
-            className="inline-flex cursor-pointer items-center gap-1 border border-rule bg-stone-surface px-2.5 py-1 font-medium text-ink hover:border-ink"
+            className="bencho-press inline-flex cursor-pointer items-center gap-1 border border-rule bg-stone-surface px-2.5 py-1 font-medium text-ink hover:border-ink"
           >
             <Camera className="h-3.5 w-3.5" />
             <span>PNG</span>
@@ -318,11 +318,16 @@ export function ProcessPfdDiagram({ pfd, fuentesMap }: ProcessPfdDiagramProps) {
         </div>
       </div>
 
-      {/* Plano PFD a ancho completo con columnas de ENTRADAS (izquierda) y SALIDAS (derecha) integradas */}
-      <div className="flex flex-col border border-rule bg-stone-surface">
+      {/* Plano PFD a la izquierda (8 cols) + Inspector técnico con descripción siempre visible al costado (4 cols) */}
+      <div className={`grid gap-5 ${expanded ? 'lg:grid-cols-1' : 'lg:grid-cols-12 lg:items-stretch'}`}>
+      <div
+        className={`flex flex-col border border-rule bg-stone-surface ${
+          expanded ? '' : 'lg:col-span-8'
+        }`}
+      >
         <div
           className={`relative w-full overflow-hidden ${
-            expanded ? 'h-[680px]' : 'h-[480px] sm:h-[560px] lg:h-[600px]'
+            expanded ? 'h-[660px]' : 'h-[430px] sm:h-[500px] lg:h-[540px]'
           }`}
         >
           <svg
@@ -775,6 +780,7 @@ export function ProcessPfdDiagram({ pfd, fuentesMap }: ProcessPfdDiagramProps) {
                       isSelected ? st.width + 1.3 : isHighlighted ? st.width + 0.5 : st.width
                     }
                     strokeDasharray={st.dashed ? '6 4' : undefined}
+                    className={st.dashed || isSelected ? 'pfd-stream-flow' : ''}
                     opacity={isHighlighted || isSelected ? 1 : 0.76}
                     markerEnd={`url(#${markerId})`}
                   />
@@ -816,7 +822,7 @@ export function ProcessPfdDiagram({ pfd, fuentesMap }: ProcessPfdDiagramProps) {
                   key={eq.tag}
                   transform={`translate(${eq.x}, ${eq.y})`}
                   data-pfd-interactive="true"
-                  className="cursor-pointer"
+                  className="pfd-svg-target cursor-pointer"
                   onClick={() => setSelection({ kind: 'equipo', tag: eq.tag })}
                 >
                   <PfdEquipmentSymbol
@@ -972,15 +978,15 @@ export function ProcessPfdDiagram({ pfd, fuentesMap }: ProcessPfdDiagramProps) {
         </div>
       </div>
 
-      {/* Bloque inferior balanceado: Inspector detallado + Resumen de Balance de Materia (Entradas vs Salidas) */}
-      <div className="grid gap-5 lg:grid-cols-12">
-        {/* Inspector del equipo o corriente seleccionada */}
+        {/* Panel inspector siempre visible al costado derecho del plano */}
         <aside
           aria-live="polite"
-          className="flex flex-col border border-rule bg-stone-surface p-5 lg:col-span-5"
+          className={`flex flex-col border border-rule bg-stone-surface p-5 ${
+            expanded ? '' : 'lg:col-span-4'
+          }`}
         >
           {selection.kind === 'equipo' && selectedEquipo ? (
-            <div className="space-y-4">
+            <div key={`eq-${selectedEquipo.tag}`} className="bencho-card-enter space-y-4">
               <div className="border-b border-rule pb-3">
                 <div className="flex items-center justify-between gap-2 text-[12px]">
                   <span className="bg-cobalt px-2 py-0.5 font-medium text-white tabular-nums">
@@ -1065,7 +1071,7 @@ export function ProcessPfdDiagram({ pfd, fuentesMap }: ProcessPfdDiagramProps) {
               </div>
             </div>
           ) : selectedCorriente ? (
-            <div className="space-y-4">
+            <div key={`st-${selectedCorriente.numero}`} className="bencho-card-enter space-y-4">
               <div className="border-b border-rule pb-3">
                 <div className="flex items-center justify-between gap-2 text-[12px]">
                   <span className="bg-cobalt px-2 py-0.5 font-medium text-white tabular-nums">
@@ -1156,8 +1162,10 @@ export function ProcessPfdDiagram({ pfd, fuentesMap }: ProcessPfdDiagramProps) {
           ) : null}
         </aside>
 
-        {/* Resumen estructurado de Balance Global de Materia (Entradas vs Salidas en t/t, kmol/t y %) */}
-        <div className="grid gap-4 border border-rule bg-stone-surface p-5 sm:grid-cols-2 lg:col-span-7">
+      </div>
+
+      {/* Balance Global de Materia (Entradas vs Salidas en t/t, kmol/t y %) */}
+      <div className="grid gap-6 border border-rule bg-stone-surface p-5 sm:grid-cols-2">
           <div>
             <div className="flex items-center gap-2 border-b border-rule pb-2.5">
               <ArrowDownToLine className="h-4 w-4 text-cobalt" />
@@ -1222,7 +1230,6 @@ export function ProcessPfdDiagram({ pfd, fuentesMap }: ProcessPfdDiagramProps) {
               ))}
             </ul>
           </div>
-        </div>
       </div>
 
       {/* Tabla de Corrientes (Stream Table) sincronizada bidireccionalmente con el PFD */}
@@ -1248,7 +1255,7 @@ export function ProcessPfdDiagram({ pfd, fuentesMap }: ProcessPfdDiagramProps) {
                 key={key}
                 type="button"
                 onClick={() => setStreamFilter(key)}
-                className={`cursor-pointer border px-2.5 py-1 font-medium transition-colors duration-150 ${
+                className={`bencho-press cursor-pointer border px-2.5 py-1 font-medium ${
                   streamFilter === key
                     ? 'border-ink bg-ink text-white'
                     : 'border-rule bg-stone-surface text-ink-muted hover:border-ink hover:text-ink'

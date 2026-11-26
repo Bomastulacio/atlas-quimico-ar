@@ -108,6 +108,7 @@
 }
 
 @media (prefers-reduced-motion: reduce) {
+
   .map-plane,
   .map-plane-tilted {
     transform: none;
@@ -269,15 +270,19 @@
 .atlas-iso .iso-shade[data-shade='0'] {
   fill: var(--anatomy-shade-0);
 }
+
 .atlas-iso .iso-shade[data-shade='1'] {
   fill: var(--anatomy-shade-1);
 }
+
 .atlas-iso .iso-shade[data-shade='2'] {
   fill: var(--anatomy-shade-2);
 }
+
 .atlas-iso .iso-shade[data-shade='3'] {
   fill: var(--anatomy-shade-3);
 }
+
 .atlas-iso .iso-top {
   fill: var(--anatomy-top);
 }
@@ -430,44 +435,57 @@
   fill: #cfd4dc;
   stroke: none;
 }
+
 .atlas-iso .tb-shine {
   fill: #ffffff;
   stroke: none;
 }
+
 .atlas-iso .tb-shade {
   fill: #8d95a3;
   stroke: none;
 }
+
 .atlas-iso .iso-pipe-alumina .tb-body {
   fill: #e8e4da;
 }
+
 .atlas-iso .iso-pipe-alumina .tb-shine {
   fill: #ffffff;
 }
+
 .atlas-iso .iso-pipe-alumina .tb-shade {
   fill: #b8b0a0;
 }
+
 .atlas-iso .iso-pipe-gas .tb-body {
   fill: #c7ced8;
 }
+
 .atlas-iso .iso-pipe-gas .tb-shade {
   fill: #7f8999;
 }
+
 .atlas-iso .iso-pipe-recycle .tb-body {
   fill: #75bd9f;
 }
+
 .atlas-iso .iso-pipe-recycle .tb-shine {
   fill: #d7f2e6;
 }
+
 .atlas-iso .iso-pipe-recycle .tb-shade {
   fill: #277052;
 }
+
 .atlas-iso .iso-pipe-steel .tb-body {
   fill: #b6c2d6;
 }
+
 .atlas-iso .iso-pipe-steel .tb-shine {
   fill: #edf3fc;
 }
+
 .atlas-iso .iso-pipe-steel .tb-shade {
   fill: #647796;
 }
@@ -507,38 +525,48 @@
 .atlas-iso .iso-line[data-tone='hi'] {
   stroke: var(--anatomy-hi);
 }
+
 .atlas-iso .iso-line[data-tone='mid'] {
   stroke: var(--anatomy-mid);
 }
+
 .atlas-iso .iso-line[data-tone='lo'] {
   stroke: var(--anatomy-lo);
 }
+
 .atlas-iso .iso-line[data-tone='faint'] {
   stroke: var(--anatomy-faint);
 }
+
 .atlas-iso .iso-line[data-tone='lit'] {
   stroke: var(--anatomy-lit);
   stroke-width: 1.6;
 }
+
 .atlas-iso .iso-line[data-tone='red'] {
   stroke: var(--anatomy-red);
   stroke-width: 1.4;
 }
+
 .atlas-iso .iso-line[data-tone='green'] {
   stroke: var(--anatomy-green);
   stroke-width: 1.4;
 }
+
 .atlas-iso .iso-line[data-tone='blue'] {
   stroke: var(--anatomy-blue);
   stroke-width: 1.4;
 }
+
 .atlas-iso .iso-line[data-tone='ochre'] {
   stroke: var(--anatomy-ochre);
   stroke-width: 1.4;
 }
+
 .atlas-iso .iso-line[data-dashed='true'] {
   stroke-dasharray: 3.5 3.5;
 }
+
 .atlas-iso .iso-line[data-flow='true'] {
   stroke-dasharray: 3 6;
   animation: atlas-iso-flow 1500ms linear infinite;
@@ -549,15 +577,19 @@
   stroke: none;
   opacity: 0.42;
 }
+
 .atlas-iso .iso-dots[data-tone='hi'] circle {
   opacity: 0.9;
 }
+
 .atlas-iso .iso-dots[data-tone='mid'] circle {
   opacity: 0.55;
 }
+
 .atlas-iso .iso-dots[data-tone='lo'] circle {
   opacity: 0.28;
 }
+
 .atlas-iso .iso-dots circle[data-pulse='true'] {
   animation: atlas-iso-pulse 1800ms ease-in-out infinite;
 }
@@ -569,18 +601,88 @@
 }
 
 @keyframes atlas-iso-pulse {
+
   0%,
   100% {
     opacity: 0.22;
   }
+
   50% {
     opacity: 0.92;
   }
 }
 
 @media (prefers-reduced-motion: reduce) {
+
   .atlas-iso .iso-line[data-flow='true'],
   .atlas-iso .iso-dots circle[data-pulse='true'] {
+    animation: none;
+  }
+}
+
+/* Micro-interacciones táctiles estilo Bencho.dev (física seca, feedback inmediato y cero rebote excesivo) */
+.bencho-press {
+  transition:
+    transform 150ms cubic-bezier(0.22, 1, 0.36, 1),
+    background-color 160ms ease,
+    border-color 160ms ease,
+    color 160ms ease,
+    box-shadow 180ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.bencho-press:hover:not(:disabled) {
+  transform: translateY(-1px);
+}
+
+.bencho-press:active:not(:disabled) {
+  transform: translateY(0) scale(0.975);
+}
+
+.bencho-card-enter {
+  animation: bencho-card-in 240ms cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+@keyframes bencho-card-in {
+  from {
+    opacity: 0;
+    transform: translateY(6px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.pfd-stream-flow {
+  stroke-dasharray: 7 5;
+  animation: pfd-dash-flow 1.35s linear infinite;
+}
+
+@keyframes pfd-dash-flow {
+  to {
+    stroke-dashoffset: -24;
+  }
+}
+
+.pfd-svg-target {
+  transition: opacity 180ms ease, filter 180ms ease;
+}
+
+.pfd-svg-target:hover {
+  filter: drop-shadow(0 2px 6px rgba(10, 66, 224, 0.14));
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .bencho-press,
+  .bencho-press:hover:not(:disabled),
+  .bencho-press:active:not(:disabled),
+  .bencho-card-enter {
+    transform: none;
+    animation: none;
+    transition: none;
+  }
+
+  .pfd-stream-flow {
     animation: none;
   }
 }

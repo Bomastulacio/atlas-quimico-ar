@@ -354,7 +354,7 @@ export function ProcessFlowDiagram({ procesoCompleto }: ProcessFlowDiagramProps)
               <button
                 type="button"
                 onClick={() => setViewMode('pfd')}
-                className={`cursor-pointer px-3 py-1 font-medium transition-colors duration-150 ${
+                className={`bencho-press cursor-pointer px-3 py-1 font-medium ${
                   viewMode === 'pfd' ? 'bg-ink text-white' : 'text-ink-muted hover:text-ink'
                 }`}
               >
@@ -363,7 +363,7 @@ export function ProcessFlowDiagram({ procesoCompleto }: ProcessFlowDiagramProps)
               <button
                 type="button"
                 onClick={() => setViewMode('bfd')}
-                className={`cursor-pointer px-3 py-1 font-medium transition-colors duration-150 ${
+                className={`bencho-press cursor-pointer px-3 py-1 font-medium ${
                   viewMode === 'bfd' ? 'bg-ink text-white' : 'text-ink-muted hover:text-ink'
                 }`}
               >
