@@ -57,4 +57,18 @@ Todas las nuevas cadenas, bocetos 3D y diagramas de proceso deben respetar estos
   - **Zoom con rueda no invasivo:** nunca atrapar el scroll normal de la página. `Ctrl + rueda` (o pellizco de trackpad) hace zoom suave anclado al cursor hasta `320%`; el scroll normal muestra un aviso discreto de `2,2 s` y existe el botón `Rueda libre` (`Esc` libera) para zoom directo con rueda.
   - Cuando una cadena opera varias rutas tecnológicas en Argentina (ej. Litio Solar vs DLE, Petroquímica Dow PE vs Unipar PVC), exponer el selector de **Ruta tecnológica** en `ProcessFlowDiagram.tsx` (`?ruta=<proceso_id>#diagrama`) y mostrar la ruta específica de cada provincia y departamento en `ProvinceSidePanel.tsx`.
 - **Micro-interacciones táctiles (estilo Bencho.dev):** usar `.bencho-press`, `.bencho-card-enter`, `.pfd-stream-flow` y `.pfd-svg-target` definidos en `src/styles/global.css`, con feedback seco y respeto estricto de `prefers-reduced-motion`.
+- **Plantilla dinámica única de producto (`src/pages/productos/[slug].astro`):** nunca crear archivos `.astro` sueltos por cada producto nuevo; toda cadena nueva se renderiza automáticamente desde `data/validated/*.json` y `src/data/productPageConfig.ts`.
 - **Servidor local para previsualización:** tras compilar (`npm run build`), recomendar `npm run preview` (o `npm run dev -- --force`) + `Ctrl + Shift + R` si el usuario tenía `dev` abierto y Vite invalidó caché de `three`.
+
+## 6. Hoja de ruta acordada: Escala Nacional, Empresas Multiprovinciales y Red B2B
+
+Decisiones de arquitectura y secuencia aprobadas por el usuario para escalar sin acumular código innecesario:
+
+1. **Secuencia ordenada (primero completar provincias sobre la base limpia):**
+   - Mantener las 6 categorías actuales (`metalurgia`, `mineria_quimica`, `fertilizantes`, `agroindustria`, `petroquimica`, `bioenergia`) sin abrir tablas ni rubros vacíos antes de tiempo, hasta completar la cobertura de las 24 provincias sobre la arquitectura actual limpia.
+   - **Primera excepción piloto industrial:** incorporar **Druetta Hnos. S.A.** (General Rodríguez, Buenos Aires · galvanizado por inmersión en caliente, encuadrado en `metalurgia`) como primera empresa transformadora/proveedora industrial fuera de los commodities primarios, únicamente con datos públicos verificables.
+2. **Doble lectura Empresa Nacional vs. Provincia Independiente (etapa de expansión corporativa):**
+   - Cuando se incorporen múltiples complejos de una misma empresa en distintas provincias (ej. **YPF** en Neuquén, Mendoza, Buenos Aires, Chubut y Santa Cruz), evolucionar `plantas` hacia `unidades_planta` (`planta <-> proceso <-> producto`) y fichas `/empresas/[slug]` que muestren toda la línea de producción nacional de esa empresa, **preservando siempre la independencia territorial**: al entrar a una provincia o departamento se muestra únicamente el proceso que opera en esa localidad.
+3. **Regla estricta para vínculos proveedor-cliente B2B y futuro Agente 4:**
+   - **Solo fuentes públicas verificables:** jamás cargar relaciones cliente-proveedor, subcontrataciones ni proyectos por comentarios verbales, inferencias o rumores. Un cruce B2B (ej. proveedor industrial -> operadora energética o minera) solo ingresa a Supabase si consta explícitamente en una fuente pública verificable con URL, fecha, hash `sha256` y `cita_ubicacion` auditable por el Agente 3.
+   - Cuando se abra la etapa de red de suministros, sumar **identidad fiscal (`CUIT`)** en `empresas` para evitar duplicados societarios y el **Agente 4 (Cruce de Cadenas y Suministros)** bajo el mismo control determinista e `interrupt()` humano.

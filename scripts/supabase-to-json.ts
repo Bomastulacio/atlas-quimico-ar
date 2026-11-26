@@ -11,6 +11,7 @@ import fs from 'node:fs/promises';
 import path from 'node:path';
 import {
   AtlasDatasetSchema,
+  PfdDatasetSchema,
   validateDatasetIntegrity,
   type AtlasDataset,
   type Fuente,
@@ -42,20 +43,33 @@ function sha256(content: string): string {
   return `sha256:${crypto.createHash('sha256').update(content).digest('hex')}`;
 }
 
-async function fetchTable(baseUrl: string, apiKey: string, table: TabName): Promise<DbRow[]> {
+const PAGE_SIZE = 1000;
+
+async function fetchTable(baseUrl: string, apiKey: string, table: string): Promise<DbRow[]> {
   const url = `${baseUrl.replace(/\/+$/, '')}/rest/v1/${table}?select=*`;
-  const res = await fetch(url, {
-    headers: {
-      apikey: apiKey,
-      Authorization: `Bearer ${apiKey}`,
-      Accept: 'application/json',
-    },
-  });
-  if (!res.ok) {
-    const body = await res.text();
-    throw new Error(`Error consultando "${table}" en Supabase (${res.status}): ${body}`);
+  const allRows: DbRow[] = [];
+  let offset = 0;
+
+  while (true) {
+    const res = await fetch(url, {
+      headers: {
+        apikey: apiKey,
+        Authorization: `Bearer ${apiKey}`,
+        Accept: 'application/json',
+        Range: `${offset}-${offset + PAGE_SIZE - 1}`,
+      },
+    });
+    if (!res.ok) {
+      const body = await res.text();
+      throw new Error(`Error consultando "${table}" en Supabase (${res.status}): ${body}`);
+    }
+    const batch = (await res.json()) as DbRow[];
+    allRows.push(...batch);
+    if (batch.length < PAGE_SIZE) break;
+    offset += PAGE_SIZE;
   }
-  return (await res.json()) as DbRow[];
+
+  return allRows;
 }
 
 function resolveProvenance(row: DbRow, fuentesMap: Map<string, Fuente>, ctx: string): Provenance {
@@ -412,8 +426,20 @@ async function main() {
     'utf-8'
   );
 
+  // Sincronizar también pfd_procesos cuando la tabla exista y tenga filas
+  const pfdRows = await fetchTable(supabaseUrl, supabaseKey, 'pfd_procesos');
+  if (pfdRows.length > 0) {
+    const cleanedPfds = pfdRows.map(({ updated_at: _u, ...rest }) => rest);
+    const parsedPfds = PfdDatasetSchema.parse(cleanedPfds);
+    await fs.writeFile(
+      path.join(VALIDATED_DIR, 'pfd_procesos.json'),
+      `${JSON.stringify(parsedPfds, null, 2)}\n`,
+      'utf-8'
+    );
+  }
+
   console.log(
-    `[supabase-to-json] OK — ${TABS.length} tablas descargadas de Supabase, validadas y escritas en data/validated/.`
+    `[supabase-to-json] OK — ${TABS.length} tablas + ${pfdRows.length} PFDs descargados con paginación desde Supabase y escritos en data/validated/.`
   );
 }
 

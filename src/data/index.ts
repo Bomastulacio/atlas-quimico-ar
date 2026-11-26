@@ -305,6 +305,15 @@ const RUTA_TERRITORIAL_FALLBACK: Record<string, Record<string, string[]>> = {
   },
 };
 
+// Mapeo declarativo planta -> procesos operados localmente (base previa a tabla N:M unidades_planta)
+const PLANTA_PROCESOS_MAP: Record<string, string[]> = {
+  'olaroz-sales-de-jujuy': ['litio-salmuera-carbonatacion'],
+  'fenix-hombre-muerto': ['litio-dle-adsorcion'],
+  'rincon-salta': ['litio-dle-adsorcion'],
+  'dow-polo-bahia-blanca': ['petroquimica-steam-cracking-polietileno'],
+  'unipar-indupa-bahia-blanca': ['petroquimica-cloro-alcali-pvc'],
+};
+
 function resolveRutasTerritorialesPorProducto(
   ds: AtlasDataset,
   provinciaId: string,
@@ -312,39 +321,21 @@ function resolveRutasTerritorialesPorProducto(
   productoIds: string[]
 ): Record<string, RutaTerritorialResumen[]> {
   const procById = new Map(ds.procesos.map((p) => [p.proceso_id, p]));
-  const plantIds = new Set(plantasLocales.map((p) => p.planta_id));
   const resultado: Record<string, RutaTerritorialResumen[]> = {};
 
   for (const prodId of productoIds) {
     const procesosProd = ds.procesos.filter((p) => p.producto_id === prodId);
     if (procesosProd.length === 0) continue;
 
-    let procesoIdsSeleccionados: string[] = [];
+    const validIds = new Set(procesosProd.map((p) => p.proceso_id));
+    const mappedFromPlants = plantasLocales
+      .flatMap((pl) => PLANTA_PROCESOS_MAP[pl.planta_id] ?? [])
+      .filter((id) => validIds.has(id));
 
-    if (prodId === 'litio') {
-      if (plantIds.has('fenix-hombre-muerto') || plantIds.has('rincon-salta')) {
-        procesoIdsSeleccionados.push('litio-dle-adsorcion');
-      }
-      if (plantIds.has('olaroz-sales-de-jujuy')) {
-        procesoIdsSeleccionados.push('litio-salmuera-carbonatacion');
-      }
-      if (procesoIdsSeleccionados.length === 0) {
-        procesoIdsSeleccionados = RUTA_TERRITORIAL_FALLBACK.litio[provinciaId] ?? [procesosProd[0].proceso_id];
-      }
-    } else if (prodId === 'petroquimica') {
-      if (plantIds.has('dow-polo-bahia-blanca')) {
-        procesoIdsSeleccionados.push('petroquimica-steam-cracking-polietileno');
-      }
-      if (plantIds.has('unipar-indupa-bahia-blanca')) {
-        procesoIdsSeleccionados.push('petroquimica-cloro-alcali-pvc');
-      }
-      if (procesoIdsSeleccionados.length === 0) {
-        procesoIdsSeleccionados =
-          RUTA_TERRITORIAL_FALLBACK.petroquimica[provinciaId] ?? procesosProd.map((p) => p.proceso_id);
-      }
-    } else {
-      procesoIdsSeleccionados = procesosProd.map((p) => p.proceso_id);
-    }
+    const procesoIdsSeleccionados =
+      mappedFromPlants.length > 0
+        ? mappedFromPlants
+        : (RUTA_TERRITORIAL_FALLBACK[prodId]?.[provinciaId] ?? procesosProd.map((p) => p.proceso_id));
 
     const dedupIds = [...new Set(procesoIdsSeleccionados)];
     resultado[prodId] = dedupIds
@@ -461,11 +452,12 @@ export function getMapaProvinciasData(): MapaProvinciaResumen[] {
 
 export interface FichaProducto {
   producto: Producto;
-  zonas: Array<ProductoZona & { provincia: Provincia }>;
+  zonas: Array<ProductoZona & { provincia: Provincia; departamento: Departamento | null }>;
   procesos: ProcesoCompleto[];
   plantas: Array<Planta & { empresa: Empresa | null; provincia: Provincia | null }>;
   produccion: ProduccionRegistro[];
   comercioExterior: ComercioExteriorRegistro[];
+  fuentesCitadas: Fuente[];
 }
 
 export function getFichaProducto(productoId: string): FichaProducto | undefined {
@@ -475,6 +467,7 @@ export function getFichaProducto(productoId: string): FichaProducto | undefined 
   const ds = loadDataset();
   const empMap = new Map(ds.empresas.map((e) => [e.empresa_id, e]));
   const provMap = new Map(ds.provincias.map((p) => [p.provincia_id, p]));
+  const deptMap = new Map(ds.departamentos.map((d) => [d.departamento_id, d]));
 
   const procesos = getProcesos(productoId)
     .map((p) => getProceso(p.proceso_id))
@@ -486,13 +479,38 @@ export function getFichaProducto(productoId: string): FichaProducto | undefined 
     provincia: provMap.get(pl.provincia_id) ?? null,
   }));
 
+  const zonas = getZonasPorProducto(productoId).map((z) => ({
+    ...z,
+    departamento: z.departamento_id ? (deptMap.get(z.departamento_id) ?? null) : null,
+  }));
+
+  const produccion = getProduccion(productoId);
+  const comercioExterior = getComercioExterior(productoId);
+
+  const citedIds = new Set<string>([
+    ...zonas.map((z) => z.procedencia.fuente_id),
+    ...procesos.map((p) => p.proceso.procedencia.fuente_id),
+    ...procesos.flatMap((p) => p.pasos.map((s) => s.procedencia.fuente_id)),
+    ...procesos.flatMap((p) => p.conexiones.map((c) => c.procedencia.fuente_id)),
+    ...procesos.flatMap((p) => Object.keys(p.pfdFuentes)),
+    ...plantas.map((pl) => pl.procedencia.fuente_id),
+    ...plantas
+      .map((pl) => pl.empresa?.procedencia.fuente_id)
+      .filter((id): id is string => Boolean(id)),
+    ...produccion.map((pr) => pr.procedencia.fuente_id),
+    ...comercioExterior.map((ce) => ce.procedencia.fuente_id),
+  ]);
+
+  const fuentesCitadas = ds.fuentes.filter((f) => citedIds.has(f.fuente_id));
+
   return {
     producto,
-    zonas: getZonasPorProducto(productoId),
+    zonas,
     procesos,
     plantas,
-    produccion: getProduccion(productoId),
-    comercioExterior: getComercioExterior(productoId),
+    produccion,
+    comercioExterior,
+    fuentesCitadas,
   };
 }
 

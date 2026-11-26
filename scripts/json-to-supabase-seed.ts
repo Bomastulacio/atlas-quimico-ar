@@ -4,7 +4,12 @@
  */
 import fs from 'node:fs/promises';
 import path from 'node:path';
-import { AtlasDatasetSchema, validateDatasetIntegrity, type AtlasDataset } from '../src/schemas';
+import {
+  AtlasDatasetSchema,
+  PfdDatasetSchema,
+  validateDatasetIntegrity,
+  type AtlasDataset,
+} from '../src/schemas';
 
 const ROOT_DIR = process.cwd();
 const VALIDATED_DIR = path.join(ROOT_DIR, 'data', 'validated');
@@ -78,6 +83,8 @@ async function main() {
     console.error('[supabase:seed] Falló integridad referencial:', integrity.errors);
     process.exit(1);
   }
+
+  const pfdList = PfdDatasetSchema.parse(await readValidated('pfd_procesos.json'));
 
   const sections: string[] = [
     '-- =============================================================================',
@@ -407,6 +414,42 @@ async function main() {
         sqlVal(ce.procedencia.fuente_id),
         sqlVal(ce.procedencia.cita_ubicacion),
         sqlVal(ce.procedencia.confianza),
+      ])
+    ),
+    upsertBlock(
+      'pfd_procesos',
+      'proceso_id',
+      [
+        'proceso_id',
+        'producto_id',
+        'titulo',
+        'norma_simbologia',
+        'base_calculo',
+        'resumen_tecnico',
+        'nota_metodologica',
+        'canvas_width',
+        'canvas_height',
+        'secciones',
+        'equipos',
+        'corrientes',
+        'servicios',
+        'limites_bateria',
+      ],
+      pfdList.map((pfd) => [
+        sqlVal(pfd.proceso_id),
+        sqlVal(pfd.producto_id),
+        sqlVal(pfd.titulo),
+        sqlVal(pfd.norma_simbologia),
+        sqlVal(pfd.base_calculo),
+        sqlVal(pfd.resumen_tecnico),
+        sqlVal(pfd.nota_metodologica),
+        sqlVal(pfd.canvas_width),
+        sqlVal(pfd.canvas_height),
+        sqlJsonb(pfd.secciones),
+        sqlJsonb(pfd.equipos),
+        sqlJsonb(pfd.corrientes),
+        sqlJsonb(pfd.servicios),
+        sqlJsonb(pfd.limites_bateria),
       ])
     ),
     'COMMIT;',
