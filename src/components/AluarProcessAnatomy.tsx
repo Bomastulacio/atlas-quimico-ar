@@ -207,7 +207,8 @@ export function AluarProcessAnatomy({
   const computeFitDistance = useCallback((kit: InkworksKit, radius: number, w: number, h: number) => {
     const vFov = kit.camera.fov * D2R;
     const tanV = Math.tan(vFov / 2);
-    const tanH = tanV * (w / Math.max(1, h));
+    // Reserva margen lateral para que las etiquetas entren cómodas sin tapar la máquina ni obligar a hacer zoom out
+    const tanH = tanV * (w / Math.max(1, h)) * 0.78;
     const compactBoost = w < 640 ? 1.15 : 1.0;
     return Math.max(6.8, Math.min(36, (radius * compactBoost) / Math.min(tanV, tanH)));
   }, []);
@@ -441,6 +442,7 @@ export function AluarProcessAnatomy({
           const isLeft = item.side === 'L';
           btn.style.opacity = '1';
           btn.style.pointerEvents = 'auto';
+          btn.style.maxWidth = `${item.maxWidth}px`;
           btn.style.left = `${item.colX.toFixed(1)}px`;
           btn.style.top = `${item.ly.toFixed(1)}px`;
           btn.style.transform = isLeft ? 'translate(-100%, -50%)' : 'translate(0%, -50%)';
@@ -796,20 +798,20 @@ export function AluarProcessAnatomy({
                     type="button"
                     onClick={() => setSelectedPartNum(item.n)}
                     style={{ opacity: 0 }}
-                    className={`absolute inline-flex max-w-[220px] cursor-pointer items-center gap-1.5 border px-2 py-1 text-left text-[12px] shadow-2xs transition-colors duration-150 ${
+                    className={`absolute inline-flex cursor-pointer items-start gap-1.5 border px-2 py-1.5 text-left text-[11px] leading-snug shadow-2xs transition-colors duration-150 sm:text-[12px] ${
                       isSelected
                         ? 'border-ink bg-ink text-white'
                         : 'border-rule-strong/35 bg-stone-surface/95 text-ink hover:border-ink'
                     }`}
                   >
                     <span
-                      className={`inline-flex h-4 w-4 shrink-0 items-center justify-center text-[11px] font-medium tabular-nums ${
+                      className={`mt-0.5 inline-flex h-4 w-4 shrink-0 items-center justify-center text-[10px] font-medium tabular-nums sm:text-[11px] ${
                         isSelected ? 'bg-white text-ink' : 'bg-stone-subtle text-ink'
                       }`}
                     >
                       {item.n}
                     </span>
-                    <span className="truncate font-normal">{item.name}</span>
+                    <span className="font-normal whitespace-normal">{item.name}</span>
                   </button>
                 );
               })}

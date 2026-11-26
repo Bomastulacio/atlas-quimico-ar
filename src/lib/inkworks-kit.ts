@@ -55,6 +55,7 @@ export interface PlacedCallout {
   colX: number;
   ly: number;
   elbowX: number;
+  maxWidth: number;
 }
 
 export function makeInkworksKit(canvas: HTMLCanvasElement) {
@@ -403,24 +404,36 @@ export function projectCallouts2Columns(
     c.at(v);
     v.project(camera);
     if (v.z >= 1 || v.z <= -1) continue;
-    const [ax, ay] = toScreen(v);
-    if (ax < -40 || ax > width + 40 || ay < -20 || ay > height + 20) continue;
+    const [rawAx, rawAy] = toScreen(v);
+    if (rawAx < -120 || rawAx > width + 120 || rawAy < -80 || rawAy > height + 80) continue;
+    // Mantiene el punto guía dentro del borde visible si el usuario acerca mucho la cámara
+    const ax = Math.max(8, Math.min(width - 8, rawAx));
+    const ay = Math.max(8, Math.min(height - 8, rawAy));
     raw.push({ ...c, ax, ay });
   }
 
-  raw.sort((a, b) => a.ax - b.ax);
+  raw.sort((a, b) => a.ax - b.ax || a.n - b.n);
   const half = Math.ceil(raw.length / 2);
   const sides: Record<'L' | 'R', typeof raw> = {
     L: raw.slice(0, half),
     R: raw.slice(half),
   };
 
-  const labelPadX = compact ? 118 : 178;
-  const colL = Math.max(labelPadX, Math.min(width * 0.24, minX - 18));
-  const colR = Math.min(width - labelPadX, Math.max(width * 0.76, maxX + 18));
-  const gap = compact ? 24 : 28;
-  const yTop = 22;
-  const yBot = height - 22;
+  // Ancho máximo y márgenes adaptados al tamaño real del lienzo para que ninguna etiqueta se recorte ni desborde
+  const outerPad = compact ? 10 : 14;
+  const maxLabelW =
+    width < 520
+      ? Math.max(116, Math.floor((width - outerPad * 2 - 20) * 0.44))
+      : compact
+        ? Math.min(184, Math.floor(width * 0.29))
+        : Math.min(208, Math.floor(width * 0.255));
+  const labelPadX = outerPad + maxLabelW;
+
+  const colL = Math.max(labelPadX, Math.min(width * 0.3, minX - 16));
+  const colR = Math.min(width - labelPadX, Math.max(width * 0.7, maxX + 16));
+  const gap = compact ? 48 : 54;
+  const yTop = 26;
+  const yBot = Math.max(yTop + gap, height - 58);
 
   const result: PlacedCallout[] = [];
 
@@ -460,6 +473,7 @@ export function projectCallouts2Columns(
         colX,
         ly,
         elbowX,
+        maxWidth: maxLabelW,
       });
     });
   }
