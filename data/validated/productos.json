@@ -108,5 +108,45 @@
     "descripcion_corta": "Complejos sucroalcoholeros de Tucumán: trapiche, cristalización de azúcar, fermentación de melazas y jugo a etanol anhidro con cogeneración desde bagazo.",
     "mdx_slug": "bioetanol-cana",
     "estado_mvp": "validado"
+  },
+  {
+    "producto_id": "soda-solvay",
+    "nombre": "Carbonato de sodio (Soda Solvay)",
+    "categoria": "mineria_quimica",
+    "formula_quimica": "Na2CO3",
+    "icono_id": "soda-solvay",
+    "descripcion_corta": "Carbonato de sodio sintético producido en San Antonio Oeste por proceso Solvay a partir de salmuera y caliza, insumo crítico del litio y del vidrio.",
+    "mdx_slug": "soda-solvay",
+    "estado_mvp": "validado"
+  },
+  {
+    "producto_id": "cal-industrial",
+    "nombre": "Cal industrial (CaO)",
+    "categoria": "mineria_quimica",
+    "formula_quimica": "CaO",
+    "icono_id": "cal-industrial",
+    "descripcion_corta": "Óxido de calcio obtenido por calcinación térmica de caliza en Los Berros (San Juan), insumo clave para minería metalífera, litio y siderurgia.",
+    "mdx_slug": "cal-industrial",
+    "estado_mvp": "validado"
+  },
+  {
+    "producto_id": "oro-plata",
+    "nombre": "Oro y plata (lingote doré)",
+    "categoria": "metalurgia",
+    "formula_quimica": "Au / Ag",
+    "icono_id": "oro-plata",
+    "descripcion_corta": "Metales preciosos recuperados por lixiviación cianurada, precipitación y fundición doré en el Macizo del Deseado (Santa Cruz).",
+    "mdx_slug": "oro-plata",
+    "estado_mvp": "validado"
+  },
+  {
+    "producto_id": "celulosa-kraft",
+    "nombre": "Celulosa Kraft blanqueada",
+    "categoria": "agroindustria",
+    "formula_quimica": "(C6H10O5)n",
+    "icono_id": "celulosa-kraft",
+    "descripcion_corta": "Pulpa química de fibra larga de pino obtenida por cocción Kraft al sulfato, blanqueo ECF y ciclo cerrado de recuperación en Misiones.",
+    "mdx_slug": "celulosa-kraft",
+    "estado_mvp": "validado"
   }
 ]

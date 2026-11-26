@@ -9345,5 +9345,2393 @@
         "fuente_id": "uncomtrade-ar-lote3-2024"
       }
     ]
+  },
+  {
+    "proceso_id": "soda-solvay-proceso",
+    "producto_id": "soda-solvay",
+    "titulo": "PFD ISO 10628: Carbonato de Sodio (Proceso Solvay · San Antonio Oeste)",
+    "norma_simbologia": "ISO 10628 / ASME",
+    "base_calculo": "1,00 t Na2CO3 anhidro (EU LVIC-S BREF)",
+    "resumen_tecnico": "Síntesis amoníaco-soda desde salmuera saturada (1,50 t NaCl) y caliza (1,25 t CaCO3) con recuperación cerrada de NH3 (>99%) y reciclo de CO2.",
+    "nota_metodologica": "Balances según EU LVIC-S BREF e IPCC 2006 Vol. 3 Cap. 2.",
+    "canvas_width": 1880,
+    "canvas_height": 760,
+    "secciones": [
+      {
+        "area_id": "s1",
+        "titulo": "ÁREA 100 · SALMUERA Y HORNO DE CAL",
+        "x": 224,
+        "y": 74,
+        "width": 340,
+        "height": 612
+      },
+      {
+        "area_id": "s2",
+        "titulo": "ÁREA 200 · AMONIACADO Y CARBONATACIÓN",
+        "x": 580,
+        "y": 74,
+        "width": 350,
+        "height": 612
+      },
+      {
+        "area_id": "s3",
+        "titulo": "ÁREA 300 · FILTRACIÓN Y CALCINACIÓN",
+        "x": 946,
+        "y": 74,
+        "width": 350,
+        "height": 612
+      },
+      {
+        "area_id": "s4",
+        "titulo": "ÁREA 400 · RECUPERACIÓN NH3 Y SILOS",
+        "x": 1312,
+        "y": 74,
+        "width": 344,
+        "height": 612
+      }
+    ],
+    "equipos": [
+      {
+        "tag": "K-101",
+        "nombre": "Horno vertical de caliza",
+        "simbolo": "furnace",
+        "area_id": "s1",
+        "x": 350,
+        "y": 230,
+        "temperatura_op": "1000 °C",
+        "presion_op": "1 bar",
+        "reaccion": "CaCO3 -> CaO + CO2",
+        "condicion_critica": "CO2 40% vol al compresor",
+        "descripcion": "Calcina piedra caliza generando CO2 para carbonatación y CaO para regeneración de NH3.",
+        "fuente_id": "eu-bref-lvic-s",
+        "cita_ubicacion": "EU LVIC-S BREF Soda Ash Solvay Process"
+      },
+      {
+        "tag": "T-102",
+        "nombre": "Purificador de salmuera",
+        "simbolo": "tank",
+        "area_id": "s1",
+        "x": 350,
+        "y": 460,
+        "temperatura_op": "25 °C",
+        "presion_op": "1 bar",
+        "reaccion": null,
+        "condicion_critica": null,
+        "descripcion": "Precipita impurezas Ca2+/Mg2+ de la salmuera saturada antes de absorción.",
+        "fuente_id": "eu-bref-lvic-s",
+        "cita_ubicacion": "EU LVIC-S BREF Soda Ash Solvay Process"
+      },
+      {
+        "tag": "C-201",
+        "nombre": "Torre de absorción NH3",
+        "simbolo": "column",
+        "area_id": "s2",
+        "x": 690,
+        "y": 430,
+        "temperatura_op": "35 °C",
+        "presion_op": "1 bar",
+        "reaccion": null,
+        "condicion_critica": "Enfriamiento continuo para máxima solubilidad",
+        "descripcion": "Absorbe amoníaco reciclado en salmuera purificada.",
+        "fuente_id": "eu-bref-lvic-s",
+        "cita_ubicacion": "EU LVIC-S BREF Soda Ash Solvay Process"
+      },
+      {
+        "tag": "C-202",
+        "nombre": "Torres Solvay (carbonatación)",
+        "simbolo": "column",
+        "area_id": "s2",
+        "x": 845,
+        "y": 280,
+        "temperatura_op": "45 °C",
+        "presion_op": "2 bar",
+        "reaccion": "NaCl + NH3 + CO2 + H2O -> NaHCO3 + NH4Cl",
+        "condicion_critica": null,
+        "descripcion": "Precipita cristales de bicarbonato de sodio por burbujeo contracorriente de CO2.",
+        "fuente_id": "eu-bref-lvic-s",
+        "cita_ubicacion": "EU LVIC-S BREF Soda Ash Solvay Process"
+      },
+      {
+        "tag": "F-301",
+        "nombre": "Filtros rotativos NaHCO3",
+        "simbolo": "filter_baghouse",
+        "area_id": "s3",
+        "x": 1055,
+        "y": 280,
+        "temperatura_op": "30 °C",
+        "presion_op": "0,6 bar",
+        "reaccion": null,
+        "condicion_critica": null,
+        "descripcion": "Separa torta de NaHCO3 del licor madre de cloruro de amonio.",
+        "fuente_id": "eu-bref-lvic-s",
+        "cita_ubicacion": "EU LVIC-S BREF Soda Ash Solvay Process"
+      },
+      {
+        "tag": "D-302",
+        "nombre": "Calcinador rotativo Na2CO3",
+        "simbolo": "dryer_bed",
+        "area_id": "s3",
+        "x": 1210,
+        "y": 220,
+        "temperatura_op": "180 °C",
+        "presion_op": "1 bar",
+        "reaccion": "2 NaHCO3 -> Na2CO3 + H2O + CO2",
+        "condicion_critica": null,
+        "descripcion": "Descompone el bicarbonato a carbonato de sodio anhidro y libera CO2 rico reciclable.",
+        "fuente_id": "eu-bref-lvic-s",
+        "cita_ubicacion": "EU LVIC-S BREF Soda Ash Solvay Process"
+      },
+      {
+        "tag": "C-401",
+        "nombre": "Columna destiladora de NH3",
+        "simbolo": "column",
+        "area_id": "s4",
+        "x": 1420,
+        "y": 450,
+        "temperatura_op": "105 °C",
+        "presion_op": "1,2 bar",
+        "reaccion": "2 NH4Cl + Ca(OH)2 -> 2 NH3 + CaCl2 + 2 H2O",
+        "condicion_critica": null,
+        "descripcion": "Recupera >99% del amoníaco con lechada de cal cerrando el lazo Solvay.",
+        "fuente_id": "eu-bref-lvic-s",
+        "cita_ubicacion": "EU LVIC-S BREF Soda Ash Solvay Process"
+      },
+      {
+        "tag": "V-402",
+        "nombre": "Silos Soda Solvay densa",
+        "simbolo": "tank",
+        "area_id": "s4",
+        "x": 1560,
+        "y": 220,
+        "temperatura_op": "40 °C",
+        "presion_op": "1 bar",
+        "reaccion": null,
+        "condicion_critica": null,
+        "descripcion": "Acopio y despacho para vidrio, detergentes y salares de litio.",
+        "fuente_id": "eu-bref-lvic-s",
+        "cita_ubicacion": "EU LVIC-S BREF Soda Ash Solvay Process"
+      }
+    ],
+    "corrientes": [
+      {
+        "numero": 1,
+        "nombre": "Caliza CaCO3",
+        "tipo": "proceso",
+        "origen_tag": null,
+        "destino_tag": "K-101",
+        "puntos": [
+          [
+            208,
+            230
+          ],
+          [
+            310,
+            230
+          ]
+        ],
+        "flag_pos": [
+          255,
+          212
+        ],
+        "especies": "CaCO3 >96%",
+        "fase": "Sólido",
+        "temperatura_c": "25",
+        "presion_bar": "1",
+        "flujo_especifico": {
+          "estado": "dato",
+          "valor": 1.25,
+          "unidad": "t/t Na2CO3"
+        },
+        "nota_tecnica": "Carga de caliza triturada a horno vertical.",
+        "fuente_id": "eu-bref-lvic-s",
+        "cita_ubicacion": "EU LVIC-S BREF Soda Ash Solvay Process"
+      },
+      {
+        "numero": 2,
+        "nombre": "Salmuera saturada",
+        "tipo": "proceso",
+        "origen_tag": null,
+        "destino_tag": "T-102",
+        "puntos": [
+          [
+            208,
+            460
+          ],
+          [
+            310,
+            460
+          ]
+        ],
+        "flag_pos": [
+          255,
+          442
+        ],
+        "especies": "NaCl 26% p/p",
+        "fase": "Líquido",
+        "temperatura_c": "20",
+        "presion_bar": "1",
+        "flujo_especifico": {
+          "estado": "dato",
+          "valor": 1.5,
+          "unidad": "t/t Na2CO3"
+        },
+        "nota_tecnica": "Salmuera de salinas patagónicas purificada.",
+        "fuente_id": "eu-bref-lvic-s",
+        "cita_ubicacion": "EU LVIC-S BREF Soda Ash Solvay Process"
+      },
+      {
+        "numero": 3,
+        "nombre": "Salmuera purificada",
+        "tipo": "proceso",
+        "origen_tag": "T-102",
+        "destino_tag": "C-201",
+        "puntos": [
+          [
+            390,
+            460
+          ],
+          [
+            655,
+            460
+          ]
+        ],
+        "flag_pos": [
+          520,
+          442
+        ],
+        "especies": "NaCl libre Ca/Mg",
+        "fase": "Líquido",
+        "temperatura_c": "25",
+        "presion_bar": "2",
+        "flujo_especifico": {
+          "estado": "dato",
+          "valor": 1.5,
+          "unidad": "t/t Na2CO3"
+        },
+        "nota_tecnica": "Ingreso limpio a torre de absorción de NH3.",
+        "fuente_id": "eu-bref-lvic-s",
+        "cita_ubicacion": "EU LVIC-S BREF Soda Ash Solvay Process"
+      },
+      {
+        "numero": 4,
+        "nombre": "Gas CO2 de caliza",
+        "tipo": "proceso",
+        "origen_tag": "K-101",
+        "destino_tag": "C-202",
+        "puntos": [
+          [
+            390,
+            230
+          ],
+          [
+            815,
+            230
+          ],
+          [
+            815,
+            260
+          ]
+        ],
+        "flag_pos": [
+          610,
+          212
+        ],
+        "especies": "CO2 40% vol",
+        "fase": "Gas",
+        "temperatura_c": "40",
+        "presion_bar": "2,2",
+        "flujo_especifico": {
+          "estado": "dato",
+          "valor": 0.55,
+          "unidad": "t/t Na2CO3"
+        },
+        "nota_tecnica": "Gas lavado y comprimido desde el horno de cal.",
+        "fuente_id": "eu-bref-lvic-s",
+        "cita_ubicacion": "EU LVIC-S BREF Soda Ash Solvay Process"
+      },
+      {
+        "numero": 5,
+        "nombre": "Salmuera amoniacal",
+        "tipo": "proceso",
+        "origen_tag": "C-201",
+        "destino_tag": "C-202",
+        "puntos": [
+          [
+            725,
+            400
+          ],
+          [
+            815,
+            400
+          ],
+          [
+            815,
+            330
+          ]
+        ],
+        "flag_pos": [
+          770,
+          382
+        ],
+        "especies": "NaCl + NH3",
+        "fase": "Líquido",
+        "temperatura_c": "35",
+        "presion_bar": "2",
+        "flujo_especifico": {
+          "estado": "sin_datos",
+          "valor": null,
+          "unidad": "t/t"
+        },
+        "nota_tecnica": "Alimentación líquida a las torres Solvay.",
+        "fuente_id": "eu-bref-lvic-s",
+        "cita_ubicacion": "EU LVIC-S BREF Soda Ash Solvay Process"
+      },
+      {
+        "numero": 6,
+        "nombre": "Suspensión NaHCO3",
+        "tipo": "proceso",
+        "origen_tag": "C-202",
+        "destino_tag": "F-301",
+        "puntos": [
+          [
+            880,
+            280
+          ],
+          [
+            1015,
+            280
+          ]
+        ],
+        "flag_pos": [
+          945,
+          262
+        ],
+        "especies": "NaHCO3 + NH4Cl",
+        "fase": "Bifásico",
+        "temperatura_c": "30",
+        "presion_bar": "1",
+        "flujo_especifico": {
+          "estado": "dato",
+          "valor": 1.58,
+          "unidad": "t/t Na2CO3"
+        },
+        "nota_tecnica": "Magma cristalino de bicarbonato hacia filtración.",
+        "fuente_id": "eu-bref-lvic-s",
+        "cita_ubicacion": "EU LVIC-S BREF Soda Ash Solvay Process"
+      },
+      {
+        "numero": 7,
+        "nombre": "Torta NaHCO3",
+        "tipo": "proceso",
+        "origen_tag": "F-301",
+        "destino_tag": "D-302",
+        "puntos": [
+          [
+            1095,
+            255
+          ],
+          [
+            1165,
+            220
+          ]
+        ],
+        "flag_pos": [
+          1125,
+          215
+        ],
+        "especies": "NaHCO3 húmedo",
+        "fase": "Sólido",
+        "temperatura_c": "30",
+        "presion_bar": "1",
+        "flujo_especifico": {
+          "estado": "dato",
+          "valor": 1.58,
+          "unidad": "t/t Na2CO3"
+        },
+        "nota_tecnica": "Torta lavada lista para calcinación rotativa.",
+        "fuente_id": "eu-bref-lvic-s",
+        "cita_ubicacion": "EU LVIC-S BREF Soda Ash Solvay Process"
+      },
+      {
+        "numero": 8,
+        "nombre": "Licor NH4Cl",
+        "tipo": "subproducto",
+        "origen_tag": "F-301",
+        "destino_tag": "C-401",
+        "puntos": [
+          [
+            1055,
+            325
+          ],
+          [
+            1055,
+            450
+          ],
+          [
+            1385,
+            450
+          ]
+        ],
+        "flag_pos": [
+          1220,
+          432
+        ],
+        "especies": "NH4Cl acuoso",
+        "fase": "Líquido",
+        "temperatura_c": "30",
+        "presion_bar": "1,5",
+        "flujo_especifico": {
+          "estado": "dato",
+          "valor": 1.01,
+          "unidad": "t/t Na2CO3"
+        },
+        "nota_tecnica": "Licor madre hacia destilación de amoníaco.",
+        "fuente_id": "eu-bref-lvic-s",
+        "cita_ubicacion": "EU LVIC-S BREF Soda Ash Solvay Process"
+      },
+      {
+        "numero": 9,
+        "nombre": "Reciclo NH3",
+        "tipo": "reciclo",
+        "origen_tag": "C-401",
+        "destino_tag": "C-201",
+        "puntos": [
+          [
+            1420,
+            520
+          ],
+          [
+            1420,
+            595
+          ],
+          [
+            690,
+            595
+          ],
+          [
+            690,
+            490
+          ]
+        ],
+        "flag_pos": [
+          1055,
+          577
+        ],
+        "especies": "NH3 + H2O",
+        "fase": "Gas",
+        "temperatura_c": "75",
+        "presion_bar": "1,2",
+        "flujo_especifico": {
+          "estado": "sin_datos",
+          "valor": null,
+          "unidad": "reciclo >99%"
+        },
+        "nota_tecnica": "Retorno cerrado de amoníaco gaseoso a absorción.",
+        "fuente_id": "eu-bref-lvic-s",
+        "cita_ubicacion": "EU LVIC-S BREF Soda Ash Solvay Process"
+      },
+      {
+        "numero": 10,
+        "nombre": "Reciclo CO2 rico",
+        "tipo": "reciclo",
+        "origen_tag": "D-302",
+        "destino_tag": "C-202",
+        "puntos": [
+          [
+            1210,
+            175
+          ],
+          [
+            1210,
+            130
+          ],
+          [
+            845,
+            130
+          ],
+          [
+            845,
+            220
+          ]
+        ],
+        "flag_pos": [
+          1025,
+          114
+        ],
+        "especies": "CO2 >90%",
+        "fase": "Gas",
+        "temperatura_c": "90",
+        "presion_bar": "2",
+        "flujo_especifico": {
+          "estado": "dato",
+          "valor": 0.42,
+          "unidad": "t/t Na2CO3"
+        },
+        "nota_tecnica": "CO2 de alta pureza recuperado del calcinador.",
+        "fuente_id": "eu-bref-lvic-s",
+        "cita_ubicacion": "EU LVIC-S BREF Soda Ash Solvay Process"
+      },
+      {
+        "numero": 11,
+        "nombre": "Soda Solvay Na2CO3",
+        "tipo": "proceso",
+        "origen_tag": "V-402",
+        "destino_tag": null,
+        "puntos": [
+          [
+            1255,
+            220
+          ],
+          [
+            1525,
+            220
+          ],
+          [
+            1672,
+            220
+          ]
+        ],
+        "flag_pos": [
+          1455,
+          202
+        ],
+        "especies": "Na2CO3 >99,2%",
+        "fase": "Sólido",
+        "temperatura_c": "40",
+        "presion_bar": "1",
+        "flujo_especifico": {
+          "estado": "dato",
+          "valor": 1,
+          "unidad": "t/t Na2CO3"
+        },
+        "nota_tecnica": "Carbonato de sodio anhidro terminado.",
+        "fuente_id": "eu-bref-lvic-s",
+        "cita_ubicacion": "EU LVIC-S BREF Soda Ash Solvay Process"
+      },
+      {
+        "numero": 12,
+        "nombre": "Efluente salino CaCl2",
+        "tipo": "emision",
+        "origen_tag": "C-401",
+        "destino_tag": null,
+        "puntos": [
+          [
+            1455,
+            450
+          ],
+          [
+            1672,
+            450
+          ]
+        ],
+        "flag_pos": [
+          1575,
+          432
+        ],
+        "especies": "CaCl2 + NaCl",
+        "fase": "Líquido",
+        "temperatura_c": "95",
+        "presion_bar": "1",
+        "flujo_especifico": {
+          "estado": "dato",
+          "valor": 1.05,
+          "unidad": "t/t Na2CO3"
+        },
+        "nota_tecnica": "Descarga salina del fondo de destilación.",
+        "fuente_id": "eu-bref-lvic-s",
+        "cita_ubicacion": "EU LVIC-S BREF Soda Ash Solvay Process"
+      }
+    ],
+    "servicios": [
+      {
+        "id": "u1",
+        "equipo_tag": "D-302",
+        "etiqueta": "Vapor MP",
+        "direccion": "entrada",
+        "x": 1210,
+        "y": 185,
+        "dx": 0,
+        "dy": -28
+      },
+      {
+        "id": "u2",
+        "equipo_tag": "C-201",
+        "etiqueta": "Agua de mar",
+        "direccion": "entrada",
+        "x": 690,
+        "y": 390,
+        "dx": 0,
+        "dy": -28
+      }
+    ],
+    "limites_bateria": [
+      {
+        "id": "lb-in-1",
+        "lado": "entrada",
+        "categoria": "materia_prima",
+        "nombre": "Piedra caliza",
+        "formula": "CaCO3",
+        "cantidad_masa": "1,25 t/t",
+        "cantidad_molar": "12,5 kmol/t",
+        "fraccion_pureza": ">96% CaCO3",
+        "corriente_num": 1,
+        "y": 230,
+        "nota": "Fuente de CO2 y CaO para regenerar NH3.",
+        "fuente_id": "eu-bref-lvic-s"
+      },
+      {
+        "id": "lb-in-2",
+        "lado": "entrada",
+        "categoria": "materia_prima",
+        "nombre": "Salmuera saturada",
+        "formula": "NaCl",
+        "cantidad_masa": "1,50 t NaCl/t",
+        "cantidad_molar": "25,7 kmol/t",
+        "fraccion_pureza": "26% p/p",
+        "corriente_num": 2,
+        "y": 460,
+        "nota": "Aporta el sodio del producto final.",
+        "fuente_id": "eu-bref-lvic-s"
+      },
+      {
+        "id": "lb-out-1",
+        "lado": "salida",
+        "categoria": "producto",
+        "nombre": "Soda Solvay anhidra",
+        "formula": "Na2CO3",
+        "cantidad_masa": "1,00 t/t",
+        "cantidad_molar": "9,43 kmol/t",
+        "fraccion_pureza": ">99,2%",
+        "corriente_num": 11,
+        "y": 220,
+        "nota": "Insumo crítico para litio y vidrio.",
+        "fuente_id": "eu-bref-lvic-s"
+      },
+      {
+        "id": "lb-out-2",
+        "lado": "salida",
+        "categoria": "emision",
+        "nombre": "Solución salina CaCl2",
+        "formula": "CaCl2",
+        "cantidad_masa": "1,05 t/t",
+        "cantidad_molar": "9,46 kmol/t",
+        "fraccion_pureza": "acuosa",
+        "corriente_num": 12,
+        "y": 450,
+        "nota": "Subproducto salino de la regeneración de NH3.",
+        "fuente_id": "eu-bref-lvic-s"
+      }
+    ]
+  },
+  {
+    "proceso_id": "cal-industrial-calcinacion",
+    "producto_id": "cal-industrial",
+    "titulo": "PFD ISO 10628: Cal Viva e Hidratada (Horno PFRK · Los Berros, San Juan)",
+    "norma_simbologia": "ISO 10628 / ASME",
+    "base_calculo": "1,00 t CaO (IPCC 2006 Cap. 2.3 y EU CLM BREF)",
+    "resumen_tecnico": "Calcinación de 1,80 t de caliza en horno vertical regenerativo PFRK (950-1100 °C) con emisión estequiométrica de 0,785 t CO2/t CaO e hidratación controlada.",
+    "nota_metodologica": "Base estequiométrica IPCC 2006 Vol. 3 Cap. 2.3 (0,785 t CO2/t CaO puro) y EU CLM BREF.",
+    "canvas_width": 1880,
+    "canvas_height": 760,
+    "secciones": [
+      {
+        "area_id": "s1",
+        "titulo": "ÁREA 100 · TRITURACIÓN Y ZARANDEO",
+        "x": 224,
+        "y": 74,
+        "width": 340,
+        "height": 612
+      },
+      {
+        "area_id": "s2",
+        "titulo": "ÁREA 200 · HORNO REGENERATIVO PFRK",
+        "x": 580,
+        "y": 74,
+        "width": 355,
+        "height": 612
+      },
+      {
+        "area_id": "s3",
+        "titulo": "ÁREA 300 · ENFRIAMIENTO Y FILTROS",
+        "x": 951,
+        "y": 74,
+        "width": 345,
+        "height": 612
+      },
+      {
+        "area_id": "s4",
+        "titulo": "ÁREA 400 · HIDRATACIÓN Y SILOS",
+        "x": 1312,
+        "y": 74,
+        "width": 344,
+        "height": 612
+      }
+    ],
+    "equipos": [
+      {
+        "tag": "M-101",
+        "nombre": "Trituradora y zaranda caliza",
+        "simbolo": "mill_gin",
+        "area_id": "s1",
+        "x": 355,
+        "y": 310,
+        "temperatura_op": "25 °C",
+        "presion_op": "1 bar",
+        "reaccion": null,
+        "condicion_critica": null,
+        "descripcion": "Clasifica piedra caliza en rango 30-90 mm para permeabilidad del horno.",
+        "fuente_id": "ipcc-2006-mineral-cap2",
+        "cita_ubicacion": "IPCC 2006 Vol. 3 Cap. 2.3 Lime Production + EU CLM BREF"
+      },
+      {
+        "tag": "K-201A",
+        "nombre": "Cuba A Horno PFRK (fuego)",
+        "simbolo": "furnace",
+        "area_id": "s2",
+        "x": 695,
+        "y": 260,
+        "temperatura_op": "1050 °C",
+        "presion_op": "1 bar",
+        "reaccion": "CaCO3 -> CaO + CO2",
+        "condicion_critica": "Calcinación suave de alta reactividad",
+        "descripcion": "Descarbonatación térmica en flujo paralelo con gas natural.",
+        "fuente_id": "ipcc-2006-mineral-cap2",
+        "cita_ubicacion": "IPCC 2006 Vol. 3 Cap. 2.3 Lime Production + EU CLM BREF"
+      },
+      {
+        "tag": "K-201B",
+        "nombre": "Cuba B Horno PFRK (regeneración)",
+        "simbolo": "furnace",
+        "area_id": "s2",
+        "x": 840,
+        "y": 420,
+        "temperatura_op": "750 °C",
+        "presion_op": "1 bar",
+        "reaccion": null,
+        "condicion_critica": null,
+        "descripcion": "Recupera calor de gases de escape para precalentar la carga.",
+        "fuente_id": "ipcc-2006-mineral-cap2",
+        "cita_ubicacion": "IPCC 2006 Vol. 3 Cap. 2.3 Lime Production + EU CLM BREF"
+      },
+      {
+        "tag": "E-301",
+        "nombre": "Enfriador y molino de CaO",
+        "simbolo": "heat_exchanger",
+        "area_id": "s3",
+        "x": 1080,
+        "y": 260,
+        "temperatura_op": "90 °C",
+        "presion_op": "1 bar",
+        "reaccion": null,
+        "condicion_critica": null,
+        "descripcion": "Enfría la cal viva precalentando el aire de combustión.",
+        "fuente_id": "ipcc-2006-mineral-cap2",
+        "cita_ubicacion": "IPCC 2006 Vol. 3 Cap. 2.3 Lime Production + EU CLM BREF"
+      },
+      {
+        "tag": "F-302",
+        "nombre": "Filtro de mangas de gases",
+        "simbolo": "filter_baghouse",
+        "area_id": "s3",
+        "x": 1120,
+        "y": 470,
+        "temperatura_op": "140 °C",
+        "presion_op": "1 bar",
+        "reaccion": null,
+        "condicion_critica": null,
+        "descripcion": "Abate material particulado previo a chimenea.",
+        "fuente_id": "ipcc-2006-mineral-cap2",
+        "cita_ubicacion": "IPCC 2006 Vol. 3 Cap. 2.3 Lime Production + EU CLM BREF"
+      },
+      {
+        "tag": "R-401",
+        "nombre": "Hidratador continuo Ca(OH)2",
+        "simbolo": "reactor",
+        "area_id": "s4",
+        "x": 1430,
+        "y": 380,
+        "temperatura_op": "98 °C",
+        "presion_op": "1 bar",
+        "reaccion": "CaO + H2O -> Ca(OH)2",
+        "condicion_critica": null,
+        "descripcion": "Apagado controlado con agua para producir cal hidratada fina.",
+        "fuente_id": "ipcc-2006-mineral-cap2",
+        "cita_ubicacion": "IPCC 2006 Vol. 3 Cap. 2.3 Lime Production + EU CLM BREF"
+      },
+      {
+        "tag": "V-402",
+        "nombre": "Silos herméticos CaO / Ca(OH)2",
+        "simbolo": "tank",
+        "area_id": "s4",
+        "x": 1560,
+        "y": 220,
+        "temperatura_op": "45 °C",
+        "presion_op": "1 bar",
+        "reaccion": null,
+        "condicion_critica": null,
+        "descripcion": "Despacho a minería metalífera, litio y exportación a Chile.",
+        "fuente_id": "ipcc-2006-mineral-cap2",
+        "cita_ubicacion": "IPCC 2006 Vol. 3 Cap. 2.3 Lime Production + EU CLM BREF"
+      }
+    ],
+    "corrientes": [
+      {
+        "numero": 1,
+        "nombre": "Caliza de cantera",
+        "tipo": "proceso",
+        "origen_tag": null,
+        "destino_tag": "M-101",
+        "puntos": [
+          [
+            208,
+            310
+          ],
+          [
+            315,
+            310
+          ]
+        ],
+        "flag_pos": [
+          258,
+          292
+        ],
+        "especies": "CaCO3 >95%",
+        "fase": "Sólido",
+        "temperatura_c": "25",
+        "presion_bar": "1",
+        "flujo_especifico": {
+          "estado": "dato",
+          "valor": 1.82,
+          "unidad": "t/t CaO"
+        },
+        "nota_tecnica": "Caliza precordillerana de Los Berros.",
+        "fuente_id": "ipcc-2006-mineral-cap2",
+        "cita_ubicacion": "IPCC 2006 Vol. 3 Cap. 2.3 Lime Production + EU CLM BREF"
+      },
+      {
+        "numero": 2,
+        "nombre": "Caliza clasificada",
+        "tipo": "proceso",
+        "origen_tag": "M-101",
+        "destino_tag": "K-201A",
+        "puntos": [
+          [
+            395,
+            310
+          ],
+          [
+            655,
+            260
+          ]
+        ],
+        "flag_pos": [
+          515,
+          265
+        ],
+        "especies": "CaCO3 30-90 mm",
+        "fase": "Sólido",
+        "temperatura_c": "25",
+        "presion_bar": "1",
+        "flujo_especifico": {
+          "estado": "dato",
+          "valor": 1.8,
+          "unidad": "t/t CaO"
+        },
+        "nota_tecnica": "Carga calibrada al tope del horno.",
+        "fuente_id": "ipcc-2006-mineral-cap2",
+        "cita_ubicacion": "IPCC 2006 Vol. 3 Cap. 2.3 Lime Production + EU CLM BREF"
+      },
+      {
+        "numero": 3,
+        "nombre": "Gas natural combustible",
+        "tipo": "proceso",
+        "origen_tag": null,
+        "destino_tag": "K-201A",
+        "puntos": [
+          [
+            208,
+            160
+          ],
+          [
+            695,
+            160
+          ],
+          [
+            695,
+            210
+          ]
+        ],
+        "flag_pos": [
+          450,
+          144
+        ],
+        "especies": "CH4",
+        "fase": "Gas",
+        "temperatura_c": "25",
+        "presion_bar": "3",
+        "flujo_especifico": {
+          "estado": "sin_datos",
+          "valor": null,
+          "unidad": "t/t"
+        },
+        "nota_tecnica": "Inyección por lanzas de quemadores PFRK.",
+        "fuente_id": "ipcc-2006-mineral-cap2",
+        "cita_ubicacion": "IPCC 2006 Vol. 3 Cap. 2.3 Lime Production + EU CLM BREF"
+      },
+      {
+        "numero": 4,
+        "nombre": "Gases calientes cruzados",
+        "tipo": "reciclo",
+        "origen_tag": "K-201A",
+        "destino_tag": "K-201B",
+        "puntos": [
+          [
+            735,
+            300
+          ],
+          [
+            800,
+            380
+          ]
+        ],
+        "flag_pos": [
+          770,
+          325
+        ],
+        "especies": "CO2 + N2",
+        "fase": "Gas",
+        "temperatura_c": "950",
+        "presion_bar": "1",
+        "flujo_especifico": {
+          "estado": "sin_datos",
+          "valor": null,
+          "unidad": "reciclo térmico"
+        },
+        "nota_tecnica": "Canal de cruce regenerativo entre cubas.",
+        "fuente_id": "ipcc-2006-mineral-cap2",
+        "cita_ubicacion": "IPCC 2006 Vol. 3 Cap. 2.3 Lime Production + EU CLM BREF"
+      },
+      {
+        "numero": 5,
+        "nombre": "Cal viva incandescente",
+        "tipo": "proceso",
+        "origen_tag": "K-201A",
+        "destino_tag": "E-301",
+        "puntos": [
+          [
+            735,
+            260
+          ],
+          [
+            1040,
+            260
+          ]
+        ],
+        "flag_pos": [
+          890,
+          242
+        ],
+        "especies": "CaO >92%",
+        "fase": "Sólido",
+        "temperatura_c": "950",
+        "presion_bar": "1",
+        "flujo_especifico": {
+          "estado": "dato",
+          "valor": 1,
+          "unidad": "t/t CaO"
+        },
+        "nota_tecnica": "Descarga inferior hacia zona de enfriamiento.",
+        "fuente_id": "ipcc-2006-mineral-cap2",
+        "cita_ubicacion": "IPCC 2006 Vol. 3 Cap. 2.3 Lime Production + EU CLM BREF"
+      },
+      {
+        "numero": 6,
+        "nombre": "Gases de chimenea (CO2)",
+        "tipo": "emision",
+        "origen_tag": "K-201B",
+        "destino_tag": null,
+        "puntos": [
+          [
+            880,
+            440
+          ],
+          [
+            1080,
+            470
+          ],
+          [
+            1672,
+            470
+          ]
+        ],
+        "flag_pos": [
+          1370,
+          452
+        ],
+        "especies": "CO2 + N2 + H2O",
+        "fase": "Gas",
+        "temperatura_c": "140",
+        "presion_bar": "1",
+        "flujo_especifico": {
+          "estado": "dato",
+          "valor": 0.785,
+          "unidad": "t/t CaO"
+        },
+        "nota_tecnica": "Factor estequiométrico IPCC de descarbonatación.",
+        "fuente_id": "ipcc-2006-mineral-cap2",
+        "cita_ubicacion": "IPCC 2006 Vol. 3 Cap. 2.3 Lime Production + EU CLM BREF"
+      },
+      {
+        "numero": 7,
+        "nombre": "Cal viva a silos",
+        "tipo": "proceso",
+        "origen_tag": "E-301",
+        "destino_tag": null,
+        "puntos": [
+          [
+            1120,
+            245
+          ],
+          [
+            1525,
+            220
+          ],
+          [
+            1672,
+            220
+          ]
+        ],
+        "flag_pos": [
+          1325,
+          210
+        ],
+        "especies": "CaO granulada/molida",
+        "fase": "Sólido",
+        "temperatura_c": "65",
+        "presion_bar": "1",
+        "flujo_especifico": {
+          "estado": "dato",
+          "valor": 1,
+          "unidad": "t/t CaO"
+        },
+        "nota_tecnica": "Despacho a granel o big-bags herméticos.",
+        "fuente_id": "ipcc-2006-mineral-cap2",
+        "cita_ubicacion": "IPCC 2006 Vol. 3 Cap. 2.3 Lime Production + EU CLM BREF"
+      },
+      {
+        "numero": 8,
+        "nombre": "Derivación a hidratación",
+        "tipo": "proceso",
+        "origen_tag": "E-301",
+        "destino_tag": "R-401",
+        "puntos": [
+          [
+            1120,
+            275
+          ],
+          [
+            1390,
+            380
+          ]
+        ],
+        "flag_pos": [
+          1255,
+          345
+        ],
+        "especies": "CaO + H2O",
+        "fase": "Sólido",
+        "temperatura_c": "70",
+        "presion_bar": "1",
+        "flujo_especifico": {
+          "estado": "sin_datos",
+          "valor": null,
+          "unidad": "fracción variable"
+        },
+        "nota_tecnica": "Corriente destinada a línea de cal hidratada.",
+        "fuente_id": "ipcc-2006-mineral-cap2",
+        "cita_ubicacion": "IPCC 2006 Vol. 3 Cap. 2.3 Lime Production + EU CLM BREF"
+      },
+      {
+        "numero": 9,
+        "nombre": "Cal hidratada Ca(OH)2",
+        "tipo": "subproducto",
+        "origen_tag": "R-401",
+        "destino_tag": null,
+        "puntos": [
+          [
+            1470,
+            380
+          ],
+          [
+            1672,
+            380
+          ]
+        ],
+        "flag_pos": [
+          1585,
+          362
+        ],
+        "especies": "Ca(OH)2 >92%",
+        "fase": "Sólido",
+        "temperatura_c": "55",
+        "presion_bar": "1",
+        "flujo_especifico": {
+          "estado": "dato",
+          "valor": 1.32,
+          "unidad": "t/t CaO"
+        },
+        "nota_tecnica": "Hidróxido de calcio para litio y potabilización.",
+        "fuente_id": "ipcc-2006-mineral-cap2",
+        "cita_ubicacion": "IPCC 2006 Vol. 3 Cap. 2.3 Lime Production + EU CLM BREF"
+      }
+    ],
+    "servicios": [
+      {
+        "id": "u1",
+        "equipo_tag": "K-201A",
+        "etiqueta": "Gas natural",
+        "direccion": "entrada",
+        "x": 695,
+        "y": 215,
+        "dx": 0,
+        "dy": -28
+      },
+      {
+        "id": "u2",
+        "equipo_tag": "R-401",
+        "etiqueta": "Agua H2O",
+        "direccion": "entrada",
+        "x": 1430,
+        "y": 340,
+        "dx": 0,
+        "dy": -28
+      }
+    ],
+    "limites_bateria": [
+      {
+        "id": "lb-in-1",
+        "lado": "entrada",
+        "categoria": "materia_prima",
+        "nombre": "Caliza de alta ley",
+        "formula": "CaCO3",
+        "cantidad_masa": "1,82 t/t CaO",
+        "cantidad_molar": "18,2 kmol/t",
+        "fraccion_pureza": ">95% CaCO3",
+        "corriente_num": 1,
+        "y": 310,
+        "nota": "Canteras de Los Berros (Sarmiento).",
+        "fuente_id": "ipcc-2006-mineral-cap2"
+      },
+      {
+        "id": "lb-in-2",
+        "lado": "entrada",
+        "categoria": "servicio",
+        "nombre": "Gas natural PFRK",
+        "formula": "CH4",
+        "cantidad_masa": "sin_datos",
+        "cantidad_molar": null,
+        "fraccion_pureza": "Gas de red",
+        "corriente_num": 3,
+        "y": 160,
+        "nota": "Aporte térmico a 950-1100 °C.",
+        "fuente_id": "ipcc-2006-mineral-cap2"
+      },
+      {
+        "id": "lb-out-1",
+        "lado": "salida",
+        "categoria": "producto",
+        "nombre": "Cal viva reactiva",
+        "formula": "CaO",
+        "cantidad_masa": "1,00 t/t",
+        "cantidad_molar": "17,8 kmol/t",
+        "fraccion_pureza": ">92% CaO",
+        "corriente_num": 7,
+        "y": 220,
+        "nota": "Exportación récord HS 2522.10 (476 kt en 2024).",
+        "fuente_id": "ipcc-2006-mineral-cap2"
+      },
+      {
+        "id": "lb-out-2",
+        "lado": "salida",
+        "categoria": "emision",
+        "nombre": "CO2 de proceso",
+        "formula": "CO2",
+        "cantidad_masa": "0,785 t/t CaO",
+        "cantidad_molar": "17,8 kmol/t",
+        "fraccion_pureza": "IPCC Cap. 2.3",
+        "corriente_num": 6,
+        "y": 470,
+        "nota": "Emisión estequiométrica de descarbonatación.",
+        "fuente_id": "ipcc-2006-mineral-cap2"
+      }
+    ]
+  },
+  {
+    "proceso_id": "oro-plata-lixiviacion-dore",
+    "producto_id": "oro-plata",
+    "titulo": "PFD ISO 10628: Oro y Plata en Lingote Doré (Macizo del Deseado, Santa Cruz)",
+    "norma_simbologia": "ISO 10628 / ASME",
+    "base_calculo": "1.000 t de mineral epitermal procesado (cianuración + Merrill-Crowe + INCO)",
+    "resumen_tecnico": "Molienda fina alcalina, lixiviación cianurada aireada (Elsner), precipitación con polvo de zinc (Merrill-Crowe), fundición a barras doré (Au/Ag) y detoxificación INCO SO2/aire.",
+    "nota_metodologica": "Esquema estándar de planta hidrometalúrgica aurífera de Santa Cruz (Cerro Vanguardia / Cerro Negro) con reciclo cerrado de solución estéril y agua.",
+    "canvas_width": 1880,
+    "canvas_height": 760,
+    "secciones": [
+      {
+        "area_id": "s1",
+        "titulo": "ÁREA 100 · CHANCADO Y MOLIENDA",
+        "x": 224,
+        "y": 74,
+        "width": 340,
+        "height": 612
+      },
+      {
+        "area_id": "s2",
+        "titulo": "ÁREA 200 · LIXIVIACIÓN CIANURADA",
+        "x": 580,
+        "y": 74,
+        "width": 350,
+        "height": 612
+      },
+      {
+        "area_id": "s3",
+        "titulo": "ÁREA 300 · MERRILL-CROWE Y FUNDICIÓN",
+        "x": 946,
+        "y": 74,
+        "width": 350,
+        "height": 612
+      },
+      {
+        "area_id": "s4",
+        "titulo": "ÁREA 400 · DETOX INCO Y RECICLO",
+        "x": 1312,
+        "y": 74,
+        "width": 344,
+        "height": 612
+      }
+    ],
+    "equipos": [
+      {
+        "tag": "M-101",
+        "nombre": "Molino SAG y bolas",
+        "simbolo": "mill_gin",
+        "area_id": "s1",
+        "x": 355,
+        "y": 300,
+        "temperatura_op": "20 °C",
+        "presion_op": "1 bar",
+        "reaccion": null,
+        "condicion_critica": "pH >10,5 con cal para evitar HCN",
+        "descripcion": "Reduce mena cuarzosa a <75 µm en pulpa alcalina.",
+        "fuente_id": "cerro-vanguardia-web-2026",
+        "cita_ubicacion": "cerrovanguardia.com.ar + USGS MCS 2025 Silver/Gold"
+      },
+      {
+        "tag": "R-201",
+        "nombre": "Tren de tanques de lixiviación",
+        "simbolo": "reactor",
+        "area_id": "s2",
+        "x": 750,
+        "y": 290,
+        "temperatura_op": "20 °C",
+        "presion_op": "1 bar",
+        "reaccion": "4 Au + 8 NaCN + O2 + 2 H2O -> 4 Na[Au(CN)2] + 4 NaOH",
+        "condicion_critica": null,
+        "descripcion": "Disolución agitada y oxigenada de oro y plata.",
+        "fuente_id": "cerro-vanguardia-web-2026",
+        "cita_ubicacion": "cerrovanguardia.com.ar + USGS MCS 2025 Silver/Gold"
+      },
+      {
+        "tag": "F-301",
+        "nombre": "Torre Crowe + Filtros precipitado Zn",
+        "simbolo": "filter_baghouse",
+        "area_id": "s3",
+        "x": 1055,
+        "y": 220,
+        "temperatura_op": "22 °C",
+        "presion_op": "0,2 bar",
+        "reaccion": "2 Na[Au(CN)2] + Zn -> 2 Au + Na2[Zn(CN)4]",
+        "condicion_critica": null,
+        "descripcion": "Desaireación al vacío y cementación metálica con polvo de zinc.",
+        "fuente_id": "cerro-vanguardia-web-2026",
+        "cita_ubicacion": "cerrovanguardia.com.ar + USGS MCS 2025 Silver/Gold"
+      },
+      {
+        "tag": "K-302",
+        "nombre": "Horno de fundición doré",
+        "simbolo": "furnace",
+        "area_id": "s3",
+        "x": 1215,
+        "y": 220,
+        "temperatura_op": "1150 °C",
+        "presion_op": "1 bar",
+        "reaccion": null,
+        "condicion_critica": null,
+        "descripcion": "Funde el precipitado con fundentes y cuela lingotes doré (Au/Ag).",
+        "fuente_id": "cerro-vanguardia-web-2026",
+        "cita_ubicacion": "cerrovanguardia.com.ar + USGS MCS 2025 Silver/Gold"
+      },
+      {
+        "tag": "R-401",
+        "nombre": "Reactor detoxificación INCO (SO2/aire)",
+        "simbolo": "reactor",
+        "area_id": "s4",
+        "x": 1425,
+        "y": 455,
+        "temperatura_op": "20 °C",
+        "presion_op": "1 bar",
+        "reaccion": "CN- + SO2 + O2 + H2O -> CNO- + H2SO4",
+        "condicion_critica": null,
+        "descripcion": "Destruye cianuro WAD antes de disposición final de colas.",
+        "fuente_id": "cerro-vanguardia-web-2026",
+        "cita_ubicacion": "cerrovanguardia.com.ar + USGS MCS 2025 Silver/Gold"
+      },
+      {
+        "tag": "T-402",
+        "nombre": "Espesador / Dique impermeabilizado",
+        "simbolo": "tank",
+        "area_id": "s4",
+        "x": 1565,
+        "y": 455,
+        "temperatura_op": "15 °C",
+        "presion_op": "1 bar",
+        "reaccion": null,
+        "condicion_critica": null,
+        "descripcion": "Almacena relaves detoxificados y recupera agua de proceso.",
+        "fuente_id": "cerro-vanguardia-web-2026",
+        "cita_ubicacion": "cerrovanguardia.com.ar + USGS MCS 2025 Silver/Gold"
+      },
+      {
+        "tag": "C-102",
+        "nombre": "Hidrociclón clasificador",
+        "simbolo": "separator",
+        "area_id": "s1",
+        "x": 485,
+        "y": 230,
+        "temperatura_op": "20 °C",
+        "presion_op": "1,8 bar",
+        "reaccion": null,
+        "condicion_critica": "Corte P80 <75 micras",
+        "descripcion": "Clasifica la pulpa molida devolviendo partículas gruesas al molino.",
+        "fuente_id": "cerro-vanguardia-web-2026",
+        "cita_ubicacion": "cerrovanguardia.com.ar + USGS MCS 2025 Silver/Gold"
+      }
+    ],
+    "corrientes": [
+      {
+        "numero": 1,
+        "nombre": "Mena epitermal Au/Ag",
+        "tipo": "proceso",
+        "origen_tag": null,
+        "destino_tag": "M-101",
+        "puntos": [
+          [
+            208,
+            300
+          ],
+          [
+            315,
+            300
+          ]
+        ],
+        "flag_pos": [
+          258,
+          282
+        ],
+        "especies": "Vetas cuarzo Au/Ag",
+        "fase": "Sólido",
+        "temperatura_c": "15",
+        "presion_bar": "1",
+        "flujo_especifico": {
+          "estado": "dato",
+          "valor": 1000,
+          "unidad": "t/lote"
+        },
+        "nota_tecnica": "Mineral de rajo y minas subterráneas de Santa Cruz.",
+        "fuente_id": "cerro-vanguardia-web-2026",
+        "cita_ubicacion": "cerrovanguardia.com.ar + USGS MCS 2025 Silver/Gold"
+      },
+      {
+        "numero": 2,
+        "nombre": "Pulpa fina alcalina",
+        "tipo": "proceso",
+        "origen_tag": "M-101",
+        "destino_tag": "R-201",
+        "puntos": [
+          [
+            395,
+            300
+          ],
+          [
+            710,
+            290
+          ]
+        ],
+        "flag_pos": [
+          550,
+          276
+        ],
+        "especies": "Pulpa <75 µm pH >10,5",
+        "fase": "Bifásico",
+        "temperatura_c": "20",
+        "presion_bar": "1",
+        "flujo_especifico": {
+          "estado": "sin_datos",
+          "valor": null,
+          "unidad": "t/t"
+        },
+        "nota_tecnica": "Ingreso a circuito de lixiviación agitada.",
+        "fuente_id": "cerro-vanguardia-web-2026",
+        "cita_ubicacion": "cerrovanguardia.com.ar + USGS MCS 2025 Silver/Gold"
+      },
+      {
+        "numero": 3,
+        "nombre": "NaCN + O2 + CaO",
+        "tipo": "proceso",
+        "origen_tag": null,
+        "destino_tag": "R-201",
+        "puntos": [
+          [
+            208,
+            175
+          ],
+          [
+            750,
+            175
+          ],
+          [
+            750,
+            240
+          ]
+        ],
+        "flag_pos": [
+          480,
+          158
+        ],
+        "especies": "NaCN + O2 + CaO",
+        "fase": "Líquido",
+        "temperatura_c": "20",
+        "presion_bar": "2",
+        "flujo_especifico": {
+          "estado": "sin_datos",
+          "valor": null,
+          "unidad": "t/t"
+        },
+        "nota_tecnica": "Reactivos dosificados bajo control de pH alcalino.",
+        "fuente_id": "cerro-vanguardia-web-2026",
+        "cita_ubicacion": "cerrovanguardia.com.ar + USGS MCS 2025 Silver/Gold"
+      },
+      {
+        "numero": 4,
+        "nombre": "Solución rica Au/Ag",
+        "tipo": "proceso",
+        "origen_tag": "R-201",
+        "destino_tag": "F-301",
+        "puntos": [
+          [
+            790,
+            260
+          ],
+          [
+            1015,
+            220
+          ]
+        ],
+        "flag_pos": [
+          900,
+          220
+        ],
+        "especies": "Na[Au(CN)2] / Na[Ag(CN)2]",
+        "fase": "Líquido",
+        "temperatura_c": "22",
+        "presion_bar": "1",
+        "flujo_especifico": {
+          "estado": "sin_datos",
+          "valor": null,
+          "unidad": "t/t"
+        },
+        "nota_tecnica": "Solución preñada clarificada hacia Merrill-Crowe.",
+        "fuente_id": "cerro-vanguardia-web-2026",
+        "cita_ubicacion": "cerrovanguardia.com.ar + USGS MCS 2025 Silver/Gold"
+      },
+      {
+        "numero": 5,
+        "nombre": "Precipitado Au/Ag",
+        "tipo": "proceso",
+        "origen_tag": "F-301",
+        "destino_tag": "K-302",
+        "puntos": [
+          [
+            1095,
+            220
+          ],
+          [
+            1175,
+            220
+          ]
+        ],
+        "flag_pos": [
+          1135,
+          202
+        ],
+        "especies": "Au + Ag metálicos",
+        "fase": "Sólido",
+        "temperatura_c": "25",
+        "presion_bar": "1",
+        "flujo_especifico": {
+          "estado": "sin_datos",
+          "valor": null,
+          "unidad": "t/t"
+        },
+        "nota_tecnica": "Torta filtrada de metales preciosos secos.",
+        "fuente_id": "cerro-vanguardia-web-2026",
+        "cita_ubicacion": "cerrovanguardia.com.ar + USGS MCS 2025 Silver/Gold"
+      },
+      {
+        "numero": 6,
+        "nombre": "Lingote doré Au/Ag",
+        "tipo": "proceso",
+        "origen_tag": "K-302",
+        "destino_tag": null,
+        "puntos": [
+          [
+            1255,
+            220
+          ],
+          [
+            1672,
+            220
+          ]
+        ],
+        "flag_pos": [
+          1470,
+          202
+        ],
+        "especies": "Aleación Au/Ag >95%",
+        "fase": "Sólido",
+        "temperatura_c": "40",
+        "presion_bar": "1",
+        "flujo_especifico": {
+          "estado": "sin_datos",
+          "valor": null,
+          "unidad": "t/t"
+        },
+        "nota_tecnica": "Barras doré destinadas a exportación y refinación.",
+        "fuente_id": "cerro-vanguardia-web-2026",
+        "cita_ubicacion": "cerrovanguardia.com.ar + USGS MCS 2025 Silver/Gold"
+      },
+      {
+        "numero": 7,
+        "nombre": "Reciclo solución estéril",
+        "tipo": "reciclo",
+        "origen_tag": "F-301",
+        "destino_tag": "R-201",
+        "puntos": [
+          [
+            1055,
+            265
+          ],
+          [
+            1055,
+            365
+          ],
+          [
+            750,
+            365
+          ],
+          [
+            750,
+            340
+          ]
+        ],
+        "flag_pos": [
+          905,
+          347
+        ],
+        "especies": "NaCN residual",
+        "fase": "Líquido",
+        "temperatura_c": "20",
+        "presion_bar": "1,5",
+        "flujo_especifico": {
+          "estado": "sin_datos",
+          "valor": null,
+          "unidad": "reciclo cerrado"
+        },
+        "nota_tecnica": "Retorno de solución cianurada estéril a tanques.",
+        "fuente_id": "cerro-vanguardia-web-2026",
+        "cita_ubicacion": "cerrovanguardia.com.ar + USGS MCS 2025 Silver/Gold"
+      },
+      {
+        "numero": 8,
+        "nombre": "Relaves a detox INCO",
+        "tipo": "emision",
+        "origen_tag": "R-201",
+        "destino_tag": "R-401",
+        "puntos": [
+          [
+            790,
+            325
+          ],
+          [
+            1385,
+            455
+          ]
+        ],
+        "flag_pos": [
+          1085,
+          405
+        ],
+        "especies": "Sólidos + CN WAD",
+        "fase": "Bifásico",
+        "temperatura_c": "20",
+        "presion_bar": "1",
+        "flujo_especifico": {
+          "estado": "sin_datos",
+          "valor": null,
+          "unidad": "t/t"
+        },
+        "nota_tecnica": "Pulpa agotada hacia destrucción oxidativa.",
+        "fuente_id": "cerro-vanguardia-web-2026",
+        "cita_ubicacion": "cerrovanguardia.com.ar + USGS MCS 2025 Silver/Gold"
+      },
+      {
+        "numero": 9,
+        "nombre": "Colas detoxificadas",
+        "tipo": "emision",
+        "origen_tag": "R-401",
+        "destino_tag": "T-402",
+        "puntos": [
+          [
+            1465,
+            455
+          ],
+          [
+            1525,
+            455
+          ]
+        ],
+        "flag_pos": [
+          1495,
+          437
+        ],
+        "especies": "CNO- estable + ganga",
+        "fase": "Bifásico",
+        "temperatura_c": "15",
+        "presion_bar": "1",
+        "flujo_especifico": {
+          "estado": "sin_datos",
+          "valor": null,
+          "unidad": "t/t"
+        },
+        "nota_tecnica": "Relaves en especificación ambiental hacia dique.",
+        "fuente_id": "cerro-vanguardia-web-2026",
+        "cita_ubicacion": "cerrovanguardia.com.ar + USGS MCS 2025 Silver/Gold"
+      },
+      {
+        "numero": 10,
+        "nombre": "Agua recuperada",
+        "tipo": "reciclo",
+        "origen_tag": "T-402",
+        "destino_tag": "M-101",
+        "puntos": [
+          [
+            1565,
+            505
+          ],
+          [
+            1565,
+            590
+          ],
+          [
+            355,
+            590
+          ],
+          [
+            355,
+            355
+          ]
+        ],
+        "flag_pos": [
+          950,
+          572
+        ],
+        "especies": "Agua clarificada",
+        "fase": "Líquido",
+        "temperatura_c": "15",
+        "presion_bar": "2",
+        "flujo_especifico": {
+          "estado": "sin_datos",
+          "valor": null,
+          "unidad": "reciclo planta"
+        },
+        "nota_tecnica": "Retorno de agua clarificada a molienda.",
+        "fuente_id": "cerro-vanguardia-web-2026",
+        "cita_ubicacion": "cerrovanguardia.com.ar + USGS MCS 2025 Silver/Gold"
+      }
+    ],
+    "servicios": [
+      {
+        "id": "u1",
+        "equipo_tag": "R-201",
+        "etiqueta": "O2 / Aire",
+        "direccion": "entrada",
+        "x": 750,
+        "y": 240,
+        "dx": 0,
+        "dy": -28
+      },
+      {
+        "id": "u2",
+        "equipo_tag": "R-401",
+        "etiqueta": "SO2 + Aire",
+        "direccion": "entrada",
+        "x": 1425,
+        "y": 415,
+        "dx": 0,
+        "dy": -28
+      }
+    ],
+    "limites_bateria": [
+      {
+        "id": "lb-in-1",
+        "lado": "entrada",
+        "categoria": "materia_prima",
+        "nombre": "Mena epitermal Au/Ag",
+        "formula": "Au/Ag/SiO2",
+        "cantidad_masa": "1.000 t base",
+        "cantidad_molar": null,
+        "fraccion_pureza": "Ley variable",
+        "corriente_num": 1,
+        "y": 300,
+        "nota": "Macizo del Deseado, Santa Cruz.",
+        "fuente_id": "cerro-vanguardia-web-2026"
+      },
+      {
+        "id": "lb-in-2",
+        "lado": "entrada",
+        "categoria": "materia_prima",
+        "nombre": "NaCN + CaO + Zn",
+        "formula": "NaCN / CaO",
+        "cantidad_masa": "sin_datos",
+        "cantidad_molar": null,
+        "fraccion_pureza": "Grado minero",
+        "corriente_num": 3,
+        "y": 175,
+        "nota": "Lixiviación alcalina y precipitación.",
+        "fuente_id": "cerro-vanguardia-web-2026"
+      },
+      {
+        "id": "lb-out-1",
+        "lado": "salida",
+        "categoria": "producto",
+        "nombre": "Lingote doré (Au/Ag)",
+        "formula": "Au / Ag",
+        "cantidad_masa": "800 t Ag país (24e)",
+        "cantidad_molar": null,
+        "fraccion_pureza": ">95% Au+Ag",
+        "corriente_num": 6,
+        "y": 220,
+        "nota": "Exp. oro 2024: USD 1.628 M (UN Comtrade).",
+        "fuente_id": "cerro-vanguardia-web-2026"
+      },
+      {
+        "id": "lb-out-2",
+        "lado": "salida",
+        "categoria": "emision",
+        "nombre": "Colas detoxificadas",
+        "formula": "CNO- / SiO2",
+        "cantidad_masa": "sin_datos",
+        "cantidad_molar": null,
+        "fraccion_pureza": "Detox INCO",
+        "corriente_num": 9,
+        "y": 455,
+        "nota": "Circuito cerrado de agua en dique.",
+        "fuente_id": "cerro-vanguardia-web-2026"
+      }
+    ]
+  },
+  {
+    "proceso_id": "celulosa-kraft-blanqueada",
+    "producto_id": "celulosa-kraft",
+    "titulo": "PFD ISO 10628: Celulosa Kraft Blanqueada ECF y Ciclo de Recuperación (Misiones)",
+    "norma_simbologia": "ISO 10628 / ASME",
+    "base_calculo": "1,00 t ADt de pulpa Kraft blanqueada de fibra larga (90% seca)",
+    "resumen_tecnico": "Cocción química de 2,10 t secas de chips de pino con licor blanco (NaOH/Na2S) a 168 °C, blanqueo ECF (O2/ClO2/H2O2) y recuperación cerrada de reactivos y energía renovable desde licor negro.",
+    "nota_metodologica": "Balance referencial de planta Kraft ECF moderna con caldera recuperadora, caustificación y horno de cal en circuito cerrado.",
+    "canvas_width": 1880,
+    "canvas_height": 760,
+    "secciones": [
+      {
+        "area_id": "s1",
+        "titulo": "ÁREA 100 · PATIO MADERA Y DIGESTIÓN",
+        "x": 224,
+        "y": 74,
+        "width": 345,
+        "height": 612
+      },
+      {
+        "area_id": "s2",
+        "titulo": "ÁREA 200 · LAVADO Y BLANQUEO ECF",
+        "x": 585,
+        "y": 74,
+        "width": 350,
+        "height": 612
+      },
+      {
+        "area_id": "s3",
+        "titulo": "ÁREA 300 · SECADO Y ENFARDADO ADt",
+        "x": 951,
+        "y": 74,
+        "width": 340,
+        "height": 612
+      },
+      {
+        "area_id": "s4",
+        "titulo": "ÁREA 400 · RECUPERACIÓN Y CAUSTIFICACIÓN",
+        "x": 1307,
+        "y": 74,
+        "width": 349,
+        "height": 612
+      }
+    ],
+    "equipos": [
+      {
+        "tag": "M-101",
+        "nombre": "Descortezador y chipeadora",
+        "simbolo": "mill_gin",
+        "area_id": "s1",
+        "x": 330,
+        "y": 240,
+        "temperatura_op": "25 °C",
+        "presion_op": "1 bar",
+        "reaccion": null,
+        "condicion_critica": null,
+        "descripcion": "Astilla rollizos de pino en chips calibrados y deriva corteza a biomasa.",
+        "fuente_id": "arauco-web-2026",
+        "cita_ubicacion": "arauco.com + AFCP Proceso Kraft de fibra larga en Misiones"
+      },
+      {
+        "tag": "R-102",
+        "nombre": "Digestor continuo Kraft",
+        "simbolo": "column",
+        "area_id": "s1",
+        "x": 485,
+        "y": 290,
+        "temperatura_op": "168 °C",
+        "presion_op": "9 bar",
+        "reaccion": null,
+        "condicion_critica": "Licor blanco NaOH + Na2S disuelve lignina",
+        "descripcion": "Cocción química continua que libera fibras largas de celulosa.",
+        "fuente_id": "arauco-web-2026",
+        "cita_ubicacion": "arauco.com + AFCP Proceso Kraft de fibra larga en Misiones"
+      },
+      {
+        "tag": "R-201",
+        "nombre": "Torres deslignificación O2 + ECF",
+        "simbolo": "reactor",
+        "area_id": "s2",
+        "x": 760,
+        "y": 230,
+        "temperatura_op": "85 °C",
+        "presion_op": "4 bar",
+        "reaccion": null,
+        "condicion_critica": null,
+        "descripcion": "Blanqueo libre de cloro elemental (O2, ClO2, H2O2) hasta >89% ISO.",
+        "fuente_id": "arauco-web-2026",
+        "cita_ubicacion": "arauco.com + AFCP Proceso Kraft de fibra larga en Misiones"
+      },
+      {
+        "tag": "D-301",
+        "nombre": "Secadora y enfardadora ADt",
+        "simbolo": "dryer_bed",
+        "area_id": "s3",
+        "x": 1120,
+        "y": 230,
+        "temperatura_op": "120 °C",
+        "presion_op": "1 bar",
+        "reaccion": null,
+        "condicion_critica": null,
+        "descripcion": "Forma hoja, prensa y seca fardos comerciales de 90% sequedad.",
+        "fuente_id": "arauco-web-2026",
+        "cita_ubicacion": "arauco.com + AFCP Proceso Kraft de fibra larga en Misiones"
+      },
+      {
+        "tag": "B-401",
+        "nombre": "Caldera recuperadora (licor negro)",
+        "simbolo": "furnace",
+        "area_id": "s4",
+        "x": 1415,
+        "y": 455,
+        "temperatura_op": "980 °C",
+        "presion_op": "65 bar",
+        "reaccion": null,
+        "condicion_critica": null,
+        "descripcion": "Combustiona lignina generando vapor y electricidad renovable más fundido salino.",
+        "fuente_id": "arauco-web-2026",
+        "cita_ubicacion": "arauco.com + AFCP Proceso Kraft de fibra larga en Misiones"
+      },
+      {
+        "tag": "R-402",
+        "nombre": "Caustificador y horno de cal",
+        "simbolo": "reactor",
+        "area_id": "s4",
+        "x": 1565,
+        "y": 455,
+        "temperatura_op": "1000 °C",
+        "presion_op": "1 bar",
+        "reaccion": "Na2CO3 + Ca(OH)2 -> 2 NaOH + CaCO3",
+        "condicion_critica": null,
+        "descripcion": "Regenera >96% del licor blanco alcalino en circuito cerrado.",
+        "fuente_id": "arauco-web-2026",
+        "cita_ubicacion": "arauco.com + AFCP Proceso Kraft de fibra larga en Misiones"
+      },
+      {
+        "tag": "W-202",
+        "nombre": "Lavador rotativo de pulpa blanqueada",
+        "simbolo": "filter_baghouse",
+        "area_id": "s2",
+        "x": 870,
+        "y": 315,
+        "temperatura_op": "65 °C",
+        "presion_op": "1 bar",
+        "reaccion": null,
+        "condicion_critica": "Lavado contracorriente con condensado limpio",
+        "descripcion": "Remueve trazas de reactivos ECF antes de la formación de hoja.",
+        "fuente_id": "arauco-web-2026",
+        "cita_ubicacion": "arauco.com + AFCP Proceso Kraft de fibra larga en Misiones"
+      }
+    ],
+    "corrientes": [
+      {
+        "numero": 1,
+        "nombre": "Rollizos de pino",
+        "tipo": "proceso",
+        "origen_tag": null,
+        "destino_tag": "M-101",
+        "puntos": [
+          [
+            208,
+            240
+          ],
+          [
+            290,
+            240
+          ]
+        ],
+        "flag_pos": [
+          248,
+          222
+        ],
+        "especies": "Pinus taeda / elliottii",
+        "fase": "Sólido",
+        "temperatura_c": "25",
+        "presion_bar": "1",
+        "flujo_especifico": {
+          "estado": "dato",
+          "valor": 4.5,
+          "unidad": "m3/t ADt"
+        },
+        "nota_tecnica": "Madera de forestaciones implantadas de Misiones.",
+        "fuente_id": "arauco-web-2026",
+        "cita_ubicacion": "arauco.com + AFCP Proceso Kraft de fibra larga en Misiones"
+      },
+      {
+        "numero": 2,
+        "nombre": "Chips calibrados",
+        "tipo": "proceso",
+        "origen_tag": "M-101",
+        "destino_tag": "R-102",
+        "puntos": [
+          [
+            370,
+            240
+          ],
+          [
+            450,
+            270
+          ]
+        ],
+        "flag_pos": [
+          410,
+          232
+        ],
+        "especies": "Celulosa + lignina",
+        "fase": "Sólido",
+        "temperatura_c": "25",
+        "presion_bar": "1",
+        "flujo_especifico": {
+          "estado": "dato",
+          "valor": 2.1,
+          "unidad": "t/t ADt"
+        },
+        "nota_tecnica": "Alimentación sólida al digestor continuo.",
+        "fuente_id": "arauco-web-2026",
+        "cita_ubicacion": "arauco.com + AFCP Proceso Kraft de fibra larga en Misiones"
+      },
+      {
+        "numero": 3,
+        "nombre": "Pulpa marrón lavada",
+        "tipo": "proceso",
+        "origen_tag": "R-102",
+        "destino_tag": "R-201",
+        "puntos": [
+          [
+            520,
+            260
+          ],
+          [
+            720,
+            230
+          ]
+        ],
+        "flag_pos": [
+          620,
+          226
+        ],
+        "especies": "Fibra larga cruda",
+        "fase": "Bifásico",
+        "temperatura_c": "80",
+        "presion_bar": "3",
+        "flujo_especifico": {
+          "estado": "dato",
+          "valor": 1.05,
+          "unidad": "t/t ADt"
+        },
+        "nota_tecnica": "Pulpa lavada libre de licor negro residual.",
+        "fuente_id": "arauco-web-2026",
+        "cita_ubicacion": "arauco.com + AFCP Proceso Kraft de fibra larga en Misiones"
+      },
+      {
+        "numero": 4,
+        "nombre": "Reactivos ECF",
+        "tipo": "proceso",
+        "origen_tag": null,
+        "destino_tag": "R-201",
+        "puntos": [
+          [
+            208,
+            130
+          ],
+          [
+            760,
+            130
+          ],
+          [
+            760,
+            185
+          ]
+        ],
+        "flag_pos": [
+          495,
+          114
+        ],
+        "especies": "O2 + ClO2 + H2O2",
+        "fase": "Líquido",
+        "temperatura_c": "40",
+        "presion_bar": "4",
+        "flujo_especifico": {
+          "estado": "sin_datos",
+          "valor": null,
+          "unidad": "t/t"
+        },
+        "nota_tecnica": "Secuencia oxidante libre de cloro elemental.",
+        "fuente_id": "arauco-web-2026",
+        "cita_ubicacion": "arauco.com + AFCP Proceso Kraft de fibra larga en Misiones"
+      },
+      {
+        "numero": 5,
+        "nombre": "Pulpa blanqueada ECF",
+        "tipo": "proceso",
+        "origen_tag": "R-201",
+        "destino_tag": "D-301",
+        "puntos": [
+          [
+            800,
+            230
+          ],
+          [
+            1075,
+            230
+          ]
+        ],
+        "flag_pos": [
+          935,
+          212
+        ],
+        "especies": "Celulosa >89% ISO",
+        "fase": "Bifásico",
+        "temperatura_c": "60",
+        "presion_bar": "2",
+        "flujo_especifico": {
+          "estado": "dato",
+          "valor": 1,
+          "unidad": "t/t ADt"
+        },
+        "nota_tecnica": "Suspensión purificada hacia máquina secadora.",
+        "fuente_id": "arauco-web-2026",
+        "cita_ubicacion": "arauco.com + AFCP Proceso Kraft de fibra larga en Misiones"
+      },
+      {
+        "numero": 6,
+        "nombre": "Fardos celulosa Kraft ADt",
+        "tipo": "proceso",
+        "origen_tag": "D-301",
+        "destino_tag": null,
+        "puntos": [
+          [
+            1165,
+            230
+          ],
+          [
+            1672,
+            230
+          ]
+        ],
+        "flag_pos": [
+          1455,
+          212
+        ],
+        "especies": "(C6H10O5)n 90% seca",
+        "fase": "Sólido",
+        "temperatura_c": "40",
+        "presion_bar": "1",
+        "flujo_especifico": {
+          "estado": "dato",
+          "valor": 1,
+          "unidad": "t/t ADt"
+        },
+        "nota_tecnica": "Fardos de pulpa fibra larga para papeleras.",
+        "fuente_id": "arauco-web-2026",
+        "cita_ubicacion": "arauco.com + AFCP Proceso Kraft de fibra larga en Misiones"
+      },
+      {
+        "numero": 7,
+        "nombre": "Licor negro (lignina)",
+        "tipo": "subproducto",
+        "origen_tag": "R-102",
+        "destino_tag": "B-401",
+        "puntos": [
+          [
+            485,
+            355
+          ],
+          [
+            485,
+            455
+          ],
+          [
+            1375,
+            455
+          ]
+        ],
+        "flag_pos": [
+          930,
+          437
+        ],
+        "especies": "Lignina + sales Na",
+        "fase": "Líquido",
+        "temperatura_c": "115",
+        "presion_bar": "3",
+        "flujo_especifico": {
+          "estado": "dato",
+          "valor": 1.5,
+          "unidad": "t/t ADt"
+        },
+        "nota_tecnica": "Concentrado en evaporadores hasta 75% sólidos.",
+        "fuente_id": "arauco-web-2026",
+        "cita_ubicacion": "arauco.com + AFCP Proceso Kraft de fibra larga en Misiones"
+      },
+      {
+        "numero": 8,
+        "nombre": "Licor verde (Na2CO3/Na2S)",
+        "tipo": "subproducto",
+        "origen_tag": "B-401",
+        "destino_tag": "R-402",
+        "puntos": [
+          [
+            1455,
+            455
+          ],
+          [
+            1525,
+            455
+          ]
+        ],
+        "flag_pos": [
+          1490,
+          437
+        ],
+        "especies": "Na2CO3 + Na2S",
+        "fase": "Líquido",
+        "temperatura_c": "90",
+        "presion_bar": "1",
+        "flujo_especifico": {
+          "estado": "sin_datos",
+          "valor": null,
+          "unidad": "reciclo químico"
+        },
+        "nota_tecnica": "Fundido disuelto hacia caustificación con cal.",
+        "fuente_id": "arauco-web-2026",
+        "cita_ubicacion": "arauco.com + AFCP Proceso Kraft de fibra larga en Misiones"
+      },
+      {
+        "numero": 9,
+        "nombre": "Reciclo licor blanco",
+        "tipo": "reciclo",
+        "origen_tag": "R-402",
+        "destino_tag": "R-102",
+        "puntos": [
+          [
+            1565,
+            510
+          ],
+          [
+            1565,
+            595
+          ],
+          [
+            460,
+            595
+          ],
+          [
+            460,
+            355
+          ]
+        ],
+        "flag_pos": [
+          1015,
+          577
+        ],
+        "especies": "NaOH + Na2S",
+        "fase": "Líquido",
+        "temperatura_c": "95",
+        "presion_bar": "9",
+        "flujo_especifico": {
+          "estado": "sin_datos",
+          "valor": null,
+          "unidad": "reciclo >96%"
+        },
+        "nota_tecnica": "Retorno cerrado del agente de cocción alcalina.",
+        "fuente_id": "arauco-web-2026",
+        "cita_ubicacion": "arauco.com + AFCP Proceso Kraft de fibra larga en Misiones"
+      },
+      {
+        "numero": 10,
+        "nombre": "Vapor y energía renovable",
+        "tipo": "subproducto",
+        "origen_tag": "B-401",
+        "destino_tag": null,
+        "puntos": [
+          [
+            1415,
+            405
+          ],
+          [
+            1415,
+            345
+          ],
+          [
+            1672,
+            345
+          ]
+        ],
+        "flag_pos": [
+          1545,
+          327
+        ],
+        "especies": "Vapor 65 bar / MWh",
+        "fase": "Gas",
+        "temperatura_c": "480",
+        "presion_bar": "65",
+        "flujo_especifico": {
+          "estado": "sin_datos",
+          "valor": null,
+          "unidad": "autosuficiente"
+        },
+        "nota_tecnica": "Cogeneración eléctrica a partir de lignina y corteza.",
+        "fuente_id": "arauco-web-2026",
+        "cita_ubicacion": "arauco.com + AFCP Proceso Kraft de fibra larga en Misiones"
+      }
+    ],
+    "servicios": [
+      {
+        "id": "u1",
+        "equipo_tag": "B-401",
+        "etiqueta": "Corteza biomasa",
+        "direccion": "entrada",
+        "x": 1415,
+        "y": 505,
+        "dx": 0,
+        "dy": 28
+      },
+      {
+        "id": "u2",
+        "equipo_tag": "D-301",
+        "etiqueta": "Vapor BP",
+        "direccion": "entrada",
+        "x": 1120,
+        "y": 190,
+        "dx": 0,
+        "dy": -28
+      }
+    ],
+    "limites_bateria": [
+      {
+        "id": "lb-in-1",
+        "lado": "entrada",
+        "categoria": "materia_prima",
+        "nombre": "Chips de pino (fibra larga)",
+        "formula": "Madera",
+        "cantidad_masa": "2,10 t seca/t",
+        "cantidad_molar": null,
+        "fraccion_pureza": "4,5 m3 rollizo",
+        "corriente_num": 1,
+        "y": 240,
+        "nota": "Bosques implantados del Alto Paraná.",
+        "fuente_id": "arauco-web-2026"
+      },
+      {
+        "id": "lb-in-2",
+        "lado": "entrada",
+        "categoria": "materia_prima",
+        "nombre": "Reactivos ECF",
+        "formula": "O2 / ClO2 / H2O2",
+        "cantidad_masa": "sin_datos",
+        "cantidad_molar": null,
+        "fraccion_pureza": "Libre de Cl2",
+        "corriente_num": 4,
+        "y": 130,
+        "nota": "Blanqueo sin cloro elemental.",
+        "fuente_id": "arauco-web-2026"
+      },
+      {
+        "id": "lb-out-1",
+        "lado": "salida",
+        "categoria": "producto",
+        "nombre": "Celulosa Kraft blanqueada",
+        "formula": "(C6H10O5)n",
+        "cantidad_masa": "1,00 t ADt/t",
+        "cantidad_molar": null,
+        "fraccion_pureza": "90% seca · >89% ISO",
+        "corriente_num": 6,
+        "y": 230,
+        "nota": "Fibra larga de alta resistencia mecánica.",
+        "fuente_id": "arauco-web-2026"
+      },
+      {
+        "id": "lb-out-2",
+        "lado": "salida",
+        "categoria": "subproducto",
+        "nombre": "Vapor y energía renovable",
+        "formula": "Biomasa",
+        "cantidad_masa": "Autosuficiente",
+        "cantidad_molar": null,
+        "fraccion_pureza": "65 bar · 480 °C",
+        "corriente_num": 10,
+        "y": 345,
+        "nota": "Cogeneración en caldera recuperadora.",
+        "fuente_id": "arauco-web-2026"
+      }
+    ]
   }
 ]

@@ -627,5 +627,190 @@
       "cita_ubicacion": "bioetanol.csv (La Florida, Depto. Cruz Alta, Tucumán)",
       "confianza": "alta"
     }
+  },
+  {
+    "planta_id": "alpat-san-antonio-oeste",
+    "empresa_id": "alpat-saic",
+    "producto_id": "soda-solvay",
+    "provincia_id": "62",
+    "departamento_id": "62077",
+    "nombre": "Planta Industrial ALPAT (Punta Delgado)",
+    "localidad": "San Antonio Oeste",
+    "lat": -40.766,
+    "lon": -64.948,
+    "estado_operativo": "operativa",
+    "capacidad": {
+      "estado": "sin_datos",
+      "valor": null,
+      "unidad": "t/año Na2CO3",
+      "procedencia": {
+        "anio": 2026,
+        "fuente_id": "eu-bref-lvic-s",
+        "fuente": "Reference Document on Best Available Techniques for Large Volume Inorganic Chemicals (LVIC-S: Soda Ash)",
+        "url": "https://bureau-industrial-transformation.jrc.ec.europa.eu/reference/large-volume-inorganic-chemicals-solids-and-others-industry",
+        "fecha_descarga": "2026-11-26",
+        "hash": "sha256:6e2692b758cbb15dd8326f03c105bee4924fe9117bfa9873c7d1f00b9786fe58",
+        "cita_ubicacion": "Sin serie de capacidad auditada pública reciente; proceso Solvay Punta Delgado",
+        "confianza": "alta"
+      }
+    },
+    "procedencia": {
+      "anio": 2025,
+      "fuente_id": "usgs-mcs-2025-soda-ash",
+      "fuente": "USGS Mineral Commodity Summaries 2025: Soda Ash (Sodium Carbonate)",
+      "url": "https://pubs.usgs.gov/periodicals/mcs2025/mcs2025-soda-ash.pdf",
+      "fecha_descarga": "2026-11-26",
+      "hash": "sha256:a386ee59806756e28c72f2fde95eaa3b68068e0614f1e0228fd13007be920ff5",
+      "cita_ubicacion": "Operación industrial Solvay Punta Delgado, San Antonio Oeste (Depto. San Antonio, Río Negro)",
+      "confianza": "alta"
+    }
+  },
+  {
+    "planta_id": "caleras-san-juan-los-berros",
+    "empresa_id": "caleras-san-juan-sa",
+    "producto_id": "cal-industrial",
+    "provincia_id": "70",
+    "departamento_id": "70105",
+    "nombre": "Planta Calera Los Berros (Hornos Maerz/PFRK)",
+    "localidad": "Los Berros",
+    "lat": -31.946,
+    "lon": -68.678,
+    "estado_operativo": "operativa",
+    "capacidad": {
+      "estado": "sin_datos",
+      "valor": null,
+      "unidad": "t/año CaO",
+      "procedencia": {
+        "anio": 2026,
+        "fuente_id": "caleras-sj-web-2026",
+        "fuente": "Portal institucional Caleras San Juan S.A. (Polo Calero Los Berros)",
+        "url": "https://calerassanjuan.com/",
+        "fecha_descarga": "2026-11-26",
+        "hash": "sha256:310cab2033ed8e1093226691058715fbf4c90a4c2d0745ec1d6a34d39971587d",
+        "cita_ubicacion": "calerassanjuan.com Complejo industrial Los Berros (Depto. Sarmiento)",
+        "confianza": "alta"
+      }
+    },
+    "procedencia": {
+      "anio": 2026,
+      "fuente_id": "caleras-sj-web-2026",
+      "fuente": "Portal institucional Caleras San Juan S.A. (Polo Calero Los Berros)",
+      "url": "https://calerassanjuan.com/",
+      "fecha_descarga": "2026-11-26",
+      "hash": "sha256:310cab2033ed8e1093226691058715fbf4c90a4c2d0745ec1d6a34d39971587d",
+      "cita_ubicacion": "calerassanjuan.com Planta Los Berros, Sarmiento (San Juan)",
+      "confianza": "alta"
+    }
+  },
+  {
+    "planta_id": "cerro-vanguardia-san-julian",
+    "empresa_id": "cerro-vanguardia-sa",
+    "producto_id": "oro-plata",
+    "provincia_id": "78",
+    "departamento_id": "78042",
+    "nombre": "Planta Metalúrgica Cerro Vanguardia",
+    "localidad": "Puerto San Julián",
+    "lat": -48.368,
+    "lon": -68.248,
+    "estado_operativo": "operativa",
+    "capacidad": {
+      "estado": "sin_datos",
+      "valor": null,
+      "unidad": "koz Au eq/año",
+      "procedencia": {
+        "anio": 2026,
+        "fuente_id": "cerro-vanguardia-web-2026",
+        "fuente": "Portal institucional Cerro Vanguardia S.A. (AngloGold Ashanti / Fomicruz S.E.)",
+        "url": "https://www.cerrovanguardia.com.ar/",
+        "fecha_descarga": "2026-11-26",
+        "hash": "sha256:2a9633ad89a1b70c4fb6e599959a6635e88c52f360d90df16e897ca5ec3416b0",
+        "cita_ubicacion": "cerrovanguardia.com.ar Planta de lixiviación y fundición doré",
+        "confianza": "alta"
+      }
+    },
+    "procedencia": {
+      "anio": 2026,
+      "fuente_id": "cerro-vanguardia-web-2026",
+      "fuente": "Portal institucional Cerro Vanguardia S.A. (AngloGold Ashanti / Fomicruz S.E.)",
+      "url": "https://www.cerrovanguardia.com.ar/",
+      "fecha_descarga": "2026-11-26",
+      "hash": "sha256:2a9633ad89a1b70c4fb6e599959a6635e88c52f360d90df16e897ca5ec3416b0",
+      "cita_ubicacion": "cerrovanguardia.com.ar Macizo del Deseado, Depto. Magallanes (Santa Cruz)",
+      "confianza": "alta"
+    }
+  },
+  {
+    "planta_id": "cerro-negro-perito-moreno",
+    "empresa_id": "newmont-cerro-negro",
+    "producto_id": "oro-plata",
+    "provincia_id": "78",
+    "departamento_id": "78035",
+    "nombre": "Complejo Minero y Planta Cerro Negro",
+    "localidad": "Perito Moreno",
+    "lat": -46.885,
+    "lon": -70.251,
+    "estado_operativo": "operativa",
+    "capacidad": {
+      "estado": "sin_datos",
+      "valor": null,
+      "unidad": "koz Au/año",
+      "procedencia": {
+        "anio": 2026,
+        "fuente_id": "caem-web-2026",
+        "fuente": "Cámara Argentina de Empresas Mineras (CAEM): polos metalíferos y minería de Santa Cruz",
+        "url": "https://www.caem.com.ar/",
+        "fecha_descarga": "2026-11-26",
+        "hash": "sha256:c87dcc459011138da2f1e13b6de3f3eae07a46092db753f9b443a94fdc9cad22",
+        "cita_ubicacion": "caem.com.ar Operación Cerro Negro, Perito Moreno",
+        "confianza": "alta"
+      }
+    },
+    "procedencia": {
+      "anio": 2026,
+      "fuente_id": "caem-web-2026",
+      "fuente": "Cámara Argentina de Empresas Mineras (CAEM): polos metalíferos y minería de Santa Cruz",
+      "url": "https://www.caem.com.ar/",
+      "fecha_descarga": "2026-11-26",
+      "hash": "sha256:c87dcc459011138da2f1e13b6de3f3eae07a46092db753f9b443a94fdc9cad22",
+      "cita_ubicacion": "caem.com.ar Complejo Cerro Negro, Depto. Lago Buenos Aires (Santa Cruz)",
+      "confianza": "alta"
+    }
+  },
+  {
+    "planta_id": "arauco-puerto-esperanza",
+    "empresa_id": "arauco-argentina-sa",
+    "producto_id": "celulosa-kraft",
+    "provincia_id": "54",
+    "departamento_id": "54063",
+    "nombre": "Planta de Celulosa Kraft Puerto Esperanza",
+    "localidad": "Puerto Esperanza",
+    "lat": -26.017,
+    "lon": -54.633,
+    "estado_operativo": "operativa",
+    "capacidad": {
+      "estado": "sin_datos",
+      "valor": null,
+      "unidad": "t/año pulpa ADt",
+      "procedencia": {
+        "anio": 2026,
+        "fuente_id": "arauco-web-2026",
+        "fuente": "Portal corporativo Arauco (Operaciones Forestales y Planta de Celulosa Puerto Esperanza)",
+        "url": "https://www.arauco.com/",
+        "fecha_descarga": "2026-11-26",
+        "hash": "sha256:d00e96942269b2c521cd86449c5ff9fe6cec49bff31cdb210f0a7f004b00fad3",
+        "cita_ubicacion": "arauco.com Planta Puerto Esperanza (Misiones)",
+        "confianza": "alta"
+      }
+    },
+    "procedencia": {
+      "anio": 2026,
+      "fuente_id": "arauco-web-2026",
+      "fuente": "Portal corporativo Arauco (Operaciones Forestales y Planta de Celulosa Puerto Esperanza)",
+      "url": "https://www.arauco.com/",
+      "fecha_descarga": "2026-11-26",
+      "hash": "sha256:d00e96942269b2c521cd86449c5ff9fe6cec49bff31cdb210f0a7f004b00fad3",
+      "cita_ubicacion": "arauco.com Planta de celulosa fibra larga, Depto. Iguazú (Misiones)",
+      "confianza": "alta"
+    }
   }
 ]

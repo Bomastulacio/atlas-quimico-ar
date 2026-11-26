@@ -427,5 +427,137 @@
       "cita_ubicacion": "centroazucarero.com.ar y US DOE AFDC Ethanol Production",
       "confianza": "alta"
     }
+  },
+  {
+    "proceso_id": "soda-solvay-proceso",
+    "producto_id": "soda-solvay",
+    "nombre": "Proceso Solvay (amoníaco-soda) en San Antonio Oeste",
+    "ruta_tecnologica": "Salmuera purificada + calcinación de caliza + carbonatación amoniacal + reciclo de NH3",
+    "reaccion_global": "2 NaCl + CaCO3 -> Na2CO3 + CaCl2",
+    "energia_especifica": {
+      "estado": "sin_datos",
+      "valor": null,
+      "unidad": "GJ/t Na2CO3",
+      "procedencia": {
+        "anio": 2026,
+        "fuente_id": "eu-bref-lvic-s",
+        "fuente": "Reference Document on Best Available Techniques for Large Volume Inorganic Chemicals (LVIC-S: Soda Ash)",
+        "url": "https://bureau-industrial-transformation.jrc.ec.europa.eu/reference/large-volume-inorganic-chemicals-solids-and-others-industry",
+        "fecha_descarga": "2026-11-26",
+        "hash": "sha256:6e2692b758cbb15dd8326f03c105bee4924fe9117bfa9873c7d1f00b9786fe58",
+        "cita_ubicacion": "EU LVIC-S BREF Cap. 2: Soda Ash Solvay Process",
+        "confianza": "alta"
+      }
+    },
+    "descripcion": "Síntesis industrial de carbonato de sodio anhidro a partir de salmuera saturada (NaCl) y piedra caliza (CaCO3) utilizando amoníaco en ciclo cerrado como agente intermediario.",
+    "procedencia": {
+      "anio": 2026,
+      "fuente_id": "eu-bref-lvic-s",
+      "fuente": "Reference Document on Best Available Techniques for Large Volume Inorganic Chemicals (LVIC-S: Soda Ash)",
+      "url": "https://bureau-industrial-transformation.jrc.ec.europa.eu/reference/large-volume-inorganic-chemicals-solids-and-others-industry",
+      "fecha_descarga": "2026-11-26",
+      "hash": "sha256:6e2692b758cbb15dd8326f03c105bee4924fe9117bfa9873c7d1f00b9786fe58",
+      "cita_ubicacion": "EU LVIC-S BREF Cap. 2: Soda Ash Solvay Process",
+      "confianza": "alta"
+    }
+  },
+  {
+    "proceso_id": "cal-industrial-calcinacion",
+    "producto_id": "cal-industrial",
+    "nombre": "Calcinación regenerativa de caliza (Los Berros, San Juan)",
+    "ruta_tecnologica": "Trituración de caliza + horno vertical regenerativo PFRK (950-1100 °C) + hidratación",
+    "reaccion_global": "CaCO3 -> CaO + CO2",
+    "energia_especifica": {
+      "estado": "sin_datos",
+      "valor": null,
+      "unidad": "GJ/t CaO",
+      "procedencia": {
+        "anio": 2006,
+        "fuente_id": "ipcc-2006-mineral-cap2",
+        "fuente": "IPCC 2006 Guidelines Vol. 3 Chapter 2: Mineral Industry Emissions (Lime & Soda Ash)",
+        "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/pdf/3_Volume3/V3_2_Ch2_Mineral_Industry.pdf",
+        "fecha_descarga": "2026-11-26",
+        "hash": "sha256:f76b756a812afeb3da0c6824cf3747d2d11002a386e1885b374138796c4e1240",
+        "cita_ubicacion": "IPCC 2006 Vol. 3 Cap. 2.3 Lime Production + EU CLM BREF",
+        "confianza": "alta"
+      }
+    },
+    "descripcion": "Descomposición térmica de carbonato de calcio de alta pureza en hornos verticales de flujo paralelo regenerativo para producir cal viva reactiva (CaO) y cal hidratada (Ca(OH)2).",
+    "procedencia": {
+      "anio": 2006,
+      "fuente_id": "ipcc-2006-mineral-cap2",
+      "fuente": "IPCC 2006 Guidelines Vol. 3 Chapter 2: Mineral Industry Emissions (Lime & Soda Ash)",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/pdf/3_Volume3/V3_2_Ch2_Mineral_Industry.pdf",
+      "fecha_descarga": "2026-11-26",
+      "hash": "sha256:f76b756a812afeb3da0c6824cf3747d2d11002a386e1885b374138796c4e1240",
+      "cita_ubicacion": "IPCC 2006 Vol. 3 Cap. 2.3 Lime Production + EU CLM BREF",
+      "confianza": "alta"
+    }
+  },
+  {
+    "proceso_id": "oro-plata-lixiviacion-dore",
+    "producto_id": "oro-plata",
+    "nombre": "Lixiviación cianurada y fundición doré (Santa Cruz)",
+    "ruta_tecnologica": "Molienda SAG/bolas + lixiviación con NaCN/O2 + Merrill-Crowe + fundición doré + destrucción INCO",
+    "reaccion_global": "4 Au + 8 NaCN + O2 + 2 H2O -> 4 Na[Au(CN)2] + 4 NaOH",
+    "energia_especifica": {
+      "estado": "sin_datos",
+      "valor": null,
+      "unidad": "MWh/t mineral",
+      "procedencia": {
+        "anio": 2026,
+        "fuente_id": "cerro-vanguardia-web-2026",
+        "fuente": "Portal institucional Cerro Vanguardia S.A. (AngloGold Ashanti / Fomicruz S.E.)",
+        "url": "https://www.cerrovanguardia.com.ar/",
+        "fecha_descarga": "2026-11-26",
+        "hash": "sha256:2a9633ad89a1b70c4fb6e599959a6635e88c52f360d90df16e897ca5ec3416b0",
+        "cita_ubicacion": "cerrovanguardia.com.ar Proceso hidrometalúrgico cianuración + fundición doré",
+        "confianza": "alta"
+      }
+    },
+    "descripcion": "Extracción hidrometalúrgica de oro y plata desde vetas epitermales del Macizo del Deseado mediante disolución alcalina con cianuro de sodio, precipitación con zinc y fundición a barras doré.",
+    "procedencia": {
+      "anio": 2026,
+      "fuente_id": "cerro-vanguardia-web-2026",
+      "fuente": "Portal institucional Cerro Vanguardia S.A. (AngloGold Ashanti / Fomicruz S.E.)",
+      "url": "https://www.cerrovanguardia.com.ar/",
+      "fecha_descarga": "2026-11-26",
+      "hash": "sha256:2a9633ad89a1b70c4fb6e599959a6635e88c52f360d90df16e897ca5ec3416b0",
+      "cita_ubicacion": "cerrovanguardia.com.ar Proceso hidrometalúrgico cianuración + fundición doré",
+      "confianza": "alta"
+    }
+  },
+  {
+    "proceso_id": "celulosa-kraft-blanqueada",
+    "producto_id": "celulosa-kraft",
+    "nombre": "Proceso Kraft al sulfato y recuperación cerrada (Misiones)",
+    "ruta_tecnologica": "Chipeado de pino + digestor continuo Kraft (NaOH/Na2S) + blanqueo ECF + caldera recuperadora y caustificación",
+    "reaccion_global": "Na2CO3 + Ca(OH)2 -> 2 NaOH + CaCO3",
+    "energia_especifica": {
+      "estado": "sin_datos",
+      "valor": null,
+      "unidad": "MWh/t ADt",
+      "procedencia": {
+        "anio": 2026,
+        "fuente_id": "arauco-web-2026",
+        "fuente": "Portal corporativo Arauco (Operaciones Forestales y Planta de Celulosa Puerto Esperanza)",
+        "url": "https://www.arauco.com/",
+        "fecha_descarga": "2026-11-26",
+        "hash": "sha256:d00e96942269b2c521cd86449c5ff9fe6cec49bff31cdb210f0a7f004b00fad3",
+        "cita_ubicacion": "arauco.com + AFCP Proceso Kraft al sulfato con recuperación química cerrada",
+        "confianza": "alta"
+      }
+    },
+    "descripcion": "Cocción química de chips de pino con licor blanco alcalino para deslignificar fibras largas de celulosa, blanqueo libre de cloro elemental (ECF) y regeneración química y energética cerrada del licor negro.",
+    "procedencia": {
+      "anio": 2026,
+      "fuente_id": "arauco-web-2026",
+      "fuente": "Portal corporativo Arauco (Operaciones Forestales y Planta de Celulosa Puerto Esperanza)",
+      "url": "https://www.arauco.com/",
+      "fecha_descarga": "2026-11-26",
+      "hash": "sha256:d00e96942269b2c521cd86449c5ff9fe6cec49bff31cdb210f0a7f004b00fad3",
+      "cita_ubicacion": "arauco.com + AFCP Proceso Kraft al sulfato con recuperación química cerrada",
+      "confianza": "alta"
+    }
   }
 ]

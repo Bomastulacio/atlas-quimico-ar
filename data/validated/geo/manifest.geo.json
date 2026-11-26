@@ -21,9 +21,9 @@
       "hash": "sha256:fc8120130c0a3468a6a573c4c16ed11dd28c6f22292c9993627b25ba068d0860"
     },
     "departamentos_activos.geojson": {
-      "departamentos": 15,
-      "bytes": 19695,
-      "hash": "sha256:e808a09d64aeb6dbafdc9e5ad809f6fa8c635de8bc38752d7fa76d7d654a8449"
+      "departamentos": 21,
+      "bytes": 27038,
+      "hash": "sha256:cb3c39b650d9420343634e06cea68767b4a213965b6bc10ac6b1d0a876ea5b62"
     }
   },
   "departamentos_oficial": {

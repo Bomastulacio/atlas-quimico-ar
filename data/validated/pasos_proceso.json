@@ -4283,5 +4283,1388 @@
       "cita_ubicacion": "bioetanol-produccin-y-ventas-total-pas-.csv",
       "confianza": "alta"
     }
+  },
+  {
+    "paso_id": "solvay-p1-salmuera",
+    "proceso_id": "soda-solvay-proceso",
+    "orden": 1,
+    "nombre": "Purificación de salmuera y calcinación de caliza",
+    "tipo_paso": "preparacion",
+    "reaccion_balanceada": "CaCO3 -> CaO + CO2",
+    "temperatura_c": "950-1100",
+    "presion_bar": "1,0",
+    "reactivos": [
+      {
+        "especie": "NaCl",
+        "cantidad": 1.5,
+        "unidad": "t/t Na2CO3"
+      },
+      {
+        "especie": "CaCO3",
+        "cantidad": 1.25,
+        "unidad": "t/t Na2CO3"
+      }
+    ],
+    "productos": [
+      {
+        "especie": "Salmuera purificada",
+        "cantidad": null,
+        "unidad": "m3/t"
+      },
+      {
+        "especie": "CO2",
+        "cantidad": 0.55,
+        "unidad": "t/t Na2CO3"
+      },
+      {
+        "especie": "CaO",
+        "cantidad": 0.7,
+        "unidad": "t/t Na2CO3"
+      }
+    ],
+    "insumos": [
+      {
+        "especie": "Coque / gas natural",
+        "cantidad": null,
+        "unidad": "GJ/t"
+      }
+    ],
+    "subproductos": [
+      {
+        "especie": "Lodos de Ca/Mg",
+        "cantidad": null,
+        "unidad": "t/t"
+      }
+    ],
+    "energia": {
+      "estado": "sin_datos",
+      "valor": null,
+      "unidad": "GJ/t",
+      "procedencia": {
+        "anio": 2026,
+        "fuente_id": "eu-bref-lvic-s",
+        "fuente": "Reference Document on Best Available Techniques for Large Volume Inorganic Chemicals (LVIC-S: Soda Ash)",
+        "url": "https://bureau-industrial-transformation.jrc.ec.europa.eu/reference/large-volume-inorganic-chemicals-solids-and-others-industry",
+        "fecha_descarga": "2026-11-26",
+        "hash": "sha256:6e2692b758cbb15dd8326f03c105bee4924fe9117bfa9873c7d1f00b9786fe58",
+        "cita_ubicacion": "EU LVIC-S BREF Cap. 2: Soda Ash Solvay Process",
+        "confianza": "alta"
+      }
+    },
+    "descripcion": "Se remueven impurezas de calcio y magnesio de la salmuera saturada mientras los hornos de cal descomponen caliza en CO2 y cal viva (CaO).",
+    "pos_x": 80,
+    "pos_y": 160,
+    "procedencia": {
+      "anio": 2026,
+      "fuente_id": "eu-bref-lvic-s",
+      "fuente": "Reference Document on Best Available Techniques for Large Volume Inorganic Chemicals (LVIC-S: Soda Ash)",
+      "url": "https://bureau-industrial-transformation.jrc.ec.europa.eu/reference/large-volume-inorganic-chemicals-solids-and-others-industry",
+      "fecha_descarga": "2026-11-26",
+      "hash": "sha256:6e2692b758cbb15dd8326f03c105bee4924fe9117bfa9873c7d1f00b9786fe58",
+      "cita_ubicacion": "EU LVIC-S BREF Cap. 2: Soda Ash Solvay Process",
+      "confianza": "alta"
+    }
+  },
+  {
+    "paso_id": "solvay-p2-amoniacado",
+    "proceso_id": "soda-solvay-proceso",
+    "orden": 2,
+    "nombre": "Absorción de amoníaco en salmuera",
+    "tipo_paso": "preparacion",
+    "reaccion_balanceada": null,
+    "temperatura_c": "30-45",
+    "presion_bar": "1,0",
+    "reactivos": [
+      {
+        "especie": "NaCl",
+        "cantidad": 1.5,
+        "unidad": "t/t Na2CO3"
+      },
+      {
+        "especie": "NH3",
+        "cantidad": null,
+        "unidad": "reciclo cerrado"
+      }
+    ],
+    "productos": [
+      {
+        "especie": "Salmuera amoniacal",
+        "cantidad": null,
+        "unidad": "m3/t"
+      }
+    ],
+    "insumos": [
+      {
+        "especie": "Agua de enfriamiento",
+        "cantidad": null,
+        "unidad": "m3/t"
+      }
+    ],
+    "subproductos": [],
+    "energia": {
+      "estado": "sin_datos",
+      "valor": null,
+      "unidad": "GJ/t",
+      "procedencia": {
+        "anio": 2026,
+        "fuente_id": "eu-bref-lvic-s",
+        "fuente": "Reference Document on Best Available Techniques for Large Volume Inorganic Chemicals (LVIC-S: Soda Ash)",
+        "url": "https://bureau-industrial-transformation.jrc.ec.europa.eu/reference/large-volume-inorganic-chemicals-solids-and-others-industry",
+        "fecha_descarga": "2026-11-26",
+        "hash": "sha256:6e2692b758cbb15dd8326f03c105bee4924fe9117bfa9873c7d1f00b9786fe58",
+        "cita_ubicacion": "EU LVIC-S BREF Cap. 2: Soda Ash Solvay Process",
+        "confianza": "alta"
+      }
+    },
+    "descripcion": "La salmuera purificada absorbe gas amoníaco reciclado en torres enfriadas para preparar el medio alcalino de precipitación.",
+    "pos_x": 340,
+    "pos_y": 160,
+    "procedencia": {
+      "anio": 2026,
+      "fuente_id": "eu-bref-lvic-s",
+      "fuente": "Reference Document on Best Available Techniques for Large Volume Inorganic Chemicals (LVIC-S: Soda Ash)",
+      "url": "https://bureau-industrial-transformation.jrc.ec.europa.eu/reference/large-volume-inorganic-chemicals-solids-and-others-industry",
+      "fecha_descarga": "2026-11-26",
+      "hash": "sha256:6e2692b758cbb15dd8326f03c105bee4924fe9117bfa9873c7d1f00b9786fe58",
+      "cita_ubicacion": "EU LVIC-S BREF Cap. 2: Soda Ash Solvay Process",
+      "confianza": "alta"
+    }
+  },
+  {
+    "paso_id": "solvay-p3-carbonatacion",
+    "proceso_id": "soda-solvay-proceso",
+    "orden": 3,
+    "nombre": "Torres de carbonatación y filtración de NaHCO3",
+    "tipo_paso": "reaccion",
+    "reaccion_balanceada": "NaCl + NH3 + CO2 + H2O -> NaHCO3 + NH4Cl",
+    "temperatura_c": "25-60",
+    "presion_bar": "2,0",
+    "reactivos": [
+      {
+        "especie": "Salmuera amoniacal",
+        "cantidad": null,
+        "unidad": "m3/t"
+      },
+      {
+        "especie": "CO2",
+        "cantidad": 0.55,
+        "unidad": "t/t Na2CO3"
+      }
+    ],
+    "productos": [
+      {
+        "especie": "NaHCO3",
+        "cantidad": 1.58,
+        "unidad": "t/t Na2CO3"
+      },
+      {
+        "especie": "NH4Cl",
+        "cantidad": 1.01,
+        "unidad": "t/t Na2CO3"
+      }
+    ],
+    "insumos": [
+      {
+        "especie": "Agua de lavado",
+        "cantidad": null,
+        "unidad": "m3/t"
+      }
+    ],
+    "subproductos": [],
+    "energia": {
+      "estado": "sin_datos",
+      "valor": null,
+      "unidad": "GJ/t",
+      "procedencia": {
+        "anio": 2026,
+        "fuente_id": "eu-bref-lvic-s",
+        "fuente": "Reference Document on Best Available Techniques for Large Volume Inorganic Chemicals (LVIC-S: Soda Ash)",
+        "url": "https://bureau-industrial-transformation.jrc.ec.europa.eu/reference/large-volume-inorganic-chemicals-solids-and-others-industry",
+        "fecha_descarga": "2026-11-26",
+        "hash": "sha256:6e2692b758cbb15dd8326f03c105bee4924fe9117bfa9873c7d1f00b9786fe58",
+        "cita_ubicacion": "EU LVIC-S BREF Cap. 2: Soda Ash Solvay Process",
+        "confianza": "alta"
+      }
+    },
+    "descripcion": "El CO2 comprimido burbujea en torres Solvay precipitando cristales de bicarbonato de sodio (NaHCO3), que se separan del licor madre de NH4Cl en filtros rotativos.",
+    "pos_x": 620,
+    "pos_y": 160,
+    "procedencia": {
+      "anio": 2026,
+      "fuente_id": "eu-bref-lvic-s",
+      "fuente": "Reference Document on Best Available Techniques for Large Volume Inorganic Chemicals (LVIC-S: Soda Ash)",
+      "url": "https://bureau-industrial-transformation.jrc.ec.europa.eu/reference/large-volume-inorganic-chemicals-solids-and-others-industry",
+      "fecha_descarga": "2026-11-26",
+      "hash": "sha256:6e2692b758cbb15dd8326f03c105bee4924fe9117bfa9873c7d1f00b9786fe58",
+      "cita_ubicacion": "EU LVIC-S BREF Cap. 2: Soda Ash Solvay Process",
+      "confianza": "alta"
+    }
+  },
+  {
+    "paso_id": "solvay-p4-calcinacion",
+    "proceso_id": "soda-solvay-proceso",
+    "orden": 4,
+    "nombre": "Calcinación a Soda Solvay liviana y densa",
+    "tipo_paso": "refinacion",
+    "reaccion_balanceada": "2 NaHCO3 -> Na2CO3 + H2O + CO2",
+    "temperatura_c": "160-200",
+    "presion_bar": "1,0",
+    "reactivos": [
+      {
+        "especie": "NaHCO3",
+        "cantidad": 1.58,
+        "unidad": "t/t Na2CO3"
+      }
+    ],
+    "productos": [
+      {
+        "especie": "Na2CO3",
+        "cantidad": 1,
+        "unidad": "t/t Na2CO3"
+      },
+      {
+        "especie": "CO2 reciclado",
+        "cantidad": 0.42,
+        "unidad": "t/t Na2CO3"
+      }
+    ],
+    "insumos": [
+      {
+        "especie": "Vapor de calentamiento",
+        "cantidad": null,
+        "unidad": "t/t"
+      }
+    ],
+    "subproductos": [],
+    "energia": {
+      "estado": "sin_datos",
+      "valor": null,
+      "unidad": "GJ/t",
+      "procedencia": {
+        "anio": 2026,
+        "fuente_id": "eu-bref-lvic-s",
+        "fuente": "Reference Document on Best Available Techniques for Large Volume Inorganic Chemicals (LVIC-S: Soda Ash)",
+        "url": "https://bureau-industrial-transformation.jrc.ec.europa.eu/reference/large-volume-inorganic-chemicals-solids-and-others-industry",
+        "fecha_descarga": "2026-11-26",
+        "hash": "sha256:6e2692b758cbb15dd8326f03c105bee4924fe9117bfa9873c7d1f00b9786fe58",
+        "cita_ubicacion": "EU LVIC-S BREF Cap. 2: Soda Ash Solvay Process",
+        "confianza": "alta"
+      }
+    },
+    "descripcion": "El bicarbonato se descompone en calcinadores rotativos a 180 °C generando carbonato de sodio anhidro (Na2CO3) y CO2 concentrado que vuelve a carbonatación.",
+    "pos_x": 920,
+    "pos_y": 120,
+    "procedencia": {
+      "anio": 2026,
+      "fuente_id": "eu-bref-lvic-s",
+      "fuente": "Reference Document on Best Available Techniques for Large Volume Inorganic Chemicals (LVIC-S: Soda Ash)",
+      "url": "https://bureau-industrial-transformation.jrc.ec.europa.eu/reference/large-volume-inorganic-chemicals-solids-and-others-industry",
+      "fecha_descarga": "2026-11-26",
+      "hash": "sha256:6e2692b758cbb15dd8326f03c105bee4924fe9117bfa9873c7d1f00b9786fe58",
+      "cita_ubicacion": "EU LVIC-S BREF Cap. 2: Soda Ash Solvay Process",
+      "confianza": "alta"
+    }
+  },
+  {
+    "paso_id": "solvay-p5-recuperacion-nh3",
+    "proceso_id": "soda-solvay-proceso",
+    "orden": 5,
+    "nombre": "Destilación y recuperación cerrada de NH3",
+    "tipo_paso": "separacion",
+    "reaccion_balanceada": "2 NH4Cl + Ca(OH)2 -> 2 NH3 + CaCl2 + 2 H2O",
+    "temperatura_c": "100-110",
+    "presion_bar": "1,2",
+    "reactivos": [
+      {
+        "especie": "NH4Cl",
+        "cantidad": 1.01,
+        "unidad": "t/t Na2CO3"
+      },
+      {
+        "especie": "Ca(OH)2",
+        "cantidad": 0.72,
+        "unidad": "t/t Na2CO3"
+      }
+    ],
+    "productos": [
+      {
+        "especie": "NH3 reciclado",
+        "cantidad": null,
+        "unidad": "reciclo >99%"
+      }
+    ],
+    "insumos": [
+      {
+        "especie": "Vapor vivo",
+        "cantidad": null,
+        "unidad": "t/t"
+      }
+    ],
+    "subproductos": [
+      {
+        "especie": "CaCl2 en efluente",
+        "cantidad": 1.05,
+        "unidad": "t/t Na2CO3"
+      }
+    ],
+    "energia": {
+      "estado": "sin_datos",
+      "valor": null,
+      "unidad": "GJ/t",
+      "procedencia": {
+        "anio": 2026,
+        "fuente_id": "eu-bref-lvic-s",
+        "fuente": "Reference Document on Best Available Techniques for Large Volume Inorganic Chemicals (LVIC-S: Soda Ash)",
+        "url": "https://bureau-industrial-transformation.jrc.ec.europa.eu/reference/large-volume-inorganic-chemicals-solids-and-others-industry",
+        "fecha_descarga": "2026-11-26",
+        "hash": "sha256:6e2692b758cbb15dd8326f03c105bee4924fe9117bfa9873c7d1f00b9786fe58",
+        "cita_ubicacion": "EU LVIC-S BREF Cap. 2: Soda Ash Solvay Process",
+        "confianza": "alta"
+      }
+    },
+    "descripcion": "La lechada de cal libera el amoníaco del cloruro de amonio en torres destiladoras, cerrando el ciclo de NH3 y descargando solución salina de CaCl2.",
+    "pos_x": 920,
+    "pos_y": 280,
+    "procedencia": {
+      "anio": 2026,
+      "fuente_id": "eu-bref-lvic-s",
+      "fuente": "Reference Document on Best Available Techniques for Large Volume Inorganic Chemicals (LVIC-S: Soda Ash)",
+      "url": "https://bureau-industrial-transformation.jrc.ec.europa.eu/reference/large-volume-inorganic-chemicals-solids-and-others-industry",
+      "fecha_descarga": "2026-11-26",
+      "hash": "sha256:6e2692b758cbb15dd8326f03c105bee4924fe9117bfa9873c7d1f00b9786fe58",
+      "cita_ubicacion": "EU LVIC-S BREF Cap. 2: Soda Ash Solvay Process",
+      "confianza": "alta"
+    }
+  },
+  {
+    "paso_id": "cal-p1-cantera",
+    "proceso_id": "cal-industrial-calcinacion",
+    "orden": 1,
+    "nombre": "Extracción, trituración y clasificación de caliza",
+    "tipo_paso": "materia_prima",
+    "reaccion_balanceada": null,
+    "temperatura_c": "Ambiente",
+    "presion_bar": "1,0",
+    "reactivos": [
+      {
+        "especie": "CaCO3 (caliza)",
+        "cantidad": 1.82,
+        "unidad": "t/t CaO"
+      }
+    ],
+    "productos": [
+      {
+        "especie": "Caliza clasificada (30-90 mm)",
+        "cantidad": 1.8,
+        "unidad": "t/t CaO"
+      }
+    ],
+    "insumos": [
+      {
+        "especie": "Energía mecánica",
+        "cantidad": null,
+        "unidad": "kWh/t"
+      }
+    ],
+    "subproductos": [
+      {
+        "especie": "Finos de caliza",
+        "cantidad": 0.02,
+        "unidad": "t/t CaO"
+      }
+    ],
+    "energia": {
+      "estado": "sin_datos",
+      "valor": null,
+      "unidad": "GJ/t",
+      "procedencia": {
+        "anio": 2006,
+        "fuente_id": "ipcc-2006-mineral-cap2",
+        "fuente": "IPCC 2006 Guidelines Vol. 3 Chapter 2: Mineral Industry Emissions (Lime & Soda Ash)",
+        "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/pdf/3_Volume3/V3_2_Ch2_Mineral_Industry.pdf",
+        "fecha_descarga": "2026-11-26",
+        "hash": "sha256:f76b756a812afeb3da0c6824cf3747d2d11002a386e1885b374138796c4e1240",
+        "cita_ubicacion": "IPCC 2006 Vol. 3 Cap. 2.3 Lime Production + EU CLM BREF",
+        "confianza": "alta"
+      }
+    },
+    "descripcion": "La roca caliza de alta ley de Los Berros se tritura y zarandea a granulometría controlada (30-90 mm) para garantizar permeabilidad al gas en el horno.",
+    "pos_x": 80,
+    "pos_y": 180,
+    "procedencia": {
+      "anio": 2006,
+      "fuente_id": "ipcc-2006-mineral-cap2",
+      "fuente": "IPCC 2006 Guidelines Vol. 3 Chapter 2: Mineral Industry Emissions (Lime & Soda Ash)",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/pdf/3_Volume3/V3_2_Ch2_Mineral_Industry.pdf",
+      "fecha_descarga": "2026-11-26",
+      "hash": "sha256:f76b756a812afeb3da0c6824cf3747d2d11002a386e1885b374138796c4e1240",
+      "cita_ubicacion": "IPCC 2006 Vol. 3 Cap. 2.3 Lime Production + EU CLM BREF",
+      "confianza": "alta"
+    }
+  },
+  {
+    "paso_id": "cal-p2-precalentamiento",
+    "proceso_id": "cal-industrial-calcinacion",
+    "orden": 2,
+    "nombre": "Precalentamiento regenerativo de carga",
+    "tipo_paso": "preparacion",
+    "reaccion_balanceada": null,
+    "temperatura_c": "650-800",
+    "presion_bar": "1,0",
+    "reactivos": [
+      {
+        "especie": "Caliza clasificada",
+        "cantidad": 1.8,
+        "unidad": "t/t CaO"
+      }
+    ],
+    "productos": [
+      {
+        "especie": "Caliza precalentada",
+        "cantidad": 1.8,
+        "unidad": "t/t CaO"
+      }
+    ],
+    "insumos": [
+      {
+        "especie": "Gases calientes del cuba paralelo",
+        "cantidad": null,
+        "unidad": "Nm3/t"
+      }
+    ],
+    "subproductos": [],
+    "energia": {
+      "estado": "sin_datos",
+      "valor": null,
+      "unidad": "GJ/t",
+      "procedencia": {
+        "anio": 2006,
+        "fuente_id": "ipcc-2006-mineral-cap2",
+        "fuente": "IPCC 2006 Guidelines Vol. 3 Chapter 2: Mineral Industry Emissions (Lime & Soda Ash)",
+        "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/pdf/3_Volume3/V3_2_Ch2_Mineral_Industry.pdf",
+        "fecha_descarga": "2026-11-26",
+        "hash": "sha256:f76b756a812afeb3da0c6824cf3747d2d11002a386e1885b374138796c4e1240",
+        "cita_ubicacion": "IPCC 2006 Vol. 3 Cap. 2.3 Lime Production + EU CLM BREF",
+        "confianza": "alta"
+      }
+    },
+    "descripcion": "En el horno vertical de doble cuba (PFRK), los gases de escape ceden calor sensible a la caliza descendente antes de la zona de fuego.",
+    "pos_x": 340,
+    "pos_y": 180,
+    "procedencia": {
+      "anio": 2006,
+      "fuente_id": "ipcc-2006-mineral-cap2",
+      "fuente": "IPCC 2006 Guidelines Vol. 3 Chapter 2: Mineral Industry Emissions (Lime & Soda Ash)",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/pdf/3_Volume3/V3_2_Ch2_Mineral_Industry.pdf",
+      "fecha_descarga": "2026-11-26",
+      "hash": "sha256:f76b756a812afeb3da0c6824cf3747d2d11002a386e1885b374138796c4e1240",
+      "cita_ubicacion": "IPCC 2006 Vol. 3 Cap. 2.3 Lime Production + EU CLM BREF",
+      "confianza": "alta"
+    }
+  },
+  {
+    "paso_id": "cal-p3-calcinacion",
+    "proceso_id": "cal-industrial-calcinacion",
+    "orden": 3,
+    "nombre": "Calcinación térmica de caliza a cal viva (CaO)",
+    "tipo_paso": "reaccion",
+    "reaccion_balanceada": "CaCO3 -> CaO + CO2",
+    "temperatura_c": "950-1100",
+    "presion_bar": "1,0",
+    "reactivos": [
+      {
+        "especie": "CaCO3",
+        "cantidad": 1.8,
+        "unidad": "t/t CaO"
+      }
+    ],
+    "productos": [
+      {
+        "especie": "CaO (cal viva)",
+        "cantidad": 1,
+        "unidad": "t/t CaO"
+      },
+      {
+        "especie": "CO2 de proceso",
+        "cantidad": 0.785,
+        "unidad": "t/t CaO"
+      }
+    ],
+    "insumos": [
+      {
+        "especie": "Gas natural / combustible",
+        "cantidad": null,
+        "unidad": "GJ/t"
+      }
+    ],
+    "subproductos": [
+      {
+        "especie": "CO2 descarbonatación + combustión",
+        "cantidad": 0.785,
+        "unidad": "t/t CaO"
+      }
+    ],
+    "energia": {
+      "estado": "sin_datos",
+      "valor": null,
+      "unidad": "GJ/t",
+      "procedencia": {
+        "anio": 2006,
+        "fuente_id": "ipcc-2006-mineral-cap2",
+        "fuente": "IPCC 2006 Guidelines Vol. 3 Chapter 2: Mineral Industry Emissions (Lime & Soda Ash)",
+        "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/pdf/3_Volume3/V3_2_Ch2_Mineral_Industry.pdf",
+        "fecha_descarga": "2026-11-26",
+        "hash": "sha256:f76b756a812afeb3da0c6824cf3747d2d11002a386e1885b374138796c4e1240",
+        "cita_ubicacion": "IPCC 2006 Vol. 3 Cap. 2.3 Lime Production + EU CLM BREF",
+        "confianza": "alta"
+      }
+    },
+    "descripcion": "Reacción endotérmica de descarbonatación en flujo paralelo con alternancia cíclica de quemadores; emite 0,785 t CO2 estequiométrico por tonelada de CaO puro (IPCC Cap. 2.3).",
+    "pos_x": 620,
+    "pos_y": 180,
+    "procedencia": {
+      "anio": 2006,
+      "fuente_id": "ipcc-2006-mineral-cap2",
+      "fuente": "IPCC 2006 Guidelines Vol. 3 Chapter 2: Mineral Industry Emissions (Lime & Soda Ash)",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/pdf/3_Volume3/V3_2_Ch2_Mineral_Industry.pdf",
+      "fecha_descarga": "2026-11-26",
+      "hash": "sha256:f76b756a812afeb3da0c6824cf3747d2d11002a386e1885b374138796c4e1240",
+      "cita_ubicacion": "IPCC 2006 Vol. 3 Cap. 2.3 Lime Production + EU CLM BREF",
+      "confianza": "alta"
+    }
+  },
+  {
+    "paso_id": "cal-p4-enfriamiento-molienda",
+    "proceso_id": "cal-industrial-calcinacion",
+    "orden": 4,
+    "nombre": "Enfriamiento, clasificación y molienda de CaO",
+    "tipo_paso": "refinacion",
+    "reaccion_balanceada": null,
+    "temperatura_c": "60-120",
+    "presion_bar": "1,0",
+    "reactivos": [
+      {
+        "especie": "CaO incandescente",
+        "cantidad": 1,
+        "unidad": "t/t CaO"
+      }
+    ],
+    "productos": [
+      {
+        "especie": "Cal viva granulada / molida",
+        "cantidad": 1,
+        "unidad": "t/t CaO"
+      }
+    ],
+    "insumos": [
+      {
+        "especie": "Aire de enfriamiento",
+        "cantidad": null,
+        "unidad": "Nm3/t"
+      }
+    ],
+    "subproductos": [
+      {
+        "especie": "Polvo retenido en filtros de mangas",
+        "cantidad": null,
+        "unidad": "kg/t"
+      }
+    ],
+    "energia": {
+      "estado": "sin_datos",
+      "valor": null,
+      "unidad": "GJ/t",
+      "procedencia": {
+        "anio": 2006,
+        "fuente_id": "ipcc-2006-mineral-cap2",
+        "fuente": "IPCC 2006 Guidelines Vol. 3 Chapter 2: Mineral Industry Emissions (Lime & Soda Ash)",
+        "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/pdf/3_Volume3/V3_2_Ch2_Mineral_Industry.pdf",
+        "fecha_descarga": "2026-11-26",
+        "hash": "sha256:f76b756a812afeb3da0c6824cf3747d2d11002a386e1885b374138796c4e1240",
+        "cita_ubicacion": "IPCC 2006 Vol. 3 Cap. 2.3 Lime Production + EU CLM BREF",
+        "confianza": "alta"
+      }
+    },
+    "descripcion": "La cal viva se enfría recuperando calor hacia el aire de combustión, se clasifica por granulometría y se almacena en silos herméticos anti-humedad.",
+    "pos_x": 900,
+    "pos_y": 140,
+    "procedencia": {
+      "anio": 2006,
+      "fuente_id": "ipcc-2006-mineral-cap2",
+      "fuente": "IPCC 2006 Guidelines Vol. 3 Chapter 2: Mineral Industry Emissions (Lime & Soda Ash)",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/pdf/3_Volume3/V3_2_Ch2_Mineral_Industry.pdf",
+      "fecha_descarga": "2026-11-26",
+      "hash": "sha256:f76b756a812afeb3da0c6824cf3747d2d11002a386e1885b374138796c4e1240",
+      "cita_ubicacion": "IPCC 2006 Vol. 3 Cap. 2.3 Lime Production + EU CLM BREF",
+      "confianza": "alta"
+    }
+  },
+  {
+    "paso_id": "cal-p5-hidratacion-despacho",
+    "proceso_id": "cal-industrial-calcinacion",
+    "orden": 5,
+    "nombre": "Hidratación controlada a Ca(OH)2 y despacho",
+    "tipo_paso": "producto",
+    "reaccion_balanceada": "CaO + H2O -> Ca(OH)2",
+    "temperatura_c": "90-105",
+    "presion_bar": "1,0",
+    "reactivos": [
+      {
+        "especie": "CaO",
+        "cantidad": 0.76,
+        "unidad": "t/t Ca(OH)2"
+      },
+      {
+        "especie": "H2O",
+        "cantidad": 0.25,
+        "unidad": "t/t Ca(OH)2"
+      }
+    ],
+    "productos": [
+      {
+        "especie": "Ca(OH)2 (cal hidratada) y CaO a granel",
+        "cantidad": 1,
+        "unidad": "t/t"
+      }
+    ],
+    "insumos": [
+      {
+        "especie": "Agua desmineralizada",
+        "cantidad": 0.25,
+        "unidad": "t/t"
+      }
+    ],
+    "subproductos": [
+      {
+        "especie": "Vapor de agua",
+        "cantidad": null,
+        "unidad": "t/t"
+      }
+    ],
+    "energia": {
+      "estado": "sin_datos",
+      "valor": null,
+      "unidad": "GJ/t",
+      "procedencia": {
+        "anio": 2006,
+        "fuente_id": "ipcc-2006-mineral-cap2",
+        "fuente": "IPCC 2006 Guidelines Vol. 3 Chapter 2: Mineral Industry Emissions (Lime & Soda Ash)",
+        "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/pdf/3_Volume3/V3_2_Ch2_Mineral_Industry.pdf",
+        "fecha_descarga": "2026-11-26",
+        "hash": "sha256:f76b756a812afeb3da0c6824cf3747d2d11002a386e1885b374138796c4e1240",
+        "cita_ubicacion": "IPCC 2006 Vol. 3 Cap. 2.3 Lime Production + EU CLM BREF",
+        "confianza": "alta"
+      }
+    },
+    "descripcion": "Fracción de la cal viva se apaga en hidratadores continuos para obtener hidróxido de calcio fino destinado a minería de litio, potabilización y exportación.",
+    "pos_x": 1180,
+    "pos_y": 180,
+    "procedencia": {
+      "anio": 2006,
+      "fuente_id": "ipcc-2006-mineral-cap2",
+      "fuente": "IPCC 2006 Guidelines Vol. 3 Chapter 2: Mineral Industry Emissions (Lime & Soda Ash)",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/pdf/3_Volume3/V3_2_Ch2_Mineral_Industry.pdf",
+      "fecha_descarga": "2026-11-26",
+      "hash": "sha256:f76b756a812afeb3da0c6824cf3747d2d11002a386e1885b374138796c4e1240",
+      "cita_ubicacion": "IPCC 2006 Vol. 3 Cap. 2.3 Lime Production + EU CLM BREF",
+      "confianza": "alta"
+    }
+  },
+  {
+    "paso_id": "oro-p1-molienda",
+    "proceso_id": "oro-plata-lixiviacion-dore",
+    "orden": 1,
+    "nombre": "Trituración y molienda SAG/bolas de mena",
+    "tipo_paso": "preparacion",
+    "reaccion_balanceada": null,
+    "temperatura_c": "Ambiente",
+    "presion_bar": "1,0",
+    "reactivos": [
+      {
+        "especie": "Mineral epitermal Au/Ag",
+        "cantidad": 1000,
+        "unidad": "t mena/lote"
+      }
+    ],
+    "productos": [
+      {
+        "especie": "Pulpa molida (<75 micras)",
+        "cantidad": 1000,
+        "unidad": "t sólidos"
+      }
+    ],
+    "insumos": [
+      {
+        "especie": "Agua de proceso reciclada",
+        "cantidad": null,
+        "unidad": "m3/t"
+      },
+      {
+        "especie": "CaO (ajuste pH >10,5)",
+        "cantidad": null,
+        "unidad": "kg/t"
+      }
+    ],
+    "subproductos": [],
+    "energia": {
+      "estado": "sin_datos",
+      "valor": null,
+      "unidad": "kWh/t",
+      "procedencia": {
+        "anio": 2026,
+        "fuente_id": "cerro-vanguardia-web-2026",
+        "fuente": "Portal institucional Cerro Vanguardia S.A. (AngloGold Ashanti / Fomicruz S.E.)",
+        "url": "https://www.cerrovanguardia.com.ar/",
+        "fecha_descarga": "2026-11-26",
+        "hash": "sha256:2a9633ad89a1b70c4fb6e599959a6635e88c52f360d90df16e897ca5ec3416b0",
+        "cita_ubicacion": "cerrovanguardia.com.ar Proceso hidrometalúrgico cianuración + fundición doré",
+        "confianza": "alta"
+      }
+    },
+    "descripcion": "El mineral cuarzoso del Macizo del Deseado se reduce en circuitos de chancado, molinos SAG/bolas e hidrociclones en medio alcalino con cal para liberar oro y plata.",
+    "pos_x": 80,
+    "pos_y": 180,
+    "procedencia": {
+      "anio": 2026,
+      "fuente_id": "cerro-vanguardia-web-2026",
+      "fuente": "Portal institucional Cerro Vanguardia S.A. (AngloGold Ashanti / Fomicruz S.E.)",
+      "url": "https://www.cerrovanguardia.com.ar/",
+      "fecha_descarga": "2026-11-26",
+      "hash": "sha256:2a9633ad89a1b70c4fb6e599959a6635e88c52f360d90df16e897ca5ec3416b0",
+      "cita_ubicacion": "cerrovanguardia.com.ar Proceso hidrometalúrgico cianuración + fundición doré",
+      "confianza": "alta"
+    }
+  },
+  {
+    "paso_id": "oro-p2-lixiviacion",
+    "proceso_id": "oro-plata-lixiviacion-dore",
+    "orden": 2,
+    "nombre": "Lixiviación cianurada agitada con oxígeno",
+    "tipo_paso": "reaccion",
+    "reaccion_balanceada": "4 Au + 8 NaCN + O2 + 2 H2O -> 4 Na[Au(CN)2] + 4 NaOH",
+    "temperatura_c": "15-25",
+    "presion_bar": "1,0",
+    "reactivos": [
+      {
+        "especie": "Pulpa Au/Ag",
+        "cantidad": null,
+        "unidad": "t/h"
+      },
+      {
+        "especie": "NaCN",
+        "cantidad": null,
+        "unidad": "kg/t mena"
+      },
+      {
+        "especie": "O2",
+        "cantidad": null,
+        "unidad": "Nm3/t"
+      }
+    ],
+    "productos": [
+      {
+        "especie": "Solución rica Na[Au(CN)2] / Na[Ag(CN)2]",
+        "cantidad": null,
+        "unidad": "m3/h"
+      }
+    ],
+    "insumos": [
+      {
+        "especie": "CaO (control pH 10,5-11)",
+        "cantidad": null,
+        "unidad": "kg/t"
+      }
+    ],
+    "subproductos": [
+      {
+        "especie": "Relaves agotados hacia detoxificación",
+        "cantidad": null,
+        "unidad": "t/h"
+      }
+    ],
+    "energia": {
+      "estado": "sin_datos",
+      "valor": null,
+      "unidad": "kWh/t",
+      "procedencia": {
+        "anio": 2026,
+        "fuente_id": "cerro-vanguardia-web-2026",
+        "fuente": "Portal institucional Cerro Vanguardia S.A. (AngloGold Ashanti / Fomicruz S.E.)",
+        "url": "https://www.cerrovanguardia.com.ar/",
+        "fecha_descarga": "2026-11-26",
+        "hash": "sha256:2a9633ad89a1b70c4fb6e599959a6635e88c52f360d90df16e897ca5ec3416b0",
+        "cita_ubicacion": "cerrovanguardia.com.ar Proceso hidrometalúrgico cianuración + fundición doré",
+        "confianza": "alta"
+      }
+    },
+    "descripcion": "En tanques agitados aireados (ecuación de Elsner), el oro y la plata forman complejos solubles de aurocianuro y argentocianuro manteniendo pH alcalino seguro.",
+    "pos_x": 360,
+    "pos_y": 180,
+    "procedencia": {
+      "anio": 2026,
+      "fuente_id": "cerro-vanguardia-web-2026",
+      "fuente": "Portal institucional Cerro Vanguardia S.A. (AngloGold Ashanti / Fomicruz S.E.)",
+      "url": "https://www.cerrovanguardia.com.ar/",
+      "fecha_descarga": "2026-11-26",
+      "hash": "sha256:2a9633ad89a1b70c4fb6e599959a6635e88c52f360d90df16e897ca5ec3416b0",
+      "cita_ubicacion": "cerrovanguardia.com.ar Proceso hidrometalúrgico cianuración + fundición doré",
+      "confianza": "alta"
+    }
+  },
+  {
+    "paso_id": "oro-p3-precipitacion",
+    "proceso_id": "oro-plata-lixiviacion-dore",
+    "orden": 3,
+    "nombre": "Clarificación y precipitación Merrill-Crowe",
+    "tipo_paso": "separacion",
+    "reaccion_balanceada": "2 Na[Au(CN)2] + Zn -> 2 Au + Na2[Zn(CN)4]",
+    "temperatura_c": "20-25",
+    "presion_bar": "0,2 (vacío desaireación)",
+    "reactivos": [
+      {
+        "especie": "Solución rica clarificada",
+        "cantidad": null,
+        "unidad": "m3/h"
+      },
+      {
+        "especie": "Zn en polvo",
+        "cantidad": null,
+        "unidad": "kg/lote"
+      }
+    ],
+    "productos": [
+      {
+        "especie": "Precipitado metálico Au/Ag",
+        "cantidad": null,
+        "unidad": "kg/lote"
+      },
+      {
+        "especie": "Solución estéril reciclada",
+        "cantidad": null,
+        "unidad": "m3/h"
+      }
+    ],
+    "insumos": [
+      {
+        "especie": "Tierra de diatomeas (filtros)",
+        "cantidad": null,
+        "unidad": "kg/lote"
+      }
+    ],
+    "subproductos": [],
+    "energia": {
+      "estado": "sin_datos",
+      "valor": null,
+      "unidad": "kWh/t",
+      "procedencia": {
+        "anio": 2026,
+        "fuente_id": "cerro-vanguardia-web-2026",
+        "fuente": "Portal institucional Cerro Vanguardia S.A. (AngloGold Ashanti / Fomicruz S.E.)",
+        "url": "https://www.cerrovanguardia.com.ar/",
+        "fecha_descarga": "2026-11-26",
+        "hash": "sha256:2a9633ad89a1b70c4fb6e599959a6635e88c52f360d90df16e897ca5ec3416b0",
+        "cita_ubicacion": "cerrovanguardia.com.ar Proceso hidrometalúrgico cianuración + fundición doré",
+        "confianza": "alta"
+      }
+    },
+    "descripcion": "La solución rica se clarifica y desoxigena al vacío; al inyectar polvo de zinc precipitan el oro y la plata metálicos mientras la solución estéril retorna a lixiviación.",
+    "pos_x": 640,
+    "pos_y": 140,
+    "procedencia": {
+      "anio": 2026,
+      "fuente_id": "cerro-vanguardia-web-2026",
+      "fuente": "Portal institucional Cerro Vanguardia S.A. (AngloGold Ashanti / Fomicruz S.E.)",
+      "url": "https://www.cerrovanguardia.com.ar/",
+      "fecha_descarga": "2026-11-26",
+      "hash": "sha256:2a9633ad89a1b70c4fb6e599959a6635e88c52f360d90df16e897ca5ec3416b0",
+      "cita_ubicacion": "cerrovanguardia.com.ar Proceso hidrometalúrgico cianuración + fundición doré",
+      "confianza": "alta"
+    }
+  },
+  {
+    "paso_id": "oro-p4-fundicion-dore",
+    "proceso_id": "oro-plata-lixiviacion-dore",
+    "orden": 4,
+    "nombre": "Fundición de precipitado y colada de barras doré",
+    "tipo_paso": "producto",
+    "reaccion_balanceada": null,
+    "temperatura_c": "1100-1200",
+    "presion_bar": "1,0",
+    "reactivos": [
+      {
+        "especie": "Precipitado Au/Ag seco",
+        "cantidad": null,
+        "unidad": "kg/lote"
+      }
+    ],
+    "productos": [
+      {
+        "especie": "Lingote doré (aleación Au/Ag)",
+        "cantidad": null,
+        "unidad": "kg/lote"
+      }
+    ],
+    "insumos": [
+      {
+        "especie": "Fundentes (bórax, sílice, nitrato)",
+        "cantidad": null,
+        "unidad": "kg/lote"
+      }
+    ],
+    "subproductos": [
+      {
+        "especie": "Escoria vitrificada (reprocesable)",
+        "cantidad": null,
+        "unidad": "kg/lote"
+      }
+    ],
+    "energia": {
+      "estado": "sin_datos",
+      "valor": null,
+      "unidad": "kWh/kg",
+      "procedencia": {
+        "anio": 2026,
+        "fuente_id": "cerro-vanguardia-web-2026",
+        "fuente": "Portal institucional Cerro Vanguardia S.A. (AngloGold Ashanti / Fomicruz S.E.)",
+        "url": "https://www.cerrovanguardia.com.ar/",
+        "fecha_descarga": "2026-11-26",
+        "hash": "sha256:2a9633ad89a1b70c4fb6e599959a6635e88c52f360d90df16e897ca5ec3416b0",
+        "cita_ubicacion": "cerrovanguardia.com.ar Proceso hidrometalúrgico cianuración + fundición doré",
+        "confianza": "alta"
+      }
+    },
+    "descripcion": "El precipitado se funde con fundentes en hornos de inducción o basculantes a 1.150 °C para colar barras doré (Au/Ag) destinadas a refinación final y exportación.",
+    "pos_x": 920,
+    "pos_y": 120,
+    "procedencia": {
+      "anio": 2026,
+      "fuente_id": "cerro-vanguardia-web-2026",
+      "fuente": "Portal institucional Cerro Vanguardia S.A. (AngloGold Ashanti / Fomicruz S.E.)",
+      "url": "https://www.cerrovanguardia.com.ar/",
+      "fecha_descarga": "2026-11-26",
+      "hash": "sha256:2a9633ad89a1b70c4fb6e599959a6635e88c52f360d90df16e897ca5ec3416b0",
+      "cita_ubicacion": "cerrovanguardia.com.ar Proceso hidrometalúrgico cianuración + fundición doré",
+      "confianza": "alta"
+    }
+  },
+  {
+    "paso_id": "oro-p5-detox-relaves",
+    "proceso_id": "oro-plata-lixiviacion-dore",
+    "orden": 5,
+    "nombre": "Destrucción de cianuro (INCO SO2/aire) y dique",
+    "tipo_paso": "emision",
+    "reaccion_balanceada": "CN- + SO2 + O2 + H2O -> CNO- + H2SO4",
+    "temperatura_c": "Ambiente",
+    "presion_bar": "1,0",
+    "reactivos": [
+      {
+        "especie": "Relaves con cianuro WAD",
+        "cantidad": null,
+        "unidad": "t/h"
+      },
+      {
+        "especie": "SO2 / metabisulfito + aire",
+        "cantidad": null,
+        "unidad": "kg/t"
+      }
+    ],
+    "productos": [
+      {
+        "especie": "Relave detoxificado (cianato CNO-)",
+        "cantidad": null,
+        "unidad": "t/h"
+      }
+    ],
+    "insumos": [
+      {
+        "especie": "CuSO4 catalizador + cal",
+        "cantidad": null,
+        "unidad": "kg/t"
+      }
+    ],
+    "subproductos": [
+      {
+        "especie": "Agua clarificada recuperada",
+        "cantidad": null,
+        "unidad": "m3/h"
+      }
+    ],
+    "energia": {
+      "estado": "sin_datos",
+      "valor": null,
+      "unidad": "kWh/t",
+      "procedencia": {
+        "anio": 2026,
+        "fuente_id": "cerro-vanguardia-web-2026",
+        "fuente": "Portal institucional Cerro Vanguardia S.A. (AngloGold Ashanti / Fomicruz S.E.)",
+        "url": "https://www.cerrovanguardia.com.ar/",
+        "fecha_descarga": "2026-11-26",
+        "hash": "sha256:2a9633ad89a1b70c4fb6e599959a6635e88c52f360d90df16e897ca5ec3416b0",
+        "cita_ubicacion": "cerrovanguardia.com.ar Proceso hidrometalúrgico cianuración + fundición doré",
+        "confianza": "alta"
+      }
+    },
+    "descripcion": "Antes de enviarse al depósito de colas impermeabilizado, el cianuro libre y disociable se oxida a cianato inocuo mediante el proceso INCO SO2/aire bajo Código Internacional del Cianuro.",
+    "pos_x": 920,
+    "pos_y": 280,
+    "procedencia": {
+      "anio": 2026,
+      "fuente_id": "cerro-vanguardia-web-2026",
+      "fuente": "Portal institucional Cerro Vanguardia S.A. (AngloGold Ashanti / Fomicruz S.E.)",
+      "url": "https://www.cerrovanguardia.com.ar/",
+      "fecha_descarga": "2026-11-26",
+      "hash": "sha256:2a9633ad89a1b70c4fb6e599959a6635e88c52f360d90df16e897ca5ec3416b0",
+      "cita_ubicacion": "cerrovanguardia.com.ar Proceso hidrometalúrgico cianuración + fundición doré",
+      "confianza": "alta"
+    }
+  },
+  {
+    "paso_id": "kraft-p1-chipeado",
+    "proceso_id": "celulosa-kraft-blanqueada",
+    "orden": 1,
+    "nombre": "Descortezado y chipeado de madera de pino",
+    "tipo_paso": "materia_prima",
+    "reaccion_balanceada": null,
+    "temperatura_c": "Ambiente",
+    "presion_bar": "1,0",
+    "reactivos": [
+      {
+        "especie": "Rollizos de pino (Pinus taeda/elliottii)",
+        "cantidad": 4.5,
+        "unidad": "m3/t ADt"
+      }
+    ],
+    "productos": [
+      {
+        "especie": "Chips calibrados de fibra larga",
+        "cantidad": 2.1,
+        "unidad": "t seca/t ADt"
+      }
+    ],
+    "insumos": [
+      {
+        "especie": "Energía eléctrica cogenerada",
+        "cantidad": null,
+        "unidad": "MWh/t"
+      }
+    ],
+    "subproductos": [
+      {
+        "especie": "Corteza y aserrín a caldera biomasa",
+        "cantidad": 0.35,
+        "unidad": "t/t ADt"
+      }
+    ],
+    "energia": {
+      "estado": "sin_datos",
+      "valor": null,
+      "unidad": "MWh/t",
+      "procedencia": {
+        "anio": 2026,
+        "fuente_id": "arauco-web-2026",
+        "fuente": "Portal corporativo Arauco (Operaciones Forestales y Planta de Celulosa Puerto Esperanza)",
+        "url": "https://www.arauco.com/",
+        "fecha_descarga": "2026-11-26",
+        "hash": "sha256:d00e96942269b2c521cd86449c5ff9fe6cec49bff31cdb210f0a7f004b00fad3",
+        "cita_ubicacion": "arauco.com + AFCP Proceso Kraft al sulfato con recuperación química cerrada",
+        "confianza": "alta"
+      }
+    },
+    "descripcion": "Los rollizos forestales de Misiones se descortezan y astillan en chips uniformes; la corteza se deriva a calderas de biomasa para generación de vapor.",
+    "pos_x": 80,
+    "pos_y": 180,
+    "procedencia": {
+      "anio": 2026,
+      "fuente_id": "arauco-web-2026",
+      "fuente": "Portal corporativo Arauco (Operaciones Forestales y Planta de Celulosa Puerto Esperanza)",
+      "url": "https://www.arauco.com/",
+      "fecha_descarga": "2026-11-26",
+      "hash": "sha256:d00e96942269b2c521cd86449c5ff9fe6cec49bff31cdb210f0a7f004b00fad3",
+      "cita_ubicacion": "arauco.com + AFCP Proceso Kraft al sulfato con recuperación química cerrada",
+      "confianza": "alta"
+    }
+  },
+  {
+    "paso_id": "kraft-p2-digestion",
+    "proceso_id": "celulosa-kraft-blanqueada",
+    "orden": 2,
+    "nombre": "Digestión continua Kraft con licor blanco",
+    "tipo_paso": "reaccion",
+    "reaccion_balanceada": null,
+    "temperatura_c": "165-170",
+    "presion_bar": "8-10",
+    "reactivos": [
+      {
+        "especie": "Chips de pino",
+        "cantidad": 2.1,
+        "unidad": "t seca/t ADt"
+      },
+      {
+        "especie": "Licor blanco (NaOH + Na2S)",
+        "cantidad": null,
+        "unidad": "m3/t ADt"
+      }
+    ],
+    "productos": [
+      {
+        "especie": "Pulpa marrón cruda (celulosa)",
+        "cantidad": 1.05,
+        "unidad": "t/t ADt"
+      },
+      {
+        "especie": "Licor negro débil (lignina + reactivos)",
+        "cantidad": null,
+        "unidad": "m3/t ADt"
+      }
+    ],
+    "insumos": [
+      {
+        "especie": "Vapor de media presión",
+        "cantidad": null,
+        "unidad": "t/t"
+      }
+    ],
+    "subproductos": [
+      {
+        "especie": "Trementina y tall-oil crudo",
+        "cantidad": null,
+        "unidad": "kg/t"
+      }
+    ],
+    "energia": {
+      "estado": "sin_datos",
+      "valor": null,
+      "unidad": "GJ/t",
+      "procedencia": {
+        "anio": 2026,
+        "fuente_id": "arauco-web-2026",
+        "fuente": "Portal corporativo Arauco (Operaciones Forestales y Planta de Celulosa Puerto Esperanza)",
+        "url": "https://www.arauco.com/",
+        "fecha_descarga": "2026-11-26",
+        "hash": "sha256:d00e96942269b2c521cd86449c5ff9fe6cec49bff31cdb210f0a7f004b00fad3",
+        "cita_ubicacion": "arauco.com + AFCP Proceso Kraft al sulfato con recuperación química cerrada",
+        "confianza": "alta"
+      }
+    },
+    "descripcion": "En el digestor continuo a 168 °C, el hidróxido y sulfuro de sodio disuelven la lignina liberando las fibras largas de celulosa intactas y generando licor negro orgánico.",
+    "pos_x": 360,
+    "pos_y": 180,
+    "procedencia": {
+      "anio": 2026,
+      "fuente_id": "arauco-web-2026",
+      "fuente": "Portal corporativo Arauco (Operaciones Forestales y Planta de Celulosa Puerto Esperanza)",
+      "url": "https://www.arauco.com/",
+      "fecha_descarga": "2026-11-26",
+      "hash": "sha256:d00e96942269b2c521cd86449c5ff9fe6cec49bff31cdb210f0a7f004b00fad3",
+      "cita_ubicacion": "arauco.com + AFCP Proceso Kraft al sulfato con recuperación química cerrada",
+      "confianza": "alta"
+    }
+  },
+  {
+    "paso_id": "kraft-p3-blanqueo-ecf",
+    "proceso_id": "celulosa-kraft-blanqueada",
+    "orden": 3,
+    "nombre": "Deslignificación O2 y blanqueo ECF (ClO2/H2O2)",
+    "tipo_paso": "refinacion",
+    "reaccion_balanceada": null,
+    "temperatura_c": "70-95",
+    "presion_bar": "3-5",
+    "reactivos": [
+      {
+        "especie": "Pulpa marrón lavada",
+        "cantidad": 1.05,
+        "unidad": "t/t ADt"
+      },
+      {
+        "especie": "O2 + ClO2 + H2O2 + NaOH",
+        "cantidad": null,
+        "unidad": "kg/t ADt"
+      }
+    ],
+    "productos": [
+      {
+        "especie": "Pulpa Kraft blanqueada ECF",
+        "cantidad": 1,
+        "unidad": "t ADt/t ADt"
+      }
+    ],
+    "insumos": [
+      {
+        "especie": "Agua tratada de río Paraná",
+        "cantidad": null,
+        "unidad": "m3/t"
+      }
+    ],
+    "subproductos": [
+      {
+        "especie": "Efluente a tratamiento biológico secundario",
+        "cantidad": null,
+        "unidad": "m3/t"
+      }
+    ],
+    "energia": {
+      "estado": "sin_datos",
+      "valor": null,
+      "unidad": "MWh/t",
+      "procedencia": {
+        "anio": 2026,
+        "fuente_id": "arauco-web-2026",
+        "fuente": "Portal corporativo Arauco (Operaciones Forestales y Planta de Celulosa Puerto Esperanza)",
+        "url": "https://www.arauco.com/",
+        "fecha_descarga": "2026-11-26",
+        "hash": "sha256:d00e96942269b2c521cd86449c5ff9fe6cec49bff31cdb210f0a7f004b00fad3",
+        "cita_ubicacion": "arauco.com + AFCP Proceso Kraft al sulfato con recuperación química cerrada",
+        "confianza": "alta"
+      }
+    },
+    "descripcion": "La lignina residual se elimina por deslignificación con oxígeno y secuencia ECF (libre de cloro elemental) con dióxido de cloro y peróxido de hidrógeno hasta blancura >89% ISO.",
+    "pos_x": 650,
+    "pos_y": 120,
+    "procedencia": {
+      "anio": 2026,
+      "fuente_id": "arauco-web-2026",
+      "fuente": "Portal corporativo Arauco (Operaciones Forestales y Planta de Celulosa Puerto Esperanza)",
+      "url": "https://www.arauco.com/",
+      "fecha_descarga": "2026-11-26",
+      "hash": "sha256:d00e96942269b2c521cd86449c5ff9fe6cec49bff31cdb210f0a7f004b00fad3",
+      "cita_ubicacion": "arauco.com + AFCP Proceso Kraft al sulfato con recuperación química cerrada",
+      "confianza": "alta"
+    }
+  },
+  {
+    "paso_id": "kraft-p4-secado-fardos",
+    "proceso_id": "celulosa-kraft-blanqueada",
+    "orden": 4,
+    "nombre": "Formación de hoja, secado y enfardado ADt",
+    "tipo_paso": "producto",
+    "reaccion_balanceada": null,
+    "temperatura_c": "110-130",
+    "presion_bar": "1,0",
+    "reactivos": [
+      {
+        "especie": "Suspensión de pulpa blanqueada",
+        "cantidad": 1,
+        "unidad": "t ADt/t ADt"
+      }
+    ],
+    "productos": [
+      {
+        "especie": "Fardos de celulosa Kraft fibra larga (90% seca)",
+        "cantidad": 1,
+        "unidad": "t ADt"
+      }
+    ],
+    "insumos": [
+      {
+        "especie": "Vapor de baja presión",
+        "cantidad": null,
+        "unidad": "t/t"
+      }
+    ],
+    "subproductos": [],
+    "energia": {
+      "estado": "sin_datos",
+      "valor": null,
+      "unidad": "GJ/t",
+      "procedencia": {
+        "anio": 2026,
+        "fuente_id": "arauco-web-2026",
+        "fuente": "Portal corporativo Arauco (Operaciones Forestales y Planta de Celulosa Puerto Esperanza)",
+        "url": "https://www.arauco.com/",
+        "fecha_descarga": "2026-11-26",
+        "hash": "sha256:d00e96942269b2c521cd86449c5ff9fe6cec49bff31cdb210f0a7f004b00fad3",
+        "cita_ubicacion": "arauco.com + AFCP Proceso Kraft al sulfato con recuperación química cerrada",
+        "confianza": "alta"
+      }
+    },
+    "descripcion": "La pulpa blanqueada se drena en mesa formadora, se prensa y seca con aire caliente en túnel hasta humedad comercial (10%) formando fardos listos para papelera y exportación.",
+    "pos_x": 960,
+    "pos_y": 120,
+    "procedencia": {
+      "anio": 2026,
+      "fuente_id": "arauco-web-2026",
+      "fuente": "Portal corporativo Arauco (Operaciones Forestales y Planta de Celulosa Puerto Esperanza)",
+      "url": "https://www.arauco.com/",
+      "fecha_descarga": "2026-11-26",
+      "hash": "sha256:d00e96942269b2c521cd86449c5ff9fe6cec49bff31cdb210f0a7f004b00fad3",
+      "cita_ubicacion": "arauco.com + AFCP Proceso Kraft al sulfato con recuperación química cerrada",
+      "confianza": "alta"
+    }
+  },
+  {
+    "paso_id": "kraft-p5-recuperacion-caustificacion",
+    "proceso_id": "celulosa-kraft-blanqueada",
+    "orden": 5,
+    "nombre": "Caldera recuperadora, caustificación y horno de cal",
+    "tipo_paso": "separacion",
+    "reaccion_balanceada": "Na2CO3 + Ca(OH)2 -> 2 NaOH + CaCO3",
+    "temperatura_c": "900-1050",
+    "presion_bar": "65 (vapor cogeneración)",
+    "reactivos": [
+      {
+        "especie": "Licor negro concentrado (75% sólidos)",
+        "cantidad": 1.5,
+        "unidad": "t sólidos/t ADt"
+      },
+      {
+        "especie": "CaO (horno de cal cerrado)",
+        "cantidad": 0.25,
+        "unidad": "t/t ADt"
+      }
+    ],
+    "productos": [
+      {
+        "especie": "Licor blanco regenerado (NaOH + Na2S)",
+        "cantidad": null,
+        "unidad": "reciclo >96%"
+      },
+      {
+        "especie": "Vapor y electricidad renovable (lignina)",
+        "cantidad": null,
+        "unidad": "MWh/t"
+      }
+    ],
+    "insumos": [
+      {
+        "especie": "Reposición Na2SO4 / CaCO3",
+        "cantidad": null,
+        "unidad": "kg/t"
+      }
+    ],
+    "subproductos": [
+      {
+        "especie": "CO2 biogénico de lignina",
+        "cantidad": null,
+        "unidad": "t/t"
+      }
+    ],
+    "energia": {
+      "estado": "sin_datos",
+      "valor": null,
+      "unidad": "MWh/t",
+      "procedencia": {
+        "anio": 2026,
+        "fuente_id": "arauco-web-2026",
+        "fuente": "Portal corporativo Arauco (Operaciones Forestales y Planta de Celulosa Puerto Esperanza)",
+        "url": "https://www.arauco.com/",
+        "fecha_descarga": "2026-11-26",
+        "hash": "sha256:d00e96942269b2c521cd86449c5ff9fe6cec49bff31cdb210f0a7f004b00fad3",
+        "cita_ubicacion": "arauco.com + AFCP Proceso Kraft al sulfato con recuperación química cerrada",
+        "confianza": "alta"
+      }
+    },
+    "descripcion": "El licor negro se quema en la caldera recuperadora generando vapor y electricidad renovable; el fundido de Na2CO3+Na2S se caustifica con cal para regenerar licor blanco hacia el digestor.",
+    "pos_x": 650,
+    "pos_y": 290,
+    "procedencia": {
+      "anio": 2026,
+      "fuente_id": "arauco-web-2026",
+      "fuente": "Portal corporativo Arauco (Operaciones Forestales y Planta de Celulosa Puerto Esperanza)",
+      "url": "https://www.arauco.com/",
+      "fecha_descarga": "2026-11-26",
+      "hash": "sha256:d00e96942269b2c521cd86449c5ff9fe6cec49bff31cdb210f0a7f004b00fad3",
+      "cita_ubicacion": "arauco.com + AFCP Proceso Kraft al sulfato con recuperación química cerrada",
+      "confianza": "alta"
+    }
   }
 ]

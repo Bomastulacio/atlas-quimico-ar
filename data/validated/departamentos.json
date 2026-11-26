@@ -133,5 +133,59 @@
     "tiene_datos_confiables": true,
     "cobertura_datos": "completa",
     "nota_cobertura": "Cordón sucroalcoholero del este tucumano (La Florida / Banda del Río Salí): molienda de caña, destilerías y deshidratadoras de bioetanol."
+  },
+  {
+    "departamento_id": "62077",
+    "provincia_id": "62",
+    "nombre": "San Antonio",
+    "tipo_zona": "polo_industrial",
+    "tiene_datos_confiables": true,
+    "cobertura_datos": "completa",
+    "nota_cobertura": "Sede de ALPAT en Punta Delgado (San Antonio Oeste), única planta Solvay de carbonato de sodio de Sudamérica."
+  },
+  {
+    "departamento_id": "70105",
+    "provincia_id": "70",
+    "nombre": "Sarmiento",
+    "tipo_zona": "minero",
+    "tiene_datos_confiables": true,
+    "cobertura_datos": "completa",
+    "nota_cobertura": "Polo calero de Los Berros, principal concentrador argentino de cal viva (CaO) e hidratada para minería y siderurgia."
+  },
+  {
+    "departamento_id": "78042",
+    "provincia_id": "78",
+    "nombre": "Magallanes",
+    "tipo_zona": "minero",
+    "tiene_datos_confiables": true,
+    "cobertura_datos": "completa",
+    "nota_cobertura": "Área Puerto San Julián / Cerro Vanguardia (oro y plata en lingote doré en el Macizo del Deseado)."
+  },
+  {
+    "departamento_id": "78035",
+    "provincia_id": "78",
+    "nombre": "Lago Buenos Aires",
+    "tipo_zona": "minero",
+    "tiene_datos_confiables": true,
+    "cobertura_datos": "completa",
+    "nota_cobertura": "Área Perito Moreno / Cerro Negro (operación subterránea y planta de lixiviación de oro y plata)."
+  },
+  {
+    "departamento_id": "54063",
+    "provincia_id": "54",
+    "nombre": "Iguazú",
+    "tipo_zona": "agro",
+    "tiene_datos_confiables": true,
+    "cobertura_datos": "completa",
+    "nota_cobertura": "Puerto Esperanza, sede de la planta de celulosa Kraft blanqueada de fibra larga de pino de Arauco Argentina."
+  },
+  {
+    "departamento_id": "54077",
+    "provincia_id": "54",
+    "nombre": "Libertador General San Martín",
+    "tipo_zona": "agro",
+    "tiene_datos_confiables": true,
+    "cobertura_datos": "completa",
+    "nota_cobertura": "Corredor foresto-industrial del Alto Paraná misionero (abastecimiento de madera de pino y pasta Kraft)."
   }
 ]

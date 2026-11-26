@@ -2242,5 +2242,797 @@
       "cita_ubicacion": "Centro Azucarero Argentino",
       "confianza": "alta"
     }
+  },
+  {
+    "conexion_id": "solvay-c1",
+    "proceso_id": "soda-solvay-proceso",
+    "origen_paso_id": "solvay-p1-salmuera",
+    "destino_paso_id": "solvay-p2-amoniacado",
+    "corriente_nombre": "Salmuera NaCl purificada",
+    "tipo_corriente": "principal",
+    "flujo": {
+      "estado": "sin_datos",
+      "valor": null,
+      "unidad": "m3/t",
+      "procedencia": {
+        "anio": 2026,
+        "fuente_id": "eu-bref-lvic-s",
+        "fuente": "Reference Document on Best Available Techniques for Large Volume Inorganic Chemicals (LVIC-S: Soda Ash)",
+        "url": "https://bureau-industrial-transformation.jrc.ec.europa.eu/reference/large-volume-inorganic-chemicals-solids-and-others-industry",
+        "fecha_descarga": "2026-11-26",
+        "hash": "sha256:6e2692b758cbb15dd8326f03c105bee4924fe9117bfa9873c7d1f00b9786fe58",
+        "cita_ubicacion": "EU LVIC-S BREF Cap. 2: Soda Ash Solvay Process",
+        "confianza": "alta"
+      }
+    },
+    "procedencia": {
+      "anio": 2026,
+      "fuente_id": "eu-bref-lvic-s",
+      "fuente": "Reference Document on Best Available Techniques for Large Volume Inorganic Chemicals (LVIC-S: Soda Ash)",
+      "url": "https://bureau-industrial-transformation.jrc.ec.europa.eu/reference/large-volume-inorganic-chemicals-solids-and-others-industry",
+      "fecha_descarga": "2026-11-26",
+      "hash": "sha256:6e2692b758cbb15dd8326f03c105bee4924fe9117bfa9873c7d1f00b9786fe58",
+      "cita_ubicacion": "EU LVIC-S BREF Cap. 2: Soda Ash Solvay Process",
+      "confianza": "alta"
+    }
+  },
+  {
+    "conexion_id": "solvay-c2",
+    "proceso_id": "soda-solvay-proceso",
+    "origen_paso_id": "solvay-p1-salmuera",
+    "destino_paso_id": "solvay-p3-carbonatacion",
+    "corriente_nombre": "Gas CO2 de horno de cal",
+    "tipo_corriente": "insumo",
+    "flujo": {
+      "estado": "dato",
+      "valor": 0.55,
+      "unidad": "t/t Na2CO3",
+      "procedencia": {
+        "anio": 2026,
+        "fuente_id": "eu-bref-lvic-s",
+        "fuente": "Reference Document on Best Available Techniques for Large Volume Inorganic Chemicals (LVIC-S: Soda Ash)",
+        "url": "https://bureau-industrial-transformation.jrc.ec.europa.eu/reference/large-volume-inorganic-chemicals-solids-and-others-industry",
+        "fecha_descarga": "2026-11-26",
+        "hash": "sha256:6e2692b758cbb15dd8326f03c105bee4924fe9117bfa9873c7d1f00b9786fe58",
+        "cita_ubicacion": "EU LVIC-S BREF Cap. 2: Soda Ash Solvay Process",
+        "confianza": "alta"
+      }
+    },
+    "procedencia": {
+      "anio": 2026,
+      "fuente_id": "eu-bref-lvic-s",
+      "fuente": "Reference Document on Best Available Techniques for Large Volume Inorganic Chemicals (LVIC-S: Soda Ash)",
+      "url": "https://bureau-industrial-transformation.jrc.ec.europa.eu/reference/large-volume-inorganic-chemicals-solids-and-others-industry",
+      "fecha_descarga": "2026-11-26",
+      "hash": "sha256:6e2692b758cbb15dd8326f03c105bee4924fe9117bfa9873c7d1f00b9786fe58",
+      "cita_ubicacion": "EU LVIC-S BREF Cap. 2: Soda Ash Solvay Process",
+      "confianza": "alta"
+    }
+  },
+  {
+    "conexion_id": "solvay-c3",
+    "proceso_id": "soda-solvay-proceso",
+    "origen_paso_id": "solvay-p1-salmuera",
+    "destino_paso_id": "solvay-p5-recuperacion-nh3",
+    "corriente_nombre": "Lechada de cal Ca(OH)2",
+    "tipo_corriente": "insumo",
+    "flujo": {
+      "estado": "dato",
+      "valor": 0.72,
+      "unidad": "t/t Na2CO3",
+      "procedencia": {
+        "anio": 2026,
+        "fuente_id": "eu-bref-lvic-s",
+        "fuente": "Reference Document on Best Available Techniques for Large Volume Inorganic Chemicals (LVIC-S: Soda Ash)",
+        "url": "https://bureau-industrial-transformation.jrc.ec.europa.eu/reference/large-volume-inorganic-chemicals-solids-and-others-industry",
+        "fecha_descarga": "2026-11-26",
+        "hash": "sha256:6e2692b758cbb15dd8326f03c105bee4924fe9117bfa9873c7d1f00b9786fe58",
+        "cita_ubicacion": "EU LVIC-S BREF Cap. 2: Soda Ash Solvay Process",
+        "confianza": "alta"
+      }
+    },
+    "procedencia": {
+      "anio": 2026,
+      "fuente_id": "eu-bref-lvic-s",
+      "fuente": "Reference Document on Best Available Techniques for Large Volume Inorganic Chemicals (LVIC-S: Soda Ash)",
+      "url": "https://bureau-industrial-transformation.jrc.ec.europa.eu/reference/large-volume-inorganic-chemicals-solids-and-others-industry",
+      "fecha_descarga": "2026-11-26",
+      "hash": "sha256:6e2692b758cbb15dd8326f03c105bee4924fe9117bfa9873c7d1f00b9786fe58",
+      "cita_ubicacion": "EU LVIC-S BREF Cap. 2: Soda Ash Solvay Process",
+      "confianza": "alta"
+    }
+  },
+  {
+    "conexion_id": "solvay-c4",
+    "proceso_id": "soda-solvay-proceso",
+    "origen_paso_id": "solvay-p2-amoniacado",
+    "destino_paso_id": "solvay-p3-carbonatacion",
+    "corriente_nombre": "Salmuera amoniacal",
+    "tipo_corriente": "principal",
+    "flujo": {
+      "estado": "sin_datos",
+      "valor": null,
+      "unidad": "m3/t",
+      "procedencia": {
+        "anio": 2026,
+        "fuente_id": "eu-bref-lvic-s",
+        "fuente": "Reference Document on Best Available Techniques for Large Volume Inorganic Chemicals (LVIC-S: Soda Ash)",
+        "url": "https://bureau-industrial-transformation.jrc.ec.europa.eu/reference/large-volume-inorganic-chemicals-solids-and-others-industry",
+        "fecha_descarga": "2026-11-26",
+        "hash": "sha256:6e2692b758cbb15dd8326f03c105bee4924fe9117bfa9873c7d1f00b9786fe58",
+        "cita_ubicacion": "EU LVIC-S BREF Cap. 2: Soda Ash Solvay Process",
+        "confianza": "alta"
+      }
+    },
+    "procedencia": {
+      "anio": 2026,
+      "fuente_id": "eu-bref-lvic-s",
+      "fuente": "Reference Document on Best Available Techniques for Large Volume Inorganic Chemicals (LVIC-S: Soda Ash)",
+      "url": "https://bureau-industrial-transformation.jrc.ec.europa.eu/reference/large-volume-inorganic-chemicals-solids-and-others-industry",
+      "fecha_descarga": "2026-11-26",
+      "hash": "sha256:6e2692b758cbb15dd8326f03c105bee4924fe9117bfa9873c7d1f00b9786fe58",
+      "cita_ubicacion": "EU LVIC-S BREF Cap. 2: Soda Ash Solvay Process",
+      "confianza": "alta"
+    }
+  },
+  {
+    "conexion_id": "solvay-c5",
+    "proceso_id": "soda-solvay-proceso",
+    "origen_paso_id": "solvay-p3-carbonatacion",
+    "destino_paso_id": "solvay-p4-calcinacion",
+    "corriente_nombre": "Torta húmeda de NaHCO3",
+    "tipo_corriente": "principal",
+    "flujo": {
+      "estado": "dato",
+      "valor": 1.58,
+      "unidad": "t/t Na2CO3",
+      "procedencia": {
+        "anio": 2026,
+        "fuente_id": "eu-bref-lvic-s",
+        "fuente": "Reference Document on Best Available Techniques for Large Volume Inorganic Chemicals (LVIC-S: Soda Ash)",
+        "url": "https://bureau-industrial-transformation.jrc.ec.europa.eu/reference/large-volume-inorganic-chemicals-solids-and-others-industry",
+        "fecha_descarga": "2026-11-26",
+        "hash": "sha256:6e2692b758cbb15dd8326f03c105bee4924fe9117bfa9873c7d1f00b9786fe58",
+        "cita_ubicacion": "EU LVIC-S BREF Cap. 2: Soda Ash Solvay Process",
+        "confianza": "alta"
+      }
+    },
+    "procedencia": {
+      "anio": 2026,
+      "fuente_id": "eu-bref-lvic-s",
+      "fuente": "Reference Document on Best Available Techniques for Large Volume Inorganic Chemicals (LVIC-S: Soda Ash)",
+      "url": "https://bureau-industrial-transformation.jrc.ec.europa.eu/reference/large-volume-inorganic-chemicals-solids-and-others-industry",
+      "fecha_descarga": "2026-11-26",
+      "hash": "sha256:6e2692b758cbb15dd8326f03c105bee4924fe9117bfa9873c7d1f00b9786fe58",
+      "cita_ubicacion": "EU LVIC-S BREF Cap. 2: Soda Ash Solvay Process",
+      "confianza": "alta"
+    }
+  },
+  {
+    "conexion_id": "solvay-c6",
+    "proceso_id": "soda-solvay-proceso",
+    "origen_paso_id": "solvay-p3-carbonatacion",
+    "destino_paso_id": "solvay-p5-recuperacion-nh3",
+    "corriente_nombre": "Licor madre de NH4Cl",
+    "tipo_corriente": "subproducto",
+    "flujo": {
+      "estado": "dato",
+      "valor": 1.01,
+      "unidad": "t/t Na2CO3",
+      "procedencia": {
+        "anio": 2026,
+        "fuente_id": "eu-bref-lvic-s",
+        "fuente": "Reference Document on Best Available Techniques for Large Volume Inorganic Chemicals (LVIC-S: Soda Ash)",
+        "url": "https://bureau-industrial-transformation.jrc.ec.europa.eu/reference/large-volume-inorganic-chemicals-solids-and-others-industry",
+        "fecha_descarga": "2026-11-26",
+        "hash": "sha256:6e2692b758cbb15dd8326f03c105bee4924fe9117bfa9873c7d1f00b9786fe58",
+        "cita_ubicacion": "EU LVIC-S BREF Cap. 2: Soda Ash Solvay Process",
+        "confianza": "alta"
+      }
+    },
+    "procedencia": {
+      "anio": 2026,
+      "fuente_id": "eu-bref-lvic-s",
+      "fuente": "Reference Document on Best Available Techniques for Large Volume Inorganic Chemicals (LVIC-S: Soda Ash)",
+      "url": "https://bureau-industrial-transformation.jrc.ec.europa.eu/reference/large-volume-inorganic-chemicals-solids-and-others-industry",
+      "fecha_descarga": "2026-11-26",
+      "hash": "sha256:6e2692b758cbb15dd8326f03c105bee4924fe9117bfa9873c7d1f00b9786fe58",
+      "cita_ubicacion": "EU LVIC-S BREF Cap. 2: Soda Ash Solvay Process",
+      "confianza": "alta"
+    }
+  },
+  {
+    "conexion_id": "solvay-c7",
+    "proceso_id": "soda-solvay-proceso",
+    "origen_paso_id": "solvay-p4-calcinacion",
+    "destino_paso_id": "solvay-p3-carbonatacion",
+    "corriente_nombre": "Reciclo CO2 rico de calcinación",
+    "tipo_corriente": "reciclo",
+    "flujo": {
+      "estado": "dato",
+      "valor": 0.42,
+      "unidad": "t/t Na2CO3",
+      "procedencia": {
+        "anio": 2026,
+        "fuente_id": "eu-bref-lvic-s",
+        "fuente": "Reference Document on Best Available Techniques for Large Volume Inorganic Chemicals (LVIC-S: Soda Ash)",
+        "url": "https://bureau-industrial-transformation.jrc.ec.europa.eu/reference/large-volume-inorganic-chemicals-solids-and-others-industry",
+        "fecha_descarga": "2026-11-26",
+        "hash": "sha256:6e2692b758cbb15dd8326f03c105bee4924fe9117bfa9873c7d1f00b9786fe58",
+        "cita_ubicacion": "EU LVIC-S BREF Cap. 2: Soda Ash Solvay Process",
+        "confianza": "alta"
+      }
+    },
+    "procedencia": {
+      "anio": 2026,
+      "fuente_id": "eu-bref-lvic-s",
+      "fuente": "Reference Document on Best Available Techniques for Large Volume Inorganic Chemicals (LVIC-S: Soda Ash)",
+      "url": "https://bureau-industrial-transformation.jrc.ec.europa.eu/reference/large-volume-inorganic-chemicals-solids-and-others-industry",
+      "fecha_descarga": "2026-11-26",
+      "hash": "sha256:6e2692b758cbb15dd8326f03c105bee4924fe9117bfa9873c7d1f00b9786fe58",
+      "cita_ubicacion": "EU LVIC-S BREF Cap. 2: Soda Ash Solvay Process",
+      "confianza": "alta"
+    }
+  },
+  {
+    "conexion_id": "solvay-c8",
+    "proceso_id": "soda-solvay-proceso",
+    "origen_paso_id": "solvay-p5-recuperacion-nh3",
+    "destino_paso_id": "solvay-p2-amoniacado",
+    "corriente_nombre": "Reciclo cerrado de NH3",
+    "tipo_corriente": "reciclo",
+    "flujo": {
+      "estado": "sin_datos",
+      "valor": null,
+      "unidad": "t/t",
+      "procedencia": {
+        "anio": 2026,
+        "fuente_id": "eu-bref-lvic-s",
+        "fuente": "Reference Document on Best Available Techniques for Large Volume Inorganic Chemicals (LVIC-S: Soda Ash)",
+        "url": "https://bureau-industrial-transformation.jrc.ec.europa.eu/reference/large-volume-inorganic-chemicals-solids-and-others-industry",
+        "fecha_descarga": "2026-11-26",
+        "hash": "sha256:6e2692b758cbb15dd8326f03c105bee4924fe9117bfa9873c7d1f00b9786fe58",
+        "cita_ubicacion": "EU LVIC-S BREF Cap. 2: Soda Ash Solvay Process",
+        "confianza": "alta"
+      }
+    },
+    "procedencia": {
+      "anio": 2026,
+      "fuente_id": "eu-bref-lvic-s",
+      "fuente": "Reference Document on Best Available Techniques for Large Volume Inorganic Chemicals (LVIC-S: Soda Ash)",
+      "url": "https://bureau-industrial-transformation.jrc.ec.europa.eu/reference/large-volume-inorganic-chemicals-solids-and-others-industry",
+      "fecha_descarga": "2026-11-26",
+      "hash": "sha256:6e2692b758cbb15dd8326f03c105bee4924fe9117bfa9873c7d1f00b9786fe58",
+      "cita_ubicacion": "EU LVIC-S BREF Cap. 2: Soda Ash Solvay Process",
+      "confianza": "alta"
+    }
+  },
+  {
+    "conexion_id": "cal-c1",
+    "proceso_id": "cal-industrial-calcinacion",
+    "origen_paso_id": "cal-p1-cantera",
+    "destino_paso_id": "cal-p2-precalentamiento",
+    "corriente_nombre": "Caliza clasificada 30-90 mm",
+    "tipo_corriente": "principal",
+    "flujo": {
+      "estado": "dato",
+      "valor": 1.8,
+      "unidad": "t/t CaO",
+      "procedencia": {
+        "anio": 2006,
+        "fuente_id": "ipcc-2006-mineral-cap2",
+        "fuente": "IPCC 2006 Guidelines Vol. 3 Chapter 2: Mineral Industry Emissions (Lime & Soda Ash)",
+        "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/pdf/3_Volume3/V3_2_Ch2_Mineral_Industry.pdf",
+        "fecha_descarga": "2026-11-26",
+        "hash": "sha256:f76b756a812afeb3da0c6824cf3747d2d11002a386e1885b374138796c4e1240",
+        "cita_ubicacion": "IPCC 2006 Vol. 3 Cap. 2.3 Lime Production + EU CLM BREF",
+        "confianza": "alta"
+      }
+    },
+    "procedencia": {
+      "anio": 2006,
+      "fuente_id": "ipcc-2006-mineral-cap2",
+      "fuente": "IPCC 2006 Guidelines Vol. 3 Chapter 2: Mineral Industry Emissions (Lime & Soda Ash)",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/pdf/3_Volume3/V3_2_Ch2_Mineral_Industry.pdf",
+      "fecha_descarga": "2026-11-26",
+      "hash": "sha256:f76b756a812afeb3da0c6824cf3747d2d11002a386e1885b374138796c4e1240",
+      "cita_ubicacion": "IPCC 2006 Vol. 3 Cap. 2.3 Lime Production + EU CLM BREF",
+      "confianza": "alta"
+    }
+  },
+  {
+    "conexion_id": "cal-c2",
+    "proceso_id": "cal-industrial-calcinacion",
+    "origen_paso_id": "cal-p2-precalentamiento",
+    "destino_paso_id": "cal-p3-calcinacion",
+    "corriente_nombre": "Caliza precalentada",
+    "tipo_corriente": "principal",
+    "flujo": {
+      "estado": "dato",
+      "valor": 1.8,
+      "unidad": "t/t CaO",
+      "procedencia": {
+        "anio": 2006,
+        "fuente_id": "ipcc-2006-mineral-cap2",
+        "fuente": "IPCC 2006 Guidelines Vol. 3 Chapter 2: Mineral Industry Emissions (Lime & Soda Ash)",
+        "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/pdf/3_Volume3/V3_2_Ch2_Mineral_Industry.pdf",
+        "fecha_descarga": "2026-11-26",
+        "hash": "sha256:f76b756a812afeb3da0c6824cf3747d2d11002a386e1885b374138796c4e1240",
+        "cita_ubicacion": "IPCC 2006 Vol. 3 Cap. 2.3 Lime Production + EU CLM BREF",
+        "confianza": "alta"
+      }
+    },
+    "procedencia": {
+      "anio": 2006,
+      "fuente_id": "ipcc-2006-mineral-cap2",
+      "fuente": "IPCC 2006 Guidelines Vol. 3 Chapter 2: Mineral Industry Emissions (Lime & Soda Ash)",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/pdf/3_Volume3/V3_2_Ch2_Mineral_Industry.pdf",
+      "fecha_descarga": "2026-11-26",
+      "hash": "sha256:f76b756a812afeb3da0c6824cf3747d2d11002a386e1885b374138796c4e1240",
+      "cita_ubicacion": "IPCC 2006 Vol. 3 Cap. 2.3 Lime Production + EU CLM BREF",
+      "confianza": "alta"
+    }
+  },
+  {
+    "conexion_id": "cal-c3",
+    "proceso_id": "cal-industrial-calcinacion",
+    "origen_paso_id": "cal-p3-calcinacion",
+    "destino_paso_id": "cal-p4-enfriamiento-molienda",
+    "corriente_nombre": "Cal viva CaO incandescente",
+    "tipo_corriente": "principal",
+    "flujo": {
+      "estado": "dato",
+      "valor": 1,
+      "unidad": "t/t CaO",
+      "procedencia": {
+        "anio": 2006,
+        "fuente_id": "ipcc-2006-mineral-cap2",
+        "fuente": "IPCC 2006 Guidelines Vol. 3 Chapter 2: Mineral Industry Emissions (Lime & Soda Ash)",
+        "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/pdf/3_Volume3/V3_2_Ch2_Mineral_Industry.pdf",
+        "fecha_descarga": "2026-11-26",
+        "hash": "sha256:f76b756a812afeb3da0c6824cf3747d2d11002a386e1885b374138796c4e1240",
+        "cita_ubicacion": "IPCC 2006 Vol. 3 Cap. 2.3 Lime Production + EU CLM BREF",
+        "confianza": "alta"
+      }
+    },
+    "procedencia": {
+      "anio": 2006,
+      "fuente_id": "ipcc-2006-mineral-cap2",
+      "fuente": "IPCC 2006 Guidelines Vol. 3 Chapter 2: Mineral Industry Emissions (Lime & Soda Ash)",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/pdf/3_Volume3/V3_2_Ch2_Mineral_Industry.pdf",
+      "fecha_descarga": "2026-11-26",
+      "hash": "sha256:f76b756a812afeb3da0c6824cf3747d2d11002a386e1885b374138796c4e1240",
+      "cita_ubicacion": "IPCC 2006 Vol. 3 Cap. 2.3 Lime Production + EU CLM BREF",
+      "confianza": "alta"
+    }
+  },
+  {
+    "conexion_id": "cal-c4",
+    "proceso_id": "cal-industrial-calcinacion",
+    "origen_paso_id": "cal-p3-calcinacion",
+    "destino_paso_id": "cal-p2-precalentamiento",
+    "corriente_nombre": "Gases calientes regenerativos",
+    "tipo_corriente": "reciclo",
+    "flujo": {
+      "estado": "sin_datos",
+      "valor": null,
+      "unidad": "Nm3/t",
+      "procedencia": {
+        "anio": 2006,
+        "fuente_id": "ipcc-2006-mineral-cap2",
+        "fuente": "IPCC 2006 Guidelines Vol. 3 Chapter 2: Mineral Industry Emissions (Lime & Soda Ash)",
+        "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/pdf/3_Volume3/V3_2_Ch2_Mineral_Industry.pdf",
+        "fecha_descarga": "2026-11-26",
+        "hash": "sha256:f76b756a812afeb3da0c6824cf3747d2d11002a386e1885b374138796c4e1240",
+        "cita_ubicacion": "IPCC 2006 Vol. 3 Cap. 2.3 Lime Production + EU CLM BREF",
+        "confianza": "alta"
+      }
+    },
+    "procedencia": {
+      "anio": 2006,
+      "fuente_id": "ipcc-2006-mineral-cap2",
+      "fuente": "IPCC 2006 Guidelines Vol. 3 Chapter 2: Mineral Industry Emissions (Lime & Soda Ash)",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/pdf/3_Volume3/V3_2_Ch2_Mineral_Industry.pdf",
+      "fecha_descarga": "2026-11-26",
+      "hash": "sha256:f76b756a812afeb3da0c6824cf3747d2d11002a386e1885b374138796c4e1240",
+      "cita_ubicacion": "IPCC 2006 Vol. 3 Cap. 2.3 Lime Production + EU CLM BREF",
+      "confianza": "alta"
+    }
+  },
+  {
+    "conexion_id": "cal-c5",
+    "proceso_id": "cal-industrial-calcinacion",
+    "origen_paso_id": "cal-p4-enfriamiento-molienda",
+    "destino_paso_id": "cal-p5-hidratacion-despacho",
+    "corriente_nombre": "Cal viva clasificada a hidratación/silo",
+    "tipo_corriente": "principal",
+    "flujo": {
+      "estado": "dato",
+      "valor": 1,
+      "unidad": "t/t CaO",
+      "procedencia": {
+        "anio": 2006,
+        "fuente_id": "ipcc-2006-mineral-cap2",
+        "fuente": "IPCC 2006 Guidelines Vol. 3 Chapter 2: Mineral Industry Emissions (Lime & Soda Ash)",
+        "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/pdf/3_Volume3/V3_2_Ch2_Mineral_Industry.pdf",
+        "fecha_descarga": "2026-11-26",
+        "hash": "sha256:f76b756a812afeb3da0c6824cf3747d2d11002a386e1885b374138796c4e1240",
+        "cita_ubicacion": "IPCC 2006 Vol. 3 Cap. 2.3 Lime Production + EU CLM BREF",
+        "confianza": "alta"
+      }
+    },
+    "procedencia": {
+      "anio": 2006,
+      "fuente_id": "ipcc-2006-mineral-cap2",
+      "fuente": "IPCC 2006 Guidelines Vol. 3 Chapter 2: Mineral Industry Emissions (Lime & Soda Ash)",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/pdf/3_Volume3/V3_2_Ch2_Mineral_Industry.pdf",
+      "fecha_descarga": "2026-11-26",
+      "hash": "sha256:f76b756a812afeb3da0c6824cf3747d2d11002a386e1885b374138796c4e1240",
+      "cita_ubicacion": "IPCC 2006 Vol. 3 Cap. 2.3 Lime Production + EU CLM BREF",
+      "confianza": "alta"
+    }
+  },
+  {
+    "conexion_id": "oro-c1",
+    "proceso_id": "oro-plata-lixiviacion-dore",
+    "origen_paso_id": "oro-p1-molienda",
+    "destino_paso_id": "oro-p2-lixiviacion",
+    "corriente_nombre": "Pulpa fina alcalina (pH >10,5)",
+    "tipo_corriente": "principal",
+    "flujo": {
+      "estado": "sin_datos",
+      "valor": null,
+      "unidad": "t/h",
+      "procedencia": {
+        "anio": 2026,
+        "fuente_id": "cerro-vanguardia-web-2026",
+        "fuente": "Portal institucional Cerro Vanguardia S.A. (AngloGold Ashanti / Fomicruz S.E.)",
+        "url": "https://www.cerrovanguardia.com.ar/",
+        "fecha_descarga": "2026-11-26",
+        "hash": "sha256:2a9633ad89a1b70c4fb6e599959a6635e88c52f360d90df16e897ca5ec3416b0",
+        "cita_ubicacion": "cerrovanguardia.com.ar Proceso hidrometalúrgico cianuración + fundición doré",
+        "confianza": "alta"
+      }
+    },
+    "procedencia": {
+      "anio": 2026,
+      "fuente_id": "cerro-vanguardia-web-2026",
+      "fuente": "Portal institucional Cerro Vanguardia S.A. (AngloGold Ashanti / Fomicruz S.E.)",
+      "url": "https://www.cerrovanguardia.com.ar/",
+      "fecha_descarga": "2026-11-26",
+      "hash": "sha256:2a9633ad89a1b70c4fb6e599959a6635e88c52f360d90df16e897ca5ec3416b0",
+      "cita_ubicacion": "cerrovanguardia.com.ar Proceso hidrometalúrgico cianuración + fundición doré",
+      "confianza": "alta"
+    }
+  },
+  {
+    "conexion_id": "oro-c2",
+    "proceso_id": "oro-plata-lixiviacion-dore",
+    "origen_paso_id": "oro-p2-lixiviacion",
+    "destino_paso_id": "oro-p3-precipitacion",
+    "corriente_nombre": "Solución rica Na[Au/Ag(CN)2]",
+    "tipo_corriente": "principal",
+    "flujo": {
+      "estado": "sin_datos",
+      "valor": null,
+      "unidad": "m3/h",
+      "procedencia": {
+        "anio": 2026,
+        "fuente_id": "cerro-vanguardia-web-2026",
+        "fuente": "Portal institucional Cerro Vanguardia S.A. (AngloGold Ashanti / Fomicruz S.E.)",
+        "url": "https://www.cerrovanguardia.com.ar/",
+        "fecha_descarga": "2026-11-26",
+        "hash": "sha256:2a9633ad89a1b70c4fb6e599959a6635e88c52f360d90df16e897ca5ec3416b0",
+        "cita_ubicacion": "cerrovanguardia.com.ar Proceso hidrometalúrgico cianuración + fundición doré",
+        "confianza": "alta"
+      }
+    },
+    "procedencia": {
+      "anio": 2026,
+      "fuente_id": "cerro-vanguardia-web-2026",
+      "fuente": "Portal institucional Cerro Vanguardia S.A. (AngloGold Ashanti / Fomicruz S.E.)",
+      "url": "https://www.cerrovanguardia.com.ar/",
+      "fecha_descarga": "2026-11-26",
+      "hash": "sha256:2a9633ad89a1b70c4fb6e599959a6635e88c52f360d90df16e897ca5ec3416b0",
+      "cita_ubicacion": "cerrovanguardia.com.ar Proceso hidrometalúrgico cianuración + fundición doré",
+      "confianza": "alta"
+    }
+  },
+  {
+    "conexion_id": "oro-c3",
+    "proceso_id": "oro-plata-lixiviacion-dore",
+    "origen_paso_id": "oro-p2-lixiviacion",
+    "destino_paso_id": "oro-p5-detox-relaves",
+    "corriente_nombre": "Relaves agotados hacia detox INCO",
+    "tipo_corriente": "residuo",
+    "flujo": {
+      "estado": "sin_datos",
+      "valor": null,
+      "unidad": "t/h",
+      "procedencia": {
+        "anio": 2026,
+        "fuente_id": "cerro-vanguardia-web-2026",
+        "fuente": "Portal institucional Cerro Vanguardia S.A. (AngloGold Ashanti / Fomicruz S.E.)",
+        "url": "https://www.cerrovanguardia.com.ar/",
+        "fecha_descarga": "2026-11-26",
+        "hash": "sha256:2a9633ad89a1b70c4fb6e599959a6635e88c52f360d90df16e897ca5ec3416b0",
+        "cita_ubicacion": "cerrovanguardia.com.ar Proceso hidrometalúrgico cianuración + fundición doré",
+        "confianza": "alta"
+      }
+    },
+    "procedencia": {
+      "anio": 2026,
+      "fuente_id": "cerro-vanguardia-web-2026",
+      "fuente": "Portal institucional Cerro Vanguardia S.A. (AngloGold Ashanti / Fomicruz S.E.)",
+      "url": "https://www.cerrovanguardia.com.ar/",
+      "fecha_descarga": "2026-11-26",
+      "hash": "sha256:2a9633ad89a1b70c4fb6e599959a6635e88c52f360d90df16e897ca5ec3416b0",
+      "cita_ubicacion": "cerrovanguardia.com.ar Proceso hidrometalúrgico cianuración + fundición doré",
+      "confianza": "alta"
+    }
+  },
+  {
+    "conexion_id": "oro-c4",
+    "proceso_id": "oro-plata-lixiviacion-dore",
+    "origen_paso_id": "oro-p3-precipitacion",
+    "destino_paso_id": "oro-p4-fundicion-dore",
+    "corriente_nombre": "Precipitado metálico Au/Ag",
+    "tipo_corriente": "principal",
+    "flujo": {
+      "estado": "sin_datos",
+      "valor": null,
+      "unidad": "kg/lote",
+      "procedencia": {
+        "anio": 2026,
+        "fuente_id": "cerro-vanguardia-web-2026",
+        "fuente": "Portal institucional Cerro Vanguardia S.A. (AngloGold Ashanti / Fomicruz S.E.)",
+        "url": "https://www.cerrovanguardia.com.ar/",
+        "fecha_descarga": "2026-11-26",
+        "hash": "sha256:2a9633ad89a1b70c4fb6e599959a6635e88c52f360d90df16e897ca5ec3416b0",
+        "cita_ubicacion": "cerrovanguardia.com.ar Proceso hidrometalúrgico cianuración + fundición doré",
+        "confianza": "alta"
+      }
+    },
+    "procedencia": {
+      "anio": 2026,
+      "fuente_id": "cerro-vanguardia-web-2026",
+      "fuente": "Portal institucional Cerro Vanguardia S.A. (AngloGold Ashanti / Fomicruz S.E.)",
+      "url": "https://www.cerrovanguardia.com.ar/",
+      "fecha_descarga": "2026-11-26",
+      "hash": "sha256:2a9633ad89a1b70c4fb6e599959a6635e88c52f360d90df16e897ca5ec3416b0",
+      "cita_ubicacion": "cerrovanguardia.com.ar Proceso hidrometalúrgico cianuración + fundición doré",
+      "confianza": "alta"
+    }
+  },
+  {
+    "conexion_id": "oro-c5",
+    "proceso_id": "oro-plata-lixiviacion-dore",
+    "origen_paso_id": "oro-p3-precipitacion",
+    "destino_paso_id": "oro-p2-lixiviacion",
+    "corriente_nombre": "Reciclo solución estéril cianurada",
+    "tipo_corriente": "reciclo",
+    "flujo": {
+      "estado": "sin_datos",
+      "valor": null,
+      "unidad": "m3/h",
+      "procedencia": {
+        "anio": 2026,
+        "fuente_id": "cerro-vanguardia-web-2026",
+        "fuente": "Portal institucional Cerro Vanguardia S.A. (AngloGold Ashanti / Fomicruz S.E.)",
+        "url": "https://www.cerrovanguardia.com.ar/",
+        "fecha_descarga": "2026-11-26",
+        "hash": "sha256:2a9633ad89a1b70c4fb6e599959a6635e88c52f360d90df16e897ca5ec3416b0",
+        "cita_ubicacion": "cerrovanguardia.com.ar Proceso hidrometalúrgico cianuración + fundición doré",
+        "confianza": "alta"
+      }
+    },
+    "procedencia": {
+      "anio": 2026,
+      "fuente_id": "cerro-vanguardia-web-2026",
+      "fuente": "Portal institucional Cerro Vanguardia S.A. (AngloGold Ashanti / Fomicruz S.E.)",
+      "url": "https://www.cerrovanguardia.com.ar/",
+      "fecha_descarga": "2026-11-26",
+      "hash": "sha256:2a9633ad89a1b70c4fb6e599959a6635e88c52f360d90df16e897ca5ec3416b0",
+      "cita_ubicacion": "cerrovanguardia.com.ar Proceso hidrometalúrgico cianuración + fundición doré",
+      "confianza": "alta"
+    }
+  },
+  {
+    "conexion_id": "oro-c6",
+    "proceso_id": "oro-plata-lixiviacion-dore",
+    "origen_paso_id": "oro-p5-detox-relaves",
+    "destino_paso_id": "oro-p1-molienda",
+    "corriente_nombre": "Agua clarificada recuperada",
+    "tipo_corriente": "reciclo",
+    "flujo": {
+      "estado": "sin_datos",
+      "valor": null,
+      "unidad": "m3/h",
+      "procedencia": {
+        "anio": 2026,
+        "fuente_id": "cerro-vanguardia-web-2026",
+        "fuente": "Portal institucional Cerro Vanguardia S.A. (AngloGold Ashanti / Fomicruz S.E.)",
+        "url": "https://www.cerrovanguardia.com.ar/",
+        "fecha_descarga": "2026-11-26",
+        "hash": "sha256:2a9633ad89a1b70c4fb6e599959a6635e88c52f360d90df16e897ca5ec3416b0",
+        "cita_ubicacion": "cerrovanguardia.com.ar Proceso hidrometalúrgico cianuración + fundición doré",
+        "confianza": "alta"
+      }
+    },
+    "procedencia": {
+      "anio": 2026,
+      "fuente_id": "cerro-vanguardia-web-2026",
+      "fuente": "Portal institucional Cerro Vanguardia S.A. (AngloGold Ashanti / Fomicruz S.E.)",
+      "url": "https://www.cerrovanguardia.com.ar/",
+      "fecha_descarga": "2026-11-26",
+      "hash": "sha256:2a9633ad89a1b70c4fb6e599959a6635e88c52f360d90df16e897ca5ec3416b0",
+      "cita_ubicacion": "cerrovanguardia.com.ar Proceso hidrometalúrgico cianuración + fundición doré",
+      "confianza": "alta"
+    }
+  },
+  {
+    "conexion_id": "kraft-c1",
+    "proceso_id": "celulosa-kraft-blanqueada",
+    "origen_paso_id": "kraft-p1-chipeado",
+    "destino_paso_id": "kraft-p2-digestion",
+    "corriente_nombre": "Chips calibrados de pino",
+    "tipo_corriente": "principal",
+    "flujo": {
+      "estado": "dato",
+      "valor": 2.1,
+      "unidad": "t seca/t ADt",
+      "procedencia": {
+        "anio": 2026,
+        "fuente_id": "arauco-web-2026",
+        "fuente": "Portal corporativo Arauco (Operaciones Forestales y Planta de Celulosa Puerto Esperanza)",
+        "url": "https://www.arauco.com/",
+        "fecha_descarga": "2026-11-26",
+        "hash": "sha256:d00e96942269b2c521cd86449c5ff9fe6cec49bff31cdb210f0a7f004b00fad3",
+        "cita_ubicacion": "arauco.com + AFCP Proceso Kraft al sulfato con recuperación química cerrada",
+        "confianza": "alta"
+      }
+    },
+    "procedencia": {
+      "anio": 2026,
+      "fuente_id": "arauco-web-2026",
+      "fuente": "Portal corporativo Arauco (Operaciones Forestales y Planta de Celulosa Puerto Esperanza)",
+      "url": "https://www.arauco.com/",
+      "fecha_descarga": "2026-11-26",
+      "hash": "sha256:d00e96942269b2c521cd86449c5ff9fe6cec49bff31cdb210f0a7f004b00fad3",
+      "cita_ubicacion": "arauco.com + AFCP Proceso Kraft al sulfato con recuperación química cerrada",
+      "confianza": "alta"
+    }
+  },
+  {
+    "conexion_id": "kraft-c2",
+    "proceso_id": "celulosa-kraft-blanqueada",
+    "origen_paso_id": "kraft-p2-digestion",
+    "destino_paso_id": "kraft-p3-blanqueo-ecf",
+    "corriente_nombre": "Pulpa marrón lavada",
+    "tipo_corriente": "principal",
+    "flujo": {
+      "estado": "dato",
+      "valor": 1.05,
+      "unidad": "t/t ADt",
+      "procedencia": {
+        "anio": 2026,
+        "fuente_id": "arauco-web-2026",
+        "fuente": "Portal corporativo Arauco (Operaciones Forestales y Planta de Celulosa Puerto Esperanza)",
+        "url": "https://www.arauco.com/",
+        "fecha_descarga": "2026-11-26",
+        "hash": "sha256:d00e96942269b2c521cd86449c5ff9fe6cec49bff31cdb210f0a7f004b00fad3",
+        "cita_ubicacion": "arauco.com + AFCP Proceso Kraft al sulfato con recuperación química cerrada",
+        "confianza": "alta"
+      }
+    },
+    "procedencia": {
+      "anio": 2026,
+      "fuente_id": "arauco-web-2026",
+      "fuente": "Portal corporativo Arauco (Operaciones Forestales y Planta de Celulosa Puerto Esperanza)",
+      "url": "https://www.arauco.com/",
+      "fecha_descarga": "2026-11-26",
+      "hash": "sha256:d00e96942269b2c521cd86449c5ff9fe6cec49bff31cdb210f0a7f004b00fad3",
+      "cita_ubicacion": "arauco.com + AFCP Proceso Kraft al sulfato con recuperación química cerrada",
+      "confianza": "alta"
+    }
+  },
+  {
+    "conexion_id": "kraft-c3",
+    "proceso_id": "celulosa-kraft-blanqueada",
+    "origen_paso_id": "kraft-p2-digestion",
+    "destino_paso_id": "kraft-p5-recuperacion-caustificacion",
+    "corriente_nombre": "Licor negro (lignina + NaOH/Na2S)",
+    "tipo_corriente": "subproducto",
+    "flujo": {
+      "estado": "dato",
+      "valor": 1.5,
+      "unidad": "t sólidos/t ADt",
+      "procedencia": {
+        "anio": 2026,
+        "fuente_id": "arauco-web-2026",
+        "fuente": "Portal corporativo Arauco (Operaciones Forestales y Planta de Celulosa Puerto Esperanza)",
+        "url": "https://www.arauco.com/",
+        "fecha_descarga": "2026-11-26",
+        "hash": "sha256:d00e96942269b2c521cd86449c5ff9fe6cec49bff31cdb210f0a7f004b00fad3",
+        "cita_ubicacion": "arauco.com + AFCP Proceso Kraft al sulfato con recuperación química cerrada",
+        "confianza": "alta"
+      }
+    },
+    "procedencia": {
+      "anio": 2026,
+      "fuente_id": "arauco-web-2026",
+      "fuente": "Portal corporativo Arauco (Operaciones Forestales y Planta de Celulosa Puerto Esperanza)",
+      "url": "https://www.arauco.com/",
+      "fecha_descarga": "2026-11-26",
+      "hash": "sha256:d00e96942269b2c521cd86449c5ff9fe6cec49bff31cdb210f0a7f004b00fad3",
+      "cita_ubicacion": "arauco.com + AFCP Proceso Kraft al sulfato con recuperación química cerrada",
+      "confianza": "alta"
+    }
+  },
+  {
+    "conexion_id": "kraft-c4",
+    "proceso_id": "celulosa-kraft-blanqueada",
+    "origen_paso_id": "kraft-p3-blanqueo-ecf",
+    "destino_paso_id": "kraft-p4-secado-fardos",
+    "corriente_nombre": "Pulpa Kraft blanqueada ECF",
+    "tipo_corriente": "principal",
+    "flujo": {
+      "estado": "dato",
+      "valor": 1,
+      "unidad": "t ADt/t ADt",
+      "procedencia": {
+        "anio": 2026,
+        "fuente_id": "arauco-web-2026",
+        "fuente": "Portal corporativo Arauco (Operaciones Forestales y Planta de Celulosa Puerto Esperanza)",
+        "url": "https://www.arauco.com/",
+        "fecha_descarga": "2026-11-26",
+        "hash": "sha256:d00e96942269b2c521cd86449c5ff9fe6cec49bff31cdb210f0a7f004b00fad3",
+        "cita_ubicacion": "arauco.com + AFCP Proceso Kraft al sulfato con recuperación química cerrada",
+        "confianza": "alta"
+      }
+    },
+    "procedencia": {
+      "anio": 2026,
+      "fuente_id": "arauco-web-2026",
+      "fuente": "Portal corporativo Arauco (Operaciones Forestales y Planta de Celulosa Puerto Esperanza)",
+      "url": "https://www.arauco.com/",
+      "fecha_descarga": "2026-11-26",
+      "hash": "sha256:d00e96942269b2c521cd86449c5ff9fe6cec49bff31cdb210f0a7f004b00fad3",
+      "cita_ubicacion": "arauco.com + AFCP Proceso Kraft al sulfato con recuperación química cerrada",
+      "confianza": "alta"
+    }
+  },
+  {
+    "conexion_id": "kraft-c5",
+    "proceso_id": "celulosa-kraft-blanqueada",
+    "origen_paso_id": "kraft-p5-recuperacion-caustificacion",
+    "destino_paso_id": "kraft-p2-digestion",
+    "corriente_nombre": "Licor blanco regenerado (ciclo cerrado)",
+    "tipo_corriente": "reciclo",
+    "flujo": {
+      "estado": "sin_datos",
+      "valor": null,
+      "unidad": "m3/t ADt",
+      "procedencia": {
+        "anio": 2026,
+        "fuente_id": "arauco-web-2026",
+        "fuente": "Portal corporativo Arauco (Operaciones Forestales y Planta de Celulosa Puerto Esperanza)",
+        "url": "https://www.arauco.com/",
+        "fecha_descarga": "2026-11-26",
+        "hash": "sha256:d00e96942269b2c521cd86449c5ff9fe6cec49bff31cdb210f0a7f004b00fad3",
+        "cita_ubicacion": "arauco.com + AFCP Proceso Kraft al sulfato con recuperación química cerrada",
+        "confianza": "alta"
+      }
+    },
+    "procedencia": {
+      "anio": 2026,
+      "fuente_id": "arauco-web-2026",
+      "fuente": "Portal corporativo Arauco (Operaciones Forestales y Planta de Celulosa Puerto Esperanza)",
+      "url": "https://www.arauco.com/",
+      "fecha_descarga": "2026-11-26",
+      "hash": "sha256:d00e96942269b2c521cd86449c5ff9fe6cec49bff31cdb210f0a7f004b00fad3",
+      "cita_ubicacion": "arauco.com + AFCP Proceso Kraft al sulfato con recuperación química cerrada",
+      "confianza": "alta"
+    }
   }
 ]

@@ -219,5 +219,90 @@
       "cita_ubicacion": "bioetanol.csv (Compañía Bioenergética La Florida S.A., La Florida, Tucumán)",
       "confianza": "alta"
     }
+  },
+  {
+    "empresa_id": "alpat-saic",
+    "razon_social": "Álcalis de la Patagonia S.A.I.C. (ALPAT)",
+    "tipo_capital": "nacional",
+    "sitio_web_oficial": null,
+    "hechos_verificables": "Única planta productora de carbonato de sodio sintético (proceso Solvay) de Sudamérica, localizada en Punta Delgado (San Antonio Oeste, Río Negro), abasteciendo a la industria del vidrio, detergentes y carbonatación de litio.",
+    "procedencia": {
+      "anio": 2025,
+      "fuente_id": "usgs-mcs-2025-soda-ash",
+      "fuente": "USGS Mineral Commodity Summaries 2025: Soda Ash (Sodium Carbonate)",
+      "url": "https://pubs.usgs.gov/periodicals/mcs2025/mcs2025-soda-ash.pdf",
+      "fecha_descarga": "2026-11-26",
+      "hash": "sha256:a386ee59806756e28c72f2fde95eaa3b68068e0614f1e0228fd13007be920ff5",
+      "cita_ubicacion": "USGS MCS 2025 Soda Ash + síntesis Solvay Argentina (San Antonio Oeste)",
+      "confianza": "alta"
+    }
+  },
+  {
+    "empresa_id": "caleras-san-juan-sa",
+    "razon_social": "Caleras San Juan S.A.",
+    "tipo_capital": "nacional",
+    "sitio_web_oficial": "https://calerassanjuan.com/",
+    "hechos_verificables": "Complejo industrial calero en Los Berros (Depto. Sarmiento, San Juan) con hornos verticales regenerativos (PFRK) de cal viva (CaO) e hidratada para minería de cobre/litio, siderurgia y exportación a Chile.",
+    "procedencia": {
+      "anio": 2026,
+      "fuente_id": "caleras-sj-web-2026",
+      "fuente": "Portal institucional Caleras San Juan S.A. (Polo Calero Los Berros)",
+      "url": "https://calerassanjuan.com/",
+      "fecha_descarga": "2026-11-26",
+      "hash": "sha256:310cab2033ed8e1093226691058715fbf4c90a4c2d0745ec1d6a34d39971587d",
+      "cita_ubicacion": "calerassanjuan.com Sección Operaciones Industriales Los Berros",
+      "confianza": "alta"
+    }
+  },
+  {
+    "empresa_id": "cerro-vanguardia-sa",
+    "razon_social": "Cerro Vanguardia S.A.",
+    "tipo_capital": "mixto",
+    "sitio_web_oficial": "https://www.cerrovanguardia.com.ar/",
+    "hechos_verificables": "Operación minera y metalúrgica de oro y plata en el Macizo del Deseado (Depto. Magallanes, Santa Cruz) participada por AngloGold Ashanti (92,5%) y Fomicruz S.E. de la Provincia de Santa Cruz (7,5%).",
+    "procedencia": {
+      "anio": 2026,
+      "fuente_id": "cerro-vanguardia-web-2026",
+      "fuente": "Portal institucional Cerro Vanguardia S.A. (AngloGold Ashanti / Fomicruz S.E.)",
+      "url": "https://www.cerrovanguardia.com.ar/",
+      "fecha_descarga": "2026-11-26",
+      "hash": "sha256:2a9633ad89a1b70c4fb6e599959a6635e88c52f360d90df16e897ca5ec3416b0",
+      "cita_ubicacion": "cerrovanguardia.com.ar Información Institucional y Planta Metalúrgica",
+      "confianza": "alta"
+    }
+  },
+  {
+    "empresa_id": "newmont-cerro-negro",
+    "razon_social": "Oroplata S.A. (Cerro Negro · Newmont)",
+    "tipo_capital": "extranjero",
+    "sitio_web_oficial": null,
+    "hechos_verificables": "Complejo minero subterráneo y planta de procesamiento de oro y plata Cerro Negro en el área de Perito Moreno (Depto. Lago Buenos Aires, Santa Cruz), uno de los principales productores auríferos de Argentina.",
+    "procedencia": {
+      "anio": 2026,
+      "fuente_id": "caem-web-2026",
+      "fuente": "Cámara Argentina de Empresas Mineras (CAEM): polos metalíferos y minería de Santa Cruz",
+      "url": "https://www.caem.com.ar/",
+      "fecha_descarga": "2026-11-26",
+      "hash": "sha256:c87dcc459011138da2f1e13b6de3f3eae07a46092db753f9b443a94fdc9cad22",
+      "cita_ubicacion": "caem.com.ar Operaciones metalíferas activas en Santa Cruz",
+      "confianza": "alta"
+    }
+  },
+  {
+    "empresa_id": "arauco-argentina-sa",
+    "razon_social": "Arauco Argentina S.A.",
+    "tipo_capital": "extranjero",
+    "sitio_web_oficial": "https://www.arauco.com/",
+    "hechos_verificables": "Operador foresto-industrial con planta de celulosa Kraft blanqueada de fibra larga de pino en Puerto Esperanza (Depto. Iguazú, Misiones), integrada con cogeneración eléctrica por biomasa y licor negro.",
+    "procedencia": {
+      "anio": 2026,
+      "fuente_id": "arauco-web-2026",
+      "fuente": "Portal corporativo Arauco (Operaciones Forestales y Planta de Celulosa Puerto Esperanza)",
+      "url": "https://www.arauco.com/",
+      "fecha_descarga": "2026-11-26",
+      "hash": "sha256:d00e96942269b2c521cd86449c5ff9fe6cec49bff31cdb210f0a7f004b00fad3",
+      "cita_ubicacion": "arauco.com Operaciones Industriales Argentina / Celulosa Puerto Esperanza",
+      "confianza": "alta"
+    }
   }
 ]

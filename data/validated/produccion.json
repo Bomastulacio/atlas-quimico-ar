@@ -1269,5 +1269,160 @@
       "cita_ubicacion": "bioetanol-produccin-y-ventas-total-pas-.csv suma mensual prod_cana_azucar 2017",
       "confianza": "alta"
     }
+  },
+  {
+    "registro_id": "prod-soda-solvay-ar-sin-datos",
+    "producto_id": "soda-solvay",
+    "provincia_id": "62",
+    "anio": 2024,
+    "medicion": {
+      "estado": "sin_datos",
+      "valor": null,
+      "unidad": "t Na2CO3",
+      "procedencia": {
+        "anio": 2025,
+        "fuente_id": "usgs-mcs-2025-soda-ash",
+        "fuente": "USGS Mineral Commodity Summaries 2025: Soda Ash (Sodium Carbonate)",
+        "url": "https://pubs.usgs.gov/periodicals/mcs2025/mcs2025-soda-ash.pdf",
+        "fecha_descarga": "2026-11-26",
+        "hash": "sha256:a386ee59806756e28c72f2fde95eaa3b68068e0614f1e0228fd13007be920ff5",
+        "cita_ubicacion": "USGS MCS 2025 no desagrega tonelaje anual individual de Argentina",
+        "confianza": "alta"
+      }
+    },
+    "procedencia": {
+      "anio": 2025,
+      "fuente_id": "usgs-mcs-2025-soda-ash",
+      "fuente": "USGS Mineral Commodity Summaries 2025: Soda Ash (Sodium Carbonate)",
+      "url": "https://pubs.usgs.gov/periodicals/mcs2025/mcs2025-soda-ash.pdf",
+      "fecha_descarga": "2026-11-26",
+      "hash": "sha256:a386ee59806756e28c72f2fde95eaa3b68068e0614f1e0228fd13007be920ff5",
+      "cita_ubicacion": "Sin serie pública abierta auditada por planta; declarado sin_datos",
+      "confianza": "alta"
+    }
+  },
+  {
+    "registro_id": "prod-cal-industrial-ar-sin-datos",
+    "producto_id": "cal-industrial",
+    "provincia_id": "70",
+    "anio": 2024,
+    "medicion": {
+      "estado": "sin_datos",
+      "valor": null,
+      "unidad": "t CaO",
+      "procedencia": {
+        "anio": 2025,
+        "fuente_id": "usgs-mcs-2025-lime",
+        "fuente": "USGS Mineral Commodity Summaries 2025: Lime (Quicklime & Hydrated Lime)",
+        "url": "https://pubs.usgs.gov/periodicals/mcs2025/mcs2025-lime.pdf",
+        "fecha_descarga": "2026-11-26",
+        "hash": "sha256:0855c314c9e11fa32e12551877dfe16c586e30c210b0e67eb64bfcb813aa1774",
+        "cita_ubicacion": "USGS MCS 2025 no desagrega producción anual individual de Argentina",
+        "confianza": "alta"
+      }
+    },
+    "procedencia": {
+      "anio": 2025,
+      "fuente_id": "usgs-mcs-2025-lime",
+      "fuente": "USGS Mineral Commodity Summaries 2025: Lime (Quicklime & Hydrated Lime)",
+      "url": "https://pubs.usgs.gov/periodicals/mcs2025/mcs2025-lime.pdf",
+      "fecha_descarga": "2026-11-26",
+      "hash": "sha256:0855c314c9e11fa32e12551877dfe16c586e30c210b0e67eb64bfcb813aa1774",
+      "cita_ubicacion": "Sin serie anual oficial desagregada en USGS/INDEC; declarado sin_datos",
+      "confianza": "alta"
+    }
+  },
+  {
+    "registro_id": "prod-plata-ar-2023",
+    "producto_id": "oro-plata",
+    "provincia_id": null,
+    "anio": 2023,
+    "medicion": {
+      "estado": "dato",
+      "valor": 808,
+      "unidad": "t Ag",
+      "procedencia": {
+        "anio": 2025,
+        "fuente_id": "usgs-mcs-2025-silver",
+        "fuente": "USGS Mineral Commodity Summaries 2025: Silver (World Mine Production & Reserves)",
+        "url": "https://pubs.usgs.gov/periodicals/mcs2025/mcs2025-silver.pdf",
+        "fecha_descarga": "2026-11-26",
+        "hash": "sha256:1aa6e68c9700f88e97d4cbf31fc039d45d4b1b738a09f6bfece8edac0ec59b24",
+        "cita_ubicacion": "mcs2025-silver.pdf pág. 2 tabla World Mine Production: Argentina 2023 = 808 t",
+        "confianza": "alta"
+      }
+    },
+    "procedencia": {
+      "anio": 2025,
+      "fuente_id": "usgs-mcs-2025-silver",
+      "fuente": "USGS Mineral Commodity Summaries 2025: Silver (World Mine Production & Reserves)",
+      "url": "https://pubs.usgs.gov/periodicals/mcs2025/mcs2025-silver.pdf",
+      "fecha_descarga": "2026-11-26",
+      "hash": "sha256:1aa6e68c9700f88e97d4cbf31fc039d45d4b1b738a09f6bfece8edac0ec59b24",
+      "cita_ubicacion": "mcs2025-silver.pdf pág. 2: producción minera argentina de plata 2023 (808 t)",
+      "confianza": "alta"
+    }
+  },
+  {
+    "registro_id": "prod-plata-ar-2024",
+    "producto_id": "oro-plata",
+    "provincia_id": null,
+    "anio": 2024,
+    "medicion": {
+      "estado": "dato",
+      "valor": 800,
+      "unidad": "t Ag",
+      "procedencia": {
+        "anio": 2025,
+        "fuente_id": "usgs-mcs-2025-silver",
+        "fuente": "USGS Mineral Commodity Summaries 2025: Silver (World Mine Production & Reserves)",
+        "url": "https://pubs.usgs.gov/periodicals/mcs2025/mcs2025-silver.pdf",
+        "fecha_descarga": "2026-11-26",
+        "hash": "sha256:1aa6e68c9700f88e97d4cbf31fc039d45d4b1b738a09f6bfece8edac0ec59b24",
+        "cita_ubicacion": "mcs2025-silver.pdf pág. 2 tabla World Mine Production: Argentina 2024e = 800 t",
+        "confianza": "media"
+      }
+    },
+    "procedencia": {
+      "anio": 2025,
+      "fuente_id": "usgs-mcs-2025-silver",
+      "fuente": "USGS Mineral Commodity Summaries 2025: Silver (World Mine Production & Reserves)",
+      "url": "https://pubs.usgs.gov/periodicals/mcs2025/mcs2025-silver.pdf",
+      "fecha_descarga": "2026-11-26",
+      "hash": "sha256:1aa6e68c9700f88e97d4cbf31fc039d45d4b1b738a09f6bfece8edac0ec59b24",
+      "cita_ubicacion": "mcs2025-silver.pdf pág. 2: producción minera argentina de plata 2024e (800 t)",
+      "confianza": "media"
+    }
+  },
+  {
+    "registro_id": "prod-celulosa-kraft-ar-sin-datos",
+    "producto_id": "celulosa-kraft",
+    "provincia_id": "54",
+    "anio": 2024,
+    "medicion": {
+      "estado": "sin_datos",
+      "valor": null,
+      "unidad": "t ADt pulpa",
+      "procedencia": {
+        "anio": 2026,
+        "fuente_id": "afcp-web-2026",
+        "fuente": "Asociación de Fabricantes de Celulosa y Papel de Argentina (AFCP)",
+        "url": "https://www.afcp.org.ar/",
+        "fecha_descarga": "2026-11-26",
+        "hash": "sha256:462042ba5213b3fdad74a435117b636267ed23d4077c2a71032f5e1d1eeec509",
+        "cita_ubicacion": "Sin serie anual pública descargable en CSV oficial; declarado sin_datos",
+        "confianza": "alta"
+      }
+    },
+    "procedencia": {
+      "anio": 2026,
+      "fuente_id": "afcp-web-2026",
+      "fuente": "Asociación de Fabricantes de Celulosa y Papel de Argentina (AFCP)",
+      "url": "https://www.afcp.org.ar/",
+      "fecha_descarga": "2026-11-26",
+      "hash": "sha256:462042ba5213b3fdad74a435117b636267ed23d4077c2a71032f5e1d1eeec509",
+      "cita_ubicacion": "Sin dataset abierto auditado por planta en Misiones; declarado sin_datos",
+      "confianza": "alta"
+    }
   }
 ]

@@ -232,5 +232,113 @@
       "cita_ubicacion": "bioetanol.csv: destilerías y deshidratadoras de bioetanol de caña en Tucumán (La Florida, Cruz Alta)",
       "confianza": "alta"
     }
+  },
+  {
+    "relacion_id": "soda-solvay-62-62077",
+    "producto_id": "soda-solvay",
+    "provincia_id": "62",
+    "departamento_id": "62077",
+    "es_dominante": true,
+    "rol_en_cadena": "sintesis",
+    "procedencia": {
+      "anio": 2025,
+      "fuente_id": "usgs-mcs-2025-soda-ash",
+      "fuente": "USGS Mineral Commodity Summaries 2025: Soda Ash (Sodium Carbonate)",
+      "url": "https://pubs.usgs.gov/periodicals/mcs2025/mcs2025-soda-ash.pdf",
+      "fecha_descarga": "2026-11-26",
+      "hash": "sha256:a386ee59806756e28c72f2fde95eaa3b68068e0614f1e0228fd13007be920ff5",
+      "cita_ubicacion": "USGS MCS 2025 Soda Ash + operación Solvay Punta Delgado (San Antonio Oeste, Río Negro)",
+      "confianza": "alta"
+    }
+  },
+  {
+    "relacion_id": "cal-industrial-70-70105",
+    "producto_id": "cal-industrial",
+    "provincia_id": "70",
+    "departamento_id": "70105",
+    "es_dominante": true,
+    "rol_en_cadena": "procesamiento",
+    "procedencia": {
+      "anio": 2026,
+      "fuente_id": "caleras-sj-web-2026",
+      "fuente": "Portal institucional Caleras San Juan S.A. (Polo Calero Los Berros)",
+      "url": "https://calerassanjuan.com/",
+      "fecha_descarga": "2026-11-26",
+      "hash": "sha256:310cab2033ed8e1093226691058715fbf4c90a4c2d0745ec1d6a34d39971587d",
+      "cita_ubicacion": "calerassanjuan.com Polo Calero Los Berros (Depto. Sarmiento, San Juan)",
+      "confianza": "alta"
+    }
+  },
+  {
+    "relacion_id": "oro-plata-78-78042",
+    "producto_id": "oro-plata",
+    "provincia_id": "78",
+    "departamento_id": "78042",
+    "es_dominante": true,
+    "rol_en_cadena": "refinacion",
+    "procedencia": {
+      "anio": 2026,
+      "fuente_id": "cerro-vanguardia-web-2026",
+      "fuente": "Portal institucional Cerro Vanguardia S.A. (AngloGold Ashanti / Fomicruz S.E.)",
+      "url": "https://www.cerrovanguardia.com.ar/",
+      "fecha_descarga": "2026-11-26",
+      "hash": "sha256:2a9633ad89a1b70c4fb6e599959a6635e88c52f360d90df16e897ca5ec3416b0",
+      "cita_ubicacion": "cerrovanguardia.com.ar Yacimiento y planta doré (Depto. Magallanes, Santa Cruz)",
+      "confianza": "alta"
+    }
+  },
+  {
+    "relacion_id": "oro-plata-78-78035",
+    "producto_id": "oro-plata",
+    "provincia_id": "78",
+    "departamento_id": "78035",
+    "es_dominante": false,
+    "rol_en_cadena": "extraccion",
+    "procedencia": {
+      "anio": 2026,
+      "fuente_id": "caem-web-2026",
+      "fuente": "Cámara Argentina de Empresas Mineras (CAEM): polos metalíferos y minería de Santa Cruz",
+      "url": "https://www.caem.com.ar/",
+      "fecha_descarga": "2026-11-26",
+      "hash": "sha256:c87dcc459011138da2f1e13b6de3f3eae07a46092db753f9b443a94fdc9cad22",
+      "cita_ubicacion": "caem.com.ar Operación Cerro Negro, Perito Moreno (Depto. Lago Buenos Aires, Santa Cruz)",
+      "confianza": "alta"
+    }
+  },
+  {
+    "relacion_id": "celulosa-kraft-54-54063",
+    "producto_id": "celulosa-kraft",
+    "provincia_id": "54",
+    "departamento_id": "54063",
+    "es_dominante": true,
+    "rol_en_cadena": "procesamiento",
+    "procedencia": {
+      "anio": 2026,
+      "fuente_id": "arauco-web-2026",
+      "fuente": "Portal corporativo Arauco (Operaciones Forestales y Planta de Celulosa Puerto Esperanza)",
+      "url": "https://www.arauco.com/",
+      "fecha_descarga": "2026-11-26",
+      "hash": "sha256:d00e96942269b2c521cd86449c5ff9fe6cec49bff31cdb210f0a7f004b00fad3",
+      "cita_ubicacion": "arauco.com Planta de Celulosa Puerto Esperanza (Depto. Iguazú, Misiones)",
+      "confianza": "alta"
+    }
+  },
+  {
+    "relacion_id": "celulosa-kraft-54-54077",
+    "producto_id": "celulosa-kraft",
+    "provincia_id": "54",
+    "departamento_id": "54077",
+    "es_dominante": false,
+    "rol_en_cadena": "extraccion",
+    "procedencia": {
+      "anio": 2026,
+      "fuente_id": "afcp-web-2026",
+      "fuente": "Asociación de Fabricantes de Celulosa y Papel de Argentina (AFCP)",
+      "url": "https://www.afcp.org.ar/",
+      "fecha_descarga": "2026-11-26",
+      "hash": "sha256:462042ba5213b3fdad74a435117b636267ed23d4077c2a71032f5e1d1eeec509",
+      "cita_ubicacion": "afcp.org.ar Cuenca foresto-industrial Alto Paraná (Depto. Lib. Gral. San Martín, Misiones)",
+      "confianza": "alta"
+    }
   }
 ]

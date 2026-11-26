@@ -526,5 +526,159 @@
     "hash": "sha256:54ab9f6bc96dd294e57a929811b13d7f2e204facedf9e02bc6911fb14b60e35a",
     "archivo_raw": null,
     "notas": "Relevamiento sectorial del NOA (20 ingenios azucareros, 16 destilerías y 12 deshidratadoras de alcohol anhidro con eje productivo en Tucumán)."
+  },
+  {
+    "fuente_id": "uncomtrade-ar-lote4-2023",
+    "nombre": "UN Comtrade: comercio exterior de Argentina HS 283620 (Soda Solvay), 252210 (Cal viva), 710812 (Oro), 710691 (Plata) y 470321 (Celulosa Kraft) 2023",
+    "organismo": "UN Comtrade (Naciones Unidas)",
+    "tipo": "oficial",
+    "url": "https://comtradeapi.un.org/public/v1/preview/C/A/HS?reporterCode=32&period=2023&partnerCode=0&partner2Code=0&customsCode=C00&motCode=0&cmdCode=283620,252210,710812,710691,470321",
+    "fecha_descarga": "2026-11-26",
+    "hash": "sha256:b2e8fc8903de1c4c163a8594b3f2283f01a71f1d01d51b3829fa091c883f3811",
+    "archivo_raw": null,
+    "notas": "Flujos oficiales 2023 de soda ash (283620), cal viva (252210), oro doré/bruto (710812), plata (710691) y pasta celulósica Kraft blanqueada (470321)."
+  },
+  {
+    "fuente_id": "uncomtrade-ar-lote4-2024",
+    "nombre": "UN Comtrade: comercio exterior de Argentina HS 283620 (Soda Solvay), 252210 (Cal viva), 710812 (Oro), 710691 (Plata) y 470321 (Celulosa Kraft) 2024",
+    "organismo": "UN Comtrade (Naciones Unidas)",
+    "tipo": "oficial",
+    "url": "https://comtradeapi.un.org/public/v1/preview/C/A/HS?reporterCode=32&period=2024&partnerCode=0&partner2Code=0&customsCode=C00&motCode=0&cmdCode=283620,252210,710812,710691,470321",
+    "fecha_descarga": "2026-11-26",
+    "hash": "sha256:8e39bec4f655267e2407e7dc81b90463946717a97d4588d65fc540ababd0739c",
+    "archivo_raw": null,
+    "notas": "Flujos oficiales 2024 de soda ash (283620), cal viva (252210), oro (710812), plata (710691) y pasta celulósica Kraft blanqueada (470321)."
+  },
+  {
+    "fuente_id": "eu-bref-lvic-s",
+    "nombre": "Reference Document on Best Available Techniques for Large Volume Inorganic Chemicals (LVIC-S: Soda Ash)",
+    "organismo": "Comisión Europea · Joint Research Centre (JRC / EU-BRITE)",
+    "tipo": "tecnica",
+    "url": "https://bureau-industrial-transformation.jrc.ec.europa.eu/reference/large-volume-inorganic-chemicals-solids-and-others-industry",
+    "fecha_descarga": "2026-11-26",
+    "hash": "sha256:6e2692b758cbb15dd8326f03c105bee4924fe9117bfa9873c7d1f00b9786fe58",
+    "archivo_raw": null,
+    "notas": "Referencia técnica BAT del proceso Solvay (calcinación de caliza, absorción de NH3, carbonatación y destilación en ciclo cerrado)."
+  },
+  {
+    "fuente_id": "eu-bref-clm",
+    "nombre": "Reference Document on Best Available Techniques in the Production of Cement, Lime and Magnesium Oxide (CLM BREF)",
+    "organismo": "Comisión Europea · Joint Research Centre (JRC / EU-BRITE)",
+    "tipo": "tecnica",
+    "url": "https://bureau-industrial-transformation.jrc.ec.europa.eu/reference/production-cement-lime-and-magnesium-oxide",
+    "fecha_descarga": "2026-11-26",
+    "hash": "sha256:fed8ff63a571396d268f29915414c344745065ecfda832ca9c5a53650ca1f2d6",
+    "archivo_raw": null,
+    "notas": "Referencia BAT para hornos verticales regenerativos (PFRK) de cal viva (CaO) e hidratación industrial a Ca(OH)2."
+  },
+  {
+    "fuente_id": "ipcc-2006-mineral-cap2",
+    "nombre": "IPCC 2006 Guidelines Vol. 3 Chapter 2: Mineral Industry Emissions (Lime & Soda Ash)",
+    "organismo": "IPCC (Intergovernmental Panel on Climate Change)",
+    "tipo": "tecnica",
+    "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/pdf/3_Volume3/V3_2_Ch2_Mineral_Industry.pdf",
+    "fecha_descarga": "2026-11-26",
+    "hash": "sha256:f76b756a812afeb3da0c6824cf3747d2d11002a386e1885b374138796c4e1240",
+    "archivo_raw": null,
+    "notas": "Estequiometría oficial de calcinación de caliza (CaCO3 -> CaO + CO2, 0,785 t CO2/t CaO) y carbonato de sodio."
+  },
+  {
+    "fuente_id": "usgs-mcs-2025-soda-ash",
+    "nombre": "USGS Mineral Commodity Summaries 2025: Soda Ash (Sodium Carbonate)",
+    "organismo": "U.S. Geological Survey (USGS)",
+    "tipo": "oficial",
+    "url": "https://pubs.usgs.gov/periodicals/mcs2025/mcs2025-soda-ash.pdf",
+    "fecha_descarga": "2026-11-26",
+    "hash": "sha256:a386ee59806756e28c72f2fde95eaa3b68068e0614f1e0228fd13007be920ff5",
+    "archivo_raw": null,
+    "notas": "Referencia mineral internacional sobre carbonato de sodio sintético (proceso Solvay) y usos en litio y vidrio."
+  },
+  {
+    "fuente_id": "usgs-mcs-2025-lime",
+    "nombre": "USGS Mineral Commodity Summaries 2025: Lime (Quicklime & Hydrated Lime)",
+    "organismo": "U.S. Geological Survey (USGS)",
+    "tipo": "oficial",
+    "url": "https://pubs.usgs.gov/periodicals/mcs2025/mcs2025-lime.pdf",
+    "fecha_descarga": "2026-11-26",
+    "hash": "sha256:0855c314c9e11fa32e12551877dfe16c586e30c210b0e67eb64bfcb813aa1774",
+    "archivo_raw": null,
+    "notas": "Referencia mineral internacional sobre cal viva (CaO) e hidratada para minería, siderurgia y tratamiento químico."
+  },
+  {
+    "fuente_id": "usgs-mcs-2025-gold",
+    "nombre": "USGS Mineral Commodity Summaries 2025: Gold",
+    "organismo": "U.S. Geological Survey (USGS)",
+    "tipo": "oficial",
+    "url": "https://pubs.usgs.gov/periodicals/mcs2025/mcs2025-gold.pdf",
+    "fecha_descarga": "2026-11-26",
+    "hash": "sha256:d4ec1750249005b4ad91dd59aaa7978932ecb7b7a410d8f6a135e6f8f8cc136f",
+    "archivo_raw": null,
+    "notas": "Referencia USGS 2025 sobre minería y metalurgia aurífera global y participación argentina en exportaciones de doré."
+  },
+  {
+    "fuente_id": "usgs-mcs-2025-silver",
+    "nombre": "USGS Mineral Commodity Summaries 2025: Silver (World Mine Production & Reserves)",
+    "organismo": "U.S. Geological Survey (USGS)",
+    "tipo": "oficial",
+    "url": "https://pubs.usgs.gov/periodicals/mcs2025/mcs2025-silver.pdf",
+    "fecha_descarga": "2026-11-26",
+    "hash": "sha256:1aa6e68c9700f88e97d4cbf31fc039d45d4b1b738a09f6bfece8edac0ec59b24",
+    "archivo_raw": null,
+    "notas": "Producción minera oficial de plata de Argentina: 808 t (2023), 800 t (2024e) y reservas de 6.500 t (pág. 2)."
+  },
+  {
+    "fuente_id": "caleras-sj-web-2026",
+    "nombre": "Portal institucional Caleras San Juan S.A. (Polo Calero Los Berros)",
+    "organismo": "Caleras San Juan S.A.",
+    "tipo": "empresa",
+    "url": "https://calerassanjuan.com/",
+    "fecha_descarga": "2026-11-26",
+    "hash": "sha256:310cab2033ed8e1093226691058715fbf4c90a4c2d0745ec1d6a34d39971587d",
+    "archivo_raw": null,
+    "notas": "Operador calero con hornos regenerativos en Los Berros (Depto. Sarmiento, San Juan) abasteciendo minería y siderurgia."
+  },
+  {
+    "fuente_id": "cerro-vanguardia-web-2026",
+    "nombre": "Portal institucional Cerro Vanguardia S.A. (AngloGold Ashanti / Fomicruz S.E.)",
+    "organismo": "Cerro Vanguardia S.A.",
+    "tipo": "empresa",
+    "url": "https://www.cerrovanguardia.com.ar/",
+    "fecha_descarga": "2026-11-26",
+    "hash": "sha256:2a9633ad89a1b70c4fb6e599959a6635e88c52f360d90df16e897ca5ec3416b0",
+    "archivo_raw": null,
+    "notas": "Yacimiento y planta metalúrgica de oro y plata (lingotes doré) en el Macizo del Deseado, Depto. Magallanes, Santa Cruz."
+  },
+  {
+    "fuente_id": "caem-web-2026",
+    "nombre": "Cámara Argentina de Empresas Mineras (CAEM): polos metalíferos y minería de Santa Cruz",
+    "organismo": "Cámara Argentina de Empresas Mineras (CAEM)",
+    "tipo": "tecnica",
+    "url": "https://www.caem.com.ar/",
+    "fecha_descarga": "2026-11-26",
+    "hash": "sha256:c87dcc459011138da2f1e13b6de3f3eae07a46092db753f9b443a94fdc9cad22",
+    "archivo_raw": null,
+    "notas": "Referencia sectorial sobre el Macizo del Deseado (Santa Cruz) como principal jurisdicción productora de oro y plata del país."
+  },
+  {
+    "fuente_id": "arauco-web-2026",
+    "nombre": "Portal corporativo Arauco (Operaciones Forestales y Planta de Celulosa Puerto Esperanza)",
+    "organismo": "Arauco Argentina S.A.",
+    "tipo": "empresa",
+    "url": "https://www.arauco.com/",
+    "fecha_descarga": "2026-11-26",
+    "hash": "sha256:d00e96942269b2c521cd86449c5ff9fe6cec49bff31cdb210f0a7f004b00fad3",
+    "archivo_raw": null,
+    "notas": "Planta de celulosa Kraft blanqueada de fibra larga de pino en Puerto Esperanza (Depto. Iguazú, Misiones)."
+  },
+  {
+    "fuente_id": "afcp-web-2026",
+    "nombre": "Asociación de Fabricantes de Celulosa y Papel de Argentina (AFCP)",
+    "organismo": "AFCP Argentina",
+    "tipo": "tecnica",
+    "url": "https://www.afcp.org.ar/",
+    "fecha_descarga": "2026-11-26",
+    "hash": "sha256:462042ba5213b3fdad74a435117b636267ed23d4077c2a71032f5e1d1eeec509",
+    "archivo_raw": null,
+    "notas": "Entidad sectorial de la industria celulósico-papelera argentina con eje de pulpa Kraft química en Misiones."
   }
 ]

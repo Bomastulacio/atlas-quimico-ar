@@ -3346,5 +3346,997 @@
       "cita_ubicacion": "UN Comtrade AR 2024 cmdCode=220710 (alcohol etílico nacional) primaryValue",
       "confianza": "alta"
     }
+  },
+  {
+    "registro_id": "comex-soda-283620-2023-usd",
+    "producto_id": "soda-solvay",
+    "anio": 2023,
+    "ncm_codigo": "2836.20",
+    "metrica": "valor_usd",
+    "exportacion": {
+      "estado": "dato",
+      "valor": 0,
+      "unidad": "millones USD",
+      "procedencia": {
+        "anio": 2023,
+        "fuente_id": "uncomtrade-ar-lote4-2023",
+        "fuente": "UN Comtrade: comercio exterior de Argentina HS 283620 (Soda Solvay), 252210 (Cal viva), 710812 (Oro), 710691 (Plata) y 470321 (Celulosa Kraft) 2023",
+        "url": "https://comtradeapi.un.org/public/v1/preview/C/A/HS?reporterCode=32&period=2023&partnerCode=0&partner2Code=0&customsCode=C00&motCode=0&cmdCode=283620,252210,710812,710691,470321",
+        "fecha_descarga": "2026-11-26",
+        "hash": "sha256:b2e8fc8903de1c4c163a8594b3f2283f01a71f1d01d51b3829fa091c883f3811",
+        "cita_ubicacion": "UN Comtrade 2023 HS 283620 flow=X",
+        "confianza": "alta"
+      }
+    },
+    "importacion": {
+      "estado": "dato",
+      "valor": 169.67,
+      "unidad": "millones USD",
+      "procedencia": {
+        "anio": 2023,
+        "fuente_id": "uncomtrade-ar-lote4-2023",
+        "fuente": "UN Comtrade: comercio exterior de Argentina HS 283620 (Soda Solvay), 252210 (Cal viva), 710812 (Oro), 710691 (Plata) y 470321 (Celulosa Kraft) 2023",
+        "url": "https://comtradeapi.un.org/public/v1/preview/C/A/HS?reporterCode=32&period=2023&partnerCode=0&partner2Code=0&customsCode=C00&motCode=0&cmdCode=283620,252210,710812,710691,470321",
+        "fecha_descarga": "2026-11-26",
+        "hash": "sha256:b2e8fc8903de1c4c163a8594b3f2283f01a71f1d01d51b3829fa091c883f3811",
+        "cita_ubicacion": "UN Comtrade 2023 HS 283620 flow=M",
+        "confianza": "alta"
+      }
+    },
+    "saldo_comercial": {
+      "estado": "dato",
+      "valor": -169.67,
+      "unidad": "millones USD",
+      "procedencia": {
+        "anio": 2023,
+        "fuente_id": "uncomtrade-ar-lote4-2023",
+        "fuente": "UN Comtrade: comercio exterior de Argentina HS 283620 (Soda Solvay), 252210 (Cal viva), 710812 (Oro), 710691 (Plata) y 470321 (Celulosa Kraft) 2023",
+        "url": "https://comtradeapi.un.org/public/v1/preview/C/A/HS?reporterCode=32&period=2023&partnerCode=0&partner2Code=0&customsCode=C00&motCode=0&cmdCode=283620,252210,710812,710691,470321",
+        "fecha_descarga": "2026-11-26",
+        "hash": "sha256:b2e8fc8903de1c4c163a8594b3f2283f01a71f1d01d51b3829fa091c883f3811",
+        "cita_ubicacion": "Saldo 2023 HS 283620 (Exp - Imp)",
+        "confianza": "alta"
+      }
+    },
+    "procedencia": {
+      "anio": 2023,
+      "fuente_id": "uncomtrade-ar-lote4-2023",
+      "fuente": "UN Comtrade: comercio exterior de Argentina HS 283620 (Soda Solvay), 252210 (Cal viva), 710812 (Oro), 710691 (Plata) y 470321 (Celulosa Kraft) 2023",
+      "url": "https://comtradeapi.un.org/public/v1/preview/C/A/HS?reporterCode=32&period=2023&partnerCode=0&partner2Code=0&customsCode=C00&motCode=0&cmdCode=283620,252210,710812,710691,470321",
+      "fecha_descarga": "2026-11-26",
+      "hash": "sha256:b2e8fc8903de1c4c163a8594b3f2283f01a71f1d01d51b3829fa091c883f3811",
+      "cita_ubicacion": "UN Comtrade 2023 Argentina HS 283620 (Disodium carbonate)",
+      "confianza": "alta"
+    }
+  },
+  {
+    "registro_id": "comex-soda-283620-2024-usd",
+    "producto_id": "soda-solvay",
+    "anio": 2024,
+    "ncm_codigo": "2836.20",
+    "metrica": "valor_usd",
+    "exportacion": {
+      "estado": "sin_datos",
+      "valor": null,
+      "unidad": "millones USD",
+      "procedencia": {
+        "anio": 2024,
+        "fuente_id": "uncomtrade-ar-lote4-2024",
+        "fuente": "UN Comtrade: comercio exterior de Argentina HS 283620 (Soda Solvay), 252210 (Cal viva), 710812 (Oro), 710691 (Plata) y 470321 (Celulosa Kraft) 2024",
+        "url": "https://comtradeapi.un.org/public/v1/preview/C/A/HS?reporterCode=32&period=2024&partnerCode=0&partner2Code=0&customsCode=C00&motCode=0&cmdCode=283620,252210,710812,710691,470321",
+        "fecha_descarga": "2026-11-26",
+        "hash": "sha256:8e39bec4f655267e2407e7dc81b90463946717a97d4588d65fc540ababd0739c",
+        "cita_ubicacion": "UN Comtrade 2024 HS 283620 sin registro de exportación",
+        "confianza": "alta"
+      }
+    },
+    "importacion": {
+      "estado": "dato",
+      "valor": 104.32,
+      "unidad": "millones USD",
+      "procedencia": {
+        "anio": 2024,
+        "fuente_id": "uncomtrade-ar-lote4-2024",
+        "fuente": "UN Comtrade: comercio exterior de Argentina HS 283620 (Soda Solvay), 252210 (Cal viva), 710812 (Oro), 710691 (Plata) y 470321 (Celulosa Kraft) 2024",
+        "url": "https://comtradeapi.un.org/public/v1/preview/C/A/HS?reporterCode=32&period=2024&partnerCode=0&partner2Code=0&customsCode=C00&motCode=0&cmdCode=283620,252210,710812,710691,470321",
+        "fecha_descarga": "2026-11-26",
+        "hash": "sha256:8e39bec4f655267e2407e7dc81b90463946717a97d4588d65fc540ababd0739c",
+        "cita_ubicacion": "UN Comtrade 2024 HS 283620 flow=M",
+        "confianza": "alta"
+      }
+    },
+    "saldo_comercial": {
+      "estado": "sin_datos",
+      "valor": null,
+      "unidad": "millones USD",
+      "procedencia": {
+        "anio": 2024,
+        "fuente_id": "uncomtrade-ar-lote4-2024",
+        "fuente": "UN Comtrade: comercio exterior de Argentina HS 283620 (Soda Solvay), 252210 (Cal viva), 710812 (Oro), 710691 (Plata) y 470321 (Celulosa Kraft) 2024",
+        "url": "https://comtradeapi.un.org/public/v1/preview/C/A/HS?reporterCode=32&period=2024&partnerCode=0&partner2Code=0&customsCode=C00&motCode=0&cmdCode=283620,252210,710812,710691,470321",
+        "fecha_descarga": "2026-11-26",
+        "hash": "sha256:8e39bec4f655267e2407e7dc81b90463946717a97d4588d65fc540ababd0739c",
+        "cita_ubicacion": "Saldo omitido al faltar exportación 2024",
+        "confianza": "alta"
+      }
+    },
+    "procedencia": {
+      "anio": 2024,
+      "fuente_id": "uncomtrade-ar-lote4-2024",
+      "fuente": "UN Comtrade: comercio exterior de Argentina HS 283620 (Soda Solvay), 252210 (Cal viva), 710812 (Oro), 710691 (Plata) y 470321 (Celulosa Kraft) 2024",
+      "url": "https://comtradeapi.un.org/public/v1/preview/C/A/HS?reporterCode=32&period=2024&partnerCode=0&partner2Code=0&customsCode=C00&motCode=0&cmdCode=283620,252210,710812,710691,470321",
+      "fecha_descarga": "2026-11-26",
+      "hash": "sha256:8e39bec4f655267e2407e7dc81b90463946717a97d4588d65fc540ababd0739c",
+      "cita_ubicacion": "UN Comtrade 2024 Argentina HS 283620 (Disodium carbonate)",
+      "confianza": "alta"
+    }
+  },
+  {
+    "registro_id": "comex-cal-252210-2023-usd",
+    "producto_id": "cal-industrial",
+    "anio": 2023,
+    "ncm_codigo": "2522.10",
+    "metrica": "valor_usd",
+    "exportacion": {
+      "estado": "dato",
+      "valor": 32.66,
+      "unidad": "millones USD",
+      "procedencia": {
+        "anio": 2023,
+        "fuente_id": "uncomtrade-ar-lote4-2023",
+        "fuente": "UN Comtrade: comercio exterior de Argentina HS 283620 (Soda Solvay), 252210 (Cal viva), 710812 (Oro), 710691 (Plata) y 470321 (Celulosa Kraft) 2023",
+        "url": "https://comtradeapi.un.org/public/v1/preview/C/A/HS?reporterCode=32&period=2023&partnerCode=0&partner2Code=0&customsCode=C00&motCode=0&cmdCode=283620,252210,710812,710691,470321",
+        "fecha_descarga": "2026-11-26",
+        "hash": "sha256:b2e8fc8903de1c4c163a8594b3f2283f01a71f1d01d51b3829fa091c883f3811",
+        "cita_ubicacion": "UN Comtrade 2023 HS 252210 flow=X",
+        "confianza": "alta"
+      }
+    },
+    "importacion": {
+      "estado": "dato",
+      "valor": 0.58,
+      "unidad": "millones USD",
+      "procedencia": {
+        "anio": 2023,
+        "fuente_id": "uncomtrade-ar-lote4-2023",
+        "fuente": "UN Comtrade: comercio exterior de Argentina HS 283620 (Soda Solvay), 252210 (Cal viva), 710812 (Oro), 710691 (Plata) y 470321 (Celulosa Kraft) 2023",
+        "url": "https://comtradeapi.un.org/public/v1/preview/C/A/HS?reporterCode=32&period=2023&partnerCode=0&partner2Code=0&customsCode=C00&motCode=0&cmdCode=283620,252210,710812,710691,470321",
+        "fecha_descarga": "2026-11-26",
+        "hash": "sha256:b2e8fc8903de1c4c163a8594b3f2283f01a71f1d01d51b3829fa091c883f3811",
+        "cita_ubicacion": "UN Comtrade 2023 HS 252210 flow=M",
+        "confianza": "alta"
+      }
+    },
+    "saldo_comercial": {
+      "estado": "dato",
+      "valor": 32.08,
+      "unidad": "millones USD",
+      "procedencia": {
+        "anio": 2023,
+        "fuente_id": "uncomtrade-ar-lote4-2023",
+        "fuente": "UN Comtrade: comercio exterior de Argentina HS 283620 (Soda Solvay), 252210 (Cal viva), 710812 (Oro), 710691 (Plata) y 470321 (Celulosa Kraft) 2023",
+        "url": "https://comtradeapi.un.org/public/v1/preview/C/A/HS?reporterCode=32&period=2023&partnerCode=0&partner2Code=0&customsCode=C00&motCode=0&cmdCode=283620,252210,710812,710691,470321",
+        "fecha_descarga": "2026-11-26",
+        "hash": "sha256:b2e8fc8903de1c4c163a8594b3f2283f01a71f1d01d51b3829fa091c883f3811",
+        "cita_ubicacion": "Saldo 2023 HS 252210 (32.66 - 0.58)",
+        "confianza": "alta"
+      }
+    },
+    "procedencia": {
+      "anio": 2023,
+      "fuente_id": "uncomtrade-ar-lote4-2023",
+      "fuente": "UN Comtrade: comercio exterior de Argentina HS 283620 (Soda Solvay), 252210 (Cal viva), 710812 (Oro), 710691 (Plata) y 470321 (Celulosa Kraft) 2023",
+      "url": "https://comtradeapi.un.org/public/v1/preview/C/A/HS?reporterCode=32&period=2023&partnerCode=0&partner2Code=0&customsCode=C00&motCode=0&cmdCode=283620,252210,710812,710691,470321",
+      "fecha_descarga": "2026-11-26",
+      "hash": "sha256:b2e8fc8903de1c4c163a8594b3f2283f01a71f1d01d51b3829fa091c883f3811",
+      "cita_ubicacion": "UN Comtrade 2023 Argentina HS 252210 (Quicklime)",
+      "confianza": "alta"
+    }
+  },
+  {
+    "registro_id": "comex-cal-252210-2023-t",
+    "producto_id": "cal-industrial",
+    "anio": 2023,
+    "ncm_codigo": "2522.10",
+    "metrica": "volumen_t",
+    "exportacion": {
+      "estado": "dato",
+      "valor": 349721.6,
+      "unidad": "t",
+      "procedencia": {
+        "anio": 2023,
+        "fuente_id": "uncomtrade-ar-lote4-2023",
+        "fuente": "UN Comtrade: comercio exterior de Argentina HS 283620 (Soda Solvay), 252210 (Cal viva), 710812 (Oro), 710691 (Plata) y 470321 (Celulosa Kraft) 2023",
+        "url": "https://comtradeapi.un.org/public/v1/preview/C/A/HS?reporterCode=32&period=2023&partnerCode=0&partner2Code=0&customsCode=C00&motCode=0&cmdCode=283620,252210,710812,710691,470321",
+        "fecha_descarga": "2026-11-26",
+        "hash": "sha256:b2e8fc8903de1c4c163a8594b3f2283f01a71f1d01d51b3829fa091c883f3811",
+        "cita_ubicacion": "UN Comtrade 2023 HS 252210 flow=X netWgt",
+        "confianza": "alta"
+      }
+    },
+    "importacion": {
+      "estado": "dato",
+      "valor": 1047,
+      "unidad": "t",
+      "procedencia": {
+        "anio": 2023,
+        "fuente_id": "uncomtrade-ar-lote4-2023",
+        "fuente": "UN Comtrade: comercio exterior de Argentina HS 283620 (Soda Solvay), 252210 (Cal viva), 710812 (Oro), 710691 (Plata) y 470321 (Celulosa Kraft) 2023",
+        "url": "https://comtradeapi.un.org/public/v1/preview/C/A/HS?reporterCode=32&period=2023&partnerCode=0&partner2Code=0&customsCode=C00&motCode=0&cmdCode=283620,252210,710812,710691,470321",
+        "fecha_descarga": "2026-11-26",
+        "hash": "sha256:b2e8fc8903de1c4c163a8594b3f2283f01a71f1d01d51b3829fa091c883f3811",
+        "cita_ubicacion": "UN Comtrade 2023 HS 252210 flow=M netWgt",
+        "confianza": "alta"
+      }
+    },
+    "saldo_comercial": {
+      "estado": "dato",
+      "valor": 348674.6,
+      "unidad": "t",
+      "procedencia": {
+        "anio": 2023,
+        "fuente_id": "uncomtrade-ar-lote4-2023",
+        "fuente": "UN Comtrade: comercio exterior de Argentina HS 283620 (Soda Solvay), 252210 (Cal viva), 710812 (Oro), 710691 (Plata) y 470321 (Celulosa Kraft) 2023",
+        "url": "https://comtradeapi.un.org/public/v1/preview/C/A/HS?reporterCode=32&period=2023&partnerCode=0&partner2Code=0&customsCode=C00&motCode=0&cmdCode=283620,252210,710812,710691,470321",
+        "fecha_descarga": "2026-11-26",
+        "hash": "sha256:b2e8fc8903de1c4c163a8594b3f2283f01a71f1d01d51b3829fa091c883f3811",
+        "cita_ubicacion": "Saldo físico 2023 HS 252210",
+        "confianza": "alta"
+      }
+    },
+    "procedencia": {
+      "anio": 2023,
+      "fuente_id": "uncomtrade-ar-lote4-2023",
+      "fuente": "UN Comtrade: comercio exterior de Argentina HS 283620 (Soda Solvay), 252210 (Cal viva), 710812 (Oro), 710691 (Plata) y 470321 (Celulosa Kraft) 2023",
+      "url": "https://comtradeapi.un.org/public/v1/preview/C/A/HS?reporterCode=32&period=2023&partnerCode=0&partner2Code=0&customsCode=C00&motCode=0&cmdCode=283620,252210,710812,710691,470321",
+      "fecha_descarga": "2026-11-26",
+      "hash": "sha256:b2e8fc8903de1c4c163a8594b3f2283f01a71f1d01d51b3829fa091c883f3811",
+      "cita_ubicacion": "UN Comtrade 2023 Argentina HS 252210 volumen físico",
+      "confianza": "alta"
+    }
+  },
+  {
+    "registro_id": "comex-cal-252210-2024-usd",
+    "producto_id": "cal-industrial",
+    "anio": 2024,
+    "ncm_codigo": "2522.10",
+    "metrica": "valor_usd",
+    "exportacion": {
+      "estado": "dato",
+      "valor": 43.5,
+      "unidad": "millones USD",
+      "procedencia": {
+        "anio": 2024,
+        "fuente_id": "uncomtrade-ar-lote4-2024",
+        "fuente": "UN Comtrade: comercio exterior de Argentina HS 283620 (Soda Solvay), 252210 (Cal viva), 710812 (Oro), 710691 (Plata) y 470321 (Celulosa Kraft) 2024",
+        "url": "https://comtradeapi.un.org/public/v1/preview/C/A/HS?reporterCode=32&period=2024&partnerCode=0&partner2Code=0&customsCode=C00&motCode=0&cmdCode=283620,252210,710812,710691,470321",
+        "fecha_descarga": "2026-11-26",
+        "hash": "sha256:8e39bec4f655267e2407e7dc81b90463946717a97d4588d65fc540ababd0739c",
+        "cita_ubicacion": "UN Comtrade 2024 HS 252210 flow=X",
+        "confianza": "alta"
+      }
+    },
+    "importacion": {
+      "estado": "dato",
+      "valor": 0.54,
+      "unidad": "millones USD",
+      "procedencia": {
+        "anio": 2024,
+        "fuente_id": "uncomtrade-ar-lote4-2024",
+        "fuente": "UN Comtrade: comercio exterior de Argentina HS 283620 (Soda Solvay), 252210 (Cal viva), 710812 (Oro), 710691 (Plata) y 470321 (Celulosa Kraft) 2024",
+        "url": "https://comtradeapi.un.org/public/v1/preview/C/A/HS?reporterCode=32&period=2024&partnerCode=0&partner2Code=0&customsCode=C00&motCode=0&cmdCode=283620,252210,710812,710691,470321",
+        "fecha_descarga": "2026-11-26",
+        "hash": "sha256:8e39bec4f655267e2407e7dc81b90463946717a97d4588d65fc540ababd0739c",
+        "cita_ubicacion": "UN Comtrade 2024 HS 252210 flow=M",
+        "confianza": "alta"
+      }
+    },
+    "saldo_comercial": {
+      "estado": "dato",
+      "valor": 42.96,
+      "unidad": "millones USD",
+      "procedencia": {
+        "anio": 2024,
+        "fuente_id": "uncomtrade-ar-lote4-2024",
+        "fuente": "UN Comtrade: comercio exterior de Argentina HS 283620 (Soda Solvay), 252210 (Cal viva), 710812 (Oro), 710691 (Plata) y 470321 (Celulosa Kraft) 2024",
+        "url": "https://comtradeapi.un.org/public/v1/preview/C/A/HS?reporterCode=32&period=2024&partnerCode=0&partner2Code=0&customsCode=C00&motCode=0&cmdCode=283620,252210,710812,710691,470321",
+        "fecha_descarga": "2026-11-26",
+        "hash": "sha256:8e39bec4f655267e2407e7dc81b90463946717a97d4588d65fc540ababd0739c",
+        "cita_ubicacion": "Saldo 2024 HS 252210 (43.50 - 0.54)",
+        "confianza": "alta"
+      }
+    },
+    "procedencia": {
+      "anio": 2024,
+      "fuente_id": "uncomtrade-ar-lote4-2024",
+      "fuente": "UN Comtrade: comercio exterior de Argentina HS 283620 (Soda Solvay), 252210 (Cal viva), 710812 (Oro), 710691 (Plata) y 470321 (Celulosa Kraft) 2024",
+      "url": "https://comtradeapi.un.org/public/v1/preview/C/A/HS?reporterCode=32&period=2024&partnerCode=0&partner2Code=0&customsCode=C00&motCode=0&cmdCode=283620,252210,710812,710691,470321",
+      "fecha_descarga": "2026-11-26",
+      "hash": "sha256:8e39bec4f655267e2407e7dc81b90463946717a97d4588d65fc540ababd0739c",
+      "cita_ubicacion": "UN Comtrade 2024 Argentina HS 252210 (Quicklime)",
+      "confianza": "alta"
+    }
+  },
+  {
+    "registro_id": "comex-cal-252210-2024-t",
+    "producto_id": "cal-industrial",
+    "anio": 2024,
+    "ncm_codigo": "2522.10",
+    "metrica": "volumen_t",
+    "exportacion": {
+      "estado": "dato",
+      "valor": 476350.9,
+      "unidad": "t",
+      "procedencia": {
+        "anio": 2024,
+        "fuente_id": "uncomtrade-ar-lote4-2024",
+        "fuente": "UN Comtrade: comercio exterior de Argentina HS 283620 (Soda Solvay), 252210 (Cal viva), 710812 (Oro), 710691 (Plata) y 470321 (Celulosa Kraft) 2024",
+        "url": "https://comtradeapi.un.org/public/v1/preview/C/A/HS?reporterCode=32&period=2024&partnerCode=0&partner2Code=0&customsCode=C00&motCode=0&cmdCode=283620,252210,710812,710691,470321",
+        "fecha_descarga": "2026-11-26",
+        "hash": "sha256:8e39bec4f655267e2407e7dc81b90463946717a97d4588d65fc540ababd0739c",
+        "cita_ubicacion": "UN Comtrade 2024 HS 252210 flow=X netWgt",
+        "confianza": "alta"
+      }
+    },
+    "importacion": {
+      "estado": "dato",
+      "valor": 938.8,
+      "unidad": "t",
+      "procedencia": {
+        "anio": 2024,
+        "fuente_id": "uncomtrade-ar-lote4-2024",
+        "fuente": "UN Comtrade: comercio exterior de Argentina HS 283620 (Soda Solvay), 252210 (Cal viva), 710812 (Oro), 710691 (Plata) y 470321 (Celulosa Kraft) 2024",
+        "url": "https://comtradeapi.un.org/public/v1/preview/C/A/HS?reporterCode=32&period=2024&partnerCode=0&partner2Code=0&customsCode=C00&motCode=0&cmdCode=283620,252210,710812,710691,470321",
+        "fecha_descarga": "2026-11-26",
+        "hash": "sha256:8e39bec4f655267e2407e7dc81b90463946717a97d4588d65fc540ababd0739c",
+        "cita_ubicacion": "UN Comtrade 2024 HS 252210 flow=M netWgt",
+        "confianza": "alta"
+      }
+    },
+    "saldo_comercial": {
+      "estado": "dato",
+      "valor": 475412.1,
+      "unidad": "t",
+      "procedencia": {
+        "anio": 2024,
+        "fuente_id": "uncomtrade-ar-lote4-2024",
+        "fuente": "UN Comtrade: comercio exterior de Argentina HS 283620 (Soda Solvay), 252210 (Cal viva), 710812 (Oro), 710691 (Plata) y 470321 (Celulosa Kraft) 2024",
+        "url": "https://comtradeapi.un.org/public/v1/preview/C/A/HS?reporterCode=32&period=2024&partnerCode=0&partner2Code=0&customsCode=C00&motCode=0&cmdCode=283620,252210,710812,710691,470321",
+        "fecha_descarga": "2026-11-26",
+        "hash": "sha256:8e39bec4f655267e2407e7dc81b90463946717a97d4588d65fc540ababd0739c",
+        "cita_ubicacion": "Saldo físico 2024 HS 252210",
+        "confianza": "alta"
+      }
+    },
+    "procedencia": {
+      "anio": 2024,
+      "fuente_id": "uncomtrade-ar-lote4-2024",
+      "fuente": "UN Comtrade: comercio exterior de Argentina HS 283620 (Soda Solvay), 252210 (Cal viva), 710812 (Oro), 710691 (Plata) y 470321 (Celulosa Kraft) 2024",
+      "url": "https://comtradeapi.un.org/public/v1/preview/C/A/HS?reporterCode=32&period=2024&partnerCode=0&partner2Code=0&customsCode=C00&motCode=0&cmdCode=283620,252210,710812,710691,470321",
+      "fecha_descarga": "2026-11-26",
+      "hash": "sha256:8e39bec4f655267e2407e7dc81b90463946717a97d4588d65fc540ababd0739c",
+      "cita_ubicacion": "UN Comtrade 2024 Argentina HS 252210 volumen físico",
+      "confianza": "alta"
+    }
+  },
+  {
+    "registro_id": "comex-oro-710812-2023-usd",
+    "producto_id": "oro-plata",
+    "anio": 2023,
+    "ncm_codigo": "7108.12",
+    "metrica": "valor_usd",
+    "exportacion": {
+      "estado": "dato",
+      "valor": 1535.08,
+      "unidad": "millones USD",
+      "procedencia": {
+        "anio": 2023,
+        "fuente_id": "uncomtrade-ar-lote4-2023",
+        "fuente": "UN Comtrade: comercio exterior de Argentina HS 283620 (Soda Solvay), 252210 (Cal viva), 710812 (Oro), 710691 (Plata) y 470321 (Celulosa Kraft) 2023",
+        "url": "https://comtradeapi.un.org/public/v1/preview/C/A/HS?reporterCode=32&period=2023&partnerCode=0&partner2Code=0&customsCode=C00&motCode=0&cmdCode=283620,252210,710812,710691,470321",
+        "fecha_descarga": "2026-11-26",
+        "hash": "sha256:b2e8fc8903de1c4c163a8594b3f2283f01a71f1d01d51b3829fa091c883f3811",
+        "cita_ubicacion": "UN Comtrade 2023 HS 710812 flow=X",
+        "confianza": "alta"
+      }
+    },
+    "importacion": {
+      "estado": "sin_datos",
+      "valor": null,
+      "unidad": "millones USD",
+      "procedencia": {
+        "anio": 2023,
+        "fuente_id": "uncomtrade-ar-lote4-2023",
+        "fuente": "UN Comtrade: comercio exterior de Argentina HS 283620 (Soda Solvay), 252210 (Cal viva), 710812 (Oro), 710691 (Plata) y 470321 (Celulosa Kraft) 2023",
+        "url": "https://comtradeapi.un.org/public/v1/preview/C/A/HS?reporterCode=32&period=2023&partnerCode=0&partner2Code=0&customsCode=C00&motCode=0&cmdCode=283620,252210,710812,710691,470321",
+        "fecha_descarga": "2026-11-26",
+        "hash": "sha256:b2e8fc8903de1c4c163a8594b3f2283f01a71f1d01d51b3829fa091c883f3811",
+        "cita_ubicacion": "UN Comtrade 2023 HS 710812 sin importación reportada",
+        "confianza": "alta"
+      }
+    },
+    "saldo_comercial": {
+      "estado": "sin_datos",
+      "valor": null,
+      "unidad": "millones USD",
+      "procedencia": {
+        "anio": 2023,
+        "fuente_id": "uncomtrade-ar-lote4-2023",
+        "fuente": "UN Comtrade: comercio exterior de Argentina HS 283620 (Soda Solvay), 252210 (Cal viva), 710812 (Oro), 710691 (Plata) y 470321 (Celulosa Kraft) 2023",
+        "url": "https://comtradeapi.un.org/public/v1/preview/C/A/HS?reporterCode=32&period=2023&partnerCode=0&partner2Code=0&customsCode=C00&motCode=0&cmdCode=283620,252210,710812,710691,470321",
+        "fecha_descarga": "2026-11-26",
+        "hash": "sha256:b2e8fc8903de1c4c163a8594b3f2283f01a71f1d01d51b3829fa091c883f3811",
+        "cita_ubicacion": "Saldo omitido al no figurar importación 2023",
+        "confianza": "alta"
+      }
+    },
+    "procedencia": {
+      "anio": 2023,
+      "fuente_id": "uncomtrade-ar-lote4-2023",
+      "fuente": "UN Comtrade: comercio exterior de Argentina HS 283620 (Soda Solvay), 252210 (Cal viva), 710812 (Oro), 710691 (Plata) y 470321 (Celulosa Kraft) 2023",
+      "url": "https://comtradeapi.un.org/public/v1/preview/C/A/HS?reporterCode=32&period=2023&partnerCode=0&partner2Code=0&customsCode=C00&motCode=0&cmdCode=283620,252210,710812,710691,470321",
+      "fecha_descarga": "2026-11-26",
+      "hash": "sha256:b2e8fc8903de1c4c163a8594b3f2283f01a71f1d01d51b3829fa091c883f3811",
+      "cita_ubicacion": "UN Comtrade 2023 Argentina HS 710812 (Oro en bruto / doré)",
+      "confianza": "alta"
+    }
+  },
+  {
+    "registro_id": "comex-oro-710812-2024-usd",
+    "producto_id": "oro-plata",
+    "anio": 2024,
+    "ncm_codigo": "7108.12",
+    "metrica": "valor_usd",
+    "exportacion": {
+      "estado": "dato",
+      "valor": 1628.28,
+      "unidad": "millones USD",
+      "procedencia": {
+        "anio": 2024,
+        "fuente_id": "uncomtrade-ar-lote4-2024",
+        "fuente": "UN Comtrade: comercio exterior de Argentina HS 283620 (Soda Solvay), 252210 (Cal viva), 710812 (Oro), 710691 (Plata) y 470321 (Celulosa Kraft) 2024",
+        "url": "https://comtradeapi.un.org/public/v1/preview/C/A/HS?reporterCode=32&period=2024&partnerCode=0&partner2Code=0&customsCode=C00&motCode=0&cmdCode=283620,252210,710812,710691,470321",
+        "fecha_descarga": "2026-11-26",
+        "hash": "sha256:8e39bec4f655267e2407e7dc81b90463946717a97d4588d65fc540ababd0739c",
+        "cita_ubicacion": "UN Comtrade 2024 HS 710812 flow=X",
+        "confianza": "alta"
+      }
+    },
+    "importacion": {
+      "estado": "dato",
+      "valor": 0,
+      "unidad": "millones USD",
+      "procedencia": {
+        "anio": 2024,
+        "fuente_id": "uncomtrade-ar-lote4-2024",
+        "fuente": "UN Comtrade: comercio exterior de Argentina HS 283620 (Soda Solvay), 252210 (Cal viva), 710812 (Oro), 710691 (Plata) y 470321 (Celulosa Kraft) 2024",
+        "url": "https://comtradeapi.un.org/public/v1/preview/C/A/HS?reporterCode=32&period=2024&partnerCode=0&partner2Code=0&customsCode=C00&motCode=0&cmdCode=283620,252210,710812,710691,470321",
+        "fecha_descarga": "2026-11-26",
+        "hash": "sha256:8e39bec4f655267e2407e7dc81b90463946717a97d4588d65fc540ababd0739c",
+        "cita_ubicacion": "UN Comtrade 2024 HS 710812 flow=M",
+        "confianza": "alta"
+      }
+    },
+    "saldo_comercial": {
+      "estado": "dato",
+      "valor": 1628.28,
+      "unidad": "millones USD",
+      "procedencia": {
+        "anio": 2024,
+        "fuente_id": "uncomtrade-ar-lote4-2024",
+        "fuente": "UN Comtrade: comercio exterior de Argentina HS 283620 (Soda Solvay), 252210 (Cal viva), 710812 (Oro), 710691 (Plata) y 470321 (Celulosa Kraft) 2024",
+        "url": "https://comtradeapi.un.org/public/v1/preview/C/A/HS?reporterCode=32&period=2024&partnerCode=0&partner2Code=0&customsCode=C00&motCode=0&cmdCode=283620,252210,710812,710691,470321",
+        "fecha_descarga": "2026-11-26",
+        "hash": "sha256:8e39bec4f655267e2407e7dc81b90463946717a97d4588d65fc540ababd0739c",
+        "cita_ubicacion": "Saldo 2024 HS 710812",
+        "confianza": "alta"
+      }
+    },
+    "procedencia": {
+      "anio": 2024,
+      "fuente_id": "uncomtrade-ar-lote4-2024",
+      "fuente": "UN Comtrade: comercio exterior de Argentina HS 283620 (Soda Solvay), 252210 (Cal viva), 710812 (Oro), 710691 (Plata) y 470321 (Celulosa Kraft) 2024",
+      "url": "https://comtradeapi.un.org/public/v1/preview/C/A/HS?reporterCode=32&period=2024&partnerCode=0&partner2Code=0&customsCode=C00&motCode=0&cmdCode=283620,252210,710812,710691,470321",
+      "fecha_descarga": "2026-11-26",
+      "hash": "sha256:8e39bec4f655267e2407e7dc81b90463946717a97d4588d65fc540ababd0739c",
+      "cita_ubicacion": "UN Comtrade 2024 Argentina HS 710812 (Oro en bruto / doré)",
+      "confianza": "alta"
+    }
+  },
+  {
+    "registro_id": "comex-oro-710812-2024-t",
+    "producto_id": "oro-plata",
+    "anio": 2024,
+    "ncm_codigo": "7108.12",
+    "metrica": "volumen_t",
+    "exportacion": {
+      "estado": "dato",
+      "valor": 165.8,
+      "unidad": "t",
+      "procedencia": {
+        "anio": 2024,
+        "fuente_id": "uncomtrade-ar-lote4-2024",
+        "fuente": "UN Comtrade: comercio exterior de Argentina HS 283620 (Soda Solvay), 252210 (Cal viva), 710812 (Oro), 710691 (Plata) y 470321 (Celulosa Kraft) 2024",
+        "url": "https://comtradeapi.un.org/public/v1/preview/C/A/HS?reporterCode=32&period=2024&partnerCode=0&partner2Code=0&customsCode=C00&motCode=0&cmdCode=283620,252210,710812,710691,470321",
+        "fecha_descarga": "2026-11-26",
+        "hash": "sha256:8e39bec4f655267e2407e7dc81b90463946717a97d4588d65fc540ababd0739c",
+        "cita_ubicacion": "UN Comtrade 2024 HS 710812 flow=X peso bruto doré",
+        "confianza": "alta"
+      }
+    },
+    "importacion": {
+      "estado": "dato",
+      "valor": 0,
+      "unidad": "t",
+      "procedencia": {
+        "anio": 2024,
+        "fuente_id": "uncomtrade-ar-lote4-2024",
+        "fuente": "UN Comtrade: comercio exterior de Argentina HS 283620 (Soda Solvay), 252210 (Cal viva), 710812 (Oro), 710691 (Plata) y 470321 (Celulosa Kraft) 2024",
+        "url": "https://comtradeapi.un.org/public/v1/preview/C/A/HS?reporterCode=32&period=2024&partnerCode=0&partner2Code=0&customsCode=C00&motCode=0&cmdCode=283620,252210,710812,710691,470321",
+        "fecha_descarga": "2026-11-26",
+        "hash": "sha256:8e39bec4f655267e2407e7dc81b90463946717a97d4588d65fc540ababd0739c",
+        "cita_ubicacion": "UN Comtrade 2024 HS 710812 flow=M",
+        "confianza": "alta"
+      }
+    },
+    "saldo_comercial": {
+      "estado": "dato",
+      "valor": 165.8,
+      "unidad": "t",
+      "procedencia": {
+        "anio": 2024,
+        "fuente_id": "uncomtrade-ar-lote4-2024",
+        "fuente": "UN Comtrade: comercio exterior de Argentina HS 283620 (Soda Solvay), 252210 (Cal viva), 710812 (Oro), 710691 (Plata) y 470321 (Celulosa Kraft) 2024",
+        "url": "https://comtradeapi.un.org/public/v1/preview/C/A/HS?reporterCode=32&period=2024&partnerCode=0&partner2Code=0&customsCode=C00&motCode=0&cmdCode=283620,252210,710812,710691,470321",
+        "fecha_descarga": "2026-11-26",
+        "hash": "sha256:8e39bec4f655267e2407e7dc81b90463946717a97d4588d65fc540ababd0739c",
+        "cita_ubicacion": "Saldo físico 2024 HS 710812",
+        "confianza": "alta"
+      }
+    },
+    "procedencia": {
+      "anio": 2024,
+      "fuente_id": "uncomtrade-ar-lote4-2024",
+      "fuente": "UN Comtrade: comercio exterior de Argentina HS 283620 (Soda Solvay), 252210 (Cal viva), 710812 (Oro), 710691 (Plata) y 470321 (Celulosa Kraft) 2024",
+      "url": "https://comtradeapi.un.org/public/v1/preview/C/A/HS?reporterCode=32&period=2024&partnerCode=0&partner2Code=0&customsCode=C00&motCode=0&cmdCode=283620,252210,710812,710691,470321",
+      "fecha_descarga": "2026-11-26",
+      "hash": "sha256:8e39bec4f655267e2407e7dc81b90463946717a97d4588d65fc540ababd0739c",
+      "cita_ubicacion": "UN Comtrade 2024 Argentina HS 710812 peso neto aduanero doré",
+      "confianza": "alta"
+    }
+  },
+  {
+    "registro_id": "comex-plata-710691-2023-usd",
+    "producto_id": "oro-plata",
+    "anio": 2023,
+    "ncm_codigo": "7106.91",
+    "metrica": "valor_usd",
+    "exportacion": {
+      "estado": "dato",
+      "valor": 196.42,
+      "unidad": "millones USD",
+      "procedencia": {
+        "anio": 2023,
+        "fuente_id": "uncomtrade-ar-lote4-2023",
+        "fuente": "UN Comtrade: comercio exterior de Argentina HS 283620 (Soda Solvay), 252210 (Cal viva), 710812 (Oro), 710691 (Plata) y 470321 (Celulosa Kraft) 2023",
+        "url": "https://comtradeapi.un.org/public/v1/preview/C/A/HS?reporterCode=32&period=2023&partnerCode=0&partner2Code=0&customsCode=C00&motCode=0&cmdCode=283620,252210,710812,710691,470321",
+        "fecha_descarga": "2026-11-26",
+        "hash": "sha256:b2e8fc8903de1c4c163a8594b3f2283f01a71f1d01d51b3829fa091c883f3811",
+        "cita_ubicacion": "UN Comtrade 2023 HS 710691 flow=X",
+        "confianza": "alta"
+      }
+    },
+    "importacion": {
+      "estado": "dato",
+      "valor": 2.15,
+      "unidad": "millones USD",
+      "procedencia": {
+        "anio": 2023,
+        "fuente_id": "uncomtrade-ar-lote4-2023",
+        "fuente": "UN Comtrade: comercio exterior de Argentina HS 283620 (Soda Solvay), 252210 (Cal viva), 710812 (Oro), 710691 (Plata) y 470321 (Celulosa Kraft) 2023",
+        "url": "https://comtradeapi.un.org/public/v1/preview/C/A/HS?reporterCode=32&period=2023&partnerCode=0&partner2Code=0&customsCode=C00&motCode=0&cmdCode=283620,252210,710812,710691,470321",
+        "fecha_descarga": "2026-11-26",
+        "hash": "sha256:b2e8fc8903de1c4c163a8594b3f2283f01a71f1d01d51b3829fa091c883f3811",
+        "cita_ubicacion": "UN Comtrade 2023 HS 710691 flow=M",
+        "confianza": "alta"
+      }
+    },
+    "saldo_comercial": {
+      "estado": "dato",
+      "valor": 194.27,
+      "unidad": "millones USD",
+      "procedencia": {
+        "anio": 2023,
+        "fuente_id": "uncomtrade-ar-lote4-2023",
+        "fuente": "UN Comtrade: comercio exterior de Argentina HS 283620 (Soda Solvay), 252210 (Cal viva), 710812 (Oro), 710691 (Plata) y 470321 (Celulosa Kraft) 2023",
+        "url": "https://comtradeapi.un.org/public/v1/preview/C/A/HS?reporterCode=32&period=2023&partnerCode=0&partner2Code=0&customsCode=C00&motCode=0&cmdCode=283620,252210,710812,710691,470321",
+        "fecha_descarga": "2026-11-26",
+        "hash": "sha256:b2e8fc8903de1c4c163a8594b3f2283f01a71f1d01d51b3829fa091c883f3811",
+        "cita_ubicacion": "Saldo 2023 HS 710691 (196.42 - 2.15)",
+        "confianza": "alta"
+      }
+    },
+    "procedencia": {
+      "anio": 2023,
+      "fuente_id": "uncomtrade-ar-lote4-2023",
+      "fuente": "UN Comtrade: comercio exterior de Argentina HS 283620 (Soda Solvay), 252210 (Cal viva), 710812 (Oro), 710691 (Plata) y 470321 (Celulosa Kraft) 2023",
+      "url": "https://comtradeapi.un.org/public/v1/preview/C/A/HS?reporterCode=32&period=2023&partnerCode=0&partner2Code=0&customsCode=C00&motCode=0&cmdCode=283620,252210,710812,710691,470321",
+      "fecha_descarga": "2026-11-26",
+      "hash": "sha256:b2e8fc8903de1c4c163a8594b3f2283f01a71f1d01d51b3829fa091c883f3811",
+      "cita_ubicacion": "UN Comtrade 2023 Argentina HS 710691 (Plata en bruto)",
+      "confianza": "alta"
+    }
+  },
+  {
+    "registro_id": "comex-plata-710691-2024-usd",
+    "producto_id": "oro-plata",
+    "anio": 2024,
+    "ncm_codigo": "7106.91",
+    "metrica": "valor_usd",
+    "exportacion": {
+      "estado": "dato",
+      "valor": 80.95,
+      "unidad": "millones USD",
+      "procedencia": {
+        "anio": 2024,
+        "fuente_id": "uncomtrade-ar-lote4-2024",
+        "fuente": "UN Comtrade: comercio exterior de Argentina HS 283620 (Soda Solvay), 252210 (Cal viva), 710812 (Oro), 710691 (Plata) y 470321 (Celulosa Kraft) 2024",
+        "url": "https://comtradeapi.un.org/public/v1/preview/C/A/HS?reporterCode=32&period=2024&partnerCode=0&partner2Code=0&customsCode=C00&motCode=0&cmdCode=283620,252210,710812,710691,470321",
+        "fecha_descarga": "2026-11-26",
+        "hash": "sha256:8e39bec4f655267e2407e7dc81b90463946717a97d4588d65fc540ababd0739c",
+        "cita_ubicacion": "UN Comtrade 2024 HS 710691 flow=X",
+        "confianza": "alta"
+      }
+    },
+    "importacion": {
+      "estado": "dato",
+      "valor": 1.33,
+      "unidad": "millones USD",
+      "procedencia": {
+        "anio": 2024,
+        "fuente_id": "uncomtrade-ar-lote4-2024",
+        "fuente": "UN Comtrade: comercio exterior de Argentina HS 283620 (Soda Solvay), 252210 (Cal viva), 710812 (Oro), 710691 (Plata) y 470321 (Celulosa Kraft) 2024",
+        "url": "https://comtradeapi.un.org/public/v1/preview/C/A/HS?reporterCode=32&period=2024&partnerCode=0&partner2Code=0&customsCode=C00&motCode=0&cmdCode=283620,252210,710812,710691,470321",
+        "fecha_descarga": "2026-11-26",
+        "hash": "sha256:8e39bec4f655267e2407e7dc81b90463946717a97d4588d65fc540ababd0739c",
+        "cita_ubicacion": "UN Comtrade 2024 HS 710691 flow=M",
+        "confianza": "alta"
+      }
+    },
+    "saldo_comercial": {
+      "estado": "dato",
+      "valor": 79.62,
+      "unidad": "millones USD",
+      "procedencia": {
+        "anio": 2024,
+        "fuente_id": "uncomtrade-ar-lote4-2024",
+        "fuente": "UN Comtrade: comercio exterior de Argentina HS 283620 (Soda Solvay), 252210 (Cal viva), 710812 (Oro), 710691 (Plata) y 470321 (Celulosa Kraft) 2024",
+        "url": "https://comtradeapi.un.org/public/v1/preview/C/A/HS?reporterCode=32&period=2024&partnerCode=0&partner2Code=0&customsCode=C00&motCode=0&cmdCode=283620,252210,710812,710691,470321",
+        "fecha_descarga": "2026-11-26",
+        "hash": "sha256:8e39bec4f655267e2407e7dc81b90463946717a97d4588d65fc540ababd0739c",
+        "cita_ubicacion": "Saldo 2024 HS 710691 (80.95 - 1.33)",
+        "confianza": "alta"
+      }
+    },
+    "procedencia": {
+      "anio": 2024,
+      "fuente_id": "uncomtrade-ar-lote4-2024",
+      "fuente": "UN Comtrade: comercio exterior de Argentina HS 283620 (Soda Solvay), 252210 (Cal viva), 710812 (Oro), 710691 (Plata) y 470321 (Celulosa Kraft) 2024",
+      "url": "https://comtradeapi.un.org/public/v1/preview/C/A/HS?reporterCode=32&period=2024&partnerCode=0&partner2Code=0&customsCode=C00&motCode=0&cmdCode=283620,252210,710812,710691,470321",
+      "fecha_descarga": "2026-11-26",
+      "hash": "sha256:8e39bec4f655267e2407e7dc81b90463946717a97d4588d65fc540ababd0739c",
+      "cita_ubicacion": "UN Comtrade 2024 Argentina HS 710691 (Plata en bruto)",
+      "confianza": "alta"
+    }
+  },
+  {
+    "registro_id": "comex-celulosa-470321-2023-usd",
+    "producto_id": "celulosa-kraft",
+    "anio": 2023,
+    "ncm_codigo": "4703.21",
+    "metrica": "valor_usd",
+    "exportacion": {
+      "estado": "sin_datos",
+      "valor": null,
+      "unidad": "millones USD",
+      "procedencia": {
+        "anio": 2023,
+        "fuente_id": "uncomtrade-ar-lote4-2023",
+        "fuente": "UN Comtrade: comercio exterior de Argentina HS 283620 (Soda Solvay), 252210 (Cal viva), 710812 (Oro), 710691 (Plata) y 470321 (Celulosa Kraft) 2023",
+        "url": "https://comtradeapi.un.org/public/v1/preview/C/A/HS?reporterCode=32&period=2023&partnerCode=0&partner2Code=0&customsCode=C00&motCode=0&cmdCode=283620,252210,710812,710691,470321",
+        "fecha_descarga": "2026-11-26",
+        "hash": "sha256:b2e8fc8903de1c4c163a8594b3f2283f01a71f1d01d51b3829fa091c883f3811",
+        "cita_ubicacion": "UN Comtrade 2023 HS 470321 sin exportación pública desagregada",
+        "confianza": "alta"
+      }
+    },
+    "importacion": {
+      "estado": "dato",
+      "valor": 16.24,
+      "unidad": "millones USD",
+      "procedencia": {
+        "anio": 2023,
+        "fuente_id": "uncomtrade-ar-lote4-2023",
+        "fuente": "UN Comtrade: comercio exterior de Argentina HS 283620 (Soda Solvay), 252210 (Cal viva), 710812 (Oro), 710691 (Plata) y 470321 (Celulosa Kraft) 2023",
+        "url": "https://comtradeapi.un.org/public/v1/preview/C/A/HS?reporterCode=32&period=2023&partnerCode=0&partner2Code=0&customsCode=C00&motCode=0&cmdCode=283620,252210,710812,710691,470321",
+        "fecha_descarga": "2026-11-26",
+        "hash": "sha256:b2e8fc8903de1c4c163a8594b3f2283f01a71f1d01d51b3829fa091c883f3811",
+        "cita_ubicacion": "UN Comtrade 2023 HS 470321 flow=M",
+        "confianza": "alta"
+      }
+    },
+    "saldo_comercial": {
+      "estado": "sin_datos",
+      "valor": null,
+      "unidad": "millones USD",
+      "procedencia": {
+        "anio": 2023,
+        "fuente_id": "uncomtrade-ar-lote4-2023",
+        "fuente": "UN Comtrade: comercio exterior de Argentina HS 283620 (Soda Solvay), 252210 (Cal viva), 710812 (Oro), 710691 (Plata) y 470321 (Celulosa Kraft) 2023",
+        "url": "https://comtradeapi.un.org/public/v1/preview/C/A/HS?reporterCode=32&period=2023&partnerCode=0&partner2Code=0&customsCode=C00&motCode=0&cmdCode=283620,252210,710812,710691,470321",
+        "fecha_descarga": "2026-11-26",
+        "hash": "sha256:b2e8fc8903de1c4c163a8594b3f2283f01a71f1d01d51b3829fa091c883f3811",
+        "cita_ubicacion": "Saldo omitido al faltar exportación desagregada",
+        "confianza": "alta"
+      }
+    },
+    "procedencia": {
+      "anio": 2023,
+      "fuente_id": "uncomtrade-ar-lote4-2023",
+      "fuente": "UN Comtrade: comercio exterior de Argentina HS 283620 (Soda Solvay), 252210 (Cal viva), 710812 (Oro), 710691 (Plata) y 470321 (Celulosa Kraft) 2023",
+      "url": "https://comtradeapi.un.org/public/v1/preview/C/A/HS?reporterCode=32&period=2023&partnerCode=0&partner2Code=0&customsCode=C00&motCode=0&cmdCode=283620,252210,710812,710691,470321",
+      "fecha_descarga": "2026-11-26",
+      "hash": "sha256:b2e8fc8903de1c4c163a8594b3f2283f01a71f1d01d51b3829fa091c883f3811",
+      "cita_ubicacion": "UN Comtrade 2023 Argentina HS 470321 (Pasta Kraft coníferas blanqueada)",
+      "confianza": "alta"
+    }
+  },
+  {
+    "registro_id": "comex-celulosa-470321-2023-t",
+    "producto_id": "celulosa-kraft",
+    "anio": 2023,
+    "ncm_codigo": "4703.21",
+    "metrica": "volumen_t",
+    "exportacion": {
+      "estado": "sin_datos",
+      "valor": null,
+      "unidad": "t",
+      "procedencia": {
+        "anio": 2023,
+        "fuente_id": "uncomtrade-ar-lote4-2023",
+        "fuente": "UN Comtrade: comercio exterior de Argentina HS 283620 (Soda Solvay), 252210 (Cal viva), 710812 (Oro), 710691 (Plata) y 470321 (Celulosa Kraft) 2023",
+        "url": "https://comtradeapi.un.org/public/v1/preview/C/A/HS?reporterCode=32&period=2023&partnerCode=0&partner2Code=0&customsCode=C00&motCode=0&cmdCode=283620,252210,710812,710691,470321",
+        "fecha_descarga": "2026-11-26",
+        "hash": "sha256:b2e8fc8903de1c4c163a8594b3f2283f01a71f1d01d51b3829fa091c883f3811",
+        "cita_ubicacion": "UN Comtrade 2023 HS 470321 sin exportación pública desagregada",
+        "confianza": "alta"
+      }
+    },
+    "importacion": {
+      "estado": "dato",
+      "valor": 12521,
+      "unidad": "t",
+      "procedencia": {
+        "anio": 2023,
+        "fuente_id": "uncomtrade-ar-lote4-2023",
+        "fuente": "UN Comtrade: comercio exterior de Argentina HS 283620 (Soda Solvay), 252210 (Cal viva), 710812 (Oro), 710691 (Plata) y 470321 (Celulosa Kraft) 2023",
+        "url": "https://comtradeapi.un.org/public/v1/preview/C/A/HS?reporterCode=32&period=2023&partnerCode=0&partner2Code=0&customsCode=C00&motCode=0&cmdCode=283620,252210,710812,710691,470321",
+        "fecha_descarga": "2026-11-26",
+        "hash": "sha256:b2e8fc8903de1c4c163a8594b3f2283f01a71f1d01d51b3829fa091c883f3811",
+        "cita_ubicacion": "UN Comtrade 2023 HS 470321 flow=M netWgt",
+        "confianza": "alta"
+      }
+    },
+    "saldo_comercial": {
+      "estado": "sin_datos",
+      "valor": null,
+      "unidad": "t",
+      "procedencia": {
+        "anio": 2023,
+        "fuente_id": "uncomtrade-ar-lote4-2023",
+        "fuente": "UN Comtrade: comercio exterior de Argentina HS 283620 (Soda Solvay), 252210 (Cal viva), 710812 (Oro), 710691 (Plata) y 470321 (Celulosa Kraft) 2023",
+        "url": "https://comtradeapi.un.org/public/v1/preview/C/A/HS?reporterCode=32&period=2023&partnerCode=0&partner2Code=0&customsCode=C00&motCode=0&cmdCode=283620,252210,710812,710691,470321",
+        "fecha_descarga": "2026-11-26",
+        "hash": "sha256:b2e8fc8903de1c4c163a8594b3f2283f01a71f1d01d51b3829fa091c883f3811",
+        "cita_ubicacion": "Saldo omitido al faltar exportación desagregada",
+        "confianza": "alta"
+      }
+    },
+    "procedencia": {
+      "anio": 2023,
+      "fuente_id": "uncomtrade-ar-lote4-2023",
+      "fuente": "UN Comtrade: comercio exterior de Argentina HS 283620 (Soda Solvay), 252210 (Cal viva), 710812 (Oro), 710691 (Plata) y 470321 (Celulosa Kraft) 2023",
+      "url": "https://comtradeapi.un.org/public/v1/preview/C/A/HS?reporterCode=32&period=2023&partnerCode=0&partner2Code=0&customsCode=C00&motCode=0&cmdCode=283620,252210,710812,710691,470321",
+      "fecha_descarga": "2026-11-26",
+      "hash": "sha256:b2e8fc8903de1c4c163a8594b3f2283f01a71f1d01d51b3829fa091c883f3811",
+      "cita_ubicacion": "UN Comtrade 2023 Argentina HS 470321 volumen importado",
+      "confianza": "alta"
+    }
+  },
+  {
+    "registro_id": "comex-celulosa-470321-2024-usd",
+    "producto_id": "celulosa-kraft",
+    "anio": 2024,
+    "ncm_codigo": "4703.21",
+    "metrica": "valor_usd",
+    "exportacion": {
+      "estado": "sin_datos",
+      "valor": null,
+      "unidad": "millones USD",
+      "procedencia": {
+        "anio": 2024,
+        "fuente_id": "uncomtrade-ar-lote4-2024",
+        "fuente": "UN Comtrade: comercio exterior de Argentina HS 283620 (Soda Solvay), 252210 (Cal viva), 710812 (Oro), 710691 (Plata) y 470321 (Celulosa Kraft) 2024",
+        "url": "https://comtradeapi.un.org/public/v1/preview/C/A/HS?reporterCode=32&period=2024&partnerCode=0&partner2Code=0&customsCode=C00&motCode=0&cmdCode=283620,252210,710812,710691,470321",
+        "fecha_descarga": "2026-11-26",
+        "hash": "sha256:8e39bec4f655267e2407e7dc81b90463946717a97d4588d65fc540ababd0739c",
+        "cita_ubicacion": "UN Comtrade 2024 HS 470321 sin exportación pública desagregada",
+        "confianza": "alta"
+      }
+    },
+    "importacion": {
+      "estado": "dato",
+      "valor": 7.37,
+      "unidad": "millones USD",
+      "procedencia": {
+        "anio": 2024,
+        "fuente_id": "uncomtrade-ar-lote4-2024",
+        "fuente": "UN Comtrade: comercio exterior de Argentina HS 283620 (Soda Solvay), 252210 (Cal viva), 710812 (Oro), 710691 (Plata) y 470321 (Celulosa Kraft) 2024",
+        "url": "https://comtradeapi.un.org/public/v1/preview/C/A/HS?reporterCode=32&period=2024&partnerCode=0&partner2Code=0&customsCode=C00&motCode=0&cmdCode=283620,252210,710812,710691,470321",
+        "fecha_descarga": "2026-11-26",
+        "hash": "sha256:8e39bec4f655267e2407e7dc81b90463946717a97d4588d65fc540ababd0739c",
+        "cita_ubicacion": "UN Comtrade 2024 HS 470321 flow=M",
+        "confianza": "alta"
+      }
+    },
+    "saldo_comercial": {
+      "estado": "sin_datos",
+      "valor": null,
+      "unidad": "millones USD",
+      "procedencia": {
+        "anio": 2024,
+        "fuente_id": "uncomtrade-ar-lote4-2024",
+        "fuente": "UN Comtrade: comercio exterior de Argentina HS 283620 (Soda Solvay), 252210 (Cal viva), 710812 (Oro), 710691 (Plata) y 470321 (Celulosa Kraft) 2024",
+        "url": "https://comtradeapi.un.org/public/v1/preview/C/A/HS?reporterCode=32&period=2024&partnerCode=0&partner2Code=0&customsCode=C00&motCode=0&cmdCode=283620,252210,710812,710691,470321",
+        "fecha_descarga": "2026-11-26",
+        "hash": "sha256:8e39bec4f655267e2407e7dc81b90463946717a97d4588d65fc540ababd0739c",
+        "cita_ubicacion": "Saldo omitido al faltar exportación desagregada",
+        "confianza": "alta"
+      }
+    },
+    "procedencia": {
+      "anio": 2024,
+      "fuente_id": "uncomtrade-ar-lote4-2024",
+      "fuente": "UN Comtrade: comercio exterior de Argentina HS 283620 (Soda Solvay), 252210 (Cal viva), 710812 (Oro), 710691 (Plata) y 470321 (Celulosa Kraft) 2024",
+      "url": "https://comtradeapi.un.org/public/v1/preview/C/A/HS?reporterCode=32&period=2024&partnerCode=0&partner2Code=0&customsCode=C00&motCode=0&cmdCode=283620,252210,710812,710691,470321",
+      "fecha_descarga": "2026-11-26",
+      "hash": "sha256:8e39bec4f655267e2407e7dc81b90463946717a97d4588d65fc540ababd0739c",
+      "cita_ubicacion": "UN Comtrade 2024 Argentina HS 470321 (Pasta Kraft coníferas blanqueada)",
+      "confianza": "alta"
+    }
+  },
+  {
+    "registro_id": "comex-celulosa-470321-2024-t",
+    "producto_id": "celulosa-kraft",
+    "anio": 2024,
+    "ncm_codigo": "4703.21",
+    "metrica": "volumen_t",
+    "exportacion": {
+      "estado": "sin_datos",
+      "valor": null,
+      "unidad": "t",
+      "procedencia": {
+        "anio": 2024,
+        "fuente_id": "uncomtrade-ar-lote4-2024",
+        "fuente": "UN Comtrade: comercio exterior de Argentina HS 283620 (Soda Solvay), 252210 (Cal viva), 710812 (Oro), 710691 (Plata) y 470321 (Celulosa Kraft) 2024",
+        "url": "https://comtradeapi.un.org/public/v1/preview/C/A/HS?reporterCode=32&period=2024&partnerCode=0&partner2Code=0&customsCode=C00&motCode=0&cmdCode=283620,252210,710812,710691,470321",
+        "fecha_descarga": "2026-11-26",
+        "hash": "sha256:8e39bec4f655267e2407e7dc81b90463946717a97d4588d65fc540ababd0739c",
+        "cita_ubicacion": "UN Comtrade 2024 HS 470321 sin exportación pública desagregada",
+        "confianza": "alta"
+      }
+    },
+    "importacion": {
+      "estado": "dato",
+      "valor": 6886.2,
+      "unidad": "t",
+      "procedencia": {
+        "anio": 2024,
+        "fuente_id": "uncomtrade-ar-lote4-2024",
+        "fuente": "UN Comtrade: comercio exterior de Argentina HS 283620 (Soda Solvay), 252210 (Cal viva), 710812 (Oro), 710691 (Plata) y 470321 (Celulosa Kraft) 2024",
+        "url": "https://comtradeapi.un.org/public/v1/preview/C/A/HS?reporterCode=32&period=2024&partnerCode=0&partner2Code=0&customsCode=C00&motCode=0&cmdCode=283620,252210,710812,710691,470321",
+        "fecha_descarga": "2026-11-26",
+        "hash": "sha256:8e39bec4f655267e2407e7dc81b90463946717a97d4588d65fc540ababd0739c",
+        "cita_ubicacion": "UN Comtrade 2024 HS 470321 flow=M netWgt",
+        "confianza": "alta"
+      }
+    },
+    "saldo_comercial": {
+      "estado": "sin_datos",
+      "valor": null,
+      "unidad": "t",
+      "procedencia": {
+        "anio": 2024,
+        "fuente_id": "uncomtrade-ar-lote4-2024",
+        "fuente": "UN Comtrade: comercio exterior de Argentina HS 283620 (Soda Solvay), 252210 (Cal viva), 710812 (Oro), 710691 (Plata) y 470321 (Celulosa Kraft) 2024",
+        "url": "https://comtradeapi.un.org/public/v1/preview/C/A/HS?reporterCode=32&period=2024&partnerCode=0&partner2Code=0&customsCode=C00&motCode=0&cmdCode=283620,252210,710812,710691,470321",
+        "fecha_descarga": "2026-11-26",
+        "hash": "sha256:8e39bec4f655267e2407e7dc81b90463946717a97d4588d65fc540ababd0739c",
+        "cita_ubicacion": "Saldo omitido al faltar exportación desagregada",
+        "confianza": "alta"
+      }
+    },
+    "procedencia": {
+      "anio": 2024,
+      "fuente_id": "uncomtrade-ar-lote4-2024",
+      "fuente": "UN Comtrade: comercio exterior de Argentina HS 283620 (Soda Solvay), 252210 (Cal viva), 710812 (Oro), 710691 (Plata) y 470321 (Celulosa Kraft) 2024",
+      "url": "https://comtradeapi.un.org/public/v1/preview/C/A/HS?reporterCode=32&period=2024&partnerCode=0&partner2Code=0&customsCode=C00&motCode=0&cmdCode=283620,252210,710812,710691,470321",
+      "fecha_descarga": "2026-11-26",
+      "hash": "sha256:8e39bec4f655267e2407e7dc81b90463946717a97d4588d65fc540ababd0739c",
+      "cita_ubicacion": "UN Comtrade 2024 Argentina HS 470321 volumen importado",
+      "confianza": "alta"
+    }
+  },
+  {
+    "registro_id": "comex-soda-283620-2024-t",
+    "producto_id": "soda-solvay",
+    "anio": 2024,
+    "ncm_codigo": "2836.20",
+    "metrica": "volumen_t",
+    "exportacion": {
+      "estado": "sin_datos",
+      "valor": null,
+      "unidad": "t",
+      "procedencia": {
+        "anio": 2024,
+        "fuente_id": "uncomtrade-ar-lote4-2024",
+        "fuente": "UN Comtrade: comercio exterior de Argentina HS 283620 (Soda Solvay), 252210 (Cal viva), 710812 (Oro), 710691 (Plata) y 470321 (Celulosa Kraft) 2024",
+        "url": "https://comtradeapi.un.org/public/v1/preview/C/A/HS?reporterCode=32&period=2024&partnerCode=0&partner2Code=0&customsCode=C00&motCode=0&cmdCode=283620,252210,710812,710691,470321",
+        "fecha_descarga": "2026-11-26",
+        "hash": "sha256:8e39bec4f655267e2407e7dc81b90463946717a97d4588d65fc540ababd0739c",
+        "cita_ubicacion": "UN Comtrade 2024 HS 283620 netWgt=null (volumen físico no reportado)",
+        "confianza": "alta"
+      }
+    },
+    "importacion": {
+      "estado": "sin_datos",
+      "valor": null,
+      "unidad": "t",
+      "procedencia": {
+        "anio": 2024,
+        "fuente_id": "uncomtrade-ar-lote4-2024",
+        "fuente": "UN Comtrade: comercio exterior de Argentina HS 283620 (Soda Solvay), 252210 (Cal viva), 710812 (Oro), 710691 (Plata) y 470321 (Celulosa Kraft) 2024",
+        "url": "https://comtradeapi.un.org/public/v1/preview/C/A/HS?reporterCode=32&period=2024&partnerCode=0&partner2Code=0&customsCode=C00&motCode=0&cmdCode=283620,252210,710812,710691,470321",
+        "fecha_descarga": "2026-11-26",
+        "hash": "sha256:8e39bec4f655267e2407e7dc81b90463946717a97d4588d65fc540ababd0739c",
+        "cita_ubicacion": "UN Comtrade 2024 HS 283620 netWgt=null (volumen físico no reportado)",
+        "confianza": "alta"
+      }
+    },
+    "saldo_comercial": {
+      "estado": "sin_datos",
+      "valor": null,
+      "unidad": "t",
+      "procedencia": {
+        "anio": 2024,
+        "fuente_id": "uncomtrade-ar-lote4-2024",
+        "fuente": "UN Comtrade: comercio exterior de Argentina HS 283620 (Soda Solvay), 252210 (Cal viva), 710812 (Oro), 710691 (Plata) y 470321 (Celulosa Kraft) 2024",
+        "url": "https://comtradeapi.un.org/public/v1/preview/C/A/HS?reporterCode=32&period=2024&partnerCode=0&partner2Code=0&customsCode=C00&motCode=0&cmdCode=283620,252210,710812,710691,470321",
+        "fecha_descarga": "2026-11-26",
+        "hash": "sha256:8e39bec4f655267e2407e7dc81b90463946717a97d4588d65fc540ababd0739c",
+        "cita_ubicacion": "UN Comtrade 2024 HS 283620 netWgt=null (volumen físico no reportado)",
+        "confianza": "alta"
+      }
+    },
+    "procedencia": {
+      "anio": 2024,
+      "fuente_id": "uncomtrade-ar-lote4-2024",
+      "fuente": "UN Comtrade: comercio exterior de Argentina HS 283620 (Soda Solvay), 252210 (Cal viva), 710812 (Oro), 710691 (Plata) y 470321 (Celulosa Kraft) 2024",
+      "url": "https://comtradeapi.un.org/public/v1/preview/C/A/HS?reporterCode=32&period=2024&partnerCode=0&partner2Code=0&customsCode=C00&motCode=0&cmdCode=283620,252210,710812,710691,470321",
+      "fecha_descarga": "2026-11-26",
+      "hash": "sha256:8e39bec4f655267e2407e7dc81b90463946717a97d4588d65fc540ababd0739c",
+      "cita_ubicacion": "UN Comtrade 2024 HS 283620 netWgt=null (volumen físico no reportado)",
+      "confianza": "alta"
+    }
   }
 ]

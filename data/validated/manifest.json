@@ -1,57 +1,57 @@
 {
   "version_esquema": "1.0.0",
-  "generado_en": "2026-11-26T13:51:49.153Z",
+  "generado_en": "2026-11-26T22:29:48.300Z",
   "origen": "supabase",
   "es_ejemplo": false,
-  "nota": "Dataset oficial sincronizado íntegramente desde Supabase.",
+  "nota": "Dataset oficial validado en Supabase (15/24 provincias completas, 15 cadenas productivas y 17 PFDs ISO 10628).",
   "tablas": {
     "fuentes": {
-      "registros": 48,
-      "hash": "sha256:9c11c24b05a95b4dab5ca4d7171cdc49e119a44ff1a42fec4d72be0bcccf2415"
+      "registros": 62,
+      "hash": "sha256:3c8e688b85dd59d14011349b6fc46521e592766f22b6a6e954337cd231df4aca"
     },
     "provincias": {
       "registros": 24,
-      "hash": "sha256:99e5479cc2e3a570e5bd64165c06948354a1143925ae66aa8f9433c5b102cac8"
+      "hash": "sha256:38d44dde46d50bb4a5f4cdc1d7fbc899aa64381a8df949aa81da42250249e821"
     },
     "departamentos": {
-      "registros": 15,
-      "hash": "sha256:3e53bbf403ed22ea119f23885bbd9a25d5d2c48f7fd1221d87651ea2cf37f9e0"
+      "registros": 21,
+      "hash": "sha256:ee44e75f5d3181b35457dd0cefa60a1d959b4b9ccb1734265ed0ad8eef5e3def"
     },
     "productos": {
-      "registros": 11,
-      "hash": "sha256:d1f106320d0813ea70dc441fb94ca8b63f4bb77ff512fec73c9da2c0ec9293ad"
+      "registros": 15,
+      "hash": "sha256:823a0db179ff5d363334434d756b9b7f7c467b5bef68bca66d1c19c6ebb1e59c"
     },
     "productos_zonas": {
-      "registros": 13,
-      "hash": "sha256:85b261afa39acf76768ccc775e10cacb4a949fee5fc2f7980090c1e37d10d384"
+      "registros": 19,
+      "hash": "sha256:335cb4ab4923f6fe8a92154d9c4c109e9f25ac61f5467bd55d7f8c5f5a1b113b"
     },
     "procesos": {
-      "registros": 13,
-      "hash": "sha256:bf2338945e706b86a5fd9ccc61a6b8c9fe6816c3c8b369ca1c8bed612bfa466d"
+      "registros": 17,
+      "hash": "sha256:f4c16d490fb4a3d86381d3147530d4e2f43c74227cd488d346a4dc82dbb262bd"
     },
     "pasos_proceso": {
-      "registros": 66,
-      "hash": "sha256:419c7fa85f5e7034c22374e1f7f77fafe0dac2b27726cd66ae15a2bb60c1e028"
+      "registros": 86,
+      "hash": "sha256:06147cdecb609d1f53d34bcd989fa82a827665ad43a61d3e248b912086503338"
     },
     "conexiones_proceso": {
-      "registros": 68,
-      "hash": "sha256:074cef175f9926b18fa82e4ed4164de216aba1d80bf4778eeb29263783191e29"
+      "registros": 92,
+      "hash": "sha256:d22990fae1989509297e0af6e2450c64ddb3306dd294186f2d7e5edb4aa20484"
     },
     "empresas": {
-      "registros": 13,
-      "hash": "sha256:37f0cc6ff37dd66a002c50a6045f6647049c8e8eff3dfc7899aa9c703d3fe48a"
+      "registros": 18,
+      "hash": "sha256:91ac1e6c283e2d0b33755c22c7e188a5abc97c0d04305ed7b5086da2e850a1e9"
     },
     "plantas": {
-      "registros": 17,
-      "hash": "sha256:c0c434989a585818debf3151fdaebde59529b3ead97734eb8246844263f75985"
+      "registros": 22,
+      "hash": "sha256:02aacba783a63000c774f0d7087d919c8a8464d4f09988e75f49f67052602be5"
     },
     "produccion": {
-      "registros": 41,
-      "hash": "sha256:8a68f4f79c299266f2586fb61d5f7137b4488dd615a78ea4bd1faac1e4eecee1"
+      "registros": 46,
+      "hash": "sha256:d541a3835b0c851dfa04b3fa194ae2c66b55d702ea6d4093789fb0abe3c8ca5f"
     },
     "comercio_exterior": {
-      "registros": 54,
-      "hash": "sha256:a63efcf8d360397f5c58b391126e1b2b380e861dde2774928932a3997dd48d29"
+      "registros": 70,
+      "hash": "sha256:ec3077e6e29662f544a2f06f41ced43b606c35ddba843d0606b9cc1e60c8af28"
     }
   }
 }

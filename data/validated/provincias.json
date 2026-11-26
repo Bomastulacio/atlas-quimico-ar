@@ -108,8 +108,8 @@
     "nombre": "Misiones",
     "iso_3166_2": "AR-N",
     "region": "NEA",
-    "cobertura_datos": "sin_datos",
-    "nota_cobertura": "Sin cadenas productivas cargadas todavía."
+    "cobertura_datos": "completa",
+    "nota_cobertura": "Polo celulósico Kraft blanqueado de fibra larga (Puerto Esperanza, Depto. Iguazú) verificado con Arauco, AFCP y UN Comtrade HS 4703.21."
   },
   {
     "provincia_id": "58",
@@ -124,8 +124,8 @@
     "nombre": "Río Negro",
     "iso_3166_2": "AR-R",
     "region": "Patagonia",
-    "cobertura_datos": "sin_datos",
-    "nota_cobertura": "Sin cadenas productivas cargadas todavía."
+    "cobertura_datos": "completa",
+    "nota_cobertura": "Polo químico de carbonato de sodio / Soda Solvay (San Antonio Oeste, ALPAT) verificado con EU LVIC-S BREF, IPCC Cap. 2, USGS MCS 2025 y UN Comtrade HS 2836.20."
   },
   {
     "provincia_id": "66",
@@ -140,8 +140,8 @@
     "nombre": "San Juan",
     "iso_3166_2": "AR-J",
     "region": "Cuyo",
-    "cobertura_datos": "sin_datos",
-    "nota_cobertura": "Sin cadenas productivas cargadas todavía."
+    "cobertura_datos": "completa",
+    "nota_cobertura": "Polo calero industrial de Los Berros (Depto. Sarmiento) verificado con IPCC Cap. 2.3, EU CLM BREF, Caleras San Juan, USGS MCS 2025 y UN Comtrade HS 2522.10."
   },
   {
     "provincia_id": "74",
@@ -156,8 +156,8 @@
     "nombre": "Santa Cruz",
     "iso_3166_2": "AR-Z",
     "region": "Patagonia",
-    "cobertura_datos": "sin_datos",
-    "nota_cobertura": "Sin cadenas productivas cargadas todavía."
+    "cobertura_datos": "completa",
+    "nota_cobertura": "Macizo del Deseado (oro y plata en lingote doré en Magallanes y Lago Buenos Aires) verificado con USGS MCS 2025, Cerro Vanguardia, CAEM y UN Comtrade HS 7108.12/7106.91."
   },
   {
     "provincia_id": "82",
