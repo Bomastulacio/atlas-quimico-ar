@@ -2396,5 +2396,608 @@
       "cita_ubicacion": "Memoria 2025 pág. 3 (442.437 t solidificado+líquido y 382.466 MWh resto de planta)",
       "confianza": "alta"
     }
+  },
+  {
+    "paso_id": "dle-p1-extraccion-salmuera",
+    "proceso_id": "litio-dle-adsorcion",
+    "orden": 1,
+    "nombre": "Bombeo de salmuera cruda y prefiltración",
+    "tipo_paso": "materia_prima",
+    "reaccion_balanceada": null,
+    "temperatura_c": "15-25",
+    "presion_bar": "2-4",
+    "reactivos": [
+      {
+        "especie": "Salmuera continental con LiCl",
+        "cantidad": null,
+        "unidad": "m3/t LCE"
+      }
+    ],
+    "productos": [
+      {
+        "especie": "Salmuera filtrada hacia columnas DLE",
+        "cantidad": null,
+        "unidad": "m3/t LCE"
+      }
+    ],
+    "insumos": [],
+    "subproductos": [],
+    "energia": {
+      "estado": "sin_datos",
+      "valor": null,
+      "unidad": "MWh/t LCE",
+      "procedencia": {
+        "anio": 2026,
+        "fuente_id": "riotinto-fenix-2026",
+        "fuente": "Ficha oficial de operación Fénix (Salar del Hombre Muerto, Catamarca)",
+        "url": "https://www.riotinto.com/en/operations/south-america/fenix",
+        "fecha_descarga": "2026-11-24",
+        "hash": "sha256:424d17d8d2353a97a4848a105ca616c6a483e4d0e4ced5360b1cec7cb9127e2b",
+        "cita_ubicacion": "riotinto.com/en/operations/south-america/fenix (DLE adsorption technology since 1997)",
+        "confianza": "alta"
+      }
+    },
+    "descripcion": "Bombeo directo hacia planta química tras remoción de sólidos suspendidos (en Fénix y Rincón evita ocupar miles de hectáreas de evaporación).",
+    "pos_x": 20,
+    "pos_y": 150,
+    "procedencia": {
+      "anio": 2026,
+      "fuente_id": "riotinto-fenix-2026",
+      "fuente": "Ficha oficial de operación Fénix (Salar del Hombre Muerto, Catamarca)",
+      "url": "https://www.riotinto.com/en/operations/south-america/fenix",
+      "fecha_descarga": "2026-11-24",
+      "hash": "sha256:424d17d8d2353a97a4848a105ca616c6a483e4d0e4ced5360b1cec7cb9127e2b",
+      "cita_ubicacion": "riotinto.com/en/operations/south-america/fenix (DLE adsorption technology since 1997)",
+      "confianza": "alta"
+    }
+  },
+  {
+    "paso_id": "dle-p2-adsorcion-selectiva",
+    "proceso_id": "litio-dle-adsorcion",
+    "orden": 2,
+    "nombre": "Adsorción selectiva DLE y elución con agua",
+    "tipo_paso": "separacion",
+    "reaccion_balanceada": null,
+    "temperatura_c": "30-60",
+    "presion_bar": "2-5",
+    "reactivos": [
+      {
+        "especie": "Salmuera cruda filtrada",
+        "cantidad": null,
+        "unidad": "m3/t LCE"
+      }
+    ],
+    "productos": [
+      {
+        "especie": "Eluato concentrado y limpio de LiCl",
+        "cantidad": 1.15,
+        "unidad": "t/t LCE"
+      }
+    ],
+    "insumos": [
+      {
+        "especie": "Agua fresca / recuperada de elución",
+        "cantidad": null,
+        "unidad": "m3/t LCE"
+      }
+    ],
+    "subproductos": [
+      {
+        "especie": "Salmuera agotada devuelta a reinyección/piletas",
+        "cantidad": null,
+        "unidad": "m3/t LCE"
+      }
+    ],
+    "energia": {
+      "estado": "sin_datos",
+      "valor": null,
+      "unidad": "MWh/t LCE",
+      "procedencia": {
+        "anio": 2026,
+        "fuente_id": "riotinto-fenix-2026",
+        "fuente": "Ficha oficial de operación Fénix (Salar del Hombre Muerto, Catamarca)",
+        "url": "https://www.riotinto.com/en/operations/south-america/fenix",
+        "fecha_descarga": "2026-11-24",
+        "hash": "sha256:424d17d8d2353a97a4848a105ca616c6a483e4d0e4ced5360b1cec7cb9127e2b",
+        "cita_ubicacion": "riotinto.com/en/operations/south-america/fenix (DLE adsorption technology since 1997)",
+        "confianza": "alta"
+      }
+    },
+    "descripcion": "Lechos de adsorbente selectivo capturan iones Li+ en ciclos de horas rechazando Na+, K+ y Mg2+ casi por completo en una sola etapa.",
+    "pos_x": 340,
+    "pos_y": 150,
+    "procedencia": {
+      "anio": 2026,
+      "fuente_id": "riotinto-fenix-2026",
+      "fuente": "Ficha oficial de operación Fénix (Salar del Hombre Muerto, Catamarca)",
+      "url": "https://www.riotinto.com/en/operations/south-america/fenix",
+      "fecha_descarga": "2026-11-24",
+      "hash": "sha256:424d17d8d2353a97a4848a105ca616c6a483e4d0e4ced5360b1cec7cb9127e2b",
+      "cita_ubicacion": "riotinto.com/en/operations/south-america/fenix (DLE adsorption technology since 1997)",
+      "confianza": "alta"
+    }
+  },
+  {
+    "paso_id": "dle-p3-pulido-osmosi",
+    "proceso_id": "litio-dle-adsorcion",
+    "orden": 3,
+    "nombre": "Pulido IX y concentración por ósmosis / evap.",
+    "tipo_paso": "preparacion",
+    "reaccion_balanceada": null,
+    "temperatura_c": "35-65",
+    "presion_bar": "10-40",
+    "reactivos": [
+      {
+        "especie": "Eluato de LiCl",
+        "cantidad": 1.15,
+        "unidad": "t/t LCE"
+      }
+    ],
+    "productos": [
+      {
+        "especie": "Solución concentrada LiCl (>99% pureza)",
+        "cantidad": 1.15,
+        "unidad": "t/t LCE"
+      }
+    ],
+    "insumos": [
+      {
+        "especie": "Agua desmineralizada recuperada por ósmosis inversa",
+        "cantidad": null,
+        "unidad": "reciclo"
+      }
+    ],
+    "subproductos": [],
+    "energia": {
+      "estado": "sin_datos",
+      "valor": null,
+      "unidad": "MWh/t LCE",
+      "procedencia": {
+        "anio": 2026,
+        "fuente_id": "riotinto-fenix-2026",
+        "fuente": "Ficha oficial de operación Fénix (Salar del Hombre Muerto, Catamarca)",
+        "url": "https://www.riotinto.com/en/operations/south-america/fenix",
+        "fecha_descarga": "2026-11-24",
+        "hash": "sha256:424d17d8d2353a97a4848a105ca616c6a483e4d0e4ced5360b1cec7cb9127e2b",
+        "cita_ubicacion": "riotinto.com/en/operations/south-america/fenix (DLE adsorption technology since 1997)",
+        "confianza": "alta"
+      }
+    },
+    "descripcion": "La ósmosis inversa recupera el agua de elución hacia la etapa DLE en lazo cerrado y eleva el título de LiCl para precipitación.",
+    "pos_x": 660,
+    "pos_y": 150,
+    "procedencia": {
+      "anio": 2026,
+      "fuente_id": "riotinto-fenix-2026",
+      "fuente": "Ficha oficial de operación Fénix (Salar del Hombre Muerto, Catamarca)",
+      "url": "https://www.riotinto.com/en/operations/south-america/fenix",
+      "fecha_descarga": "2026-11-24",
+      "hash": "sha256:424d17d8d2353a97a4848a105ca616c6a483e4d0e4ced5360b1cec7cb9127e2b",
+      "cita_ubicacion": "riotinto.com/en/operations/south-america/fenix (DLE adsorption technology since 1997)",
+      "confianza": "alta"
+    }
+  },
+  {
+    "paso_id": "dle-p4-carbonatacion",
+    "proceso_id": "litio-dle-adsorcion",
+    "orden": 4,
+    "nombre": "Carbonatación con Na2CO3 y centrifugado",
+    "tipo_paso": "reaccion",
+    "reaccion_balanceada": "2 LiCl + Na2CO3 -> Li2CO3 + 2 NaCl",
+    "temperatura_c": "85-95",
+    "presion_bar": "1,0",
+    "reactivos": [
+      {
+        "especie": "LiCl concentrado",
+        "cantidad": 1.15,
+        "unidad": "t/t LCE"
+      },
+      {
+        "especie": "Na2CO3 (ceniza de soda)",
+        "cantidad": 1.434,
+        "unidad": "t/t LCE"
+      }
+    ],
+    "productos": [
+      {
+        "especie": "Li2CO3 precipitado y lavado",
+        "cantidad": 1,
+        "unidad": "t/t LCE"
+      }
+    ],
+    "insumos": [],
+    "subproductos": [
+      {
+        "especie": "NaCl en aguas madres",
+        "cantidad": 1.58,
+        "unidad": "t/t LCE"
+      }
+    ],
+    "energia": {
+      "estado": "sin_datos",
+      "valor": null,
+      "unidad": "MWh/t LCE",
+      "procedencia": {
+        "anio": 2026,
+        "fuente_id": "riotinto-fenix-2026",
+        "fuente": "Ficha oficial de operación Fénix (Salar del Hombre Muerto, Catamarca)",
+        "url": "https://www.riotinto.com/en/operations/south-america/fenix",
+        "fecha_descarga": "2026-11-24",
+        "hash": "sha256:424d17d8d2353a97a4848a105ca616c6a483e4d0e4ced5360b1cec7cb9127e2b",
+        "cita_ubicacion": "riotinto.com/en/operations/south-america/fenix (DLE adsorption technology since 1997)",
+        "confianza": "alta"
+      }
+    },
+    "descripcion": "Reacción en caliente idéntica al esquema evaporítico, pero con menor consumo previo de cal/soda gracias a la selectividad del DLE.",
+    "pos_x": 980,
+    "pos_y": 150,
+    "procedencia": {
+      "anio": 2026,
+      "fuente_id": "riotinto-fenix-2026",
+      "fuente": "Ficha oficial de operación Fénix (Salar del Hombre Muerto, Catamarca)",
+      "url": "https://www.riotinto.com/en/operations/south-america/fenix",
+      "fecha_descarga": "2026-11-24",
+      "hash": "sha256:424d17d8d2353a97a4848a105ca616c6a483e4d0e4ced5360b1cec7cb9127e2b",
+      "cita_ubicacion": "riotinto.com/en/operations/south-america/fenix (DLE adsorption technology since 1997)",
+      "confianza": "alta"
+    }
+  },
+  {
+    "paso_id": "dle-p5-secado-grado-bateria",
+    "proceso_id": "litio-dle-adsorcion",
+    "orden": 5,
+    "nombre": "Secado térmico y despacho LCE (>=99,5%)",
+    "tipo_paso": "producto",
+    "reaccion_balanceada": null,
+    "temperatura_c": "120-160",
+    "presion_bar": "1,0",
+    "reactivos": [
+      {
+        "especie": "Torta húmeda de Li2CO3",
+        "cantidad": 1.07,
+        "unidad": "t/t LCE"
+      }
+    ],
+    "productos": [
+      {
+        "especie": "Carbonato de litio grado batería",
+        "cantidad": 1,
+        "unidad": "t/t LCE"
+      }
+    ],
+    "insumos": [],
+    "subproductos": [],
+    "energia": {
+      "estado": "sin_datos",
+      "valor": null,
+      "unidad": "MWh/t LCE",
+      "procedencia": {
+        "anio": 2026,
+        "fuente_id": "riotinto-fenix-2026",
+        "fuente": "Ficha oficial de operación Fénix (Salar del Hombre Muerto, Catamarca)",
+        "url": "https://www.riotinto.com/en/operations/south-america/fenix",
+        "fecha_descarga": "2026-11-24",
+        "hash": "sha256:424d17d8d2353a97a4848a105ca616c6a483e4d0e4ced5360b1cec7cb9127e2b",
+        "cita_ubicacion": "riotinto.com/en/operations/south-america/fenix (DLE adsorption technology since 1997)",
+        "confianza": "alta"
+      }
+    },
+    "descripcion": "Secado, micronizado y despacho en Catamarca (32 ktpa en Fénix) y Salta (3 ktpa inicial Rincón hacia 60 ktpa).",
+    "pos_x": 1300,
+    "pos_y": 150,
+    "procedencia": {
+      "anio": 2026,
+      "fuente_id": "riotinto-fenix-2026",
+      "fuente": "Ficha oficial de operación Fénix (Salar del Hombre Muerto, Catamarca)",
+      "url": "https://www.riotinto.com/en/operations/south-america/fenix",
+      "fecha_descarga": "2026-11-24",
+      "hash": "sha256:424d17d8d2353a97a4848a105ca616c6a483e4d0e4ced5360b1cec7cb9127e2b",
+      "cita_ubicacion": "riotinto.com/en/operations/south-america/fenix (DLE adsorption technology since 1997)",
+      "confianza": "alta"
+    }
+  },
+  {
+    "paso_id": "pvc-p1-purificacion-salmuera",
+    "proceso_id": "petroquimica-cloro-alcali-pvc",
+    "orden": 1,
+    "nombre": "Disolución y purificación ultrapura de salmuera",
+    "tipo_paso": "materia_prima",
+    "reaccion_balanceada": null,
+    "temperatura_c": "60-70",
+    "presion_bar": "1,0",
+    "reactivos": [
+      {
+        "especie": "NaCl industrial + agua de proceso",
+        "cantidad": 1.66,
+        "unidad": "t NaCl/t Cl2"
+      }
+    ],
+    "productos": [
+      {
+        "especie": "Salmuera saturada NaCl (~300 g/L)",
+        "cantidad": 1.66,
+        "unidad": "t NaCl/t Cl2"
+      }
+    ],
+    "insumos": [
+      {
+        "especie": "Resinas quelantes (Ca/Mg < 20 ppb)",
+        "cantidad": null,
+        "unidad": "servicio"
+      }
+    ],
+    "subproductos": [],
+    "energia": {
+      "estado": "sin_datos",
+      "valor": null,
+      "unidad": "MWh/t Cl2",
+      "procedencia": {
+        "anio": 2014,
+        "fuente_id": "eu-bref-chlor-alkali",
+        "fuente": "Best Available Techniques (BAT) Reference Document for the Production of Chlor-alkali (CAK BREF)",
+        "url": "https://bureau-industrial-transformation.jrc.ec.europa.eu/reference/production-chlor-alkali",
+        "fecha_descarga": "2026-11-26",
+        "hash": "sha256:667074387e3bc69d4cc90e4073db5ff2464f97d4772284475e821d6ee9c2c459",
+        "cita_ubicacion": "EU CAK BREF: membrane cell ECU (1 t Cl2 + 1,1 t NaOH + 0,03 t H2, 2,5 MWh DC/t Cl2)",
+        "confianza": "alta"
+      }
+    },
+    "descripcion": "Remoción química e intercambio iónico de Ca, Mg y sulfatos por debajo de 20 ppb para proteger las membranas catiónicas fluoradas.",
+    "pos_x": 20,
+    "pos_y": 150,
+    "procedencia": {
+      "anio": 2014,
+      "fuente_id": "eu-bref-chlor-alkali",
+      "fuente": "Best Available Techniques (BAT) Reference Document for the Production of Chlor-alkali (CAK BREF)",
+      "url": "https://bureau-industrial-transformation.jrc.ec.europa.eu/reference/production-chlor-alkali",
+      "fecha_descarga": "2026-11-26",
+      "hash": "sha256:667074387e3bc69d4cc90e4073db5ff2464f97d4772284475e821d6ee9c2c459",
+      "cita_ubicacion": "EU CAK BREF: membrane cell ECU (1 t Cl2 + 1,1 t NaOH + 0,03 t H2, 2,5 MWh DC/t Cl2)",
+      "confianza": "alta"
+    }
+  },
+  {
+    "paso_id": "pvc-p2-celdas-membrana",
+    "proceso_id": "petroquimica-cloro-alcali-pvc",
+    "orden": 2,
+    "nombre": "Electrólisis cloro-álcali en celda de membrana",
+    "tipo_paso": "reaccion",
+    "reaccion_balanceada": "2 NaCl + 2 H2O -> Cl2 + 2 NaOH + H2",
+    "temperatura_c": "85-90",
+    "presion_bar": "1,0-1,2",
+    "reactivos": [
+      {
+        "especie": "NaCl purificado + H2O",
+        "cantidad": 1.66,
+        "unidad": "t/t Cl2"
+      }
+    ],
+    "productos": [
+      {
+        "especie": "Cl2 gaseoso anódico",
+        "cantidad": 1,
+        "unidad": "t/t Cl2"
+      },
+      {
+        "especie": "NaOH soda cáustica (base seca 1,13 t)",
+        "cantidad": 1.13,
+        "unidad": "t/t Cl2"
+      }
+    ],
+    "insumos": [
+      {
+        "especie": "Electricidad DC celdas de membrana",
+        "cantidad": 2.5,
+        "unidad": "MWh/t Cl2"
+      }
+    ],
+    "subproductos": [
+      {
+        "especie": "H2 catódico (0,028 t/t Cl2)",
+        "cantidad": 0.028,
+        "unidad": "t/t Cl2"
+      }
+    ],
+    "energia": {
+      "estado": "dato",
+      "valor": 2.5,
+      "unidad": "MWh/t Cl2 (ECU)",
+      "procedencia": {
+        "anio": 2014,
+        "fuente_id": "eu-bref-chlor-alkali",
+        "fuente": "Best Available Techniques (BAT) Reference Document for the Production of Chlor-alkali (CAK BREF)",
+        "url": "https://bureau-industrial-transformation.jrc.ec.europa.eu/reference/production-chlor-alkali",
+        "fecha_descarga": "2026-11-26",
+        "hash": "sha256:667074387e3bc69d4cc90e4073db5ff2464f97d4772284475e821d6ee9c2c459",
+        "cita_ubicacion": "EU CAK BREF: membrane cell ECU (1 t Cl2 + 1,1 t NaOH + 0,03 t H2, 2,5 MWh DC/t Cl2)",
+        "confianza": "alta"
+      }
+    },
+    "descripcion": "Tecnología BAT libre de mercurio: el anolito libera Cl2 y el catolito produce NaOH al 32% (concentrable a 50%) más H2 puro.",
+    "pos_x": 340,
+    "pos_y": 150,
+    "procedencia": {
+      "anio": 2014,
+      "fuente_id": "eu-bref-chlor-alkali",
+      "fuente": "Best Available Techniques (BAT) Reference Document for the Production of Chlor-alkali (CAK BREF)",
+      "url": "https://bureau-industrial-transformation.jrc.ec.europa.eu/reference/production-chlor-alkali",
+      "fecha_descarga": "2026-11-26",
+      "hash": "sha256:667074387e3bc69d4cc90e4073db5ff2464f97d4772284475e821d6ee9c2c459",
+      "cita_ubicacion": "EU CAK BREF: membrane cell ECU (1 t Cl2 + 1,1 t NaOH + 0,03 t H2, 2,5 MWh DC/t Cl2)",
+      "confianza": "alta"
+    }
+  },
+  {
+    "paso_id": "pvc-p3-sintesis-edc",
+    "proceso_id": "petroquimica-cloro-alcali-pvc",
+    "orden": 3,
+    "nombre": "Cloración directa y oxicloración a EDC",
+    "tipo_paso": "reaccion",
+    "reaccion_balanceada": "C2H4 + Cl2 -> C2H4Cl2",
+    "temperatura_c": "50-240",
+    "presion_bar": "1,5-5,0",
+    "reactivos": [
+      {
+        "especie": "Cl2 (desde celdas de membrana)",
+        "cantidad": 0.58,
+        "unidad": "t/t PVC"
+      },
+      {
+        "especie": "C2H4 (etileno del Polo Bahía Blanca)",
+        "cantidad": 0.46,
+        "unidad": "t/t PVC"
+      }
+    ],
+    "productos": [
+      {
+        "especie": "Dicloroetano (EDC = C2H4Cl2)",
+        "cantidad": 1.6,
+        "unidad": "t/t PVC"
+      }
+    ],
+    "insumos": [],
+    "subproductos": [],
+    "energia": {
+      "estado": "sin_datos",
+      "valor": null,
+      "unidad": "GJ/t PVC",
+      "procedencia": {
+        "anio": 2026,
+        "fuente_id": "unipar-acerca-2026",
+        "fuente": "Perfil institucional y unidad productiva Bahía Blanca (Unipar Indupa S.A.I.C.)",
+        "url": "https://unipar.com/es/acerca-de-unipar",
+        "fecha_descarga": "2026-11-25",
+        "hash": "sha256:078744f42c406f68aa33110931629fe7dfa3cd9c6544791837111532d225a6f8",
+        "cita_ubicacion": "unipar.com/es/acerca-de-unipar (unidad Bahía Blanca: cloro, soda cáustica y PVC)",
+        "confianza": "alta"
+      }
+    },
+    "descripcion": "Proceso balanceado: el etileno reacciona con Cl2 fresco (cloración directa) y con el HCl reciclado del cracker de EDC (oxicloración).",
+    "pos_x": 660,
+    "pos_y": 150,
+    "procedencia": {
+      "anio": 2026,
+      "fuente_id": "unipar-acerca-2026",
+      "fuente": "Perfil institucional y unidad productiva Bahía Blanca (Unipar Indupa S.A.I.C.)",
+      "url": "https://unipar.com/es/acerca-de-unipar",
+      "fecha_descarga": "2026-11-25",
+      "hash": "sha256:078744f42c406f68aa33110931629fe7dfa3cd9c6544791837111532d225a6f8",
+      "cita_ubicacion": "unipar.com/es/acerca-de-unipar (unidad Bahía Blanca: cloro, soda cáustica y PVC)",
+      "confianza": "alta"
+    }
+  },
+  {
+    "paso_id": "pvc-p4-craqueo-mvc",
+    "proceso_id": "petroquimica-cloro-alcali-pvc",
+    "orden": 4,
+    "nombre": "Pirólisis de EDC y destilación de monómero MVC",
+    "tipo_paso": "separacion",
+    "reaccion_balanceada": "C2H4Cl2 -> C2H3Cl + HCl",
+    "temperatura_c": "480-520",
+    "presion_bar": "20-26",
+    "reactivos": [
+      {
+        "especie": "EDC purificado",
+        "cantidad": 1.6,
+        "unidad": "t/t PVC"
+      }
+    ],
+    "productos": [
+      {
+        "especie": "Monómero Cloruro de Vinilo (MVC)",
+        "cantidad": 1.01,
+        "unidad": "t/t PVC"
+      }
+    ],
+    "insumos": [],
+    "subproductos": [
+      {
+        "especie": "HCl anhidro reciclado a oxicloración",
+        "cantidad": 0.59,
+        "unidad": "t/t PVC"
+      }
+    ],
+    "energia": {
+      "estado": "sin_datos",
+      "valor": null,
+      "unidad": "GJ/t PVC",
+      "procedencia": {
+        "anio": 2026,
+        "fuente_id": "unipar-acerca-2026",
+        "fuente": "Perfil institucional y unidad productiva Bahía Blanca (Unipar Indupa S.A.I.C.)",
+        "url": "https://unipar.com/es/acerca-de-unipar",
+        "fecha_descarga": "2026-11-25",
+        "hash": "sha256:078744f42c406f68aa33110931629fe7dfa3cd9c6544791837111532d225a6f8",
+        "cita_ubicacion": "unipar.com/es/acerca-de-unipar (unidad Bahía Blanca: cloro, soda cáustica y PVC)",
+        "confianza": "alta"
+      }
+    },
+    "descripcion": "El craqueo térmico convierte el EDC en MVC grado polímero y HCl gaseoso que retorna íntegramente al reactor de oxicloración.",
+    "pos_x": 980,
+    "pos_y": 150,
+    "procedencia": {
+      "anio": 2026,
+      "fuente_id": "unipar-acerca-2026",
+      "fuente": "Perfil institucional y unidad productiva Bahía Blanca (Unipar Indupa S.A.I.C.)",
+      "url": "https://unipar.com/es/acerca-de-unipar",
+      "fecha_descarga": "2026-11-25",
+      "hash": "sha256:078744f42c406f68aa33110931629fe7dfa3cd9c6544791837111532d225a6f8",
+      "cita_ubicacion": "unipar.com/es/acerca-de-unipar (unidad Bahía Blanca: cloro, soda cáustica y PVC)",
+      "confianza": "alta"
+    }
+  },
+  {
+    "paso_id": "pvc-p5-polimerizacion-pvc",
+    "proceso_id": "petroquimica-cloro-alcali-pvc",
+    "orden": 5,
+    "nombre": "Polimerización en suspensión y secado de PVC",
+    "tipo_paso": "producto",
+    "reaccion_balanceada": "n C2H3Cl -> -(CH2-CHCl)n-",
+    "temperatura_c": "50-70",
+    "presion_bar": "7-12",
+    "reactivos": [
+      {
+        "especie": "MVC líquido (C2H3Cl)",
+        "cantidad": 1.01,
+        "unidad": "t/t PVC"
+      }
+    ],
+    "productos": [
+      {
+        "especie": "Resina PVC en polvo (HS 3904.10)",
+        "cantidad": 1,
+        "unidad": "t/t PVC"
+      }
+    ],
+    "insumos": [],
+    "subproductos": [],
+    "energia": {
+      "estado": "sin_datos",
+      "valor": null,
+      "unidad": "GJ/t PVC",
+      "procedencia": {
+        "anio": 2026,
+        "fuente_id": "unipar-acerca-2026",
+        "fuente": "Perfil institucional y unidad productiva Bahía Blanca (Unipar Indupa S.A.I.C.)",
+        "url": "https://unipar.com/es/acerca-de-unipar",
+        "fecha_descarga": "2026-11-25",
+        "hash": "sha256:078744f42c406f68aa33110931629fe7dfa3cd9c6544791837111532d225a6f8",
+        "cita_ubicacion": "unipar.com/es/acerca-de-unipar (unidad Bahía Blanca: cloro, soda cáustica y PVC)",
+        "confianza": "alta"
+      }
+    },
+    "descripcion": "Polimerización en autoclaves con agua desmineralizada e iniciadores, stripping de MVC residual, centrifugación y secado en Bahía Blanca.",
+    "pos_x": 1300,
+    "pos_y": 150,
+    "procedencia": {
+      "anio": 2026,
+      "fuente_id": "unipar-acerca-2026",
+      "fuente": "Perfil institucional y unidad productiva Bahía Blanca (Unipar Indupa S.A.I.C.)",
+      "url": "https://unipar.com/es/acerca-de-unipar",
+      "fecha_descarga": "2026-11-25",
+      "hash": "sha256:078744f42c406f68aa33110931629fe7dfa3cd9c6544791837111532d225a6f8",
+      "cita_ubicacion": "unipar.com/es/acerca-de-unipar (unidad Bahía Blanca: cloro, soda cáustica y PVC)",
+      "confianza": "alta"
+    }
   }
 ]

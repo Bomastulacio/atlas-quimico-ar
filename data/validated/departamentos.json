@@ -15,7 +15,7 @@
     "tipo_zona": "minero",
     "tiene_datos_confiables": true,
     "cobertura_datos": "completa",
-    "nota_cobertura": "Salar del Hombre Muerto (Catamarca): Planta Fénix operativa desde 1997."
+    "nota_cobertura": "Salar del Hombre Muerto (Catamarca): Planta Fénix (Rio Tinto) operando Extracción Directa de Litio (DLE por adsorción) desde 1997 (32 ktpa LCE)."
   },
   {
     "departamento_id": "22021",
@@ -60,7 +60,7 @@
     "tipo_zona": "minero",
     "tiene_datos_confiables": true,
     "cobertura_datos": "completa",
-    "nota_cobertura": "Salares de Olaroz y Cauchari-Olaroz (Jujuy): polo principal de carbonato de litio."
+    "nota_cobertura": "Salares de Olaroz y Cauchari-Olaroz (Jujuy): ruta evaporítica en piletas solares hacia carbonato de litio."
   },
   {
     "departamento_id": "66105",
@@ -69,7 +69,7 @@
     "tipo_zona": "minero",
     "tiene_datos_confiables": true,
     "cobertura_datos": "parcial",
-    "nota_cobertura": "Puna salteña (Salar del Rincón): planta inicial operativa 2024 y ampliación en curso."
+    "nota_cobertura": "Puna salteña (Salar del Rincón): planta inicial DLE (3.000 t/año desde nov. 2024) y expansión DLE comercial hacia 60 ktpa LCE."
   },
   {
     "departamento_id": "82084",

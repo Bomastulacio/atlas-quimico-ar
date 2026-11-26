@@ -394,5 +394,16 @@
     "hash": "sha256:95a85ff34aed08721925bc5918789d8422a4790da67db399cd5da328305b5491",
     "archivo_raw": null,
     "notas": "Referencia BAT internacional para pretratamiento químico de algodón: descrudado alcalino con NaOH, blanqueo con peróxido de hidrógeno (H2O2) libre de cloro y recuperación de soda."
+  },
+  {
+    "fuente_id": "eu-bref-chlor-alkali",
+    "nombre": "Best Available Techniques (BAT) Reference Document for the Production of Chlor-alkali (CAK BREF)",
+    "organismo": "Comisión Europea · Joint Research Centre (JRC / EU-BRITE)",
+    "tipo": "tecnica",
+    "url": "https://bureau-industrial-transformation.jrc.ec.europa.eu/reference/production-chlor-alkali",
+    "fecha_descarga": "2026-11-26",
+    "hash": "sha256:667074387e3bc69d4cc90e4073db5ff2464f97d4772284475e821d6ee9c2c459",
+    "archivo_raw": null,
+    "notas": "Consumo eléctrico BAT en celdas de membrana (2,5-3,0 MWh DC / t Cl2 o ECU = 1 t Cl2 + 1,1 t NaOH + 0,03 t H2) y concentración de soda cáustica al 50%."
   }
 ]

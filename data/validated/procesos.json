@@ -229,5 +229,71 @@
       "cita_ubicacion": "renova.com.ar (Planta Timbúes 32.400 t/día molienda; Planta San Lorenzo 1.450 t/día biodiésel)",
       "confianza": "alta"
     }
+  },
+  {
+    "proceso_id": "litio-dle-adsorcion",
+    "producto_id": "litio",
+    "nombre": "Extracción Directa de Litio (DLE) por adsorción y carbonatación (Fénix / Rincón)",
+    "ruta_tecnologica": "Salmuera de salar -> adsorción selectiva DLE (horas) -> elución con agua fresca y retorno de salmuera agotada -> purificación IX + concentración -> carbonatación Na2CO3",
+    "reaccion_global": "2 LiCl + Na2CO3 -> Li2CO3 + 2 NaCl",
+    "energia_especifica": {
+      "estado": "sin_datos",
+      "valor": null,
+      "unidad": "MWh/t LCE",
+      "procedencia": {
+        "anio": 2026,
+        "fuente_id": "riotinto-fenix-2026",
+        "fuente": "Ficha oficial de operación Fénix (Salar del Hombre Muerto, Catamarca)",
+        "url": "https://www.riotinto.com/en/operations/south-america/fenix",
+        "fecha_descarga": "2026-11-24",
+        "hash": "sha256:424d17d8d2353a97a4848a105ca616c6a483e4d0e4ced5360b1cec7cb9127e2b",
+        "cita_ubicacion": "riotinto.com/en/operations/south-america/fenix (DLE adsorption technology since 1997)",
+        "confianza": "alta"
+      }
+    },
+    "descripcion": "Ruta tecnológica activa en Catamarca (Fénix, Salar del Hombre Muerto desde 1997) y Salta (Rincón, 3.000 t/año inicial + expansión 60 ktpa). Captura LiCl selectivamente en columnas/lechos de adsorción sin esperar 12-18 meses de piletas solares.",
+    "procedencia": {
+      "anio": 2026,
+      "fuente_id": "riotinto-fenix-2026",
+      "fuente": "Ficha oficial de operación Fénix (Salar del Hombre Muerto, Catamarca)",
+      "url": "https://www.riotinto.com/en/operations/south-america/fenix",
+      "fecha_descarga": "2026-11-24",
+      "hash": "sha256:424d17d8d2353a97a4848a105ca616c6a483e4d0e4ced5360b1cec7cb9127e2b",
+      "cita_ubicacion": "riotinto.com/en/operations/south-america/fenix (DLE adsorption technology since 1997)",
+      "confianza": "alta"
+    }
+  },
+  {
+    "proceso_id": "petroquimica-cloro-alcali-pvc",
+    "producto_id": "petroquimica",
+    "nombre": "Proceso Cloro-Álcali (celda de membrana) y cadena vinílica EDC -> MVC -> PVC (Unipar)",
+    "ruta_tecnologica": "Salmuera NaCl saturada + electricidad -> celdas de membrana (Cl2 + NaOH + H2) -> cloración de etileno (EDC) y pirólisis a MVC -> polimerización a PVC",
+    "reaccion_global": "2 NaCl + 2 H2O -> Cl2 + 2 NaOH + H2",
+    "energia_especifica": {
+      "estado": "dato",
+      "valor": 2.5,
+      "unidad": "MWh/t Cl2 (ECU)",
+      "procedencia": {
+        "anio": 2014,
+        "fuente_id": "eu-bref-chlor-alkali",
+        "fuente": "Best Available Techniques (BAT) Reference Document for the Production of Chlor-alkali (CAK BREF)",
+        "url": "https://bureau-industrial-transformation.jrc.ec.europa.eu/reference/production-chlor-alkali",
+        "fecha_descarga": "2026-11-26",
+        "hash": "sha256:667074387e3bc69d4cc90e4073db5ff2464f97d4772284475e821d6ee9c2c459",
+        "cita_ubicacion": "EU CAK BREF: membrane cell ECU (1 t Cl2 + 1,1 t NaOH + 0,03 t H2, 2,5 MWh DC/t Cl2)",
+        "confianza": "alta"
+      }
+    },
+    "descripcion": "Ruta cloro-vinílica operada por Unipar Indupa en el Polo Petroquímico Bahía Blanca. Según EU CAK BREF, una Unidad Electroquímica (ECU) produce 1 t Cl2, 1,1 t NaOH y 0,03 t H2 consumiendo 2,5-3,0 MWh DC en celdas de membrana libres de mercurio y asbesto.",
+    "procedencia": {
+      "anio": 2014,
+      "fuente_id": "eu-bref-chlor-alkali",
+      "fuente": "Best Available Techniques (BAT) Reference Document for the Production of Chlor-alkali (CAK BREF)",
+      "url": "https://bureau-industrial-transformation.jrc.ec.europa.eu/reference/production-chlor-alkali",
+      "fecha_descarga": "2026-11-26",
+      "hash": "sha256:667074387e3bc69d4cc90e4073db5ff2464f97d4772284475e821d6ee9c2c459",
+      "cita_ubicacion": "EU CAK BREF: membrane cell ECU (1 t Cl2 + 1,1 t NaOH + 0,03 t H2, 2,5 MWh DC/t Cl2)",
+      "confianza": "alta"
+    }
   }
 ]

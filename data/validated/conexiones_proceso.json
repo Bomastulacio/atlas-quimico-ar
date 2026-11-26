@@ -1219,5 +1219,335 @@
       "cita_ubicacion": "renova.com.ar",
       "confianza": "alta"
     }
+  },
+  {
+    "conexion_id": "dle-c1-bombeo-a-adsorcion",
+    "proceso_id": "litio-dle-adsorcion",
+    "origen_paso_id": "dle-p1-extraccion-salmuera",
+    "destino_paso_id": "dle-p2-adsorcion-selectiva",
+    "corriente_nombre": "Salmuera filtrada",
+    "tipo_corriente": "principal",
+    "flujo": {
+      "estado": "sin_datos",
+      "valor": null,
+      "unidad": "m3/t LCE",
+      "procedencia": {
+        "anio": 2026,
+        "fuente_id": "riotinto-fenix-2026",
+        "fuente": "Ficha oficial de operación Fénix (Salar del Hombre Muerto, Catamarca)",
+        "url": "https://www.riotinto.com/en/operations/south-america/fenix",
+        "fecha_descarga": "2026-11-24",
+        "hash": "sha256:424d17d8d2353a97a4848a105ca616c6a483e4d0e4ced5360b1cec7cb9127e2b",
+        "cita_ubicacion": "riotinto.com/en/operations/south-america/fenix (DLE adsorption technology since 1997)",
+        "confianza": "alta"
+      }
+    },
+    "procedencia": {
+      "anio": 2026,
+      "fuente_id": "riotinto-fenix-2026",
+      "fuente": "Ficha oficial de operación Fénix (Salar del Hombre Muerto, Catamarca)",
+      "url": "https://www.riotinto.com/en/operations/south-america/fenix",
+      "fecha_descarga": "2026-11-24",
+      "hash": "sha256:424d17d8d2353a97a4848a105ca616c6a483e4d0e4ced5360b1cec7cb9127e2b",
+      "cita_ubicacion": "riotinto.com/en/operations/south-america/fenix (DLE adsorption technology since 1997)",
+      "confianza": "alta"
+    }
+  },
+  {
+    "conexion_id": "dle-c2-eluato-a-osmosi",
+    "proceso_id": "litio-dle-adsorcion",
+    "origen_paso_id": "dle-p2-adsorcion-selectiva",
+    "destino_paso_id": "dle-p3-pulido-osmosi",
+    "corriente_nombre": "Eluato de LiCl purificado",
+    "tipo_corriente": "principal",
+    "flujo": {
+      "estado": "dato",
+      "valor": 1.15,
+      "unidad": "t/t LCE",
+      "procedencia": {
+        "anio": 2026,
+        "fuente_id": "riotinto-fenix-2026",
+        "fuente": "Ficha oficial de operación Fénix (Salar del Hombre Muerto, Catamarca)",
+        "url": "https://www.riotinto.com/en/operations/south-america/fenix",
+        "fecha_descarga": "2026-11-24",
+        "hash": "sha256:424d17d8d2353a97a4848a105ca616c6a483e4d0e4ced5360b1cec7cb9127e2b",
+        "cita_ubicacion": "riotinto.com/en/operations/south-america/fenix (DLE adsorption technology since 1997)",
+        "confianza": "alta"
+      }
+    },
+    "procedencia": {
+      "anio": 2026,
+      "fuente_id": "riotinto-fenix-2026",
+      "fuente": "Ficha oficial de operación Fénix (Salar del Hombre Muerto, Catamarca)",
+      "url": "https://www.riotinto.com/en/operations/south-america/fenix",
+      "fecha_descarga": "2026-11-24",
+      "hash": "sha256:424d17d8d2353a97a4848a105ca616c6a483e4d0e4ced5360b1cec7cb9127e2b",
+      "cita_ubicacion": "riotinto.com/en/operations/south-america/fenix (DLE adsorption technology since 1997)",
+      "confianza": "alta"
+    }
+  },
+  {
+    "conexion_id": "dle-c3-reciclo-agua-ro",
+    "proceso_id": "litio-dle-adsorcion",
+    "origen_paso_id": "dle-p3-pulido-osmosi",
+    "destino_paso_id": "dle-p2-adsorcion-selectiva",
+    "corriente_nombre": "Agua RO reciclada a elución",
+    "tipo_corriente": "reciclo",
+    "flujo": {
+      "estado": "sin_datos",
+      "valor": null,
+      "unidad": "m3/t LCE",
+      "procedencia": {
+        "anio": 2026,
+        "fuente_id": "riotinto-fenix-2026",
+        "fuente": "Ficha oficial de operación Fénix (Salar del Hombre Muerto, Catamarca)",
+        "url": "https://www.riotinto.com/en/operations/south-america/fenix",
+        "fecha_descarga": "2026-11-24",
+        "hash": "sha256:424d17d8d2353a97a4848a105ca616c6a483e4d0e4ced5360b1cec7cb9127e2b",
+        "cita_ubicacion": "riotinto.com/en/operations/south-america/fenix (DLE adsorption technology since 1997)",
+        "confianza": "alta"
+      }
+    },
+    "procedencia": {
+      "anio": 2026,
+      "fuente_id": "riotinto-fenix-2026",
+      "fuente": "Ficha oficial de operación Fénix (Salar del Hombre Muerto, Catamarca)",
+      "url": "https://www.riotinto.com/en/operations/south-america/fenix",
+      "fecha_descarga": "2026-11-24",
+      "hash": "sha256:424d17d8d2353a97a4848a105ca616c6a483e4d0e4ced5360b1cec7cb9127e2b",
+      "cita_ubicacion": "riotinto.com/en/operations/south-america/fenix (DLE adsorption technology since 1997)",
+      "confianza": "alta"
+    }
+  },
+  {
+    "conexion_id": "dle-c4-concentrado-a-carbonatacion",
+    "proceso_id": "litio-dle-adsorcion",
+    "origen_paso_id": "dle-p3-pulido-osmosi",
+    "destino_paso_id": "dle-p4-carbonatacion",
+    "corriente_nombre": "Solución concentrada de LiCl",
+    "tipo_corriente": "principal",
+    "flujo": {
+      "estado": "dato",
+      "valor": 1.15,
+      "unidad": "t/t LCE",
+      "procedencia": {
+        "anio": 2026,
+        "fuente_id": "riotinto-fenix-2026",
+        "fuente": "Ficha oficial de operación Fénix (Salar del Hombre Muerto, Catamarca)",
+        "url": "https://www.riotinto.com/en/operations/south-america/fenix",
+        "fecha_descarga": "2026-11-24",
+        "hash": "sha256:424d17d8d2353a97a4848a105ca616c6a483e4d0e4ced5360b1cec7cb9127e2b",
+        "cita_ubicacion": "riotinto.com/en/operations/south-america/fenix (DLE adsorption technology since 1997)",
+        "confianza": "alta"
+      }
+    },
+    "procedencia": {
+      "anio": 2026,
+      "fuente_id": "riotinto-fenix-2026",
+      "fuente": "Ficha oficial de operación Fénix (Salar del Hombre Muerto, Catamarca)",
+      "url": "https://www.riotinto.com/en/operations/south-america/fenix",
+      "fecha_descarga": "2026-11-24",
+      "hash": "sha256:424d17d8d2353a97a4848a105ca616c6a483e4d0e4ced5360b1cec7cb9127e2b",
+      "cita_ubicacion": "riotinto.com/en/operations/south-america/fenix (DLE adsorption technology since 1997)",
+      "confianza": "alta"
+    }
+  },
+  {
+    "conexion_id": "dle-c5-torta-a-secado",
+    "proceso_id": "litio-dle-adsorcion",
+    "origen_paso_id": "dle-p4-carbonatacion",
+    "destino_paso_id": "dle-p5-secado-grado-bateria",
+    "corriente_nombre": "Li2CO3 lavado húmedo",
+    "tipo_corriente": "principal",
+    "flujo": {
+      "estado": "dato",
+      "valor": 1.07,
+      "unidad": "t/t LCE",
+      "procedencia": {
+        "anio": 2026,
+        "fuente_id": "riotinto-fenix-2026",
+        "fuente": "Ficha oficial de operación Fénix (Salar del Hombre Muerto, Catamarca)",
+        "url": "https://www.riotinto.com/en/operations/south-america/fenix",
+        "fecha_descarga": "2026-11-24",
+        "hash": "sha256:424d17d8d2353a97a4848a105ca616c6a483e4d0e4ced5360b1cec7cb9127e2b",
+        "cita_ubicacion": "riotinto.com/en/operations/south-america/fenix (DLE adsorption technology since 1997)",
+        "confianza": "alta"
+      }
+    },
+    "procedencia": {
+      "anio": 2026,
+      "fuente_id": "riotinto-fenix-2026",
+      "fuente": "Ficha oficial de operación Fénix (Salar del Hombre Muerto, Catamarca)",
+      "url": "https://www.riotinto.com/en/operations/south-america/fenix",
+      "fecha_descarga": "2026-11-24",
+      "hash": "sha256:424d17d8d2353a97a4848a105ca616c6a483e4d0e4ced5360b1cec7cb9127e2b",
+      "cita_ubicacion": "riotinto.com/en/operations/south-america/fenix (DLE adsorption technology since 1997)",
+      "confianza": "alta"
+    }
+  },
+  {
+    "conexion_id": "pvc-c1-salmuera-a-celdas",
+    "proceso_id": "petroquimica-cloro-alcali-pvc",
+    "origen_paso_id": "pvc-p1-purificacion-salmuera",
+    "destino_paso_id": "pvc-p2-celdas-membrana",
+    "corriente_nombre": "Salmuera ultrapura",
+    "tipo_corriente": "principal",
+    "flujo": {
+      "estado": "dato",
+      "valor": 1.66,
+      "unidad": "t NaCl/t Cl2",
+      "procedencia": {
+        "anio": 2014,
+        "fuente_id": "eu-bref-chlor-alkali",
+        "fuente": "Best Available Techniques (BAT) Reference Document for the Production of Chlor-alkali (CAK BREF)",
+        "url": "https://bureau-industrial-transformation.jrc.ec.europa.eu/reference/production-chlor-alkali",
+        "fecha_descarga": "2026-11-26",
+        "hash": "sha256:667074387e3bc69d4cc90e4073db5ff2464f97d4772284475e821d6ee9c2c459",
+        "cita_ubicacion": "EU CAK BREF: membrane cell ECU (1 t Cl2 + 1,1 t NaOH + 0,03 t H2, 2,5 MWh DC/t Cl2)",
+        "confianza": "alta"
+      }
+    },
+    "procedencia": {
+      "anio": 2014,
+      "fuente_id": "eu-bref-chlor-alkali",
+      "fuente": "Best Available Techniques (BAT) Reference Document for the Production of Chlor-alkali (CAK BREF)",
+      "url": "https://bureau-industrial-transformation.jrc.ec.europa.eu/reference/production-chlor-alkali",
+      "fecha_descarga": "2026-11-26",
+      "hash": "sha256:667074387e3bc69d4cc90e4073db5ff2464f97d4772284475e821d6ee9c2c459",
+      "cita_ubicacion": "EU CAK BREF: membrane cell ECU (1 t Cl2 + 1,1 t NaOH + 0,03 t H2, 2,5 MWh DC/t Cl2)",
+      "confianza": "alta"
+    }
+  },
+  {
+    "conexion_id": "pvc-c2-cl2-a-edc",
+    "proceso_id": "petroquimica-cloro-alcali-pvc",
+    "origen_paso_id": "pvc-p2-celdas-membrana",
+    "destino_paso_id": "pvc-p3-sintesis-edc",
+    "corriente_nombre": "Cl2 gaseoso a EDC",
+    "tipo_corriente": "principal",
+    "flujo": {
+      "estado": "dato",
+      "valor": 0.58,
+      "unidad": "t Cl2/t PVC",
+      "procedencia": {
+        "anio": 2026,
+        "fuente_id": "unipar-acerca-2026",
+        "fuente": "Perfil institucional y unidad productiva Bahía Blanca (Unipar Indupa S.A.I.C.)",
+        "url": "https://unipar.com/es/acerca-de-unipar",
+        "fecha_descarga": "2026-11-25",
+        "hash": "sha256:078744f42c406f68aa33110931629fe7dfa3cd9c6544791837111532d225a6f8",
+        "cita_ubicacion": "unipar.com/es/acerca-de-unipar (unidad Bahía Blanca: cloro, soda cáustica y PVC)",
+        "confianza": "alta"
+      }
+    },
+    "procedencia": {
+      "anio": 2026,
+      "fuente_id": "unipar-acerca-2026",
+      "fuente": "Perfil institucional y unidad productiva Bahía Blanca (Unipar Indupa S.A.I.C.)",
+      "url": "https://unipar.com/es/acerca-de-unipar",
+      "fecha_descarga": "2026-11-25",
+      "hash": "sha256:078744f42c406f68aa33110931629fe7dfa3cd9c6544791837111532d225a6f8",
+      "cita_ubicacion": "unipar.com/es/acerca-de-unipar (unidad Bahía Blanca: cloro, soda cáustica y PVC)",
+      "confianza": "alta"
+    }
+  },
+  {
+    "conexion_id": "pvc-c3-edc-a-cracker",
+    "proceso_id": "petroquimica-cloro-alcali-pvc",
+    "origen_paso_id": "pvc-p3-sintesis-edc",
+    "destino_paso_id": "pvc-p4-craqueo-mvc",
+    "corriente_nombre": "EDC purificado",
+    "tipo_corriente": "principal",
+    "flujo": {
+      "estado": "dato",
+      "valor": 1.6,
+      "unidad": "t EDC/t PVC",
+      "procedencia": {
+        "anio": 2026,
+        "fuente_id": "unipar-acerca-2026",
+        "fuente": "Perfil institucional y unidad productiva Bahía Blanca (Unipar Indupa S.A.I.C.)",
+        "url": "https://unipar.com/es/acerca-de-unipar",
+        "fecha_descarga": "2026-11-25",
+        "hash": "sha256:078744f42c406f68aa33110931629fe7dfa3cd9c6544791837111532d225a6f8",
+        "cita_ubicacion": "unipar.com/es/acerca-de-unipar (unidad Bahía Blanca: cloro, soda cáustica y PVC)",
+        "confianza": "alta"
+      }
+    },
+    "procedencia": {
+      "anio": 2026,
+      "fuente_id": "unipar-acerca-2026",
+      "fuente": "Perfil institucional y unidad productiva Bahía Blanca (Unipar Indupa S.A.I.C.)",
+      "url": "https://unipar.com/es/acerca-de-unipar",
+      "fecha_descarga": "2026-11-25",
+      "hash": "sha256:078744f42c406f68aa33110931629fe7dfa3cd9c6544791837111532d225a6f8",
+      "cita_ubicacion": "unipar.com/es/acerca-de-unipar (unidad Bahía Blanca: cloro, soda cáustica y PVC)",
+      "confianza": "alta"
+    }
+  },
+  {
+    "conexion_id": "pvc-c4-reciclo-hcl",
+    "proceso_id": "petroquimica-cloro-alcali-pvc",
+    "origen_paso_id": "pvc-p4-craqueo-mvc",
+    "destino_paso_id": "pvc-p3-sintesis-edc",
+    "corriente_nombre": "HCl reciclado a oxicloración",
+    "tipo_corriente": "reciclo",
+    "flujo": {
+      "estado": "dato",
+      "valor": 0.59,
+      "unidad": "t HCl/t PVC",
+      "procedencia": {
+        "anio": 2026,
+        "fuente_id": "unipar-acerca-2026",
+        "fuente": "Perfil institucional y unidad productiva Bahía Blanca (Unipar Indupa S.A.I.C.)",
+        "url": "https://unipar.com/es/acerca-de-unipar",
+        "fecha_descarga": "2026-11-25",
+        "hash": "sha256:078744f42c406f68aa33110931629fe7dfa3cd9c6544791837111532d225a6f8",
+        "cita_ubicacion": "unipar.com/es/acerca-de-unipar (unidad Bahía Blanca: cloro, soda cáustica y PVC)",
+        "confianza": "alta"
+      }
+    },
+    "procedencia": {
+      "anio": 2026,
+      "fuente_id": "unipar-acerca-2026",
+      "fuente": "Perfil institucional y unidad productiva Bahía Blanca (Unipar Indupa S.A.I.C.)",
+      "url": "https://unipar.com/es/acerca-de-unipar",
+      "fecha_descarga": "2026-11-25",
+      "hash": "sha256:078744f42c406f68aa33110931629fe7dfa3cd9c6544791837111532d225a6f8",
+      "cita_ubicacion": "unipar.com/es/acerca-de-unipar (unidad Bahía Blanca: cloro, soda cáustica y PVC)",
+      "confianza": "alta"
+    }
+  },
+  {
+    "conexion_id": "pvc-c5-mvc-a-pvc",
+    "proceso_id": "petroquimica-cloro-alcali-pvc",
+    "origen_paso_id": "pvc-p4-craqueo-mvc",
+    "destino_paso_id": "pvc-p5-polimerizacion-pvc",
+    "corriente_nombre": "Monómero MVC líquido",
+    "tipo_corriente": "principal",
+    "flujo": {
+      "estado": "dato",
+      "valor": 1.01,
+      "unidad": "t MVC/t PVC",
+      "procedencia": {
+        "anio": 2026,
+        "fuente_id": "unipar-acerca-2026",
+        "fuente": "Perfil institucional y unidad productiva Bahía Blanca (Unipar Indupa S.A.I.C.)",
+        "url": "https://unipar.com/es/acerca-de-unipar",
+        "fecha_descarga": "2026-11-25",
+        "hash": "sha256:078744f42c406f68aa33110931629fe7dfa3cd9c6544791837111532d225a6f8",
+        "cita_ubicacion": "unipar.com/es/acerca-de-unipar (unidad Bahía Blanca: cloro, soda cáustica y PVC)",
+        "confianza": "alta"
+      }
+    },
+    "procedencia": {
+      "anio": 2026,
+      "fuente_id": "unipar-acerca-2026",
+      "fuente": "Perfil institucional y unidad productiva Bahía Blanca (Unipar Indupa S.A.I.C.)",
+      "url": "https://unipar.com/es/acerca-de-unipar",
+      "fecha_descarga": "2026-11-25",
+      "hash": "sha256:078744f42c406f68aa33110931629fe7dfa3cd9c6544791837111532d225a6f8",
+      "cita_ubicacion": "unipar.com/es/acerca-de-unipar (unidad Bahía Blanca: cloro, soda cáustica y PVC)",
+      "confianza": "alta"
+    }
   }
 ]

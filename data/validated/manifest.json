@@ -6,8 +6,8 @@
   "nota": "Dataset oficial sincronizado íntegramente desde Supabase.",
   "tablas": {
     "fuentes": {
-      "registros": 36,
-      "hash": "sha256:1ce35d41524c8f89c6fab8330d7adb509ead43b0a1e64c6aed20ed1eea7f0fee"
+      "registros": 37,
+      "hash": "sha256:8ca6fe290cd1174386267d2e2fb1cccf5fc3c37f97fb76665ec886529cd5a135"
     },
     "provincias": {
       "registros": 24,
@@ -15,7 +15,7 @@
     },
     "departamentos": {
       "registros": 10,
-      "hash": "sha256:4a0ffda2f39b57ae1c247a3f8496c2c047de254c93dd70eef9aae006a7ad7ace"
+      "hash": "sha256:2311b512f12425a0c5d7dcfa05073448cc7516e816178dd6e13ad172c95aab0f"
     },
     "productos": {
       "registros": 7,
@@ -26,16 +26,16 @@
       "hash": "sha256:5700b064150b82404f0c8781463522686d7530d29b3363a80df4b8346c2e2e3f"
     },
     "procesos": {
-      "registros": 7,
-      "hash": "sha256:ffbc60d8ccb2b70417d838df00e8c8d45625687890f4a7bc57a2f72abc431ce9"
+      "registros": 9,
+      "hash": "sha256:3aeeadbbf3f98725b8c456cd056e269ffd35e1ea506521d1a9fefba3d7f21c15"
     },
     "pasos_proceso": {
-      "registros": 36,
-      "hash": "sha256:a84e5fe3fdbb7a330f8cc1f385ebe9eef8773c0cdf2fdaa1e32d8b139bcce835"
+      "registros": 46,
+      "hash": "sha256:f4832ff52e99932c218cbf417cd1c1da8d5ecfebd2dc81b39e937e842e7f3bb0"
     },
     "conexiones_proceso": {
-      "registros": 37,
-      "hash": "sha256:e57e41b7b65f72dc8dd78acbabc30dae9bb56b2c02a7f47185fe3058b3904e1a"
+      "registros": 47,
+      "hash": "sha256:6fcf9bbbf398aabce57679f73cb3901a3dc44cbaf9bb4103909f9dc9a8b466a5"
     },
     "empresas": {
       "registros": 8,

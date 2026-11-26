@@ -5620,5 +5620,1356 @@
         "fuente_id": "uncomtrade-ar-lote2-agro-2024"
       }
     ]
+  },
+  {
+    "proceso_id": "litio-dle-adsorcion",
+    "producto_id": "litio",
+    "titulo": "PFD: Extracción Directa de Litio (DLE) por Adsorción Selectiva y Carbonatación (Catamarca / Salta)",
+    "norma_simbologia": "ISO 10628 / ASME",
+    "base_calculo": "1,00 t de Li2CO3 grado batería (13,53 kmol Li2CO3) vía DLE (Fénix / Rincón)",
+    "resumen_tecnico": "Tecnología de adsorción selectiva DLE implementada en Salar del Hombre Muerto (Fénix, Catamarca) y Salar del Rincón (Salta): la salmuera cruda se filtra y pasa por columnas de sorbente sólido selectivo al litio (en horas en lugar de 12-18 meses solares); el agua de elución se recupera por ósmosis inversa antes de precipitar Li2CO3 con Na2CO3.",
+    "nota_metodologica": "Arquitectura verificada desde Rio Tinto Fénix (Catamarca) y Rincón (Salta) + estequiometría USGS MCS 2025. Caudales internos variables por concentración de salmuera figuran como s/d.",
+    "canvas_width": 1880,
+    "canvas_height": 760,
+    "secciones": [
+      {
+        "area_id": "area-100",
+        "titulo": "Área 100 · Bombeo y Adsorción DLE",
+        "x": 224,
+        "y": 40,
+        "width": 352,
+        "height": 665
+      },
+      {
+        "area_id": "area-200",
+        "titulo": "Área 200 · Ósmosis Inversa y Pulido IX",
+        "x": 594,
+        "y": 40,
+        "width": 338,
+        "height": 665
+      },
+      {
+        "area_id": "area-300",
+        "titulo": "Área 300 · Carbonatación con Na2CO3",
+        "x": 950,
+        "y": 40,
+        "width": 356,
+        "height": 665
+      },
+      {
+        "area_id": "area-400",
+        "titulo": "Área 400 · Secado y Grado Batería",
+        "x": 1324,
+        "y": 40,
+        "width": 332,
+        "height": 665
+      }
+    ],
+    "equipos": [
+      {
+        "tag": "P-101",
+        "nombre": "Bombeo y filtro multimedia",
+        "simbolo": "pump",
+        "area_id": "area-100",
+        "x": 318,
+        "y": 240,
+        "temperatura_op": "15-25 °C",
+        "presion_op": "2-4 bar",
+        "reaccion": null,
+        "condicion_critica": "Horas vs meses",
+        "descripcion": "Alimentación directa desde pozos de salmuera con filtración de arenas y partículas finas para evitar colmatar el lecho DLE.",
+        "fuente_id": "riotinto-fenix-2026",
+        "cita_ubicacion": "riotinto.com/en/operations/south-america/fenix"
+      },
+      {
+        "tag": "T-101",
+        "nombre": "Columnas adsorbentes DLE",
+        "simbolo": "column",
+        "area_id": "area-100",
+        "x": 502,
+        "y": 240,
+        "temperatura_op": "35-60 °C",
+        "presion_op": "2-5 bar",
+        "reaccion": "LiCl + Sorbente <-> Sorbente·LiCl",
+        "condicion_critica": "Rechazo Mg/Na",
+        "descripcion": "Adsorción selectiva de LiCl en lecho sólido con posterior lavado de desplazamiento (elución) con agua tibia.",
+        "fuente_id": "riotinto-fenix-2026",
+        "cita_ubicacion": "riotinto.com/en/operations/south-america/fenix (DLE proprietary technology)"
+      },
+      {
+        "tag": "V-101",
+        "nombre": "Tanque salmuera agotada",
+        "simbolo": "tank",
+        "area_id": "area-100",
+        "x": 502,
+        "y": 515,
+        "temperatura_op": "20-30 °C",
+        "presion_op": "1,0 bar",
+        "reaccion": null,
+        "condicion_critica": null,
+        "descripcion": "Salmuera sin litio retornada al salar de forma controlada tras intercambio térmico.",
+        "fuente_id": "riotinto-rincon-2026",
+        "cita_ubicacion": "riotinto.com/en/operations/south-america/rincon"
+      },
+      {
+        "tag": "S-201",
+        "nombre": "Ósmosis inversa recup. H2O",
+        "simbolo": "separator",
+        "area_id": "area-200",
+        "x": 684,
+        "y": 240,
+        "temperatura_op": "30-45 °C",
+        "presion_op": "25-40 bar",
+        "reaccion": null,
+        "condicion_critica": "Reciclo H2O",
+        "descripcion": "Preconcentra el eluato diluido de LiCl y devuelve permeado limpio al tanque de elución de las columnas DLE T-101.",
+        "fuente_id": "riotinto-rincon-2026",
+        "cita_ubicacion": "riotinto.com/en/operations/south-america/rincon"
+      },
+      {
+        "tag": "T-201",
+        "nombre": "Intercambio iónico (pulido)",
+        "simbolo": "column",
+        "area_id": "area-200",
+        "x": 858,
+        "y": 240,
+        "temperatura_op": "30-45 °C",
+        "presion_op": "2-3 bar",
+        "reaccion": null,
+        "condicion_critica": "Ca/Mg < 10 ppm",
+        "descripcion": "Pulido final de cationes divalentes residuales (Ca2+/Mg2+) previo a evaporador de concentración y carbonatación.",
+        "fuente_id": "riotinto-fenix-2026",
+        "cita_ubicacion": "riotinto.com/en/operations/south-america/fenix"
+      },
+      {
+        "tag": "V-201",
+        "nombre": "Evaporador de eluato LiCl",
+        "simbolo": "separator",
+        "area_id": "area-200",
+        "x": 858,
+        "y": 515,
+        "temperatura_op": "80-100 °C",
+        "presion_op": "0,4-0,8 bar",
+        "reaccion": null,
+        "condicion_critica": "Vapor recup.",
+        "descripcion": "Ajusta el título final de LiCl para maximizar rendimiento de precipitación de carbonato en R-301.",
+        "fuente_id": "riotinto-fenix-2026",
+        "cita_ubicacion": "riotinto.com/en/operations/south-america/fenix"
+      },
+      {
+        "tag": "R-301",
+        "nombre": "Reactor de carbonatación",
+        "simbolo": "reactor",
+        "area_id": "area-300",
+        "x": 1044,
+        "y": 240,
+        "temperatura_op": "85-95 °C",
+        "presion_op": "1,0 bar",
+        "reaccion": "2 LiCl + Na2CO3 -> Li2CO3 + 2 NaCl",
+        "condicion_critica": "TC 90 °C",
+        "descripcion": "Precipitación cristalina en caliente de carbonato de litio de alta pureza mediante dosificación de ceniza de soda.",
+        "fuente_id": "usgs-mcs-2025-litio",
+        "cita_ubicacion": "USGS MCS 2025 pág. 110"
+      },
+      {
+        "tag": "D-301",
+        "nombre": "Centrífuga y lavado térmico",
+        "simbolo": "centrifuge",
+        "area_id": "area-300",
+        "x": 1228,
+        "y": 240,
+        "temperatura_op": "80-90 °C",
+        "presion_op": "1,0 bar",
+        "reaccion": null,
+        "condicion_critica": "H2O 85 °C",
+        "descripcion": "Separación de cristales y lavado con agua desmineralizada caliente para eliminar cloruro de sodio residual.",
+        "fuente_id": "riotinto-fenix-2026",
+        "cita_ubicacion": "riotinto.com/en/operations/south-america/fenix"
+      },
+      {
+        "tag": "F-401",
+        "nombre": "Secador rotatorio indirecto",
+        "simbolo": "dryer_bed",
+        "area_id": "area-400",
+        "x": 1418,
+        "y": 240,
+        "temperatura_op": "120-160 °C",
+        "presion_op": "1,0 bar",
+        "reaccion": null,
+        "condicion_critica": "H2O < 0,2%",
+        "descripcion": "Secado fino sin contacto directo de gases de combustión para preservar pureza grado batería.",
+        "fuente_id": "riotinto-fenix-2026",
+        "cita_ubicacion": "riotinto.com/en/operations/south-america/fenix"
+      },
+      {
+        "tag": "G-401",
+        "nombre": "Micronizado y envasado LCE",
+        "simbolo": "granulator",
+        "area_id": "area-400",
+        "x": 1560,
+        "y": 515,
+        "temperatura_op": "25-35 °C",
+        "presion_op": "1,0 bar",
+        "reaccion": null,
+        "condicion_critica": "Li2CO3 >= 99,5%",
+        "descripcion": "Envasado comercial desde Catamarca (Fénix 32 ktpa -> 40 ktpa) y Salta (Rincón 3 ktpa -> 60 ktpa).",
+        "fuente_id": "riotinto-rincon-2026",
+        "cita_ubicacion": "riotinto.com/en/operations/south-america/rincon"
+      }
+    ],
+    "corrientes": [
+      {
+        "numero": 1,
+        "nombre": "Salmuera cruda del salar",
+        "tipo": "proceso",
+        "origen_tag": null,
+        "destino_tag": "P-101",
+        "puntos": [
+          [
+            206,
+            240
+          ],
+          [
+            292,
+            240
+          ]
+        ],
+        "flag_pos": [
+          246,
+          240
+        ],
+        "especies": "LiCl, NaCl, MgCl2, KCl, H2O",
+        "fase": "Líquido",
+        "temperatura_c": "15-25",
+        "presion_bar": "0,65-2",
+        "flujo_especifico": {
+          "estado": "sin_datos",
+          "valor": null,
+          "unidad": "m3/t LCE"
+        },
+        "nota_tecnica": "Alimenta directo la unidad DLE sin piletas previas de evaporación solar prolongada.",
+        "fuente_id": "riotinto-fenix-2026",
+        "cita_ubicacion": "riotinto.com/en/operations/south-america/fenix"
+      },
+      {
+        "numero": 2,
+        "nombre": "Salmuera filtrada a adsorción DLE",
+        "tipo": "proceso",
+        "origen_tag": "P-101",
+        "destino_tag": "T-101",
+        "puntos": [
+          [
+            344,
+            240
+          ],
+          [
+            478,
+            240
+          ]
+        ],
+        "flag_pos": [
+          410,
+          240
+        ],
+        "especies": "LiCl (~0,05-0,08% Li)",
+        "fase": "Líquido",
+        "temperatura_c": "30-50",
+        "presion_bar": "2-5",
+        "flujo_especifico": {
+          "estado": "sin_datos",
+          "valor": null,
+          "unidad": "m3/t LCE"
+        },
+        "nota_tecnica": "Paso continuo sobre el sorbente sólido.",
+        "fuente_id": "riotinto-fenix-2026",
+        "cita_ubicacion": "riotinto.com/en/operations/south-america/fenix"
+      },
+      {
+        "numero": 3,
+        "nombre": "Salmuera agotada en Li a retorno",
+        "tipo": "subproducto",
+        "origen_tag": "T-101",
+        "destino_tag": "V-101",
+        "puntos": [
+          [
+            502,
+            296
+          ],
+          [
+            502,
+            482
+          ]
+        ],
+        "flag_pos": [
+          502,
+          392
+        ],
+        "especies": "NaCl, MgCl2, KCl (Li depleted)",
+        "fase": "Líquido",
+        "temperatura_c": "25-40",
+        "presion_bar": "1,0",
+        "flujo_especifico": {
+          "estado": "sin_datos",
+          "valor": null,
+          "unidad": "m3/t LCE"
+        },
+        "nota_tecnica": "Conserva la mayor parte del balance de salmuera sin evaporar a atmósfera.",
+        "fuente_id": "riotinto-rincon-2026",
+        "cita_ubicacion": "riotinto.com/en/operations/south-america/rincon"
+      },
+      {
+        "numero": 4,
+        "nombre": "Eluato de LiCl purificado",
+        "tipo": "proceso",
+        "origen_tag": "T-101",
+        "destino_tag": "S-201",
+        "puntos": [
+          [
+            526,
+            240
+          ],
+          [
+            656,
+            240
+          ]
+        ],
+        "flag_pos": [
+          591,
+          240
+        ],
+        "especies": "LiCl diluido (bajo Mg/Na/K)",
+        "fase": "Líquido",
+        "temperatura_c": "35-55",
+        "presion_bar": "2-3",
+        "flujo_especifico": {
+          "estado": "dato",
+          "valor": 1.15,
+          "unidad": "t/t LCE"
+        },
+        "nota_tecnica": "Base anhidra 27,06 kmol LiCl/t LCE.",
+        "fuente_id": "riotinto-fenix-2026",
+        "cita_ubicacion": "riotinto.com/en/operations/south-america/fenix"
+      },
+      {
+        "numero": 5,
+        "nombre": "Reciclo de agua RO hacia elución DLE",
+        "tipo": "reciclo",
+        "origen_tag": "S-201",
+        "destino_tag": "T-101",
+        "puntos": [
+          [
+            684,
+            286
+          ],
+          [
+            684,
+            646
+          ],
+          [
+            426,
+            646
+          ],
+          [
+            426,
+            260
+          ],
+          [
+            478,
+            260
+          ]
+        ],
+        "flag_pos": [
+          576,
+          646
+        ],
+        "especies": "H2O permeada (<100 ppm STD)",
+        "fase": "Líquido",
+        "temperatura_c": "35-50",
+        "presion_bar": "3-5",
+        "flujo_especifico": {
+          "estado": "sin_datos",
+          "valor": null,
+          "unidad": "m3/t LCE"
+        },
+        "nota_tecnica": "Reduce drásticamente el consumo neto de agua dulce en el altiplano.",
+        "fuente_id": "riotinto-rincon-2026",
+        "cita_ubicacion": "riotinto.com/en/operations/south-america/rincon"
+      },
+      {
+        "numero": 6,
+        "nombre": "LiCl preconcentrado a pulido IX",
+        "tipo": "proceso",
+        "origen_tag": "S-201",
+        "destino_tag": "T-201",
+        "puntos": [
+          [
+            712,
+            240
+          ],
+          [
+            834,
+            240
+          ]
+        ],
+        "flag_pos": [
+          773,
+          240
+        ],
+        "especies": "LiCl + trazas Ca/Mg",
+        "fase": "Líquido",
+        "temperatura_c": "30-45",
+        "presion_bar": "2-3",
+        "flujo_especifico": {
+          "estado": "dato",
+          "valor": 1.15,
+          "unidad": "t/t LCE"
+        },
+        "nota_tecnica": "Pasa por lecho de intercambio iónico.",
+        "fuente_id": "riotinto-fenix-2026",
+        "cita_ubicacion": "riotinto.com/en/operations/south-america/fenix"
+      },
+      {
+        "numero": 7,
+        "nombre": "Eluato pulido a evaporación térmica",
+        "tipo": "proceso",
+        "origen_tag": "T-201",
+        "destino_tag": "V-201",
+        "puntos": [
+          [
+            858,
+            296
+          ],
+          [
+            858,
+            480
+          ]
+        ],
+        "flag_pos": [
+          858,
+          392
+        ],
+        "especies": "LiCl ultrapuro (<10 ppm Ca/Mg)",
+        "fase": "Líquido",
+        "temperatura_c": "40-50",
+        "presion_bar": "1,0",
+        "flujo_especifico": {
+          "estado": "dato",
+          "valor": 1.15,
+          "unidad": "t/t LCE"
+        },
+        "nota_tecnica": "Concentración final previa a carbonatación.",
+        "fuente_id": "riotinto-fenix-2026",
+        "cita_ubicacion": "riotinto.com/en/operations/south-america/fenix"
+      },
+      {
+        "numero": 8,
+        "nombre": "LiCl concentrado a reactor R-301",
+        "tipo": "proceso",
+        "origen_tag": "V-201",
+        "destino_tag": "R-301",
+        "puntos": [
+          [
+            886,
+            515
+          ],
+          [
+            964,
+            515
+          ],
+          [
+            964,
+            240
+          ],
+          [
+            1010,
+            240
+          ]
+        ],
+        "flag_pos": [
+          964,
+          388
+        ],
+        "especies": "LiCl concentrado",
+        "fase": "Líquido",
+        "temperatura_c": "75-90",
+        "presion_bar": "1,0",
+        "flujo_especifico": {
+          "estado": "dato",
+          "valor": 1.15,
+          "unidad": "t/t LCE"
+        },
+        "nota_tecnica": "27,06 kmol LiCl hacia precipitación con ceniza de soda.",
+        "fuente_id": "usgs-mcs-2025-litio",
+        "cita_ubicacion": "USGS MCS 2025 pág. 110"
+      },
+      {
+        "numero": 9,
+        "nombre": "Pulpa de cristales Li2CO3",
+        "tipo": "proceso",
+        "origen_tag": "R-301",
+        "destino_tag": "D-301",
+        "puntos": [
+          [
+            1078,
+            240
+          ],
+          [
+            1188,
+            240
+          ]
+        ],
+        "flag_pos": [
+          1133,
+          240
+        ],
+        "especies": "Li2CO3 (s) + NaCl (ac)",
+        "fase": "Bifásico",
+        "temperatura_c": "85-95",
+        "presion_bar": "1,0",
+        "flujo_especifico": {
+          "estado": "sin_datos",
+          "valor": null,
+          "unidad": "t/t LCE"
+        },
+        "nota_tecnica": "Separación centrífuga con reciclo de aguas madres a planta.",
+        "fuente_id": "riotinto-fenix-2026",
+        "cita_ubicacion": "riotinto.com/en/operations/south-america/fenix"
+      },
+      {
+        "numero": 10,
+        "nombre": "Torta húmeda de Li2CO3 a secado",
+        "tipo": "proceso",
+        "origen_tag": "D-301",
+        "destino_tag": "F-401",
+        "puntos": [
+          [
+            1272,
+            240
+          ],
+          [
+            1382,
+            240
+          ]
+        ],
+        "flag_pos": [
+          1327,
+          240
+        ],
+        "especies": "Li2CO3 lavado (>99,5% b.s.)",
+        "fase": "Sólido",
+        "temperatura_c": "70-85",
+        "presion_bar": "1,0",
+        "flujo_especifico": {
+          "estado": "dato",
+          "valor": 1.07,
+          "unidad": "t/t LCE"
+        },
+        "nota_tecnica": "Humedad residual evaporada en F-401.",
+        "fuente_id": "riotinto-fenix-2026",
+        "cita_ubicacion": "riotinto.com/en/operations/south-america/fenix"
+      },
+      {
+        "numero": 11,
+        "nombre": "Carbonato de litio grado batería (DLE)",
+        "tipo": "proceso",
+        "origen_tag": "F-401",
+        "destino_tag": "G-401",
+        "puntos": [
+          [
+            1418,
+            276
+          ],
+          [
+            1418,
+            515
+          ],
+          [
+            1512,
+            515
+          ]
+        ],
+        "flag_pos": [
+          1418,
+          405
+        ],
+        "especies": "Li2CO3 (>=99,5% masa)",
+        "fase": "Sólido",
+        "temperatura_c": "35-50",
+        "presion_bar": "1,0",
+        "flujo_especifico": {
+          "estado": "dato",
+          "valor": 1,
+          "unidad": "t/t LCE"
+        },
+        "nota_tecnica": "1,00 t = 13,53 kmol Li2CO3.",
+        "fuente_id": "usgs-mcs-2025-litio",
+        "cita_ubicacion": "USGS MCS 2025 pág. 110"
+      },
+      {
+        "numero": 12,
+        "nombre": "Li2CO3 en big-bags (Fénix / Rincón)",
+        "tipo": "proceso",
+        "origen_tag": "G-401",
+        "destino_tag": null,
+        "puntos": [
+          [
+            1608,
+            515
+          ],
+          [
+            1672,
+            515
+          ]
+        ],
+        "flag_pos": [
+          1640,
+          515
+        ],
+        "especies": "Li2CO3 (18,79% Li contenido)",
+        "fase": "Sólido",
+        "temperatura_c": "25",
+        "presion_bar": "1,0",
+        "flujo_especifico": {
+          "estado": "dato",
+          "valor": 1,
+          "unidad": "t/t LCE"
+        },
+        "nota_tecnica": "Despachado desde Catamarca (Fénix) y Salta (Rincón).",
+        "fuente_id": "riotinto-rincon-2026",
+        "cita_ubicacion": "riotinto.com/en/operations/south-america/rincon"
+      }
+    ],
+    "servicios": [
+      {
+        "id": "dle-ro-vap",
+        "equipo_tag": "V-201",
+        "etiqueta": "Vapor conc.",
+        "direccion": "entrada",
+        "x": 858,
+        "y": 552,
+        "dx": 0,
+        "dy": 44
+      },
+      {
+        "id": "dle-soda-r301",
+        "equipo_tag": "R-301",
+        "etiqueta": "Na2CO3 (1,434 t/t)",
+        "direccion": "entrada",
+        "x": 1044,
+        "y": 192,
+        "dx": 0,
+        "dy": -46
+      },
+      {
+        "id": "dle-agua-d301",
+        "equipo_tag": "D-301",
+        "etiqueta": "Agua lavado 85 °C",
+        "direccion": "entrada",
+        "x": 1228,
+        "y": 204,
+        "dx": 0,
+        "dy": -44
+      }
+    ],
+    "limites_bateria": [
+      {
+        "id": "dle-in-salmuera",
+        "lado": "entrada",
+        "categoria": "materia_prima",
+        "nombre": "Salmuera cruda (sin piletas largas)",
+        "formula": "LiCl (Fénix / Rincón)",
+        "cantidad_masa": "s/d m3 / t LCE",
+        "cantidad_molar": "27,06 kmol Li+ / t",
+        "fraccion_pureza": "Procesamiento en horas",
+        "corriente_num": 1,
+        "y": 196,
+        "nota": "La salmuera agotada vuelve al salar reduciendo huella hídrica.",
+        "fuente_id": "riotinto-fenix-2026"
+      },
+      {
+        "id": "dle-in-soda",
+        "lado": "entrada",
+        "categoria": "materia_prima",
+        "nombre": "Ceniza de soda (Na2CO3)",
+        "formula": "Na2CO3",
+        "cantidad_masa": ">= 1,434 t / t LCE",
+        "cantidad_molar": ">= 13,53 kmol / t",
+        "fraccion_pureza": "Menor purga Ca/Mg por DLE",
+        "corriente_num": 8,
+        "y": 356,
+        "nota": "Estequiométrico mínimo para carbonatación.",
+        "fuente_id": "usgs-mcs-2025-litio"
+      },
+      {
+        "id": "dle-out-agotada",
+        "lado": "salida",
+        "categoria": "subproducto",
+        "nombre": "Salmuera agotada + NaCl",
+        "formula": "NaCl + retorno salar",
+        "cantidad_masa": "s/d m3 + >=1,58 t NaCl/t",
+        "cantidad_molar": ">= 27,06 kmol NaCl / t",
+        "fraccion_pureza": "Sin tortas masivas Mg/Ca",
+        "corriente_num": 3,
+        "y": 196,
+        "nota": "Ventaja distintiva del DLE respecto a evaporación solar.",
+        "fuente_id": "riotinto-rincon-2026"
+      },
+      {
+        "id": "dle-out-lce",
+        "lado": "salida",
+        "categoria": "producto",
+        "nombre": "Carbonato de litio DLE",
+        "formula": "Li2CO3",
+        "cantidad_masa": "1,000 t / t LCE",
+        "cantidad_molar": "13,53 kmol / t LCE",
+        "fraccion_pureza": ">=99,5% LCE · 18,79% Li",
+        "corriente_num": 12,
+        "y": 440,
+        "nota": "Fénix (Catamarca) 32 ktpa + Rincón (Salta) 3 -> 60 ktpa.",
+        "fuente_id": "riotinto-fenix-2026"
+      }
+    ]
+  },
+  {
+    "proceso_id": "petroquimica-cloro-alcali-pvc",
+    "producto_id": "petroquimica",
+    "titulo": "PFD: Electrólisis Cloro-Álcali (Membrana), EDC, MVC y Polimerización a PVC (Unipar Bahía Blanca)",
+    "norma_simbologia": "ISO 10628 / ASME",
+    "base_calculo": "1,00 t de resina PVC (16,00 kmol unidad -C2H3Cl-) en Complejo Unipar Bahía Blanca",
+    "resumen_tecnico": "Complejo cloro-álcali y vinílico de Unipar Indupa en Bahía Blanca: electrólisis de salmuera NaCl ultrapura en celdas de membrana (generando Cl2, soda cáustica NaOH al 32->50% e hidrógeno H2), cloración directa y oxicloración de etileno proveniente del Polo Bahía Blanca hacia EDC, craqueo de EDC a monómero MVC con reciclo cerrado de HCl y polimerización en suspensión a PVC.",
+    "nota_metodologica": "Consumo específico de celdas de membrana (2,5 MWh DC / t Cl2 o ECU) y estequiometría según EU Chlor-Alkali BREF (CAK). Planta operada por Unipar Indupa en Bahía Blanca.",
+    "canvas_width": 1880,
+    "canvas_height": 760,
+    "secciones": [
+      {
+        "area_id": "area-100",
+        "titulo": "Área 100 · Electrólisis Cloro-Álcali",
+        "x": 224,
+        "y": 40,
+        "width": 352,
+        "height": 665
+      },
+      {
+        "area_id": "area-200",
+        "titulo": "Área 200 · Evaporación NaOH y Síntesis EDC",
+        "x": 594,
+        "y": 40,
+        "width": 338,
+        "height": 665
+      },
+      {
+        "area_id": "area-300",
+        "titulo": "Área 300 · Pirólisis EDC -> MVC",
+        "x": 950,
+        "y": 40,
+        "width": 356,
+        "height": 665
+      },
+      {
+        "area_id": "area-400",
+        "titulo": "Área 400 · Polimerización y Secado PVC",
+        "x": 1324,
+        "y": 40,
+        "width": 332,
+        "height": 665
+      }
+    ],
+    "equipos": [
+      {
+        "tag": "T-101",
+        "nombre": "Purificación salmuera (Ca/Mg)",
+        "simbolo": "column",
+        "area_id": "area-100",
+        "x": 318,
+        "y": 240,
+        "temperatura_op": "60-70 °C",
+        "presion_op": "1,0 bar",
+        "reaccion": null,
+        "condicion_critica": "Ca/Mg < 20 ppb",
+        "descripcion": "Disolución de NaCl, precipitación química y pulido con resinas quelantes para proteger las membranas.",
+        "fuente_id": "eu-bref-chlor-alkali",
+        "cita_ubicacion": "EU CAK BREF: membrane brine purification (<20 ppb Ca+Mg)"
+      },
+      {
+        "tag": "C-101",
+        "nombre": "Celdas de membrana (Cl2/NaOH)",
+        "simbolo": "electrolytic_cell",
+        "area_id": "area-100",
+        "x": 502,
+        "y": 240,
+        "temperatura_op": "85-90 °C",
+        "presion_op": "1,1 bar",
+        "reaccion": "2 NaCl + 2 H2O -> Cl2 + 2 NaOH + H2",
+        "condicion_critica": "2,5 MWh/t Cl2",
+        "descripcion": "Electrólisis BAT sin mercurio: produce Cl2 en ánodo y soda cáustica al 32% + hidrógeno H2 en cátodo.",
+        "fuente_id": "eu-bref-chlor-alkali",
+        "cita_ubicacion": "EU CAK BREF: membrane cells (2,5-3,0 MWh DC / t Cl2)"
+      },
+      {
+        "tag": "V-201",
+        "nombre": "Evaporadores soda cáustica 50%",
+        "simbolo": "separator",
+        "area_id": "area-200",
+        "x": 684,
+        "y": 515,
+        "temperatura_op": "90-135 °C",
+        "presion_op": "0,2-1,0 bar",
+        "reaccion": null,
+        "condicion_critica": "NaOH 50% comercial",
+        "descripcion": "Concentra la soda cáustica desde 32% hasta solución comercial estándar del 50% en peso para la industria química/papelera/alúmina.",
+        "fuente_id": "eu-bref-chlor-alkali",
+        "cita_ubicacion": "EU CAK BREF: caustic soda concentration to 50%"
+      },
+      {
+        "tag": "R-201",
+        "nombre": "Cloración directa y oxiclor. EDC",
+        "simbolo": "reactor",
+        "area_id": "area-200",
+        "x": 760,
+        "y": 240,
+        "temperatura_op": "50-240 °C",
+        "presion_op": "1,5-5,0 bar",
+        "reaccion": "C2H4 + Cl2 -> C2H4Cl2",
+        "condicion_critica": "EDC C2H4Cl2",
+        "descripcion": "Combina Cl2 fresco y el HCl reciclado del cracker con etileno del Polo Bahía Blanca para producir 1,2-dicloroetano (EDC).",
+        "fuente_id": "unipar-acerca-2026",
+        "cita_ubicacion": "unipar.com/es/acerca-de-unipar (unidad integrada cloro -> PVC Bahía Blanca)"
+      },
+      {
+        "tag": "F-301",
+        "nombre": "Horno de pirólisis EDC -> MVC",
+        "simbolo": "furnace",
+        "area_id": "area-300",
+        "x": 1044,
+        "y": 240,
+        "temperatura_op": "480-520 °C",
+        "presion_op": "20-26 bar",
+        "reaccion": "C2H4Cl2 -> C2H3Cl + HCl",
+        "condicion_critica": "TC 500 °C",
+        "descripcion": "Craqueo térmico en fase gas del EDC purificado formando monómero cloruro de vinilo (MVC) y cloruro de hidrógeno anhidro.",
+        "fuente_id": "eu-bref-lvoc-2017",
+        "cita_ubicacion": "EU LVOC BREF (2017): EDC cracking to VCM"
+      },
+      {
+        "tag": "T-301",
+        "nombre": "Destilación MVC y reciclo HCl",
+        "simbolo": "column",
+        "area_id": "area-300",
+        "x": 1228,
+        "y": 240,
+        "temperatura_op": "-20 a 110 °C",
+        "presion_op": "5-12 bar",
+        "reaccion": null,
+        "condicion_critica": "Reciclo HCl 100%",
+        "descripcion": "Separa por destilación el HCl anhidro (reciclado a oxicloración), MVC grado polímero y EDC no convertido.",
+        "fuente_id": "eu-bref-lvoc-2017",
+        "cita_ubicacion": "EU LVOC BREF (2017): VCM distillation & HCl recycle"
+      },
+      {
+        "tag": "R-401",
+        "nombre": "Autoclaves polimerización PVC",
+        "simbolo": "reactor",
+        "area_id": "area-400",
+        "x": 1418,
+        "y": 240,
+        "temperatura_op": "50-70 °C",
+        "presion_op": "7-12 bar",
+        "reaccion": "n C2H3Cl -> -(CH2-CHCl)n-",
+        "condicion_critica": "Suspensión acuosa",
+        "descripcion": "Polimerización por radicales libres en suspensión de MVC líquido disperso en agua desmineralizada.",
+        "fuente_id": "unipar-acerca-2026",
+        "cita_ubicacion": "unipar.com/es/acerca-de-unipar"
+      },
+      {
+        "tag": "D-401",
+        "nombre": "Centrífuga y secado resina PVC",
+        "simbolo": "dryer_bed",
+        "area_id": "area-400",
+        "x": 1560,
+        "y": 515,
+        "temperatura_op": "60-85 °C",
+        "presion_op": "1,0 bar",
+        "reaccion": null,
+        "condicion_critica": "HS 3904.10",
+        "descripcion": "Despojamiento de monómero residual por debajo de norma sanitaria, deshidratación centrífuga y secado en lecho fluidizado.",
+        "fuente_id": "unipar-acerca-2026",
+        "cita_ubicacion": "unipar.com/es/acerca-de-unipar y UN Comtrade HS 390410"
+      }
+    ],
+    "corrientes": [
+      {
+        "numero": 1,
+        "nombre": "Sal industrial purificada (NaCl)",
+        "tipo": "proceso",
+        "origen_tag": null,
+        "destino_tag": "T-101",
+        "puntos": [
+          [
+            206,
+            240
+          ],
+          [
+            294,
+            240
+          ]
+        ],
+        "flag_pos": [
+          248,
+          240
+        ],
+        "especies": "NaCl + H2O saturada",
+        "fase": "Líquido",
+        "temperatura_c": "60-70",
+        "presion_bar": "1,0",
+        "flujo_especifico": {
+          "estado": "dato",
+          "valor": 0.96,
+          "unidad": "t NaCl/t PVC"
+        },
+        "nota_tecnica": "Equivalente estequiométrico para generar el 0,58 t Cl2 requeridas por tonelada de PVC (~16,4 kmol NaCl).",
+        "fuente_id": "eu-bref-chlor-alkali",
+        "cita_ubicacion": "EU CAK BREF: 1,66 t NaCl/t Cl2 * 0,58 t Cl2/t PVC"
+      },
+      {
+        "numero": 2,
+        "nombre": "Salmuera ultrapura (<20 ppb Ca/Mg)",
+        "tipo": "proceso",
+        "origen_tag": "T-101",
+        "destino_tag": "C-101",
+        "puntos": [
+          [
+            342,
+            240
+          ],
+          [
+            458,
+            240
+          ]
+        ],
+        "flag_pos": [
+          400,
+          240
+        ],
+        "especies": "NaCl (~300 g/L)",
+        "fase": "Líquido",
+        "temperatura_c": "65",
+        "presion_bar": "1,1",
+        "flujo_especifico": {
+          "estado": "dato",
+          "valor": 0.96,
+          "unidad": "t NaCl/t PVC"
+        },
+        "nota_tecnica": "Salmuera agotada de retorno se re-satura en lazo cerrado.",
+        "fuente_id": "eu-bref-chlor-alkali",
+        "cita_ubicacion": "EU CAK BREF"
+      },
+      {
+        "numero": 3,
+        "nombre": "Cloro gaseoso (Cl2) hacia síntesis EDC",
+        "tipo": "proceso",
+        "origen_tag": "C-101",
+        "destino_tag": "R-201",
+        "puntos": [
+          [
+            546,
+            240
+          ],
+          [
+            728,
+            240
+          ]
+        ],
+        "flag_pos": [
+          637,
+          240
+        ],
+        "especies": "Cl2 seco (~99,5% mol)",
+        "fase": "Gas",
+        "temperatura_c": "35-60",
+        "presion_bar": "1,5-4",
+        "flujo_especifico": {
+          "estado": "dato",
+          "valor": 0.58,
+          "unidad": "t/t PVC"
+        },
+        "nota_tecnica": "Equivale a 8,18 kmol Cl2/t PVC.",
+        "fuente_id": "eu-bref-chlor-alkali",
+        "cita_ubicacion": "EU CAK BREF"
+      },
+      {
+        "numero": 4,
+        "nombre": "Soda cáustica NaOH 32% a evaporación",
+        "tipo": "subproducto",
+        "origen_tag": "C-101",
+        "destino_tag": "V-201",
+        "puntos": [
+          [
+            502,
+            274
+          ],
+          [
+            502,
+            515
+          ],
+          [
+            656,
+            515
+          ]
+        ],
+        "flag_pos": [
+          576,
+          515
+        ],
+        "especies": "NaOH (32% masa) + H2O",
+        "fase": "Líquido",
+        "temperatura_c": "85-90",
+        "presion_bar": "1,1",
+        "flujo_especifico": {
+          "estado": "dato",
+          "valor": 0.65,
+          "unidad": "t NaOH 100%/t PVC"
+        },
+        "nota_tecnica": "Coproducto estequiométrico fijo (1,13 t NaOH por t Cl2 = 16,3 kmol NaOH/t PVC).",
+        "fuente_id": "eu-bref-chlor-alkali",
+        "cita_ubicacion": "EU CAK BREF (ECU stoichiometric ratio 1:1,1)"
+      },
+      {
+        "numero": 5,
+        "nombre": "Soda cáustica comercial (NaOH 50%)",
+        "tipo": "subproducto",
+        "origen_tag": "V-201",
+        "destino_tag": null,
+        "puntos": [
+          [
+            712,
+            515
+          ],
+          [
+            1672,
+            515
+          ]
+        ],
+        "flag_pos": [
+          1232,
+          515
+        ],
+        "especies": "NaOH solución 50% en masa",
+        "fase": "Líquido",
+        "temperatura_c": "40-50",
+        "presion_bar": "1,0",
+        "flujo_especifico": {
+          "estado": "dato",
+          "valor": 0.65,
+          "unidad": "t NaOH 100%/t PVC"
+        },
+        "nota_tecnica": "Coproducto estratégico comercializado por Unipar Indupa para industria local.",
+        "fuente_id": "unipar-acerca-2026",
+        "cita_ubicacion": "unipar.com/es/acerca-de-unipar"
+      },
+      {
+        "numero": 6,
+        "nombre": "Dicloroetano (EDC) hacia craqueo térmico",
+        "tipo": "proceso",
+        "origen_tag": "R-201",
+        "destino_tag": "F-301",
+        "puntos": [
+          [
+            792,
+            240
+          ],
+          [
+            1006,
+            240
+          ]
+        ],
+        "flag_pos": [
+          899,
+          240
+        ],
+        "especies": "C2H4Cl2 (>99,5% masa)",
+        "fase": "Líquido",
+        "temperatura_c": "60-90",
+        "presion_bar": "20-26",
+        "flujo_especifico": {
+          "estado": "dato",
+          "valor": 1.6,
+          "unidad": "t/t PVC"
+        },
+        "nota_tecnica": "16,17 kmol EDC/t PVC (combinando cloración directa y oxicloración).",
+        "fuente_id": "eu-bref-lvoc-2017",
+        "cita_ubicacion": "EU LVOC BREF (2017)"
+      },
+      {
+        "numero": 7,
+        "nombre": "Gas craqueado MVC + HCl a destilación",
+        "tipo": "proceso",
+        "origen_tag": "F-301",
+        "destino_tag": "T-301",
+        "puntos": [
+          [
+            1082,
+            240
+          ],
+          [
+            1204,
+            240
+          ]
+        ],
+        "flag_pos": [
+          1143,
+          240
+        ],
+        "especies": "C2H3Cl, HCl, EDC sin convertir",
+        "fase": "Bifásico",
+        "temperatura_c": "500 -> 150",
+        "presion_bar": "18-24",
+        "flujo_especifico": {
+          "estado": "dato",
+          "valor": 1.6,
+          "unidad": "t/t PVC"
+        },
+        "nota_tecnica": "Enfriado rápidamente por quench de EDC.",
+        "fuente_id": "eu-bref-lvoc-2017",
+        "cita_ubicacion": "EU LVOC BREF (2017)"
+      },
+      {
+        "numero": 8,
+        "nombre": "Reciclo cerrado de HCl anhidro",
+        "tipo": "reciclo",
+        "origen_tag": "T-301",
+        "destino_tag": "R-201",
+        "puntos": [
+          [
+            1228,
+            296
+          ],
+          [
+            1228,
+            430
+          ],
+          [
+            760,
+            430
+          ],
+          [
+            760,
+            286
+          ]
+        ],
+        "flag_pos": [
+          994,
+          430
+        ],
+        "especies": "HCl gaseoso anhidro",
+        "fase": "Gas",
+        "temperatura_c": "-10 a 30",
+        "presion_bar": "6-10",
+        "flujo_especifico": {
+          "estado": "dato",
+          "valor": 0.59,
+          "unidad": "t/t PVC"
+        },
+        "nota_tecnica": "16,17 kmol HCl recuperado e integrado a oxicloración con etileno + O2.",
+        "fuente_id": "eu-bref-lvoc-2017",
+        "cita_ubicacion": "EU LVOC BREF (2017): balanced EDC/VCM HCl recycle"
+      },
+      {
+        "numero": 9,
+        "nombre": "Monómero Cloruro de Vinilo (MVC)",
+        "tipo": "proceso",
+        "origen_tag": "T-301",
+        "destino_tag": "R-401",
+        "puntos": [
+          [
+            1252,
+            240
+          ],
+          [
+            1386,
+            240
+          ]
+        ],
+        "flag_pos": [
+          1319,
+          240
+        ],
+        "especies": "C2H3Cl (>99,9% masa)",
+        "fase": "Líquido",
+        "temperatura_c": "25-40",
+        "presion_bar": "7-12",
+        "flujo_especifico": {
+          "estado": "dato",
+          "valor": 1.01,
+          "unidad": "t/t PVC"
+        },
+        "nota_tecnica": "16,16 kmol MVC para producir 1,00 t de resina PVC.",
+        "fuente_id": "unipar-acerca-2026",
+        "cita_ubicacion": "unipar.com/es/acerca-de-unipar"
+      },
+      {
+        "numero": 10,
+        "nombre": "Suspensión acuosa de PVC",
+        "tipo": "proceso",
+        "origen_tag": "R-401",
+        "destino_tag": "D-401",
+        "puntos": [
+          [
+            1418,
+            286
+          ],
+          [
+            1418,
+            456
+          ],
+          [
+            1560,
+            456
+          ],
+          [
+            1560,
+            485
+          ]
+        ],
+        "flag_pos": [
+          1488,
+          456
+        ],
+        "especies": "Polímero PVC en agua desmin.",
+        "fase": "Bifásico",
+        "temperatura_c": "60-80",
+        "presion_bar": "1,0",
+        "flujo_especifico": {
+          "estado": "dato",
+          "valor": 1,
+          "unidad": "t/t PVC"
+        },
+        "nota_tecnica": "Pasa por columna de stripping de MVC residual antes de centrifugar.",
+        "fuente_id": "unipar-acerca-2026",
+        "cita_ubicacion": "unipar.com/es/acerca-de-unipar"
+      },
+      {
+        "numero": 11,
+        "nombre": "Resina PVC en polvo (HS 3904.10)",
+        "tipo": "proceso",
+        "origen_tag": "D-401",
+        "destino_tag": null,
+        "puntos": [
+          [
+            1596,
+            515
+          ],
+          [
+            1672,
+            515
+          ]
+        ],
+        "flag_pos": [
+          1634,
+          515
+        ],
+        "especies": "-(CH2-CHCl)n- (>99,5% resina)",
+        "fase": "Sólido",
+        "temperatura_c": "35-45",
+        "presion_bar": "1,0",
+        "flujo_especifico": {
+          "estado": "dato",
+          "valor": 1,
+          "unidad": "t/t PVC"
+        },
+        "nota_tecnica": "Base 1,00 t = 16,00 kmol unidad monomérica; despacho de Unipar Bahía Blanca.",
+        "fuente_id": "uncomtrade-ar-lote2-ind-2024",
+        "cita_ubicacion": "UN Comtrade HS 390410 (2024) y Unipar Bahía Blanca"
+      }
+    ],
+    "servicios": [
+      {
+        "id": "pvc-dc-c101",
+        "equipo_tag": "C-101",
+        "etiqueta": "2,5 MWh/t Cl2 (DC) -> H2",
+        "direccion": "entrada",
+        "x": 502,
+        "y": 206,
+        "dx": 0,
+        "dy": -46
+      },
+      {
+        "id": "pvc-c2h4-r201",
+        "equipo_tag": "R-201",
+        "etiqueta": "C2H4 (0,46 t/t) + O2",
+        "direccion": "entrada",
+        "x": 760,
+        "y": 192,
+        "dx": 0,
+        "dy": -46
+      },
+      {
+        "id": "pvc-h2o-r401",
+        "equipo_tag": "R-401",
+        "etiqueta": "H2O desmin. + iniciad.",
+        "direccion": "entrada",
+        "x": 1418,
+        "y": 192,
+        "dx": 0,
+        "dy": -46
+      }
+    ],
+    "limites_bateria": [
+      {
+        "id": "pvc-in-sal",
+        "lado": "entrada",
+        "categoria": "materia_prima",
+        "nombre": "Sal industrial + Electricidad DC",
+        "formula": "NaCl + 2,5 MWh/t Cl2",
+        "cantidad_masa": "0,96 t NaCl / t PVC",
+        "cantidad_molar": "16,42 kmol NaCl / t",
+        "fraccion_pureza": "Celdas de membrana BAT",
+        "corriente_num": 1,
+        "y": 196,
+        "nota": "Electrólisis cloro-álcali libre de mercurio en Unipar Bahía Blanca.",
+        "fuente_id": "eu-bref-chlor-alkali"
+      },
+      {
+        "id": "pvc-in-etileno",
+        "lado": "entrada",
+        "categoria": "materia_prima",
+        "nombre": "Etileno (Polo Bahía Blanca)",
+        "formula": "C2H4 (28,05 kg/kmol)",
+        "cantidad_masa": "0,46 t / t PVC",
+        "cantidad_molar": "16,40 kmol C2H4 / t",
+        "fraccion_pureza": ">99,9% grado polímero",
+        "corriente_num": 6,
+        "y": 356,
+        "nota": "Sinergia directa dentro del mismo polo petroquímico de Bahía Blanca.",
+        "fuente_id": "unipar-acerca-2026"
+      },
+      {
+        "id": "pvc-out-naoh",
+        "lado": "salida",
+        "categoria": "subproducto",
+        "nombre": "Soda cáustica (NaOH 50%) + H2",
+        "formula": "NaOH + H2",
+        "cantidad_masa": "0,65 t NaOH 100% + 0,016 t H2",
+        "cantidad_molar": "16,3 + 8,1 kmol / t PVC",
+        "fraccion_pureza": "Solución comercial 50%",
+        "corriente_num": 5,
+        "y": 196,
+        "nota": "Coproductos fijos de cada Unidad Electroquímica ECU.",
+        "fuente_id": "eu-bref-chlor-alkali"
+      },
+      {
+        "id": "pvc-out-pvc",
+        "lado": "salida",
+        "categoria": "producto",
+        "nombre": "Policloruro de Vinilo (PVC)",
+        "formula": "-(CH2-CHCl)n-",
+        "cantidad_masa": "1,000 t / t PVC",
+        "cantidad_molar": "16,00 kmol MVC / t",
+        "fraccion_pureza": "Resina suspensión HS 3904",
+        "corriente_num": 11,
+        "y": 440,
+        "nota": "Unipar Indupa es el principal productor de PVC y cloro-soda del país.",
+        "fuente_id": "unipar-acerca-2026"
+      }
+    ]
   }
 ]
