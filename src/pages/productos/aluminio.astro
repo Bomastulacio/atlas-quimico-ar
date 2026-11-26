@@ -53,6 +53,7 @@ const citedFuenteIds = new Set<string>([
   ...ficha.procesos.map((p) => p.proceso.procedencia.fuente_id),
   ...ficha.procesos.flatMap((p) => p.pasos.map((s) => s.procedencia.fuente_id)),
   ...ficha.procesos.flatMap((p) => p.conexiones.map((c) => c.procedencia.fuente_id)),
+  ...ficha.procesos.flatMap((p) => Object.keys(p.pfdFuentes)),
   ...ficha.plantas.map((pl) => pl.procedencia.fuente_id),
   ...ficha.plantas
     .map((pl) => pl.empresa?.procedencia.fuente_id)

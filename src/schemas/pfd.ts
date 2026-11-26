@@ -16,6 +16,12 @@ export const PfdSimboloEquipoSchema = z.enum([
   'granulator',
   'extruder',
   'dryer_bed',
+  'electrolytic_cell',
+  'filter_baghouse',
+  'solar_pond',
+  'centrifuge',
+  'extractor',
+  'mill_gin',
 ]);
 
 export type PfdSimboloEquipo = z.infer<typeof PfdSimboloEquipoSchema>;

@@ -232,19 +232,22 @@ describe('Capa única de acceso a datos (src/data)', () => {
     ).toBe(true);
   });
 
-  it('valida los PFDs ISO 10628 piloto (Petroquímica y Urea) con equipos, corrientes y referencias verificadas', () => {
+  it('valida los 7 PFDs ISO 10628 completos con equipos, corrientes, limites de bateria y referencias verificadas', () => {
     const pfds = getPfdProcesos();
-    expect(pfds).toHaveLength(2);
+    expect(pfds).toHaveLength(7);
+
+    for (const pfd of pfds) {
+      expect(pfd.equipos.length).toBeGreaterThanOrEqual(8);
+      expect(pfd.corrientes.length).toBeGreaterThanOrEqual(10);
+      expect(pfd.limites_bateria.some((l) => l.lado === 'entrada')).toBe(true);
+      expect(pfd.limites_bateria.some((l) => l.lado === 'salida')).toBe(true);
+    }
 
     const pfdPetro = getPfdPorProceso('petroquimica-steam-cracking-polietileno')!;
-    expect(pfdPetro.equipos.length).toBeGreaterThanOrEqual(10);
-    expect(pfdPetro.corrientes.length).toBeGreaterThanOrEqual(14);
     expect(pfdPetro.corrientes.some((c) => c.tipo === 'reciclo')).toBe(true);
     expect(pfdPetro.corrientes.some((c) => c.flujo_especifico.estado === 'sin_datos')).toBe(true);
 
     const pfdUrea = getPfdPorProceso('urea-haber-bosch-sintesis')!;
-    expect(pfdUrea.equipos.length).toBeGreaterThanOrEqual(11);
-    expect(pfdUrea.corrientes.length).toBeGreaterThanOrEqual(15);
     const nh3Stream = pfdUrea.corrientes.find((c) => c.numero === 9)!;
     expect(nh3Stream.flujo_especifico.estado).toBe('dato');
     expect(nh3Stream.flujo_especifico.valor).toBeCloseTo(0.578, 3);

@@ -240,6 +240,77 @@ export function PfdEquipmentSymbol({
         </g>
       );
 
+    case 'electrolytic_cell':
+      // Cuba electrolítica Hall-Héroult con barra colectora DC, ánodos colgantes y baño fundido
+      return (
+        <g>
+          <rect x={-44} y={-8} width={88} height={42} fill={fill} stroke={stroke} strokeWidth={sw} />
+          <line x1={-40} y1={16} x2={40} y2={16} stroke={selected ? '#0A42E0' : '#C86A11'} strokeWidth={1.6} />
+          <line x1={-36} y1={-32} x2={36} y2={-32} stroke={stroke} strokeWidth={2.2} />
+          {[-22, 0, 22].map((ax) => (
+            <g key={ax}>
+              <line x1={ax} y1={-32} x2={ax} y2={-16} stroke={stroke} strokeWidth={1.5} />
+              <rect x={ax - 8} y={-16} width={16} height={24} fill="#E2E3E0" stroke={stroke} strokeWidth={1.2} />
+            </g>
+          ))}
+        </g>
+      );
+
+    case 'filter_baghouse':
+      // Centro de tratamiento de gases seco (GTC) / filtro de mangas con tolva cónica
+      return (
+        <g>
+          <path d="M -32 -34 L 32 -34 L 32 8 L 12 36 L -12 36 L -32 8 Z" fill={fill} stroke={stroke} strokeWidth={sw} />
+          <line x1={-32} y1={-16} x2={32} y2={-16} stroke={detailStroke} strokeWidth={1.2} />
+          {[-18, -6, 6, 18].map((bx) => (
+            <rect key={bx} x={bx - 3} y={-16} width={6} height={22} fill="none" stroke={detailStroke} strokeWidth={1.1} />
+          ))}
+        </g>
+      );
+
+    case 'solar_pond':
+      // Piletas de evaporación solar en batería escalonada
+      return (
+        <g>
+          <polygon points="-44,24 -34,-12 34,-12 44,24" fill={fill} stroke={stroke} strokeWidth={sw} />
+          <line x1={-36} y1={4} x2={36} y2={4} stroke={selected ? '#0A42E0' : '#0B7A53'} strokeWidth={1.5} />
+          <path d="M -22 -24 L -16 -32 L -10 -24 M -4 -24 L 2 -32 L 8 -24 M 14 -24 L 20 -32 L 26 -24" fill="none" stroke={detailStroke} strokeWidth={1.2} />
+        </g>
+      );
+
+    case 'centrifuge':
+      // Centrífuga / decantador mecánico continuo
+      return (
+        <g>
+          <path d="M -38 -18 L 18 -18 L 40 -6 L 40 6 L 18 18 L -38 18 Z" fill={fill} stroke={stroke} strokeWidth={sw} />
+          <line x1={-46} y1={0} x2={46} y2={0} stroke={detailStroke} strokeWidth={1.1} strokeDasharray="4 3" />
+          <circle cx={-10} cy={0} r={10} fill="none" stroke={detailStroke} strokeWidth={1.2} />
+        </g>
+      );
+
+    case 'extractor':
+      // Extractor sólido-líquido continuo en contracorriente
+      return (
+        <g>
+          <rect x={-44} y={-24} width={88} height={48} fill={fill} stroke={stroke} strokeWidth={sw} />
+          <line x1={-44} y1={0} x2={44} y2={0} stroke={detailStroke} strokeWidth={1.2} strokeDasharray="5 3" />
+          {[-24, 0, 24].map((sx) => (
+            <line key={sx} x1={sx} y1={-24} x2={sx} y2={24} stroke={detailStroke} strokeWidth={1} opacity={0.65} />
+          ))}
+        </g>
+      );
+
+    case 'mill_gin':
+      // Molino quebrador / laminador / desmotadora con rodillos y sierras
+      return (
+        <g>
+          <polygon points="-34,-30 34,-30 22,0 22,28 -22,28 -22,0" fill={fill} stroke={stroke} strokeWidth={sw} />
+          <circle cx={-10} cy={-8} r={8} fill="none" stroke={stroke} strokeWidth={1.3} />
+          <circle cx={10} cy={-8} r={8} fill="none" stroke={stroke} strokeWidth={1.3} />
+          <line x1={-14} y1={14} x2={14} y2={14} stroke={detailStroke} strokeWidth={1.2} />
+        </g>
+      );
+
     case 'tank':
     default:
       return (
