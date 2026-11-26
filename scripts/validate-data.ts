@@ -1,7 +1,7 @@
 import crypto from 'node:crypto';
 import fs from 'node:fs/promises';
 import path from 'node:path';
-import { AtlasDatasetSchema, validateDatasetIntegrity } from '../src/schemas';
+import { AtlasDatasetSchema, PfdDatasetSchema, validateDatasetIntegrity } from '../src/schemas';
 
 const VALIDATED_DIR = path.join(process.cwd(), 'data', 'validated');
 
@@ -84,9 +84,43 @@ async function main() {
     process.exit(1);
   }
 
+  // Validación del snapshot PFD ISO 10628 (integridad con procesos, productos y fuentes)
+  const pfdFile = await readJsonFile('pfd_procesos.json');
+  const pfdParsed = PfdDatasetSchema.safeParse(pfdFile.data);
+  if (!pfdParsed.success) {
+    console.error('[data:validate] ERROR de esquema en pfd_procesos.json:');
+    for (const issue of pfdParsed.error.issues) {
+      console.error(`  - ${issue.path.join('.')}: ${issue.message}`);
+    }
+    process.exit(1);
+  }
+  const procIds = new Set(parsed.data.procesos.map((p) => p.proceso_id));
+  const prodIds = new Set(parsed.data.productos.map((p) => p.producto_id));
+  const fuenteIds = new Set(parsed.data.fuentes.map((f) => f.fuente_id));
+  const pfdErrors: string[] = [];
+  for (const pfd of pfdParsed.data) {
+    if (!procIds.has(pfd.proceso_id)) pfdErrors.push(`PFD proceso_id inexistente: ${pfd.proceso_id}`);
+    if (!prodIds.has(pfd.producto_id)) pfdErrors.push(`PFD producto_id inexistente: ${pfd.producto_id}`);
+    for (const eq of pfd.equipos) {
+      if (!fuenteIds.has(eq.fuente_id)) {
+        pfdErrors.push(`PFD ${pfd.proceso_id} equipo ${eq.tag}: fuente_id inexistente "${eq.fuente_id}"`);
+      }
+    }
+    for (const cor of pfd.corrientes) {
+      if (!fuenteIds.has(cor.fuente_id)) {
+        pfdErrors.push(`PFD ${pfd.proceso_id} corriente <${cor.numero}>: fuente_id inexistente "${cor.fuente_id}"`);
+      }
+    }
+  }
+  if (pfdErrors.length > 0) {
+    console.error('[data:validate] ERROR de integridad referencial en pfd_procesos.json:');
+    for (const e of pfdErrors) console.error(`  - ${e}`);
+    process.exit(1);
+  }
+
   const totalTablas = TABS.length;
   console.log(
-    `[data:validate] OK — ${totalTablas} tablas, ${parsed.data.provincias.length} provincias, ${parsed.data.productos.length} productos, modo=${
+    `[data:validate] OK — ${totalTablas} tablas, ${parsed.data.provincias.length} provincias, ${parsed.data.productos.length} productos, ${pfdParsed.data.length} PFDs ISO 10628, modo=${
       parsed.data.manifest.es_ejemplo ? 'EJEMPLO' : 'OFICIAL'
     }${strictReal ? ' (strict-real)' : ''}.`
   );

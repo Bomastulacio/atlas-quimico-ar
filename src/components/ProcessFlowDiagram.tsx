@@ -17,6 +17,7 @@ import { AnimatePresence, motion, MotionConfig } from 'motion/react';
 import { ExternalLink, Flame, Gauge, Zap } from 'lucide-react';
 import type { ConexionProceso, CorrienteEspecie, PasoProceso } from '@/schemas';
 import type { ProcesoCompleto } from '@/data';
+import { ProcessPfdDiagram } from './ProcessPfdDiagram';
 
 interface ProcessFlowDiagramProps {
   procesoCompleto: ProcesoCompleto;
@@ -245,7 +246,8 @@ function SpeciesTable({
 }
 
 export function ProcessFlowDiagram({ procesoCompleto }: ProcessFlowDiagramProps) {
-  const { proceso, pasos, conexiones } = procesoCompleto;
+  const { proceso, pasos, conexiones, pfd, pfdFuentes } = procesoCompleto;
+  const [viewMode, setViewMode] = useState<'pfd' | 'bfd'>(pfd ? 'pfd' : 'bfd');
 
   // Seleccionar por defecto el paso de reacción principal (o el primero si no hay)
   const defaultStepId =
@@ -257,12 +259,13 @@ export function ProcessFlowDiagram({ procesoCompleto }: ProcessFlowDiagramProps)
     [pasos]
   );
 
+  // Ampliamos el espaciado horizontal efectivo en vista BFD (1.36x) para que las etiquetas de corriente jamás pisen las cajas
   const nodes: StepFlowNode[] = useMemo(
     () =>
       pasos.map((paso) => ({
         id: paso.paso_id,
         type: 'processStep',
-        position: { x: paso.pos_x, y: paso.pos_y },
+        position: { x: Math.round(paso.pos_x * 1.36), y: paso.pos_y },
         data: {
           paso,
           isSelected: paso.paso_id === selectedStepId,
@@ -344,6 +347,41 @@ export function ProcessFlowDiagram({ procesoCompleto }: ProcessFlowDiagramProps)
   return (
     <MotionConfig reducedMotion="user">
       <div className="space-y-4">
+        {/* Switch de modo: PFD técnico ISO 10628 (cuando existe) + Vista resumida en bloques (BFD) */}
+        {pfd && (
+          <div className="flex flex-wrap items-center justify-between gap-3 border border-rule bg-stone-surface px-4 py-2.5">
+            <div className="inline-flex border border-rule bg-stone-bg p-0.5 text-[13px]">
+              <button
+                type="button"
+                onClick={() => setViewMode('pfd')}
+                className={`cursor-pointer px-3 py-1 font-medium transition-colors duration-150 ${
+                  viewMode === 'pfd' ? 'bg-ink text-white' : 'text-ink-muted hover:text-ink'
+                }`}
+              >
+                PFD de ingeniería (ISO 10628)
+              </button>
+              <button
+                type="button"
+                onClick={() => setViewMode('bfd')}
+                className={`cursor-pointer px-3 py-1 font-medium transition-colors duration-150 ${
+                  viewMode === 'bfd' ? 'bg-ink text-white' : 'text-ink-muted hover:text-ink'
+                }`}
+              >
+                Vista resumida en bloques (BFD)
+              </button>
+            </div>
+            <p className="text-[12px] text-ink-muted">
+              {viewMode === 'pfd'
+                ? 'Equipos normalizados, corrientes numeradas, servicios auxiliares y Tabla de Corrientes'
+                : 'Resumen por etapas con entradas, reacciones y salidas agregadas'}
+            </p>
+          </div>
+        )}
+
+        {pfd && viewMode === 'pfd' ? (
+          <ProcessPfdDiagram pfd={pfd} fuentesMap={pfdFuentes} />
+        ) : (
+        <>
         {/* Barra superior de selección rápida accesible (útil en teclado y mobile) */}
         <div
           role="tablist"
@@ -613,6 +651,8 @@ export function ProcessFlowDiagram({ procesoCompleto }: ProcessFlowDiagramProps)
             </AnimatePresence>
           </aside>
         </div>
+        </>
+        )}
       </div>
     </MotionConfig>
   );

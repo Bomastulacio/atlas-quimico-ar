@@ -17,6 +17,8 @@ import {
   getMapaDepartamentosData,
   getMapaProvinciasData,
   getMercadoSnapshot,
+  getPfdPorProceso,
+  getPfdProcesos,
   getProceso,
   getProduccion,
   getProductos,
@@ -228,5 +230,29 @@ describe('Capa única de acceso a datos (src/data)', () => {
           v.haciaProductoId === 'biodiesel'
       )
     ).toBe(true);
+  });
+
+  it('valida los PFDs ISO 10628 piloto (Petroquímica y Urea) con equipos, corrientes y referencias verificadas', () => {
+    const pfds = getPfdProcesos();
+    expect(pfds).toHaveLength(2);
+
+    const pfdPetro = getPfdPorProceso('petroquimica-steam-cracking-polietileno')!;
+    expect(pfdPetro.equipos.length).toBeGreaterThanOrEqual(10);
+    expect(pfdPetro.corrientes.length).toBeGreaterThanOrEqual(14);
+    expect(pfdPetro.corrientes.some((c) => c.tipo === 'reciclo')).toBe(true);
+    expect(pfdPetro.corrientes.some((c) => c.flujo_especifico.estado === 'sin_datos')).toBe(true);
+
+    const pfdUrea = getPfdPorProceso('urea-haber-bosch-sintesis')!;
+    expect(pfdUrea.equipos.length).toBeGreaterThanOrEqual(11);
+    expect(pfdUrea.corrientes.length).toBeGreaterThanOrEqual(15);
+    const nh3Stream = pfdUrea.corrientes.find((c) => c.numero === 9)!;
+    expect(nh3Stream.flujo_especifico.estado).toBe('dato');
+    expect(nh3Stream.flujo_especifico.valor).toBeCloseTo(0.578, 3);
+
+    const procUrea = getProceso('urea-haber-bosch-sintesis')!;
+    expect(procUrea.pfd?.proceso_id).toBe('urea-haber-bosch-sintesis');
+    expect(Object.keys(procUrea.pfdFuentes)).toEqual(
+      expect.arrayContaining(['eu-bref-lvic-aaf-2007', 'epa-ap42-ch8-inorganic', 'profertil-eecc-2025'])
+    );
   });
 });

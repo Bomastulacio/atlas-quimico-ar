@@ -21,10 +21,12 @@ import plantasRaw from '@data/plantas.json';
 import produccionRaw from '@data/produccion.json';
 import comercioExteriorRaw from '@data/comercio_exterior.json';
 import mercadoRaw from '@data/mercado.json';
+import pfdProcesosRaw from '@data/pfd_procesos.json';
 
 import {
   AtlasDatasetSchema,
   MercadoSnapshotSchema,
+  PfdDatasetSchema,
   type AtlasDataset,
   type CoberturaDatos,
   type ComercioExteriorRegistro,
@@ -36,6 +38,7 @@ import {
   type Fuente,
   type MercadoSnapshot,
   type PasoProceso,
+  type PfdProceso,
   type Planta,
   type Proceso,
   type ProduccionRegistro,
@@ -46,6 +49,17 @@ import {
 
 let cachedDataset: AtlasDataset | null = null;
 let cachedMercado: MercadoSnapshot | null = null;
+let cachedPfd: PfdProceso[] | null = null;
+
+export function getPfdProcesos(): PfdProceso[] {
+  if (cachedPfd) return cachedPfd;
+  cachedPfd = PfdDatasetSchema.parse(pfdProcesosRaw);
+  return cachedPfd;
+}
+
+export function getPfdPorProceso(procesoId: string): PfdProceso | null {
+  return getPfdProcesos().find((p) => p.proceso_id === procesoId) ?? null;
+}
 
 export function getMercadoSnapshot(): MercadoSnapshot {
   if (cachedMercado) return cachedMercado;
@@ -161,6 +175,8 @@ export interface ProcesoCompleto {
   proceso: Proceso;
   pasos: PasoProceso[];
   conexiones: ConexionProceso[];
+  pfd: PfdProceso | null;
+  pfdFuentes: Record<string, Fuente>;
 }
 
 export function getProcesos(productoId?: string): Proceso[] {
@@ -177,8 +193,21 @@ export function getProceso(procesoId: string): ProcesoCompleto | undefined {
     .filter((s) => s.proceso_id === procesoId)
     .sort((a, b) => a.orden - b.orden);
   const conexiones = ds.conexiones_proceso.filter((c) => c.proceso_id === procesoId);
+  const pfd = getPfdPorProceso(procesoId);
+  const pfdFuentes: Record<string, Fuente> = {};
+  if (pfd) {
+    const fMap = new Map(ds.fuentes.map((f) => [f.fuente_id, f]));
+    const ids = new Set<string>([
+      ...pfd.equipos.map((e) => e.fuente_id),
+      ...pfd.corrientes.map((c) => c.fuente_id),
+    ]);
+    for (const id of ids) {
+      const f = fMap.get(id);
+      if (f) pfdFuentes[id] = f;
+    }
+  }
 
-  return { proceso, pasos, conexiones };
+  return { proceso, pasos, conexiones, pfd, pfdFuentes };
 }
 
 export function getEmpresas(): Empresa[] {
