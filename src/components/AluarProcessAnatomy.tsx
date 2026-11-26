@@ -143,6 +143,8 @@ export function AluarProcessAnatomy({
   const [showFlows, setShowFlows] = useState(true);
   const [showCallouts, setShowCallouts] = useState(true);
   const [isRecording, setIsRecording] = useState(false);
+  const [webglStatus, setWebglStatus] = useState<'ready' | 'lost' | 'error'>('ready');
+  const [webglNonce, setWebglNonce] = useState(0);
 
   const simRef = useRef<{
     theta: number;
@@ -283,7 +285,7 @@ export function AluarProcessAnatomy({
     aimCameraAtPhase(simRef.current.phaseIdx);
   }, [playbackMode, playing, aimCameraAtPhase]);
 
-  // Montaje WebGL Three.js + bucle pausado a 60 fps
+  // Montaje WebGL Three.js + bucle pausado a 60 fps (con recuperación automática ante pérdida de contexto WebGL)
   useEffect(() => {
     const canvas = canvasRef.current;
     const stage = stageRef.current;
@@ -295,10 +297,32 @@ export function AluarProcessAnatomy({
       simRef.current.playing = false;
     }
 
-    const kit = makeInkworksKit(canvas);
-    const model = buildAluarMechanism(kit);
+    let kit: InkworksKit;
+    let model: AluarMechanismModel;
+    try {
+      kit = makeInkworksKit(canvas);
+      model = buildAluarMechanism(kit);
+      setWebglStatus('ready');
+    } catch {
+      setWebglStatus('error');
+      return;
+    }
+
     simRef.current.kit = kit;
     simRef.current.model = model;
+    model.setLayer('casings', showCasings);
+    model.setLayer('flows', showFlows);
+
+    const onContextLost = (ev: Event) => {
+      ev.preventDefault();
+      setWebglStatus('lost');
+    };
+    const onContextRestored = () => {
+      setWebglStatus('ready');
+      setWebglNonce((n) => n + 1);
+    };
+    canvas.addEventListener('webglcontextlost', onContextLost, false);
+    canvas.addEventListener('webglcontextrestored', onContextRestored, false);
 
     kit.controls.minDistance = 6.2;
     kit.controls.maxDistance = 40;
@@ -466,11 +490,13 @@ export function AluarProcessAnatomy({
     return () => {
       window.cancelAnimationFrame(rafId);
       ro.disconnect();
+      canvas.removeEventListener('webglcontextlost', onContextLost);
+      canvas.removeEventListener('webglcontextrestored', onContextRestored);
       kit.controls.removeEventListener('start', onStartInteract);
       kit.controls.removeEventListener('end', onEndInteract);
       kit.dispose();
     };
-  }, [computeFitDistance]);
+  }, [computeFitDistance, webglNonce]);
 
   // Captura PNG nítida de la etapa o vista actual con subtítulo explicativo
   const handleDownloadPng = useCallback(() => {
@@ -746,10 +772,36 @@ export function AluarProcessAnatomy({
             }}
           >
             <canvas
+              key={webglNonce}
               ref={canvasRef}
               aria-label="Simulación 3D interactiva del proceso completo de Aluar en Puerto Madryn"
               className="block h-full w-full cursor-grab active:cursor-grabbing"
             />
+
+            {webglStatus !== 'ready' && (
+              <div className="absolute inset-0 z-30 flex flex-col items-center justify-center bg-stone-surface/92 p-6 text-center">
+                <p className="font-display text-[17px] font-medium text-ink">
+                  {webglStatus === 'lost'
+                    ? 'El navegador pausó el contexto gráfico WebGL'
+                    : 'No se pudo iniciar la vista 3D WebGL en esta pestaña'}
+                </p>
+                <p className="mt-1.5 max-w-md text-[13px] text-ink-muted">
+                  Suele ocurrir al dejar varias pestañas abiertas o al recargar el servidor local.
+                  Tocá el botón para reactivar la animación 3D de Aluar.
+                </p>
+                <button
+                  type="button"
+                  onClick={() => {
+                    setWebglStatus('ready');
+                    setWebglNonce((n) => n + 1);
+                  }}
+                  className="bencho-press mt-4 inline-flex cursor-pointer items-center gap-2 bg-ink px-4 py-2 text-[13px] font-medium text-white hover:bg-cobalt"
+                >
+                  <RotateCcw className="h-3.5 w-3.5" />
+                  <span>Reactivar escena 3D</span>
+                </button>
+              </div>
+            )}
 
             {/* Líneas guía quebradas SOLO para las 2 o 3 piezas de la etapa actual */}
             <svg
