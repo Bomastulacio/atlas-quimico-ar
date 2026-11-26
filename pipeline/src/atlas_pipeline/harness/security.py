@@ -92,6 +92,11 @@ DEFAULT_ALLOWED_DOMAINS: frozenset[str] = frozenset(
         "renova.com.ar",
         "molinosagro.com.ar",
         "buyatti.com.ar",
+        "calerassanjuan.com",
+        "www.cerrovanguardia.com.ar",
+        "www.caem.com.ar",
+        "www.arauco.com",
+        "www.afcp.org.ar",
     }
 )
 

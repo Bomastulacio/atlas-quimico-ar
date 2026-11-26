@@ -79,6 +79,30 @@ const ANATOMY_BY_PRODUCT: Record<string, ProductAnatomyHeader> = {
       'Lámina interactiva en 3D del complejo sucroalcoholero: tandem de trapiches, clarificación y tacho de azúcar flexible, fermentación rápida con reciclo de levaduras, destilería 3A y caldera de cogeneración a bagazo.',
     hint: 'Orbitá en 3D, cambiá de etapa o grabá un clip WebM a 60 fps',
   },
+  'soda-solvay': {
+    title: 'Circuito 3D en movimiento en Río Negro (San Antonio Oeste)',
+    description:
+      'Lámina interactiva en 3D del proceso Solvay: purificación de salmuera y horno vertical de caliza, absorción de amoníaco, torres de carbonatación de NaHCO3, calcinador rotativo y recuperación cerrada de NH3.',
+    hint: 'Orbitá en 3D, cambiá de etapa o grabá un clip WebM a 60 fps',
+  },
+  'cal-industrial': {
+    title: 'Circuito 3D en movimiento en San Juan (Los Berros, Sarmiento)',
+    description:
+      'Lámina interactiva en 3D del polo calero industrial: trituración y zarandeo de caliza, horno vertical regenerativo PFRK de doble cuba a 1.050 °C, filtro de mangas, hidratador continuo y silos de despacho.',
+    hint: 'Orbitá en 3D, cambiá de etapa o grabá un clip WebM a 60 fps',
+  },
+  'oro-plata': {
+    title: 'Circuito 3D en movimiento en Santa Cruz (Macizo del Deseado)',
+    description:
+      'Lámina interactiva en 3D de la hidrometalurgia aurífera: molienda SAG/bolas, lixiviación cianurada aireada, precipitación Merrill-Crowe con zinc, fundición a lingotes doré y detoxificación INCO.',
+    hint: 'Orbitá en 3D, cambiá de etapa o grabá un clip WebM a 60 fps',
+  },
+  'celulosa-kraft': {
+    title: 'Circuito 3D en movimiento en Misiones (Puerto Esperanza)',
+    description:
+      'Lámina interactiva en 3D de la planta Kraft de fibra larga: descortezado y chipeado de pino, digestor continuo con licor blanco a 168 °C, blanqueo ECF, túnel secador y ciclo cerrado de caldera recuperadora y caustificación.',
+    hint: 'Orbitá en 3D, cambiá de etapa o grabá un clip WebM a 60 fps',
+  },
 };
 
 const PROCESO_META_BY_PRODUCT: Record<
@@ -124,6 +148,11 @@ const NCM_LABELS: Record<string, string> = {
   '3902.10': 'Polipropileno en formas primarias (HS 3902.10)',
   '2207.10': 'Alcohol etílico sin desnaturalizar >=80% vol (HS 2207.10)',
   '1701.99': 'Azúcar de caña refinada (HS 1701.99)',
+  '2836.20': 'Carbonato de disodio / Soda Solvay (HS 2836.20)',
+  '2522.10': 'Cal viva industrial CaO (HS 2522.10)',
+  '7108.12': 'Oro en bruto / barras doré (HS 7108.12)',
+  '7106.91': 'Plata en bruto (HS 7106.91)',
+  '4703.21': 'Pasta química Kraft de coníferas blanqueada (HS 4703.21)',
 };
 
 const SIN_DATOS_PRODUCCION_COPY: Record<string, string> = {
@@ -133,6 +162,12 @@ const SIN_DATOS_PRODUCCION_COPY: Record<string, string> = {
     'El Complejo Industrial Plaza Huincul (YPF) concentra la síntesis argentina de metanol desde gas natural neuquino para biodiésel y resinas locales. Al no publicarse series anuales abiertas auditadas de toneladas producidas, queda explícitamente declarado sin datos.',
   polipropileno:
     'No existen series públicas abiertas auditadas de toneladas anuales de polipropileno por planta en portales estadísticos nacionales. Se consignan únicamente los flujos verificados de comercio exterior aduanero (UN Comtrade HS 3902.10).',
+  'soda-solvay':
+    'USGS MCS 2025 no desagrega la producción anual individual de carbonato de sodio de Argentina ni existe serie abierta de toneladas de ALPAT. El campo permanece explícitamente sin datos y se muestran las importaciones netas verificadas (UN Comtrade HS 2836.20).',
+  'cal-industrial':
+    'USGS MCS 2025 no desagrega producción anual individual de cal viva para Argentina. Se presentan las exportaciones físicas verificadas (476 kt en 2024, UN Comtrade HS 2522.10) encabezadas por el polo calero de Los Berros (San Juan).',
+  'celulosa-kraft':
+    'No existe serie abierta anual descargable en CSV oficial por planta para pulpa Kraft blanqueada en Misiones. El campo de producción anual queda declarado sin datos y se consignan los flujos aduaneros HS 4703.21.',
 };
 
 function fmtNum(v: number, decimals = 0): string {

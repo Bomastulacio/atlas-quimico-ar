@@ -8,6 +8,10 @@ import { MetanolProcessAnatomy } from '@/components/MetanolProcessAnatomy';
 import { PolipropilenoProcessAnatomy } from '@/components/PolipropilenoProcessAnatomy';
 import { BioetanolMaizProcessAnatomy } from '@/components/BioetanolMaizProcessAnatomy';
 import { BioetanolCanaProcessAnatomy } from '@/components/BioetanolCanaProcessAnatomy';
+import { SodaSolvayProcessAnatomy } from '@/components/SodaSolvayProcessAnatomy';
+import { CalIndustrialProcessAnatomy } from '@/components/CalIndustrialProcessAnatomy';
+import { OroPlataProcessAnatomy } from '@/components/OroPlataProcessAnatomy';
+import { CelulosaKraftProcessAnatomy } from '@/components/CelulosaKraftProcessAnatomy';
 import { StandaloneCompanyMarket } from '@/components/CompanyMarketCard';
 import { ProcessFlowDiagram } from '@/components/ProcessFlowDiagram';
 import { ProductIcon } from '@/components/ProductIcon';
@@ -108,6 +112,16 @@ const expMetanolVol2023T = (() => {
 })();
 const ultimoComexVolExp =
   comexVol[0]?.exportacion.estado === 'dato' ? comexVol[0].exportacion.valor : null;
+const ultimoComexVolImp =
+  comexVol[0]?.importacion.estado === 'dato' ? comexVol[0].importacion.valor : null;
+const sodaImp2024UsdM = (() => {
+  const r = comexUsd.find((x) => x.ncm_codigo === '2836.20' && x.anio === 2024);
+  return r?.importacion.estado === 'dato' ? r.importacion.valor : null;
+})();
+const oroExp2024UsdM = (() => {
+  const r = comexUsd.find((x) => x.ncm_codigo === '7108.12' && x.anio === 2024);
+  return r?.exportacion.estado === 'dato' ? r.exportacion.valor : null;
+})();
 
 const mercadoEmpresaIds = new Set(mercadoSnapshot.empresas.map((m) => m.empresa_id));
 
@@ -266,6 +280,35 @@ const ESTADO_PLANTA_LABEL: Record<string, string> = {
             pasos={procesoPrincipal.pasos}
             bioetanolCanaM3={etanolNacionalM3}
             azucarExp2024T={expAzucarVol2024T}
+          />
+        )}
+        {slug === 'soda-solvay' && (
+          <SodaSolvayProcessAnatomy
+            client:load
+            pasos={procesoPrincipal.pasos}
+            importUsd2024M={sodaImp2024UsdM}
+          />
+        )}
+        {slug === 'cal-industrial' && (
+          <CalIndustrialProcessAnatomy
+            client:load
+            pasos={procesoPrincipal.pasos}
+            exportVol2024T={ultimoComexVolExp}
+          />
+        )}
+        {slug === 'oro-plata' && (
+          <OroPlataProcessAnatomy
+            client:load
+            pasos={procesoPrincipal.pasos}
+            prodPlata2024T={ultimaProdVal}
+            exportOro2024UsdM={oroExp2024UsdM}
+          />
+        )}
+        {slug === 'celulosa-kraft' && (
+          <CelulosaKraftProcessAnatomy
+            client:load
+            pasos={procesoPrincipal.pasos}
+            importVol2024T={ultimoComexVolImp}
           />
         )}
       </section>

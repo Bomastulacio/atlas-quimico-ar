@@ -143,6 +143,43 @@ export function ProductIcon({ iconId, size = 18, className = '', ...props }: Pro
         </svg>
       );
 
+    // Soda Solvay: cristal hexagonal + torres de carbonatación
+    case 'soda-solvay':
+      return (
+        <svg {...common}>
+          <polygon points="12 3.5 18.5 7.2 18.5 14.8 12 18.5 5.5 14.8 5.5 7.2" />
+          <path d="M12 3.5V18.5M5.5 11H18.5" />
+        </svg>
+      );
+
+    // Cal industrial: horno vertical PFRK + llama de calcinación
+    case 'cal-industrial':
+      return (
+        <svg {...common}>
+          <path d="M7.5 4.5H16.5L18 19.5H6L7.5 4.5Z" />
+          <path d="M9 11.5H15M12 15.5V19.5" />
+          <circle cx="12" cy="8.2" r="1.4" fill="currentColor" stroke="none" />
+        </svg>
+      );
+
+    // Oro y plata doré: lingote trapezoidal + destello metálico
+    case 'oro-plata':
+      return (
+        <svg {...common}>
+          <polygon points="5.5 17.5 8 10.5 16 10.5 18.5 17.5" />
+          <path d="M12 4V7.5M8.2 5.8L9.8 7.6M15.8 5.8L14.2 7.6" />
+        </svg>
+      );
+
+    // Celulosa Kraft: fardo prensado con zunchos + hoja de pino
+    case 'celulosa-kraft':
+      return (
+        <svg {...common}>
+          <rect x="4.5" y="7" width="15" height="12" />
+          <path d="M9.5 7V19M14.5 7V19M12 3.5L9.5 7H14.5L12 3.5Z" />
+        </svg>
+      );
+
     default:
       return (
         <svg {...common}>
