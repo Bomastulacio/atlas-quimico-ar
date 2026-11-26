@@ -1,17 +1,33 @@
-import { useEffect, useMemo, useState } from 'react';
-import { AnimatePresence, motion, MotionConfig } from 'motion/react';
-import { Focus, Layers, Maximize2, Pause, Play, RotateCcw } from 'lucide-react';
+import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
+import {
+  Camera,
+  Focus,
+  Pause,
+  Play,
+  RotateCcw,
+  SkipBack,
+  SkipForward,
+  Video,
+} from 'lucide-react';
 import type { PasoProceso } from '@/schemas';
 import {
-  buildAluarAnatomyScene,
-  buildDialNeedlePath,
-  type AluarAssemblyId,
-  type DrawnDots,
-  type DrawnLine,
-  type DrawnSolid,
-  type DrawnTube,
-  type StageCameraBox,
-} from './aluar/aluarAnatomyGeometry';
+  D2R,
+  INK_HEX,
+  makeInkworksKit,
+  mod,
+  PAPER_HEX,
+  projectCallouts2Columns,
+  THREE,
+  type InkworksKit,
+} from '@/lib/inkworks-kit';
+import {
+  ALUAR_CYCLE_DEG,
+  ALUAR_OVERVIEW_CAMERA,
+  ALUAR_PHASES,
+  buildAluarMechanism,
+  getPhaseIndexAt,
+  type AluarMechanismModel,
+} from './aluar/aluarInkworksMechanism';
 
 interface AluarProcessAnatomyProps {
   pasos: PasoProceso[];
@@ -20,127 +36,11 @@ interface AluarProcessAnatomyProps {
   energiaElectrolisisMwhT: number | null;
 }
 
-interface StageSpec {
-  id: AluarAssemblyId;
-  code: string;
-  shortLabel: string;
-  pasoId: string;
-  dialTempC: number;
-  calloutMetric: string;
-  calloutCaption: string;
-  physicalParts: string;
-}
-
-const SPRING_EXPLODE = {
-  type: 'spring' as const,
-  stiffness: 170,
-  damping: 26,
-  mass: 0.95,
-};
-
-const SPRING_TAB = {
-  type: 'spring' as const,
-  stiffness: 420,
-  damping: 34,
-  mass: 0.85,
-};
-
-function SolidElement({ solid }: { solid: DrawnSolid }) {
-  const {
-    paths,
-    tone = 'hi',
-    crease = 'faint',
-    lit = false,
-    flat = false,
-    className,
-    innerLines,
-    innerDots,
-  } = solid;
-  return (
-    <g
-      className={className ? `iso-solid ${className}` : 'iso-solid'}
-      data-lit={lit ? '' : undefined}
-      data-seamless={paths.seamless ? '' : undefined}
-    >
-      <path className="iso-fill" d={paths.fill} />
-      {!flat &&
-        paths.shades.map((d, idx) =>
-          d ? <path key={idx} className="iso-shade" data-shade={String(idx)} d={d} /> : null
-        )}
-      {!flat && paths.top && <path className="iso-top" d={paths.top} />}
-      {crease !== 'none' && paths.crease && (
-        <path className="iso-line iso-crease" data-tone={crease} d={paths.crease} />
-      )}
-      {crease !== 'none' && paths.bevel && (
-        <path className="iso-line iso-bevel" data-tone={crease} d={paths.bevel} />
-      )}
-      {innerLines?.map((ln, idx) => (
-        <path key={idx} className="iso-line" data-tone={ln.tone ?? 'faint'} d={ln.d} />
-      ))}
-      {innerDots?.map((dt, idx) => (
-        <g key={idx} className="iso-dots" data-tone={dt.tone ?? 'mid'}>
-          {dt.points.map(([cx, cy], pIdx) => (
-            <circle key={pIdx} cx={cx} cy={cy} r={dt.size ?? 0.5} />
-          ))}
-        </g>
-      ))}
-      {paths.outline && <path className="iso-line iso-edge" data-tone={tone} d={paths.outline} />}
-    </g>
-  );
-}
-
-function TubeElement({ tube }: { tube: DrawnTube }) {
-  const { pieces, tone = 'hi', className } = tube;
-  return (
-    <g className={className ? `tb ${className}` : 'tb'}>
-      {pieces.map((pc, idx) => (
-        <g key={idx}>
-          <path className="tb-body" d={pc.body} />
-          {pc.wide && pc.shine && <path className="tb-shine" d={pc.shine} />}
-          {pc.wide && pc.shade && <path className="tb-shade" d={pc.shade} />}
-          <path className="iso-line tb-edge" data-tone={tone} d={pc.edges} />
-        </g>
-      ))}
-    </g>
-  );
-}
-
-function LinesLayer({ lines }: { lines: DrawnLine[] }) {
-  return (
-    <>
-      {lines.map((ln) => (
-        <path
-          key={ln.id}
-          className={ln.className ? `iso-line ${ln.className}` : 'iso-line'}
-          data-tone={ln.tone ?? 'lo'}
-          data-dashed={ln.dashed ? 'true' : undefined}
-          data-flow={ln.flow ? 'true' : undefined}
-          d={ln.d}
-        />
-      ))}
-    </>
-  );
-}
-
-function DotsLayer({ dots }: { dots: DrawnDots[] }) {
-  return (
-    <>
-      {dots.map((dt) => (
-        <g key={dt.id} className="iso-dots" data-tone={dt.tone ?? 'mid'}>
-          {dt.points.map(([cx, cy], idx) => (
-            <circle
-              key={idx}
-              cx={cx}
-              cy={cy}
-              r={dt.size ?? 0.55}
-              data-pulse={dt.pulse ? 'true' : undefined}
-            />
-          ))}
-        </g>
-      ))}
-    </>
-  );
-}
+const SPEEDS = [
+  { divisor: 4, label: '1/4x' },
+  { divisor: 2, label: '1/2x' },
+  { divisor: 1, label: '1x' },
+] as const;
 
 export function AluarProcessAnatomy({
   pasos,
@@ -148,815 +48,1052 @@ export function AluarProcessAnatomy({
   aluminaImportadaT,
   energiaElectrolisisMwhT,
 }: AluarProcessAnatomyProps) {
-  const scene = useMemo(() => buildAluarAnatomyScene(), []);
+  const stageRef = useRef<HTMLDivElement | null>(null);
+  const canvasRef = useRef<HTMLCanvasElement | null>(null);
+  const leadersSvgRef = useRef<SVGSVGElement | null>(null);
+  const calloutItemRefs = useRef<Array<HTMLButtonElement | null>>([]);
+  const leaderLineRefs = useRef<Array<SVGPolylineElement | null>>([]);
+  const leaderDotRefs = useRef<Array<SVGCircleElement | null>>([]);
+  const playheadRef = useRef<HTMLDivElement | null>(null);
+  const degreeLabelRef = useRef<HTMLSpanElement | null>(null);
+  const gaugeNeedleRef = useRef<SVGGElement | null>(null);
+  const gaugeTextRef = useRef<HTMLSpanElement | null>(null);
+  const timelineRef = useRef<HTMLDivElement | null>(null);
 
-  const stages: StageSpec[] = useMemo(() => {
-    const aluminaStr =
-      aluminaImportadaT !== null
-        ? `${Math.round(aluminaImportadaT).toLocaleString('es-AR')} t/año`
-        : '1,96 t Al2O3/t Al';
-    const energiaStr =
-      energiaElectrolisisMwhT !== null
-        ? `${energiaElectrolisisMwhT.toLocaleString('es-AR', { minimumFractionDigits: 2 })} MWh/t Al`
-        : '14,20 MWh/t Al';
-    const prodStr =
-      produccionLiquidaT !== null
-        ? `${produccionLiquidaT.toLocaleString('es-AR')} t Al`
-        : '445.327 t Al';
+  const [playing, setPlaying] = useState(true);
+  const [speedDivisor, setSpeedDivisor] = useState<number>(2);
+  const [loadPct, setLoadPct] = useState<number>(78);
+  const [activePhaseIdx, setActivePhaseIdx] = useState<number>(0);
 
-    return [
-      {
-        id: 'silo',
-        code: '01',
-        shortLabel: 'Muelle Storni, buque y silos',
-        pasoId: 'al-p2-recepcion-storni',
-        dialTempC: 25,
-        calloutMetric: aluminaStr,
-        calloutCaption: 'Alúmina importada HS 2818.20 (UN Comtrade 2024)',
-        physicalParts:
-          'Golfo Nuevo, muelle sobre pilotes, buque granelero con bodegas de alúmina, torre neumática, galería cubierta y silos cónicos.',
-      },
-      {
-        id: 'anodos',
-        code: '02',
-        shortLabel: 'Horno de ánodos y envarillado',
-        pasoId: 'al-p3-planta-anodos',
-        dialTempC: 1150,
-        calloutMetric: '0,43 t C/t Al',
-        calloutCaption: 'Consumo neto anódico · cocción 1.100 a 1.200 °C',
-        physicalParts:
-          'Horno de fosas incandescentes, puente quemador, mesa de envarillado y bloques de carbono precocido.',
-      },
-      {
-        id: 'cuba',
-        code: '03',
-        shortLabel: 'Cuba Hall-Héroult en corte',
-        pasoId: 'al-p4-electrolisis-hall-heroult',
-        dialTempC: 960,
-        calloutMetric: energiaStr,
-        calloutCaption: `${prodStr} líquido FY 2024-25 · baño criolita 950 a 970 °C`,
-        physicalParts:
-          'Carcasa en corte, refractario, cátodo de carbono, colchón de Al líquido, baño criolita, 4 ánodos precocidos y viga CC.',
-      },
-      {
-        id: 'gtc',
-        code: '04',
-        shortLabel: 'Gases GTC y reciclo HF',
-        pasoId: 'al-p5-tratamiento-gases',
-        dialTempC: 100,
-        calloutMetric: '1,6 t CO2/t Al',
-        calloutCaption: 'Captura seca de HF en reciclo cerrado · IPCC Table 4.10',
-        physicalParts:
-          'Ducto extractor, 2 ciclones reactores secos, filtros de mangas, chimenea cónica y ducto verde de retorno.',
-      },
-      {
-        id: 'fundicion',
-        code: '05',
-        shortLabel: 'Fundición, lingotes y barrotes',
-        pasoId: 'al-p6-fundicion-colada',
-        dialTempC: 720,
-        calloutMetric: '0,86 MWh/t Al',
-        calloutCaption: '425.409 t solidificadas + 17.028 t líquido · 700 a 740 °C',
-        physicalParts:
-          'Crisol de vacío, horno de mantenimiento a 720 °C, lingotes T, barrotes cilíndricos de extrusión y bobina de alambrón.',
-      },
-    ];
-  }, [aluminaImportadaT, energiaElectrolisisMwhT, produccionLiquidaT]);
+  const [showCasings, setShowCasings] = useState(true);
+  const [showFlows, setShowFlows] = useState(true);
+  const [showCallouts, setShowCallouts] = useState(true);
+  const [followPhaseCam, setFollowPhaseCam] = useState(false);
+  const [autoOrbit, setAutoOrbit] = useState(false);
+  const [isRecording, setIsRecording] = useState(false);
 
-  const [selectedId, setSelectedId] = useState<AluarAssemblyId>('cuba');
-  const [hoveredId, setHoveredId] = useState<AluarAssemblyId | null>(null);
-  const [zoomed, setZoomed] = useState(false);
-  const [exploded, setExploded] = useState(false);
-  const [autoTour, setAutoTour] = useState(false);
-
-  const activeId = hoveredId ?? selectedId;
-  const activeStage = stages.find((s) => s.id === activeId) ?? stages[2]!;
-  const activePaso = pasos.find((p) => p.paso_id === activeStage.pasoId) ?? null;
-
-  // Interpolación suave de la cámara SVG (viewBox) al enfocar una etapa o volver a planta completa
-  const targetCamera: StageCameraBox = zoomed ? scene.cameraViews[selectedId] : scene.cameraViews.all;
-  const [cam, setCam] = useState<StageCameraBox>(scene.cameraViews.all);
+  // Estado mutable leído a 60 fps sin disparar re-renders de React en cada frame
+  const simRef = useRef<{
+    theta: number;
+    playing: boolean;
+    speedDivisor: number;
+    loadFactor: number;
+    tween: { from: number; to: number; t: number; dur: number } | null;
+    scrubbing: boolean;
+    showCallouts: boolean;
+    followPhaseCam: boolean;
+    userDraggingOrbit: boolean;
+    desiredTarget: THREE.Vector3;
+    desiredDist: number;
+    hasDesiredCam: boolean;
+    kit: InkworksKit | null;
+    model: AluarMechanismModel | null;
+    phaseIdx: number;
+  }>({
+    theta: 14,
+    playing: true,
+    speedDivisor: 2,
+    loadFactor: 0.78,
+    tween: null,
+    scrubbing: false,
+    showCallouts: true,
+    followPhaseCam: false,
+    userDraggingOrbit: false,
+    desiredTarget: new THREE.Vector3(...ALUAR_OVERVIEW_CAMERA.target),
+    desiredDist: 22,
+    hasDesiredCam: false,
+    kit: null,
+    model: null,
+    phaseIdx: 0,
+  });
 
   useEffect(() => {
-    const prefersReduced =
-      typeof window !== 'undefined' &&
-      window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-    if (prefersReduced) {
-      setCam(targetCamera);
-      return;
-    }
+    simRef.current.playing = playing;
+  }, [playing]);
 
-    let frame = 0;
-    let cur = { ...cam };
-    const step = () => {
-      const dx = targetCamera.x - cur.x;
-      const dy = targetCamera.y - cur.y;
-      const dw = targetCamera.w - cur.w;
-      const dh = targetCamera.h - cur.h;
-      if (
-        Math.abs(dx) < 0.4 &&
-        Math.abs(dy) < 0.4 &&
-        Math.abs(dw) < 0.4 &&
-        Math.abs(dh) < 0.4
-      ) {
-        setCam(targetCamera);
-        return;
-      }
-      cur = {
-        x: cur.x + dx * 0.16,
-        y: cur.y + dy * 0.16,
-        w: cur.w + dw * 0.16,
-        h: cur.h + dh * 0.16,
+  useEffect(() => {
+    simRef.current.speedDivisor = speedDivisor;
+  }, [speedDivisor]);
+
+  useEffect(() => {
+    simRef.current.loadFactor = loadPct / 100;
+  }, [loadPct]);
+
+  useEffect(() => {
+    simRef.current.showCallouts = showCallouts;
+  }, [showCallouts]);
+
+  useEffect(() => {
+    simRef.current.followPhaseCam = followPhaseCam;
+    if (followPhaseCam) {
+      const ph = ALUAR_PHASES[simRef.current.phaseIdx]!;
+      simRef.current.desiredTarget.set(...ph.cameraTarget);
+      simRef.current.hasDesiredCam = true;
+    }
+  }, [followPhaseCam]);
+
+  useEffect(() => {
+    simRef.current.model?.setLayer('casings', showCasings);
+  }, [showCasings]);
+
+  useEffect(() => {
+    simRef.current.model?.setLayer('flows', showFlows);
+  }, [showFlows]);
+
+  useEffect(() => {
+    if (simRef.current.kit) {
+      simRef.current.kit.controls.autoRotate = autoOrbit;
+    }
+  }, [autoOrbit]);
+
+  const computeFitDistance = useCallback((kit: InkworksKit, radius: number, w: number, h: number) => {
+    const vFov = kit.camera.fov * D2R;
+    const tanV = Math.tan(vFov / 2);
+    const tanH = tanV * (w / Math.max(1, h));
+    const compactBoost = w < 720 ? 1.18 : 1.0;
+    return Math.max(8.5, Math.min(38, (radius * compactBoost) / Math.min(tanV, tanH)));
+  }, []);
+
+  const resetCamera = useCallback(() => {
+    const { kit } = simRef.current;
+    const stage = stageRef.current;
+    if (!kit || !stage) return;
+    setFollowPhaseCam(false);
+    const rect = stage.getBoundingClientRect();
+    const dist = computeFitDistance(
+      kit,
+      ALUAR_OVERVIEW_CAMERA.radius,
+      rect.width || 960,
+      rect.height || 540
+    );
+    const dir = new THREE.Vector3(...ALUAR_OVERVIEW_CAMERA.dir).normalize();
+    simRef.current.desiredTarget.set(...ALUAR_OVERVIEW_CAMERA.target);
+    simRef.current.desiredDist = dist;
+    kit.controls.target.copy(simRef.current.desiredTarget);
+    kit.camera.position.copy(simRef.current.desiredTarget).addScaledVector(dir, dist);
+    kit.controls.update();
+    simRef.current.hasDesiredCam = false;
+  }, [computeFitDistance]);
+
+  const jumpToPhase = useCallback(
+    (phaseIdx: number, direction: -1 | 0 | 1 = 0, focusCam = false) => {
+      const targetPhase = ALUAR_PHASES[phaseIdx];
+      if (!targetPhase) return;
+      const cur = mod(simRef.current.theta, ALUAR_CYCLE_DEG);
+      const dest = targetPhase.startDeg + 6;
+      let d = mod(dest - cur, ALUAR_CYCLE_DEG);
+      if (direction < 0 && d > 0) d -= ALUAR_CYCLE_DEG;
+      else if (direction === 0 && d > ALUAR_CYCLE_DEG / 2) d -= ALUAR_CYCLE_DEG;
+
+      simRef.current.tween = {
+        from: simRef.current.theta,
+        to: simRef.current.theta + d,
+        t: 0,
+        dur: 0.52,
       };
-      setCam(cur);
-      frame = window.requestAnimationFrame(step);
-    };
-    frame = window.requestAnimationFrame(step);
-    return () => window.cancelAnimationFrame(frame);
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [targetCamera.x, targetCamera.y, targetCamera.w, targetCamera.h]);
+      setActivePhaseIdx(phaseIdx);
+      simRef.current.phaseIdx = phaseIdx;
 
-  // Interpolación suave de la aguja del dial de temperatura
-  const [needleTemp, setNeedleTemp] = useState(activeStage.dialTempC);
-  useEffect(() => {
-    const prefersReduced =
-      typeof window !== 'undefined' &&
-      window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-    if (prefersReduced) {
-      setNeedleTemp(activeStage.dialTempC);
-      return;
-    }
-    let frame = 0;
-    let current = needleTemp;
-    const target = activeStage.dialTempC;
-    const step = () => {
-      const diff = target - current;
-      if (Math.abs(diff) < 1.2) {
-        setNeedleTemp(target);
-        return;
+      if (focusCam || simRef.current.followPhaseCam) {
+        const { kit } = simRef.current;
+        const stage = stageRef.current;
+        if (kit && stage) {
+          const rect = stage.getBoundingClientRect();
+          simRef.current.desiredTarget.set(...targetPhase.cameraTarget);
+          simRef.current.desiredDist = computeFitDistance(
+            kit,
+            targetPhase.cameraRadius,
+            rect.width || 960,
+            rect.height || 540
+          );
+          simRef.current.hasDesiredCam = true;
+        }
       }
-      current += diff * 0.14;
-      setNeedleTemp(current);
-      frame = window.requestAnimationFrame(step);
-    };
-    frame = window.requestAnimationFrame(step);
-    return () => window.cancelAnimationFrame(frame);
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [activeStage.dialTempC]);
+    },
+    [computeFitDistance]
+  );
 
-  // Recorrido automático por las 5 etapas
+  const stepPhase = useCallback(
+    (dir: -1 | 1) => {
+      setPlaying(false);
+      const curIdx = getPhaseIndexAt(simRef.current.theta);
+      const nextIdx = (curIdx + dir + ALUAR_PHASES.length) % ALUAR_PHASES.length;
+      jumpToPhase(nextIdx, dir);
+    },
+    [jumpToPhase]
+  );
+
+  // Montaje WebGL Three.js + bucle determinista a 60 fps
   useEffect(() => {
-    if (!autoTour) return;
-    const timer = window.setInterval(() => {
-      setSelectedId((curr) => {
-        const idx = stages.findIndex((s) => s.id === curr);
-        return stages[(idx + 1) % stages.length]!.id;
-      });
-    }, 3800);
-    return () => window.clearInterval(timer);
-  }, [autoTour, stages]);
+    const canvas = canvasRef.current;
+    const stage = stageRef.current;
+    if (!canvas || !stage) return;
 
-  const needlePath = useMemo(() => buildDialNeedlePath(needleTemp, scene), [needleTemp, scene]);
-
-  const isDimmed = (id: AluarAssemblyId) => hoveredId !== null && hoveredId !== id;
-  const isActive = (id: AluarAssemblyId) => activeId === id;
-
-  const handleSelectAssembly = (id: AluarAssemblyId, shouldZoom?: boolean) => {
-    setAutoTour(false);
-    setSelectedId(id);
-    if (shouldZoom !== undefined) {
-      setZoomed(shouldZoom);
+    const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    if (reduceMotion) {
+      setPlaying(false);
+      simRef.current.playing = false;
     }
-  };
 
-  const viewBoxStr = `${cam.x.toFixed(1)} ${cam.y.toFixed(1)} ${cam.w.toFixed(1)} ${cam.h.toFixed(1)}`;
+    const kit = makeInkworksKit(canvas);
+    const model = buildAluarMechanism(kit);
+    simRef.current.kit = kit;
+    simRef.current.model = model;
+
+    kit.controls.minDistance = 7.5;
+    kit.controls.maxDistance = 42;
+
+    const onStartInteract = () => {
+      simRef.current.userDraggingOrbit = true;
+      simRef.current.hasDesiredCam = false;
+    };
+    const onEndInteract = () => {
+      simRef.current.userDraggingOrbit = false;
+    };
+    kit.controls.addEventListener('start', onStartInteract);
+    kit.controls.addEventListener('end', onEndInteract);
+
+    let vw = stage.clientWidth || 960;
+    let vh = stage.clientHeight || 540;
+
+    const updateLayout = () => {
+      const r = stage.getBoundingClientRect();
+      vw = Math.max(280, r.width);
+      vh = Math.max(260, r.height);
+      kit.renderer.setSize(vw, vh, false);
+      kit.camera.aspect = vw / vh;
+      kit.camera.updateProjectionMatrix();
+      const vFov = kit.camera.fov * D2R;
+      kit.outlineMat.uniforms.uPx!.value = ((2 * Math.tan(vFov / 2)) / vh) * 1.45;
+    };
+
+    updateLayout();
+    const initDist = computeFitDistance(kit, ALUAR_OVERVIEW_CAMERA.radius, vw, vh);
+    const initDir = new THREE.Vector3(...ALUAR_OVERVIEW_CAMERA.dir).normalize();
+    kit.controls.target.set(...ALUAR_OVERVIEW_CAMERA.target);
+    kit.camera.position.copy(kit.controls.target).addScaledVector(initDir, initDist);
+    kit.controls.update();
+
+    const ro = new ResizeObserver(() => updateLayout());
+    ro.observe(stage);
+
+    let lastTimeMs = performance.now();
+    const camDirTmp = new THREE.Vector3();
+    let rafId = 0;
+
+    const frame = (nowMs: number) => {
+      const dt = Math.min(Math.max(0, (nowMs - lastTimeMs) / 1000), 0.05);
+      lastTimeMs = nowMs;
+      const s = simRef.current;
+
+      if (s.tween) {
+        s.tween.t += dt / s.tween.dur;
+        const k = s.tween.t >= 1 ? 1 : 0.5 - 0.5 * Math.cos(Math.PI * s.tween.t);
+        s.theta = s.tween.from + (s.tween.to - s.tween.from) * k;
+        if (s.tween.t >= 1) s.tween = null;
+      } else if (s.playing && !s.scrubbing) {
+        const baseDegPerSec = 34 + 26 * s.loadFactor;
+        s.theta += (baseDegPerSec / s.speedDivisor) * dt;
+      }
+
+      model.pose(s.theta, dt, s.loadFactor);
+
+      const phi = mod(s.theta, ALUAR_CYCLE_DEG);
+      const pIdx = getPhaseIndexAt(phi);
+      if (pIdx !== s.phaseIdx) {
+        s.phaseIdx = pIdx;
+        setActivePhaseIdx(pIdx);
+        if (s.followPhaseCam && !s.userDraggingOrbit) {
+          const ph = ALUAR_PHASES[pIdx]!;
+          s.desiredTarget.set(...ph.cameraTarget);
+          s.desiredDist = computeFitDistance(kit, ph.cameraRadius, vw, vh);
+          s.hasDesiredCam = true;
+        }
+      }
+
+      if (s.hasDesiredCam && !s.userDraggingOrbit) {
+        const alpha = 1 - Math.exp(-dt * 4.5);
+        kit.controls.target.lerp(s.desiredTarget, alpha);
+        camDirTmp.copy(kit.camera.position).sub(kit.controls.target);
+        const curDist = Math.max(0.1, camDirTmp.length());
+        const nextDist = curDist + (s.desiredDist - curDist) * alpha;
+        camDirTmp.normalize().multiplyScalar(nextDist);
+        kit.camera.position.copy(kit.controls.target).add(camDirTmp);
+        if (
+          kit.controls.target.distanceTo(s.desiredTarget) < 0.02 &&
+          Math.abs(curDist - s.desiredDist) < 0.05
+        ) {
+          s.hasDesiredCam = false;
+        }
+      }
+
+      kit.controls.update();
+      kit.renderer.render(kit.scene, kit.camera);
+
+      // Actualizar aguja del dial de temperatura/carga y barra de ciclo directo en DOM (60 fps limpios)
+      if (playheadRef.current) {
+        playheadRef.current.style.left = `${(phi / ALUAR_CYCLE_DEG) * 100}%`;
+      }
+      if (degreeLabelRef.current) {
+        degreeLabelRef.current.textContent = `${Math.round(phi)}°`;
+      }
+
+      // Temperatura / intensidad instantánea según fase
+      const gaugeTemp =
+        pIdx === 0
+          ? 28 + 12 * Math.sin(phi * D2R * 2)
+          : pIdx === 1
+            ? 1120 + 35 * s.loadFactor
+            : pIdx === 2
+              ? 955 + 12 * s.loadFactor
+              : pIdx === 3
+                ? 115 + 15 * s.loadFactor
+                : 715 + 20 * s.loadFactor;
+      if (gaugeNeedleRef.current) {
+        const norm = Math.min(1, Math.max(0, gaugeTemp / 1200));
+        const angle = -120 + norm * 240;
+        gaugeNeedleRef.current.setAttribute('transform', `rotate(${angle.toFixed(1)} 100 100)`);
+      }
+      if (gaugeTextRef.current) {
+        gaugeTextRef.current.textContent = `${Math.round(gaugeTemp)} °C`;
+      }
+
+      // Proyectar globos numerados en 2 columnas sin superposición
+      if (s.showCallouts) {
+        const placed = projectCallouts2Columns(
+          model.callouts,
+          kit.camera,
+          vw,
+          vh,
+          ALUAR_OVERVIEW_CAMERA.worldBox,
+          model.compactCalloutIds
+        );
+        const byNum = new Map(placed.map((p) => [p.n, p]));
+
+        model.callouts.forEach((def, idx) => {
+          const btn = calloutItemRefs.current[idx];
+          const poly = leaderLineRefs.current[idx];
+          const dot = leaderDotRefs.current[idx];
+          const item = byNum.get(def.n);
+          if (!btn || !poly || !dot) return;
+
+          if (!item) {
+            btn.style.opacity = '0';
+            btn.style.pointerEvents = 'none';
+            poly.style.opacity = '0';
+            dot.style.opacity = '0';
+            return;
+          }
+
+          const isLeft = item.side === 'L';
+          btn.style.opacity = '1';
+          btn.style.pointerEvents = 'auto';
+          btn.style.left = `${item.colX.toFixed(1)}px`;
+          btn.style.top = `${item.ly.toFixed(1)}px`;
+          btn.style.transform = isLeft ? 'translate(-100%, -50%)' : 'translate(0%, -50%)';
+
+          poly.style.opacity = '1';
+          poly.setAttribute(
+            'points',
+            `${item.ax.toFixed(1)},${item.ay.toFixed(1)} ${item.elbowX.toFixed(1)},${item.ly.toFixed(1)} ${item.colX.toFixed(1)},${item.ly.toFixed(1)}`
+          );
+          dot.style.opacity = '1';
+          dot.setAttribute('cx', item.ax.toFixed(1));
+          dot.setAttribute('cy', item.ay.toFixed(1));
+        });
+      }
+
+      rafId = window.requestAnimationFrame(frame);
+    };
+
+    rafId = window.requestAnimationFrame(frame);
+
+    return () => {
+      window.cancelAnimationFrame(rafId);
+      ro.disconnect();
+      kit.controls.removeEventListener('start', onStartInteract);
+      kit.controls.removeEventListener('end', onEndInteract);
+      kit.dispose();
+    };
+  }, [computeFitDistance]);
+
+  // Scrubbing directo sobre la barra de ciclo (como barra de progreso de video)
+  const scrubTimelineAt = useCallback((clientX: number) => {
+    const el = timelineRef.current;
+    if (!el) return;
+    const rect = el.getBoundingClientRect();
+    if (rect.width <= 0) return;
+    const frac = Math.min(1, Math.max(0, (clientX - rect.left) / rect.width));
+    const targetDeg = frac * ALUAR_CYCLE_DEG;
+    const cur = mod(simRef.current.theta, ALUAR_CYCLE_DEG);
+    let d = targetDeg - cur;
+    if (d > ALUAR_CYCLE_DEG / 2) d -= ALUAR_CYCLE_DEG;
+    if (d < -ALUAR_CYCLE_DEG / 2) d += ALUAR_CYCLE_DEG;
+    simRef.current.theta += d;
+  }, []);
+
+  // Exportar imagen PNG HD nítida (papel cuadriculado + modelo 3D + rótulo)
+  const handleDownloadPng = useCallback(() => {
+    const glCanvas = canvasRef.current;
+    if (!glCanvas) return;
+    const w = glCanvas.width;
+    const h = glCanvas.height;
+    const out = document.createElement('canvas');
+    out.width = w;
+    out.height = h;
+    const ctx = out.getContext('2d');
+    if (!ctx) return;
+
+    ctx.fillStyle = PAPER_HEX;
+    ctx.fillRect(0, 0, w, h);
+    ctx.strokeStyle = 'rgba(20, 23, 31, 0.06)';
+    ctx.lineWidth = 1;
+    for (let x = 0; x < w; x += 24) {
+      ctx.beginPath();
+      ctx.moveTo(x, 0);
+      ctx.lineTo(x, h);
+      ctx.stroke();
+    }
+    for (let y = 0; y < h; y += 24) {
+      ctx.beginPath();
+      ctx.moveTo(0, y);
+      ctx.lineTo(w, y);
+      ctx.stroke();
+    }
+    ctx.drawImage(glCanvas, 0, 0);
+    ctx.fillStyle = INK_HEX;
+    ctx.font = '500 22px Inter, sans-serif';
+    ctx.fillText('FIG. 01 · Aluar Puerto Madryn (Golfo Nuevo a Fundición)', 28, h - 28);
+
+    const a = document.createElement('a');
+    a.href = out.toDataURL('image/png');
+    a.download = 'aluar-circuito-inkworks-3d.png';
+    a.click();
+  }, []);
+
+  // Grabar clip de video WebM a 60 fps del recorrido completo (8 segundos) directo en el navegador
+  const handleRecordVideoClip = useCallback(() => {
+    const glCanvas = canvasRef.current;
+    if (!glCanvas || isRecording || typeof MediaRecorder === 'undefined') return;
+
+    setIsRecording(true);
+    setPlaying(true);
+    simRef.current.playing = true;
+    const prevSpeed = simRef.current.speedDivisor;
+    simRef.current.speedDivisor = 1;
+    setSpeedDivisor(1);
+
+    const w = glCanvas.width;
+    const h = glCanvas.height;
+    const recCanvas = document.createElement('canvas');
+    recCanvas.width = w;
+    recCanvas.height = h;
+    const ctx = recCanvas.getContext('2d')!;
+
+    let active = true;
+    const drawComposite = () => {
+      if (!active) return;
+      ctx.fillStyle = PAPER_HEX;
+      ctx.fillRect(0, 0, w, h);
+      ctx.strokeStyle = 'rgba(20, 23, 31, 0.055)';
+      ctx.lineWidth = 1;
+      for (let x = 0; x < w; x += 24) {
+        ctx.beginPath();
+        ctx.moveTo(x, 0);
+        ctx.lineTo(x, h);
+        ctx.stroke();
+      }
+      for (let y = 0; y < h; y += 24) {
+        ctx.beginPath();
+        ctx.moveTo(0, y);
+        ctx.lineTo(w, y);
+        ctx.stroke();
+      }
+      ctx.drawImage(glCanvas, 0, 0);
+
+      const ph = ALUAR_PHASES[simRef.current.phaseIdx]!;
+      ctx.fillStyle = INK_HEX;
+      ctx.fillRect(24, h - 62, 540, 38);
+      ctx.fillStyle = ph.color;
+      ctx.fillRect(24, h - 62, 6, 38);
+      ctx.fillStyle = '#ffffff';
+      ctx.font = '500 18px Inter, sans-serif';
+      ctx.fillText(`Etapa ${ph.code} · ${ph.name}`, 42, h - 37);
+
+      window.requestAnimationFrame(drawComposite);
+    };
+    window.requestAnimationFrame(drawComposite);
+
+    const stream = recCanvas.captureStream(60);
+    const mimeType = MediaRecorder.isTypeSupported('video/webm;codecs=vp9')
+      ? 'video/webm;codecs=vp9'
+      : 'video/webm';
+    const recorder = new MediaRecorder(stream, {
+      mimeType,
+      videoBitsPerSecond: 6_000_000,
+    });
+    const chunks: BlobPart[] = [];
+    recorder.ondataavailable = (ev) => {
+      if (ev.data.size > 0) chunks.push(ev.data);
+    };
+    recorder.onstop = () => {
+      active = false;
+      simRef.current.speedDivisor = prevSpeed;
+      setSpeedDivisor(prevSpeed);
+      setIsRecording(false);
+      const blob = new Blob(chunks, { type: mimeType });
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement('a');
+      a.href = url;
+      a.download = 'aluar-proceso-3d-inkworks.webm';
+      a.click();
+      window.setTimeout(() => URL.revokeObjectURL(url), 4000);
+    };
+
+    recorder.start();
+    window.setTimeout(() => {
+      if (recorder.state !== 'inactive') recorder.stop();
+    }, 8000);
+  }, [isRecording]);
+
+  const activePhase = ALUAR_PHASES[activePhaseIdx] ?? ALUAR_PHASES[0]!;
+  const matchedPaso = useMemo(
+    () => pasos.find((p) => p.paso_id === activePhase.pasoId) ?? pasos[activePhaseIdx] ?? null,
+    [pasos, activePhase.pasoId, activePhaseIdx]
+  );
+
+  const currentKa = Math.round(175 + (loadPct / 100) * 55);
 
   return (
-    <MotionConfig reducedMotion="user">
-      <div className="border border-rule bg-stone-surface">
-        {/* Cabecera de controles táctiles: Vista planta / Enfocar etapa + Despiece + Recorrido */}
-        <div className="flex flex-wrap items-center justify-between gap-3 border-b border-rule px-5 py-3.5 sm:px-6">
-          <div className="flex flex-wrap items-center gap-2.5">
-            <span className="text-[13px] font-medium text-ink tabular-nums">Fig. 01</span>
-            <span className="text-rule-strong/30">/</span>
-            <span className="text-[13px] text-ink-muted">
-              Diorama costero e industrial Aluar (Golfo Nuevo, Muelle Storni y planta Puerto Madryn)
-            </span>
-          </div>
-
-          <div className="flex flex-wrap items-center gap-2">
-            {/* Switch cámara: Planta completa / Zoom en etapa */}
-            <div
-              role="group"
-              aria-label="Encuadre de cámara"
-              className="inline-flex bg-stone-subtle p-0.5 text-[13px]"
-            >
-              <button
-                type="button"
-                aria-pressed={!zoomed}
-                onClick={() => setZoomed(false)}
-                className={`relative inline-flex cursor-pointer items-center gap-1.5 px-3 py-1 font-medium transition-colors duration-150 ${
-                  !zoomed ? 'text-white' : 'text-ink-muted hover:text-ink'
-                }`}
-              >
-                {!zoomed && (
-                  <motion.span
-                    layoutId="aluar-camera-mode"
-                    transition={SPRING_TAB}
-                    className="absolute inset-0 bg-ink"
-                  />
-                )}
-                <span className="relative z-10 inline-flex items-center gap-1.5">
-                  <Maximize2 className="h-3.5 w-3.5" />
-                  Planta completa
-                </span>
-              </button>
-              <button
-                type="button"
-                aria-pressed={zoomed}
-                onClick={() => setZoomed(true)}
-                className={`relative inline-flex cursor-pointer items-center gap-1.5 px-3 py-1 font-medium transition-colors duration-150 ${
-                  zoomed ? 'text-white' : 'text-ink-muted hover:text-ink'
-                }`}
-              >
-                {zoomed && (
-                  <motion.span
-                    layoutId="aluar-camera-mode"
-                    transition={SPRING_TAB}
-                    className="absolute inset-0 bg-cobalt"
-                  />
-                )}
-                <span className="relative z-10 inline-flex items-center gap-1.5">
-                  <Focus className="h-3.5 w-3.5" />
-                  Zoom etapa {activeStage.code}
-                </span>
-              </button>
-            </div>
-
-            <button
-              type="button"
-              onClick={() => {
-                setExploded((prev) => !prev);
-                if (!exploded) setSelectedId('cuba');
-              }}
-              aria-pressed={exploded}
-              className={`inline-flex cursor-pointer items-center gap-1.5 border px-3 py-1 text-[13px] font-medium transition-colors duration-150 ${
-                exploded
-                  ? 'border-cobalt bg-cobalt text-white'
-                  : 'border-rule bg-stone-bg text-ink hover:border-ink'
-              }`}
-            >
-              <Layers className="h-3.5 w-3.5" />
-              <span>{exploded ? 'Cerrar cuba' : 'Despiece cuba'}</span>
-            </button>
-
-            <button
-              type="button"
-              onClick={() => {
-                setAutoTour((prev) => {
-                  const next = !prev;
-                  if (next) setZoomed(true);
-                  return next;
-                });
-              }}
-              aria-pressed={autoTour}
-              className={`inline-flex cursor-pointer items-center gap-1.5 border px-3 py-1 text-[13px] font-medium transition-colors duration-150 ${
-                autoTour
-                  ? 'border-ink bg-ink text-white'
-                  : 'border-rule bg-stone-bg text-ink hover:border-ink'
-              }`}
-            >
-              {autoTour ? <Pause className="h-3.5 w-3.5" /> : <Play className="h-3.5 w-3.5" />}
-              <span>{autoTour ? 'Pausar' : 'Recorrido'}</span>
-            </button>
-
-            <button
-              type="button"
-              onClick={() => {
-                setAutoTour(false);
-                setExploded(false);
-                setZoomed(false);
-                setSelectedId('cuba');
-                setHoveredId(null);
-              }}
-              aria-label="Restablecer vista completa"
-              title="Restablecer vista completa"
-              className="inline-flex cursor-pointer items-center justify-center border border-rule bg-stone-bg p-1.5 text-ink-muted transition-colors duration-150 hover:border-ink hover:text-ink"
-            >
-              <RotateCcw className="h-3.5 w-3.5" />
-            </button>
-          </div>
+    <div className="border border-rule bg-stone-surface">
+      {/* Barra superior de lámina de ingeniería (estilo Inkworks) */}
+      <div className="flex flex-wrap items-center justify-between gap-3 border-b border-rule bg-stone-bg px-4 py-2.5 text-[12px] sm:px-6">
+        <div className="flex flex-wrap items-center gap-2.5">
+          <span className="bg-ink px-2 py-0.5 font-medium text-white tabular-nums">FIG. 01</span>
+          <span className="text-ink-muted">
+            Lámina 3D en movimiento · Golfo Nuevo, Muelle Storni, electrólisis y colada
+          </span>
         </div>
 
-        {/* Cuerpo widescreen: Placa isométrica 3D (8 cols) + Inspector técnico (4 cols) */}
-        <div className="grid lg:grid-cols-12">
-          <div className="atlas-iso relative flex flex-col justify-between bg-stone-surface p-4 sm:p-6 lg:col-span-8 lg:border-r lg:border-rule">
-            {/* Cabecera del plate */}
-            <div className="flex flex-wrap items-center justify-between gap-2 text-[13px] text-ink-muted">
-              <span className="font-medium text-ink">
-                {activeStage.code} · {activeStage.shortLabel}
-              </span>
-              <span className="tabular-nums">
-                {zoomed ? 'Detalle enfocado (click doble para alejar)' : 'Vista general 1× (click doble en una etapa para acercar)'}
-              </span>
-            </div>
+        <div className="flex flex-wrap items-center gap-1.5">
+          {(
+            [
+              {
+                key: 'casings',
+                label: 'Carcasas',
+                on: showCasings,
+                toggle: () => setShowCasings((v) => !v),
+              },
+              {
+                key: 'flows',
+                label: 'Flujos',
+                on: showFlows,
+                toggle: () => setShowFlows((v) => !v),
+              },
+              {
+                key: 'labels',
+                label: 'Etiquetas (12)',
+                on: showCallouts,
+                toggle: () => setShowCallouts((v) => !v),
+              },
+              {
+                key: 'focus',
+                label: 'Seguir etapa',
+                on: followPhaseCam,
+                toggle: () => setFollowPhaseCam((v) => !v),
+              },
+              {
+                key: 'orbit',
+                label: 'Giro 3D',
+                on: autoOrbit,
+                toggle: () => setAutoOrbit((v) => !v),
+              },
+            ] as const
+          ).map((item) => (
+            <button
+              key={item.key}
+              type="button"
+              aria-pressed={item.on}
+              onClick={item.toggle}
+              className={`cursor-pointer border px-2.5 py-1 font-medium transition-colors duration-150 ${
+                item.on
+                  ? 'border-ink bg-ink text-white'
+                  : 'border-rule bg-stone-surface text-ink-muted hover:border-ink hover:text-ink'
+              }`}
+            >
+              {item.label}
+            </button>
+          ))}
 
-            {/* Lienzo SVG isométrico con cámara suavizada y ductos 3D */}
-            <div className="my-3 overflow-hidden border border-rule/70 bg-[#F4F3EE]">
-              <svg
-                viewBox={viewBoxStr}
-                role="img"
-                aria-label="Diorama isométrico interactivo del complejo Aluar en Puerto Madryn: Golfo Nuevo, Muelle Almirante Storni, buque alúminero, silos, horno de ánodos, cuba Hall-Héroult en corte, GTC y fundición"
-                className="iso-svg mx-auto w-full"
+          <button
+            type="button"
+            onClick={handleDownloadPng}
+            title="Descargar imagen PNG de alta nitidez"
+            className="inline-flex cursor-pointer items-center gap-1 border border-rule bg-stone-surface px-2.5 py-1 font-medium text-ink transition-colors duration-150 hover:border-ink hover:text-cobalt"
+          >
+            <Camera className="h-3.5 w-3.5" />
+            <span>PNG</span>
+          </button>
+
+          <button
+            type="button"
+            onClick={handleRecordVideoClip}
+            disabled={isRecording}
+            title="Grabar clip de video WebM a 60 fps (8 segundos)"
+            className={`inline-flex cursor-pointer items-center gap-1 border px-2.5 py-1 font-medium transition-colors duration-150 ${
+              isRecording
+                ? 'border-signal-red bg-signal-red text-white'
+                : 'border-rule bg-stone-surface text-ink hover:border-ink hover:text-cobalt'
+            }`}
+          >
+            <Video className="h-3.5 w-3.5" />
+            <span>{isRecording ? 'Grabando 8s...' : 'Clip WebM'}</span>
+          </button>
+        </div>
+      </div>
+
+      {/* Escenario 3D sobre papel milimetrado técnico + 12 globos numerados sin colisión */}
+      <div
+        ref={stageRef}
+        className="relative h-[460px] w-full overflow-hidden select-none sm:h-[540px] lg:h-[580px]"
+        style={{
+          backgroundColor: PAPER_HEX,
+          backgroundImage:
+            'linear-gradient(to right, rgba(20,23,31,0.05) 1px, transparent 1px), linear-gradient(to bottom, rgba(20,23,31,0.05) 1px, transparent 1px), linear-gradient(to right, rgba(20,23,31,0.095) 1px, transparent 1px), linear-gradient(to bottom, rgba(20,23,31,0.095) 1px, transparent 1px)',
+          backgroundSize: '20px 20px, 20px 20px, 100px 100px, 100px 100px',
+        }}
+      >
+        {/* Coordenadas de zona en el margen superior como hoja de ingeniería */}
+        <div
+          aria-hidden="true"
+          className="pointer-events-none absolute inset-x-0 top-0 z-10 hidden grid-cols-8 border-b border-rule/60 text-center text-[10px] text-ink-muted/70 tabular-nums sm:grid"
+        >
+          {['1 · MAR', '2 · MUELLE', '3 · SILOS', '4 · ÁNODOS', '5 · CUBA', '6 · GTC', '7 · SIFÓN', '8 · COLADA'].map(
+            (zone) => (
+              <span key={zone} className="border-r border-rule/40 py-0.5 last:border-r-0">
+                {zone}
+              </span>
+            )
+          )}
+        </div>
+
+        <canvas
+          ref={canvasRef}
+          aria-label="Simulación 3D interactiva del proceso completo de Aluar en Puerto Madryn"
+          className="block h-full w-full cursor-grab active:cursor-grabbing"
+        />
+
+        {/* Líneas guía quebradas (leaders) en SVG sincronizadas a 60 fps */}
+        <svg
+          ref={leadersSvgRef}
+          aria-hidden="true"
+          className={`pointer-events-none absolute inset-0 h-full w-full transition-opacity duration-150 ${
+            showCallouts ? 'opacity-100' : 'opacity-0'
+          }`}
+        >
+          {Array.from({ length: 12 }, (_, idx) => (
+            <g key={idx}>
+              <polyline
+                ref={(el) => {
+                  leaderLineRefs.current[idx] = el;
+                }}
+                fill="none"
+                stroke="rgba(20, 23, 31, 0.58)"
+                strokeWidth="1"
+              />
+              <circle
+                ref={(el) => {
+                  leaderDotRefs.current[idx] = el;
+                }}
+                r="2.6"
+                fill={INK_HEX}
+              />
+            </g>
+          ))}
+        </svg>
+
+        {/* 12 globos numerados interactivos en 2 columnas laterales */}
+        <div
+          className={`pointer-events-none absolute inset-0 z-10 transition-opacity duration-150 ${
+            showCallouts ? 'opacity-100' : 'opacity-0'
+          }`}
+        >
+          {[
+            { n: 1, name: 'Golfo Nuevo y Muelle Storni', phaseIndex: 0 },
+            { n: 2, name: 'Buque granelero (Al2O3)', phaseIndex: 0 },
+            { n: 3, name: 'Grúa succionadora neumática', phaseIndex: 0 },
+            { n: 4, name: 'Conducto hermético a silos', phaseIndex: 0 },
+            { n: 5, name: 'Silos cónicos de alúmina', phaseIndex: 0 },
+            { n: 6, name: 'Horno de cocción de ánodos', phaseIndex: 1 },
+            { n: 7, name: 'Monorriel de ánodos (C)', phaseIndex: 1 },
+            { n: 8, name: 'Barras DC y rompe-costra', phaseIndex: 2 },
+            { n: 9, name: 'Cuba Hall-Héroult (960 °C)', phaseIndex: 2 },
+            { n: 10, name: 'Ciclones y reciclo GTC (>99%)', phaseIndex: 3 },
+            { n: 11, name: 'Crisol de sifonado al vacío', phaseIndex: 4 },
+            { n: 12, name: 'Horno y colada de lingotes', phaseIndex: 4 },
+          ].map((item, idx) => {
+            const isPhaseActive = activePhaseIdx === item.phaseIndex;
+            return (
+              <button
+                key={item.n}
+                ref={(el) => {
+                  calloutItemRefs.current[idx] = el;
+                }}
+                type="button"
+                onClick={() => jumpToPhase(item.phaseIndex, 0, true)}
+                style={{ opacity: 0 }}
+                className={`group absolute inline-flex cursor-pointer items-center gap-1.5 border px-2 py-0.5 text-[12px] whitespace-nowrap shadow-2xs transition-colors duration-150 ${
+                  isPhaseActive
+                    ? 'border-ink bg-ink text-white'
+                    : 'border-rule-strong/30 bg-stone-surface/95 text-ink hover:border-ink'
+                }`}
               >
-                {/* 1. Halo y terreno escalonado (Golfo Nuevo + Terraza Puerto Madryn) */}
-                <g aria-hidden="true">
-                  <path className="iso-halo" d={scene.baseHalo} />
-                  {scene.terrainSolids.map((s) => (
-                    <SolidElement key={s.id} solid={s} />
-                  ))}
-                  <LinesLayer lines={scene.terrainLines} />
-                  <DotsLayer dots={scene.terrainDots} />
-                  <g transform={scene.plateLabelTransform}>
-                    <text
-                      x="0"
-                      y="0"
-                      fontSize="5.2"
-                      fontWeight="700"
-                      letterSpacing="0.08em"
-                      fill="#424650"
-                      style={{ fontFamily: 'var(--font-display)' }}
-                    >
-                      ALUAR · CHUBUT
-                    </text>
-                  </g>
-                </g>
-
-                {/* 2. Ensamble 02 (atrás-izquierda): Planta de ánodos y horno de cocción */}
-                <g
-                  role="button"
-                  tabIndex={0}
-                  aria-label="02 Planta de ánodos precocidos y horno de cocción 1.150 °C"
-                  className="iso-assembly"
-                  data-active={isActive('anodos')}
-                  data-dim={isDimmed('anodos')}
-                  onMouseEnter={() => setHoveredId('anodos')}
-                  onMouseLeave={() => setHoveredId(null)}
-                  onClick={() => handleSelectAssembly('anodos')}
-                  onDoubleClick={() => handleSelectAssembly('anodos', !zoomed)}
-                  onKeyDown={(e) => {
-                    if (e.key === 'Enter' || e.key === ' ') {
-                      e.preventDefault();
-                      handleSelectAssembly('anodos');
-                    }
-                  }}
+                <span
+                  className={`inline-flex h-4 w-4 items-center justify-center text-[11px] font-medium tabular-nums ${
+                    isPhaseActive ? 'bg-white text-ink' : 'bg-stone-subtle text-ink'
+                  }`}
                 >
-                  {scene.anodosPlantSolids.map((s) => (
-                    <SolidElement key={s.id} solid={s} />
-                  ))}
-                  <LinesLayer lines={scene.anodosPlantLines} />
-                  <DotsLayer dots={scene.anodosPlantDots} />
-                </g>
+                  {item.n}
+                </span>
+                <span className="font-normal">{item.name}</span>
+              </button>
+            );
+          })}
+        </div>
 
-                {/* 3. Ensamble 04 (atrás-derecha): Centro de Tratamiento de Gases (GTC) */}
-                <g
-                  role="button"
-                  tabIndex={0}
-                  aria-label="04 Centro de Tratamiento de Gases (GTC) y reciclo de fluoruros"
-                  className="iso-assembly"
-                  data-active={isActive('gtc')}
-                  data-dim={isDimmed('gtc')}
-                  onMouseEnter={() => setHoveredId('gtc')}
-                  onMouseLeave={() => setHoveredId(null)}
-                  onClick={() => handleSelectAssembly('gtc')}
-                  onDoubleClick={() => handleSelectAssembly('gtc', !zoomed)}
-                  onKeyDown={(e) => {
-                    if (e.key === 'Enter' || e.key === ' ') {
-                      e.preventDefault();
-                      handleSelectAssembly('gtc');
-                    }
-                  }}
-                >
-                  {scene.gtcSolids.map((s) => (
-                    <SolidElement key={s.id} solid={s} />
-                  ))}
-                  {scene.gtcTubes.map((tb) => (
-                    <TubeElement key={tb.id} tube={tb} />
-                  ))}
-                  <LinesLayer lines={scene.gtcLines} />
-                  <DotsLayer dots={scene.gtcDots} />
-                </g>
-
-                {/* 4. Ensamble 01 (izquierda costera): Muelle Storni, Buque, Grúa y Silos */}
-                <g
-                  role="button"
-                  tabIndex={0}
-                  aria-label="01 Muelle Almirante Storni, buque granelero, grúa descargadora y silos"
-                  className="iso-assembly"
-                  data-active={isActive('silo')}
-                  data-dim={isDimmed('silo')}
-                  onMouseEnter={() => setHoveredId('silo')}
-                  onMouseLeave={() => setHoveredId(null)}
-                  onClick={() => handleSelectAssembly('silo')}
-                  onDoubleClick={() => handleSelectAssembly('silo', !zoomed)}
-                  onKeyDown={(e) => {
-                    if (e.key === 'Enter' || e.key === ' ') {
-                      e.preventDefault();
-                      handleSelectAssembly('silo');
-                    }
-                  }}
-                >
-                  {scene.pierSolids.map((s) => (
-                    <SolidElement key={s.id} solid={s} />
-                  ))}
-                  {scene.pierTubes.map((tb) => (
-                    <TubeElement key={tb.id} tube={tb} />
-                  ))}
-                  <LinesLayer lines={scene.pierLines} />
-                  <DotsLayer dots={scene.pierDots} />
-                </g>
-
-                {/* 5. Ensamble 03 (centro hero): Cuba Hall-Héroult en corte abierto */}
-                <g
-                  role="button"
-                  tabIndex={0}
-                  aria-label="03 Cuba electrolítica Hall-Héroult en corte abierto"
-                  className="iso-assembly"
-                  data-active={isActive('cuba')}
-                  data-dim={isDimmed('cuba')}
-                  onMouseEnter={() => setHoveredId('cuba')}
-                  onMouseLeave={() => setHoveredId(null)}
-                  onClick={() => handleSelectAssembly('cuba')}
-                  onDoubleClick={() => handleSelectAssembly('cuba', !zoomed)}
-                  onKeyDown={(e) => {
-                    if (e.key === 'Enter' || e.key === ' ') {
-                      e.preventDefault();
-                      handleSelectAssembly('cuba');
-                    }
-                  }}
-                >
-                  {scene.cubaBackSolids.map((s) => (
-                    <SolidElement key={s.id} solid={s} />
-                  ))}
-                  <LinesLayer lines={scene.cubaBackLines} />
-                  {scene.cubaCathodeSolids.map((s) => (
-                    <SolidElement key={s.id} solid={s} />
-                  ))}
-
-                  {/* Colchón de aluminio líquido */}
-                  <motion.g
-                    animate={{
-                      x: exploded ? scene.explodeVectors.metal[0] : 0,
-                      y: exploded ? scene.explodeVectors.metal[1] : 0,
-                    }}
-                    transition={SPRING_EXPLODE}
-                  >
-                    {scene.cubaMetalSolids.map((s) => (
-                      <SolidElement key={s.id} solid={s} />
-                    ))}
-                  </motion.g>
-
-                  {/* Baño fundido de criolita */}
-                  <motion.g
-                    animate={{
-                      x: exploded ? scene.explodeVectors.bath[0] : 0,
-                      y: exploded ? scene.explodeVectors.bath[1] : 0,
-                    }}
-                    transition={{ ...SPRING_EXPLODE, delay: exploded ? 0.04 : 0 }}
-                  >
-                    {scene.cubaBathSolids.map((s) => (
-                      <SolidElement key={s.id} solid={s} />
-                    ))}
-                    <DotsLayer dots={scene.cubaBathDots} />
-                  </motion.g>
-                </g>
-
-                {/* Ánodos suspendidos + viga CC (vinculados a etapa 02 y 03, suben en Despiece) */}
-                <motion.g
-                  className="iso-assembly"
-                  data-active={isActive('anodos') || isActive('cuba')}
-                  data-dim={hoveredId !== null && hoveredId !== 'anodos' && hoveredId !== 'cuba'}
-                  animate={{
-                    x: exploded ? scene.explodeVectors.anodos[0] : 0,
-                    y: exploded ? scene.explodeVectors.anodos[1] : 0,
-                  }}
-                  transition={{ ...SPRING_EXPLODE, delay: exploded ? 0.08 : 0 }}
-                  onMouseEnter={() => setHoveredId('cuba')}
-                  onMouseLeave={() => setHoveredId(null)}
-                  onClick={() => handleSelectAssembly('cuba')}
-                >
-                  {scene.cubaAnodesSolids.map((s) => (
-                    <SolidElement key={s.id} solid={s} />
-                  ))}
-                  <DotsLayer dots={scene.cubaAnodesDots} />
-                  <path
-                    className="iso-line"
-                    data-tone="blue"
-                    data-flow={isActive('anodos') || isActive('cuba') ? 'true' : undefined}
-                    d={scene.flowPaths.dcBusbar}
-                  />
-                </motion.g>
-
-                {/* Labio frontal cortado + barras colectoras de cátodo + pórtico frontal */}
-                <g
-                  className="iso-assembly"
-                  data-active={isActive('cuba')}
-                  data-dim={isDimmed('cuba')}
-                  onMouseEnter={() => setHoveredId('cuba')}
-                  onMouseLeave={() => setHoveredId(null)}
-                  onClick={() => handleSelectAssembly('cuba')}
-                >
-                  {scene.cubaFrontSolids.map((s) => (
-                    <SolidElement key={s.id} solid={s} />
-                  ))}
-                </g>
-
-                {/* Superestructura tolva y campana superior */}
-                <motion.g
-                  className="iso-assembly"
-                  data-active={isActive('cuba')}
-                  data-dim={hoveredId !== null && hoveredId !== 'cuba' && hoveredId !== 'silo'}
-                  animate={{
-                    x: exploded ? scene.explodeVectors.hood[0] : 0,
-                    y: exploded ? scene.explodeVectors.hood[1] : 0,
-                  }}
-                  transition={{ ...SPRING_EXPLODE, delay: exploded ? 0.12 : 0 }}
-                  onMouseEnter={() => setHoveredId('cuba')}
-                  onMouseLeave={() => setHoveredId(null)}
-                  onClick={() => handleSelectAssembly('cuba')}
-                >
-                  {scene.cubaHoodSolids.map((s) => (
-                    <SolidElement key={s.id} solid={s} />
-                  ))}
-                  <LinesLayer lines={scene.cubaHoodLines} />
-                </motion.g>
-
-                {/* 6. Ensamble 05 (frente-derecha): Crisol, Horno 720 °C, Lingotes, Barrotes y Alambrón */}
-                <g
-                  role="button"
-                  tabIndex={0}
-                  aria-label="05 Sala de fundición, crisol de vacío, horno 720 °C, lingotes y barrotes"
-                  className="iso-assembly"
-                  data-active={isActive('fundicion')}
-                  data-dim={isDimmed('fundicion')}
-                  onMouseEnter={() => setHoveredId('fundicion')}
-                  onMouseLeave={() => setHoveredId(null)}
-                  onClick={() => handleSelectAssembly('fundicion')}
-                  onDoubleClick={() => handleSelectAssembly('fundicion', !zoomed)}
-                  onKeyDown={(e) => {
-                    if (e.key === 'Enter' || e.key === ' ') {
-                      e.preventDefault();
-                      handleSelectAssembly('fundicion');
-                    }
-                  }}
-                >
-                  {scene.fundicionTubes.map((tb) => (
-                    <TubeElement key={tb.id} tube={tb} />
-                  ))}
-                  {scene.fundicionSolids.map((s) => (
-                    <SolidElement key={s.id} solid={s} />
-                  ))}
-                  <LinesLayer lines={scene.fundicionLines} />
-                  <DotsLayer dots={scene.fundicionDots} />
-                </g>
-
-                {/* Corrientes animadas sutiles cuando se selecciona la etapa correspondiente */}
-                {isActive('silo') && (
-                  <path className="iso-line" data-tone="ochre" data-flow="true" d={scene.flowPaths.aluminaFeed} />
-                )}
-                {isActive('gtc') && (
-                  <>
-                    <path className="iso-line" data-tone="red" data-flow="true" d={scene.flowPaths.gasToGtc} />
-                    <path className="iso-line" data-tone="green" data-flow="true" d={scene.flowPaths.gtcRecycle} />
-                  </>
-                )}
-                {isActive('fundicion') && (
-                  <path className="iso-line" data-tone="blue" data-flow="true" d={scene.flowPaths.metalTap} />
-                )}
-
-                {/* 7. Dial térmico isométrico (0 a 1.250 °C) */}
-                <g aria-hidden="true">
-                  {scene.dialSolids.map((s) => (
-                    <SolidElement key={s.id} solid={s} />
-                  ))}
-                  <LinesLayer lines={scene.dialLines} />
-                  <path className="iso-line" data-tone="lit" d={needlePath} />
-                  <DotsLayer dots={scene.dialDots} />
-                </g>
-
-                {/* 8. Pins numerados interactivos (01..05) para lectura instantánea de cada estación */}
-                <g>
-                  {scene.pins.map((pin) => {
-                    const active = isActive(pin.id);
-                    const scaleFactor = cam.w / scene.width;
-                    return (
-                      <g
-                        key={pin.id}
-                        transform={`translate(${pin.x.toFixed(1)} ${pin.y.toFixed(1)}) scale(${scaleFactor.toFixed(3)})`}
-                        role="button"
-                        tabIndex={0}
-                        aria-label={`${pin.code} ${pin.label}`}
-                        className="cursor-pointer"
-                        onMouseEnter={() => setHoveredId(pin.id)}
-                        onMouseLeave={() => setHoveredId(null)}
-                        onClick={() => handleSelectAssembly(pin.id, true)}
-                        onKeyDown={(e) => {
-                          if (e.key === 'Enter' || e.key === ' ') {
-                            e.preventDefault();
-                            handleSelectAssembly(pin.id, true);
-                          }
-                        }}
-                      >
-                        <circle
-                          r={active ? 12 : 10.5}
-                          fill={active ? '#0A42E0' : '#111214'}
-                          stroke="#F7F7F5"
-                          strokeWidth="1.8"
-                        />
-                        <text
-                          textAnchor="middle"
-                          dominantBaseline="central"
-                          fontSize="9.5"
-                          fontWeight="700"
-                          fill="#FFFFFF"
-                          style={{ fontFamily: 'var(--font-display)' }}
-                        >
-                          {pin.code}
-                        </text>
-                      </g>
-                    );
-                  })}
-                </g>
-              </svg>
-            </div>
-
-            {/* Pie del plate: pista interactiva + lectura en vivo del dial */}
-            <div className="flex flex-wrap items-center justify-between gap-3 border-t border-rule pt-3 text-[13px]">
-              <span className="text-ink-muted">
-                Hacé click en los pins 01 a 05 para enfocar cada etapa en detalle
-              </span>
-              <span className="font-medium text-ink tabular-nums">
-                Dial térmico: {Math.round(needleTemp).toLocaleString('es-AR')} °C ·{' '}
-                {activeStage.calloutMetric}
-              </span>
-            </div>
-
-            {/* Leyenda material compacta */}
-            <div className="mt-3 flex flex-wrap items-center gap-x-5 gap-y-2 text-[13px] text-ink-muted">
-              <span className="inline-flex items-center gap-2">
-                <span className="inline-block h-2.5 w-2.5 border border-ink/30 bg-[#A3BCD2]" />
-                Golfo Nuevo y Muelle Storni
-              </span>
-              <span className="inline-flex items-center gap-2">
-                <span className="inline-block h-2.5 w-2.5 border border-ink/40 bg-[#393F4A]" />
-                Carbono (ánodos y cátodo)
-              </span>
-              <span className="inline-flex items-center gap-2">
-                <span className="inline-block h-2.5 w-2.5 border border-ink/30 bg-[#E39538]" />
-                Baño criolita / hornos
-              </span>
-              <span className="inline-flex items-center gap-2">
-                <span className="inline-block h-2.5 w-2.5 border border-ink/30 bg-[#C4D5E8]" />
-                Aluminio líquido y colada
-              </span>
-              <span className="inline-flex items-center gap-2">
-                <span className="inline-block h-2.5 w-2.5 bg-cobalt" />
-                Grúa portuaria y viga CC
-              </span>
-              <span className="inline-flex items-center gap-2">
-                <span className="inline-block h-2.5 w-2.5 bg-emerald-react" />
-                GTC y reciclo HF
-              </span>
-            </div>
-          </div>
-
-          {/* Panel lateral técnico sincronizado con los datos verificados de Aluar */}
-          <div className="flex flex-col justify-between border-t border-rule bg-stone-surface lg:col-span-4 lg:border-t-0">
-            <div>
-              <div className="border-b border-rule p-4 sm:p-5">
-                <div className="flex items-center justify-between gap-2">
-                  <p className="text-[13px] font-medium text-ink-muted">
-                    Etapas del complejo Aluar
-                  </p>
-                  {zoomed && (
-                    <button
-                      type="button"
-                      onClick={() => setZoomed(false)}
-                      className="cursor-pointer text-[13px] font-medium text-cobalt hover:underline"
-                    >
-                      Ver planta 1×
-                    </button>
-                  )}
-                </div>
-                <div
-                  className="mt-3 flex flex-col gap-1.5"
-                  role="tablist"
-                  aria-label="Etapas de planta Aluar"
-                >
-                  {stages.map((st) => {
-                    const selected = activeId === st.id;
-                    return (
-                      <button
-                        key={st.id}
-                        type="button"
-                        role="tab"
-                        aria-selected={selected}
-                        onMouseEnter={() => setHoveredId(st.id)}
-                        onMouseLeave={() => setHoveredId(null)}
-                        onClick={() => handleSelectAssembly(st.id, true)}
-                        className={`flex cursor-pointer items-center justify-between gap-3 border px-3 py-2 text-left text-[14px] transition-colors duration-150 ${
-                          selected
-                            ? 'border-ink bg-ink text-white'
-                            : 'border-rule bg-stone-bg text-ink hover:border-ink'
-                        }`}
-                      >
-                        <span className="flex items-center gap-2.5">
-                          <span
-                            className={`text-[13px] font-medium tabular-nums ${
-                              selected ? 'text-white/75' : 'text-ink-muted'
-                            }`}
-                          >
-                            {st.code}
-                          </span>
-                          <span className="font-medium">{st.shortLabel}</span>
-                        </span>
-                        <span
-                          className={`text-[13px] tabular-nums ${
-                            selected ? 'text-white/85' : 'text-ink-muted'
-                          }`}
-                        >
-                          {st.dialTempC} °C
-                        </span>
-                      </button>
-                    );
-                  })}
-                </div>
-              </div>
-
-              <AnimatePresence mode="wait">
-                <motion.div
-                  key={activeStage.id}
-                  initial={{ opacity: 0, y: 6 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  exit={{ opacity: 0, y: -4 }}
-                  transition={{ duration: 0.18, ease: [0.22, 1, 0.36, 1] }}
-                  className="p-5 sm:p-6"
-                >
-                  <h3 className="font-display text-[20px] font-medium leading-snug text-ink">
-                    {activePaso?.nombre ?? activeStage.shortLabel}
-                  </h3>
-
-                  <p className="mt-2 font-display text-[26px] font-medium leading-tight text-cobalt tabular-nums">
-                    {activeStage.calloutMetric}
-                  </p>
-                  <p className="mt-1 text-[13px] text-ink-muted">{activeStage.calloutCaption}</p>
-
-                  {activePaso?.reaccion_balanceada && (
-                    <div className="mt-4 border-l-2 border-cobalt bg-stone-bg px-3.5 py-2.5">
-                      <p className="text-[13px] text-ink-muted">Reacción balanceada</p>
-                      <p className="mt-0.5 font-display text-[15px] font-medium text-ink tabular-nums">
-                        {activePaso.reaccion_balanceada}
-                      </p>
-                    </div>
-                  )}
-
-                  <dl className="mt-4 grid grid-cols-2 gap-3 border-y border-rule py-3.5 text-[13px] tabular-nums">
-                    <div>
-                      <dt className="text-ink-muted">Temperatura</dt>
-                      <dd className="mt-0.5 font-medium text-ink">
-                        {activePaso?.temperatura_c ? `${activePaso.temperatura_c} °C` : 'Sin datos'}
-                      </dd>
-                    </div>
-                    <div>
-                      <dt className="text-ink-muted">Presión</dt>
-                      <dd className="mt-0.5 font-medium text-ink">
-                        {activePaso?.presion_bar ? `${activePaso.presion_bar} bar` : 'Sin datos'}
-                      </dd>
-                    </div>
-                  </dl>
-
-                  {activePaso && (
-                    <p className="mt-4 text-[14px] leading-relaxed text-ink-muted">
-                      {activePaso.descripcion}
-                    </p>
-                  )}
-
-                  <p className="mt-3 text-[13px] text-ink-muted">
-                    <strong className="font-medium text-ink">En el diorama:</strong>{' '}
-                    {activeStage.physicalParts}
-                  </p>
-                </motion.div>
-              </AnimatePresence>
-            </div>
-
-            {activePaso && (
-              <div className="border-t border-rule bg-stone-bg px-5 py-3 text-[13px] text-ink-muted">
-                Fuente ({activePaso.procedencia.anio}): {activePaso.procedencia.fuente}
-              </div>
-            )}
+        {/* Controles flotantes discretos abajo del lienzo 3D */}
+        <div className="pointer-events-none absolute inset-x-4 bottom-3 z-20 flex flex-wrap items-center justify-between gap-2 text-[12px]">
+          <span className="border border-rule bg-stone-surface/92 px-2.5 py-1 text-ink-muted backdrop-blur-xs">
+            Arrastrá para orbitar en 3D · Rueda para zoom · Click en globo para acercar máquina
+          </span>
+          <div className="pointer-events-auto flex items-center gap-1.5">
+            <button
+              type="button"
+              onClick={() => jumpToPhase(activePhaseIdx, 0, true)}
+              className="inline-flex cursor-pointer items-center gap-1 border border-rule bg-stone-surface/95 px-2.5 py-1 font-medium text-ink transition-colors duration-150 hover:border-ink hover:text-cobalt"
+            >
+              <Focus className="h-3.5 w-3.5" />
+              <span>Acercar a etapa {activePhase.code}</span>
+            </button>
+            <button
+              type="button"
+              onClick={resetCamera}
+              className="inline-flex cursor-pointer items-center gap-1 border border-rule bg-stone-surface/95 px-2.5 py-1 font-medium text-ink transition-colors duration-150 hover:border-ink hover:text-cobalt"
+            >
+              <RotateCcw className="h-3.5 w-3.5" />
+              <span>Vista general</span>
+            </button>
           </div>
         </div>
       </div>
-    </MotionConfig>
+
+      {/* Barra de reproducción y línea de tiempo arrastrable 0°..360° (Chart C de Inkworks) */}
+      <div className="border-t border-rule bg-stone-bg px-4 py-3.5 sm:px-6">
+        <div className="flex flex-wrap items-center justify-between gap-4">
+          {/* Transporte Play / Pause / Prev / Next */}
+          <div className="flex items-center gap-2">
+            <button
+              type="button"
+              onClick={() => stepPhase(-1)}
+              aria-label="Etapa anterior"
+              className="inline-flex h-8 w-8 cursor-pointer items-center justify-center border border-rule bg-stone-surface text-ink transition-colors duration-150 hover:border-ink"
+            >
+              <SkipBack className="h-3.5 w-3.5" />
+            </button>
+            <button
+              type="button"
+              onClick={() => {
+                simRef.current.tween = null;
+                setPlaying((p) => !p);
+              }}
+              aria-label={playing ? 'Pausar simulación' : 'Reproducir simulación'}
+              className="inline-flex h-9 w-9 cursor-pointer items-center justify-center bg-ink text-white transition-colors duration-150 hover:bg-cobalt"
+            >
+              {playing ? <Pause className="h-4 w-4" /> : <Play className="h-4 w-4" />}
+            </button>
+            <button
+              type="button"
+              onClick={() => stepPhase(1)}
+              aria-label="Siguiente etapa"
+              className="inline-flex h-8 w-8 cursor-pointer items-center justify-center border border-rule bg-stone-surface text-ink transition-colors duration-150 hover:border-ink"
+            >
+              <SkipForward className="h-3.5 w-3.5" />
+            </button>
+
+            <div className="ml-2 flex border border-rule bg-stone-surface p-0.5 text-[12px]">
+              {SPEEDS.map((sp) => (
+                <button
+                  key={sp.divisor}
+                  type="button"
+                  onClick={() => setSpeedDivisor(sp.divisor)}
+                  className={`cursor-pointer px-2 py-0.5 font-medium tabular-nums transition-colors duration-150 ${
+                    speedDivisor === sp.divisor
+                      ? 'bg-ink text-white'
+                      : 'text-ink-muted hover:text-ink'
+                  }`}
+                >
+                  {sp.label}
+                </button>
+              ))}
+            </div>
+          </div>
+
+          {/* Slider conductor (intensidad de serie en kA) */}
+          <div className="flex items-center gap-3 text-[12px] tabular-nums">
+            <label htmlFor="aluar-potline-ka" className="text-ink-muted">
+              Corriente de serie:
+            </label>
+            <input
+              id="aluar-potline-ka"
+              type="range"
+              min={25}
+              max={100}
+              value={loadPct}
+              onChange={(e) => setLoadPct(Number(e.target.value))}
+              className="w-28 accent-ink sm:w-36"
+            />
+            <span className="w-14 font-medium text-ink">{currentKa} kA</span>
+            <span className="text-ink-muted">
+              Ciclo: <strong ref={degreeLabelRef} className="font-medium text-ink">14°</strong>
+            </span>
+          </div>
+        </div>
+
+        {/* Cronograma de ciclo arrastrable (scrubbable) dividido en las 5 etapas */}
+        <div
+          ref={timelineRef}
+          onPointerDown={(e) => {
+            e.currentTarget.setPointerCapture(e.pointerId);
+            simRef.current.scrubbing = true;
+            simRef.current.tween = null;
+            scrubTimelineAt(e.clientX);
+          }}
+          onPointerMove={(e) => {
+            if (simRef.current.scrubbing) scrubTimelineAt(e.clientX);
+          }}
+          onPointerUp={() => {
+            simRef.current.scrubbing = false;
+          }}
+          onPointerCancel={() => {
+            simRef.current.scrubbing = false;
+          }}
+          role="slider"
+          tabIndex={0}
+          aria-label="Línea de tiempo del ciclo industrial de Aluar (arrastrá para avanzar o retroceder)"
+          aria-valuemin={0}
+          aria-valuemax={360}
+          className="relative mt-3 h-8 w-full cursor-ew-resize select-none border border-rule bg-stone-surface"
+        >
+          <div className="flex h-full w-full">
+            {ALUAR_PHASES.map((ph) => {
+              const widthPct = ((ph.endDeg - ph.startDeg) / ALUAR_CYCLE_DEG) * 100;
+              const isCurrent = ph.index === activePhaseIdx;
+              return (
+                <div
+                  key={ph.code}
+                  style={{
+                    width: `${widthPct}%`,
+                    backgroundColor: ph.color,
+                    opacity: isCurrent ? 0.92 : 0.24,
+                  }}
+                  className="flex h-full items-center border-r border-white/40 px-2 transition-opacity duration-150 last:border-r-0"
+                >
+                  <span
+                    className={`truncate text-[11px] font-medium tracking-wide ${
+                      isCurrent ? 'text-white' : 'text-ink'
+                    }`}
+                  >
+                    {ph.code} · {ph.short}
+                  </span>
+                </div>
+              );
+            })}
+          </div>
+
+          {/* Cabezal móvil (playhead) */}
+          <div
+            ref={playheadRef}
+            style={{ left: '4%' }}
+            className="pointer-events-none absolute inset-y-0 z-10 w-[2px] -translate-x-1/2 bg-ink"
+          >
+            <span className="absolute -top-1.5 left-1/2 h-2.5 w-2.5 -translate-x-1/2 rotate-45 bg-ink" />
+          </div>
+        </div>
+      </div>
+
+      {/* Ficha inferior: Detalle de máquina, transporte físico, reacción e instrumento de aguja */}
+      <div className="grid border-t border-rule lg:grid-cols-12">
+        {/* Bloque A: Explicación de la etapa activa y cómo se transporta el material */}
+        <div className="flex flex-col justify-between p-6 lg:col-span-8 lg:border-r lg:border-rule">
+          <div>
+            {/* Selector directo de las 5 fases */}
+            <div className="flex flex-wrap gap-1.5 border-b border-rule pb-4">
+              {ALUAR_PHASES.map((ph) => {
+                const isSel = ph.index === activePhaseIdx;
+                return (
+                  <button
+                    key={ph.code}
+                    type="button"
+                    onClick={() => {
+                      setPlaying(false);
+                      jumpToPhase(ph.index, 0, true);
+                    }}
+                    className={`inline-flex cursor-pointer items-center gap-2 border px-3 py-1.5 text-[13px] font-medium transition-colors duration-150 ${
+                      isSel
+                        ? 'border-ink bg-ink text-white'
+                        : 'border-rule bg-stone-bg text-ink hover:border-ink'
+                    }`}
+                  >
+                    <span
+                      className="h-2 w-2 rounded-full"
+                      style={{ backgroundColor: isSel ? '#ffffff' : ph.color }}
+                    />
+                    <span className="tabular-nums">{ph.code}</span>
+                    <span>{ph.name}</span>
+                  </button>
+                );
+              })}
+            </div>
+
+            <div className="mt-5 flex flex-wrap items-baseline justify-between gap-3">
+              <h3 className="font-display text-[20px] font-medium leading-[1.2] tracking-[-0.018em] text-ink">
+                Etapa {activePhase.code}: {activePhase.name}
+              </h3>
+              {matchedPaso?.reaccion_balanceada && (
+                <span className="bg-stone-subtle px-2.5 py-1 text-[13px] font-medium text-cobalt tabular-nums">
+                  {matchedPaso.reaccion_balanceada}
+                </span>
+              )}
+            </div>
+
+            <p className="mt-2.5 max-w-[70ch] text-[14px] font-normal leading-relaxed text-ink">
+              {activePhase.summary}
+            </p>
+
+            <p className="mt-3 border-l-2 border-cobalt bg-stone-bg px-3.5 py-2.5 text-[13px] font-normal text-ink-muted">
+              {activePhase.transportDetail}
+            </p>
+          </div>
+
+          {/* 4 magnitudes reales verificadas en pie tabular */}
+          <dl className="mt-6 grid grid-cols-2 gap-4 border-t border-rule pt-4 text-[13px] sm:grid-cols-4 tabular-nums">
+            <div>
+              <dt className="text-[12px] text-ink-muted">Alúmina en puerto (2024)</dt>
+              <dd className="mt-0.5 font-display text-[17px] font-medium text-ink">
+                {aluminaImportadaT !== null
+                  ? `${Math.round(aluminaImportadaT).toLocaleString('es-AR')} t`
+                  : 'Sin datos'}
+              </dd>
+            </div>
+            <div>
+              <dt className="text-[12px] text-ink-muted">Energía en cubas</dt>
+              <dd className="mt-0.5 font-display text-[17px] font-medium text-cobalt">
+                {energiaElectrolisisMwhT !== null
+                  ? `${energiaElectrolisisMwhT.toLocaleString('es-AR', { minimumFractionDigits: 2 })} MWh/t`
+                  : 'Sin datos'}
+              </dd>
+            </div>
+            <div>
+              <dt className="text-[12px] text-ink-muted">Captura seca GTC</dt>
+              <dd className="mt-0.5 font-display text-[17px] font-medium text-emerald-react">
+                &gt;99% HF
+              </dd>
+            </div>
+            <div>
+              <dt className="text-[12px] text-ink-muted">Aluminio líquido (FY25)</dt>
+              <dd className="mt-0.5 font-display text-[17px] font-medium text-ink">
+                {produccionLiquidaT !== null
+                  ? `${produccionLiquidaT.toLocaleString('es-AR')} t`
+                  : 'Sin datos'}
+              </dd>
+            </div>
+          </dl>
+        </div>
+
+        {/* Bloque B: Instrumento térmico de aguja (estilo Inkworks Block B) + rótulo de plano */}
+        <div className="flex flex-col justify-between bg-stone-bg/60 p-6 lg:col-span-4">
+          <div>
+            <div className="flex items-center justify-between border-b border-rule pb-2.5 text-[12px] text-ink-muted">
+              <span className="font-medium text-ink">Instrumento de etapa</span>
+              <span>Régimen térmico</span>
+            </div>
+
+            <div className="mt-4 flex flex-col items-center">
+              <svg viewBox="0 0 200 132" className="h-32 w-48">
+                <path
+                  d="M 28 106 A 78 78 0 1 1 172 106"
+                  fill="none"
+                  stroke="#cfd5df"
+                  strokeWidth="6"
+                  strokeLinecap="round"
+                />
+                <path
+                  d="M 145 42 A 78 78 0 0 1 172 106"
+                  fill="none"
+                  stroke="#d93025"
+                  strokeWidth="6"
+                  strokeLinecap="round"
+                />
+                {[0, 300, 600, 900, 1200].map((val) => {
+                  const a = (-210 + (val / 1200) * 240) * D2R;
+                  const x0 = 100 + Math.cos(a) * 66;
+                  const y0 = 100 + Math.sin(a) * 66;
+                  const x1 = 100 + Math.cos(a) * 76;
+                  const y1 = 100 + Math.sin(a) * 76;
+                  const tx = 100 + Math.cos(a) * 52;
+                  const ty = 100 + Math.sin(a) * 52;
+                  return (
+                    <g key={val}>
+                      <line x1={x0} y1={y0} x2={x1} y2={y1} stroke={INK_HEX} strokeWidth="1.4" />
+                      <text
+                        x={tx}
+                        y={ty + 3}
+                        textAnchor="middle"
+                        fontSize="9"
+                        fontFamily="Inter, sans-serif"
+                        fill="#52555e"
+                      >
+                        {val}
+                      </text>
+                    </g>
+                  );
+                })}
+                <g ref={gaugeNeedleRef} transform="rotate(-110 100 100)">
+                  <line
+                    x1="100"
+                    y1="108"
+                    x2="100"
+                    y2="32"
+                    stroke="#d93025"
+                    strokeWidth="2.2"
+                    strokeLinecap="round"
+                  />
+                </g>
+                <circle cx="100" cy="100" r="5.5" fill={PAPER_HEX} stroke={INK_HEX} strokeWidth="1.5" />
+              </svg>
+              <span
+                ref={gaugeTextRef}
+                className="-mt-2 font-display text-[20px] font-medium text-ink tabular-nums"
+              >
+                960 °C
+              </span>
+              <span className="text-[12px] text-ink-muted">Temperatura operativa en foco</span>
+            </div>
+          </div>
+
+          {/* Rótulo técnico de plano (Title Block de Inkworks) */}
+          <div className="mt-5 border border-rule bg-stone-surface p-3 text-[12px] tabular-nums">
+            <div className="flex items-baseline justify-between border-b border-rule pb-1.5">
+              <span className="text-ink-muted">Plano</span>
+              <span className="font-medium text-ink">ALU-PMY-INK-01</span>
+            </div>
+            <div className="mt-1.5 flex items-baseline justify-between">
+              <span className="text-ink-muted">Ubicación</span>
+              <span className="text-ink">Puerto Madryn, Chubut</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
   );
 }
