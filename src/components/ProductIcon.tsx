@@ -180,6 +180,45 @@ export function ProductIcon({ iconId, size = 18, className = '', ...props }: Pro
         </svg>
       );
 
+    // GLP gas natural: esfera presurizada sobre patas + válvula superior
+    case 'glp-gas-natural':
+      return (
+        <svg {...common}>
+          <circle cx="12" cy="11.5" r="5.5" />
+          <path d="M6.5 11.5H17.5M12 6V3.5M9.5 3.5H14.5" />
+          <path d="M8.5 16L7 20.5M15.5 16L17 20.5M12 17V20.5" />
+        </svg>
+      );
+
+    // Sal industrial NaCl: cristal cúbico isométrico
+    case 'sal-industrial':
+      return (
+        <svg {...common}>
+          <polygon points="12 3.5 19.5 7.8 19.5 16.2 12 20.5 4.5 16.2 4.5 7.8" />
+          <path d="M4.5 7.8L12 12L19.5 7.8M12 12V20.5" />
+        </svg>
+      );
+
+    // Cemento Portland: horno rotativo inclinado + torre ciclónica
+    case 'cemento-clinker':
+      return (
+        <svg {...common}>
+          <rect x="4.5" y="5" width="4.5" height="14" />
+          <path d="M9 11L19.5 13.5V17L9 14.5" />
+          <path d="M3.5 19H20.5" />
+        </svg>
+      );
+
+    // Cítricos y aceite esencial D-limoneno: gajos geométricos + gota de aceite
+    case 'citricos-limoneno':
+      return (
+        <svg {...common}>
+          <circle cx="11.5" cy="12.5" r="6.5" />
+          <path d="M11.5 6V19M5 12.5H18M7 8L16 17M16 8L7 17" />
+          <path d="M16.5 4.5L19 7" />
+        </svg>
+      );
+
     default:
       return (
         <svg {...common}>

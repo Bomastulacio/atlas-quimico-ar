@@ -97,6 +97,13 @@ DEFAULT_ALLOWED_DOMAINS: frozenset[str] = frozenset(
         "www.caem.com.ar",
         "www.arauco.com",
         "www.afcp.org.ar",
+        "www.afcparg.org.ar",
+        "totalenergies.com.ar",
+        "www.enargas.gob.ar",
+        "www.dosanclas.com.ar",
+        "www.cementosavellaneda.com.ar",
+        "www.fecier.org.ar",
+        "www.federcitrus.org",
     }
 )
 

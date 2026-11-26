@@ -12,6 +12,10 @@ import { SodaSolvayProcessAnatomy } from '@/components/SodaSolvayProcessAnatomy'
 import { CalIndustrialProcessAnatomy } from '@/components/CalIndustrialProcessAnatomy';
 import { OroPlataProcessAnatomy } from '@/components/OroPlataProcessAnatomy';
 import { CelulosaKraftProcessAnatomy } from '@/components/CelulosaKraftProcessAnatomy';
+import { GlpGasNaturalProcessAnatomy } from '@/components/GlpGasNaturalProcessAnatomy';
+import { SalIndustrialProcessAnatomy } from '@/components/SalIndustrialProcessAnatomy';
+import { CementoClinkerProcessAnatomy } from '@/components/CementoClinkerProcessAnatomy';
+import { CitricosLimonenoProcessAnatomy } from '@/components/CitricosLimonenoProcessAnatomy';
 import { StandaloneCompanyMarket } from '@/components/CompanyMarketCard';
 import { ProcessFlowDiagram } from '@/components/ProcessFlowDiagram';
 import { ProductIcon } from '@/components/ProductIcon';
@@ -120,6 +124,14 @@ const sodaImp2024UsdM = (() => {
 })();
 const oroExp2024UsdM = (() => {
   const r = comexUsd.find((x) => x.ncm_codigo === '7108.12' && x.anio === 2024);
+  return r?.exportacion.estado === 'dato' ? r.exportacion.valor : null;
+})();
+const glpPropanoExp2024T = (() => {
+  const r = comexVol.find((x) => x.ncm_codigo === '2711.12' && x.anio === 2024);
+  return r?.exportacion.estado === 'dato' ? r.exportacion.valor : null;
+})();
+const jugoNaranjaExp2024T = (() => {
+  const r = comexVol.find((x) => x.ncm_codigo === '2009.11' && x.anio === 2024);
   return r?.exportacion.estado === 'dato' ? r.exportacion.valor : null;
 })();
 
@@ -309,6 +321,30 @@ const ESTADO_PLANTA_LABEL: Record<string, string> = {
             client:load
             pasos={procesoPrincipal.pasos}
             importVol2024T={ultimoComexVolImp}
+          />
+        )}
+        {slug === 'glp-gas-natural' && (
+          <GlpGasNaturalProcessAnatomy
+            client:load
+            pasos={procesoPrincipal.pasos}
+            exportPropano2024T={glpPropanoExp2024T}
+          />
+        )}
+        {slug === 'sal-industrial' && (
+          <SalIndustrialProcessAnatomy
+            client:load
+            pasos={procesoPrincipal.pasos}
+            exportVol2024T={ultimoComexVolExp}
+          />
+        )}
+        {slug === 'cemento-clinker' && (
+          <CementoClinkerProcessAnatomy client:load pasos={procesoPrincipal.pasos} />
+        )}
+        {slug === 'citricos-limoneno' && (
+          <CitricosLimonenoProcessAnatomy
+            client:load
+            pasos={procesoPrincipal.pasos}
+            exportJugo2024T={jugoNaranjaExp2024T}
           />
         )}
       </section>

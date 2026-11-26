@@ -103,6 +103,30 @@ const ANATOMY_BY_PRODUCT: Record<string, ProductAnatomyHeader> = {
       'Lámina interactiva en 3D de la planta Kraft de fibra larga: descortezado y chipeado de pino, digestor continuo con licor blanco a 168 °C, blanqueo ECF, túnel secador y ciclo cerrado de caldera recuperadora y caustificación.',
     hint: 'Orbitá en 3D, cambiá de etapa o grabá un clip WebM a 60 fps',
   },
+  'glp-gas-natural': {
+    title: 'Circuito 3D en movimiento en Tierra del Fuego (Cuenca Austral)',
+    description:
+      'Lámina interactiva en 3D de la planta criogénica de gas y GLP en Río Grande: slug catcher a 75 bar, tamices moleculares 4A, turbo-expansión a -95 °C, tren de columnas C2/C3/C4 y esferas presurizadas.',
+    hint: 'Orbitá en 3D, cambiá de etapa o grabá un clip WebM a 60 fps',
+  },
+  'sal-industrial': {
+    title: 'Circuito 3D en movimiento en La Pampa (Salinas Grandes de Hidalgo)',
+    description:
+      'Lámina interactiva en 3D de la refinación de cloruro de sodio: cosecha evaporítica en salina, molienda húmeda, lavado contracorriente en salmuera saturada, centrifugación pusher, secado en lecho fluido y silos.',
+    hint: 'Orbitá en 3D, cambiá de etapa o grabá un clip WebM a 60 fps',
+  },
+  'cemento-clinker': {
+    title: 'Circuito 3D en movimiento en San Luis (La Calera, Depto. Belgrano)',
+    description:
+      'Lámina interactiva en 3D de la planta cementera vía seca: molino vertical de crudo, torre de 5 ciclones precalcinadora a 900 °C, horno rotativo a 1.450 °C, enfriador de parrilla con aire terciario y molienda con yeso.',
+    hint: 'Orbitá en 3D, cambiá de etapa o grabá un clip WebM a 60 fps',
+  },
+  'citricos-limoneno': {
+    title: 'Circuito 3D en movimiento en Entre Ríos (Concordia y Federación)',
+    description:
+      'Lámina interactiva en 3D del complejo citrícola entrerriano: extracción integral en frío, centrifugación y winterización de aceite esencial D-limoneno, evaporación multiefecto TASTE a 65 °Brix y secado de cáscara.',
+    hint: 'Orbitá en 3D, cambiá de etapa o grabá un clip WebM a 60 fps',
+  },
 };
 
 const PROCESO_META_BY_PRODUCT: Record<
@@ -153,6 +177,13 @@ const NCM_LABELS: Record<string, string> = {
   '7108.12': 'Oro en bruto / barras doré (HS 7108.12)',
   '7106.91': 'Plata en bruto (HS 7106.91)',
   '4703.21': 'Pasta química Kraft de coníferas blanqueada (HS 4703.21)',
+  '2711.12': 'Propano licuado GLP (HS 2711.12)',
+  '2711.13': 'Butanos licuados GLP (HS 2711.13)',
+  '2501.00': 'Sal industrial y cloruro de sodio puro (HS 2501.00)',
+  '2523.29': 'Cemento Portland gris / común (HS 2523.29)',
+  '2523.10': 'Clínker de cemento hidráulico (HS 2523.10)',
+  '2009.11': 'Jugo de naranja congelado / concentrado (HS 2009.11)',
+  '3301.12': 'Aceite esencial de naranja / D-limoneno (HS 3301.12)',
 };
 
 const SIN_DATOS_PRODUCCION_COPY: Record<string, string> = {
@@ -168,6 +199,14 @@ const SIN_DATOS_PRODUCCION_COPY: Record<string, string> = {
     'USGS MCS 2025 no desagrega producción anual individual de cal viva para Argentina. Se presentan las exportaciones físicas verificadas (476 kt en 2024, UN Comtrade HS 2522.10) encabezadas por el polo calero de Los Berros (San Juan).',
   'celulosa-kraft':
     'No existe serie abierta anual descargable en CSV oficial por planta para pulpa Kraft blanqueada en Misiones. El campo de producción anual queda declarado sin datos y se consignan los flujos aduaneros HS 4703.21.',
+  'glp-gas-natural':
+    'No existe serie pública abierta auditada desagregada por planta de fraccionamiento en Tierra del Fuego. Se informan las exportaciones nacionales verificadas de propano y butano licuados (716 kt combinadas en 2024, UN Comtrade HS 2711.12 y 2711.13).',
+  'sal-industrial':
+    'USGS MCS 2025 Salt no desagrega la producción individual de Argentina en la tabla mundial ni existe serie provincial abierta de La Pampa. El campo queda declarado sin datos y se informan los flujos aduaneros oficiales HS 2501.00.',
+  'cemento-clinker':
+    'No existe serie pública abierta descargable desagregada por planta provincial para La Calera (San Luis). El campo de producción física permanece explícitamente sin datos mientras se consigna la trazabilidad del proceso vía seca (IPCC Cap. 2.2) y comercio exterior HS 2523.',
+  'citricos-limoneno':
+    'No existe balance industrial abierto descargable por planta para jugo concentrado y aceite esencial en Concordia. Se declaran sin datos las toneladas producidas por planta y se exhiben las exportaciones nacionales verificadas de jugo concentrado (HS 2009.11) y aceite esencial (HS 3301.12).',
 };
 
 function fmtNum(v: number, decimals = 0): string {
