@@ -9,6 +9,7 @@ description = "Pipeline offline de agentes LangGraph (Orquestador + Agentes + Ha
 readme = "README.md"
 requires-python = ">=3.11,<3.14"
 dependencies = [
+  "google-genai>=3.5.0",
   "httpx>=0.28.1",
   "langchain-core>=0.3.50",
   "langchain-google-genai>=2.1.2",

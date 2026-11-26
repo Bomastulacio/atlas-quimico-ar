@@ -21,6 +21,7 @@ AGENT_TOOL_ALLOWLIST: dict[str, frozenset[str]] = {
             "verify_chemistry",
             "export_staging_supabase",
             "human_interrupt",
+            "watch_sources",
         }
     ),
     "agent1_data": frozenset(
@@ -43,22 +44,54 @@ AGENT_TOOL_ALLOWLIST: dict[str, frozenset[str]] = {
     ),
 }
 
-# Dominios oficiales o técnicos de confianza permitidos para descargas automáticas
+# Dominios oficiales, científicos y operadores auditados permitidos para descargas automáticas
 DEFAULT_ALLOWED_DOMAINS: frozenset[str] = frozenset(
     {
+        # Organismos oficiales argentinos (INDEC, Georef, Energía, Agricultura, Minería, BCRA, CNV)
         "apis.datos.gob.ar",
         "datos.gob.ar",
+        "infra.datos.gob.ar",
         "www.indec.gob.ar",
         "indec.gob.ar",
-        "infra.datos.gob.ar",
+        "www.argentina.gob.ar",
+        "datos.energia.gob.ar",
+        "www.energia.gob.ar",
+        "energia.gob.ar",
+        "datos.magyp.gob.ar",
+        "www.magyp.gob.ar",
+        "magyp.gob.ar",
+        "datos.mineria.gob.ar",
+        "siacam.gob.ar",
+        "www.siacam.gob.ar",
+        "api.bcra.gob.ar",
+        "www.bcra.gob.ar",
+        "www.cnv.gov.ar",
+        # Organismos multilaterales, APIs científicas y bibliografía BAT/química
         "comtradeapi.un.org",
         "pubs.usgs.gov",
         "www.ipcc-nggip.iges.or.jp",
-        "www.argentina.gob.ar",
-        "magyp.gob.ar",
+        "bureau-industrial-transformation.jrc.ec.europa.eu",
+        "afdc.energy.gov",
+        "www.epa.gov",
+        "pubchem.ncbi.nlm.nih.gov",
+        "webbook.nist.gov",
+        "api.openalex.org",
+        "api.crossref.org",
+        # Operadores industriales y cámaras sectoriales auditadas presentes en fuentes.json
         "cdn.aluar.com.ar",
         "www.aluar.com.ar",
-        "www.cnv.gov.ar",
+        "ar.dow.com",
+        "unipar.com",
+        "www.profertil.com.ar",
+        "www.riotinto.com",
+        "inversores.ypf.com",
+        "www.petrocuyo.com",
+        "bio4.com.ar",
+        "www.acabio.com.ar",
+        "centroazucarero.com.ar",
+        "renova.com.ar",
+        "molinosagro.com.ar",
+        "buyatti.com.ar",
     }
 )
 
@@ -119,7 +152,7 @@ def fence_untrusted_content(
     fuente_id: str,
     url: str,
     content_hash: str,
-    max_chars: int = 18_000,
+    max_chars: int = 120_000,
 ) -> tuple[str, list[InjectionFinding]]:
     """
     Aísla texto externo como DATO NO CONFIABLE, neutraliza etiquetas de cierre

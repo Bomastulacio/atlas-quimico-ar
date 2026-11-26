@@ -82,6 +82,8 @@ class OrchestratorRuntime:
     source_specs: list[SourceSpec]
     strict_real: bool = True
     prefer_deterministic_only: bool = False
+    prefer_existing_sources: bool = True
+    catalog_context: str | None = None
     llm_extractor: LLMExtractorFn | None = None
     process_llm_extractor: ProcessLLMExtractorFn | None = None
     verifier_llm: VerifierLLMFn | None = None
@@ -120,6 +122,7 @@ def build_stage4_graph(runtime: OrchestratorRuntime, checkpointer: SqliteSaver):
                 spec,
                 runtime.settings.raw_dir,
                 timeout_seconds=runtime.settings.http_timeout_seconds,
+                prefer_existing=runtime.prefer_existing_sources,
                 persist_local=False,
                 supabase_url=runtime.settings.supabase_url,
                 supabase_service_role_key=runtime.settings.supabase_service_role_key,
@@ -152,7 +155,12 @@ def build_stage4_graph(runtime: OrchestratorRuntime, checkpointer: SqliteSaver):
         parsed: list[ParsedSource] = []
         alerts: list[str] = []
         for fs in runtime.fetched_sources:
-            ps = parse_source(fs)
+            ps = parse_source(
+                fs,
+                max_source_chars=runtime.settings.max_source_chars,
+                max_pdf_page_chars=runtime.settings.max_pdf_page_chars,
+                max_html_lines=runtime.settings.max_html_lines,
+            )
             parsed.append(ps)
             for finding in ps.injection_findings:
                 alerts.append(
@@ -190,6 +198,7 @@ def build_stage4_graph(runtime: OrchestratorRuntime, checkpointer: SqliteSaver):
             circuit_breaker=runtime.circuit_breaker,
             cache=runtime.cache,
             validation_feedback=state.get("validation_feedback"),
+            catalog_context=runtime.catalog_context,
             llm_extractor=runtime.llm_extractor,
             prefer_deterministic_only=runtime.prefer_deterministic_only,
         )
@@ -407,6 +416,7 @@ def build_full_pipeline_graph(runtime: OrchestratorRuntime, checkpointer: Sqlite
                 spec,
                 runtime.settings.raw_dir,
                 timeout_seconds=runtime.settings.http_timeout_seconds,
+                prefer_existing=runtime.prefer_existing_sources,
                 persist_local=False,
                 supabase_url=runtime.settings.supabase_url,
                 supabase_service_role_key=runtime.settings.supabase_service_role_key,
@@ -435,7 +445,12 @@ def build_full_pipeline_graph(runtime: OrchestratorRuntime, checkpointer: Sqlite
         parsed = []
         alerts: list[str] = []
         for fs in runtime.fetched_sources:
-            ps = parse_source(fs)
+            ps = parse_source(
+                fs,
+                max_source_chars=runtime.settings.max_source_chars,
+                max_pdf_page_chars=runtime.settings.max_pdf_page_chars,
+                max_html_lines=runtime.settings.max_html_lines,
+            )
             parsed.append(ps)
             for finding in ps.injection_findings:
                 alerts.append(f"[{ps.fuente_id}] patrón '{finding.rule}': {finding.snippet!r}")
@@ -465,6 +480,7 @@ def build_full_pipeline_graph(runtime: OrchestratorRuntime, checkpointer: Sqlite
             circuit_breaker=runtime.circuit_breaker,
             cache=runtime.cache,
             validation_feedback=state.get("validation_feedback"),
+            catalog_context=runtime.catalog_context,
             llm_extractor=runtime.llm_extractor,
             prefer_deterministic_only=runtime.prefer_deterministic_only,
         )
@@ -533,6 +549,7 @@ def build_full_pipeline_graph(runtime: OrchestratorRuntime, checkpointer: Sqlite
             circuit_breaker=runtime.circuit_breaker,
             cache=runtime.cache,
             chemical_feedback=state.get("chem_feedback"),
+            catalog_context=runtime.catalog_context,
             llm_extractor=runtime.process_llm_extractor,
         )
         if runtime.known_fuentes_override:

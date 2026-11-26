@@ -42,7 +42,13 @@ def _strip_html(html_text: str) -> str:
     return "\n".join(ln for ln in lines if ln)
 
 
-def parse_source(fetched: FetchedSource) -> ParsedSource:
+def parse_source(
+    fetched: FetchedSource,
+    *,
+    max_source_chars: int = 120_000,
+    max_pdf_page_chars: int = 12_000,
+    max_html_lines: int = 2_000,
+) -> ParsedSource:
     """Convierte archivos crudos (en memoria o disco) a filas citadas y texto cercado."""
     fmt = fetched.spec.formato.lower()
     raw_bytes = fetched.raw_bytes if fetched.raw_bytes else (
@@ -87,15 +93,15 @@ def parse_source(fetched: FetchedSource) -> ParsedSource:
             rows.append(
                 CitedRow(
                     cita_ubicacion=f"{filename} pág. {page_num}",
-                    data={"pagina": page_num, "texto": page_text[:4000]},
+                    data={"pagina": page_num, "texto": page_text[:max_pdf_page_chars]},
                 )
             )
-            plain_chunks.append(f"[pág. {page_num}]\n{page_text[:2500]}")
+            plain_chunks.append(f"[pág. {page_num}]\n{page_text[:max_pdf_page_chars]}")
 
     elif fmt == "html":
         text = raw_bytes.decode("utf-8", errors="replace")
         stripped = _strip_html(text)
-        for line_num, line in enumerate(stripped.splitlines()[:400], start=1):
+        for line_num, line in enumerate(stripped.splitlines()[:max_html_lines], start=1):
             rows.append(CitedRow(cita_ubicacion=f"{filename} línea {line_num}", data={"texto": line}))
         plain_chunks.append(stripped)
 
@@ -109,6 +115,7 @@ def parse_source(fetched: FetchedSource) -> ParsedSource:
         fuente_id=fetched.fuente.fuente_id,
         url=fetched.fuente.url,
         content_hash=fetched.sha256_hash,
+        max_chars=max_source_chars,
     )
 
     return ParsedSource(
