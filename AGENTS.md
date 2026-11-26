@@ -38,3 +38,23 @@ Este archivo define las reglas operativas obligatorias para cualquier agente o c
 - **Diseño frontend:** estética de Atlas Cartográfico en piedra clara (`#ECECE9`, `#F7F7F5`, tinta `#111214`), 2 familias tipográficas (`Space Grotesk` + `Inter` con `tabular-nums`), sin ruido decorativo ni rayas largas (`—`) en textos de interfaz.
 - **Diagramas y mapa:** React Flow y D3 dirigidos 100% por datos desde `src/data/` (nunca hardcodear nodos, aristas ni cifras en componentes).
 - **Git:** trabajar en ramas por tarea (`feat/`, `fix/`, `data/`, `docs/`, `chore/`), usar Conventional Commits y separar commits de código de commits de datos (declarando URLs y hashes en los commits de datos).
+
+## 5. Estándares UX/UI aprobados por el usuario (construir siempre así)
+
+Todas las nuevas cadenas, bocetos 3D y diagramas de proceso deben respetar estos patrones ya validados con visto bueno explícito del usuario:
+
+- **Skill obligatoria de procesos:** activar `.agents/skills/atlas-bocetos-proceso/SKILL.md` al crear o replicar uno o varios bocetos 3D o diagramas PFD.
+- **Bocetos 3D interactivos (estilo Inkworks-Atlas):**
+  - Reutilizar `src/components/ProcessAnatomy3DPlayer.tsx` y `src/lib/inkworks-kit.ts`: cada nueva planta solo requiere un archivo de mecanismo (`src/components/<slug>/<slug>InkworksMechanism.ts`) y un wrapper liviano (~55 líneas, patrón `AlgodonProcessAnatomy.tsx`).
+  - Arrancar en modo `step_loop` pausado (`11°/s` a `1x`) enfocado en el Paso 01, más botón `Recorrido completo (32s)` y selector `0.5x / 1x / 2x`.
+  - Mostrar solo **2 o 3 etiquetas descriptivas por etapa** con ajuste adaptativo al viewport (`0.78` de margen lateral, `whitespace-normal` y `maxWidth` dinámico) para que nunca obliguen a hacer zoom-out.
+  - Mantener el panel derecho siempre visible con botones `Anterior / Siguiente`, relato claro (`Qué ingresa`, `Máquina y transporte`, `Qué sale`), reacción balanceada y piezas clickeables.
+  - Incluir siempre blindaje ante `webglcontextlost` / `webglcontextrestored` con overlay y botón `Reactivar escena 3D`, más exportación `PNG` y `WebM` a 60 fps.
+- **Diagramas PFD de ingeniería (ISO 10628):**
+  - Datos 100% declarativos en `data/validated/pfd_procesos.json` (y `procesos`/`pasos`/`conexiones`) renderizados por `src/components/ProcessPfdDiagram.tsx`.
+  - Vista dividida `8+4` con el plano a la izquierda e inspector técnico siempre visible al costado derecho (más botón `Ampliar plano` opcional).
+  - Columnas laterales integradas de **Límites de Batería** (Entradas a izquierda, Salidas a derecha) expresando cantidades en unidades de ingeniería (`t/t`, `kmol/t`, `MWh/t`, fracciones/pureza o `sin_datos`).
+  - **Zoom con rueda no invasivo:** nunca atrapar el scroll normal de la página. `Ctrl + rueda` (o pellizco de trackpad) hace zoom suave anclado al cursor hasta `320%`; el scroll normal muestra un aviso discreto de `2,2 s` y existe el botón `Rueda libre` (`Esc` libera) para zoom directo con rueda.
+  - Cuando una cadena opera varias rutas tecnológicas en Argentina (ej. Litio Solar vs DLE, Petroquímica Dow PE vs Unipar PVC), exponer el selector de **Ruta tecnológica** en `ProcessFlowDiagram.tsx` (`?ruta=<proceso_id>#diagrama`) y mostrar la ruta específica de cada provincia y departamento en `ProvinceSidePanel.tsx`.
+- **Micro-interacciones táctiles (estilo Bencho.dev):** usar `.bencho-press`, `.bencho-card-enter`, `.pfd-stream-flow` y `.pfd-svg-target` definidos en `src/styles/global.css`, con feedback seco y respeto estricto de `prefers-reduced-motion`.
+- **Servidor local para previsualización:** tras compilar (`npm run build`), recomendar `npm run preview` (o `npm run dev -- --force`) + `Ctrl + Shift + R` si el usuario tenía `dev` abierto y Vite invalidó caché de `three`.
