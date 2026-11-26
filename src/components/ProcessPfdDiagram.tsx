@@ -1,4 +1,4 @@
-import { useMemo, useRef, useState } from 'react';
+import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
 import {
   ArrowDownToLine,
   ArrowUpFromLine,
@@ -89,6 +89,13 @@ export function ProcessPfdDiagram({ pfd, fuentesMap }: ProcessPfdDiagramProps) {
 
   const [zoom, setZoom] = useState(1);
   const [pan, setPan] = useState({ x: 0, y: 0 });
+  const [wheelZoomEnabled, setWheelZoomEnabled] = useState(false);
+  const [showWheelHint, setShowWheelHint] = useState(false);
+  const wheelHintTimerRef = useRef<number | null>(null);
+  const viewportRef = useRef<HTMLDivElement | null>(null);
+  const viewRef = useRef({ zoom: 1, pan: { x: 0, y: 0 } });
+  viewRef.current = { zoom, pan };
+
   const dragRef = useRef<{
     active: boolean;
     startX: number;
@@ -159,10 +166,93 @@ export function ProcessPfdDiagram({ pfd, fuentesMap }: ProcessPfdDiagramProps) {
     return pfd.corrientes.filter((c) => c.tipo === streamFilter);
   }, [pfd.corrientes, streamFilter]);
 
-  const handleResetView = () => {
+  const handleResetView = useCallback(() => {
     setZoom(1);
     setPan({ x: 0, y: 0 });
-  };
+  }, []);
+
+  // Zoom suave anclado al cursor (estilo CAD/Figma) con Ctrl+rueda o en modo "Rueda libre"
+  const applyWheelZoom = useCallback(
+    (clientX: number, clientY: number, deltaY: number) => {
+      const svg = svgRef.current;
+      if (!svg) return;
+      const rect = svg.getBoundingClientRect();
+      if (rect.width <= 0 || rect.height <= 0) return;
+
+      const { zoom: curZoom, pan: curPan } = viewRef.current;
+      const factor = Math.exp(-deltaY * 0.0014);
+      const nextZoom = Math.max(0.85, Math.min(3.2, Number((curZoom * factor).toFixed(3))));
+      if (nextZoom === curZoom) return;
+
+      const curVbW = pfd.canvas_width / curZoom;
+      const curVbH = pfd.canvas_height / curZoom;
+      const curVbX = (pfd.canvas_width - curVbW) / 2 - curPan.x;
+      const curVbY = (pfd.canvas_height - curVbH) / 2 - curPan.y;
+
+      const scale = Math.min(rect.width / curVbW, rect.height / curVbH);
+      const renderedW = curVbW * scale;
+      const renderedH = curVbH * scale;
+      const offsetX = (rect.width - renderedW) / 2;
+      const offsetY = (rect.height - renderedH) / 2;
+
+      const fracX = Math.max(0, Math.min(1, (clientX - rect.left - offsetX) / renderedW));
+      const fracY = Math.max(0, Math.min(1, (clientY - rect.top - offsetY) / renderedH));
+
+      const worldX = curVbX + fracX * curVbW;
+      const worldY = curVbY + fracY * curVbH;
+
+      const nextVbW = pfd.canvas_width / nextZoom;
+      const nextVbH = pfd.canvas_height / nextZoom;
+      const rawPanX = (pfd.canvas_width - nextVbW) / 2 - (worldX - fracX * nextVbW);
+      const rawPanY = (pfd.canvas_height - nextVbH) / 2 - (worldY - fracY * nextVbH);
+
+      setZoom(nextZoom);
+      setPan({
+        x: Math.max(-640, Math.min(640, rawPanX)),
+        y: Math.max(-340, Math.min(340, rawPanY)),
+      });
+    },
+    [pfd.canvas_width, pfd.canvas_height]
+  );
+
+  useEffect(() => {
+    const el = viewportRef.current;
+    if (!el) return;
+
+    const onWheel = (e: WheelEvent) => {
+      if (e.ctrlKey || e.metaKey || wheelZoomEnabled) {
+        e.preventDefault();
+        applyWheelZoom(e.clientX, e.clientY, e.deltaY);
+        if (showWheelHint) setShowWheelHint(false);
+        return;
+      }
+
+      // Aviso discreto y no invasivo la primera vez que se scrollea sobre el plano
+      setShowWheelHint(true);
+      if (wheelHintTimerRef.current !== null) {
+        window.clearTimeout(wheelHintTimerRef.current);
+      }
+      wheelHintTimerRef.current = window.setTimeout(() => {
+        setShowWheelHint(false);
+      }, 2200);
+    };
+
+    const onKeyDown = (e: KeyboardEvent) => {
+      if (e.key === 'Escape' && wheelZoomEnabled) {
+        setWheelZoomEnabled(false);
+      }
+    };
+
+    el.addEventListener('wheel', onWheel, { passive: false });
+    window.addEventListener('keydown', onKeyDown);
+    return () => {
+      el.removeEventListener('wheel', onWheel);
+      window.removeEventListener('keydown', onKeyDown);
+      if (wheelHintTimerRef.current !== null) {
+        window.clearTimeout(wheelHintTimerRef.current);
+      }
+    };
+  }, [wheelZoomEnabled, applyWheelZoom, showWheelHint]);
 
   const handlePointerDown = (e: React.PointerEvent<SVGSVGElement>) => {
     if ((e.target as HTMLElement).closest('[data-pfd-interactive="true"]')) return;
@@ -181,8 +271,8 @@ export function ProcessPfdDiagram({ pfd, fuentesMap }: ProcessPfdDiagramProps) {
     const dx = (e.clientX - dragRef.current.startX) / zoom;
     const dy = (e.clientY - dragRef.current.startY) / zoom;
     setPan({
-      x: Math.max(-520, Math.min(520, dragRef.current.origX + dx)),
-      y: Math.max(-260, Math.min(260, dragRef.current.origY + dy)),
+      x: Math.max(-640, Math.min(640, dragRef.current.origX + dx)),
+      y: Math.max(-340, Math.min(340, dragRef.current.origY + dy)),
     });
   };
 
@@ -275,7 +365,21 @@ export function ProcessPfdDiagram({ pfd, fuentesMap }: ProcessPfdDiagramProps) {
 
           <button
             type="button"
-            onClick={() => setZoom((z) => Math.min(2.4, Number((z + 0.25).toFixed(2))))}
+            aria-pressed={wheelZoomEnabled}
+            onClick={() => setWheelZoomEnabled((v) => !v)}
+            title="Si está activo, la rueda del mouse hace zoom directo sobre el plano sin necesidad de apretar Ctrl"
+            className={`bencho-press cursor-pointer border px-2.5 py-1 font-medium ${
+              wheelZoomEnabled
+                ? 'border-cobalt bg-cobalt text-white'
+                : 'border-rule bg-stone-surface text-ink-muted hover:border-ink hover:text-ink'
+            }`}
+          >
+            {wheelZoomEnabled ? 'Rueda: zoom activo' : 'Rueda libre'}
+          </button>
+
+          <button
+            type="button"
+            onClick={() => setZoom((z) => Math.min(3.2, Number((z + 0.25).toFixed(2))))}
             aria-label="Acercar PFD"
             className="bencho-press inline-flex cursor-pointer items-center border border-rule bg-stone-surface px-2 py-1 text-ink hover:border-ink"
           >
@@ -326,6 +430,8 @@ export function ProcessPfdDiagram({ pfd, fuentesMap }: ProcessPfdDiagramProps) {
         }`}
       >
         <div
+          ref={viewportRef}
+          onMouseLeave={() => setShowWheelHint(false)}
           className={`relative w-full overflow-hidden ${
             expanded ? 'h-[660px]' : 'h-[430px] sm:h-[500px] lg:h-[540px]'
           }`}
@@ -965,11 +1071,17 @@ export function ProcessPfdDiagram({ pfd, fuentesMap }: ProcessPfdDiagramProps) {
               </text>
             </g>
           </svg>
+
+          {showWheelHint && !wheelZoomEnabled && (
+            <div className="bencho-card-enter pointer-events-none absolute bottom-3 left-1/2 z-20 -translate-x-1/2 border border-rule-strong/30 bg-ink/92 px-3 py-1.5 text-[12px] text-white shadow-xs">
+              Mantené <kbd className="border border-white/30 px-1 py-0.5 font-mono text-[11px]">Ctrl</kbd> + rueda para zoom, o activá <span className="font-medium">Rueda libre</span>
+            </div>
+          )}
         </div>
 
         <div className="flex flex-wrap items-center justify-between gap-2 border-t border-rule bg-stone-bg px-4 py-2 text-[12px] text-ink-muted">
           <span>
-            Arrastrá para mover el plano · Tocá cualquier equipo, entrada/salida o rombo numerado
+            Arrastrá para mover el plano · {wheelZoomEnabled ? 'Rueda del mouse: zoom directo (Esc para salir)' : 'Ctrl + rueda para zoom al cursor'}
           </span>
           <span className="tabular-nums">
             {pfd.equipos.length} equipos ISO · {pfd.corrientes.length} corrientes · Zoom{' '}
