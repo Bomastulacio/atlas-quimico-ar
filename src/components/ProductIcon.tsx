@@ -102,6 +102,47 @@ export function ProductIcon({ iconId, size = 18, className = '', ...props }: Pro
         </svg>
       );
 
+    // Metanol: molécula CH3-OH geométrica (carbono central + grupo hidroxilo)
+    case 'metanol-sintesis':
+      return (
+        <svg {...common}>
+          <circle cx="9.5" cy="12" r="3" />
+          <circle cx="17.5" cy="12" r="2.2" />
+          <path d="M12.5 12H15.3M9.5 9V5.5M9.5 15V18.5M6.5 12H3.8" />
+        </svg>
+      );
+
+    // Polipropileno: cadena polimérica en zig-zag con grupo metilo lateral
+    case 'polipropileno-pellet':
+      return (
+        <svg {...common}>
+          <path d="M3.5 15.5L8 10.5L12.5 15.5L17 10.5L20.5 14" />
+          <path d="M8 10.5V5.5M17 10.5V5.5" />
+          <circle cx="8" cy="5.5" r="1.4" fill="currentColor" stroke="none" />
+          <circle cx="17" cy="5.5" r="1.4" fill="currentColor" stroke="none" />
+        </svg>
+      );
+
+    // Bioetanol de maíz: mazorca geométrica + gota combustible
+    case 'bioetanol-maiz':
+      return (
+        <svg {...common}>
+          <rect x="8.5" y="4.5" width="7" height="12.5" rx="3.5" />
+          <path d="M8.5 9H15.5M8.5 13H15.5M12 4.5V17" />
+          <path d="M6 15.5C7 18.5 9.2 20 12 20C14.8 20 17 18.5 18 15.5" />
+        </svg>
+      );
+
+    // Bioetanol y azúcar de caña: tallo segmentado con nudos + hojas
+    case 'bioetanol-cana':
+      return (
+        <svg {...common}>
+          <path d="M12 4V20" />
+          <path d="M9.5 9H14.5M9.5 14.5H14.5" />
+          <path d="M12 9L17.5 5.5M12 14.5L6.5 11" />
+        </svg>
+      );
+
     default:
       return (
         <svg {...common}>

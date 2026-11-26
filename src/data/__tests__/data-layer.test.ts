@@ -37,10 +37,10 @@ describe('Capa única de acceso a datos (src/data)', () => {
     expect(isExampleDataset()).toBe(false);
   });
 
-  it('carga las 24 jurisdicciones oficiales Georef (23 provincias + CABA) con 7 completas y 17 sin_datos', () => {
+  it('carga las 24 jurisdicciones oficiales Georef (23 provincias + CABA) con 11 completas y 13 sin_datos', () => {
     const provincias = getProvincias();
     expect(provincias).toHaveLength(24);
-    for (const id of ['06', '10', '22', '26', '38', '66', '82']) {
+    for (const id of ['06', '10', '14', '22', '26', '38', '50', '58', '66', '82', '90']) {
       expect(getProvincia(id)?.cobertura_datos).toBe('completa');
     }
     expect(getProvincia('94')?.iso_3166_2).toBe('AR-V');
@@ -56,9 +56,21 @@ describe('Capa única de acceso a datos (src/data)', () => {
     expect(santaFe.secundarios.map((p) => p.producto_id)).toContain('biodiesel');
   });
 
-  it('valida las 7 cadenas MVP completas con procesos, pasos y comercio exterior verificados', () => {
-    const expectedIds = ['aluminio', 'litio', 'urea', 'algodon', 'soja', 'petroquimica', 'biodiesel'];
-    expect(getProductos()).toHaveLength(7);
+  it('valida las 11 cadenas completas con procesos, pasos y comercio exterior verificados', () => {
+    const expectedIds = [
+      'aluminio',
+      'litio',
+      'urea',
+      'algodon',
+      'soja',
+      'petroquimica',
+      'biodiesel',
+      'metanol',
+      'polipropileno',
+      'bioetanol-maiz',
+      'bioetanol-cana',
+    ];
+    expect(getProductos()).toHaveLength(11);
 
     for (const id of expectedIds) {
       const ficha = getFichaProducto(id);
@@ -102,13 +114,13 @@ describe('Capa única de acceso a datos (src/data)', () => {
   it('calcula el resumen de cobertura provincial y departamental', () => {
     const resumen = getResumenCobertura();
     expect(resumen.totalProvincias).toBe(24);
-    expect(resumen.porNivel.completa).toBe(7);
-    expect(resumen.porNivel.sin_datos).toBe(17);
-    expect(resumen.departamentosConDatos).toBe(10);
-    expect(getDepartamentos()).toHaveLength(10);
+    expect(resumen.porNivel.completa).toBe(11);
+    expect(resumen.porNivel.sin_datos).toBe(13);
+    expect(resumen.departamentosConDatos).toBe(15);
+    expect(getDepartamentos()).toHaveLength(15);
   });
 
-  it('alinea 1:1 los 24 códigos Georef del GeoJSON IGN con las provincias y las 11 plantas', () => {
+  it('alinea 1:1 los 24 códigos Georef del GeoJSON IGN con las provincias y las 17 plantas', () => {
     const continental = getGeoContinental();
     const antartida = getGeoAntartidaIslas();
     const manifestGeo = getGeoManifest();
@@ -125,16 +137,16 @@ describe('Capa única de acceso a datos (src/data)', () => {
     }
 
     const totalPlantas = mapaData.reduce((acc, p) => acc + p.plantas.length, 0);
-    expect(totalPlantas).toBe(11);
+    expect(totalPlantas).toBe(17);
   });
 
-  it('alinea 1:1 los 10 departamentos confiables con el GeoJSON oficial IGN y el índice de búsqueda', () => {
+  it('alinea 1:1 los 15 departamentos confiables con el GeoJSON oficial IGN y el índice de búsqueda', () => {
     const deptGeo = getGeoDepartamentos();
     const deptData = getMapaDepartamentosData();
     const manifestGeo = getGeoManifest();
 
-    expect(deptGeo.features).toHaveLength(10);
-    expect(deptData).toHaveLength(10);
+    expect(deptGeo.features).toHaveLength(15);
+    expect(deptData).toHaveLength(15);
     expect(manifestGeo.departamentos_oficial?.hash_raw).toMatch(/^sha256:[a-f0-9]{64}$/);
 
     const geoDeptIds = new Set(deptGeo.features.map((f) => f.properties.id));
@@ -145,12 +157,12 @@ describe('Capa única de acceso a datos (src/data)', () => {
     }
 
     const searchDeptItems = getSearchIndex().filter((i) => i.kind === 'departamento');
-    expect(searchDeptItems).toHaveLength(10);
+    expect(searchDeptItems).toHaveLength(15);
   });
 
   it('expone el directorio verificable de empresas con plantas, productos y trazabilidad (Etapa 8)', () => {
     const empresas = getEmpresasConPlantas();
-    expect(empresas).toHaveLength(8);
+    expect(empresas).toHaveLength(13);
     for (const item of empresas) {
       expect(item.plantas.length).toBeGreaterThanOrEqual(1);
       expect(item.productos.length).toBeGreaterThanOrEqual(1);
@@ -160,22 +172,22 @@ describe('Capa única de acceso a datos (src/data)', () => {
     }
 
     const searchEmpItems = getSearchIndex().filter((i) => i.kind === 'empresa');
-    expect(searchEmpItems).toHaveLength(8);
+    expect(searchEmpItems).toHaveLength(13);
   });
 
   it('consolida el indicador de cobertura territorial por región y las 24 jurisdicciones (Etapa 8)', () => {
     const cov = getCoberturaDetallada();
     expect(cov.provincias).toHaveLength(24);
-    expect(cov.totales.provinciasConDatos).toBe(7);
-    expect(cov.totales.provinciasSinDatos).toBe(17);
-    expect(cov.totales.empresasVerificadas).toBe(8);
-    expect(cov.totales.plantasGeorreferenciadas).toBe(11);
+    expect(cov.totales.provinciasConDatos).toBe(11);
+    expect(cov.totales.provinciasSinDatos).toBe(13);
+    expect(cov.totales.empresasVerificadas).toBe(13);
+    expect(cov.totales.plantasGeorreferenciadas).toBe(17);
     expect(cov.totales.plantasSinCapacidadPublica).toBeGreaterThanOrEqual(1);
 
     const sumaRegiones = cov.porRegion.reduce((acc, r) => acc + r.total, 0);
     expect(sumaRegiones).toBe(24);
     const sumaConDatos = cov.porRegion.reduce((acc, r) => acc + r.conDatos, 0);
-    expect(sumaConDatos).toBe(7);
+    expect(sumaConDatos).toBe(11);
   });
 
   it('valida el snapshot bursátil y las conversiones ARS/USD por tipo de dólar (CCL, MEP, Oficial)', () => {
@@ -211,7 +223,7 @@ describe('Capa única de acceso a datos (src/data)', () => {
 
   it('construye los datos del comparador de productos, provincias y cadena de valor transversal (Etapa 9)', () => {
     const prodComp = getComparadorProductosData();
-    expect(prodComp).toHaveLength(7);
+    expect(prodComp).toHaveLength(11);
     const al = prodComp.find((p) => p.producto.producto_id === 'aluminio')!;
     expect(al.proceso?.energia_especifica.estado).toBe('dato');
     expect(al.ultimoComexUsd?.saldo_comercial.estado).toBe('dato');
@@ -223,9 +235,9 @@ describe('Capa única de acceso a datos (src/data)', () => {
 
     const provComp = getComparadorProvinciasData();
     expect(provComp).toHaveLength(24);
-    // Primeras 7 deben ser las jurisdicciones con cobertura completa
-    expect(provComp.slice(0, 7).every((p) => p.provincia.cobertura_datos === 'completa')).toBe(true);
-    expect(provComp.slice(7).every((p) => p.provincia.cobertura_datos === 'sin_datos')).toBe(true);
+    // Primeras 11 deben ser las jurisdicciones con cobertura completa
+    expect(provComp.slice(0, 11).every((p) => p.provincia.cobertura_datos === 'completa')).toBe(true);
+    expect(provComp.slice(11).every((p) => p.provincia.cobertura_datos === 'sin_datos')).toBe(true);
 
     const cadena = getCadenaValorTransversalData();
     expect(cadena.troncos).toHaveLength(5);
@@ -241,9 +253,9 @@ describe('Capa única de acceso a datos (src/data)', () => {
     ).toBe(true);
   });
 
-  it('valida los 9 PFDs ISO 10628 completos y rutas territoriales diferenciadas por provincia/depto', () => {
+  it('valida los 13 PFDs ISO 10628 completos y rutas territoriales diferenciadas por provincia/depto', () => {
     const pfds = getPfdProcesos();
-    expect(pfds).toHaveLength(9);
+    expect(pfds).toHaveLength(13);
 
     for (const pfd of pfds) {
       expect(pfd.equipos.length).toBeGreaterThanOrEqual(7);
