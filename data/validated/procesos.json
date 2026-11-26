@@ -295,5 +295,137 @@
       "cita_ubicacion": "EU CAK BREF: membrane cell ECU (1 t Cl2 + 1,1 t NaOH + 0,03 t H2, 2,5 MWh DC/t Cl2)",
       "confianza": "alta"
     }
+  },
+  {
+    "proceso_id": "metanol-reformado-sintesis",
+    "producto_id": "metanol",
+    "nombre": "Reformado de gas natural y síntesis catalítica de metanol",
+    "ruta_tecnologica": "Gas natural (CH4) desulfurado -> reformado con vapor (SMR a 850 °C) -> compresión syngas (CO + 2 H2 a 65 bar) -> síntesis catalítica Cu/ZnO -> destilación grado AA",
+    "reaccion_global": "CO + 2 H2 -> CH3OH",
+    "energia_especifica": {
+      "estado": "sin_datos",
+      "valor": null,
+      "unidad": "GJ/t CH3OH",
+      "procedencia": {
+        "anio": 2006,
+        "fuente_id": "ipcc-2006-v3-ch3-amoniaco-urea",
+        "fuente": "2006 IPCC Guidelines for National Greenhouse Gas Inventories (Vol. 3, Cap. 3: Chemical Industry Emissions)",
+        "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/pdf/3_Volume3/V3_3_Ch3_Chemical_Industry.pdf",
+        "fecha_descarga": "2026-11-24",
+        "hash": "sha256:f25c2817eecdae6a1f930b342eb09b2d8a6065b12bfce632502a01e1a61bbaa2",
+        "cita_ubicacion": "IPCC 2006 Vol. 3 Cap. 3.9 Methanol Production (consumo real de planta no auditado públicamente)",
+        "confianza": "alta"
+      }
+    },
+    "descripcion": "Síntesis industrial a baja presión en Plaza Huincul (Neuquén). Estequiometría desde gas natural: 0,50 t CH4 + 0,56 t H2O producen 1,00 t de metanol (CH3OH) más calor de reacción recuperado en vapor. IPCC Cap. 3.9 Table 3.12 documenta el factor de proceso convencional de 0,67 t CO2/t metanol.",
+    "procedencia": {
+      "anio": 2006,
+      "fuente_id": "ipcc-2006-v3-ch3-amoniaco-urea",
+      "fuente": "2006 IPCC Guidelines for National Greenhouse Gas Inventories (Vol. 3, Cap. 3: Chemical Industry Emissions)",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/pdf/3_Volume3/V3_3_Ch3_Chemical_Industry.pdf",
+      "fecha_descarga": "2026-11-24",
+      "hash": "sha256:f25c2817eecdae6a1f930b342eb09b2d8a6065b12bfce632502a01e1a61bbaa2",
+      "cita_ubicacion": "IPCC 2006 Vol. 3 Cap. 3.9 Table 3.12 (Methanol conventional SMR: 0,67 t CO2/t CH3OH)",
+      "confianza": "alta"
+    }
+  },
+  {
+    "proceso_id": "polipropileno-fcc-polimerizacion",
+    "producto_id": "polipropileno",
+    "nombre": "Separación de propileno FCC y polimerización a polipropileno",
+    "ruta_tecnologica": "Gasoil pesado -> craqueo catalítico fluido FCC (refinería) -> splitter C3 (C3H6 >99,5%) -> polimerización catalítica Ziegler-Natta -> desgasificación y peletizado",
+    "reaccion_global": "n C3H6 -> -(C3H6)n-",
+    "energia_especifica": {
+      "estado": "sin_datos",
+      "valor": null,
+      "unidad": "MWh/t PP",
+      "procedencia": {
+        "anio": 2007,
+        "fuente_id": "eu-bref-polymers",
+        "fuente": "Reference Document on Best Available Techniques in the Production of Polymers (POL BREF)",
+        "url": "https://bureau-industrial-transformation.jrc.ec.europa.eu/reference/production-polymers",
+        "fecha_descarga": "2026-11-26",
+        "hash": "sha256:f49403eab2439da283626fd50341b5094c00bc4ca1ccf663dd3461e65fb80f63",
+        "cita_ubicacion": "EU POL BREF: Polypropylene production (consumo local sin reporte auditado)",
+        "confianza": "alta"
+      }
+    },
+    "descripcion": "Cadena petroquímica integrada de Luján de Cuyo (Mendoza): la refinería fracciona propileno grado polímero (>99,5% C3H6) y la planta de polipropileno lo polimeriza en fase gas (Ziegler-Natta) con reciclo cerrado de monómero no reaccionado.",
+    "procedencia": {
+      "anio": 2007,
+      "fuente_id": "eu-bref-polymers",
+      "fuente": "Reference Document on Best Available Techniques in the Production of Polymers (POL BREF)",
+      "url": "https://bureau-industrial-transformation.jrc.ec.europa.eu/reference/production-polymers",
+      "fecha_descarga": "2026-11-26",
+      "hash": "sha256:f49403eab2439da283626fd50341b5094c00bc4ca1ccf663dd3461e65fb80f63",
+      "cita_ubicacion": "EU POL BREF: Polypropylene gas-phase/slurry polymerization & monomer recovery",
+      "confianza": "alta"
+    }
+  },
+  {
+    "proceso_id": "bioetanol-maiz-molienda-seca",
+    "producto_id": "bioetanol-maiz",
+    "nombre": "Molienda seca de maíz, fermentación y deshidratación a bioetanol",
+    "ruta_tecnologica": "Molienda de maíz -> cocción y licuefacción enzimática -> sacarificación y fermentación (levaduras) -> destilación + tamices moleculares (>99,5%) -> burlanda DDGS",
+    "reaccion_global": "C6H12O6 -> 2 C2H5OH + 2 CO2",
+    "energia_especifica": {
+      "estado": "sin_datos",
+      "valor": null,
+      "unidad": "MJ/L etanol",
+      "procedencia": {
+        "anio": 2026,
+        "fuente_id": "afdc-ethanol-doe",
+        "fuente": "Alternative Fuels Data Center: Ethanol Production (Dry Mill & Sugarcane Fermentation)",
+        "url": "https://afdc.energy.gov/fuels/ethanol-production",
+        "fecha_descarga": "2026-11-26",
+        "hash": "sha256:ca1aaedc23f4f8346503693ec5f40e36132a9476c51434d6536ffd7ff6a2eaf0",
+        "cita_ubicacion": "US DOE AFDC Ethanol Production (dry-mill corn process)",
+        "confianza": "alta"
+      }
+    },
+    "descripcion": "Biorrefinería de molienda seca típica de Córdoba (Río Cuarto y Villa María). Cada tonelada de maíz seco rinde ~400-410 L (~0,32 t) de bioetanol anhidro para mezcla obligatoria en naftas, ~0,31 t de burlanda proteica (DDGS) para ganadería y ~0,30 t de CO2 biogénico de fermentación.",
+    "procedencia": {
+      "anio": 2026,
+      "fuente_id": "afdc-ethanol-doe",
+      "fuente": "Alternative Fuels Data Center: Ethanol Production (Dry Mill & Sugarcane Fermentation)",
+      "url": "https://afdc.energy.gov/fuels/ethanol-production",
+      "fecha_descarga": "2026-11-26",
+      "hash": "sha256:ca1aaedc23f4f8346503693ec5f40e36132a9476c51434d6536ffd7ff6a2eaf0",
+      "cita_ubicacion": "afdc.energy.gov/fuels/ethanol-production (dry milling: starch hydrolysis, fermentation, distillation & DDGS)",
+      "confianza": "alta"
+    }
+  },
+  {
+    "proceso_id": "bioetanol-cana-fermentacion",
+    "producto_id": "bioetanol-cana",
+    "nombre": "Molienda de caña, fermentación de melaza/jugo y cogeneración",
+    "ruta_tecnologica": "Trapiche de caña -> separación de bagazo (caldera cogeneración) -> clarificación y cristalización de azúcar -> fermentación de melaza/jugo -> destilación y deshidratación",
+    "reaccion_global": "C12H22O11 + H2O -> 4 C2H5OH + 4 CO2",
+    "energia_especifica": {
+      "estado": "sin_datos",
+      "valor": null,
+      "unidad": "MJ/L etanol",
+      "procedencia": {
+        "anio": 2026,
+        "fuente_id": "caa-web-2026",
+        "fuente": "Centro Azucarero Argentino (CAA): actividad sucroalcoholera y bioetanol de caña",
+        "url": "https://centroazucarero.com.ar/",
+        "fecha_descarga": "2026-11-26",
+        "hash": "sha256:54ab9f6bc96dd294e57a929811b13d7f2e204facedf9e02bc6911fb14b60e35a",
+        "cita_ubicacion": "Centro Azucarero Argentino: complejos sucroalcoholeros con cogeneración desde bagazo",
+        "confianza": "alta"
+      }
+    },
+    "descripcion": "Esquema sucroalcoholero integrado de Tucumán (Depto. Cruz Alta): la caña molida entrega jugo azucarado (destinado a azúcar y fermentación) y ~0,28 t de bagazo/t caña que abastece vapor y electricidad renovable en calderas propias.",
+    "procedencia": {
+      "anio": 2026,
+      "fuente_id": "caa-web-2026",
+      "fuente": "Centro Azucarero Argentino (CAA): actividad sucroalcoholera y bioetanol de caña",
+      "url": "https://centroazucarero.com.ar/",
+      "fecha_descarga": "2026-11-26",
+      "hash": "sha256:54ab9f6bc96dd294e57a929811b13d7f2e204facedf9e02bc6911fb14b60e35a",
+      "cita_ubicacion": "centroazucarero.com.ar y US DOE AFDC Ethanol Production",
+      "confianza": "alta"
+    }
   }
 ]

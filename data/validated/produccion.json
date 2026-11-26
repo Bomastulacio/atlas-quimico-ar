@@ -897,5 +897,377 @@
       "cita_ubicacion": "estadisticas_biocombustibles.xls hoja RESUMEN BIODIESEL fila 20 (2021)",
       "confianza": "alta"
     }
+  },
+  {
+    "registro_id": "prod-metanol-58-2024-sd",
+    "producto_id": "metanol",
+    "provincia_id": "58",
+    "anio": 2024,
+    "medicion": {
+      "estado": "sin_datos",
+      "valor": null,
+      "unidad": "t",
+      "procedencia": {
+        "anio": 2026,
+        "fuente_id": "ypf-inversores-2026",
+        "fuente": "Portal oficial de Inversores e Infraestructura Industrial (YPF S.A.)",
+        "url": "https://inversores.ypf.com/",
+        "fecha_descarga": "2026-11-26",
+        "hash": "sha256:f39c95b1076dd0e8513a2df3785151328c44a6b26ce435b9eaf1465bc2d4917e",
+        "cita_ubicacion": "Sin serie anual pública auditada abierta en datos.gob.ar para metanol físico",
+        "confianza": "alta"
+      }
+    },
+    "procedencia": {
+      "anio": 2026,
+      "fuente_id": "ypf-inversores-2026",
+      "fuente": "Portal oficial de Inversores e Infraestructura Industrial (YPF S.A.)",
+      "url": "https://inversores.ypf.com/",
+      "fecha_descarga": "2026-11-26",
+      "hash": "sha256:f39c95b1076dd0e8513a2df3785151328c44a6b26ce435b9eaf1465bc2d4917e",
+      "cita_ubicacion": "Auditoría de fuentes abiertas 2026: producción física declarada sin datos públicos auditados",
+      "confianza": "alta"
+    }
+  },
+  {
+    "registro_id": "prod-polipropileno-50-2024-sd",
+    "producto_id": "polipropileno",
+    "provincia_id": "50",
+    "anio": 2024,
+    "medicion": {
+      "estado": "sin_datos",
+      "valor": null,
+      "unidad": "t",
+      "procedencia": {
+        "anio": 2026,
+        "fuente_id": "petrocuyo-web-2026",
+        "fuente": "Portal institucional y operaciones de polipropileno (Petrocuyo S.A.I.C.)",
+        "url": "https://www.petrocuyo.com/",
+        "fecha_descarga": "2026-11-26",
+        "hash": "sha256:5706e3a328532bddf36e6af90c032f40c80e99ce17049403540bb26dec2da3e3",
+        "cita_ubicacion": "Sin serie anual pública auditada abierta para producción física de polipropileno en Mendoza",
+        "confianza": "alta"
+      }
+    },
+    "procedencia": {
+      "anio": 2026,
+      "fuente_id": "petrocuyo-web-2026",
+      "fuente": "Portal institucional y operaciones de polipropileno (Petrocuyo S.A.I.C.)",
+      "url": "https://www.petrocuyo.com/",
+      "fecha_descarga": "2026-11-26",
+      "hash": "sha256:5706e3a328532bddf36e6af90c032f40c80e99ce17049403540bb26dec2da3e3",
+      "cita_ubicacion": "Auditoría de fuentes abiertas 2026: producción física declarada sin datos públicos auditados",
+      "confianza": "alta"
+    }
+  },
+  {
+    "registro_id": "prod-bioetanol-maiz-ar-2020",
+    "producto_id": "bioetanol-maiz",
+    "provincia_id": null,
+    "anio": 2020,
+    "medicion": {
+      "estado": "dato",
+      "valor": 423575,
+      "unidad": "m3",
+      "procedencia": {
+        "anio": 2020,
+        "fuente_id": "se-bioetanol-total-csv",
+        "fuente": "Bioetanol: producción y ventas (total país, desagregado por maíz y caña de azúcar)",
+        "url": "https://datos.energia.gob.ar/dataset/5ce77ad1-c729-42cd-a8b5-2407de005e5b/resource/e5478cfe-b3ff-4fc7-a564-18cbe4752ad4/download/bioetanol-produccin-y-ventas-total-pas-.csv",
+        "fecha_descarga": "2026-11-26",
+        "hash": "sha256:83cd1c183ede6f2e065743ce18adfe1554b0141c64a5804b0e116f988abd6adc",
+        "cita_ubicacion": "bioetanol-produccin-y-ventas-total-pas-.csv suma mensual prod_maiz 2020",
+        "confianza": "alta"
+      }
+    },
+    "procedencia": {
+      "anio": 2020,
+      "fuente_id": "se-bioetanol-total-csv",
+      "fuente": "Bioetanol: producción y ventas (total país, desagregado por maíz y caña de azúcar)",
+      "url": "https://datos.energia.gob.ar/dataset/5ce77ad1-c729-42cd-a8b5-2407de005e5b/resource/e5478cfe-b3ff-4fc7-a564-18cbe4752ad4/download/bioetanol-produccin-y-ventas-total-pas-.csv",
+      "fecha_descarga": "2026-11-26",
+      "hash": "sha256:83cd1c183ede6f2e065743ce18adfe1554b0141c64a5804b0e116f988abd6adc",
+      "cita_ubicacion": "bioetanol-produccin-y-ventas-total-pas-.csv suma mensual prod_maiz 2020",
+      "confianza": "alta"
+    }
+  },
+  {
+    "registro_id": "prod-bioetanol-maiz-ar-2019",
+    "producto_id": "bioetanol-maiz",
+    "provincia_id": null,
+    "anio": 2019,
+    "medicion": {
+      "estado": "dato",
+      "valor": 553829,
+      "unidad": "m3",
+      "procedencia": {
+        "anio": 2019,
+        "fuente_id": "se-bioetanol-total-csv",
+        "fuente": "Bioetanol: producción y ventas (total país, desagregado por maíz y caña de azúcar)",
+        "url": "https://datos.energia.gob.ar/dataset/5ce77ad1-c729-42cd-a8b5-2407de005e5b/resource/e5478cfe-b3ff-4fc7-a564-18cbe4752ad4/download/bioetanol-produccin-y-ventas-total-pas-.csv",
+        "fecha_descarga": "2026-11-26",
+        "hash": "sha256:83cd1c183ede6f2e065743ce18adfe1554b0141c64a5804b0e116f988abd6adc",
+        "cita_ubicacion": "bioetanol-produccin-y-ventas-total-pas-.csv suma mensual prod_maiz 2019",
+        "confianza": "alta"
+      }
+    },
+    "procedencia": {
+      "anio": 2019,
+      "fuente_id": "se-bioetanol-total-csv",
+      "fuente": "Bioetanol: producción y ventas (total país, desagregado por maíz y caña de azúcar)",
+      "url": "https://datos.energia.gob.ar/dataset/5ce77ad1-c729-42cd-a8b5-2407de005e5b/resource/e5478cfe-b3ff-4fc7-a564-18cbe4752ad4/download/bioetanol-produccin-y-ventas-total-pas-.csv",
+      "fecha_descarga": "2026-11-26",
+      "hash": "sha256:83cd1c183ede6f2e065743ce18adfe1554b0141c64a5804b0e116f988abd6adc",
+      "cita_ubicacion": "bioetanol-produccin-y-ventas-total-pas-.csv suma mensual prod_maiz 2019",
+      "confianza": "alta"
+    }
+  },
+  {
+    "registro_id": "prod-bioetanol-maiz-ar-2018",
+    "producto_id": "bioetanol-maiz",
+    "provincia_id": null,
+    "anio": 2018,
+    "medicion": {
+      "estado": "dato",
+      "valor": 585619,
+      "unidad": "m3",
+      "procedencia": {
+        "anio": 2018,
+        "fuente_id": "se-bioetanol-total-csv",
+        "fuente": "Bioetanol: producción y ventas (total país, desagregado por maíz y caña de azúcar)",
+        "url": "https://datos.energia.gob.ar/dataset/5ce77ad1-c729-42cd-a8b5-2407de005e5b/resource/e5478cfe-b3ff-4fc7-a564-18cbe4752ad4/download/bioetanol-produccin-y-ventas-total-pas-.csv",
+        "fecha_descarga": "2026-11-26",
+        "hash": "sha256:83cd1c183ede6f2e065743ce18adfe1554b0141c64a5804b0e116f988abd6adc",
+        "cita_ubicacion": "bioetanol-produccin-y-ventas-total-pas-.csv suma mensual prod_maiz 2018",
+        "confianza": "alta"
+      }
+    },
+    "procedencia": {
+      "anio": 2018,
+      "fuente_id": "se-bioetanol-total-csv",
+      "fuente": "Bioetanol: producción y ventas (total país, desagregado por maíz y caña de azúcar)",
+      "url": "https://datos.energia.gob.ar/dataset/5ce77ad1-c729-42cd-a8b5-2407de005e5b/resource/e5478cfe-b3ff-4fc7-a564-18cbe4752ad4/download/bioetanol-produccin-y-ventas-total-pas-.csv",
+      "fecha_descarga": "2026-11-26",
+      "hash": "sha256:83cd1c183ede6f2e065743ce18adfe1554b0141c64a5804b0e116f988abd6adc",
+      "cita_ubicacion": "bioetanol-produccin-y-ventas-total-pas-.csv suma mensual prod_maiz 2018",
+      "confianza": "alta"
+    }
+  },
+  {
+    "registro_id": "prod-bioetanol-maiz-ar-2017",
+    "producto_id": "bioetanol-maiz",
+    "provincia_id": null,
+    "anio": 2017,
+    "medicion": {
+      "estado": "dato",
+      "valor": 551964,
+      "unidad": "m3",
+      "procedencia": {
+        "anio": 2017,
+        "fuente_id": "se-bioetanol-total-csv",
+        "fuente": "Bioetanol: producción y ventas (total país, desagregado por maíz y caña de azúcar)",
+        "url": "https://datos.energia.gob.ar/dataset/5ce77ad1-c729-42cd-a8b5-2407de005e5b/resource/e5478cfe-b3ff-4fc7-a564-18cbe4752ad4/download/bioetanol-produccin-y-ventas-total-pas-.csv",
+        "fecha_descarga": "2026-11-26",
+        "hash": "sha256:83cd1c183ede6f2e065743ce18adfe1554b0141c64a5804b0e116f988abd6adc",
+        "cita_ubicacion": "bioetanol-produccin-y-ventas-total-pas-.csv suma mensual prod_maiz 2017",
+        "confianza": "alta"
+      }
+    },
+    "procedencia": {
+      "anio": 2017,
+      "fuente_id": "se-bioetanol-total-csv",
+      "fuente": "Bioetanol: producción y ventas (total país, desagregado por maíz y caña de azúcar)",
+      "url": "https://datos.energia.gob.ar/dataset/5ce77ad1-c729-42cd-a8b5-2407de005e5b/resource/e5478cfe-b3ff-4fc7-a564-18cbe4752ad4/download/bioetanol-produccin-y-ventas-total-pas-.csv",
+      "fecha_descarga": "2026-11-26",
+      "hash": "sha256:83cd1c183ede6f2e065743ce18adfe1554b0141c64a5804b0e116f988abd6adc",
+      "cita_ubicacion": "bioetanol-produccin-y-ventas-total-pas-.csv suma mensual prod_maiz 2017",
+      "confianza": "alta"
+    }
+  },
+  {
+    "registro_id": "prod-maiz-insumo-14-2025",
+    "producto_id": "bioetanol-maiz",
+    "provincia_id": "14",
+    "anio": 2025,
+    "medicion": {
+      "estado": "dato",
+      "valor": 17971562,
+      "unidad": "t maíz",
+      "procedencia": {
+        "anio": 2025,
+        "fuente_id": "sagyp-estimaciones-2026-03",
+        "fuente": "Estimaciones Agrícolas por provincia y departamento (actualización marzo 2026)",
+        "url": "https://datos.magyp.gob.ar/dataset/9e1e77ba-267e-4eaa-a59f-3296e86b5f36/resource/95d066e6-8a0f-4a80-b59d-6f28f88eacd5/download/estimaciones-agricolas-2026-03.csv",
+        "fecha_descarga": "2026-11-24",
+        "hash": "sha256:7a47a6d356258a69ce0010031f9b2f45ea4c873901d8f812c7c394d9946f9395",
+        "cita_ubicacion": "estimaciones-agricolas-2026-03.csv cultivo=Maíz provincia_id=14 campania=2024/2025",
+        "confianza": "alta"
+      }
+    },
+    "procedencia": {
+      "anio": 2025,
+      "fuente_id": "sagyp-estimaciones-2026-03",
+      "fuente": "Estimaciones Agrícolas por provincia y departamento (actualización marzo 2026)",
+      "url": "https://datos.magyp.gob.ar/dataset/9e1e77ba-267e-4eaa-a59f-3296e86b5f36/resource/95d066e6-8a0f-4a80-b59d-6f28f88eacd5/download/estimaciones-agricolas-2026-03.csv",
+      "fecha_descarga": "2026-11-24",
+      "hash": "sha256:7a47a6d356258a69ce0010031f9b2f45ea4c873901d8f812c7c394d9946f9395",
+      "cita_ubicacion": "estimaciones-agricolas-2026-03.csv cultivo=Maíz provincia_id=14 campania=2024/2025",
+      "confianza": "alta"
+    }
+  },
+  {
+    "registro_id": "prod-maiz-insumo-14-2024",
+    "producto_id": "bioetanol-maiz",
+    "provincia_id": "14",
+    "anio": 2024,
+    "medicion": {
+      "estado": "dato",
+      "valor": 20613843,
+      "unidad": "t maíz",
+      "procedencia": {
+        "anio": 2024,
+        "fuente_id": "sagyp-estimaciones-2026-03",
+        "fuente": "Estimaciones Agrícolas por provincia y departamento (actualización marzo 2026)",
+        "url": "https://datos.magyp.gob.ar/dataset/9e1e77ba-267e-4eaa-a59f-3296e86b5f36/resource/95d066e6-8a0f-4a80-b59d-6f28f88eacd5/download/estimaciones-agricolas-2026-03.csv",
+        "fecha_descarga": "2026-11-24",
+        "hash": "sha256:7a47a6d356258a69ce0010031f9b2f45ea4c873901d8f812c7c394d9946f9395",
+        "cita_ubicacion": "estimaciones-agricolas-2026-03.csv cultivo=Maíz provincia_id=14 campania=2023/2024",
+        "confianza": "alta"
+      }
+    },
+    "procedencia": {
+      "anio": 2024,
+      "fuente_id": "sagyp-estimaciones-2026-03",
+      "fuente": "Estimaciones Agrícolas por provincia y departamento (actualización marzo 2026)",
+      "url": "https://datos.magyp.gob.ar/dataset/9e1e77ba-267e-4eaa-a59f-3296e86b5f36/resource/95d066e6-8a0f-4a80-b59d-6f28f88eacd5/download/estimaciones-agricolas-2026-03.csv",
+      "fecha_descarga": "2026-11-24",
+      "hash": "sha256:7a47a6d356258a69ce0010031f9b2f45ea4c873901d8f812c7c394d9946f9395",
+      "cita_ubicacion": "estimaciones-agricolas-2026-03.csv cultivo=Maíz provincia_id=14 campania=2023/2024",
+      "confianza": "alta"
+    }
+  },
+  {
+    "registro_id": "prod-bioetanol-cana-ar-2020",
+    "producto_id": "bioetanol-cana",
+    "provincia_id": null,
+    "anio": 2020,
+    "medicion": {
+      "estado": "dato",
+      "valor": 385150,
+      "unidad": "m3",
+      "procedencia": {
+        "anio": 2020,
+        "fuente_id": "se-bioetanol-total-csv",
+        "fuente": "Bioetanol: producción y ventas (total país, desagregado por maíz y caña de azúcar)",
+        "url": "https://datos.energia.gob.ar/dataset/5ce77ad1-c729-42cd-a8b5-2407de005e5b/resource/e5478cfe-b3ff-4fc7-a564-18cbe4752ad4/download/bioetanol-produccin-y-ventas-total-pas-.csv",
+        "fecha_descarga": "2026-11-26",
+        "hash": "sha256:83cd1c183ede6f2e065743ce18adfe1554b0141c64a5804b0e116f988abd6adc",
+        "cita_ubicacion": "bioetanol-produccin-y-ventas-total-pas-.csv suma mensual prod_cana_azucar 2020",
+        "confianza": "alta"
+      }
+    },
+    "procedencia": {
+      "anio": 2020,
+      "fuente_id": "se-bioetanol-total-csv",
+      "fuente": "Bioetanol: producción y ventas (total país, desagregado por maíz y caña de azúcar)",
+      "url": "https://datos.energia.gob.ar/dataset/5ce77ad1-c729-42cd-a8b5-2407de005e5b/resource/e5478cfe-b3ff-4fc7-a564-18cbe4752ad4/download/bioetanol-produccin-y-ventas-total-pas-.csv",
+      "fecha_descarga": "2026-11-26",
+      "hash": "sha256:83cd1c183ede6f2e065743ce18adfe1554b0141c64a5804b0e116f988abd6adc",
+      "cita_ubicacion": "bioetanol-produccin-y-ventas-total-pas-.csv suma mensual prod_cana_azucar 2020",
+      "confianza": "alta"
+    }
+  },
+  {
+    "registro_id": "prod-bioetanol-cana-ar-2019",
+    "producto_id": "bioetanol-cana",
+    "provincia_id": null,
+    "anio": 2019,
+    "medicion": {
+      "estado": "dato",
+      "valor": 519667,
+      "unidad": "m3",
+      "procedencia": {
+        "anio": 2019,
+        "fuente_id": "se-bioetanol-total-csv",
+        "fuente": "Bioetanol: producción y ventas (total país, desagregado por maíz y caña de azúcar)",
+        "url": "https://datos.energia.gob.ar/dataset/5ce77ad1-c729-42cd-a8b5-2407de005e5b/resource/e5478cfe-b3ff-4fc7-a564-18cbe4752ad4/download/bioetanol-produccin-y-ventas-total-pas-.csv",
+        "fecha_descarga": "2026-11-26",
+        "hash": "sha256:83cd1c183ede6f2e065743ce18adfe1554b0141c64a5804b0e116f988abd6adc",
+        "cita_ubicacion": "bioetanol-produccin-y-ventas-total-pas-.csv suma mensual prod_cana_azucar 2019",
+        "confianza": "alta"
+      }
+    },
+    "procedencia": {
+      "anio": 2019,
+      "fuente_id": "se-bioetanol-total-csv",
+      "fuente": "Bioetanol: producción y ventas (total país, desagregado por maíz y caña de azúcar)",
+      "url": "https://datos.energia.gob.ar/dataset/5ce77ad1-c729-42cd-a8b5-2407de005e5b/resource/e5478cfe-b3ff-4fc7-a564-18cbe4752ad4/download/bioetanol-produccin-y-ventas-total-pas-.csv",
+      "fecha_descarga": "2026-11-26",
+      "hash": "sha256:83cd1c183ede6f2e065743ce18adfe1554b0141c64a5804b0e116f988abd6adc",
+      "cita_ubicacion": "bioetanol-produccin-y-ventas-total-pas-.csv suma mensual prod_cana_azucar 2019",
+      "confianza": "alta"
+    }
+  },
+  {
+    "registro_id": "prod-bioetanol-cana-ar-2018",
+    "producto_id": "bioetanol-cana",
+    "provincia_id": null,
+    "anio": 2018,
+    "medicion": {
+      "estado": "dato",
+      "valor": 528162,
+      "unidad": "m3",
+      "procedencia": {
+        "anio": 2018,
+        "fuente_id": "se-bioetanol-total-csv",
+        "fuente": "Bioetanol: producción y ventas (total país, desagregado por maíz y caña de azúcar)",
+        "url": "https://datos.energia.gob.ar/dataset/5ce77ad1-c729-42cd-a8b5-2407de005e5b/resource/e5478cfe-b3ff-4fc7-a564-18cbe4752ad4/download/bioetanol-produccin-y-ventas-total-pas-.csv",
+        "fecha_descarga": "2026-11-26",
+        "hash": "sha256:83cd1c183ede6f2e065743ce18adfe1554b0141c64a5804b0e116f988abd6adc",
+        "cita_ubicacion": "bioetanol-produccin-y-ventas-total-pas-.csv suma mensual prod_cana_azucar 2018",
+        "confianza": "alta"
+      }
+    },
+    "procedencia": {
+      "anio": 2018,
+      "fuente_id": "se-bioetanol-total-csv",
+      "fuente": "Bioetanol: producción y ventas (total país, desagregado por maíz y caña de azúcar)",
+      "url": "https://datos.energia.gob.ar/dataset/5ce77ad1-c729-42cd-a8b5-2407de005e5b/resource/e5478cfe-b3ff-4fc7-a564-18cbe4752ad4/download/bioetanol-produccin-y-ventas-total-pas-.csv",
+      "fecha_descarga": "2026-11-26",
+      "hash": "sha256:83cd1c183ede6f2e065743ce18adfe1554b0141c64a5804b0e116f988abd6adc",
+      "cita_ubicacion": "bioetanol-produccin-y-ventas-total-pas-.csv suma mensual prod_cana_azucar 2018",
+      "confianza": "alta"
+    }
+  },
+  {
+    "registro_id": "prod-bioetanol-cana-ar-2017",
+    "producto_id": "bioetanol-cana",
+    "provincia_id": null,
+    "anio": 2017,
+    "medicion": {
+      "estado": "dato",
+      "valor": 553143,
+      "unidad": "m3",
+      "procedencia": {
+        "anio": 2017,
+        "fuente_id": "se-bioetanol-total-csv",
+        "fuente": "Bioetanol: producción y ventas (total país, desagregado por maíz y caña de azúcar)",
+        "url": "https://datos.energia.gob.ar/dataset/5ce77ad1-c729-42cd-a8b5-2407de005e5b/resource/e5478cfe-b3ff-4fc7-a564-18cbe4752ad4/download/bioetanol-produccin-y-ventas-total-pas-.csv",
+        "fecha_descarga": "2026-11-26",
+        "hash": "sha256:83cd1c183ede6f2e065743ce18adfe1554b0141c64a5804b0e116f988abd6adc",
+        "cita_ubicacion": "bioetanol-produccin-y-ventas-total-pas-.csv suma mensual prod_cana_azucar 2017",
+        "confianza": "alta"
+      }
+    },
+    "procedencia": {
+      "anio": 2017,
+      "fuente_id": "se-bioetanol-total-csv",
+      "fuente": "Bioetanol: producción y ventas (total país, desagregado por maíz y caña de azúcar)",
+      "url": "https://datos.energia.gob.ar/dataset/5ce77ad1-c729-42cd-a8b5-2407de005e5b/resource/e5478cfe-b3ff-4fc7-a564-18cbe4752ad4/download/bioetanol-produccin-y-ventas-total-pas-.csv",
+      "fecha_descarga": "2026-11-26",
+      "hash": "sha256:83cd1c183ede6f2e065743ce18adfe1554b0141c64a5804b0e116f988abd6adc",
+      "cita_ubicacion": "bioetanol-produccin-y-ventas-total-pas-.csv suma mensual prod_cana_azucar 2017",
+      "confianza": "alta"
+    }
   }
 ]

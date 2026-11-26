@@ -2354,5 +2354,997 @@
       "cita_ubicacion": "UN Comtrade AR 2023 cmdCode=382600 flow=X/M netWgt_kg (264.600 t exp)",
       "confianza": "alta"
     }
+  },
+  {
+    "registro_id": "comex-metanol-290511-2024-usd",
+    "producto_id": "metanol",
+    "anio": 2024,
+    "ncm_codigo": "2905.11",
+    "metrica": "valor_usd",
+    "exportacion": {
+      "estado": "dato",
+      "valor": 0.25,
+      "unidad": "millones USD",
+      "procedencia": {
+        "anio": 2024,
+        "fuente_id": "uncomtrade-ar-lote3-2024",
+        "fuente": "UN Comtrade: comercio exterior de Argentina HS 290511 (Metanol), 390210 (Polipropileno), 220710/220720 (Alcohol etílico) y 170199 (Azúcar) 2024",
+        "url": "https://comtradeapi.un.org/public/v1/preview/C/A/HS?reporterCode=32&period=2024&partnerCode=0&partner2Code=0&customsCode=C00&motCode=0&cmdCode=290511,390210,220710,220720,170199",
+        "fecha_descarga": "2026-11-26",
+        "hash": "sha256:13e2c93483644ca09e2f2dd434fb4470b232c0bec65979308b4b595873775f58",
+        "cita_ubicacion": "UN Comtrade AR 2024 cmdCode=290511 primaryValue",
+        "confianza": "alta"
+      }
+    },
+    "importacion": {
+      "estado": "dato",
+      "valor": 0.84,
+      "unidad": "millones USD",
+      "procedencia": {
+        "anio": 2024,
+        "fuente_id": "uncomtrade-ar-lote3-2024",
+        "fuente": "UN Comtrade: comercio exterior de Argentina HS 290511 (Metanol), 390210 (Polipropileno), 220710/220720 (Alcohol etílico) y 170199 (Azúcar) 2024",
+        "url": "https://comtradeapi.un.org/public/v1/preview/C/A/HS?reporterCode=32&period=2024&partnerCode=0&partner2Code=0&customsCode=C00&motCode=0&cmdCode=290511,390210,220710,220720,170199",
+        "fecha_descarga": "2026-11-26",
+        "hash": "sha256:13e2c93483644ca09e2f2dd434fb4470b232c0bec65979308b4b595873775f58",
+        "cita_ubicacion": "UN Comtrade AR 2024 cmdCode=290511 primaryValue",
+        "confianza": "alta"
+      }
+    },
+    "saldo_comercial": {
+      "estado": "dato",
+      "valor": -0.59,
+      "unidad": "millones USD",
+      "procedencia": {
+        "anio": 2024,
+        "fuente_id": "uncomtrade-ar-lote3-2024",
+        "fuente": "UN Comtrade: comercio exterior de Argentina HS 290511 (Metanol), 390210 (Polipropileno), 220710/220720 (Alcohol etílico) y 170199 (Azúcar) 2024",
+        "url": "https://comtradeapi.un.org/public/v1/preview/C/A/HS?reporterCode=32&period=2024&partnerCode=0&partner2Code=0&customsCode=C00&motCode=0&cmdCode=290511,390210,220710,220720,170199",
+        "fecha_descarga": "2026-11-26",
+        "hash": "sha256:13e2c93483644ca09e2f2dd434fb4470b232c0bec65979308b4b595873775f58",
+        "cita_ubicacion": "UN Comtrade AR 2024 cmdCode=290511 primaryValue",
+        "confianza": "alta"
+      }
+    },
+    "procedencia": {
+      "anio": 2024,
+      "fuente_id": "uncomtrade-ar-lote3-2024",
+      "fuente": "UN Comtrade: comercio exterior de Argentina HS 290511 (Metanol), 390210 (Polipropileno), 220710/220720 (Alcohol etílico) y 170199 (Azúcar) 2024",
+      "url": "https://comtradeapi.un.org/public/v1/preview/C/A/HS?reporterCode=32&period=2024&partnerCode=0&partner2Code=0&customsCode=C00&motCode=0&cmdCode=290511,390210,220710,220720,170199",
+      "fecha_descarga": "2026-11-26",
+      "hash": "sha256:13e2c93483644ca09e2f2dd434fb4470b232c0bec65979308b4b595873775f58",
+      "cita_ubicacion": "UN Comtrade AR 2024 cmdCode=290511 primaryValue",
+      "confianza": "alta"
+    }
+  },
+  {
+    "registro_id": "comex-metanol-290511-2023-usd",
+    "producto_id": "metanol",
+    "anio": 2023,
+    "ncm_codigo": "2905.11",
+    "metrica": "valor_usd",
+    "exportacion": {
+      "estado": "dato",
+      "valor": 2.3,
+      "unidad": "millones USD",
+      "procedencia": {
+        "anio": 2023,
+        "fuente_id": "uncomtrade-ar-lote3-2023",
+        "fuente": "UN Comtrade: comercio exterior de Argentina HS 290511 (Metanol), 390210 (Polipropileno), 220710/220720 (Alcohol etílico) y 170199 (Azúcar) 2023",
+        "url": "https://comtradeapi.un.org/public/v1/preview/C/A/HS?reporterCode=32&period=2023&partnerCode=0&partner2Code=0&customsCode=C00&motCode=0&cmdCode=290511,390210,220710,220720,170199",
+        "fecha_descarga": "2026-11-26",
+        "hash": "sha256:ddeedb8d679b523fd6fb7dfbe6307998dec1bb589639a0736ad3c1029cb825da",
+        "cita_ubicacion": "UN Comtrade AR 2023 cmdCode=290511 primaryValue",
+        "confianza": "alta"
+      }
+    },
+    "importacion": {
+      "estado": "dato",
+      "valor": 0.39,
+      "unidad": "millones USD",
+      "procedencia": {
+        "anio": 2023,
+        "fuente_id": "uncomtrade-ar-lote3-2023",
+        "fuente": "UN Comtrade: comercio exterior de Argentina HS 290511 (Metanol), 390210 (Polipropileno), 220710/220720 (Alcohol etílico) y 170199 (Azúcar) 2023",
+        "url": "https://comtradeapi.un.org/public/v1/preview/C/A/HS?reporterCode=32&period=2023&partnerCode=0&partner2Code=0&customsCode=C00&motCode=0&cmdCode=290511,390210,220710,220720,170199",
+        "fecha_descarga": "2026-11-26",
+        "hash": "sha256:ddeedb8d679b523fd6fb7dfbe6307998dec1bb589639a0736ad3c1029cb825da",
+        "cita_ubicacion": "UN Comtrade AR 2023 cmdCode=290511 primaryValue",
+        "confianza": "alta"
+      }
+    },
+    "saldo_comercial": {
+      "estado": "dato",
+      "valor": 1.91,
+      "unidad": "millones USD",
+      "procedencia": {
+        "anio": 2023,
+        "fuente_id": "uncomtrade-ar-lote3-2023",
+        "fuente": "UN Comtrade: comercio exterior de Argentina HS 290511 (Metanol), 390210 (Polipropileno), 220710/220720 (Alcohol etílico) y 170199 (Azúcar) 2023",
+        "url": "https://comtradeapi.un.org/public/v1/preview/C/A/HS?reporterCode=32&period=2023&partnerCode=0&partner2Code=0&customsCode=C00&motCode=0&cmdCode=290511,390210,220710,220720,170199",
+        "fecha_descarga": "2026-11-26",
+        "hash": "sha256:ddeedb8d679b523fd6fb7dfbe6307998dec1bb589639a0736ad3c1029cb825da",
+        "cita_ubicacion": "UN Comtrade AR 2023 cmdCode=290511 primaryValue",
+        "confianza": "alta"
+      }
+    },
+    "procedencia": {
+      "anio": 2023,
+      "fuente_id": "uncomtrade-ar-lote3-2023",
+      "fuente": "UN Comtrade: comercio exterior de Argentina HS 290511 (Metanol), 390210 (Polipropileno), 220710/220720 (Alcohol etílico) y 170199 (Azúcar) 2023",
+      "url": "https://comtradeapi.un.org/public/v1/preview/C/A/HS?reporterCode=32&period=2023&partnerCode=0&partner2Code=0&customsCode=C00&motCode=0&cmdCode=290511,390210,220710,220720,170199",
+      "fecha_descarga": "2026-11-26",
+      "hash": "sha256:ddeedb8d679b523fd6fb7dfbe6307998dec1bb589639a0736ad3c1029cb825da",
+      "cita_ubicacion": "UN Comtrade AR 2023 cmdCode=290511 primaryValue",
+      "confianza": "alta"
+    }
+  },
+  {
+    "registro_id": "comex-metanol-290511-2024-vol",
+    "producto_id": "metanol",
+    "anio": 2024,
+    "ncm_codigo": "2905.11",
+    "metrica": "volumen_t",
+    "exportacion": {
+      "estado": "dato",
+      "valor": 738.9,
+      "unidad": "t",
+      "procedencia": {
+        "anio": 2024,
+        "fuente_id": "uncomtrade-ar-lote3-2024",
+        "fuente": "UN Comtrade: comercio exterior de Argentina HS 290511 (Metanol), 390210 (Polipropileno), 220710/220720 (Alcohol etílico) y 170199 (Azúcar) 2024",
+        "url": "https://comtradeapi.un.org/public/v1/preview/C/A/HS?reporterCode=32&period=2024&partnerCode=0&partner2Code=0&customsCode=C00&motCode=0&cmdCode=290511,390210,220710,220720,170199",
+        "fecha_descarga": "2026-11-26",
+        "hash": "sha256:13e2c93483644ca09e2f2dd434fb4470b232c0bec65979308b4b595873775f58",
+        "cita_ubicacion": "UN Comtrade AR 2024 cmdCode=290511 netWgt_kg (imp netWgt nulo)",
+        "confianza": "alta"
+      }
+    },
+    "importacion": {
+      "estado": "sin_datos",
+      "valor": null,
+      "unidad": "t",
+      "procedencia": {
+        "anio": 2024,
+        "fuente_id": "uncomtrade-ar-lote3-2024",
+        "fuente": "UN Comtrade: comercio exterior de Argentina HS 290511 (Metanol), 390210 (Polipropileno), 220710/220720 (Alcohol etílico) y 170199 (Azúcar) 2024",
+        "url": "https://comtradeapi.un.org/public/v1/preview/C/A/HS?reporterCode=32&period=2024&partnerCode=0&partner2Code=0&customsCode=C00&motCode=0&cmdCode=290511,390210,220710,220720,170199",
+        "fecha_descarga": "2026-11-26",
+        "hash": "sha256:13e2c93483644ca09e2f2dd434fb4470b232c0bec65979308b4b595873775f58",
+        "cita_ubicacion": "UN Comtrade AR 2024 cmdCode=290511 netWgt_kg (imp netWgt nulo)",
+        "confianza": "alta"
+      }
+    },
+    "saldo_comercial": {
+      "estado": "sin_datos",
+      "valor": null,
+      "unidad": "t",
+      "procedencia": {
+        "anio": 2024,
+        "fuente_id": "uncomtrade-ar-lote3-2024",
+        "fuente": "UN Comtrade: comercio exterior de Argentina HS 290511 (Metanol), 390210 (Polipropileno), 220710/220720 (Alcohol etílico) y 170199 (Azúcar) 2024",
+        "url": "https://comtradeapi.un.org/public/v1/preview/C/A/HS?reporterCode=32&period=2024&partnerCode=0&partner2Code=0&customsCode=C00&motCode=0&cmdCode=290511,390210,220710,220720,170199",
+        "fecha_descarga": "2026-11-26",
+        "hash": "sha256:13e2c93483644ca09e2f2dd434fb4470b232c0bec65979308b4b595873775f58",
+        "cita_ubicacion": "UN Comtrade AR 2024 cmdCode=290511 netWgt_kg (imp netWgt nulo)",
+        "confianza": "alta"
+      }
+    },
+    "procedencia": {
+      "anio": 2024,
+      "fuente_id": "uncomtrade-ar-lote3-2024",
+      "fuente": "UN Comtrade: comercio exterior de Argentina HS 290511 (Metanol), 390210 (Polipropileno), 220710/220720 (Alcohol etílico) y 170199 (Azúcar) 2024",
+      "url": "https://comtradeapi.un.org/public/v1/preview/C/A/HS?reporterCode=32&period=2024&partnerCode=0&partner2Code=0&customsCode=C00&motCode=0&cmdCode=290511,390210,220710,220720,170199",
+      "fecha_descarga": "2026-11-26",
+      "hash": "sha256:13e2c93483644ca09e2f2dd434fb4470b232c0bec65979308b4b595873775f58",
+      "cita_ubicacion": "UN Comtrade AR 2024 cmdCode=290511 netWgt_kg (imp netWgt nulo)",
+      "confianza": "alta"
+    }
+  },
+  {
+    "registro_id": "comex-metanol-290511-2023-vol",
+    "producto_id": "metanol",
+    "anio": 2023,
+    "ncm_codigo": "2905.11",
+    "metrica": "volumen_t",
+    "exportacion": {
+      "estado": "dato",
+      "valor": 5262.5,
+      "unidad": "t",
+      "procedencia": {
+        "anio": 2023,
+        "fuente_id": "uncomtrade-ar-lote3-2023",
+        "fuente": "UN Comtrade: comercio exterior de Argentina HS 290511 (Metanol), 390210 (Polipropileno), 220710/220720 (Alcohol etílico) y 170199 (Azúcar) 2023",
+        "url": "https://comtradeapi.un.org/public/v1/preview/C/A/HS?reporterCode=32&period=2023&partnerCode=0&partner2Code=0&customsCode=C00&motCode=0&cmdCode=290511,390210,220710,220720,170199",
+        "fecha_descarga": "2026-11-26",
+        "hash": "sha256:ddeedb8d679b523fd6fb7dfbe6307998dec1bb589639a0736ad3c1029cb825da",
+        "cita_ubicacion": "UN Comtrade AR 2023 cmdCode=290511 netWgt_kg (imp netWgt nulo)",
+        "confianza": "alta"
+      }
+    },
+    "importacion": {
+      "estado": "sin_datos",
+      "valor": null,
+      "unidad": "t",
+      "procedencia": {
+        "anio": 2023,
+        "fuente_id": "uncomtrade-ar-lote3-2023",
+        "fuente": "UN Comtrade: comercio exterior de Argentina HS 290511 (Metanol), 390210 (Polipropileno), 220710/220720 (Alcohol etílico) y 170199 (Azúcar) 2023",
+        "url": "https://comtradeapi.un.org/public/v1/preview/C/A/HS?reporterCode=32&period=2023&partnerCode=0&partner2Code=0&customsCode=C00&motCode=0&cmdCode=290511,390210,220710,220720,170199",
+        "fecha_descarga": "2026-11-26",
+        "hash": "sha256:ddeedb8d679b523fd6fb7dfbe6307998dec1bb589639a0736ad3c1029cb825da",
+        "cita_ubicacion": "UN Comtrade AR 2023 cmdCode=290511 netWgt_kg (imp netWgt nulo)",
+        "confianza": "alta"
+      }
+    },
+    "saldo_comercial": {
+      "estado": "sin_datos",
+      "valor": null,
+      "unidad": "t",
+      "procedencia": {
+        "anio": 2023,
+        "fuente_id": "uncomtrade-ar-lote3-2023",
+        "fuente": "UN Comtrade: comercio exterior de Argentina HS 290511 (Metanol), 390210 (Polipropileno), 220710/220720 (Alcohol etílico) y 170199 (Azúcar) 2023",
+        "url": "https://comtradeapi.un.org/public/v1/preview/C/A/HS?reporterCode=32&period=2023&partnerCode=0&partner2Code=0&customsCode=C00&motCode=0&cmdCode=290511,390210,220710,220720,170199",
+        "fecha_descarga": "2026-11-26",
+        "hash": "sha256:ddeedb8d679b523fd6fb7dfbe6307998dec1bb589639a0736ad3c1029cb825da",
+        "cita_ubicacion": "UN Comtrade AR 2023 cmdCode=290511 netWgt_kg (imp netWgt nulo)",
+        "confianza": "alta"
+      }
+    },
+    "procedencia": {
+      "anio": 2023,
+      "fuente_id": "uncomtrade-ar-lote3-2023",
+      "fuente": "UN Comtrade: comercio exterior de Argentina HS 290511 (Metanol), 390210 (Polipropileno), 220710/220720 (Alcohol etílico) y 170199 (Azúcar) 2023",
+      "url": "https://comtradeapi.un.org/public/v1/preview/C/A/HS?reporterCode=32&period=2023&partnerCode=0&partner2Code=0&customsCode=C00&motCode=0&cmdCode=290511,390210,220710,220720,170199",
+      "fecha_descarga": "2026-11-26",
+      "hash": "sha256:ddeedb8d679b523fd6fb7dfbe6307998dec1bb589639a0736ad3c1029cb825da",
+      "cita_ubicacion": "UN Comtrade AR 2023 cmdCode=290511 netWgt_kg (imp netWgt nulo)",
+      "confianza": "alta"
+    }
+  },
+  {
+    "registro_id": "comex-polipropileno-390210-2024-usd",
+    "producto_id": "polipropileno",
+    "anio": 2024,
+    "ncm_codigo": "3902.10",
+    "metrica": "valor_usd",
+    "exportacion": {
+      "estado": "dato",
+      "valor": 46.15,
+      "unidad": "millones USD",
+      "procedencia": {
+        "anio": 2024,
+        "fuente_id": "uncomtrade-ar-lote3-2024",
+        "fuente": "UN Comtrade: comercio exterior de Argentina HS 290511 (Metanol), 390210 (Polipropileno), 220710/220720 (Alcohol etílico) y 170199 (Azúcar) 2024",
+        "url": "https://comtradeapi.un.org/public/v1/preview/C/A/HS?reporterCode=32&period=2024&partnerCode=0&partner2Code=0&customsCode=C00&motCode=0&cmdCode=290511,390210,220710,220720,170199",
+        "fecha_descarga": "2026-11-26",
+        "hash": "sha256:13e2c93483644ca09e2f2dd434fb4470b232c0bec65979308b4b595873775f58",
+        "cita_ubicacion": "UN Comtrade AR 2024 cmdCode=390210 primaryValue",
+        "confianza": "alta"
+      }
+    },
+    "importacion": {
+      "estado": "dato",
+      "valor": 88.54,
+      "unidad": "millones USD",
+      "procedencia": {
+        "anio": 2024,
+        "fuente_id": "uncomtrade-ar-lote3-2024",
+        "fuente": "UN Comtrade: comercio exterior de Argentina HS 290511 (Metanol), 390210 (Polipropileno), 220710/220720 (Alcohol etílico) y 170199 (Azúcar) 2024",
+        "url": "https://comtradeapi.un.org/public/v1/preview/C/A/HS?reporterCode=32&period=2024&partnerCode=0&partner2Code=0&customsCode=C00&motCode=0&cmdCode=290511,390210,220710,220720,170199",
+        "fecha_descarga": "2026-11-26",
+        "hash": "sha256:13e2c93483644ca09e2f2dd434fb4470b232c0bec65979308b4b595873775f58",
+        "cita_ubicacion": "UN Comtrade AR 2024 cmdCode=390210 primaryValue",
+        "confianza": "alta"
+      }
+    },
+    "saldo_comercial": {
+      "estado": "dato",
+      "valor": -42.39,
+      "unidad": "millones USD",
+      "procedencia": {
+        "anio": 2024,
+        "fuente_id": "uncomtrade-ar-lote3-2024",
+        "fuente": "UN Comtrade: comercio exterior de Argentina HS 290511 (Metanol), 390210 (Polipropileno), 220710/220720 (Alcohol etílico) y 170199 (Azúcar) 2024",
+        "url": "https://comtradeapi.un.org/public/v1/preview/C/A/HS?reporterCode=32&period=2024&partnerCode=0&partner2Code=0&customsCode=C00&motCode=0&cmdCode=290511,390210,220710,220720,170199",
+        "fecha_descarga": "2026-11-26",
+        "hash": "sha256:13e2c93483644ca09e2f2dd434fb4470b232c0bec65979308b4b595873775f58",
+        "cita_ubicacion": "UN Comtrade AR 2024 cmdCode=390210 primaryValue",
+        "confianza": "alta"
+      }
+    },
+    "procedencia": {
+      "anio": 2024,
+      "fuente_id": "uncomtrade-ar-lote3-2024",
+      "fuente": "UN Comtrade: comercio exterior de Argentina HS 290511 (Metanol), 390210 (Polipropileno), 220710/220720 (Alcohol etílico) y 170199 (Azúcar) 2024",
+      "url": "https://comtradeapi.un.org/public/v1/preview/C/A/HS?reporterCode=32&period=2024&partnerCode=0&partner2Code=0&customsCode=C00&motCode=0&cmdCode=290511,390210,220710,220720,170199",
+      "fecha_descarga": "2026-11-26",
+      "hash": "sha256:13e2c93483644ca09e2f2dd434fb4470b232c0bec65979308b4b595873775f58",
+      "cita_ubicacion": "UN Comtrade AR 2024 cmdCode=390210 primaryValue",
+      "confianza": "alta"
+    }
+  },
+  {
+    "registro_id": "comex-polipropileno-390210-2023-usd",
+    "producto_id": "polipropileno",
+    "anio": 2023,
+    "ncm_codigo": "3902.10",
+    "metrica": "valor_usd",
+    "exportacion": {
+      "estado": "dato",
+      "valor": 41.43,
+      "unidad": "millones USD",
+      "procedencia": {
+        "anio": 2023,
+        "fuente_id": "uncomtrade-ar-lote3-2023",
+        "fuente": "UN Comtrade: comercio exterior de Argentina HS 290511 (Metanol), 390210 (Polipropileno), 220710/220720 (Alcohol etílico) y 170199 (Azúcar) 2023",
+        "url": "https://comtradeapi.un.org/public/v1/preview/C/A/HS?reporterCode=32&period=2023&partnerCode=0&partner2Code=0&customsCode=C00&motCode=0&cmdCode=290511,390210,220710,220720,170199",
+        "fecha_descarga": "2026-11-26",
+        "hash": "sha256:ddeedb8d679b523fd6fb7dfbe6307998dec1bb589639a0736ad3c1029cb825da",
+        "cita_ubicacion": "UN Comtrade AR 2023 cmdCode=390210 primaryValue",
+        "confianza": "alta"
+      }
+    },
+    "importacion": {
+      "estado": "dato",
+      "valor": 91.27,
+      "unidad": "millones USD",
+      "procedencia": {
+        "anio": 2023,
+        "fuente_id": "uncomtrade-ar-lote3-2023",
+        "fuente": "UN Comtrade: comercio exterior de Argentina HS 290511 (Metanol), 390210 (Polipropileno), 220710/220720 (Alcohol etílico) y 170199 (Azúcar) 2023",
+        "url": "https://comtradeapi.un.org/public/v1/preview/C/A/HS?reporterCode=32&period=2023&partnerCode=0&partner2Code=0&customsCode=C00&motCode=0&cmdCode=290511,390210,220710,220720,170199",
+        "fecha_descarga": "2026-11-26",
+        "hash": "sha256:ddeedb8d679b523fd6fb7dfbe6307998dec1bb589639a0736ad3c1029cb825da",
+        "cita_ubicacion": "UN Comtrade AR 2023 cmdCode=390210 primaryValue",
+        "confianza": "alta"
+      }
+    },
+    "saldo_comercial": {
+      "estado": "dato",
+      "valor": -49.84,
+      "unidad": "millones USD",
+      "procedencia": {
+        "anio": 2023,
+        "fuente_id": "uncomtrade-ar-lote3-2023",
+        "fuente": "UN Comtrade: comercio exterior de Argentina HS 290511 (Metanol), 390210 (Polipropileno), 220710/220720 (Alcohol etílico) y 170199 (Azúcar) 2023",
+        "url": "https://comtradeapi.un.org/public/v1/preview/C/A/HS?reporterCode=32&period=2023&partnerCode=0&partner2Code=0&customsCode=C00&motCode=0&cmdCode=290511,390210,220710,220720,170199",
+        "fecha_descarga": "2026-11-26",
+        "hash": "sha256:ddeedb8d679b523fd6fb7dfbe6307998dec1bb589639a0736ad3c1029cb825da",
+        "cita_ubicacion": "UN Comtrade AR 2023 cmdCode=390210 primaryValue",
+        "confianza": "alta"
+      }
+    },
+    "procedencia": {
+      "anio": 2023,
+      "fuente_id": "uncomtrade-ar-lote3-2023",
+      "fuente": "UN Comtrade: comercio exterior de Argentina HS 290511 (Metanol), 390210 (Polipropileno), 220710/220720 (Alcohol etílico) y 170199 (Azúcar) 2023",
+      "url": "https://comtradeapi.un.org/public/v1/preview/C/A/HS?reporterCode=32&period=2023&partnerCode=0&partner2Code=0&customsCode=C00&motCode=0&cmdCode=290511,390210,220710,220720,170199",
+      "fecha_descarga": "2026-11-26",
+      "hash": "sha256:ddeedb8d679b523fd6fb7dfbe6307998dec1bb589639a0736ad3c1029cb825da",
+      "cita_ubicacion": "UN Comtrade AR 2023 cmdCode=390210 primaryValue",
+      "confianza": "alta"
+    }
+  },
+  {
+    "registro_id": "comex-polipropileno-390210-2024-vol",
+    "producto_id": "polipropileno",
+    "anio": 2024,
+    "ncm_codigo": "3902.10",
+    "metrica": "volumen_t",
+    "exportacion": {
+      "estado": "dato",
+      "valor": 41569.5,
+      "unidad": "t",
+      "procedencia": {
+        "anio": 2024,
+        "fuente_id": "uncomtrade-ar-lote3-2024",
+        "fuente": "UN Comtrade: comercio exterior de Argentina HS 290511 (Metanol), 390210 (Polipropileno), 220710/220720 (Alcohol etílico) y 170199 (Azúcar) 2024",
+        "url": "https://comtradeapi.un.org/public/v1/preview/C/A/HS?reporterCode=32&period=2024&partnerCode=0&partner2Code=0&customsCode=C00&motCode=0&cmdCode=290511,390210,220710,220720,170199",
+        "fecha_descarga": "2026-11-26",
+        "hash": "sha256:13e2c93483644ca09e2f2dd434fb4470b232c0bec65979308b4b595873775f58",
+        "cita_ubicacion": "UN Comtrade AR 2024 cmdCode=390210 netWgt_kg (imp netWgt nulo)",
+        "confianza": "alta"
+      }
+    },
+    "importacion": {
+      "estado": "sin_datos",
+      "valor": null,
+      "unidad": "t",
+      "procedencia": {
+        "anio": 2024,
+        "fuente_id": "uncomtrade-ar-lote3-2024",
+        "fuente": "UN Comtrade: comercio exterior de Argentina HS 290511 (Metanol), 390210 (Polipropileno), 220710/220720 (Alcohol etílico) y 170199 (Azúcar) 2024",
+        "url": "https://comtradeapi.un.org/public/v1/preview/C/A/HS?reporterCode=32&period=2024&partnerCode=0&partner2Code=0&customsCode=C00&motCode=0&cmdCode=290511,390210,220710,220720,170199",
+        "fecha_descarga": "2026-11-26",
+        "hash": "sha256:13e2c93483644ca09e2f2dd434fb4470b232c0bec65979308b4b595873775f58",
+        "cita_ubicacion": "UN Comtrade AR 2024 cmdCode=390210 netWgt_kg (imp netWgt nulo)",
+        "confianza": "alta"
+      }
+    },
+    "saldo_comercial": {
+      "estado": "sin_datos",
+      "valor": null,
+      "unidad": "t",
+      "procedencia": {
+        "anio": 2024,
+        "fuente_id": "uncomtrade-ar-lote3-2024",
+        "fuente": "UN Comtrade: comercio exterior de Argentina HS 290511 (Metanol), 390210 (Polipropileno), 220710/220720 (Alcohol etílico) y 170199 (Azúcar) 2024",
+        "url": "https://comtradeapi.un.org/public/v1/preview/C/A/HS?reporterCode=32&period=2024&partnerCode=0&partner2Code=0&customsCode=C00&motCode=0&cmdCode=290511,390210,220710,220720,170199",
+        "fecha_descarga": "2026-11-26",
+        "hash": "sha256:13e2c93483644ca09e2f2dd434fb4470b232c0bec65979308b4b595873775f58",
+        "cita_ubicacion": "UN Comtrade AR 2024 cmdCode=390210 netWgt_kg (imp netWgt nulo)",
+        "confianza": "alta"
+      }
+    },
+    "procedencia": {
+      "anio": 2024,
+      "fuente_id": "uncomtrade-ar-lote3-2024",
+      "fuente": "UN Comtrade: comercio exterior de Argentina HS 290511 (Metanol), 390210 (Polipropileno), 220710/220720 (Alcohol etílico) y 170199 (Azúcar) 2024",
+      "url": "https://comtradeapi.un.org/public/v1/preview/C/A/HS?reporterCode=32&period=2024&partnerCode=0&partner2Code=0&customsCode=C00&motCode=0&cmdCode=290511,390210,220710,220720,170199",
+      "fecha_descarga": "2026-11-26",
+      "hash": "sha256:13e2c93483644ca09e2f2dd434fb4470b232c0bec65979308b4b595873775f58",
+      "cita_ubicacion": "UN Comtrade AR 2024 cmdCode=390210 netWgt_kg (imp netWgt nulo)",
+      "confianza": "alta"
+    }
+  },
+  {
+    "registro_id": "comex-polipropileno-390210-2023-vol",
+    "producto_id": "polipropileno",
+    "anio": 2023,
+    "ncm_codigo": "3902.10",
+    "metrica": "volumen_t",
+    "exportacion": {
+      "estado": "dato",
+      "valor": 36201.4,
+      "unidad": "t",
+      "procedencia": {
+        "anio": 2023,
+        "fuente_id": "uncomtrade-ar-lote3-2023",
+        "fuente": "UN Comtrade: comercio exterior de Argentina HS 290511 (Metanol), 390210 (Polipropileno), 220710/220720 (Alcohol etílico) y 170199 (Azúcar) 2023",
+        "url": "https://comtradeapi.un.org/public/v1/preview/C/A/HS?reporterCode=32&period=2023&partnerCode=0&partner2Code=0&customsCode=C00&motCode=0&cmdCode=290511,390210,220710,220720,170199",
+        "fecha_descarga": "2026-11-26",
+        "hash": "sha256:ddeedb8d679b523fd6fb7dfbe6307998dec1bb589639a0736ad3c1029cb825da",
+        "cita_ubicacion": "UN Comtrade AR 2023 cmdCode=390210 netWgt_kg",
+        "confianza": "alta"
+      }
+    },
+    "importacion": {
+      "estado": "dato",
+      "valor": 56012.6,
+      "unidad": "t",
+      "procedencia": {
+        "anio": 2023,
+        "fuente_id": "uncomtrade-ar-lote3-2023",
+        "fuente": "UN Comtrade: comercio exterior de Argentina HS 290511 (Metanol), 390210 (Polipropileno), 220710/220720 (Alcohol etílico) y 170199 (Azúcar) 2023",
+        "url": "https://comtradeapi.un.org/public/v1/preview/C/A/HS?reporterCode=32&period=2023&partnerCode=0&partner2Code=0&customsCode=C00&motCode=0&cmdCode=290511,390210,220710,220720,170199",
+        "fecha_descarga": "2026-11-26",
+        "hash": "sha256:ddeedb8d679b523fd6fb7dfbe6307998dec1bb589639a0736ad3c1029cb825da",
+        "cita_ubicacion": "UN Comtrade AR 2023 cmdCode=390210 netWgt_kg",
+        "confianza": "alta"
+      }
+    },
+    "saldo_comercial": {
+      "estado": "dato",
+      "valor": -19811.2,
+      "unidad": "t",
+      "procedencia": {
+        "anio": 2023,
+        "fuente_id": "uncomtrade-ar-lote3-2023",
+        "fuente": "UN Comtrade: comercio exterior de Argentina HS 290511 (Metanol), 390210 (Polipropileno), 220710/220720 (Alcohol etílico) y 170199 (Azúcar) 2023",
+        "url": "https://comtradeapi.un.org/public/v1/preview/C/A/HS?reporterCode=32&period=2023&partnerCode=0&partner2Code=0&customsCode=C00&motCode=0&cmdCode=290511,390210,220710,220720,170199",
+        "fecha_descarga": "2026-11-26",
+        "hash": "sha256:ddeedb8d679b523fd6fb7dfbe6307998dec1bb589639a0736ad3c1029cb825da",
+        "cita_ubicacion": "UN Comtrade AR 2023 cmdCode=390210 netWgt_kg",
+        "confianza": "alta"
+      }
+    },
+    "procedencia": {
+      "anio": 2023,
+      "fuente_id": "uncomtrade-ar-lote3-2023",
+      "fuente": "UN Comtrade: comercio exterior de Argentina HS 290511 (Metanol), 390210 (Polipropileno), 220710/220720 (Alcohol etílico) y 170199 (Azúcar) 2023",
+      "url": "https://comtradeapi.un.org/public/v1/preview/C/A/HS?reporterCode=32&period=2023&partnerCode=0&partner2Code=0&customsCode=C00&motCode=0&cmdCode=290511,390210,220710,220720,170199",
+      "fecha_descarga": "2026-11-26",
+      "hash": "sha256:ddeedb8d679b523fd6fb7dfbe6307998dec1bb589639a0736ad3c1029cb825da",
+      "cita_ubicacion": "UN Comtrade AR 2023 cmdCode=390210 netWgt_kg",
+      "confianza": "alta"
+    }
+  },
+  {
+    "registro_id": "comex-bioetanol-maiz-220710-2024-usd",
+    "producto_id": "bioetanol-maiz",
+    "anio": 2024,
+    "ncm_codigo": "2207.10",
+    "metrica": "valor_usd",
+    "exportacion": {
+      "estado": "dato",
+      "valor": 15.82,
+      "unidad": "millones USD",
+      "procedencia": {
+        "anio": 2024,
+        "fuente_id": "uncomtrade-ar-lote3-2024",
+        "fuente": "UN Comtrade: comercio exterior de Argentina HS 290511 (Metanol), 390210 (Polipropileno), 220710/220720 (Alcohol etílico) y 170199 (Azúcar) 2024",
+        "url": "https://comtradeapi.un.org/public/v1/preview/C/A/HS?reporterCode=32&period=2024&partnerCode=0&partner2Code=0&customsCode=C00&motCode=0&cmdCode=290511,390210,220710,220720,170199",
+        "fecha_descarga": "2026-11-26",
+        "hash": "sha256:13e2c93483644ca09e2f2dd434fb4470b232c0bec65979308b4b595873775f58",
+        "cita_ubicacion": "UN Comtrade AR 2024 cmdCode=220710 primaryValue",
+        "confianza": "alta"
+      }
+    },
+    "importacion": {
+      "estado": "dato",
+      "valor": 0.45,
+      "unidad": "millones USD",
+      "procedencia": {
+        "anio": 2024,
+        "fuente_id": "uncomtrade-ar-lote3-2024",
+        "fuente": "UN Comtrade: comercio exterior de Argentina HS 290511 (Metanol), 390210 (Polipropileno), 220710/220720 (Alcohol etílico) y 170199 (Azúcar) 2024",
+        "url": "https://comtradeapi.un.org/public/v1/preview/C/A/HS?reporterCode=32&period=2024&partnerCode=0&partner2Code=0&customsCode=C00&motCode=0&cmdCode=290511,390210,220710,220720,170199",
+        "fecha_descarga": "2026-11-26",
+        "hash": "sha256:13e2c93483644ca09e2f2dd434fb4470b232c0bec65979308b4b595873775f58",
+        "cita_ubicacion": "UN Comtrade AR 2024 cmdCode=220710 primaryValue",
+        "confianza": "alta"
+      }
+    },
+    "saldo_comercial": {
+      "estado": "dato",
+      "valor": 15.37,
+      "unidad": "millones USD",
+      "procedencia": {
+        "anio": 2024,
+        "fuente_id": "uncomtrade-ar-lote3-2024",
+        "fuente": "UN Comtrade: comercio exterior de Argentina HS 290511 (Metanol), 390210 (Polipropileno), 220710/220720 (Alcohol etílico) y 170199 (Azúcar) 2024",
+        "url": "https://comtradeapi.un.org/public/v1/preview/C/A/HS?reporterCode=32&period=2024&partnerCode=0&partner2Code=0&customsCode=C00&motCode=0&cmdCode=290511,390210,220710,220720,170199",
+        "fecha_descarga": "2026-11-26",
+        "hash": "sha256:13e2c93483644ca09e2f2dd434fb4470b232c0bec65979308b4b595873775f58",
+        "cita_ubicacion": "UN Comtrade AR 2024 cmdCode=220710 primaryValue",
+        "confianza": "alta"
+      }
+    },
+    "procedencia": {
+      "anio": 2024,
+      "fuente_id": "uncomtrade-ar-lote3-2024",
+      "fuente": "UN Comtrade: comercio exterior de Argentina HS 290511 (Metanol), 390210 (Polipropileno), 220710/220720 (Alcohol etílico) y 170199 (Azúcar) 2024",
+      "url": "https://comtradeapi.un.org/public/v1/preview/C/A/HS?reporterCode=32&period=2024&partnerCode=0&partner2Code=0&customsCode=C00&motCode=0&cmdCode=290511,390210,220710,220720,170199",
+      "fecha_descarga": "2026-11-26",
+      "hash": "sha256:13e2c93483644ca09e2f2dd434fb4470b232c0bec65979308b4b595873775f58",
+      "cita_ubicacion": "UN Comtrade AR 2024 cmdCode=220710 primaryValue",
+      "confianza": "alta"
+    }
+  },
+  {
+    "registro_id": "comex-bioetanol-maiz-220710-2023-usd",
+    "producto_id": "bioetanol-maiz",
+    "anio": 2023,
+    "ncm_codigo": "2207.10",
+    "metrica": "valor_usd",
+    "exportacion": {
+      "estado": "dato",
+      "valor": 13.13,
+      "unidad": "millones USD",
+      "procedencia": {
+        "anio": 2023,
+        "fuente_id": "uncomtrade-ar-lote3-2023",
+        "fuente": "UN Comtrade: comercio exterior de Argentina HS 290511 (Metanol), 390210 (Polipropileno), 220710/220720 (Alcohol etílico) y 170199 (Azúcar) 2023",
+        "url": "https://comtradeapi.un.org/public/v1/preview/C/A/HS?reporterCode=32&period=2023&partnerCode=0&partner2Code=0&customsCode=C00&motCode=0&cmdCode=290511,390210,220710,220720,170199",
+        "fecha_descarga": "2026-11-26",
+        "hash": "sha256:ddeedb8d679b523fd6fb7dfbe6307998dec1bb589639a0736ad3c1029cb825da",
+        "cita_ubicacion": "UN Comtrade AR 2023 cmdCode=220710 primaryValue",
+        "confianza": "alta"
+      }
+    },
+    "importacion": {
+      "estado": "dato",
+      "valor": 0.51,
+      "unidad": "millones USD",
+      "procedencia": {
+        "anio": 2023,
+        "fuente_id": "uncomtrade-ar-lote3-2023",
+        "fuente": "UN Comtrade: comercio exterior de Argentina HS 290511 (Metanol), 390210 (Polipropileno), 220710/220720 (Alcohol etílico) y 170199 (Azúcar) 2023",
+        "url": "https://comtradeapi.un.org/public/v1/preview/C/A/HS?reporterCode=32&period=2023&partnerCode=0&partner2Code=0&customsCode=C00&motCode=0&cmdCode=290511,390210,220710,220720,170199",
+        "fecha_descarga": "2026-11-26",
+        "hash": "sha256:ddeedb8d679b523fd6fb7dfbe6307998dec1bb589639a0736ad3c1029cb825da",
+        "cita_ubicacion": "UN Comtrade AR 2023 cmdCode=220710 primaryValue",
+        "confianza": "alta"
+      }
+    },
+    "saldo_comercial": {
+      "estado": "dato",
+      "valor": 12.62,
+      "unidad": "millones USD",
+      "procedencia": {
+        "anio": 2023,
+        "fuente_id": "uncomtrade-ar-lote3-2023",
+        "fuente": "UN Comtrade: comercio exterior de Argentina HS 290511 (Metanol), 390210 (Polipropileno), 220710/220720 (Alcohol etílico) y 170199 (Azúcar) 2023",
+        "url": "https://comtradeapi.un.org/public/v1/preview/C/A/HS?reporterCode=32&period=2023&partnerCode=0&partner2Code=0&customsCode=C00&motCode=0&cmdCode=290511,390210,220710,220720,170199",
+        "fecha_descarga": "2026-11-26",
+        "hash": "sha256:ddeedb8d679b523fd6fb7dfbe6307998dec1bb589639a0736ad3c1029cb825da",
+        "cita_ubicacion": "UN Comtrade AR 2023 cmdCode=220710 primaryValue",
+        "confianza": "alta"
+      }
+    },
+    "procedencia": {
+      "anio": 2023,
+      "fuente_id": "uncomtrade-ar-lote3-2023",
+      "fuente": "UN Comtrade: comercio exterior de Argentina HS 290511 (Metanol), 390210 (Polipropileno), 220710/220720 (Alcohol etílico) y 170199 (Azúcar) 2023",
+      "url": "https://comtradeapi.un.org/public/v1/preview/C/A/HS?reporterCode=32&period=2023&partnerCode=0&partner2Code=0&customsCode=C00&motCode=0&cmdCode=290511,390210,220710,220720,170199",
+      "fecha_descarga": "2026-11-26",
+      "hash": "sha256:ddeedb8d679b523fd6fb7dfbe6307998dec1bb589639a0736ad3c1029cb825da",
+      "cita_ubicacion": "UN Comtrade AR 2023 cmdCode=220710 primaryValue",
+      "confianza": "alta"
+    }
+  },
+  {
+    "registro_id": "comex-bioetanol-maiz-220710-2024-vol",
+    "producto_id": "bioetanol-maiz",
+    "anio": 2024,
+    "ncm_codigo": "2207.10",
+    "metrica": "volumen_t",
+    "exportacion": {
+      "estado": "dato",
+      "valor": 18390.7,
+      "unidad": "t",
+      "procedencia": {
+        "anio": 2024,
+        "fuente_id": "uncomtrade-ar-lote3-2024",
+        "fuente": "UN Comtrade: comercio exterior de Argentina HS 290511 (Metanol), 390210 (Polipropileno), 220710/220720 (Alcohol etílico) y 170199 (Azúcar) 2024",
+        "url": "https://comtradeapi.un.org/public/v1/preview/C/A/HS?reporterCode=32&period=2024&partnerCode=0&partner2Code=0&customsCode=C00&motCode=0&cmdCode=290511,390210,220710,220720,170199",
+        "fecha_descarga": "2026-11-26",
+        "hash": "sha256:13e2c93483644ca09e2f2dd434fb4470b232c0bec65979308b4b595873775f58",
+        "cita_ubicacion": "UN Comtrade AR 2024 cmdCode=220710 netWgt_kg (imp netWgt nulo)",
+        "confianza": "alta"
+      }
+    },
+    "importacion": {
+      "estado": "sin_datos",
+      "valor": null,
+      "unidad": "t",
+      "procedencia": {
+        "anio": 2024,
+        "fuente_id": "uncomtrade-ar-lote3-2024",
+        "fuente": "UN Comtrade: comercio exterior de Argentina HS 290511 (Metanol), 390210 (Polipropileno), 220710/220720 (Alcohol etílico) y 170199 (Azúcar) 2024",
+        "url": "https://comtradeapi.un.org/public/v1/preview/C/A/HS?reporterCode=32&period=2024&partnerCode=0&partner2Code=0&customsCode=C00&motCode=0&cmdCode=290511,390210,220710,220720,170199",
+        "fecha_descarga": "2026-11-26",
+        "hash": "sha256:13e2c93483644ca09e2f2dd434fb4470b232c0bec65979308b4b595873775f58",
+        "cita_ubicacion": "UN Comtrade AR 2024 cmdCode=220710 netWgt_kg (imp netWgt nulo)",
+        "confianza": "alta"
+      }
+    },
+    "saldo_comercial": {
+      "estado": "sin_datos",
+      "valor": null,
+      "unidad": "t",
+      "procedencia": {
+        "anio": 2024,
+        "fuente_id": "uncomtrade-ar-lote3-2024",
+        "fuente": "UN Comtrade: comercio exterior de Argentina HS 290511 (Metanol), 390210 (Polipropileno), 220710/220720 (Alcohol etílico) y 170199 (Azúcar) 2024",
+        "url": "https://comtradeapi.un.org/public/v1/preview/C/A/HS?reporterCode=32&period=2024&partnerCode=0&partner2Code=0&customsCode=C00&motCode=0&cmdCode=290511,390210,220710,220720,170199",
+        "fecha_descarga": "2026-11-26",
+        "hash": "sha256:13e2c93483644ca09e2f2dd434fb4470b232c0bec65979308b4b595873775f58",
+        "cita_ubicacion": "UN Comtrade AR 2024 cmdCode=220710 netWgt_kg (imp netWgt nulo)",
+        "confianza": "alta"
+      }
+    },
+    "procedencia": {
+      "anio": 2024,
+      "fuente_id": "uncomtrade-ar-lote3-2024",
+      "fuente": "UN Comtrade: comercio exterior de Argentina HS 290511 (Metanol), 390210 (Polipropileno), 220710/220720 (Alcohol etílico) y 170199 (Azúcar) 2024",
+      "url": "https://comtradeapi.un.org/public/v1/preview/C/A/HS?reporterCode=32&period=2024&partnerCode=0&partner2Code=0&customsCode=C00&motCode=0&cmdCode=290511,390210,220710,220720,170199",
+      "fecha_descarga": "2026-11-26",
+      "hash": "sha256:13e2c93483644ca09e2f2dd434fb4470b232c0bec65979308b4b595873775f58",
+      "cita_ubicacion": "UN Comtrade AR 2024 cmdCode=220710 netWgt_kg (imp netWgt nulo)",
+      "confianza": "alta"
+    }
+  },
+  {
+    "registro_id": "comex-bioetanol-maiz-220710-2023-vol",
+    "producto_id": "bioetanol-maiz",
+    "anio": 2023,
+    "ncm_codigo": "2207.10",
+    "metrica": "volumen_t",
+    "exportacion": {
+      "estado": "dato",
+      "valor": 13779.2,
+      "unidad": "t",
+      "procedencia": {
+        "anio": 2023,
+        "fuente_id": "uncomtrade-ar-lote3-2023",
+        "fuente": "UN Comtrade: comercio exterior de Argentina HS 290511 (Metanol), 390210 (Polipropileno), 220710/220720 (Alcohol etílico) y 170199 (Azúcar) 2023",
+        "url": "https://comtradeapi.un.org/public/v1/preview/C/A/HS?reporterCode=32&period=2023&partnerCode=0&partner2Code=0&customsCode=C00&motCode=0&cmdCode=290511,390210,220710,220720,170199",
+        "fecha_descarga": "2026-11-26",
+        "hash": "sha256:ddeedb8d679b523fd6fb7dfbe6307998dec1bb589639a0736ad3c1029cb825da",
+        "cita_ubicacion": "UN Comtrade AR 2023 cmdCode=220710 netWgt_kg (imp netWgt nulo)",
+        "confianza": "alta"
+      }
+    },
+    "importacion": {
+      "estado": "sin_datos",
+      "valor": null,
+      "unidad": "t",
+      "procedencia": {
+        "anio": 2023,
+        "fuente_id": "uncomtrade-ar-lote3-2023",
+        "fuente": "UN Comtrade: comercio exterior de Argentina HS 290511 (Metanol), 390210 (Polipropileno), 220710/220720 (Alcohol etílico) y 170199 (Azúcar) 2023",
+        "url": "https://comtradeapi.un.org/public/v1/preview/C/A/HS?reporterCode=32&period=2023&partnerCode=0&partner2Code=0&customsCode=C00&motCode=0&cmdCode=290511,390210,220710,220720,170199",
+        "fecha_descarga": "2026-11-26",
+        "hash": "sha256:ddeedb8d679b523fd6fb7dfbe6307998dec1bb589639a0736ad3c1029cb825da",
+        "cita_ubicacion": "UN Comtrade AR 2023 cmdCode=220710 netWgt_kg (imp netWgt nulo)",
+        "confianza": "alta"
+      }
+    },
+    "saldo_comercial": {
+      "estado": "sin_datos",
+      "valor": null,
+      "unidad": "t",
+      "procedencia": {
+        "anio": 2023,
+        "fuente_id": "uncomtrade-ar-lote3-2023",
+        "fuente": "UN Comtrade: comercio exterior de Argentina HS 290511 (Metanol), 390210 (Polipropileno), 220710/220720 (Alcohol etílico) y 170199 (Azúcar) 2023",
+        "url": "https://comtradeapi.un.org/public/v1/preview/C/A/HS?reporterCode=32&period=2023&partnerCode=0&partner2Code=0&customsCode=C00&motCode=0&cmdCode=290511,390210,220710,220720,170199",
+        "fecha_descarga": "2026-11-26",
+        "hash": "sha256:ddeedb8d679b523fd6fb7dfbe6307998dec1bb589639a0736ad3c1029cb825da",
+        "cita_ubicacion": "UN Comtrade AR 2023 cmdCode=220710 netWgt_kg (imp netWgt nulo)",
+        "confianza": "alta"
+      }
+    },
+    "procedencia": {
+      "anio": 2023,
+      "fuente_id": "uncomtrade-ar-lote3-2023",
+      "fuente": "UN Comtrade: comercio exterior de Argentina HS 290511 (Metanol), 390210 (Polipropileno), 220710/220720 (Alcohol etílico) y 170199 (Azúcar) 2023",
+      "url": "https://comtradeapi.un.org/public/v1/preview/C/A/HS?reporterCode=32&period=2023&partnerCode=0&partner2Code=0&customsCode=C00&motCode=0&cmdCode=290511,390210,220710,220720,170199",
+      "fecha_descarga": "2026-11-26",
+      "hash": "sha256:ddeedb8d679b523fd6fb7dfbe6307998dec1bb589639a0736ad3c1029cb825da",
+      "cita_ubicacion": "UN Comtrade AR 2023 cmdCode=220710 netWgt_kg (imp netWgt nulo)",
+      "confianza": "alta"
+    }
+  },
+  {
+    "registro_id": "comex-bioetanol-cana-170199-2024-usd",
+    "producto_id": "bioetanol-cana",
+    "anio": 2024,
+    "ncm_codigo": "1701.99",
+    "metrica": "valor_usd",
+    "exportacion": {
+      "estado": "dato",
+      "valor": 110.44,
+      "unidad": "millones USD",
+      "procedencia": {
+        "anio": 2024,
+        "fuente_id": "uncomtrade-ar-lote3-2024",
+        "fuente": "UN Comtrade: comercio exterior de Argentina HS 290511 (Metanol), 390210 (Polipropileno), 220710/220720 (Alcohol etílico) y 170199 (Azúcar) 2024",
+        "url": "https://comtradeapi.un.org/public/v1/preview/C/A/HS?reporterCode=32&period=2024&partnerCode=0&partner2Code=0&customsCode=C00&motCode=0&cmdCode=290511,390210,220710,220720,170199",
+        "fecha_descarga": "2026-11-26",
+        "hash": "sha256:13e2c93483644ca09e2f2dd434fb4470b232c0bec65979308b4b595873775f58",
+        "cita_ubicacion": "UN Comtrade AR 2024 cmdCode=170199 (azúcar de caña refinada) primaryValue",
+        "confianza": "alta"
+      }
+    },
+    "importacion": {
+      "estado": "dato",
+      "valor": 0.27,
+      "unidad": "millones USD",
+      "procedencia": {
+        "anio": 2024,
+        "fuente_id": "uncomtrade-ar-lote3-2024",
+        "fuente": "UN Comtrade: comercio exterior de Argentina HS 290511 (Metanol), 390210 (Polipropileno), 220710/220720 (Alcohol etílico) y 170199 (Azúcar) 2024",
+        "url": "https://comtradeapi.un.org/public/v1/preview/C/A/HS?reporterCode=32&period=2024&partnerCode=0&partner2Code=0&customsCode=C00&motCode=0&cmdCode=290511,390210,220710,220720,170199",
+        "fecha_descarga": "2026-11-26",
+        "hash": "sha256:13e2c93483644ca09e2f2dd434fb4470b232c0bec65979308b4b595873775f58",
+        "cita_ubicacion": "UN Comtrade AR 2024 cmdCode=170199 (azúcar de caña refinada) primaryValue",
+        "confianza": "alta"
+      }
+    },
+    "saldo_comercial": {
+      "estado": "dato",
+      "valor": 110.17,
+      "unidad": "millones USD",
+      "procedencia": {
+        "anio": 2024,
+        "fuente_id": "uncomtrade-ar-lote3-2024",
+        "fuente": "UN Comtrade: comercio exterior de Argentina HS 290511 (Metanol), 390210 (Polipropileno), 220710/220720 (Alcohol etílico) y 170199 (Azúcar) 2024",
+        "url": "https://comtradeapi.un.org/public/v1/preview/C/A/HS?reporterCode=32&period=2024&partnerCode=0&partner2Code=0&customsCode=C00&motCode=0&cmdCode=290511,390210,220710,220720,170199",
+        "fecha_descarga": "2026-11-26",
+        "hash": "sha256:13e2c93483644ca09e2f2dd434fb4470b232c0bec65979308b4b595873775f58",
+        "cita_ubicacion": "UN Comtrade AR 2024 cmdCode=170199 (azúcar de caña refinada) primaryValue",
+        "confianza": "alta"
+      }
+    },
+    "procedencia": {
+      "anio": 2024,
+      "fuente_id": "uncomtrade-ar-lote3-2024",
+      "fuente": "UN Comtrade: comercio exterior de Argentina HS 290511 (Metanol), 390210 (Polipropileno), 220710/220720 (Alcohol etílico) y 170199 (Azúcar) 2024",
+      "url": "https://comtradeapi.un.org/public/v1/preview/C/A/HS?reporterCode=32&period=2024&partnerCode=0&partner2Code=0&customsCode=C00&motCode=0&cmdCode=290511,390210,220710,220720,170199",
+      "fecha_descarga": "2026-11-26",
+      "hash": "sha256:13e2c93483644ca09e2f2dd434fb4470b232c0bec65979308b4b595873775f58",
+      "cita_ubicacion": "UN Comtrade AR 2024 cmdCode=170199 (azúcar de caña refinada) primaryValue",
+      "confianza": "alta"
+    }
+  },
+  {
+    "registro_id": "comex-bioetanol-cana-170199-2023-usd",
+    "producto_id": "bioetanol-cana",
+    "anio": 2023,
+    "ncm_codigo": "1701.99",
+    "metrica": "valor_usd",
+    "exportacion": {
+      "estado": "dato",
+      "valor": 23.14,
+      "unidad": "millones USD",
+      "procedencia": {
+        "anio": 2023,
+        "fuente_id": "uncomtrade-ar-lote3-2023",
+        "fuente": "UN Comtrade: comercio exterior de Argentina HS 290511 (Metanol), 390210 (Polipropileno), 220710/220720 (Alcohol etílico) y 170199 (Azúcar) 2023",
+        "url": "https://comtradeapi.un.org/public/v1/preview/C/A/HS?reporterCode=32&period=2023&partnerCode=0&partner2Code=0&customsCode=C00&motCode=0&cmdCode=290511,390210,220710,220720,170199",
+        "fecha_descarga": "2026-11-26",
+        "hash": "sha256:ddeedb8d679b523fd6fb7dfbe6307998dec1bb589639a0736ad3c1029cb825da",
+        "cita_ubicacion": "UN Comtrade AR 2023 cmdCode=170199 (azúcar de caña refinada) primaryValue",
+        "confianza": "alta"
+      }
+    },
+    "importacion": {
+      "estado": "dato",
+      "valor": 0.58,
+      "unidad": "millones USD",
+      "procedencia": {
+        "anio": 2023,
+        "fuente_id": "uncomtrade-ar-lote3-2023",
+        "fuente": "UN Comtrade: comercio exterior de Argentina HS 290511 (Metanol), 390210 (Polipropileno), 220710/220720 (Alcohol etílico) y 170199 (Azúcar) 2023",
+        "url": "https://comtradeapi.un.org/public/v1/preview/C/A/HS?reporterCode=32&period=2023&partnerCode=0&partner2Code=0&customsCode=C00&motCode=0&cmdCode=290511,390210,220710,220720,170199",
+        "fecha_descarga": "2026-11-26",
+        "hash": "sha256:ddeedb8d679b523fd6fb7dfbe6307998dec1bb589639a0736ad3c1029cb825da",
+        "cita_ubicacion": "UN Comtrade AR 2023 cmdCode=170199 (azúcar de caña refinada) primaryValue",
+        "confianza": "alta"
+      }
+    },
+    "saldo_comercial": {
+      "estado": "dato",
+      "valor": 22.56,
+      "unidad": "millones USD",
+      "procedencia": {
+        "anio": 2023,
+        "fuente_id": "uncomtrade-ar-lote3-2023",
+        "fuente": "UN Comtrade: comercio exterior de Argentina HS 290511 (Metanol), 390210 (Polipropileno), 220710/220720 (Alcohol etílico) y 170199 (Azúcar) 2023",
+        "url": "https://comtradeapi.un.org/public/v1/preview/C/A/HS?reporterCode=32&period=2023&partnerCode=0&partner2Code=0&customsCode=C00&motCode=0&cmdCode=290511,390210,220710,220720,170199",
+        "fecha_descarga": "2026-11-26",
+        "hash": "sha256:ddeedb8d679b523fd6fb7dfbe6307998dec1bb589639a0736ad3c1029cb825da",
+        "cita_ubicacion": "UN Comtrade AR 2023 cmdCode=170199 (azúcar de caña refinada) primaryValue",
+        "confianza": "alta"
+      }
+    },
+    "procedencia": {
+      "anio": 2023,
+      "fuente_id": "uncomtrade-ar-lote3-2023",
+      "fuente": "UN Comtrade: comercio exterior de Argentina HS 290511 (Metanol), 390210 (Polipropileno), 220710/220720 (Alcohol etílico) y 170199 (Azúcar) 2023",
+      "url": "https://comtradeapi.un.org/public/v1/preview/C/A/HS?reporterCode=32&period=2023&partnerCode=0&partner2Code=0&customsCode=C00&motCode=0&cmdCode=290511,390210,220710,220720,170199",
+      "fecha_descarga": "2026-11-26",
+      "hash": "sha256:ddeedb8d679b523fd6fb7dfbe6307998dec1bb589639a0736ad3c1029cb825da",
+      "cita_ubicacion": "UN Comtrade AR 2023 cmdCode=170199 (azúcar de caña refinada) primaryValue",
+      "confianza": "alta"
+    }
+  },
+  {
+    "registro_id": "comex-bioetanol-cana-170199-2024-vol",
+    "producto_id": "bioetanol-cana",
+    "anio": 2024,
+    "ncm_codigo": "1701.99",
+    "metrica": "volumen_t",
+    "exportacion": {
+      "estado": "dato",
+      "valor": 199545.6,
+      "unidad": "t",
+      "procedencia": {
+        "anio": 2024,
+        "fuente_id": "uncomtrade-ar-lote3-2024",
+        "fuente": "UN Comtrade: comercio exterior de Argentina HS 290511 (Metanol), 390210 (Polipropileno), 220710/220720 (Alcohol etílico) y 170199 (Azúcar) 2024",
+        "url": "https://comtradeapi.un.org/public/v1/preview/C/A/HS?reporterCode=32&period=2024&partnerCode=0&partner2Code=0&customsCode=C00&motCode=0&cmdCode=290511,390210,220710,220720,170199",
+        "fecha_descarga": "2026-11-26",
+        "hash": "sha256:13e2c93483644ca09e2f2dd434fb4470b232c0bec65979308b4b595873775f58",
+        "cita_ubicacion": "UN Comtrade AR 2024 cmdCode=170199 netWgt_kg (imp netWgt nulo)",
+        "confianza": "alta"
+      }
+    },
+    "importacion": {
+      "estado": "sin_datos",
+      "valor": null,
+      "unidad": "t",
+      "procedencia": {
+        "anio": 2024,
+        "fuente_id": "uncomtrade-ar-lote3-2024",
+        "fuente": "UN Comtrade: comercio exterior de Argentina HS 290511 (Metanol), 390210 (Polipropileno), 220710/220720 (Alcohol etílico) y 170199 (Azúcar) 2024",
+        "url": "https://comtradeapi.un.org/public/v1/preview/C/A/HS?reporterCode=32&period=2024&partnerCode=0&partner2Code=0&customsCode=C00&motCode=0&cmdCode=290511,390210,220710,220720,170199",
+        "fecha_descarga": "2026-11-26",
+        "hash": "sha256:13e2c93483644ca09e2f2dd434fb4470b232c0bec65979308b4b595873775f58",
+        "cita_ubicacion": "UN Comtrade AR 2024 cmdCode=170199 netWgt_kg (imp netWgt nulo)",
+        "confianza": "alta"
+      }
+    },
+    "saldo_comercial": {
+      "estado": "sin_datos",
+      "valor": null,
+      "unidad": "t",
+      "procedencia": {
+        "anio": 2024,
+        "fuente_id": "uncomtrade-ar-lote3-2024",
+        "fuente": "UN Comtrade: comercio exterior de Argentina HS 290511 (Metanol), 390210 (Polipropileno), 220710/220720 (Alcohol etílico) y 170199 (Azúcar) 2024",
+        "url": "https://comtradeapi.un.org/public/v1/preview/C/A/HS?reporterCode=32&period=2024&partnerCode=0&partner2Code=0&customsCode=C00&motCode=0&cmdCode=290511,390210,220710,220720,170199",
+        "fecha_descarga": "2026-11-26",
+        "hash": "sha256:13e2c93483644ca09e2f2dd434fb4470b232c0bec65979308b4b595873775f58",
+        "cita_ubicacion": "UN Comtrade AR 2024 cmdCode=170199 netWgt_kg (imp netWgt nulo)",
+        "confianza": "alta"
+      }
+    },
+    "procedencia": {
+      "anio": 2024,
+      "fuente_id": "uncomtrade-ar-lote3-2024",
+      "fuente": "UN Comtrade: comercio exterior de Argentina HS 290511 (Metanol), 390210 (Polipropileno), 220710/220720 (Alcohol etílico) y 170199 (Azúcar) 2024",
+      "url": "https://comtradeapi.un.org/public/v1/preview/C/A/HS?reporterCode=32&period=2024&partnerCode=0&partner2Code=0&customsCode=C00&motCode=0&cmdCode=290511,390210,220710,220720,170199",
+      "fecha_descarga": "2026-11-26",
+      "hash": "sha256:13e2c93483644ca09e2f2dd434fb4470b232c0bec65979308b4b595873775f58",
+      "cita_ubicacion": "UN Comtrade AR 2024 cmdCode=170199 netWgt_kg (imp netWgt nulo)",
+      "confianza": "alta"
+    }
+  },
+  {
+    "registro_id": "comex-bioetanol-cana-220710-2024-usd",
+    "producto_id": "bioetanol-cana",
+    "anio": 2024,
+    "ncm_codigo": "2207.10",
+    "metrica": "valor_usd",
+    "exportacion": {
+      "estado": "dato",
+      "valor": 15.82,
+      "unidad": "millones USD",
+      "procedencia": {
+        "anio": 2024,
+        "fuente_id": "uncomtrade-ar-lote3-2024",
+        "fuente": "UN Comtrade: comercio exterior de Argentina HS 290511 (Metanol), 390210 (Polipropileno), 220710/220720 (Alcohol etílico) y 170199 (Azúcar) 2024",
+        "url": "https://comtradeapi.un.org/public/v1/preview/C/A/HS?reporterCode=32&period=2024&partnerCode=0&partner2Code=0&customsCode=C00&motCode=0&cmdCode=290511,390210,220710,220720,170199",
+        "fecha_descarga": "2026-11-26",
+        "hash": "sha256:13e2c93483644ca09e2f2dd434fb4470b232c0bec65979308b4b595873775f58",
+        "cita_ubicacion": "UN Comtrade AR 2024 cmdCode=220710 (alcohol etílico nacional) primaryValue",
+        "confianza": "alta"
+      }
+    },
+    "importacion": {
+      "estado": "dato",
+      "valor": 0.45,
+      "unidad": "millones USD",
+      "procedencia": {
+        "anio": 2024,
+        "fuente_id": "uncomtrade-ar-lote3-2024",
+        "fuente": "UN Comtrade: comercio exterior de Argentina HS 290511 (Metanol), 390210 (Polipropileno), 220710/220720 (Alcohol etílico) y 170199 (Azúcar) 2024",
+        "url": "https://comtradeapi.un.org/public/v1/preview/C/A/HS?reporterCode=32&period=2024&partnerCode=0&partner2Code=0&customsCode=C00&motCode=0&cmdCode=290511,390210,220710,220720,170199",
+        "fecha_descarga": "2026-11-26",
+        "hash": "sha256:13e2c93483644ca09e2f2dd434fb4470b232c0bec65979308b4b595873775f58",
+        "cita_ubicacion": "UN Comtrade AR 2024 cmdCode=220710 (alcohol etílico nacional) primaryValue",
+        "confianza": "alta"
+      }
+    },
+    "saldo_comercial": {
+      "estado": "dato",
+      "valor": 15.37,
+      "unidad": "millones USD",
+      "procedencia": {
+        "anio": 2024,
+        "fuente_id": "uncomtrade-ar-lote3-2024",
+        "fuente": "UN Comtrade: comercio exterior de Argentina HS 290511 (Metanol), 390210 (Polipropileno), 220710/220720 (Alcohol etílico) y 170199 (Azúcar) 2024",
+        "url": "https://comtradeapi.un.org/public/v1/preview/C/A/HS?reporterCode=32&period=2024&partnerCode=0&partner2Code=0&customsCode=C00&motCode=0&cmdCode=290511,390210,220710,220720,170199",
+        "fecha_descarga": "2026-11-26",
+        "hash": "sha256:13e2c93483644ca09e2f2dd434fb4470b232c0bec65979308b4b595873775f58",
+        "cita_ubicacion": "UN Comtrade AR 2024 cmdCode=220710 (alcohol etílico nacional) primaryValue",
+        "confianza": "alta"
+      }
+    },
+    "procedencia": {
+      "anio": 2024,
+      "fuente_id": "uncomtrade-ar-lote3-2024",
+      "fuente": "UN Comtrade: comercio exterior de Argentina HS 290511 (Metanol), 390210 (Polipropileno), 220710/220720 (Alcohol etílico) y 170199 (Azúcar) 2024",
+      "url": "https://comtradeapi.un.org/public/v1/preview/C/A/HS?reporterCode=32&period=2024&partnerCode=0&partner2Code=0&customsCode=C00&motCode=0&cmdCode=290511,390210,220710,220720,170199",
+      "fecha_descarga": "2026-11-26",
+      "hash": "sha256:13e2c93483644ca09e2f2dd434fb4470b232c0bec65979308b4b595873775f58",
+      "cita_ubicacion": "UN Comtrade AR 2024 cmdCode=220710 (alcohol etílico nacional) primaryValue",
+      "confianza": "alta"
+    }
   }
 ]

@@ -88,5 +88,50 @@
     "tiene_datos_confiables": true,
     "cobertura_datos": "completa",
     "nota_cobertura": "Cordón industrial Up-River (Timbúes y San Lorenzo): mayor polo mundial de molienda de soja y biodiésel (Renova, Molinos Agro)."
+  },
+  {
+    "departamento_id": "58035",
+    "provincia_id": "58",
+    "nombre": "Confluencia",
+    "tipo_zona": "energetico",
+    "tiene_datos_confiables": true,
+    "cobertura_datos": "completa",
+    "nota_cobertura": "Plaza Huincul y cuenca gasífera neuquina: sede de la principal planta de metanol a partir de gas natural del país (YPF CIPH)."
+  },
+  {
+    "departamento_id": "50063",
+    "provincia_id": "50",
+    "nombre": "Luján de Cuyo",
+    "tipo_zona": "polo_industrial",
+    "tiene_datos_confiables": true,
+    "cobertura_datos": "completa",
+    "nota_cobertura": "Polo Petroquímico y Refinador mendocino: Complejo Industrial YPF (FCC y propileno) integrado con Petrocuyo (polipropileno)."
+  },
+  {
+    "departamento_id": "14098",
+    "provincia_id": "14",
+    "nombre": "Río Cuarto",
+    "tipo_zona": "agro",
+    "tiene_datos_confiables": true,
+    "cobertura_datos": "completa",
+    "nota_cobertura": "Núcleo maicero del sur cordobés: sede de Bio4 Argentina (molienda seca de maíz, bioetanol anhidro y burlanda DDGS)."
+  },
+  {
+    "departamento_id": "14042",
+    "provincia_id": "14",
+    "nombre": "General San Martín",
+    "tipo_zona": "agro",
+    "tiene_datos_confiables": true,
+    "cobertura_datos": "completa",
+    "nota_cobertura": "Villa María (Córdoba): biorrefinería cooperativa ACA Bio para bioetanol anhidro de maíz y recuperación de CO2."
+  },
+  {
+    "departamento_id": "90014",
+    "provincia_id": "90",
+    "nombre": "Cruz Alta",
+    "tipo_zona": "agro",
+    "tiene_datos_confiables": true,
+    "cobertura_datos": "completa",
+    "nota_cobertura": "Cordón sucroalcoholero del este tucumano (La Florida / Banda del Río Salí): molienda de caña, destilerías y deshidratadoras de bioetanol."
   }
 ]

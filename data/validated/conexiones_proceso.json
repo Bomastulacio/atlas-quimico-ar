@@ -1549,5 +1549,698 @@
       "cita_ubicacion": "unipar.com/es/acerca-de-unipar (unidad Bahía Blanca: cloro, soda cáustica y PVC)",
       "confianza": "alta"
     }
+  },
+  {
+    "conexion_id": "met-c1-gas-a-smr",
+    "proceso_id": "metanol-reformado-sintesis",
+    "origen_paso_id": "met-p1-desulfuracion-gas",
+    "destino_paso_id": "met-p2-reformado-vapor",
+    "corriente_nombre": "Gas natural desulfurado",
+    "tipo_corriente": "principal",
+    "flujo": {
+      "estado": "dato",
+      "valor": 0.56,
+      "unidad": "t/t CH3OH",
+      "procedencia": {
+        "anio": 2006,
+        "fuente_id": "ipcc-2006-v3-ch3-amoniaco-urea",
+        "fuente": "2006 IPCC Guidelines for National Greenhouse Gas Inventories (Vol. 3, Cap. 3: Chemical Industry Emissions)",
+        "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/pdf/3_Volume3/V3_3_Ch3_Chemical_Industry.pdf",
+        "fecha_descarga": "2026-11-24",
+        "hash": "sha256:f25c2817eecdae6a1f930b342eb09b2d8a6065b12bfce632502a01e1a61bbaa2",
+        "cita_ubicacion": "IPCC Cap. 3.9",
+        "confianza": "alta"
+      }
+    },
+    "procedencia": {
+      "anio": 2006,
+      "fuente_id": "ipcc-2006-v3-ch3-amoniaco-urea",
+      "fuente": "2006 IPCC Guidelines for National Greenhouse Gas Inventories (Vol. 3, Cap. 3: Chemical Industry Emissions)",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/pdf/3_Volume3/V3_3_Ch3_Chemical_Industry.pdf",
+      "fecha_descarga": "2026-11-24",
+      "hash": "sha256:f25c2817eecdae6a1f930b342eb09b2d8a6065b12bfce632502a01e1a61bbaa2",
+      "cita_ubicacion": "IPCC Cap. 3.9",
+      "confianza": "alta"
+    }
+  },
+  {
+    "conexion_id": "met-c2-smr-a-comp",
+    "proceso_id": "metanol-reformado-sintesis",
+    "origen_paso_id": "met-p2-reformado-vapor",
+    "destino_paso_id": "met-p3-compresion-syngas",
+    "corriente_nombre": "Syngas (CO + 3 H2)",
+    "tipo_corriente": "principal",
+    "flujo": {
+      "estado": "dato",
+      "valor": 1.18,
+      "unidad": "t/t CH3OH",
+      "procedencia": {
+        "anio": 2006,
+        "fuente_id": "ipcc-2006-v3-ch3-amoniaco-urea",
+        "fuente": "2006 IPCC Guidelines for National Greenhouse Gas Inventories (Vol. 3, Cap. 3: Chemical Industry Emissions)",
+        "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/pdf/3_Volume3/V3_3_Ch3_Chemical_Industry.pdf",
+        "fecha_descarga": "2026-11-24",
+        "hash": "sha256:f25c2817eecdae6a1f930b342eb09b2d8a6065b12bfce632502a01e1a61bbaa2",
+        "cita_ubicacion": "IPCC Cap. 3.9",
+        "confianza": "alta"
+      }
+    },
+    "procedencia": {
+      "anio": 2006,
+      "fuente_id": "ipcc-2006-v3-ch3-amoniaco-urea",
+      "fuente": "2006 IPCC Guidelines for National Greenhouse Gas Inventories (Vol. 3, Cap. 3: Chemical Industry Emissions)",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/pdf/3_Volume3/V3_3_Ch3_Chemical_Industry.pdf",
+      "fecha_descarga": "2026-11-24",
+      "hash": "sha256:f25c2817eecdae6a1f930b342eb09b2d8a6065b12bfce632502a01e1a61bbaa2",
+      "cita_ubicacion": "IPCC Cap. 3.9",
+      "confianza": "alta"
+    }
+  },
+  {
+    "conexion_id": "met-c3-comp-a-sint",
+    "proceso_id": "metanol-reformado-sintesis",
+    "origen_paso_id": "met-p3-compresion-syngas",
+    "destino_paso_id": "met-p4-sintesis-catalitica",
+    "corriente_nombre": "Syngas comprimido (65 bar)",
+    "tipo_corriente": "principal",
+    "flujo": {
+      "estado": "dato",
+      "valor": 1.08,
+      "unidad": "t/t CH3OH",
+      "procedencia": {
+        "anio": 2017,
+        "fuente_id": "eu-bref-lvoc-2017",
+        "fuente": "Best Available Techniques (BAT) Reference Document for the Production of Large Volume Organic Chemicals (LVOC BREF)",
+        "url": "https://bureau-industrial-transformation.jrc.ec.europa.eu/reference/production-large-volume-organic-chemicals",
+        "fecha_descarga": "2026-11-26",
+        "hash": "sha256:fb75a48a3620f76be5994c385048921a27c0dffdfad33ab595aac4654cfe8a34",
+        "cita_ubicacion": "EU LVOC BREF",
+        "confianza": "alta"
+      }
+    },
+    "procedencia": {
+      "anio": 2017,
+      "fuente_id": "eu-bref-lvoc-2017",
+      "fuente": "Best Available Techniques (BAT) Reference Document for the Production of Large Volume Organic Chemicals (LVOC BREF)",
+      "url": "https://bureau-industrial-transformation.jrc.ec.europa.eu/reference/production-large-volume-organic-chemicals",
+      "fecha_descarga": "2026-11-26",
+      "hash": "sha256:fb75a48a3620f76be5994c385048921a27c0dffdfad33ab595aac4654cfe8a34",
+      "cita_ubicacion": "EU LVOC BREF",
+      "confianza": "alta"
+    }
+  },
+  {
+    "conexion_id": "met-c4-reciclo-syngas",
+    "proceso_id": "metanol-reformado-sintesis",
+    "origen_paso_id": "met-p4-sintesis-catalitica",
+    "destino_paso_id": "met-p3-compresion-syngas",
+    "corriente_nombre": "Syngas no convertido (reciclo)",
+    "tipo_corriente": "reciclo",
+    "flujo": {
+      "estado": "sin_datos",
+      "valor": null,
+      "unidad": "t/t CH3OH",
+      "procedencia": {
+        "anio": 2017,
+        "fuente_id": "eu-bref-lvoc-2017",
+        "fuente": "Best Available Techniques (BAT) Reference Document for the Production of Large Volume Organic Chemicals (LVOC BREF)",
+        "url": "https://bureau-industrial-transformation.jrc.ec.europa.eu/reference/production-large-volume-organic-chemicals",
+        "fecha_descarga": "2026-11-26",
+        "hash": "sha256:fb75a48a3620f76be5994c385048921a27c0dffdfad33ab595aac4654cfe8a34",
+        "cita_ubicacion": "EU LVOC BREF",
+        "confianza": "alta"
+      }
+    },
+    "procedencia": {
+      "anio": 2017,
+      "fuente_id": "eu-bref-lvoc-2017",
+      "fuente": "Best Available Techniques (BAT) Reference Document for the Production of Large Volume Organic Chemicals (LVOC BREF)",
+      "url": "https://bureau-industrial-transformation.jrc.ec.europa.eu/reference/production-large-volume-organic-chemicals",
+      "fecha_descarga": "2026-11-26",
+      "hash": "sha256:fb75a48a3620f76be5994c385048921a27c0dffdfad33ab595aac4654cfe8a34",
+      "cita_ubicacion": "EU LVOC BREF",
+      "confianza": "alta"
+    }
+  },
+  {
+    "conexion_id": "met-c5-crudo-a-dest",
+    "proceso_id": "metanol-reformado-sintesis",
+    "origen_paso_id": "met-p4-sintesis-catalitica",
+    "destino_paso_id": "met-p5-destilacion-grado-aa",
+    "corriente_nombre": "Metanol crudo condensado",
+    "tipo_corriente": "principal",
+    "flujo": {
+      "estado": "dato",
+      "valor": 1.04,
+      "unidad": "t/t CH3OH",
+      "procedencia": {
+        "anio": 2006,
+        "fuente_id": "ipcc-2006-v3-ch3-amoniaco-urea",
+        "fuente": "2006 IPCC Guidelines for National Greenhouse Gas Inventories (Vol. 3, Cap. 3: Chemical Industry Emissions)",
+        "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/pdf/3_Volume3/V3_3_Ch3_Chemical_Industry.pdf",
+        "fecha_descarga": "2026-11-24",
+        "hash": "sha256:f25c2817eecdae6a1f930b342eb09b2d8a6065b12bfce632502a01e1a61bbaa2",
+        "cita_ubicacion": "IPCC Cap. 3.9",
+        "confianza": "alta"
+      }
+    },
+    "procedencia": {
+      "anio": 2006,
+      "fuente_id": "ipcc-2006-v3-ch3-amoniaco-urea",
+      "fuente": "2006 IPCC Guidelines for National Greenhouse Gas Inventories (Vol. 3, Cap. 3: Chemical Industry Emissions)",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/pdf/3_Volume3/V3_3_Ch3_Chemical_Industry.pdf",
+      "fecha_descarga": "2026-11-24",
+      "hash": "sha256:f25c2817eecdae6a1f930b342eb09b2d8a6065b12bfce632502a01e1a61bbaa2",
+      "cita_ubicacion": "IPCC Cap. 3.9",
+      "confianza": "alta"
+    }
+  },
+  {
+    "conexion_id": "pp-c1-fcc-a-splitter",
+    "proceso_id": "polipropileno-fcc-polimerizacion",
+    "origen_paso_id": "pp-p1-craqueo-fcc",
+    "destino_paso_id": "pp-p2-splitter-propileno",
+    "corriente_nombre": "Corte C3 de refinería",
+    "tipo_corriente": "principal",
+    "flujo": {
+      "estado": "dato",
+      "valor": 1.45,
+      "unidad": "t/t PP",
+      "procedencia": {
+        "anio": 2007,
+        "fuente_id": "eu-bref-polymers",
+        "fuente": "Reference Document on Best Available Techniques in the Production of Polymers (POL BREF)",
+        "url": "https://bureau-industrial-transformation.jrc.ec.europa.eu/reference/production-polymers",
+        "fecha_descarga": "2026-11-26",
+        "hash": "sha256:f49403eab2439da283626fd50341b5094c00bc4ca1ccf663dd3461e65fb80f63",
+        "cita_ubicacion": "EU POL BREF",
+        "confianza": "alta"
+      }
+    },
+    "procedencia": {
+      "anio": 2007,
+      "fuente_id": "eu-bref-polymers",
+      "fuente": "Reference Document on Best Available Techniques in the Production of Polymers (POL BREF)",
+      "url": "https://bureau-industrial-transformation.jrc.ec.europa.eu/reference/production-polymers",
+      "fecha_descarga": "2026-11-26",
+      "hash": "sha256:f49403eab2439da283626fd50341b5094c00bc4ca1ccf663dd3461e65fb80f63",
+      "cita_ubicacion": "EU POL BREF",
+      "confianza": "alta"
+    }
+  },
+  {
+    "conexion_id": "pp-c2-splitter-a-polim",
+    "proceso_id": "polipropileno-fcc-polimerizacion",
+    "origen_paso_id": "pp-p2-splitter-propileno",
+    "destino_paso_id": "pp-p3-polimerizacion-zn",
+    "corriente_nombre": "Propileno grado polímero (>99,5%)",
+    "tipo_corriente": "principal",
+    "flujo": {
+      "estado": "dato",
+      "valor": 1.015,
+      "unidad": "t/t PP",
+      "procedencia": {
+        "anio": 2007,
+        "fuente_id": "eu-bref-polymers",
+        "fuente": "Reference Document on Best Available Techniques in the Production of Polymers (POL BREF)",
+        "url": "https://bureau-industrial-transformation.jrc.ec.europa.eu/reference/production-polymers",
+        "fecha_descarga": "2026-11-26",
+        "hash": "sha256:f49403eab2439da283626fd50341b5094c00bc4ca1ccf663dd3461e65fb80f63",
+        "cita_ubicacion": "EU POL BREF",
+        "confianza": "alta"
+      }
+    },
+    "procedencia": {
+      "anio": 2007,
+      "fuente_id": "eu-bref-polymers",
+      "fuente": "Reference Document on Best Available Techniques in the Production of Polymers (POL BREF)",
+      "url": "https://bureau-industrial-transformation.jrc.ec.europa.eu/reference/production-polymers",
+      "fecha_descarga": "2026-11-26",
+      "hash": "sha256:f49403eab2439da283626fd50341b5094c00bc4ca1ccf663dd3461e65fb80f63",
+      "cita_ubicacion": "EU POL BREF",
+      "confianza": "alta"
+    }
+  },
+  {
+    "conexion_id": "pp-c3-polim-a-desgas",
+    "proceso_id": "polipropileno-fcc-polimerizacion",
+    "origen_paso_id": "pp-p3-polimerizacion-zn",
+    "destino_paso_id": "pp-p4-desgasificacion-reciclo",
+    "corriente_nombre": "Polvo de PP con monómero",
+    "tipo_corriente": "principal",
+    "flujo": {
+      "estado": "dato",
+      "valor": 1.005,
+      "unidad": "t/t PP",
+      "procedencia": {
+        "anio": 2007,
+        "fuente_id": "eu-bref-polymers",
+        "fuente": "Reference Document on Best Available Techniques in the Production of Polymers (POL BREF)",
+        "url": "https://bureau-industrial-transformation.jrc.ec.europa.eu/reference/production-polymers",
+        "fecha_descarga": "2026-11-26",
+        "hash": "sha256:f49403eab2439da283626fd50341b5094c00bc4ca1ccf663dd3461e65fb80f63",
+        "cita_ubicacion": "EU POL BREF",
+        "confianza": "alta"
+      }
+    },
+    "procedencia": {
+      "anio": 2007,
+      "fuente_id": "eu-bref-polymers",
+      "fuente": "Reference Document on Best Available Techniques in the Production of Polymers (POL BREF)",
+      "url": "https://bureau-industrial-transformation.jrc.ec.europa.eu/reference/production-polymers",
+      "fecha_descarga": "2026-11-26",
+      "hash": "sha256:f49403eab2439da283626fd50341b5094c00bc4ca1ccf663dd3461e65fb80f63",
+      "cita_ubicacion": "EU POL BREF",
+      "confianza": "alta"
+    }
+  },
+  {
+    "conexion_id": "pp-c4-reciclo-c3h6",
+    "proceso_id": "polipropileno-fcc-polimerizacion",
+    "origen_paso_id": "pp-p4-desgasificacion-reciclo",
+    "destino_paso_id": "pp-p3-polimerizacion-zn",
+    "corriente_nombre": "Propileno recuperado (reciclo)",
+    "tipo_corriente": "reciclo",
+    "flujo": {
+      "estado": "sin_datos",
+      "valor": null,
+      "unidad": "t/t PP",
+      "procedencia": {
+        "anio": 2007,
+        "fuente_id": "eu-bref-polymers",
+        "fuente": "Reference Document on Best Available Techniques in the Production of Polymers (POL BREF)",
+        "url": "https://bureau-industrial-transformation.jrc.ec.europa.eu/reference/production-polymers",
+        "fecha_descarga": "2026-11-26",
+        "hash": "sha256:f49403eab2439da283626fd50341b5094c00bc4ca1ccf663dd3461e65fb80f63",
+        "cita_ubicacion": "EU POL BREF",
+        "confianza": "alta"
+      }
+    },
+    "procedencia": {
+      "anio": 2007,
+      "fuente_id": "eu-bref-polymers",
+      "fuente": "Reference Document on Best Available Techniques in the Production of Polymers (POL BREF)",
+      "url": "https://bureau-industrial-transformation.jrc.ec.europa.eu/reference/production-polymers",
+      "fecha_descarga": "2026-11-26",
+      "hash": "sha256:f49403eab2439da283626fd50341b5094c00bc4ca1ccf663dd3461e65fb80f63",
+      "cita_ubicacion": "EU POL BREF",
+      "confianza": "alta"
+    }
+  },
+  {
+    "conexion_id": "pp-c5-desgas-a-extrus",
+    "proceso_id": "polipropileno-fcc-polimerizacion",
+    "origen_paso_id": "pp-p4-desgasificacion-reciclo",
+    "destino_paso_id": "pp-p5-extrusion-peletizado",
+    "corriente_nombre": "Polvo de PP purificado",
+    "tipo_corriente": "principal",
+    "flujo": {
+      "estado": "dato",
+      "valor": 1,
+      "unidad": "t/t PP",
+      "procedencia": {
+        "anio": 2026,
+        "fuente_id": "petrocuyo-web-2026",
+        "fuente": "Portal institucional y operaciones de polipropileno (Petrocuyo S.A.I.C.)",
+        "url": "https://www.petrocuyo.com/",
+        "fecha_descarga": "2026-11-26",
+        "hash": "sha256:5706e3a328532bddf36e6af90c032f40c80e99ce17049403540bb26dec2da3e3",
+        "cita_ubicacion": "Petrocuyo Luján de Cuyo",
+        "confianza": "alta"
+      }
+    },
+    "procedencia": {
+      "anio": 2026,
+      "fuente_id": "petrocuyo-web-2026",
+      "fuente": "Portal institucional y operaciones de polipropileno (Petrocuyo S.A.I.C.)",
+      "url": "https://www.petrocuyo.com/",
+      "fecha_descarga": "2026-11-26",
+      "hash": "sha256:5706e3a328532bddf36e6af90c032f40c80e99ce17049403540bb26dec2da3e3",
+      "cita_ubicacion": "Petrocuyo Luján de Cuyo",
+      "confianza": "alta"
+    }
+  },
+  {
+    "conexion_id": "bm-c1-harina-a-licuef",
+    "proceso_id": "bioetanol-maiz-molienda-seca",
+    "origen_paso_id": "bm-p1-molienda-maiz",
+    "destino_paso_id": "bm-p2-licuefaccion-sacarificacion",
+    "corriente_nombre": "Harina de maíz molida",
+    "tipo_corriente": "principal",
+    "flujo": {
+      "estado": "dato",
+      "valor": 3.08,
+      "unidad": "t/t etanol",
+      "procedencia": {
+        "anio": 2026,
+        "fuente_id": "afdc-ethanol-doe",
+        "fuente": "Alternative Fuels Data Center: Ethanol Production (Dry Mill & Sugarcane Fermentation)",
+        "url": "https://afdc.energy.gov/fuels/ethanol-production",
+        "fecha_descarga": "2026-11-26",
+        "hash": "sha256:ca1aaedc23f4f8346503693ec5f40e36132a9476c51434d6536ffd7ff6a2eaf0",
+        "cita_ubicacion": "US DOE AFDC",
+        "confianza": "alta"
+      }
+    },
+    "procedencia": {
+      "anio": 2026,
+      "fuente_id": "afdc-ethanol-doe",
+      "fuente": "Alternative Fuels Data Center: Ethanol Production (Dry Mill & Sugarcane Fermentation)",
+      "url": "https://afdc.energy.gov/fuels/ethanol-production",
+      "fecha_descarga": "2026-11-26",
+      "hash": "sha256:ca1aaedc23f4f8346503693ec5f40e36132a9476c51434d6536ffd7ff6a2eaf0",
+      "cita_ubicacion": "US DOE AFDC",
+      "confianza": "alta"
+    }
+  },
+  {
+    "conexion_id": "bm-c2-mosto-a-ferm",
+    "proceso_id": "bioetanol-maiz-molienda-seca",
+    "origen_paso_id": "bm-p2-licuefaccion-sacarificacion",
+    "destino_paso_id": "bm-p3-fermentacion-levaduras",
+    "corriente_nombre": "Mosto sacarificado (glucosa)",
+    "tipo_corriente": "principal",
+    "flujo": {
+      "estado": "dato",
+      "valor": 2.04,
+      "unidad": "t glucosa eq/t etanol",
+      "procedencia": {
+        "anio": 2026,
+        "fuente_id": "afdc-ethanol-doe",
+        "fuente": "Alternative Fuels Data Center: Ethanol Production (Dry Mill & Sugarcane Fermentation)",
+        "url": "https://afdc.energy.gov/fuels/ethanol-production",
+        "fecha_descarga": "2026-11-26",
+        "hash": "sha256:ca1aaedc23f4f8346503693ec5f40e36132a9476c51434d6536ffd7ff6a2eaf0",
+        "cita_ubicacion": "US DOE AFDC",
+        "confianza": "alta"
+      }
+    },
+    "procedencia": {
+      "anio": 2026,
+      "fuente_id": "afdc-ethanol-doe",
+      "fuente": "Alternative Fuels Data Center: Ethanol Production (Dry Mill & Sugarcane Fermentation)",
+      "url": "https://afdc.energy.gov/fuels/ethanol-production",
+      "fecha_descarga": "2026-11-26",
+      "hash": "sha256:ca1aaedc23f4f8346503693ec5f40e36132a9476c51434d6536ffd7ff6a2eaf0",
+      "cita_ubicacion": "US DOE AFDC",
+      "confianza": "alta"
+    }
+  },
+  {
+    "conexion_id": "bm-c3-vino-a-dest",
+    "proceso_id": "bioetanol-maiz-molienda-seca",
+    "origen_paso_id": "bm-p3-fermentacion-levaduras",
+    "destino_paso_id": "bm-p4-destilacion-tamices",
+    "corriente_nombre": "Vino fermentado (12-15% v/v)",
+    "tipo_corriente": "principal",
+    "flujo": {
+      "estado": "dato",
+      "valor": 1,
+      "unidad": "t etanol eq/t",
+      "procedencia": {
+        "anio": 2026,
+        "fuente_id": "afdc-ethanol-doe",
+        "fuente": "Alternative Fuels Data Center: Ethanol Production (Dry Mill & Sugarcane Fermentation)",
+        "url": "https://afdc.energy.gov/fuels/ethanol-production",
+        "fecha_descarga": "2026-11-26",
+        "hash": "sha256:ca1aaedc23f4f8346503693ec5f40e36132a9476c51434d6536ffd7ff6a2eaf0",
+        "cita_ubicacion": "US DOE AFDC",
+        "confianza": "alta"
+      }
+    },
+    "procedencia": {
+      "anio": 2026,
+      "fuente_id": "afdc-ethanol-doe",
+      "fuente": "Alternative Fuels Data Center: Ethanol Production (Dry Mill & Sugarcane Fermentation)",
+      "url": "https://afdc.energy.gov/fuels/ethanol-production",
+      "fecha_descarga": "2026-11-26",
+      "hash": "sha256:ca1aaedc23f4f8346503693ec5f40e36132a9476c51434d6536ffd7ff6a2eaf0",
+      "cita_ubicacion": "US DOE AFDC",
+      "confianza": "alta"
+    }
+  },
+  {
+    "conexion_id": "bm-c4-dest-a-despacho",
+    "proceso_id": "bioetanol-maiz-molienda-seca",
+    "origen_paso_id": "bm-p4-destilacion-tamices",
+    "destino_paso_id": "bm-p5-burlanda-despacho",
+    "corriente_nombre": "Bioetanol anhidro + vinaza a DDGS",
+    "tipo_corriente": "principal",
+    "flujo": {
+      "estado": "dato",
+      "valor": 1.97,
+      "unidad": "t/t etanol",
+      "procedencia": {
+        "anio": 2026,
+        "fuente_id": "afdc-ethanol-doe",
+        "fuente": "Alternative Fuels Data Center: Ethanol Production (Dry Mill & Sugarcane Fermentation)",
+        "url": "https://afdc.energy.gov/fuels/ethanol-production",
+        "fecha_descarga": "2026-11-26",
+        "hash": "sha256:ca1aaedc23f4f8346503693ec5f40e36132a9476c51434d6536ffd7ff6a2eaf0",
+        "cita_ubicacion": "US DOE AFDC",
+        "confianza": "alta"
+      }
+    },
+    "procedencia": {
+      "anio": 2026,
+      "fuente_id": "afdc-ethanol-doe",
+      "fuente": "Alternative Fuels Data Center: Ethanol Production (Dry Mill & Sugarcane Fermentation)",
+      "url": "https://afdc.energy.gov/fuels/ethanol-production",
+      "fecha_descarga": "2026-11-26",
+      "hash": "sha256:ca1aaedc23f4f8346503693ec5f40e36132a9476c51434d6536ffd7ff6a2eaf0",
+      "cita_ubicacion": "US DOE AFDC",
+      "confianza": "alta"
+    }
+  },
+  {
+    "conexion_id": "bm-c5-reciclo-agua-proceso",
+    "proceso_id": "bioetanol-maiz-molienda-seca",
+    "origen_paso_id": "bm-p5-burlanda-despacho",
+    "destino_paso_id": "bm-p2-licuefaccion-sacarificacion",
+    "corriente_nombre": "Vinaza liviana reciclada (backset)",
+    "tipo_corriente": "reciclo",
+    "flujo": {
+      "estado": "sin_datos",
+      "valor": null,
+      "unidad": "m3/t etanol",
+      "procedencia": {
+        "anio": 2026,
+        "fuente_id": "afdc-ethanol-doe",
+        "fuente": "Alternative Fuels Data Center: Ethanol Production (Dry Mill & Sugarcane Fermentation)",
+        "url": "https://afdc.energy.gov/fuels/ethanol-production",
+        "fecha_descarga": "2026-11-26",
+        "hash": "sha256:ca1aaedc23f4f8346503693ec5f40e36132a9476c51434d6536ffd7ff6a2eaf0",
+        "cita_ubicacion": "US DOE AFDC",
+        "confianza": "alta"
+      }
+    },
+    "procedencia": {
+      "anio": 2026,
+      "fuente_id": "afdc-ethanol-doe",
+      "fuente": "Alternative Fuels Data Center: Ethanol Production (Dry Mill & Sugarcane Fermentation)",
+      "url": "https://afdc.energy.gov/fuels/ethanol-production",
+      "fecha_descarga": "2026-11-26",
+      "hash": "sha256:ca1aaedc23f4f8346503693ec5f40e36132a9476c51434d6536ffd7ff6a2eaf0",
+      "cita_ubicacion": "US DOE AFDC",
+      "confianza": "alta"
+    }
+  },
+  {
+    "conexion_id": "bc-c1-jugo-a-clarif",
+    "proceso_id": "bioetanol-cana-fermentacion",
+    "origen_paso_id": "bc-p1-trapiche-cana",
+    "destino_paso_id": "bc-p2-clarificacion-evaporacion",
+    "corriente_nombre": "Jugo mixto de caña",
+    "tipo_corriente": "principal",
+    "flujo": {
+      "estado": "dato",
+      "valor": 10.4,
+      "unidad": "t/t etanol eq",
+      "procedencia": {
+        "anio": 2026,
+        "fuente_id": "caa-web-2026",
+        "fuente": "Centro Azucarero Argentino (CAA): actividad sucroalcoholera y bioetanol de caña",
+        "url": "https://centroazucarero.com.ar/",
+        "fecha_descarga": "2026-11-26",
+        "hash": "sha256:54ab9f6bc96dd294e57a929811b13d7f2e204facedf9e02bc6911fb14b60e35a",
+        "cita_ubicacion": "Centro Azucarero Argentino",
+        "confianza": "alta"
+      }
+    },
+    "procedencia": {
+      "anio": 2026,
+      "fuente_id": "caa-web-2026",
+      "fuente": "Centro Azucarero Argentino (CAA): actividad sucroalcoholera y bioetanol de caña",
+      "url": "https://centroazucarero.com.ar/",
+      "fecha_descarga": "2026-11-26",
+      "hash": "sha256:54ab9f6bc96dd294e57a929811b13d7f2e204facedf9e02bc6911fb14b60e35a",
+      "cita_ubicacion": "Centro Azucarero Argentino",
+      "confianza": "alta"
+    }
+  },
+  {
+    "conexion_id": "bc-c2-bagazo-a-caldera",
+    "proceso_id": "bioetanol-cana-fermentacion",
+    "origen_paso_id": "bc-p1-trapiche-cana",
+    "destino_paso_id": "bc-p5-cogeneracion-despacho",
+    "corriente_nombre": "Bagazo combustible a cogeneración",
+    "tipo_corriente": "subproducto",
+    "flujo": {
+      "estado": "dato",
+      "valor": 4.1,
+      "unidad": "t/t etanol eq",
+      "procedencia": {
+        "anio": 2026,
+        "fuente_id": "caa-web-2026",
+        "fuente": "Centro Azucarero Argentino (CAA): actividad sucroalcoholera y bioetanol de caña",
+        "url": "https://centroazucarero.com.ar/",
+        "fecha_descarga": "2026-11-26",
+        "hash": "sha256:54ab9f6bc96dd294e57a929811b13d7f2e204facedf9e02bc6911fb14b60e35a",
+        "cita_ubicacion": "Centro Azucarero Argentino",
+        "confianza": "alta"
+      }
+    },
+    "procedencia": {
+      "anio": 2026,
+      "fuente_id": "caa-web-2026",
+      "fuente": "Centro Azucarero Argentino (CAA): actividad sucroalcoholera y bioetanol de caña",
+      "url": "https://centroazucarero.com.ar/",
+      "fecha_descarga": "2026-11-26",
+      "hash": "sha256:54ab9f6bc96dd294e57a929811b13d7f2e204facedf9e02bc6911fb14b60e35a",
+      "cita_ubicacion": "Centro Azucarero Argentino",
+      "confianza": "alta"
+    }
+  },
+  {
+    "conexion_id": "bc-c3-melaza-a-ferm",
+    "proceso_id": "bioetanol-cana-fermentacion",
+    "origen_paso_id": "bc-p2-clarificacion-evaporacion",
+    "destino_paso_id": "bc-p3-fermentacion-sacarosa",
+    "corriente_nombre": "Melaza y jugo clarificado",
+    "tipo_corriente": "principal",
+    "flujo": {
+      "estado": "dato",
+      "valor": 3.4,
+      "unidad": "t/t etanol eq",
+      "procedencia": {
+        "anio": 2026,
+        "fuente_id": "caa-web-2026",
+        "fuente": "Centro Azucarero Argentino (CAA): actividad sucroalcoholera y bioetanol de caña",
+        "url": "https://centroazucarero.com.ar/",
+        "fecha_descarga": "2026-11-26",
+        "hash": "sha256:54ab9f6bc96dd294e57a929811b13d7f2e204facedf9e02bc6911fb14b60e35a",
+        "cita_ubicacion": "Centro Azucarero Argentino",
+        "confianza": "alta"
+      }
+    },
+    "procedencia": {
+      "anio": 2026,
+      "fuente_id": "caa-web-2026",
+      "fuente": "Centro Azucarero Argentino (CAA): actividad sucroalcoholera y bioetanol de caña",
+      "url": "https://centroazucarero.com.ar/",
+      "fecha_descarga": "2026-11-26",
+      "hash": "sha256:54ab9f6bc96dd294e57a929811b13d7f2e204facedf9e02bc6911fb14b60e35a",
+      "cita_ubicacion": "Centro Azucarero Argentino",
+      "confianza": "alta"
+    }
+  },
+  {
+    "conexion_id": "bc-c4-vino-a-dest",
+    "proceso_id": "bioetanol-cana-fermentacion",
+    "origen_paso_id": "bc-p3-fermentacion-sacarosa",
+    "destino_paso_id": "bc-p4-destilacion-deshidratacion",
+    "corriente_nombre": "Vino fermentado",
+    "tipo_corriente": "principal",
+    "flujo": {
+      "estado": "dato",
+      "valor": 1,
+      "unidad": "t etanol eq/t",
+      "procedencia": {
+        "anio": 2026,
+        "fuente_id": "afdc-ethanol-doe",
+        "fuente": "Alternative Fuels Data Center: Ethanol Production (Dry Mill & Sugarcane Fermentation)",
+        "url": "https://afdc.energy.gov/fuels/ethanol-production",
+        "fecha_descarga": "2026-11-26",
+        "hash": "sha256:ca1aaedc23f4f8346503693ec5f40e36132a9476c51434d6536ffd7ff6a2eaf0",
+        "cita_ubicacion": "US DOE AFDC",
+        "confianza": "alta"
+      }
+    },
+    "procedencia": {
+      "anio": 2026,
+      "fuente_id": "afdc-ethanol-doe",
+      "fuente": "Alternative Fuels Data Center: Ethanol Production (Dry Mill & Sugarcane Fermentation)",
+      "url": "https://afdc.energy.gov/fuels/ethanol-production",
+      "fecha_descarga": "2026-11-26",
+      "hash": "sha256:ca1aaedc23f4f8346503693ec5f40e36132a9476c51434d6536ffd7ff6a2eaf0",
+      "cita_ubicacion": "US DOE AFDC",
+      "confianza": "alta"
+    }
+  },
+  {
+    "conexion_id": "bc-c5-reciclo-levadura",
+    "proceso_id": "bioetanol-cana-fermentacion",
+    "origen_paso_id": "bc-p4-destilacion-deshidratacion",
+    "destino_paso_id": "bc-p3-fermentacion-sacarosa",
+    "corriente_nombre": "Crema de levaduras recuperada",
+    "tipo_corriente": "reciclo",
+    "flujo": {
+      "estado": "sin_datos",
+      "valor": null,
+      "unidad": "t/t etanol",
+      "procedencia": {
+        "anio": 2026,
+        "fuente_id": "afdc-ethanol-doe",
+        "fuente": "Alternative Fuels Data Center: Ethanol Production (Dry Mill & Sugarcane Fermentation)",
+        "url": "https://afdc.energy.gov/fuels/ethanol-production",
+        "fecha_descarga": "2026-11-26",
+        "hash": "sha256:ca1aaedc23f4f8346503693ec5f40e36132a9476c51434d6536ffd7ff6a2eaf0",
+        "cita_ubicacion": "US DOE AFDC",
+        "confianza": "alta"
+      }
+    },
+    "procedencia": {
+      "anio": 2026,
+      "fuente_id": "afdc-ethanol-doe",
+      "fuente": "Alternative Fuels Data Center: Ethanol Production (Dry Mill & Sugarcane Fermentation)",
+      "url": "https://afdc.energy.gov/fuels/ethanol-production",
+      "fecha_descarga": "2026-11-26",
+      "hash": "sha256:ca1aaedc23f4f8346503693ec5f40e36132a9476c51434d6536ffd7ff6a2eaf0",
+      "cita_ubicacion": "US DOE AFDC",
+      "confianza": "alta"
+    }
+  },
+  {
+    "conexion_id": "bc-c6-etanol-a-despacho",
+    "proceso_id": "bioetanol-cana-fermentacion",
+    "origen_paso_id": "bc-p4-destilacion-deshidratacion",
+    "destino_paso_id": "bc-p5-cogeneracion-despacho",
+    "corriente_nombre": "Bioetanol anhidro de caña",
+    "tipo_corriente": "principal",
+    "flujo": {
+      "estado": "dato",
+      "valor": 1,
+      "unidad": "t/t etanol",
+      "procedencia": {
+        "anio": 2026,
+        "fuente_id": "caa-web-2026",
+        "fuente": "Centro Azucarero Argentino (CAA): actividad sucroalcoholera y bioetanol de caña",
+        "url": "https://centroazucarero.com.ar/",
+        "fecha_descarga": "2026-11-26",
+        "hash": "sha256:54ab9f6bc96dd294e57a929811b13d7f2e204facedf9e02bc6911fb14b60e35a",
+        "cita_ubicacion": "Centro Azucarero Argentino",
+        "confianza": "alta"
+      }
+    },
+    "procedencia": {
+      "anio": 2026,
+      "fuente_id": "caa-web-2026",
+      "fuente": "Centro Azucarero Argentino (CAA): actividad sucroalcoholera y bioetanol de caña",
+      "url": "https://centroazucarero.com.ar/",
+      "fecha_descarga": "2026-11-26",
+      "hash": "sha256:54ab9f6bc96dd294e57a929811b13d7f2e204facedf9e02bc6911fb14b60e35a",
+      "cita_ubicacion": "Centro Azucarero Argentino",
+      "confianza": "alta"
+    }
   }
 ]

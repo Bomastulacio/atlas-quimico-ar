@@ -2999,5 +2999,1289 @@
       "cita_ubicacion": "unipar.com/es/acerca-de-unipar (unidad Bahía Blanca: cloro, soda cáustica y PVC)",
       "confianza": "alta"
     }
+  },
+  {
+    "paso_id": "met-p1-desulfuracion-gas",
+    "proceso_id": "metanol-reformado-sintesis",
+    "orden": 1,
+    "nombre": "Desulfuración y saturación de gas natural",
+    "tipo_paso": "materia_prima",
+    "reaccion_balanceada": null,
+    "temperatura_c": "350-380",
+    "presion_bar": "30-35",
+    "reactivos": [
+      {
+        "especie": "CH4 (gas natural cuenca neuquina)",
+        "cantidad": 0.56,
+        "unidad": "t/t CH3OH"
+      }
+    ],
+    "productos": [
+      {
+        "especie": "Gas natural desulfurado",
+        "cantidad": 0.56,
+        "unidad": "t/t CH3OH"
+      }
+    ],
+    "insumos": [
+      {
+        "especie": "Lecho ZnO (remoción H2S < 0,1 ppm)",
+        "cantidad": null,
+        "unidad": "adsorbente"
+      }
+    ],
+    "subproductos": [],
+    "energia": {
+      "estado": "sin_datos",
+      "valor": null,
+      "unidad": "GJ/t CH3OH",
+      "procedencia": {
+        "anio": 2006,
+        "fuente_id": "ipcc-2006-v3-ch3-amoniaco-urea",
+        "fuente": "2006 IPCC Guidelines for National Greenhouse Gas Inventories (Vol. 3, Cap. 3: Chemical Industry Emissions)",
+        "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/pdf/3_Volume3/V3_3_Ch3_Chemical_Industry.pdf",
+        "fecha_descarga": "2026-11-24",
+        "hash": "sha256:f25c2817eecdae6a1f930b342eb09b2d8a6065b12bfce632502a01e1a61bbaa2",
+        "cita_ubicacion": "IPCC Cap. 3.9 Methanol",
+        "confianza": "alta"
+      }
+    },
+    "descripcion": "Eliminación de compuestos de azufre del gas natural de Neuquén para evitar el envenenamiento de los catalizadores de Ni y Cu.",
+    "pos_x": 20,
+    "pos_y": 150,
+    "procedencia": {
+      "anio": 2006,
+      "fuente_id": "ipcc-2006-v3-ch3-amoniaco-urea",
+      "fuente": "2006 IPCC Guidelines for National Greenhouse Gas Inventories (Vol. 3, Cap. 3: Chemical Industry Emissions)",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/pdf/3_Volume3/V3_3_Ch3_Chemical_Industry.pdf",
+      "fecha_descarga": "2026-11-24",
+      "hash": "sha256:f25c2817eecdae6a1f930b342eb09b2d8a6065b12bfce632502a01e1a61bbaa2",
+      "cita_ubicacion": "IPCC 2006 Vol. 3 Cap. 3.9",
+      "confianza": "alta"
+    }
+  },
+  {
+    "paso_id": "met-p2-reformado-vapor",
+    "proceso_id": "metanol-reformado-sintesis",
+    "orden": 2,
+    "nombre": "Reformado con vapor (SMR) a gas de síntesis",
+    "tipo_paso": "reaccion",
+    "reaccion_balanceada": "CH4 + H2O -> CO + 3 H2",
+    "temperatura_c": "830-870",
+    "presion_bar": "20-25",
+    "reactivos": [
+      {
+        "especie": "CH4 desulfurado",
+        "cantidad": 0.56,
+        "unidad": "t/t CH3OH"
+      },
+      {
+        "especie": "H2O (vapor de proceso)",
+        "cantidad": 0.62,
+        "unidad": "t/t CH3OH"
+      }
+    ],
+    "productos": [
+      {
+        "especie": "Syngas (CO + H2 + CO2)",
+        "cantidad": 1.18,
+        "unidad": "t/t CH3OH"
+      }
+    ],
+    "insumos": [
+      {
+        "especie": "Gas combustible de horno reformador",
+        "cantidad": null,
+        "unidad": "servicio térmico"
+      }
+    ],
+    "subproductos": [
+      {
+        "especie": "CO2 de combustión y proceso (IPCC Table 3.12)",
+        "cantidad": 0.67,
+        "unidad": "t CO2/t CH3OH"
+      }
+    ],
+    "energia": {
+      "estado": "sin_datos",
+      "valor": null,
+      "unidad": "GJ/t CH3OH",
+      "procedencia": {
+        "anio": 2006,
+        "fuente_id": "ipcc-2006-v3-ch3-amoniaco-urea",
+        "fuente": "2006 IPCC Guidelines for National Greenhouse Gas Inventories (Vol. 3, Cap. 3: Chemical Industry Emissions)",
+        "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/pdf/3_Volume3/V3_3_Ch3_Chemical_Industry.pdf",
+        "fecha_descarga": "2026-11-24",
+        "hash": "sha256:f25c2817eecdae6a1f930b342eb09b2d8a6065b12bfce632502a01e1a61bbaa2",
+        "cita_ubicacion": "IPCC 2006 Cap. 3.9 Table 3.12",
+        "confianza": "alta"
+      }
+    },
+    "descripcion": "Reformado catalítico endotérmico en tubos rellenos de catalizador de níquel que genera gas de síntesis ajustado a módulo estequiométrico.",
+    "pos_x": 340,
+    "pos_y": 150,
+    "procedencia": {
+      "anio": 2006,
+      "fuente_id": "ipcc-2006-v3-ch3-amoniaco-urea",
+      "fuente": "2006 IPCC Guidelines for National Greenhouse Gas Inventories (Vol. 3, Cap. 3: Chemical Industry Emissions)",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/pdf/3_Volume3/V3_3_Ch3_Chemical_Industry.pdf",
+      "fecha_descarga": "2026-11-24",
+      "hash": "sha256:f25c2817eecdae6a1f930b342eb09b2d8a6065b12bfce632502a01e1a61bbaa2",
+      "cita_ubicacion": "IPCC 2006 Vol. 3 Cap. 3.9 Table 3.12",
+      "confianza": "alta"
+    }
+  },
+  {
+    "paso_id": "met-p3-compresion-syngas",
+    "proceso_id": "metanol-reformado-sintesis",
+    "orden": 3,
+    "nombre": "Enfriamiento, separación de condensado y compresión",
+    "tipo_paso": "preparacion",
+    "reaccion_balanceada": null,
+    "temperatura_c": "40-110",
+    "presion_bar": "60-80",
+    "reactivos": [
+      {
+        "especie": "Syngas reformado",
+        "cantidad": 1.18,
+        "unidad": "t/t CH3OH"
+      }
+    ],
+    "productos": [
+      {
+        "especie": "Syngas comprimido seco (65 bar)",
+        "cantidad": 1.08,
+        "unidad": "t/t CH3OH"
+      }
+    ],
+    "insumos": [],
+    "subproductos": [
+      {
+        "especie": "Condensado de proceso recuperado",
+        "cantidad": 0.1,
+        "unidad": "t/t CH3OH"
+      }
+    ],
+    "energia": {
+      "estado": "sin_datos",
+      "valor": null,
+      "unidad": "GJ/t CH3OH",
+      "procedencia": {
+        "anio": 2017,
+        "fuente_id": "eu-bref-lvoc-2017",
+        "fuente": "Best Available Techniques (BAT) Reference Document for the Production of Large Volume Organic Chemicals (LVOC BREF)",
+        "url": "https://bureau-industrial-transformation.jrc.ec.europa.eu/reference/production-large-volume-organic-chemicals",
+        "fecha_descarga": "2026-11-26",
+        "hash": "sha256:fb75a48a3620f76be5994c385048921a27c0dffdfad33ab595aac4654cfe8a34",
+        "cita_ubicacion": "EU LVOC BREF syngas compression",
+        "confianza": "alta"
+      }
+    },
+    "descripcion": "Recuperación de calor en calderas de vapor de alta presión, condensación de agua en exceso y compresión centrífuga hasta presión de síntesis.",
+    "pos_x": 660,
+    "pos_y": 150,
+    "procedencia": {
+      "anio": 2017,
+      "fuente_id": "eu-bref-lvoc-2017",
+      "fuente": "Best Available Techniques (BAT) Reference Document for the Production of Large Volume Organic Chemicals (LVOC BREF)",
+      "url": "https://bureau-industrial-transformation.jrc.ec.europa.eu/reference/production-large-volume-organic-chemicals",
+      "fecha_descarga": "2026-11-26",
+      "hash": "sha256:fb75a48a3620f76be5994c385048921a27c0dffdfad33ab595aac4654cfe8a34",
+      "cita_ubicacion": "EU LVOC BREF (2017)",
+      "confianza": "alta"
+    }
+  },
+  {
+    "paso_id": "met-p4-sintesis-catalitica",
+    "proceso_id": "metanol-reformado-sintesis",
+    "orden": 4,
+    "nombre": "Síntesis catalítica de metanol en lazo cerrado",
+    "tipo_paso": "reaccion",
+    "reaccion_balanceada": "CO + 2 H2 -> CH3OH",
+    "temperatura_c": "230-270",
+    "presion_bar": "60-80",
+    "reactivos": [
+      {
+        "especie": "Syngas (CO + 2 H2) fresco + reciclo",
+        "cantidad": 1.08,
+        "unidad": "t/t CH3OH"
+      }
+    ],
+    "productos": [
+      {
+        "especie": "Metanol crudo condensado (CH3OH + H2O)",
+        "cantidad": 1.04,
+        "unidad": "t/t CH3OH"
+      }
+    ],
+    "insumos": [
+      {
+        "especie": "Catalizador Cu/ZnO/Al2O3",
+        "cantidad": null,
+        "unidad": "lecho fijo"
+      }
+    ],
+    "subproductos": [
+      {
+        "especie": "Gas de purga combustible (H2/CH4)",
+        "cantidad": 0.04,
+        "unidad": "t/t CH3OH"
+      }
+    ],
+    "energia": {
+      "estado": "sin_datos",
+      "valor": null,
+      "unidad": "GJ/t CH3OH",
+      "procedencia": {
+        "anio": 2006,
+        "fuente_id": "ipcc-2006-v3-ch3-amoniaco-urea",
+        "fuente": "2006 IPCC Guidelines for National Greenhouse Gas Inventories (Vol. 3, Cap. 3: Chemical Industry Emissions)",
+        "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/pdf/3_Volume3/V3_3_Ch3_Chemical_Industry.pdf",
+        "fecha_descarga": "2026-11-24",
+        "hash": "sha256:f25c2817eecdae6a1f930b342eb09b2d8a6065b12bfce632502a01e1a61bbaa2",
+        "cita_ubicacion": "IPCC Cap. 3.9",
+        "confianza": "alta"
+      }
+    },
+    "descripcion": "Conversión exotérmica sobre catalizador de cobre-zinc con generación de vapor de media presión y reciclo del gas no convertido.",
+    "pos_x": 980,
+    "pos_y": 150,
+    "procedencia": {
+      "anio": 2006,
+      "fuente_id": "ipcc-2006-v3-ch3-amoniaco-urea",
+      "fuente": "2006 IPCC Guidelines for National Greenhouse Gas Inventories (Vol. 3, Cap. 3: Chemical Industry Emissions)",
+      "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/pdf/3_Volume3/V3_3_Ch3_Chemical_Industry.pdf",
+      "fecha_descarga": "2026-11-24",
+      "hash": "sha256:f25c2817eecdae6a1f930b342eb09b2d8a6065b12bfce632502a01e1a61bbaa2",
+      "cita_ubicacion": "IPCC 2006 Vol. 3 Cap. 3.9",
+      "confianza": "alta"
+    }
+  },
+  {
+    "paso_id": "met-p5-destilacion-grado-aa",
+    "proceso_id": "metanol-reformado-sintesis",
+    "orden": 5,
+    "nombre": "Destilación (topping + refino) a metanol grado AA",
+    "tipo_paso": "producto",
+    "reaccion_balanceada": null,
+    "temperatura_c": "65-105",
+    "presion_bar": "1,2-2,0",
+    "reactivos": [
+      {
+        "especie": "Metanol crudo",
+        "cantidad": 1.04,
+        "unidad": "t/t CH3OH"
+      }
+    ],
+    "productos": [
+      {
+        "especie": "Metanol anhidro grado AA (>99,85%, HS 2905.11)",
+        "cantidad": 1,
+        "unidad": "t/t CH3OH"
+      }
+    ],
+    "insumos": [],
+    "subproductos": [
+      {
+        "especie": "Agua de fondos y alcoholes pesados",
+        "cantidad": 0.04,
+        "unidad": "t/t CH3OH"
+      }
+    ],
+    "energia": {
+      "estado": "sin_datos",
+      "valor": null,
+      "unidad": "GJ/t CH3OH",
+      "procedencia": {
+        "anio": 2026,
+        "fuente_id": "ypf-inversores-2026",
+        "fuente": "Portal oficial de Inversores e Infraestructura Industrial (YPF S.A.)",
+        "url": "https://inversores.ypf.com/",
+        "fecha_descarga": "2026-11-26",
+        "hash": "sha256:f39c95b1076dd0e8513a2df3785151328c44a6b26ce435b9eaf1465bc2d4917e",
+        "cita_ubicacion": "Complejo Industrial Plaza Huincul",
+        "confianza": "alta"
+      }
+    },
+    "descripcion": "Tren de columnas que remueve livianos disueltos y agua para despachar metanol grado químico hacia plantas de biodiésel y resinas.",
+    "pos_x": 1300,
+    "pos_y": 150,
+    "procedencia": {
+      "anio": 2024,
+      "fuente_id": "uncomtrade-ar-lote3-2024",
+      "fuente": "UN Comtrade: comercio exterior de Argentina HS 290511 (Metanol), 390210 (Polipropileno), 220710/220720 (Alcohol etílico) y 170199 (Azúcar) 2024",
+      "url": "https://comtradeapi.un.org/public/v1/preview/C/A/HS?reporterCode=32&period=2024&partnerCode=0&partner2Code=0&customsCode=C00&motCode=0&cmdCode=290511,390210,220710,220720,170199",
+      "fecha_descarga": "2026-11-26",
+      "hash": "sha256:13e2c93483644ca09e2f2dd434fb4470b232c0bec65979308b4b595873775f58",
+      "cita_ubicacion": "UN Comtrade AR 2024 cmdCode=290511",
+      "confianza": "alta"
+    }
+  },
+  {
+    "paso_id": "pp-p1-craqueo-fcc",
+    "proceso_id": "polipropileno-fcc-polimerizacion",
+    "orden": 1,
+    "nombre": "Craqueo catalítico fluido (FCC) en refinería",
+    "tipo_paso": "materia_prima",
+    "reaccion_balanceada": null,
+    "temperatura_c": "510-540",
+    "presion_bar": "2,0-2,5",
+    "reactivos": [
+      {
+        "especie": "Gasoil pesado de vacío (crudo cuyano/neuquino)",
+        "cantidad": null,
+        "unidad": "t/t PP"
+      }
+    ],
+    "productos": [
+      {
+        "especie": "Corte C3 de refinería (propileno + propano)",
+        "cantidad": 1.45,
+        "unidad": "t/t PP"
+      }
+    ],
+    "insumos": [
+      {
+        "especie": "Catalizador zeolítico FCC regenerado",
+        "cantidad": null,
+        "unidad": "lecho fluidizado"
+      }
+    ],
+    "subproductos": [],
+    "energia": {
+      "estado": "sin_datos",
+      "valor": null,
+      "unidad": "MWh/t PP",
+      "procedencia": {
+        "anio": 2026,
+        "fuente_id": "ypf-inversores-2026",
+        "fuente": "Portal oficial de Inversores e Infraestructura Industrial (YPF S.A.)",
+        "url": "https://inversores.ypf.com/",
+        "fecha_descarga": "2026-11-26",
+        "hash": "sha256:f39c95b1076dd0e8513a2df3785151328c44a6b26ce435b9eaf1465bc2d4917e",
+        "cita_ubicacion": "Complejo Industrial Luján de Cuyo",
+        "confianza": "alta"
+      }
+    },
+    "descripcion": "Unidad FCC de la refinería de Luján de Cuyo que rompe hidrocarburos pesados y genera gases licuados ricos en propileno.",
+    "pos_x": 20,
+    "pos_y": 150,
+    "procedencia": {
+      "anio": 2026,
+      "fuente_id": "ypf-inversores-2026",
+      "fuente": "Portal oficial de Inversores e Infraestructura Industrial (YPF S.A.)",
+      "url": "https://inversores.ypf.com/",
+      "fecha_descarga": "2026-11-26",
+      "hash": "sha256:f39c95b1076dd0e8513a2df3785151328c44a6b26ce435b9eaf1465bc2d4917e",
+      "cita_ubicacion": "Complejo Industrial Luján de Cuyo (Mendoza)",
+      "confianza": "alta"
+    }
+  },
+  {
+    "paso_id": "pp-p2-splitter-propileno",
+    "proceso_id": "polipropileno-fcc-polimerizacion",
+    "orden": 2,
+    "nombre": "Fraccionamiento en splitter C3 (propileno >99,5%)",
+    "tipo_paso": "separacion",
+    "reaccion_balanceada": null,
+    "temperatura_c": "35-55",
+    "presion_bar": "18-22",
+    "reactivos": [
+      {
+        "especie": "Corte C3 mezclado (C3H6 / C3H8)",
+        "cantidad": 1.45,
+        "unidad": "t/t PP"
+      }
+    ],
+    "productos": [
+      {
+        "especie": "Propileno grado polímero (C3H6 >99,5%)",
+        "cantidad": 1.015,
+        "unidad": "t/t PP"
+      }
+    ],
+    "insumos": [
+      {
+        "especie": "Lechos de purificación (remoción CO/H2O/S)",
+        "cantidad": null,
+        "unidad": "adsorción"
+      }
+    ],
+    "subproductos": [
+      {
+        "especie": "Propano comercial (C3H8 a GLP)",
+        "cantidad": 0.435,
+        "unidad": "t/t PP"
+      }
+    ],
+    "energia": {
+      "estado": "sin_datos",
+      "valor": null,
+      "unidad": "MWh/t PP",
+      "procedencia": {
+        "anio": 2007,
+        "fuente_id": "eu-bref-polymers",
+        "fuente": "Reference Document on Best Available Techniques in the Production of Polymers (POL BREF)",
+        "url": "https://bureau-industrial-transformation.jrc.ec.europa.eu/reference/production-polymers",
+        "fecha_descarga": "2026-11-26",
+        "hash": "sha256:f49403eab2439da283626fd50341b5094c00bc4ca1ccf663dd3461e65fb80f63",
+        "cita_ubicacion": "EU POL BREF monomer purification",
+        "confianza": "alta"
+      }
+    },
+    "descripcion": "Columna superfraccionadora que separa propileno de propano y purifica trazas venenosas antes del reactor de polimerización.",
+    "pos_x": 340,
+    "pos_y": 150,
+    "procedencia": {
+      "anio": 2007,
+      "fuente_id": "eu-bref-polymers",
+      "fuente": "Reference Document on Best Available Techniques in the Production of Polymers (POL BREF)",
+      "url": "https://bureau-industrial-transformation.jrc.ec.europa.eu/reference/production-polymers",
+      "fecha_descarga": "2026-11-26",
+      "hash": "sha256:f49403eab2439da283626fd50341b5094c00bc4ca1ccf663dd3461e65fb80f63",
+      "cita_ubicacion": "EU POL BREF: Polypropylene",
+      "confianza": "alta"
+    }
+  },
+  {
+    "paso_id": "pp-p3-polimerizacion-zn",
+    "proceso_id": "polipropileno-fcc-polimerizacion",
+    "orden": 3,
+    "nombre": "Polimerización catalítica Ziegler-Natta (fase gas)",
+    "tipo_paso": "reaccion",
+    "reaccion_balanceada": "n C3H6 -> -(C3H6)n-",
+    "temperatura_c": "65-80",
+    "presion_bar": "28-35",
+    "reactivos": [
+      {
+        "especie": "C3H6 (propileno fresco + reciclo)",
+        "cantidad": 1.015,
+        "unidad": "t/t PP"
+      }
+    ],
+    "productos": [
+      {
+        "especie": "Polvo de polipropileno isotáctico",
+        "cantidad": 1.005,
+        "unidad": "t/t PP"
+      }
+    ],
+    "insumos": [
+      {
+        "especie": "Catalizador Ziegler-Natta (TiCl4/MgCl2 + AlEt3)",
+        "cantidad": null,
+        "unidad": "catalizador"
+      },
+      {
+        "especie": "H2 regulador de peso molecular",
+        "cantidad": null,
+        "unidad": "aditivo"
+      }
+    ],
+    "subproductos": [
+      {
+        "especie": "Monómero C3H6 no convertido (reciclo)",
+        "cantidad": 0.01,
+        "unidad": "t/t PP"
+      }
+    ],
+    "energia": {
+      "estado": "sin_datos",
+      "valor": null,
+      "unidad": "MWh/t PP",
+      "procedencia": {
+        "anio": 2007,
+        "fuente_id": "eu-bref-polymers",
+        "fuente": "Reference Document on Best Available Techniques in the Production of Polymers (POL BREF)",
+        "url": "https://bureau-industrial-transformation.jrc.ec.europa.eu/reference/production-polymers",
+        "fecha_descarga": "2026-11-26",
+        "hash": "sha256:f49403eab2439da283626fd50341b5094c00bc4ca1ccf663dd3461e65fb80f63",
+        "cita_ubicacion": "EU POL BREF gas-phase polypropylene",
+        "confianza": "alta"
+      }
+    },
+    "descripcion": "Reacción exotérmica controlada en reactor de lecho agitado/gas con remoción de calor por evaporación de propileno líquido.",
+    "pos_x": 660,
+    "pos_y": 150,
+    "procedencia": {
+      "anio": 2007,
+      "fuente_id": "eu-bref-polymers",
+      "fuente": "Reference Document on Best Available Techniques in the Production of Polymers (POL BREF)",
+      "url": "https://bureau-industrial-transformation.jrc.ec.europa.eu/reference/production-polymers",
+      "fecha_descarga": "2026-11-26",
+      "hash": "sha256:f49403eab2439da283626fd50341b5094c00bc4ca1ccf663dd3461e65fb80f63",
+      "cita_ubicacion": "EU POL BREF: Polypropylene gas-phase reactor",
+      "confianza": "alta"
+    }
+  },
+  {
+    "paso_id": "pp-p4-desgasificacion-reciclo",
+    "proceso_id": "polipropileno-fcc-polimerizacion",
+    "orden": 4,
+    "nombre": "Desgasificación, desactivación y reciclo de C3H6",
+    "tipo_paso": "separacion",
+    "reaccion_balanceada": null,
+    "temperatura_c": "60-85",
+    "presion_bar": "1,2-2,0",
+    "reactivos": [
+      {
+        "especie": "Polvo de PP con monómero ocluido",
+        "cantidad": 1.005,
+        "unidad": "t/t PP"
+      }
+    ],
+    "productos": [
+      {
+        "especie": "Polvo de polipropileno desgasificado",
+        "cantidad": 1,
+        "unidad": "t/t PP"
+      }
+    ],
+    "insumos": [
+      {
+        "especie": "Nitrógeno y vapor de desactivación",
+        "cantidad": null,
+        "unidad": "servicio"
+      }
+    ],
+    "subproductos": [
+      {
+        "especie": "C3H6 recuperado (recompresión a reactor)",
+        "cantidad": 0.005,
+        "unidad": "t/t PP"
+      }
+    ],
+    "energia": {
+      "estado": "sin_datos",
+      "valor": null,
+      "unidad": "MWh/t PP",
+      "procedencia": {
+        "anio": 2007,
+        "fuente_id": "eu-bref-polymers",
+        "fuente": "Reference Document on Best Available Techniques in the Production of Polymers (POL BREF)",
+        "url": "https://bureau-industrial-transformation.jrc.ec.europa.eu/reference/production-polymers",
+        "fecha_descarga": "2026-11-26",
+        "hash": "sha256:f49403eab2439da283626fd50341b5094c00bc4ca1ccf663dd3461e65fb80f63",
+        "cita_ubicacion": "EU POL BREF degassing & monomer recovery",
+        "confianza": "alta"
+      }
+    },
+    "descripcion": "Stripping con nitrógeno para recuperar propileno residual por compresión cerrada y neutralizar restos de catalizador.",
+    "pos_x": 980,
+    "pos_y": 150,
+    "procedencia": {
+      "anio": 2007,
+      "fuente_id": "eu-bref-polymers",
+      "fuente": "Reference Document on Best Available Techniques in the Production of Polymers (POL BREF)",
+      "url": "https://bureau-industrial-transformation.jrc.ec.europa.eu/reference/production-polymers",
+      "fecha_descarga": "2026-11-26",
+      "hash": "sha256:f49403eab2439da283626fd50341b5094c00bc4ca1ccf663dd3461e65fb80f63",
+      "cita_ubicacion": "EU POL BREF: Polypropylene degassing",
+      "confianza": "alta"
+    }
+  },
+  {
+    "paso_id": "pp-p5-extrusion-peletizado",
+    "proceso_id": "polipropileno-fcc-polimerizacion",
+    "orden": 5,
+    "nombre": "Aditivación, extrusión y peletizado de PP",
+    "tipo_paso": "producto",
+    "reaccion_balanceada": null,
+    "temperatura_c": "210-240",
+    "presion_bar": "1,0",
+    "reactivos": [
+      {
+        "especie": "Polvo de polipropileno",
+        "cantidad": 1,
+        "unidad": "t/t PP"
+      }
+    ],
+    "productos": [
+      {
+        "especie": "Pellets de polipropileno (HS 3902.10)",
+        "cantidad": 1,
+        "unidad": "t/t PP"
+      }
+    ],
+    "insumos": [
+      {
+        "especie": "Antioxidantes y estabilizantes térmicos",
+        "cantidad": null,
+        "unidad": "aditivo"
+      }
+    ],
+    "subproductos": [],
+    "energia": {
+      "estado": "sin_datos",
+      "valor": null,
+      "unidad": "MWh/t PP",
+      "procedencia": {
+        "anio": 2026,
+        "fuente_id": "petrocuyo-web-2026",
+        "fuente": "Portal institucional y operaciones de polipropileno (Petrocuyo S.A.I.C.)",
+        "url": "https://www.petrocuyo.com/",
+        "fecha_descarga": "2026-11-26",
+        "hash": "sha256:5706e3a328532bddf36e6af90c032f40c80e99ce17049403540bb26dec2da3e3",
+        "cita_ubicacion": "petrocuyo.com (Luján de Cuyo)",
+        "confianza": "alta"
+      }
+    },
+    "descripcion": "Fusión en extrusora doble tornillo, corte bajo agua en pellets, homogeneización en silos y despacho a industria automotriz, envases y rafia.",
+    "pos_x": 1300,
+    "pos_y": 150,
+    "procedencia": {
+      "anio": 2024,
+      "fuente_id": "uncomtrade-ar-lote3-2024",
+      "fuente": "UN Comtrade: comercio exterior de Argentina HS 290511 (Metanol), 390210 (Polipropileno), 220710/220720 (Alcohol etílico) y 170199 (Azúcar) 2024",
+      "url": "https://comtradeapi.un.org/public/v1/preview/C/A/HS?reporterCode=32&period=2024&partnerCode=0&partner2Code=0&customsCode=C00&motCode=0&cmdCode=290511,390210,220710,220720,170199",
+      "fecha_descarga": "2026-11-26",
+      "hash": "sha256:13e2c93483644ca09e2f2dd434fb4470b232c0bec65979308b4b595873775f58",
+      "cita_ubicacion": "UN Comtrade AR 2024 cmdCode=390210",
+      "confianza": "alta"
+    }
+  },
+  {
+    "paso_id": "bm-p1-molienda-maiz",
+    "proceso_id": "bioetanol-maiz-molienda-seca",
+    "orden": 1,
+    "nombre": "Recepción, limpieza y molienda seca de maíz",
+    "tipo_paso": "materia_prima",
+    "reaccion_balanceada": null,
+    "temperatura_c": "20-30",
+    "presion_bar": "1,0",
+    "reactivos": [
+      {
+        "especie": "Grano de maíz seco (Córdoba)",
+        "cantidad": 3.1,
+        "unidad": "t/t etanol"
+      }
+    ],
+    "productos": [
+      {
+        "especie": "Harina fina de maíz (almidón ~70%)",
+        "cantidad": 3.08,
+        "unidad": "t/t etanol"
+      }
+    ],
+    "insumos": [],
+    "subproductos": [
+      {
+        "especie": "Impurezas y polvo de zaranda",
+        "cantidad": 0.02,
+        "unidad": "t/t etanol"
+      }
+    ],
+    "energia": {
+      "estado": "sin_datos",
+      "valor": null,
+      "unidad": "MJ/L etanol",
+      "procedencia": {
+        "anio": 2026,
+        "fuente_id": "afdc-ethanol-doe",
+        "fuente": "Alternative Fuels Data Center: Ethanol Production (Dry Mill & Sugarcane Fermentation)",
+        "url": "https://afdc.energy.gov/fuels/ethanol-production",
+        "fecha_descarga": "2026-11-26",
+        "hash": "sha256:ca1aaedc23f4f8346503693ec5f40e36132a9476c51434d6536ffd7ff6a2eaf0",
+        "cita_ubicacion": "US DOE AFDC Dry Mill",
+        "confianza": "alta"
+      }
+    },
+    "descripcion": "Molinos de martillos reducen el grano de maíz cordobés a harina fina para exponer los gránulos de almidón al ataque enzimático.",
+    "pos_x": 20,
+    "pos_y": 150,
+    "procedencia": {
+      "anio": 2026,
+      "fuente_id": "bio4-web-2026",
+      "fuente": "Portal oficial Bio4 Argentina (Bioetanol Río Cuarto S.A.)",
+      "url": "https://bio4.com.ar/",
+      "fecha_descarga": "2026-11-26",
+      "hash": "sha256:f7d9e9b758e86cdd4a8ae2e9e04f533a1368feca92a5bce3218bc669b6a524b7",
+      "cita_ubicacion": "bio4.com.ar y US DOE AFDC Ethanol Production",
+      "confianza": "alta"
+    }
+  },
+  {
+    "paso_id": "bm-p2-licuefaccion-sacarificacion",
+    "proceso_id": "bioetanol-maiz-molienda-seca",
+    "orden": 2,
+    "nombre": "Cocción, licuefacción y sacarificación enzimática",
+    "tipo_paso": "preparacion",
+    "reaccion_balanceada": "(C6H10O5)n + n H2O -> n C6H12O6",
+    "temperatura_c": "85-105",
+    "presion_bar": "1,5-2,0",
+    "reactivos": [
+      {
+        "especie": "Harina de maíz + agua de proceso",
+        "cantidad": 3.08,
+        "unidad": "t/t etanol"
+      }
+    ],
+    "productos": [
+      {
+        "especie": "Mosto hidrolizado rico en glucosa",
+        "cantidad": 2.04,
+        "unidad": "t glucosa eq/t etanol"
+      }
+    ],
+    "insumos": [
+      {
+        "especie": "Enzimas alfa-amilasa y glucoamilasa",
+        "cantidad": null,
+        "unidad": "biocatalizador"
+      }
+    ],
+    "subproductos": [],
+    "energia": {
+      "estado": "sin_datos",
+      "valor": null,
+      "unidad": "MJ/L etanol",
+      "procedencia": {
+        "anio": 2026,
+        "fuente_id": "afdc-ethanol-doe",
+        "fuente": "Alternative Fuels Data Center: Ethanol Production (Dry Mill & Sugarcane Fermentation)",
+        "url": "https://afdc.energy.gov/fuels/ethanol-production",
+        "fecha_descarga": "2026-11-26",
+        "hash": "sha256:ca1aaedc23f4f8346503693ec5f40e36132a9476c51434d6536ffd7ff6a2eaf0",
+        "cita_ubicacion": "US DOE AFDC liquefaction & saccharification",
+        "confianza": "alta"
+      }
+    },
+    "descripcion": "Jet-cooker gelatiniza el almidón y las enzimas amilasas lo convierten en azúcares fermentables (glucosa).",
+    "pos_x": 340,
+    "pos_y": 150,
+    "procedencia": {
+      "anio": 2026,
+      "fuente_id": "afdc-ethanol-doe",
+      "fuente": "Alternative Fuels Data Center: Ethanol Production (Dry Mill & Sugarcane Fermentation)",
+      "url": "https://afdc.energy.gov/fuels/ethanol-production",
+      "fecha_descarga": "2026-11-26",
+      "hash": "sha256:ca1aaedc23f4f8346503693ec5f40e36132a9476c51434d6536ffd7ff6a2eaf0",
+      "cita_ubicacion": "afdc.energy.gov/fuels/ethanol-production",
+      "confianza": "alta"
+    }
+  },
+  {
+    "paso_id": "bm-p3-fermentacion-levaduras",
+    "proceso_id": "bioetanol-maiz-molienda-seca",
+    "orden": 3,
+    "nombre": "Fermentación alcohólica con levaduras",
+    "tipo_paso": "reaccion",
+    "reaccion_balanceada": "C6H12O6 -> 2 C2H5OH + 2 CO2",
+    "temperatura_c": "30-34",
+    "presion_bar": "1,0",
+    "reactivos": [
+      {
+        "especie": "Glucosa (C6H12O6) en mosto",
+        "cantidad": 2.04,
+        "unidad": "t/t etanol"
+      }
+    ],
+    "productos": [
+      {
+        "especie": "Vino fermentado (12-15% v/v etanol)",
+        "cantidad": 1,
+        "unidad": "t etanol eq/t"
+      }
+    ],
+    "insumos": [
+      {
+        "especie": "Levadura Saccharomyces cerevisiae",
+        "cantidad": null,
+        "unidad": "inóculo"
+      }
+    ],
+    "subproductos": [
+      {
+        "especie": "CO2 biogénico de fermentación (capturable)",
+        "cantidad": 0.96,
+        "unidad": "t/t etanol"
+      }
+    ],
+    "energia": {
+      "estado": "sin_datos",
+      "valor": null,
+      "unidad": "MJ/L etanol",
+      "procedencia": {
+        "anio": 2026,
+        "fuente_id": "afdc-ethanol-doe",
+        "fuente": "Alternative Fuels Data Center: Ethanol Production (Dry Mill & Sugarcane Fermentation)",
+        "url": "https://afdc.energy.gov/fuels/ethanol-production",
+        "fecha_descarga": "2026-11-26",
+        "hash": "sha256:ca1aaedc23f4f8346503693ec5f40e36132a9476c51434d6536ffd7ff6a2eaf0",
+        "cita_ubicacion": "US DOE AFDC fermentation",
+        "confianza": "alta"
+      }
+    },
+    "descripcion": "Fermentadores cerrados refrigerados durante 48-60 horas; el CO2 de alta pureza se lava y puede recuperarse como insumo industrial.",
+    "pos_x": 660,
+    "pos_y": 150,
+    "procedencia": {
+      "anio": 2026,
+      "fuente_id": "acabio-web-2026",
+      "fuente": "Portal oficial ACA BIO Cooperativa Limitada (Villa María, Córdoba)",
+      "url": "https://www.acabio.com.ar/",
+      "fecha_descarga": "2026-11-26",
+      "hash": "sha256:23b80444827f78618e30e7d0f0615a69fc7b785a05e649c1e4b4df8fcaa1cf29",
+      "cita_ubicacion": "acabio.com.ar y US DOE AFDC",
+      "confianza": "alta"
+    }
+  },
+  {
+    "paso_id": "bm-p4-destilacion-tamices",
+    "proceso_id": "bioetanol-maiz-molienda-seca",
+    "orden": 4,
+    "nombre": "Destilación y deshidratación con tamices moleculares",
+    "tipo_paso": "separacion",
+    "reaccion_balanceada": null,
+    "temperatura_c": "78-115",
+    "presion_bar": "1,0-3,5",
+    "reactivos": [
+      {
+        "especie": "Vino fermentado",
+        "cantidad": 1,
+        "unidad": "t etanol eq/t"
+      }
+    ],
+    "productos": [
+      {
+        "especie": "Bioetanol anhidro (>99,5% v/v, HS 2207.10)",
+        "cantidad": 1,
+        "unidad": "t/t etanol"
+      }
+    ],
+    "insumos": [
+      {
+        "especie": "Tamices moleculares zeolíticos 3A",
+        "cantidad": null,
+        "unidad": "adsorción PSA"
+      }
+    ],
+    "subproductos": [
+      {
+        "especie": "Vinaza entera hacia centrífugas de burlanda",
+        "cantidad": 0.97,
+        "unidad": "t sólida eq/t etanol"
+      }
+    ],
+    "energia": {
+      "estado": "sin_datos",
+      "valor": null,
+      "unidad": "MJ/L etanol",
+      "procedencia": {
+        "anio": 2026,
+        "fuente_id": "afdc-ethanol-doe",
+        "fuente": "Alternative Fuels Data Center: Ethanol Production (Dry Mill & Sugarcane Fermentation)",
+        "url": "https://afdc.energy.gov/fuels/ethanol-production",
+        "fecha_descarga": "2026-11-26",
+        "hash": "sha256:ca1aaedc23f4f8346503693ec5f40e36132a9476c51434d6536ffd7ff6a2eaf0",
+        "cita_ubicacion": "US DOE AFDC distillation & molecular sieves",
+        "confianza": "alta"
+      }
+    },
+    "descripcion": "Las columnas alcanzan el azeótropo (95,6% p/p) y los tamices moleculares adsorben el agua remanente sin usar solventes tóxicos.",
+    "pos_x": 980,
+    "pos_y": 150,
+    "procedencia": {
+      "anio": 2026,
+      "fuente_id": "afdc-ethanol-doe",
+      "fuente": "Alternative Fuels Data Center: Ethanol Production (Dry Mill & Sugarcane Fermentation)",
+      "url": "https://afdc.energy.gov/fuels/ethanol-production",
+      "fecha_descarga": "2026-11-26",
+      "hash": "sha256:ca1aaedc23f4f8346503693ec5f40e36132a9476c51434d6536ffd7ff6a2eaf0",
+      "cita_ubicacion": "afdc.energy.gov/fuels/ethanol-production",
+      "confianza": "alta"
+    }
+  },
+  {
+    "paso_id": "bm-p5-burlanda-despacho",
+    "proceso_id": "bioetanol-maiz-molienda-seca",
+    "orden": 5,
+    "nombre": "Centrifugado de burlanda (WDGS/DDGS) y despacho",
+    "tipo_paso": "producto",
+    "reaccion_balanceada": null,
+    "temperatura_c": "25-90",
+    "presion_bar": "1,0",
+    "reactivos": [
+      {
+        "especie": "Bioetanol anhidro + vinaza entera",
+        "cantidad": 1.97,
+        "unidad": "t/t etanol"
+      }
+    ],
+    "productos": [
+      {
+        "especie": "Bioetanol anhidro para corte obligatorio en naftas",
+        "cantidad": 1,
+        "unidad": "t/t etanol"
+      },
+      {
+        "especie": "Burlanda proteica (WDGS/DDGS) para feedlots",
+        "cantidad": 0.97,
+        "unidad": "t/t etanol"
+      }
+    ],
+    "insumos": [],
+    "subproductos": [],
+    "energia": {
+      "estado": "sin_datos",
+      "valor": null,
+      "unidad": "MJ/L etanol",
+      "procedencia": {
+        "anio": 2026,
+        "fuente_id": "bio4-web-2026",
+        "fuente": "Portal oficial Bio4 Argentina (Bioetanol Río Cuarto S.A.)",
+        "url": "https://bio4.com.ar/",
+        "fecha_descarga": "2026-11-26",
+        "hash": "sha256:f7d9e9b758e86cdd4a8ae2e9e04f533a1368feca92a5bce3218bc669b6a524b7",
+        "cita_ubicacion": "bio4.com.ar y acabio.com.ar",
+        "confianza": "alta"
+      }
+    },
+    "descripcion": "Despacho de bioetanol hacia destilerías petroleras y valorización integral de la proteína y fibra del maíz como alimento ganadero.",
+    "pos_x": 1300,
+    "pos_y": 150,
+    "procedencia": {
+      "anio": 2020,
+      "fuente_id": "se-bioetanol-total-csv",
+      "fuente": "Bioetanol: producción y ventas (total país, desagregado por maíz y caña de azúcar)",
+      "url": "https://datos.energia.gob.ar/dataset/5ce77ad1-c729-42cd-a8b5-2407de005e5b/resource/e5478cfe-b3ff-4fc7-a564-18cbe4752ad4/download/bioetanol-produccin-y-ventas-total-pas-.csv",
+      "fecha_descarga": "2026-11-26",
+      "hash": "sha256:83cd1c183ede6f2e065743ce18adfe1554b0141c64a5804b0e116f988abd6adc",
+      "cita_ubicacion": "Secretaría de Energía: bioetanol de maíz 423.575 m3 (2020) y 553.829 m3 (2019)",
+      "confianza": "alta"
+    }
+  },
+  {
+    "paso_id": "bc-p1-trapiche-cana",
+    "proceso_id": "bioetanol-cana-fermentacion",
+    "orden": 1,
+    "nombre": "Recepción, picado y molienda en trapiche",
+    "tipo_paso": "materia_prima",
+    "reaccion_balanceada": null,
+    "temperatura_c": "25-35",
+    "presion_bar": "1,0",
+    "reactivos": [
+      {
+        "especie": "Caña de azúcar cosechada (Tucumán)",
+        "cantidad": 14.5,
+        "unidad": "t caña/t etanol eq"
+      }
+    ],
+    "productos": [
+      {
+        "especie": "Jugo mixto de sacarosa (13-15% Brix)",
+        "cantidad": 10.4,
+        "unidad": "t/t etanol eq"
+      }
+    ],
+    "insumos": [
+      {
+        "especie": "Agua de imbibición",
+        "cantidad": null,
+        "unidad": "servicio"
+      }
+    ],
+    "subproductos": [
+      {
+        "especie": "Bagazo fibroso a caldera de cogeneración",
+        "cantidad": 4.1,
+        "unidad": "t/t etanol eq"
+      }
+    ],
+    "energia": {
+      "estado": "sin_datos",
+      "valor": null,
+      "unidad": "MJ/L etanol",
+      "procedencia": {
+        "anio": 2026,
+        "fuente_id": "caa-web-2026",
+        "fuente": "Centro Azucarero Argentino (CAA): actividad sucroalcoholera y bioetanol de caña",
+        "url": "https://centroazucarero.com.ar/",
+        "fecha_descarga": "2026-11-26",
+        "hash": "sha256:54ab9f6bc96dd294e57a929811b13d7f2e204facedf9e02bc6911fb14b60e35a",
+        "cita_ubicacion": "Centro Azucarero Argentino",
+        "confianza": "alta"
+      }
+    },
+    "descripcion": "Tandem de molinos que extrae el jugo rico en sacarosa y separa el bagazo para generar vapor y energía eléctrica renovable.",
+    "pos_x": 20,
+    "pos_y": 150,
+    "procedencia": {
+      "anio": 2026,
+      "fuente_id": "caa-web-2026",
+      "fuente": "Centro Azucarero Argentino (CAA): actividad sucroalcoholera y bioetanol de caña",
+      "url": "https://centroazucarero.com.ar/",
+      "fecha_descarga": "2026-11-26",
+      "hash": "sha256:54ab9f6bc96dd294e57a929811b13d7f2e204facedf9e02bc6911fb14b60e35a",
+      "cita_ubicacion": "centroazucarero.com.ar",
+      "confianza": "alta"
+    }
+  },
+  {
+    "paso_id": "bc-p2-clarificacion-evaporacion",
+    "proceso_id": "bioetanol-cana-fermentacion",
+    "orden": 2,
+    "nombre": "Clarificación, evaporación y cristalización de azúcar",
+    "tipo_paso": "separacion",
+    "reaccion_balanceada": null,
+    "temperatura_c": "65-105",
+    "presion_bar": "0,2-1,5",
+    "reactivos": [
+      {
+        "especie": "Jugo mixto de caña",
+        "cantidad": 10.4,
+        "unidad": "t/t etanol eq"
+      }
+    ],
+    "productos": [
+      {
+        "especie": "Melaza y jugo clarificado hacia destilería",
+        "cantidad": 3.4,
+        "unidad": "t/t etanol eq"
+      },
+      {
+        "especie": "Azúcar de caña cristalizado (HS 1701.99)",
+        "cantidad": null,
+        "unidad": "coproducto flexible"
+      }
+    ],
+    "insumos": [
+      {
+        "especie": "Lechada de cal Ca(OH)2 y vapor de caldera",
+        "cantidad": null,
+        "unidad": "servicio"
+      }
+    ],
+    "subproductos": [
+      {
+        "especie": "Cachaza orgánica (enmienda agrícola)",
+        "cantidad": 0.45,
+        "unidad": "t/t etanol eq"
+      }
+    ],
+    "energia": {
+      "estado": "sin_datos",
+      "valor": null,
+      "unidad": "MJ/L etanol",
+      "procedencia": {
+        "anio": 2026,
+        "fuente_id": "caa-web-2026",
+        "fuente": "Centro Azucarero Argentino (CAA): actividad sucroalcoholera y bioetanol de caña",
+        "url": "https://centroazucarero.com.ar/",
+        "fecha_descarga": "2026-11-26",
+        "hash": "sha256:54ab9f6bc96dd294e57a929811b13d7f2e204facedf9e02bc6911fb14b60e35a",
+        "cita_ubicacion": "Centro Azucarero Argentino",
+        "confianza": "alta"
+      }
+    },
+    "descripcion": "El ingenio regula el mix flexible entre azúcar cristalizado y melaza/jugo directo destinado a la destilería de bioetanol.",
+    "pos_x": 340,
+    "pos_y": 150,
+    "procedencia": {
+      "anio": 2026,
+      "fuente_id": "caa-web-2026",
+      "fuente": "Centro Azucarero Argentino (CAA): actividad sucroalcoholera y bioetanol de caña",
+      "url": "https://centroazucarero.com.ar/",
+      "fecha_descarga": "2026-11-26",
+      "hash": "sha256:54ab9f6bc96dd294e57a929811b13d7f2e204facedf9e02bc6911fb14b60e35a",
+      "cita_ubicacion": "centroazucarero.com.ar",
+      "confianza": "alta"
+    }
+  },
+  {
+    "paso_id": "bc-p3-fermentacion-sacarosa",
+    "proceso_id": "bioetanol-cana-fermentacion",
+    "orden": 3,
+    "nombre": "Fermentación continua de melaza y jugo",
+    "tipo_paso": "reaccion",
+    "reaccion_balanceada": "C12H22O11 + H2O -> 4 C2H5OH + 4 CO2",
+    "temperatura_c": "32-35",
+    "presion_bar": "1,0",
+    "reactivos": [
+      {
+        "especie": "Sacarosa y azúcares reductores en mosto",
+        "cantidad": 1.95,
+        "unidad": "t sacarosa eq/t etanol"
+      }
+    ],
+    "productos": [
+      {
+        "especie": "Vino fermentado (8-10% v/v etanol)",
+        "cantidad": 1,
+        "unidad": "t etanol eq/t"
+      }
+    ],
+    "insumos": [
+      {
+        "especie": "Levadura reciclada por centrifugación",
+        "cantidad": null,
+        "unidad": "reciclo biológico"
+      }
+    ],
+    "subproductos": [
+      {
+        "especie": "CO2 biogénico de fermentación",
+        "cantidad": 0.95,
+        "unidad": "t/t etanol"
+      }
+    ],
+    "energia": {
+      "estado": "sin_datos",
+      "valor": null,
+      "unidad": "MJ/L etanol",
+      "procedencia": {
+        "anio": 2026,
+        "fuente_id": "afdc-ethanol-doe",
+        "fuente": "Alternative Fuels Data Center: Ethanol Production (Dry Mill & Sugarcane Fermentation)",
+        "url": "https://afdc.energy.gov/fuels/ethanol-production",
+        "fecha_descarga": "2026-11-26",
+        "hash": "sha256:ca1aaedc23f4f8346503693ec5f40e36132a9476c51434d6536ffd7ff6a2eaf0",
+        "cita_ubicacion": "US DOE AFDC sugarcane fermentation",
+        "confianza": "alta"
+      }
+    },
+    "descripcion": "Conversión rápida (8-12 h) de sacarosa a etanol sin necesidad de hidrólisis previa de almidón, con reciclo de crema de levaduras.",
+    "pos_x": 660,
+    "pos_y": 150,
+    "procedencia": {
+      "anio": 2026,
+      "fuente_id": "afdc-ethanol-doe",
+      "fuente": "Alternative Fuels Data Center: Ethanol Production (Dry Mill & Sugarcane Fermentation)",
+      "url": "https://afdc.energy.gov/fuels/ethanol-production",
+      "fecha_descarga": "2026-11-26",
+      "hash": "sha256:ca1aaedc23f4f8346503693ec5f40e36132a9476c51434d6536ffd7ff6a2eaf0",
+      "cita_ubicacion": "afdc.energy.gov/fuels/ethanol-production",
+      "confianza": "alta"
+    }
+  },
+  {
+    "paso_id": "bc-p4-destilacion-deshidratacion",
+    "proceso_id": "bioetanol-cana-fermentacion",
+    "orden": 4,
+    "nombre": "Destilación y deshidratación a bioetanol anhidro",
+    "tipo_paso": "separacion",
+    "reaccion_balanceada": null,
+    "temperatura_c": "78-112",
+    "presion_bar": "1,0-3,5",
+    "reactivos": [
+      {
+        "especie": "Vino fermentado",
+        "cantidad": 1,
+        "unidad": "t etanol eq/t"
+      }
+    ],
+    "productos": [
+      {
+        "especie": "Bioetanol anhidro de caña (>99,5% v/v)",
+        "cantidad": 1,
+        "unidad": "t/t etanol"
+      }
+    ],
+    "insumos": [
+      {
+        "especie": "Vapor de baja presión desde cogeneración",
+        "cantidad": null,
+        "unidad": "servicio térmico"
+      }
+    ],
+    "subproductos": [
+      {
+        "especie": "Vinaza tratada (fertirriego controlado / biogás)",
+        "cantidad": null,
+        "unidad": "m3/m3 etanol"
+      }
+    ],
+    "energia": {
+      "estado": "sin_datos",
+      "valor": null,
+      "unidad": "MJ/L etanol",
+      "procedencia": {
+        "anio": 2026,
+        "fuente_id": "caa-web-2026",
+        "fuente": "Centro Azucarero Argentino (CAA): actividad sucroalcoholera y bioetanol de caña",
+        "url": "https://centroazucarero.com.ar/",
+        "fecha_descarga": "2026-11-26",
+        "hash": "sha256:54ab9f6bc96dd294e57a929811b13d7f2e204facedf9e02bc6911fb14b60e35a",
+        "cita_ubicacion": "Centro Azucarero Argentino: 16 destilerías y 12 deshidratadoras",
+        "confianza": "alta"
+      }
+    },
+    "descripcion": "Columnas destiladoras-rectificadoras y tamices moleculares que producen etanol anhidro con baja huella de carbono gracias al vapor de bagazo.",
+    "pos_x": 980,
+    "pos_y": 150,
+    "procedencia": {
+      "anio": 2026,
+      "fuente_id": "caa-web-2026",
+      "fuente": "Centro Azucarero Argentino (CAA): actividad sucroalcoholera y bioetanol de caña",
+      "url": "https://centroazucarero.com.ar/",
+      "fecha_descarga": "2026-11-26",
+      "hash": "sha256:54ab9f6bc96dd294e57a929811b13d7f2e204facedf9e02bc6911fb14b60e35a",
+      "cita_ubicacion": "centroazucarero.com.ar",
+      "confianza": "alta"
+    }
+  },
+  {
+    "paso_id": "bc-p5-cogeneracion-despacho",
+    "proceso_id": "bioetanol-cana-fermentacion",
+    "orden": 5,
+    "nombre": "Cogeneración con bagazo y despacho sucroalcoholero",
+    "tipo_paso": "producto",
+    "reaccion_balanceada": null,
+    "temperatura_c": "25-480",
+    "presion_bar": "1,0-45",
+    "reactivos": [
+      {
+        "especie": "Bioetanol anhidro de caña",
+        "cantidad": 1,
+        "unidad": "t/t etanol"
+      },
+      {
+        "especie": "Bagazo seco en caldera",
+        "cantidad": 4.1,
+        "unidad": "t/t etanol eq"
+      }
+    ],
+    "productos": [
+      {
+        "especie": "Bioetanol anhidro para mezcla en naftas (HS 2207.10)",
+        "cantidad": 1,
+        "unidad": "t/t etanol"
+      },
+      {
+        "especie": "Azúcar de caña y electricidad renovable",
+        "cantidad": null,
+        "unidad": "coproducto"
+      }
+    ],
+    "insumos": [],
+    "subproductos": [],
+    "energia": {
+      "estado": "sin_datos",
+      "valor": null,
+      "unidad": "MJ/L etanol",
+      "procedencia": {
+        "anio": 2020,
+        "fuente_id": "se-bioetanol-total-csv",
+        "fuente": "Bioetanol: producción y ventas (total país, desagregado por maíz y caña de azúcar)",
+        "url": "https://datos.energia.gob.ar/dataset/5ce77ad1-c729-42cd-a8b5-2407de005e5b/resource/e5478cfe-b3ff-4fc7-a564-18cbe4752ad4/download/bioetanol-produccin-y-ventas-total-pas-.csv",
+        "fecha_descarga": "2026-11-26",
+        "hash": "sha256:83cd1c183ede6f2e065743ce18adfe1554b0141c64a5804b0e116f988abd6adc",
+        "cita_ubicacion": "Secretaría de Energía: bioetanol de caña 385.150 m3 (2020) y 519.667 m3 (2019)",
+        "confianza": "alta"
+      }
+    },
+    "descripcion": "El bagazo cubre la demanda térmica del ingenio y la destilería, despachando bioetanol anhidro y azúcar refinada desde Tucumán.",
+    "pos_x": 1300,
+    "pos_y": 150,
+    "procedencia": {
+      "anio": 2020,
+      "fuente_id": "se-bioetanol-total-csv",
+      "fuente": "Bioetanol: producción y ventas (total país, desagregado por maíz y caña de azúcar)",
+      "url": "https://datos.energia.gob.ar/dataset/5ce77ad1-c729-42cd-a8b5-2407de005e5b/resource/e5478cfe-b3ff-4fc7-a564-18cbe4752ad4/download/bioetanol-produccin-y-ventas-total-pas-.csv",
+      "fecha_descarga": "2026-11-26",
+      "hash": "sha256:83cd1c183ede6f2e065743ce18adfe1554b0141c64a5804b0e116f988abd6adc",
+      "cita_ubicacion": "bioetanol-produccin-y-ventas-total-pas-.csv",
+      "confianza": "alta"
+    }
   }
 ]

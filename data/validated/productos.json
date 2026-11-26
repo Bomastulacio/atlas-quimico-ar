@@ -68,5 +68,45 @@
     "descripcion_corta": "Ésteres metílicos de ácidos grasos (FAME) obtenidos por transesterificación alcalina de aceite de soja con metanol en San Lorenzo y Gran Rosario.",
     "mdx_slug": "biodiesel",
     "estado_mvp": "validado"
+  },
+  {
+    "producto_id": "metanol",
+    "nombre": "Metanol",
+    "categoria": "petroquimica",
+    "formula_quimica": "CH3OH",
+    "icono_id": "metanol-sintesis",
+    "descripcion_corta": "Síntesis catalítica de metanol grado químico desde gas natural neuquino en Plaza Huincul (insumo clave para biodiésel, resinas y formaldehído).",
+    "mdx_slug": "metanol",
+    "estado_mvp": "validado"
+  },
+  {
+    "producto_id": "polipropileno",
+    "nombre": "Polipropileno",
+    "categoria": "petroquimica",
+    "formula_quimica": "(C3H6)n",
+    "icono_id": "polipropileno-pellet",
+    "descripcion_corta": "Polimerización catalítica de propileno proveniente de refinación FCC en el Polo Industrial de Luján de Cuyo (Mendoza).",
+    "mdx_slug": "polipropileno",
+    "estado_mvp": "validado"
+  },
+  {
+    "producto_id": "bioetanol-maiz",
+    "nombre": "Bioetanol de maíz",
+    "categoria": "bioenergia",
+    "formula_quimica": "C2H5OH",
+    "icono_id": "bioetanol-maiz",
+    "descripcion_corta": "Biorrefinerías de molienda seca de maíz en Córdoba: hidrólisis enzimática, fermentación, deshidratación con tamices moleculares y burlanda DDGS.",
+    "mdx_slug": "bioetanol-maiz",
+    "estado_mvp": "validado"
+  },
+  {
+    "producto_id": "bioetanol-cana",
+    "nombre": "Bioetanol y azúcar de caña",
+    "categoria": "bioenergia",
+    "formula_quimica": "C2H5OH / C12H22O11",
+    "icono_id": "bioetanol-cana",
+    "descripcion_corta": "Complejos sucroalcoholeros de Tucumán: trapiche, cristalización de azúcar, fermentación de melazas y jugo a etanol anhidro con cogeneración desde bagazo.",
+    "mdx_slug": "bioetanol-cana",
+    "estado_mvp": "validado"
   }
 ]

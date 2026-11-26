@@ -6971,5 +6971,2379 @@
         "fuente_id": "unipar-acerca-2026"
       }
     ]
+  },
+  {
+    "proceso_id": "metanol-reformado-sintesis",
+    "producto_id": "metanol",
+    "titulo": "PFD: Reformado con Vapor de Gas Natural (SMR) y Síntesis Catalítica de Metanol (CH3OH)",
+    "norma_simbologia": "ISO 10628 / ASME",
+    "base_calculo": "1,00 t de metanol grado AA (31,21 kmol CH3OH) · Complejo Plaza Huincul (Neuquén)",
+    "resumen_tecnico": "Desulfuración de gas natural neuquino, reformado con vapor a 850 °C, recuperación térmica en caldera de vapor, compresión del syngas a 65 bar, lazo catalítico Cu/ZnO con reciclo cerrado y tren de destilación de dos columnas (topping + refino grado AA).",
+    "nota_metodologica": "Estequiometría de reformado/síntesis y factor de CO2 verificados desde IPCC 2006 Vol. 3 Cap. 3.9 Table 3.12 (0,67 t CO2/t CH3OH) y EU LVOC BREF. Caudales de purga y vapor propietarios declarados s/d.",
+    "canvas_width": 1880,
+    "canvas_height": 760,
+    "secciones": [
+      {
+        "area_id": "area-100",
+        "titulo": "Área 100 · Desulfuración y SMR",
+        "x": 224,
+        "y": 40,
+        "width": 352,
+        "height": 665
+      },
+      {
+        "area_id": "area-200",
+        "titulo": "Área 200 · Recuperación y compresión",
+        "x": 594,
+        "y": 40,
+        "width": 338,
+        "height": 665
+      },
+      {
+        "area_id": "area-300",
+        "titulo": "Área 300 · Lazo de síntesis CH3OH",
+        "x": 950,
+        "y": 40,
+        "width": 356,
+        "height": 665
+      },
+      {
+        "area_id": "area-400",
+        "titulo": "Área 400 · Destilación grado AA",
+        "x": 1324,
+        "y": 40,
+        "width": 332,
+        "height": 665
+      }
+    ],
+    "equipos": [
+      {
+        "tag": "D-101",
+        "nombre": "Desulfurador ZnO",
+        "simbolo": "dryer_bed",
+        "area_id": "area-100",
+        "x": 300,
+        "y": 245,
+        "temperatura_op": "360 °C",
+        "presion_op": "32 bar",
+        "reaccion": null,
+        "condicion_critica": "H2S < 0,1 ppm",
+        "descripcion": "Lecho fijo de óxido de zinc que protege los catalizadores de reformado y síntesis.",
+        "fuente_id": "ipcc-2006-v3-ch3-amoniaco-urea",
+        "cita_ubicacion": "IPCC Cap. 3.9 Methanol"
+      },
+      {
+        "tag": "F-101",
+        "nombre": "Reformador con vapor SMR",
+        "simbolo": "furnace",
+        "area_id": "area-100",
+        "x": 485,
+        "y": 245,
+        "temperatura_op": "850 °C",
+        "presion_op": "22 bar",
+        "reaccion": "CH4 + H2O -> CO + 3 H2",
+        "condicion_critica": "TC 850 °C",
+        "descripcion": "Horno tubular con catalizador de níquel donde el metano se transforma en gas de síntesis.",
+        "fuente_id": "ipcc-2006-v3-ch3-amoniaco-urea",
+        "cita_ubicacion": "IPCC 2006 Vol. 3 Cap. 3.9 Table 3.12"
+      },
+      {
+        "tag": "E-201",
+        "nombre": "Caldera WHB y enfriador",
+        "simbolo": "heat_exchanger",
+        "area_id": "area-200",
+        "x": 685,
+        "y": 245,
+        "temperatura_op": "850 -> 45 °C",
+        "presion_op": "21 bar",
+        "reaccion": null,
+        "condicion_critica": "Vapor HP",
+        "descripcion": "Recupera entalpía del gas reformado generando vapor de alta presión para compresores.",
+        "fuente_id": "eu-bref-lvoc-2017",
+        "cita_ubicacion": "EU LVOC BREF heat recovery"
+      },
+      {
+        "tag": "K-201",
+        "nombre": "Compresor de syngas",
+        "simbolo": "compressor",
+        "area_id": "area-200",
+        "x": 855,
+        "y": 245,
+        "temperatura_op": "45 -> 115 °C",
+        "presion_op": "65 bar",
+        "reaccion": null,
+        "condicion_critica": "PC 65 bar",
+        "descripcion": "Compresor centrífugo multietapa que eleva el syngas seco a la presión del lazo de síntesis.",
+        "fuente_id": "eu-bref-lvoc-2017",
+        "cita_ubicacion": "EU LVOC BREF syngas compression"
+      },
+      {
+        "tag": "R-301",
+        "nombre": "Reactor síntesis Cu/ZnO",
+        "simbolo": "reactor",
+        "area_id": "area-300",
+        "x": 1045,
+        "y": 245,
+        "temperatura_op": "250 °C",
+        "presion_op": "65 bar",
+        "reaccion": "CO + 2 H2 -> CH3OH",
+        "condicion_critica": "TC 250 °C",
+        "descripcion": "Convertidor isotérmico refrigerado por agua hirviendo sobre catalizador Cu/ZnO/Al2O3.",
+        "fuente_id": "ipcc-2006-v3-ch3-amoniaco-urea",
+        "cita_ubicacion": "IPCC Cap. 3.9 Methanol"
+      },
+      {
+        "tag": "V-301",
+        "nombre": "Separador de metanol crudo",
+        "simbolo": "separator",
+        "area_id": "area-300",
+        "x": 1220,
+        "y": 245,
+        "temperatura_op": "40 °C",
+        "presion_op": "62 bar",
+        "reaccion": null,
+        "condicion_critica": "Reciclo gas",
+        "descripcion": "Separa metanol líquido crudo del gas de síntesis no reaccionado que vuelve al lazo.",
+        "fuente_id": "eu-bref-lvoc-2017",
+        "cita_ubicacion": "EU LVOC BREF methanol loop"
+      },
+      {
+        "tag": "T-401",
+        "nombre": "Columna Topping (livianos)",
+        "simbolo": "column",
+        "area_id": "area-400",
+        "x": 1405,
+        "y": 245,
+        "temperatura_op": "75 °C",
+        "presion_op": "1,6 bar",
+        "reaccion": null,
+        "condicion_critica": "Livianos top",
+        "descripcion": "Remueve gases disueltos y éter dimetílico antes de la rectificación final.",
+        "fuente_id": "eu-bref-lvoc-2017",
+        "cita_ubicacion": "EU LVOC BREF methanol distillation"
+      },
+      {
+        "tag": "T-402",
+        "nombre": "Columna de refino AA",
+        "simbolo": "column",
+        "area_id": "area-400",
+        "x": 1575,
+        "y": 245,
+        "temperatura_op": "65-105 °C",
+        "presion_op": "1,2 bar",
+        "reaccion": null,
+        "condicion_critica": ">99,85% AA",
+        "descripcion": "Destila metanol anhidro grado químico AA por cabeza y agua de proceso por fondos.",
+        "fuente_id": "ypf-inversores-2026",
+        "cita_ubicacion": "Complejo Plaza Huincul"
+      }
+    ],
+    "corrientes": [
+      {
+        "numero": 1,
+        "nombre": "Gas natural alimentación",
+        "tipo": "proceso",
+        "origen_tag": null,
+        "destino_tag": "D-101",
+        "puntos": [
+          [
+            208,
+            245
+          ],
+          [
+            268,
+            245
+          ]
+        ],
+        "flag_pos": [
+          236,
+          245
+        ],
+        "especies": "CH4 (>92% mol)",
+        "fase": "Gas",
+        "temperatura_c": "25",
+        "presion_bar": "32",
+        "flujo_especifico": {
+          "estado": "dato",
+          "valor": 0.56,
+          "unidad": "t/t CH3OH"
+        },
+        "nota_tecnica": "Gas natural de cuenca Neuquina.",
+        "fuente_id": "ipcc-2006-v3-ch3-amoniaco-urea",
+        "cita_ubicacion": "IPCC Cap. 3.9"
+      },
+      {
+        "numero": 2,
+        "nombre": "Gas natural desulfurado",
+        "tipo": "proceso",
+        "origen_tag": "D-101",
+        "destino_tag": "F-101",
+        "puntos": [
+          [
+            332,
+            245
+          ],
+          [
+            445,
+            245
+          ]
+        ],
+        "flag_pos": [
+          388,
+          245
+        ],
+        "especies": "CH4 + vapor",
+        "fase": "Gas",
+        "temperatura_c": "360",
+        "presion_bar": "31",
+        "flujo_especifico": {
+          "estado": "dato",
+          "valor": 0.56,
+          "unidad": "t/t CH3OH"
+        },
+        "nota_tecnica": "Mezclado con vapor de proceso H2O/C ~3:1.",
+        "fuente_id": "ipcc-2006-v3-ch3-amoniaco-urea",
+        "cita_ubicacion": "IPCC Cap. 3.9"
+      },
+      {
+        "numero": 3,
+        "nombre": "Syngas reformado caliente",
+        "tipo": "proceso",
+        "origen_tag": "F-101",
+        "destino_tag": "E-201",
+        "puntos": [
+          [
+            525,
+            245
+          ],
+          [
+            645,
+            245
+          ]
+        ],
+        "flag_pos": [
+          585,
+          245
+        ],
+        "especies": "CO, H2, CO2, H2O",
+        "fase": "Gas",
+        "temperatura_c": "850",
+        "presion_bar": "22",
+        "flujo_especifico": {
+          "estado": "dato",
+          "valor": 1.18,
+          "unidad": "t/t CH3OH"
+        },
+        "nota_tecnica": "Gas de síntesis saliendo de tubos catalíticos.",
+        "fuente_id": "ipcc-2006-v3-ch3-amoniaco-urea",
+        "cita_ubicacion": "IPCC Cap. 3.9"
+      },
+      {
+        "numero": 4,
+        "nombre": "Syngas frío a compresión",
+        "tipo": "proceso",
+        "origen_tag": "E-201",
+        "destino_tag": "K-201",
+        "puntos": [
+          [
+            725,
+            245
+          ],
+          [
+            815,
+            245
+          ]
+        ],
+        "flag_pos": [
+          770,
+          245
+        ],
+        "especies": "CO + H2 + CO2",
+        "fase": "Gas",
+        "temperatura_c": "45",
+        "presion_bar": "21",
+        "flujo_especifico": {
+          "estado": "dato",
+          "valor": 1.08,
+          "unidad": "t/t CH3OH"
+        },
+        "nota_tecnica": "Tras condensar agua de proceso.",
+        "fuente_id": "eu-bref-lvoc-2017",
+        "cita_ubicacion": "EU LVOC BREF"
+      },
+      {
+        "numero": 5,
+        "nombre": "Syngas comprimido (65 bar)",
+        "tipo": "proceso",
+        "origen_tag": "K-201",
+        "destino_tag": "R-301",
+        "puntos": [
+          [
+            895,
+            245
+          ],
+          [
+            1005,
+            245
+          ]
+        ],
+        "flag_pos": [
+          950,
+          245
+        ],
+        "especies": "CO + 2 H2",
+        "fase": "Gas",
+        "temperatura_c": "115",
+        "presion_bar": "65",
+        "flujo_especifico": {
+          "estado": "dato",
+          "valor": 1.08,
+          "unidad": "t/t CH3OH"
+        },
+        "nota_tecnica": "Carga hacia convertidor catalítico.",
+        "fuente_id": "eu-bref-lvoc-2017",
+        "cita_ubicacion": "EU LVOC BREF"
+      },
+      {
+        "numero": 6,
+        "nombre": "Efluente reactor metanol",
+        "tipo": "proceso",
+        "origen_tag": "R-301",
+        "destino_tag": "V-301",
+        "puntos": [
+          [
+            1085,
+            245
+          ],
+          [
+            1185,
+            245
+          ]
+        ],
+        "flag_pos": [
+          1135,
+          245
+        ],
+        "especies": "CH3OH, H2O, syngas",
+        "fase": "Bifásico",
+        "temperatura_c": "40",
+        "presion_bar": "62",
+        "flujo_especifico": {
+          "estado": "sin_datos",
+          "valor": null,
+          "unidad": "t/t CH3OH"
+        },
+        "nota_tecnica": "Enfriado antes del separador flash.",
+        "fuente_id": "eu-bref-lvoc-2017",
+        "cita_ubicacion": "EU LVOC BREF"
+      },
+      {
+        "numero": 7,
+        "nombre": "Reciclo de syngas no convertido",
+        "tipo": "reciclo",
+        "origen_tag": "V-301",
+        "destino_tag": "K-201",
+        "puntos": [
+          [
+            1220,
+            315
+          ],
+          [
+            1220,
+            560
+          ],
+          [
+            855,
+            560
+          ],
+          [
+            855,
+            315
+          ]
+        ],
+        "flag_pos": [
+          1040,
+          560
+        ],
+        "especies": "H2 + CO + CO2",
+        "fase": "Gas",
+        "temperatura_c": "40",
+        "presion_bar": "61",
+        "flujo_especifico": {
+          "estado": "sin_datos",
+          "valor": null,
+          "unidad": "t/t CH3OH"
+        },
+        "nota_tecnica": "Lazo de reciclo para elevar conversión global >95%.",
+        "fuente_id": "eu-bref-lvoc-2017",
+        "cita_ubicacion": "EU LVOC BREF"
+      },
+      {
+        "numero": 8,
+        "nombre": "Metanol crudo a topping",
+        "tipo": "proceso",
+        "origen_tag": "V-301",
+        "destino_tag": "T-401",
+        "puntos": [
+          [
+            1255,
+            245
+          ],
+          [
+            1375,
+            245
+          ]
+        ],
+        "flag_pos": [
+          1315,
+          245
+        ],
+        "especies": "CH3OH (~82%) + H2O",
+        "fase": "Líquido",
+        "temperatura_c": "45",
+        "presion_bar": "4",
+        "flujo_especifico": {
+          "estado": "dato",
+          "valor": 1.04,
+          "unidad": "t/t CH3OH"
+        },
+        "nota_tecnica": "Corriente despresurizada a destilación.",
+        "fuente_id": "ipcc-2006-v3-ch3-amoniaco-urea",
+        "cita_ubicacion": "IPCC Cap. 3.9"
+      },
+      {
+        "numero": 9,
+        "nombre": "Metanol desgasificado a refino",
+        "tipo": "proceso",
+        "origen_tag": "T-401",
+        "destino_tag": "T-402",
+        "puntos": [
+          [
+            1435,
+            245
+          ],
+          [
+            1545,
+            245
+          ]
+        ],
+        "flag_pos": [
+          1490,
+          245
+        ],
+        "especies": "CH3OH + H2O",
+        "fase": "Líquido",
+        "temperatura_c": "75",
+        "presion_bar": "1,6",
+        "flujo_especifico": {
+          "estado": "dato",
+          "valor": 1.03,
+          "unidad": "t/t CH3OH"
+        },
+        "nota_tecnica": "Fondos de topping libres de gases livianos.",
+        "fuente_id": "eu-bref-lvoc-2017",
+        "cita_ubicacion": "EU LVOC BREF"
+      },
+      {
+        "numero": 10,
+        "nombre": "Metanol grado AA producto",
+        "tipo": "proceso",
+        "origen_tag": "T-402",
+        "destino_tag": null,
+        "puntos": [
+          [
+            1605,
+            245
+          ],
+          [
+            1672,
+            245
+          ]
+        ],
+        "flag_pos": [
+          1640,
+          245
+        ],
+        "especies": "CH3OH (>=99,85%)",
+        "fase": "Líquido",
+        "temperatura_c": "40",
+        "presion_bar": "1,2",
+        "flujo_especifico": {
+          "estado": "dato",
+          "valor": 1,
+          "unidad": "t/t CH3OH"
+        },
+        "nota_tecnica": "Producto comercial HS 2905.11 (31,21 kmol/t).",
+        "fuente_id": "uncomtrade-ar-lote3-2024",
+        "cita_ubicacion": "UN Comtrade HS 290511"
+      },
+      {
+        "numero": 11,
+        "nombre": "Emisión CO2 de reformador",
+        "tipo": "emision",
+        "origen_tag": "F-101",
+        "destino_tag": null,
+        "puntos": [
+          [
+            485,
+            175
+          ],
+          [
+            485,
+            110
+          ],
+          [
+            560,
+            110
+          ]
+        ],
+        "flag_pos": [
+          525,
+          110
+        ],
+        "especies": "CO2 + N2 + H2O",
+        "fase": "Gas",
+        "temperatura_c": "180",
+        "presion_bar": "1,0",
+        "flujo_especifico": {
+          "estado": "dato",
+          "valor": 0.67,
+          "unidad": "t CO2/t CH3OH"
+        },
+        "nota_tecnica": "Factor Tier 1 IPCC Table 3.12 para SMR convencional.",
+        "fuente_id": "ipcc-2006-v3-ch3-amoniaco-urea",
+        "cita_ubicacion": "IPCC 2006 Vol. 3 Table 3.12"
+      }
+    ],
+    "servicios": [
+      {
+        "id": "u-met-1",
+        "equipo_tag": "F-101",
+        "etiqueta": "Vapor proceso (0,62 t/t)",
+        "direccion": "entrada",
+        "x": 445,
+        "y": 175,
+        "dx": 0,
+        "dy": -42
+      },
+      {
+        "id": "u-met-2",
+        "equipo_tag": "R-301",
+        "etiqueta": "Vapor MP recuperado",
+        "direccion": "salida",
+        "x": 1045,
+        "y": 175,
+        "dx": 0,
+        "dy": -42
+      }
+    ],
+    "limites_bateria": [
+      {
+        "id": "lb-met-in1",
+        "lado": "entrada",
+        "categoria": "materia_prima",
+        "nombre": "Gas natural Neuquén",
+        "formula": "CH4",
+        "cantidad_masa": "0,56 t/t CH3OH",
+        "cantidad_molar": "34,9 kmol/t",
+        "fraccion_pureza": ">92% mol CH4",
+        "corriente_num": 1,
+        "y": 95,
+        "nota": "Carga proceso hacia SMR (cuenca neuquina).",
+        "fuente_id": "ipcc-2006-v3-ch3-amoniaco-urea"
+      },
+      {
+        "id": "lb-met-in2",
+        "lado": "entrada",
+        "categoria": "servicio",
+        "nombre": "Vapor de proceso",
+        "formula": "H2O (v)",
+        "cantidad_masa": "0,62 t/t CH3OH",
+        "cantidad_molar": "34,4 kmol/t",
+        "fraccion_pureza": "Agua desmin.",
+        "corriente_num": null,
+        "y": 245,
+        "nota": "Relación vapor/carbono en reformado.",
+        "fuente_id": "eu-bref-lvoc-2017"
+      },
+      {
+        "id": "lb-met-out1",
+        "lado": "salida",
+        "categoria": "producto",
+        "nombre": "Metanol grado AA",
+        "formula": "CH3OH",
+        "cantidad_masa": "1,00 t/t CH3OH",
+        "cantidad_molar": "31,21 kmol/t",
+        "fraccion_pureza": ">=99,85% p/p",
+        "corriente_num": 10,
+        "y": 95,
+        "nota": "Insumo crítico para biodiésel, resinas y HS 2905.11.",
+        "fuente_id": "uncomtrade-ar-lote3-2024"
+      },
+      {
+        "id": "lb-met-out2",
+        "lado": "salida",
+        "categoria": "emision",
+        "nombre": "CO2 de proceso SMR",
+        "formula": "CO2",
+        "cantidad_masa": "0,67 t CO2/t",
+        "cantidad_molar": "15,22 kmol/t",
+        "fraccion_pureza": "Gases chimenea",
+        "corriente_num": 11,
+        "y": 245,
+        "nota": "Factor IPCC 2006 Table 3.12 (SMR convencional).",
+        "fuente_id": "ipcc-2006-v3-ch3-amoniaco-urea"
+      }
+    ]
+  },
+  {
+    "proceso_id": "polipropileno-fcc-polimerizacion",
+    "producto_id": "polipropileno",
+    "titulo": "PFD: Separación de Propileno FCC y Polimerización en Fase Gas a Polipropileno (C3H6)n",
+    "norma_simbologia": "ISO 10628 / ASME",
+    "base_calculo": "1,00 t de pellets de polipropileno (23,76 kmol C3H6 eq.) · Polo Luján de Cuyo (Mendoza)",
+    "resumen_tecnico": "Integración refinería-petroquímica de Luján de Cuyo: corte C3 de craqueo catalítico fluido (FCC), superfraccionamiento propileno/propano, purificación en tamices, polimerización catalítica Ziegler-Natta en fase gas con reciclo de monómero, desgasificación con N2 y extrusión a pellets.",
+    "nota_metodologica": "Topología de equipos y condiciones (T, P) verificadas desde EU JRC Polymers BREF (POL BREF) y fichas institucionales de Petrocuyo e YPF. Caudales internos propietarios declarados s/d.",
+    "canvas_width": 1880,
+    "canvas_height": 760,
+    "secciones": [
+      {
+        "area_id": "area-100",
+        "titulo": "Área 100 · FCC y Splitter C3",
+        "x": 224,
+        "y": 40,
+        "width": 352,
+        "height": 665
+      },
+      {
+        "area_id": "area-200",
+        "titulo": "Área 200 · Purificación de carga",
+        "x": 594,
+        "y": 40,
+        "width": 338,
+        "height": 665
+      },
+      {
+        "area_id": "area-300",
+        "titulo": "Área 300 · Polimerización fase gas",
+        "x": 950,
+        "y": 40,
+        "width": 356,
+        "height": 665
+      },
+      {
+        "area_id": "area-400",
+        "titulo": "Área 400 · Desgasificación y extrusión",
+        "x": 1324,
+        "y": 40,
+        "width": 332,
+        "height": 665
+      }
+    ],
+    "equipos": [
+      {
+        "tag": "R-101",
+        "nombre": "Unidad FCC (refinería)",
+        "simbolo": "reactor",
+        "area_id": "area-100",
+        "x": 300,
+        "y": 245,
+        "temperatura_op": "525 °C",
+        "presion_op": "2,2 bar",
+        "reaccion": "Craqueo gasoil -> C3",
+        "condicion_critica": "TC 525 °C",
+        "descripcion": "Craqueo catalítico fluido en refinería Luján de Cuyo que abastece la corriente C3.",
+        "fuente_id": "ypf-inversores-2026",
+        "cita_ubicacion": "Complejo Industrial Luján de Cuyo"
+      },
+      {
+        "tag": "T-101",
+        "nombre": "Splitter C3 (C3H6/C3H8)",
+        "simbolo": "column",
+        "area_id": "area-100",
+        "x": 485,
+        "y": 245,
+        "temperatura_op": "45 °C",
+        "presion_op": "20 bar",
+        "reaccion": null,
+        "condicion_critica": "C3H6 >99,5%",
+        "descripcion": "Superfraccionadora que separa propileno grado polímero por cabeza y propano por fondos.",
+        "fuente_id": "eu-bref-polymers",
+        "cita_ubicacion": "EU POL BREF monomer separation"
+      },
+      {
+        "tag": "D-201",
+        "nombre": "Lechos purificadores C3",
+        "simbolo": "dryer_bed",
+        "area_id": "area-200",
+        "x": 755,
+        "y": 245,
+        "temperatura_op": "35 °C",
+        "presion_op": "22 bar",
+        "reaccion": null,
+        "condicion_critica": "H2O/CO < 1 ppm",
+        "descripcion": "Tamices moleculares y catalizador de cobre para eliminar trazas venenosas del propileno.",
+        "fuente_id": "eu-bref-polymers",
+        "cita_ubicacion": "EU POL BREF monomer purification"
+      },
+      {
+        "tag": "R-301",
+        "nombre": "Reactor fase gas Z-N",
+        "simbolo": "reactor",
+        "area_id": "area-300",
+        "x": 1035,
+        "y": 245,
+        "temperatura_op": "75 °C",
+        "presion_op": "32 bar",
+        "reaccion": "n C3H6 -> -(C3H6)n-",
+        "condicion_critica": "TC 75 °C / 32 bar",
+        "descripcion": "Reactor de polimerización catalítica Ziegler-Natta refrigerado por condensación de propileno.",
+        "fuente_id": "eu-bref-polymers",
+        "cita_ubicacion": "EU POL BREF gas-phase PP"
+      },
+      {
+        "tag": "K-301",
+        "nombre": "Compresor reciclo C3H6",
+        "simbolo": "compressor",
+        "area_id": "area-300",
+        "x": 1215,
+        "y": 455,
+        "temperatura_op": "55 °C",
+        "presion_op": "34 bar",
+        "reaccion": null,
+        "condicion_critica": "Reciclo cerrado",
+        "descripcion": "Reintroduce el propileno recuperado de la desgasificación hacia el reactor.",
+        "fuente_id": "eu-bref-polymers",
+        "cita_ubicacion": "EU POL BREF monomer recovery"
+      },
+      {
+        "tag": "V-401",
+        "nombre": "Silo desgasificador N2",
+        "simbolo": "separator",
+        "area_id": "area-400",
+        "x": 1395,
+        "y": 245,
+        "temperatura_op": "75 °C",
+        "presion_op": "1,4 bar",
+        "reaccion": null,
+        "condicion_critica": "Stripping N2",
+        "descripcion": "Separa el monómero ocluido en el polvo de polipropileno y desactiva el catalizador.",
+        "fuente_id": "eu-bref-polymers",
+        "cita_ubicacion": "EU POL BREF degassing"
+      },
+      {
+        "tag": "EX-401",
+        "nombre": "Extrusora y peletizado",
+        "simbolo": "extruder",
+        "area_id": "area-400",
+        "x": 1570,
+        "y": 245,
+        "temperatura_op": "225 °C",
+        "presion_op": "1,0 bar",
+        "reaccion": null,
+        "condicion_critica": "HS 3902.10",
+        "descripcion": "Aditivación, homogeneización y corte bajo agua en pellets comerciales de PP.",
+        "fuente_id": "petrocuyo-web-2026",
+        "cita_ubicacion": "Petrocuyo Luján de Cuyo"
+      }
+    ],
+    "corrientes": [
+      {
+        "numero": 1,
+        "nombre": "Gasoil pesado a FCC",
+        "tipo": "proceso",
+        "origen_tag": null,
+        "destino_tag": "R-101",
+        "puntos": [
+          [
+            208,
+            245
+          ],
+          [
+            260,
+            245
+          ]
+        ],
+        "flag_pos": [
+          234,
+          245
+        ],
+        "especies": "VGO hidrocarburos",
+        "fase": "Líquido",
+        "temperatura_c": "350",
+        "presion_bar": "3",
+        "flujo_especifico": {
+          "estado": "sin_datos",
+          "valor": null,
+          "unidad": "t/t PP"
+        },
+        "nota_tecnica": "Carga de refinería a craqueo catalítico.",
+        "fuente_id": "ypf-inversores-2026",
+        "cita_ubicacion": "CILC Mendoza"
+      },
+      {
+        "numero": 2,
+        "nombre": "Corte C3 de refinería",
+        "tipo": "proceso",
+        "origen_tag": "R-101",
+        "destino_tag": "T-101",
+        "puntos": [
+          [
+            340,
+            245
+          ],
+          [
+            455,
+            245
+          ]
+        ],
+        "flag_pos": [
+          398,
+          245
+        ],
+        "especies": "C3H6 (~70%) + C3H8",
+        "fase": "Líquido",
+        "temperatura_c": "45",
+        "presion_bar": "20",
+        "flujo_especifico": {
+          "estado": "dato",
+          "valor": 1.45,
+          "unidad": "t/t PP"
+        },
+        "nota_tecnica": "Corriente mixta C3 hacia splitter.",
+        "fuente_id": "eu-bref-polymers",
+        "cita_ubicacion": "EU POL BREF"
+      },
+      {
+        "numero": 3,
+        "nombre": "Propano a GLP",
+        "tipo": "subproducto",
+        "origen_tag": "T-101",
+        "destino_tag": null,
+        "puntos": [
+          [
+            485,
+            315
+          ],
+          [
+            485,
+            460
+          ],
+          [
+            565,
+            460
+          ]
+        ],
+        "flag_pos": [
+          525,
+          460
+        ],
+        "especies": "C3H8 (propano)",
+        "fase": "Líquido",
+        "temperatura_c": "55",
+        "presion_bar": "20",
+        "flujo_especifico": {
+          "estado": "dato",
+          "valor": 0.435,
+          "unidad": "t/t PP"
+        },
+        "nota_tecnica": "Fondos del splitter retornados a refinería/GLP.",
+        "fuente_id": "eu-bref-polymers",
+        "cita_ubicacion": "EU POL BREF"
+      },
+      {
+        "numero": 4,
+        "nombre": "Propileno grado polímero",
+        "tipo": "proceso",
+        "origen_tag": "T-101",
+        "destino_tag": "D-201",
+        "puntos": [
+          [
+            515,
+            245
+          ],
+          [
+            723,
+            245
+          ]
+        ],
+        "flag_pos": [
+          620,
+          245
+        ],
+        "especies": "C3H6 (>99,5%)",
+        "fase": "Líquido",
+        "temperatura_c": "40",
+        "presion_bar": "22",
+        "flujo_especifico": {
+          "estado": "dato",
+          "valor": 1.015,
+          "unidad": "t/t PP"
+        },
+        "nota_tecnica": "Cabeza del splitter hacia purificación.",
+        "fuente_id": "eu-bref-polymers",
+        "cita_ubicacion": "EU POL BREF"
+      },
+      {
+        "numero": 5,
+        "nombre": "Propileno ultrapuro a reactor",
+        "tipo": "proceso",
+        "origen_tag": "D-201",
+        "destino_tag": "R-301",
+        "puntos": [
+          [
+            787,
+            245
+          ],
+          [
+            995,
+            245
+          ]
+        ],
+        "flag_pos": [
+          890,
+          245
+        ],
+        "especies": "C3H6 puro",
+        "fase": "Líquido",
+        "temperatura_c": "35",
+        "presion_bar": "32",
+        "flujo_especifico": {
+          "estado": "dato",
+          "valor": 1.015,
+          "unidad": "t/t PP"
+        },
+        "nota_tecnica": "Alimentación principal a polimerización.",
+        "fuente_id": "eu-bref-polymers",
+        "cita_ubicacion": "EU POL BREF"
+      },
+      {
+        "numero": 6,
+        "nombre": "Polvo de PP con gas ocluido",
+        "tipo": "proceso",
+        "origen_tag": "R-301",
+        "destino_tag": "V-401",
+        "puntos": [
+          [
+            1075,
+            245
+          ],
+          [
+            1360,
+            245
+          ]
+        ],
+        "flag_pos": [
+          1220,
+          245
+        ],
+        "especies": "(C3H6)n + C3H6",
+        "fase": "Sólido",
+        "temperatura_c": "75",
+        "presion_bar": "2",
+        "flujo_especifico": {
+          "estado": "dato",
+          "valor": 1.005,
+          "unidad": "t/t PP"
+        },
+        "nota_tecnica": "Descarga del reactor hacia desgasificador.",
+        "fuente_id": "eu-bref-polymers",
+        "cita_ubicacion": "EU POL BREF"
+      },
+      {
+        "numero": 7,
+        "nombre": "Reciclo de propileno recuperado",
+        "tipo": "reciclo",
+        "origen_tag": "V-401",
+        "destino_tag": "K-301",
+        "puntos": [
+          [
+            1395,
+            315
+          ],
+          [
+            1395,
+            455
+          ],
+          [
+            1255,
+            455
+          ]
+        ],
+        "flag_pos": [
+          1325,
+          455
+        ],
+        "especies": "C3H6 gas",
+        "fase": "Gas",
+        "temperatura_c": "55",
+        "presion_bar": "1,4",
+        "flujo_especifico": {
+          "estado": "sin_datos",
+          "valor": null,
+          "unidad": "t/t PP"
+        },
+        "nota_tecnica": "Monómero recuperado del purgado.",
+        "fuente_id": "eu-bref-polymers",
+        "cita_ubicacion": "EU POL BREF"
+      },
+      {
+        "numero": 8,
+        "nombre": "C3H6 recomprimido al reactor",
+        "tipo": "reciclo",
+        "origen_tag": "K-301",
+        "destino_tag": "R-301",
+        "puntos": [
+          [
+            1175,
+            455
+          ],
+          [
+            1035,
+            455
+          ],
+          [
+            1035,
+            315
+          ]
+        ],
+        "flag_pos": [
+          1095,
+          455
+        ],
+        "especies": "C3H6 comprimido",
+        "fase": "Gas",
+        "temperatura_c": "65",
+        "presion_bar": "34",
+        "flujo_especifico": {
+          "estado": "sin_datos",
+          "valor": null,
+          "unidad": "t/t PP"
+        },
+        "nota_tecnica": "Retorno cerrado al reactor de polimerización.",
+        "fuente_id": "eu-bref-polymers",
+        "cita_ubicacion": "EU POL BREF"
+      },
+      {
+        "numero": 9,
+        "nombre": "Polvo de PP desgasificado",
+        "tipo": "proceso",
+        "origen_tag": "V-401",
+        "destino_tag": "EX-401",
+        "puntos": [
+          [
+            1430,
+            245
+          ],
+          [
+            1530,
+            245
+          ]
+        ],
+        "flag_pos": [
+          1480,
+          245
+        ],
+        "especies": "(C3H6)n polvo",
+        "fase": "Sólido",
+        "temperatura_c": "70",
+        "presion_bar": "1,0",
+        "flujo_especifico": {
+          "estado": "dato",
+          "valor": 1,
+          "unidad": "t/t PP"
+        },
+        "nota_tecnica": "Polímero listo para aditivación.",
+        "fuente_id": "eu-bref-polymers",
+        "cita_ubicacion": "EU POL BREF"
+      },
+      {
+        "numero": 10,
+        "nombre": "Pellets de polipropileno",
+        "tipo": "proceso",
+        "origen_tag": "EX-401",
+        "destino_tag": null,
+        "puntos": [
+          [
+            1610,
+            245
+          ],
+          [
+            1672,
+            245
+          ]
+        ],
+        "flag_pos": [
+          1642,
+          245
+        ],
+        "especies": "(C3H6)n pellets",
+        "fase": "Sólido",
+        "temperatura_c": "45",
+        "presion_bar": "1,0",
+        "flujo_especifico": {
+          "estado": "dato",
+          "valor": 1,
+          "unidad": "t/t PP"
+        },
+        "nota_tecnica": "Resina comercial HS 3902.10.",
+        "fuente_id": "uncomtrade-ar-lote3-2024",
+        "cita_ubicacion": "UN Comtrade HS 390210"
+      }
+    ],
+    "servicios": [
+      {
+        "id": "u-pp-1",
+        "equipo_tag": "R-301",
+        "etiqueta": "Catalizador Z-N + H2",
+        "direccion": "entrada",
+        "x": 1035,
+        "y": 175,
+        "dx": 0,
+        "dy": -42
+      },
+      {
+        "id": "u-pp-2",
+        "equipo_tag": "V-401",
+        "etiqueta": "N2 stripping",
+        "direccion": "entrada",
+        "x": 1395,
+        "y": 175,
+        "dx": 0,
+        "dy": -42
+      }
+    ],
+    "limites_bateria": [
+      {
+        "id": "lb-pp-in1",
+        "lado": "entrada",
+        "categoria": "materia_prima",
+        "nombre": "Propileno grado polímero",
+        "formula": "C3H6",
+        "cantidad_masa": "1,015 t/t PP",
+        "cantidad_molar": "24,12 kmol/t",
+        "fraccion_pureza": ">99,5% C3H6",
+        "corriente_num": 4,
+        "y": 95,
+        "nota": "Proveniente de FCC y splitter C3 de refinería.",
+        "fuente_id": "eu-bref-polymers"
+      },
+      {
+        "id": "lb-pp-in2",
+        "lado": "entrada",
+        "categoria": "servicio",
+        "nombre": "Catalizador y aditivos",
+        "formula": "Z-N / N2",
+        "cantidad_masa": "Sin dato público",
+        "cantidad_molar": null,
+        "fraccion_pureza": "Trazas controladas",
+        "corriente_num": null,
+        "y": 245,
+        "nota": "Dosificación propietaria de planta.",
+        "fuente_id": "eu-bref-polymers"
+      },
+      {
+        "id": "lb-pp-out1",
+        "lado": "salida",
+        "categoria": "producto",
+        "nombre": "Polipropileno (pellets)",
+        "formula": "(C3H6)n",
+        "cantidad_masa": "1,00 t/t PP",
+        "cantidad_molar": "23,76 kmol C3 eq",
+        "fraccion_pureza": "Homopol. / Copol.",
+        "corriente_num": 10,
+        "y": 95,
+        "nota": "Resinas primarias HS 3902.10 (Petrocuyo Mendoza).",
+        "fuente_id": "uncomtrade-ar-lote3-2024"
+      },
+      {
+        "id": "lb-pp-out2",
+        "lado": "salida",
+        "categoria": "subproducto",
+        "nombre": "Propano comercial",
+        "formula": "C3H8",
+        "cantidad_masa": "0,435 t/t PP",
+        "cantidad_molar": "9,86 kmol/t",
+        "fraccion_pureza": "Corte GLP",
+        "corriente_num": 3,
+        "y": 245,
+        "nota": "Separado en splitter C3 hacia circuito GLP.",
+        "fuente_id": "eu-bref-polymers"
+      }
+    ]
+  },
+  {
+    "proceso_id": "bioetanol-maiz-molienda-seca",
+    "producto_id": "bioetanol-maiz",
+    "titulo": "PFD: Biorrefinería de Molienda Seca de Maíz a Bioetanol Anhidro y Burlanda (DDGS)",
+    "norma_simbologia": "ISO 10628 / ASME",
+    "base_calculo": "1,00 t de bioetanol anhidro (~1.267 L, 21,71 kmol C2H5OH) · Polo Córdoba",
+    "resumen_tecnico": "Molienda de maíz seco, gelatinización y sacarificación enzimática del almidón, fermentación con levaduras, destilación rectificadora, deshidratación por tamices moleculares 3A (sin solventes) y separación centrífuga de burlanda proteica (WDGS/DDGS) con reciclo de vinaza liviana.",
+    "nota_metodologica": "Esquema de molienda seca verificado según US DOE AFDC Ethanol Production y operaciones cordobesas (Bio4 Río Cuarto y ACA Bio Villa María). Estequiometría de fermentación exacta: 1,956 t glucosa -> 1,000 t etanol + 0,956 t CO2.",
+    "canvas_width": 1880,
+    "canvas_height": 760,
+    "secciones": [
+      {
+        "area_id": "area-100",
+        "titulo": "Área 100 · Molienda e hidrólisis",
+        "x": 224,
+        "y": 40,
+        "width": 352,
+        "height": 665
+      },
+      {
+        "area_id": "area-200",
+        "titulo": "Área 200 · Fermentación alcohólica",
+        "x": 594,
+        "y": 40,
+        "width": 338,
+        "height": 665
+      },
+      {
+        "area_id": "area-300",
+        "titulo": "Área 300 · Destilación y tamices 3A",
+        "x": 950,
+        "y": 40,
+        "width": 356,
+        "height": 665
+      },
+      {
+        "area_id": "area-400",
+        "titulo": "Área 400 · Burlanda DDGS y despacho",
+        "x": 1324,
+        "y": 40,
+        "width": 332,
+        "height": 665
+      }
+    ],
+    "equipos": [
+      {
+        "tag": "M-101",
+        "nombre": "Molino de martillos",
+        "simbolo": "mill_gin",
+        "area_id": "area-100",
+        "x": 300,
+        "y": 245,
+        "temperatura_op": "25 °C",
+        "presion_op": "1,0 bar",
+        "reaccion": null,
+        "condicion_critica": "Harina fina",
+        "descripcion": "Molienda seca del grano de maíz cordobés para liberar el almidón.",
+        "fuente_id": "afdc-ethanol-doe",
+        "cita_ubicacion": "US DOE AFDC Dry Milling"
+      },
+      {
+        "tag": "R-101",
+        "nombre": "Jet-cooker y licuefacción",
+        "simbolo": "reactor",
+        "area_id": "area-100",
+        "x": 485,
+        "y": 245,
+        "temperatura_op": "95 °C",
+        "presion_op": "1,8 bar",
+        "reaccion": "Almidón + H2O -> Glucosa",
+        "condicion_critica": "Alfa-amilasa",
+        "descripcion": "Cocción con vapor e hidrólisis enzimática del almidón a dextrinas y glucosa.",
+        "fuente_id": "afdc-ethanol-doe",
+        "cita_ubicacion": "US DOE AFDC liquefaction"
+      },
+      {
+        "tag": "R-201",
+        "nombre": "Fermentadores cerrados",
+        "simbolo": "tank",
+        "area_id": "area-200",
+        "x": 755,
+        "y": 245,
+        "temperatura_op": "32 °C",
+        "presion_op": "1,0 bar",
+        "reaccion": "C6H12O6 -> 2 C2H5OH + 2 CO2",
+        "condicion_critica": "48-60 h · 32 °C",
+        "descripcion": "Fermentación con levaduras Saccharomyces cerevisiae generando vino y CO2 biogénico.",
+        "fuente_id": "afdc-ethanol-doe",
+        "cita_ubicacion": "US DOE AFDC fermentation"
+      },
+      {
+        "tag": "T-301",
+        "nombre": "Columna destiladora-rectif.",
+        "simbolo": "column",
+        "area_id": "area-300",
+        "x": 1035,
+        "y": 245,
+        "temperatura_op": "78-105 °C",
+        "presion_op": "1,2 bar",
+        "reaccion": null,
+        "condicion_critica": "95,6% azeótropo",
+        "descripcion": "Concentra el etanol desde el vino fermentado hasta etanol hidratado azeotrópico.",
+        "fuente_id": "afdc-ethanol-doe",
+        "cita_ubicacion": "US DOE AFDC distillation"
+      },
+      {
+        "tag": "D-301",
+        "nombre": "Tamices moleculares 3A",
+        "simbolo": "dryer_bed",
+        "area_id": "area-300",
+        "x": 1220,
+        "y": 245,
+        "temperatura_op": "115 °C",
+        "presion_op": "3,2 bar",
+        "reaccion": null,
+        "condicion_critica": ">99,5% anhidro",
+        "descripcion": "Adsorción selectiva de agua en fase vapor (PSA) para grado combustible anhidro.",
+        "fuente_id": "afdc-ethanol-doe",
+        "cita_ubicacion": "US DOE AFDC molecular sieves"
+      },
+      {
+        "tag": "S-401",
+        "nombre": "Centrífuga decantadora",
+        "simbolo": "centrifuge",
+        "area_id": "area-400",
+        "x": 1405,
+        "y": 420,
+        "temperatura_op": "80 °C",
+        "presion_op": "1,0 bar",
+        "reaccion": null,
+        "condicion_critica": "Reciclo backset",
+        "descripcion": "Separa la torta húmeda proteica (WDGS) de la vinaza liviana reciclable.",
+        "fuente_id": "afdc-ethanol-doe",
+        "cita_ubicacion": "US DOE AFDC stillage separation"
+      },
+      {
+        "tag": "V-401",
+        "nombre": "Secador DDGS y silos",
+        "simbolo": "granulator",
+        "area_id": "area-400",
+        "x": 1575,
+        "y": 420,
+        "temperatura_op": "90 °C",
+        "presion_op": "1,0 bar",
+        "reaccion": null,
+        "condicion_critica": "28-30% prot.",
+        "descripcion": "Acondicionamiento de burlanda húmeda/seca destinada a alimentación ganadera.",
+        "fuente_id": "bio4-web-2026",
+        "cita_ubicacion": "bio4.com.ar y acabio.com.ar"
+      }
+    ],
+    "corrientes": [
+      {
+        "numero": 1,
+        "nombre": "Grano de maíz seco",
+        "tipo": "proceso",
+        "origen_tag": null,
+        "destino_tag": "M-101",
+        "puntos": [
+          [
+            208,
+            245
+          ],
+          [
+            262,
+            245
+          ]
+        ],
+        "flag_pos": [
+          235,
+          245
+        ],
+        "especies": "Maíz (~70% almidón)",
+        "fase": "Sólido",
+        "temperatura_c": "25",
+        "presion_bar": "1,0",
+        "flujo_especifico": {
+          "estado": "dato",
+          "valor": 3.1,
+          "unidad": "t/t etanol"
+        },
+        "nota_tecnica": "Maíz de zona núcleo cordobesa.",
+        "fuente_id": "afdc-ethanol-doe",
+        "cita_ubicacion": "US DOE AFDC"
+      },
+      {
+        "numero": 2,
+        "nombre": "Harina de maíz",
+        "tipo": "proceso",
+        "origen_tag": "M-101",
+        "destino_tag": "R-101",
+        "puntos": [
+          [
+            338,
+            245
+          ],
+          [
+            445,
+            245
+          ]
+        ],
+        "flag_pos": [
+          392,
+          245
+        ],
+        "especies": "Harina integral",
+        "fase": "Sólido",
+        "temperatura_c": "30",
+        "presion_bar": "1,0",
+        "flujo_especifico": {
+          "estado": "dato",
+          "valor": 3.08,
+          "unidad": "t/t etanol"
+        },
+        "nota_tecnica": "Molienda seca en martillos.",
+        "fuente_id": "afdc-ethanol-doe",
+        "cita_ubicacion": "US DOE AFDC"
+      },
+      {
+        "numero": 3,
+        "nombre": "Mosto hidrolizado",
+        "tipo": "proceso",
+        "origen_tag": "R-101",
+        "destino_tag": "R-201",
+        "puntos": [
+          [
+            525,
+            245
+          ],
+          [
+            715,
+            245
+          ]
+        ],
+        "flag_pos": [
+          620,
+          245
+        ],
+        "especies": "Glucosa + fibra + prot.",
+        "fase": "Líquido",
+        "temperatura_c": "32",
+        "presion_bar": "1,2",
+        "flujo_especifico": {
+          "estado": "dato",
+          "valor": 2.04,
+          "unidad": "t glucosa eq/t"
+        },
+        "nota_tecnica": "Enfriado antes de inocular levaduras.",
+        "fuente_id": "afdc-ethanol-doe",
+        "cita_ubicacion": "US DOE AFDC"
+      },
+      {
+        "numero": 4,
+        "nombre": "CO2 biogénico",
+        "tipo": "subproducto",
+        "origen_tag": "R-201",
+        "destino_tag": null,
+        "puntos": [
+          [
+            755,
+            175
+          ],
+          [
+            755,
+            108
+          ],
+          [
+            845,
+            108
+          ]
+        ],
+        "flag_pos": [
+          805,
+          108
+        ],
+        "especies": "CO2 (>99% lavado)",
+        "fase": "Gas",
+        "temperatura_c": "32",
+        "presion_bar": "1,0",
+        "flujo_especifico": {
+          "estado": "dato",
+          "valor": 0.96,
+          "unidad": "t/t etanol"
+        },
+        "nota_tecnica": "Coproducto biogénico recuperable (ACA Bio).",
+        "fuente_id": "acabio-web-2026",
+        "cita_ubicacion": "acabio.com.ar"
+      },
+      {
+        "numero": 5,
+        "nombre": "Vino fermentado",
+        "tipo": "proceso",
+        "origen_tag": "R-201",
+        "destino_tag": "T-301",
+        "puntos": [
+          [
+            795,
+            245
+          ],
+          [
+            1005,
+            245
+          ]
+        ],
+        "flag_pos": [
+          900,
+          245
+        ],
+        "especies": "C2H5OH (12-15%) + H2O",
+        "fase": "Líquido",
+        "temperatura_c": "33",
+        "presion_bar": "1,5",
+        "flujo_especifico": {
+          "estado": "dato",
+          "valor": 1,
+          "unidad": "t etanol eq/t"
+        },
+        "nota_tecnica": "Carga hacia columna destiladora.",
+        "fuente_id": "afdc-ethanol-doe",
+        "cita_ubicacion": "US DOE AFDC"
+      },
+      {
+        "numero": 6,
+        "nombre": "Etanol hidratado (95,6%)",
+        "tipo": "proceso",
+        "origen_tag": "T-301",
+        "destino_tag": "D-301",
+        "puntos": [
+          [
+            1065,
+            245
+          ],
+          [
+            1188,
+            245
+          ]
+        ],
+        "flag_pos": [
+          1126,
+          245
+        ],
+        "especies": "C2H5OH + H2O (4,4%)",
+        "fase": "Gas",
+        "temperatura_c": "112",
+        "presion_bar": "3,2",
+        "flujo_especifico": {
+          "estado": "dato",
+          "valor": 1.05,
+          "unidad": "t/t etanol"
+        },
+        "nota_tecnica": "Vapor sobrecalentado hacia tamices 3A.",
+        "fuente_id": "afdc-ethanol-doe",
+        "cita_ubicacion": "US DOE AFDC"
+      },
+      {
+        "numero": 7,
+        "nombre": "Bioetanol anhidro (>99,5%)",
+        "tipo": "proceso",
+        "origen_tag": "D-301",
+        "destino_tag": null,
+        "puntos": [
+          [
+            1252,
+            245
+          ],
+          [
+            1672,
+            245
+          ]
+        ],
+        "flag_pos": [
+          1480,
+          245
+        ],
+        "especies": "C2H5OH (>=99,5% v/v)",
+        "fase": "Líquido",
+        "temperatura_c": "30",
+        "presion_bar": "1,0",
+        "flujo_especifico": {
+          "estado": "dato",
+          "valor": 1,
+          "unidad": "t/t etanol"
+        },
+        "nota_tecnica": "Combustible renovable para corte en naftas.",
+        "fuente_id": "se-bioetanol-total-csv",
+        "cita_ubicacion": "Secretaría de Energía"
+      },
+      {
+        "numero": 8,
+        "nombre": "Vinaza entera de fondos",
+        "tipo": "subproducto",
+        "origen_tag": "T-301",
+        "destino_tag": "S-401",
+        "puntos": [
+          [
+            1035,
+            315
+          ],
+          [
+            1035,
+            420
+          ],
+          [
+            1365,
+            420
+          ]
+        ],
+        "flag_pos": [
+          1195,
+          420
+        ],
+        "especies": "Proteínas + fibra + H2O",
+        "fase": "Bifásico",
+        "temperatura_c": "92",
+        "presion_bar": "1,2",
+        "flujo_especifico": {
+          "estado": "dato",
+          "valor": 0.97,
+          "unidad": "t sólida eq/t"
+        },
+        "nota_tecnica": "Fracción no fermentable del grano de maíz.",
+        "fuente_id": "afdc-ethanol-doe",
+        "cita_ubicacion": "US DOE AFDC"
+      },
+      {
+        "numero": 9,
+        "nombre": "Reciclo de vinaza liviana",
+        "tipo": "reciclo",
+        "origen_tag": "S-401",
+        "destino_tag": "R-101",
+        "puntos": [
+          [
+            1405,
+            490
+          ],
+          [
+            1405,
+            585
+          ],
+          [
+            485,
+            585
+          ],
+          [
+            485,
+            315
+          ]
+        ],
+        "flag_pos": [
+          935,
+          585
+        ],
+        "especies": "Agua proceso (backset)",
+        "fase": "Líquido",
+        "temperatura_c": "75",
+        "presion_bar": "2,0",
+        "flujo_especifico": {
+          "estado": "sin_datos",
+          "valor": null,
+          "unidad": "m3/t etanol"
+        },
+        "nota_tecnica": "Reduce consumo de agua fresca en empaste.",
+        "fuente_id": "afdc-ethanol-doe",
+        "cita_ubicacion": "US DOE AFDC"
+      },
+      {
+        "numero": 10,
+        "nombre": "Burlanda proteica (DDGS)",
+        "tipo": "subproducto",
+        "origen_tag": "V-401",
+        "destino_tag": null,
+        "puntos": [
+          [
+            1615,
+            420
+          ],
+          [
+            1672,
+            420
+          ]
+        ],
+        "flag_pos": [
+          1644,
+          420
+        ],
+        "especies": "WDGS / DDGS",
+        "fase": "Sólido",
+        "temperatura_c": "40",
+        "presion_bar": "1,0",
+        "flujo_especifico": {
+          "estado": "dato",
+          "valor": 0.97,
+          "unidad": "t/t etanol"
+        },
+        "nota_tecnica": "Coproducto proteico clave para feedlots cordobeses.",
+        "fuente_id": "bio4-web-2026",
+        "cita_ubicacion": "bio4.com.ar"
+      }
+    ],
+    "servicios": [
+      {
+        "id": "u-bm-1",
+        "equipo_tag": "R-101",
+        "etiqueta": "Enzimas + Vapor",
+        "direccion": "entrada",
+        "x": 485,
+        "y": 175,
+        "dx": 0,
+        "dy": -42
+      },
+      {
+        "id": "u-bm-2",
+        "equipo_tag": "T-301",
+        "etiqueta": "Vapor reboiler",
+        "direccion": "entrada",
+        "x": 1035,
+        "y": 175,
+        "dx": 0,
+        "dy": -42
+      }
+    ],
+    "limites_bateria": [
+      {
+        "id": "lb-bm-in1",
+        "lado": "entrada",
+        "categoria": "materia_prima",
+        "nombre": "Grano de maíz (Córdoba)",
+        "formula": "(C6H10O5)n",
+        "cantidad_masa": "3,10 t/t etanol",
+        "cantidad_molar": "11,3 kmol glc eq",
+        "fraccion_pureza": "~70% almidón",
+        "corriente_num": 1,
+        "y": 95,
+        "nota": "Córdoba cosechó 17,97 Mt en 2024/25 (SAGyP).",
+        "fuente_id": "sagyp-estimaciones-2026-03"
+      },
+      {
+        "id": "lb-bm-in2",
+        "lado": "entrada",
+        "categoria": "servicio",
+        "nombre": "Enzimas y levaduras",
+        "formula": "Amilasas / S.c.",
+        "cantidad_masa": "Sin dato público",
+        "cantidad_molar": null,
+        "fraccion_pureza": "Biocatalizadores",
+        "corriente_num": null,
+        "y": 245,
+        "nota": "Licuefacción, sacarificación y fermentación.",
+        "fuente_id": "afdc-ethanol-doe"
+      },
+      {
+        "id": "lb-bm-out1",
+        "lado": "salida",
+        "categoria": "producto",
+        "nombre": "Bioetanol anhidro",
+        "formula": "C2H5OH",
+        "cantidad_masa": "1,00 t (~1.267 L)",
+        "cantidad_molar": "21,71 kmol/t",
+        "fraccion_pureza": ">=99,5% v/v",
+        "corriente_num": 7,
+        "y": 95,
+        "nota": "423.575 m3 (2020) / 553.829 m3 (2019) nacional.",
+        "fuente_id": "se-bioetanol-total-csv"
+      },
+      {
+        "id": "lb-bm-out2",
+        "lado": "salida",
+        "categoria": "subproducto",
+        "nombre": "Burlanda proteica DDGS",
+        "formula": "Prot. + Fibra",
+        "cantidad_masa": "0,97 t/t etanol",
+        "cantidad_molar": null,
+        "fraccion_pureza": "28-30% proteína",
+        "corriente_num": 10,
+        "y": 245,
+        "nota": "Nutrición bovina/porcina en Córdoba.",
+        "fuente_id": "bio4-web-2026"
+      },
+      {
+        "id": "lb-bm-out3",
+        "lado": "salida",
+        "categoria": "subproducto",
+        "nombre": "CO2 biogénico",
+        "formula": "CO2",
+        "cantidad_masa": "0,96 t/t etanol",
+        "cantidad_molar": "21,8 kmol/t",
+        "fraccion_pureza": ">99% lavado",
+        "corriente_num": 4,
+        "y": 395,
+        "nota": "Recuperado como gas carbónico alimenticio.",
+        "fuente_id": "acabio-web-2026"
+      }
+    ]
+  },
+  {
+    "proceso_id": "bioetanol-cana-fermentacion",
+    "producto_id": "bioetanol-cana",
+    "titulo": "PFD: Complejo Sucroalcoholero de Caña de Azúcar (Azúcar, Bioetanol Anhidro y Cogeneración)",
+    "norma_simbologia": "ISO 10628 / ASME",
+    "base_calculo": "1,00 t de bioetanol anhidro eq. (~1.267 L) desde caña de azúcar · Tucumán",
+    "resumen_tecnico": "Molienda en trapiche separando jugo de sacarosa y bagazo fibroso (destinado a calderas de cogeneración de vapor y electricidad), clarificación/evaporación flexible hacia azúcar y melaza, fermentación rápida con reciclo de levaduras, destilación y deshidratación con tamices moleculares.",
+    "nota_metodologica": "Referencia técnica verificada según Centro Azucarero Argentino (20 ingenios, 16 destilerías y 12 deshidratadoras en el NOA), Secretaría de Energía y US DOE AFDC. Rendimiento típico ~70-85 L etanol/t caña (o mix flexible azúcar + melaza).",
+    "canvas_width": 1880,
+    "canvas_height": 760,
+    "secciones": [
+      {
+        "area_id": "area-100",
+        "titulo": "Área 100 · Trapiche y bagazo",
+        "x": 224,
+        "y": 40,
+        "width": 352,
+        "height": 665
+      },
+      {
+        "area_id": "area-200",
+        "titulo": "Área 200 · Clarificación y azúcar",
+        "x": 594,
+        "y": 40,
+        "width": 338,
+        "height": 665
+      },
+      {
+        "area_id": "area-300",
+        "titulo": "Área 300 · Fermentación continua",
+        "x": 950,
+        "y": 40,
+        "width": 356,
+        "height": 665
+      },
+      {
+        "area_id": "area-400",
+        "titulo": "Área 400 · Destilería y cogeneración",
+        "x": 1324,
+        "y": 40,
+        "width": 332,
+        "height": 665
+      }
+    ],
+    "equipos": [
+      {
+        "tag": "M-101",
+        "nombre": "Tandem de trapiches",
+        "simbolo": "mill_gin",
+        "area_id": "area-100",
+        "x": 315,
+        "y": 245,
+        "temperatura_op": "30 °C",
+        "presion_op": "1,0 bar",
+        "reaccion": null,
+        "condicion_critica": "Extracción >95%",
+        "descripcion": "Molinos de rodillos que extraen jugo azucarado y separan bagazo fibroso.",
+        "fuente_id": "caa-web-2026",
+        "cita_ubicacion": "Centro Azucarero Argentino"
+      },
+      {
+        "tag": "F-101",
+        "nombre": "Caldera bagazo (cogen.)",
+        "simbolo": "furnace",
+        "area_id": "area-100",
+        "x": 475,
+        "y": 450,
+        "temperatura_op": "460 °C",
+        "presion_op": "42 bar",
+        "reaccion": "Bagazo + O2 -> Vapor + MW",
+        "condicion_critica": "Energía propia",
+        "descripcion": "Quema bagazo renovable para generar vapor de proceso y electricidad del ingenio.",
+        "fuente_id": "caa-web-2026",
+        "cita_ubicacion": "Centro Azucarero Argentino"
+      },
+      {
+        "tag": "V-201",
+        "nombre": "Clarificador y evaporador",
+        "simbolo": "separator",
+        "area_id": "area-200",
+        "x": 755,
+        "y": 245,
+        "temperatura_op": "100 °C",
+        "presion_op": "0,6 bar",
+        "reaccion": null,
+        "condicion_critica": "Mix azúcar/melaza",
+        "descripcion": "Purifica jugo con cal, separa cachaza y divide corrientes entre cristalización y melaza.",
+        "fuente_id": "caa-web-2026",
+        "cita_ubicacion": "Centro Azucarero Argentino"
+      },
+      {
+        "tag": "R-301",
+        "nombre": "Fermentadores continuos",
+        "simbolo": "tank",
+        "area_id": "area-300",
+        "x": 1035,
+        "y": 245,
+        "temperatura_op": "33 °C",
+        "presion_op": "1,0 bar",
+        "reaccion": "C12H22O11 + H2O -> 4 C2H5OH + 4 CO2",
+        "condicion_critica": "8-12 h · reciclo",
+        "descripcion": "Fermentación directa de sacarosa con centrífugas de reciclo de levaduras.",
+        "fuente_id": "afdc-ethanol-doe",
+        "cita_ubicacion": "US DOE AFDC sugarcane ethanol"
+      },
+      {
+        "tag": "S-301",
+        "nombre": "Centrífuga de levaduras",
+        "simbolo": "centrifuge",
+        "area_id": "area-300",
+        "x": 1215,
+        "y": 245,
+        "temperatura_op": "33 °C",
+        "presion_op": "1,0 bar",
+        "reaccion": null,
+        "condicion_critica": "Reciclo crema",
+        "descripcion": "Recupera la biomasa de levadura para reinyectarla a las cubas de fermentación.",
+        "fuente_id": "afdc-ethanol-doe",
+        "cita_ubicacion": "US DOE AFDC"
+      },
+      {
+        "tag": "T-401",
+        "nombre": "Columna destiladora",
+        "simbolo": "column",
+        "area_id": "area-400",
+        "x": 1400,
+        "y": 245,
+        "temperatura_op": "78-106 °C",
+        "presion_op": "1,2 bar",
+        "reaccion": null,
+        "condicion_critica": "95,6% hidratado",
+        "descripcion": "Separa alcohol hidratado por cabeza y vinaza por fondos.",
+        "fuente_id": "caa-web-2026",
+        "cita_ubicacion": "Centro Azucarero Argentino"
+      },
+      {
+        "tag": "D-401",
+        "nombre": "Deshidratadora tamices 3A",
+        "simbolo": "dryer_bed",
+        "area_id": "area-400",
+        "x": 1575,
+        "y": 245,
+        "temperatura_op": "112 °C",
+        "presion_op": "3,2 bar",
+        "reaccion": null,
+        "condicion_critica": ">99,5% anhidro",
+        "descripcion": "Deshidrata a bioetanol anhidro combustible para corte obligatorio en naftas.",
+        "fuente_id": "caa-web-2026",
+        "cita_ubicacion": "Centro Azucarero Argentino"
+      }
+    ],
+    "corrientes": [
+      {
+        "numero": 1,
+        "nombre": "Caña de azúcar fresca",
+        "tipo": "proceso",
+        "origen_tag": null,
+        "destino_tag": "M-101",
+        "puntos": [
+          [
+            208,
+            245
+          ],
+          [
+            277,
+            245
+          ]
+        ],
+        "flag_pos": [
+          242,
+          245
+        ],
+        "especies": "Caña (13-15% sacarosa)",
+        "fase": "Sólido",
+        "temperatura_c": "25",
+        "presion_bar": "1,0",
+        "flujo_especifico": {
+          "estado": "dato",
+          "valor": 14.5,
+          "unidad": "t/t etanol eq"
+        },
+        "nota_tecnica": "Zafra tucumana (mayo-noviembre).",
+        "fuente_id": "caa-web-2026",
+        "cita_ubicacion": "CAA"
+      },
+      {
+        "numero": 2,
+        "nombre": "Bagazo a caldera",
+        "tipo": "subproducto",
+        "origen_tag": "M-101",
+        "destino_tag": "F-101",
+        "puntos": [
+          [
+            315,
+            315
+          ],
+          [
+            315,
+            450
+          ],
+          [
+            435,
+            450
+          ]
+        ],
+        "flag_pos": [
+          370,
+          450
+        ],
+        "especies": "Fibra celulósica (~50% hum.)",
+        "fase": "Sólido",
+        "temperatura_c": "30",
+        "presion_bar": "1,0",
+        "flujo_especifico": {
+          "estado": "dato",
+          "valor": 4.1,
+          "unidad": "t/t etanol eq"
+        },
+        "nota_tecnica": "Combustible biomásico renovable del ingenio.",
+        "fuente_id": "caa-web-2026",
+        "cita_ubicacion": "CAA"
+      },
+      {
+        "numero": 3,
+        "nombre": "Jugo mixto de caña",
+        "tipo": "proceso",
+        "origen_tag": "M-101",
+        "destino_tag": "V-201",
+        "puntos": [
+          [
+            353,
+            245
+          ],
+          [
+            720,
+            245
+          ]
+        ],
+        "flag_pos": [
+          535,
+          245
+        ],
+        "especies": "Sacarosa + agua",
+        "fase": "Líquido",
+        "temperatura_c": "32",
+        "presion_bar": "1,2",
+        "flujo_especifico": {
+          "estado": "dato",
+          "valor": 10.4,
+          "unidad": "t/t etanol eq"
+        },
+        "nota_tecnica": "Jugo extraído en trapiches.",
+        "fuente_id": "caa-web-2026",
+        "cita_ubicacion": "CAA"
+      },
+      {
+        "numero": 4,
+        "nombre": "Azúcar cristalizado (flexible)",
+        "tipo": "subproducto",
+        "origen_tag": "V-201",
+        "destino_tag": null,
+        "puntos": [
+          [
+            755,
+            175
+          ],
+          [
+            755,
+            108
+          ],
+          [
+            855,
+            108
+          ]
+        ],
+        "flag_pos": [
+          805,
+          108
+        ],
+        "especies": "C12H22O11 (HS 1701.99)",
+        "fase": "Sólido",
+        "temperatura_c": "45",
+        "presion_bar": "1,0",
+        "flujo_especifico": {
+          "estado": "sin_datos",
+          "valor": null,
+          "unidad": "t/t etanol eq"
+        },
+        "nota_tecnica": "Fracción derivada a azúcar comercial según zafra.",
+        "fuente_id": "uncomtrade-ar-lote3-2024",
+        "cita_ubicacion": "UN Comtrade HS 170199"
+      },
+      {
+        "numero": 5,
+        "nombre": "Melaza y jugo a fermentación",
+        "tipo": "proceso",
+        "origen_tag": "V-201",
+        "destino_tag": "R-301",
+        "puntos": [
+          [
+            790,
+            245
+          ],
+          [
+            995,
+            245
+          ]
+        ],
+        "flag_pos": [
+          892,
+          245
+        ],
+        "especies": "Sacarosa + azúcares red.",
+        "fase": "Líquido",
+        "temperatura_c": "33",
+        "presion_bar": "1,2",
+        "flujo_especifico": {
+          "estado": "dato",
+          "valor": 3.4,
+          "unidad": "t/t etanol eq"
+        },
+        "nota_tecnica": "Mosto clarificado listo para levaduras.",
+        "fuente_id": "caa-web-2026",
+        "cita_ubicacion": "CAA"
+      },
+      {
+        "numero": 6,
+        "nombre": "Mosto fermentado con levadura",
+        "tipo": "proceso",
+        "origen_tag": "R-301",
+        "destino_tag": "S-301",
+        "puntos": [
+          [
+            1075,
+            245
+          ],
+          [
+            1175,
+            245
+          ]
+        ],
+        "flag_pos": [
+          1125,
+          245
+        ],
+        "especies": "C2H5OH + levaduras",
+        "fase": "Líquido",
+        "temperatura_c": "34",
+        "presion_bar": "1,2",
+        "flujo_especifico": {
+          "estado": "dato",
+          "valor": 1,
+          "unidad": "t etanol eq/t"
+        },
+        "nota_tecnica": "Salida hacia centrífuga recuperadora.",
+        "fuente_id": "afdc-ethanol-doe",
+        "cita_ubicacion": "US DOE AFDC"
+      },
+      {
+        "numero": 7,
+        "nombre": "Reciclo de crema de levadura",
+        "tipo": "reciclo",
+        "origen_tag": "S-301",
+        "destino_tag": "R-301",
+        "puntos": [
+          [
+            1215,
+            315
+          ],
+          [
+            1215,
+            455
+          ],
+          [
+            1035,
+            455
+          ],
+          [
+            1035,
+            315
+          ]
+        ],
+        "flag_pos": [
+          1125,
+          455
+        ],
+        "especies": "Saccharomyces c.",
+        "fase": "Líquido",
+        "temperatura_c": "32",
+        "presion_bar": "1,5",
+        "flujo_especifico": {
+          "estado": "sin_datos",
+          "valor": null,
+          "unidad": "t/t etanol"
+        },
+        "nota_tecnica": "Mantiene alta densidad celular y ciclos de 8-12 h.",
+        "fuente_id": "afdc-ethanol-doe",
+        "cita_ubicacion": "US DOE AFDC"
+      },
+      {
+        "numero": 8,
+        "nombre": "Vino centrifugado a destilería",
+        "tipo": "proceso",
+        "origen_tag": "S-301",
+        "destino_tag": "T-401",
+        "puntos": [
+          [
+            1255,
+            245
+          ],
+          [
+            1370,
+            245
+          ]
+        ],
+        "flag_pos": [
+          1312,
+          245
+        ],
+        "especies": "C2H5OH (8-10% v/v)",
+        "fase": "Líquido",
+        "temperatura_c": "34",
+        "presion_bar": "1,5",
+        "flujo_especifico": {
+          "estado": "dato",
+          "valor": 1,
+          "unidad": "t etanol eq/t"
+        },
+        "nota_tecnica": "Vino limpio de levaduras hacia columnas.",
+        "fuente_id": "afdc-ethanol-doe",
+        "cita_ubicacion": "US DOE AFDC"
+      },
+      {
+        "numero": 9,
+        "nombre": "Alcohol hidratado a tamices",
+        "tipo": "proceso",
+        "origen_tag": "T-401",
+        "destino_tag": "D-401",
+        "puntos": [
+          [
+            1430,
+            245
+          ],
+          [
+            1543,
+            245
+          ]
+        ],
+        "flag_pos": [
+          1486,
+          245
+        ],
+        "especies": "C2H5OH (95,6%)",
+        "fase": "Gas",
+        "temperatura_c": "112",
+        "presion_bar": "3,2",
+        "flujo_especifico": {
+          "estado": "dato",
+          "valor": 1.05,
+          "unidad": "t/t etanol"
+        },
+        "nota_tecnica": "Etanol azeotrópico a deshidratación.",
+        "fuente_id": "caa-web-2026",
+        "cita_ubicacion": "CAA"
+      },
+      {
+        "numero": 10,
+        "nombre": "Bioetanol anhidro de caña",
+        "tipo": "proceso",
+        "origen_tag": "D-401",
+        "destino_tag": null,
+        "puntos": [
+          [
+            1607,
+            245
+          ],
+          [
+            1672,
+            245
+          ]
+        ],
+        "flag_pos": [
+          1640,
+          245
+        ],
+        "especies": "C2H5OH (>=99,5% v/v)",
+        "fase": "Líquido",
+        "temperatura_c": "30",
+        "presion_bar": "1,0",
+        "flujo_especifico": {
+          "estado": "dato",
+          "valor": 1,
+          "unidad": "t/t etanol"
+        },
+        "nota_tecnica": "Despacho a refinerías para corte en naftas.",
+        "fuente_id": "se-bioetanol-total-csv",
+        "cita_ubicacion": "Secretaría de Energía"
+      }
+    ],
+    "servicios": [
+      {
+        "id": "u-bc-1",
+        "equipo_tag": "F-101",
+        "etiqueta": "Vapor + Electricidad renovable",
+        "direccion": "salida",
+        "x": 515,
+        "y": 450,
+        "dx": 48,
+        "dy": 0
+      },
+      {
+        "id": "u-bc-2",
+        "equipo_tag": "T-401",
+        "etiqueta": "Vapor desde caldera",
+        "direccion": "entrada",
+        "x": 1400,
+        "y": 175,
+        "dx": 0,
+        "dy": -42
+      }
+    ],
+    "limites_bateria": [
+      {
+        "id": "lb-bc-in1",
+        "lado": "entrada",
+        "categoria": "materia_prima",
+        "nombre": "Caña de azúcar (Tucumán)",
+        "formula": "C12H22O11 + fibra",
+        "cantidad_masa": "14,5 t/t etanol eq",
+        "cantidad_molar": "5,7 kmol sac. eq",
+        "fraccion_pureza": "13-15% Brix",
+        "corriente_num": 1,
+        "y": 95,
+        "nota": "Eje productivo del NOA (Tucumán, Salta, Jujuy).",
+        "fuente_id": "caa-web-2026"
+      },
+      {
+        "id": "lb-bc-in2",
+        "lado": "entrada",
+        "categoria": "servicio",
+        "nombre": "Energía propia bagazo",
+        "formula": "Biomasa",
+        "cantidad_masa": "4,1 t bagazo/t",
+        "cantidad_molar": null,
+        "fraccion_pureza": "Autosuficiente",
+        "corriente_num": 2,
+        "y": 245,
+        "nota": "Cogeneración térmica y eléctrica renovable.",
+        "fuente_id": "caa-web-2026"
+      },
+      {
+        "id": "lb-bc-out1",
+        "lado": "salida",
+        "categoria": "producto",
+        "nombre": "Bioetanol anhidro caña",
+        "formula": "C2H5OH",
+        "cantidad_masa": "1,00 t (~1.267 L)",
+        "cantidad_molar": "21,71 kmol/t",
+        "fraccion_pureza": ">=99,5% v/v",
+        "corriente_num": 10,
+        "y": 95,
+        "nota": "385.150 m3 (2020) / 519.667 m3 (2019) nacional.",
+        "fuente_id": "se-bioetanol-total-csv"
+      },
+      {
+        "id": "lb-bc-out2",
+        "lado": "salida",
+        "categoria": "subproducto",
+        "nombre": "Azúcar de caña refinada",
+        "formula": "C12H22O11",
+        "cantidad_masa": "Mix flexible",
+        "cantidad_molar": null,
+        "fraccion_pureza": "HS 1701.99",
+        "corriente_num": 4,
+        "y": 245,
+        "nota": "Exportación AR 2024: 199.546 t (USD 110,44 M).",
+        "fuente_id": "uncomtrade-ar-lote3-2024"
+      }
+    ]
   }
 ]

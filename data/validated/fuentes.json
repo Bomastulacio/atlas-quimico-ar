@@ -405,5 +405,126 @@
     "hash": "sha256:667074387e3bc69d4cc90e4073db5ff2464f97d4772284475e821d6ee9c2c459",
     "archivo_raw": null,
     "notas": "Consumo eléctrico BAT en celdas de membrana (2,5-3,0 MWh DC / t Cl2 o ECU = 1 t Cl2 + 1,1 t NaOH + 0,03 t H2) y concentración de soda cáustica al 50%."
+  },
+  {
+    "fuente_id": "uncomtrade-ar-lote3-2023",
+    "nombre": "UN Comtrade: comercio exterior de Argentina HS 290511 (Metanol), 390210 (Polipropileno), 220710/220720 (Alcohol etílico) y 170199 (Azúcar) 2023",
+    "organismo": "UN Comtrade (Naciones Unidas)",
+    "tipo": "oficial",
+    "url": "https://comtradeapi.un.org/public/v1/preview/C/A/HS?reporterCode=32&period=2023&partnerCode=0&partner2Code=0&customsCode=C00&motCode=0&cmdCode=290511,390210,220710,220720,170199",
+    "fecha_descarga": "2026-11-26",
+    "hash": "sha256:ddeedb8d679b523fd6fb7dfbe6307998dec1bb589639a0736ad3c1029cb825da",
+    "archivo_raw": null,
+    "notas": "Flujos oficiales 2023 de metanol (290511), polipropileno primario (390210), etanol (220710/220720) y azúcar refinada (170199)."
+  },
+  {
+    "fuente_id": "uncomtrade-ar-lote3-2024",
+    "nombre": "UN Comtrade: comercio exterior de Argentina HS 290511 (Metanol), 390210 (Polipropileno), 220710/220720 (Alcohol etílico) y 170199 (Azúcar) 2024",
+    "organismo": "UN Comtrade (Naciones Unidas)",
+    "tipo": "oficial",
+    "url": "https://comtradeapi.un.org/public/v1/preview/C/A/HS?reporterCode=32&period=2024&partnerCode=0&partner2Code=0&customsCode=C00&motCode=0&cmdCode=290511,390210,220710,220720,170199",
+    "fecha_descarga": "2026-11-26",
+    "hash": "sha256:13e2c93483644ca09e2f2dd434fb4470b232c0bec65979308b4b595873775f58",
+    "archivo_raw": null,
+    "notas": "Flujos oficiales 2024 de metanol (290511), polipropileno primario (390210), etanol (220710/220720) y azúcar refinada (170199)."
+  },
+  {
+    "fuente_id": "se-bioetanol-total-csv",
+    "nombre": "Bioetanol: producción y ventas (total país, desagregado por maíz y caña de azúcar)",
+    "organismo": "Secretaría de Energía de la Nación (datos.energia.gob.ar)",
+    "tipo": "oficial",
+    "url": "https://datos.energia.gob.ar/dataset/5ce77ad1-c729-42cd-a8b5-2407de005e5b/resource/e5478cfe-b3ff-4fc7-a564-18cbe4752ad4/download/bioetanol-produccin-y-ventas-total-pas-.csv",
+    "fecha_descarga": "2026-11-26",
+    "hash": "sha256:83cd1c183ede6f2e065743ce18adfe1554b0141c64a5804b0e116f988abd6adc",
+    "archivo_raw": null,
+    "notas": "Serie mensual oficial en m3 de bioetanol de maíz y bioetanol de caña de azúcar (2016-2020 completos)."
+  },
+  {
+    "fuente_id": "se-bioetanol-empresas-csv",
+    "nombre": "Bioetanol: detalle de cupos asignados, producción y ventas por empresa y provincia",
+    "organismo": "Secretaría de Energía de la Nación (datos.energia.gob.ar)",
+    "tipo": "oficial",
+    "url": "https://datos.energia.gob.ar/dataset/5ce77ad1-c729-42cd-a8b5-2407de005e5b/resource/0df1eeda-854b-44b0-8ea6-1a537f167fa4/download/bioetanol.csv",
+    "fecha_descarga": "2026-11-26",
+    "hash": "sha256:0ca08a9f96046a4e3aab458e61a9011ef3d21c65bde6185398a1310ee44f530d",
+    "archivo_raw": null,
+    "notas": "Registro nominal de elaboradoras de bioetanol por localidad y provincia (Bioetanol Río Cuarto S.A., Promaíz S.A., Compañía Bioenergética La Florida S.A., etc.)."
+  },
+  {
+    "fuente_id": "eu-bref-polymers",
+    "nombre": "Reference Document on Best Available Techniques in the Production of Polymers (POL BREF)",
+    "organismo": "Comisión Europea · Joint Research Centre (JRC / EU-BRITE)",
+    "tipo": "tecnica",
+    "url": "https://bureau-industrial-transformation.jrc.ec.europa.eu/reference/production-polymers",
+    "fecha_descarga": "2026-11-26",
+    "hash": "sha256:f49403eab2439da283626fd50341b5094c00bc4ca1ccf663dd3461e65fb80f63",
+    "archivo_raw": null,
+    "notas": "Referencia BAT internacional para polimerización de polipropileno en fase gas y fase líquida (Ziegler-Natta, desgasificación y extrusión)."
+  },
+  {
+    "fuente_id": "afdc-ethanol-doe",
+    "nombre": "Alternative Fuels Data Center: Ethanol Production (Dry Mill & Sugarcane Fermentation)",
+    "organismo": "U.S. Department of Energy (AFDC / NREL)",
+    "tipo": "tecnica",
+    "url": "https://afdc.energy.gov/fuels/ethanol-production",
+    "fecha_descarga": "2026-11-26",
+    "hash": "sha256:ca1aaedc23f4f8346503693ec5f40e36132a9476c51434d6536ffd7ff6a2eaf0",
+    "archivo_raw": null,
+    "notas": "Referencia técnica de proceso para molienda seca de maíz (sacarificación, fermentación, destilación, tamices moleculares y coproducto DDGS) y fermentación directa de azúcares."
+  },
+  {
+    "fuente_id": "ypf-inversores-2026",
+    "nombre": "Portal oficial de Inversores e Infraestructura Industrial (YPF S.A.)",
+    "organismo": "YPF S.A.",
+    "tipo": "empresa",
+    "url": "https://inversores.ypf.com/",
+    "fecha_descarga": "2026-11-26",
+    "hash": "sha256:f39c95b1076dd0e8513a2df3785151328c44a6b26ce435b9eaf1465bc2d4917e",
+    "archivo_raw": null,
+    "notas": "Operador de los Complejos Industriales Plaza Huincul (metanol y refinería en Neuquén) y Luján de Cuyo (refinación y propileno en Mendoza)."
+  },
+  {
+    "fuente_id": "petrocuyo-web-2026",
+    "nombre": "Portal institucional y operaciones de polipropileno (Petrocuyo S.A.I.C.)",
+    "organismo": "Petrocuyo S.A.I.C.",
+    "tipo": "empresa",
+    "url": "https://www.petrocuyo.com/",
+    "fecha_descarga": "2026-11-26",
+    "hash": "sha256:5706e3a328532bddf36e6af90c032f40c80e99ce17049403540bb26dec2da3e3",
+    "archivo_raw": null,
+    "notas": "Productor argentino de resinas de polipropileno con planta industrial en Luján de Cuyo (Mendoza) integrada al suministro de propileno de refinería."
+  },
+  {
+    "fuente_id": "bio4-web-2026",
+    "nombre": "Portal oficial Bio4 Argentina (Bioetanol Río Cuarto S.A.)",
+    "organismo": "Bioetanol Río Cuarto S.A.",
+    "tipo": "empresa",
+    "url": "https://bio4.com.ar/",
+    "fecha_descarga": "2026-11-26",
+    "hash": "sha256:f7d9e9b758e86cdd4a8ae2e9e04f533a1368feca92a5bce3218bc669b6a524b7",
+    "archivo_raw": null,
+    "notas": "Primera planta argentina de bioetanol de maíz ubicada en Río Cuarto (Córdoba), integrada con producción de burlanda (WDGS/DDGS) y biogás."
+  },
+  {
+    "fuente_id": "acabio-web-2026",
+    "nombre": "Portal oficial ACA BIO Cooperativa Limitada (Villa María, Córdoba)",
+    "organismo": "ACA Bio Cooperativa Limitada",
+    "tipo": "empresa",
+    "url": "https://www.acabio.com.ar/",
+    "fecha_descarga": "2026-11-26",
+    "hash": "sha256:23b80444827f78618e30e7d0f0615a69fc7b785a05e649c1e4b4df8fcaa1cf29",
+    "archivo_raw": null,
+    "notas": "Biorrefinería cooperativa de maíz en Villa María (Depto. General San Martín, Córdoba) que produce bioetanol anhidro, burlanda y CO2 recuperado."
+  },
+  {
+    "fuente_id": "caa-web-2026",
+    "nombre": "Centro Azucarero Argentino (CAA): actividad sucroalcoholera y bioetanol de caña",
+    "organismo": "Centro Azucarero Argentino",
+    "tipo": "tecnica",
+    "url": "https://centroazucarero.com.ar/",
+    "fecha_descarga": "2026-11-26",
+    "hash": "sha256:54ab9f6bc96dd294e57a929811b13d7f2e204facedf9e02bc6911fb14b60e35a",
+    "archivo_raw": null,
+    "notas": "Relevamiento sectorial del NOA (20 ingenios azucareros, 16 destilerías y 12 deshidratadoras de alcohol anhidro con eje productivo en Tucumán)."
   }
 ]

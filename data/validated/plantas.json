@@ -405,5 +405,227 @@
       "cita_ubicacion": "renova.com.ar (Planta Timbúes 32.400 t/día molienda; Planta San Lorenzo 1.450 t/día biodiésel)",
       "confianza": "alta"
     }
+  },
+  {
+    "planta_id": "ypf-metanol-plaza-huincul",
+    "empresa_id": "ypf-sa",
+    "producto_id": "metanol",
+    "provincia_id": "58",
+    "departamento_id": "58035",
+    "nombre": "Complejo Industrial Plaza Huincul (Planta de Metanol YPF)",
+    "localidad": "Plaza Huincul",
+    "lat": -38.932,
+    "lon": -69.188,
+    "estado_operativo": "operativa",
+    "capacidad": {
+      "estado": "sin_datos",
+      "valor": null,
+      "unidad": "t/año CH3OH",
+      "procedencia": {
+        "anio": 2026,
+        "fuente_id": "ypf-inversores-2026",
+        "fuente": "Portal oficial de Inversores e Infraestructura Industrial (YPF S.A.)",
+        "url": "https://inversores.ypf.com/",
+        "fecha_descarga": "2026-11-26",
+        "hash": "sha256:f39c95b1076dd0e8513a2df3785151328c44a6b26ce435b9eaf1465bc2d4917e",
+        "cita_ubicacion": "Capacidad anual nominal sujeta a publicación auditada de YPF Química",
+        "confianza": "alta"
+      }
+    },
+    "procedencia": {
+      "anio": 2026,
+      "fuente_id": "ypf-inversores-2026",
+      "fuente": "Portal oficial de Inversores e Infraestructura Industrial (YPF S.A.)",
+      "url": "https://inversores.ypf.com/",
+      "fecha_descarga": "2026-11-26",
+      "hash": "sha256:f39c95b1076dd0e8513a2df3785151328c44a6b26ce435b9eaf1465bc2d4917e",
+      "cita_ubicacion": "Complejo Industrial Plaza Huincul (Depto. Confluencia, Neuquén)",
+      "confianza": "alta"
+    }
+  },
+  {
+    "planta_id": "ypf-cilc-lujan-de-cuyo",
+    "empresa_id": "ypf-sa",
+    "producto_id": "polipropileno",
+    "provincia_id": "50",
+    "departamento_id": "50063",
+    "nombre": "Complejo Industrial Luján de Cuyo (Refinería YPF · FCC)",
+    "localidad": "Luján de Cuyo",
+    "lat": -33.058,
+    "lon": -68.932,
+    "estado_operativo": "operativa",
+    "capacidad": {
+      "estado": "sin_datos",
+      "valor": null,
+      "unidad": "m3/día crudo",
+      "procedencia": {
+        "anio": 2026,
+        "fuente_id": "ypf-inversores-2026",
+        "fuente": "Portal oficial de Inversores e Infraestructura Industrial (YPF S.A.)",
+        "url": "https://inversores.ypf.com/",
+        "fecha_descarga": "2026-11-26",
+        "hash": "sha256:f39c95b1076dd0e8513a2df3785151328c44a6b26ce435b9eaf1465bc2d4917e",
+        "cita_ubicacion": "Complejo refinador abastecedor de propileno al polo Luján de Cuyo",
+        "confianza": "alta"
+      }
+    },
+    "procedencia": {
+      "anio": 2026,
+      "fuente_id": "ypf-inversores-2026",
+      "fuente": "Portal oficial de Inversores e Infraestructura Industrial (YPF S.A.)",
+      "url": "https://inversores.ypf.com/",
+      "fecha_descarga": "2026-11-26",
+      "hash": "sha256:f39c95b1076dd0e8513a2df3785151328c44a6b26ce435b9eaf1465bc2d4917e",
+      "cita_ubicacion": "Complejo Industrial Luján de Cuyo (Mendoza)",
+      "confianza": "alta"
+    }
+  },
+  {
+    "planta_id": "petrocuyo-lujan-de-cuyo",
+    "empresa_id": "petrocuyo-saic",
+    "producto_id": "polipropileno",
+    "provincia_id": "50",
+    "departamento_id": "50063",
+    "nombre": "Planta Petrocuyo Luján de Cuyo (Polipropileno)",
+    "localidad": "Luján de Cuyo",
+    "lat": -33.064,
+    "lon": -68.925,
+    "estado_operativo": "operativa",
+    "capacidad": {
+      "estado": "sin_datos",
+      "valor": null,
+      "unidad": "t/año PP",
+      "procedencia": {
+        "anio": 2026,
+        "fuente_id": "petrocuyo-web-2026",
+        "fuente": "Portal institucional y operaciones de polipropileno (Petrocuyo S.A.I.C.)",
+        "url": "https://www.petrocuyo.com/",
+        "fecha_descarga": "2026-11-26",
+        "hash": "sha256:5706e3a328532bddf36e6af90c032f40c80e99ce17049403540bb26dec2da3e3",
+        "cita_ubicacion": "petrocuyo.com (planta Luján de Cuyo, capacidad sin reporte primario descargado)",
+        "confianza": "alta"
+      }
+    },
+    "procedencia": {
+      "anio": 2026,
+      "fuente_id": "petrocuyo-web-2026",
+      "fuente": "Portal institucional y operaciones de polipropileno (Petrocuyo S.A.I.C.)",
+      "url": "https://www.petrocuyo.com/",
+      "fecha_descarga": "2026-11-26",
+      "hash": "sha256:5706e3a328532bddf36e6af90c032f40c80e99ce17049403540bb26dec2da3e3",
+      "cita_ubicacion": "petrocuyo.com (Polo Petroquímico Luján de Cuyo, Mendoza)",
+      "confianza": "alta"
+    }
+  },
+  {
+    "planta_id": "bio4-rio-cuarto",
+    "empresa_id": "bio4-argentina",
+    "producto_id": "bioetanol-maiz",
+    "provincia_id": "14",
+    "departamento_id": "14098",
+    "nombre": "Planta Bio4 (Bioetanol de Maíz y Burlanda)",
+    "localidad": "Río Cuarto",
+    "lat": -33.153,
+    "lon": -64.316,
+    "estado_operativo": "operativa",
+    "capacidad": {
+      "estado": "sin_datos",
+      "valor": null,
+      "unidad": "m3/año bioetanol",
+      "procedencia": {
+        "anio": 2026,
+        "fuente_id": "bio4-web-2026",
+        "fuente": "Portal oficial Bio4 Argentina (Bioetanol Río Cuarto S.A.)",
+        "url": "https://bio4.com.ar/",
+        "fecha_descarga": "2026-11-26",
+        "hash": "sha256:f7d9e9b758e86cdd4a8ae2e9e04f533a1368feca92a5bce3218bc669b6a524b7",
+        "cita_ubicacion": "bio4.com.ar y registro Secretaría de Energía bioetanol.csv",
+        "confianza": "alta"
+      }
+    },
+    "procedencia": {
+      "anio": 2026,
+      "fuente_id": "bio4-web-2026",
+      "fuente": "Portal oficial Bio4 Argentina (Bioetanol Río Cuarto S.A.)",
+      "url": "https://bio4.com.ar/",
+      "fecha_descarga": "2026-11-26",
+      "hash": "sha256:f7d9e9b758e86cdd4a8ae2e9e04f533a1368feca92a5bce3218bc669b6a524b7",
+      "cita_ubicacion": "bio4.com.ar (Río Cuarto, Córdoba)",
+      "confianza": "alta"
+    }
+  },
+  {
+    "planta_id": "acabio-villa-maria",
+    "empresa_id": "aca-bio",
+    "producto_id": "bioetanol-maiz",
+    "provincia_id": "14",
+    "departamento_id": "14042",
+    "nombre": "Biorrefinería ACA Bio (Bioetanol de Maíz)",
+    "localidad": "Villa María",
+    "lat": -32.426,
+    "lon": -63.176,
+    "estado_operativo": "operativa",
+    "capacidad": {
+      "estado": "sin_datos",
+      "valor": null,
+      "unidad": "m3/año bioetanol",
+      "procedencia": {
+        "anio": 2026,
+        "fuente_id": "acabio-web-2026",
+        "fuente": "Portal oficial ACA BIO Cooperativa Limitada (Villa María, Córdoba)",
+        "url": "https://www.acabio.com.ar/",
+        "fecha_descarga": "2026-11-26",
+        "hash": "sha256:23b80444827f78618e30e7d0f0615a69fc7b785a05e649c1e4b4df8fcaa1cf29",
+        "cita_ubicacion": "acabio.com.ar (Villa María, Depto. General San Martín, Córdoba)",
+        "confianza": "alta"
+      }
+    },
+    "procedencia": {
+      "anio": 2026,
+      "fuente_id": "acabio-web-2026",
+      "fuente": "Portal oficial ACA BIO Cooperativa Limitada (Villa María, Córdoba)",
+      "url": "https://www.acabio.com.ar/",
+      "fecha_descarga": "2026-11-26",
+      "hash": "sha256:23b80444827f78618e30e7d0f0615a69fc7b785a05e649c1e4b4df8fcaa1cf29",
+      "cita_ubicacion": "acabio.com.ar (Villa María, Córdoba)",
+      "confianza": "alta"
+    }
+  },
+  {
+    "planta_id": "la-florida-cruz-alta",
+    "empresa_id": "bioenergetica-la-florida",
+    "producto_id": "bioetanol-cana",
+    "provincia_id": "90",
+    "departamento_id": "90014",
+    "nombre": "Complejo Sucroalcoholero La Florida (Destilería y Deshidratadora)",
+    "localidad": "La Florida",
+    "lat": -26.809,
+    "lon": -65.075,
+    "estado_operativo": "operativa",
+    "capacidad": {
+      "estado": "sin_datos",
+      "valor": null,
+      "unidad": "m3/año bioetanol",
+      "procedencia": {
+        "anio": 2026,
+        "fuente_id": "se-bioetanol-empresas-csv",
+        "fuente": "Bioetanol: detalle de cupos asignados, producción y ventas por empresa y provincia",
+        "url": "https://datos.energia.gob.ar/dataset/5ce77ad1-c729-42cd-a8b5-2407de005e5b/resource/0df1eeda-854b-44b0-8ea6-1a537f167fa4/download/bioetanol.csv",
+        "fecha_descarga": "2026-11-26",
+        "hash": "sha256:0ca08a9f96046a4e3aab458e61a9011ef3d21c65bde6185398a1310ee44f530d",
+        "cita_ubicacion": "bioetanol.csv (Compañía Bioenergética La Florida S.A., Tucumán)",
+        "confianza": "alta"
+      }
+    },
+    "procedencia": {
+      "anio": 2026,
+      "fuente_id": "se-bioetanol-empresas-csv",
+      "fuente": "Bioetanol: detalle de cupos asignados, producción y ventas por empresa y provincia",
+      "url": "https://datos.energia.gob.ar/dataset/5ce77ad1-c729-42cd-a8b5-2407de005e5b/resource/0df1eeda-854b-44b0-8ea6-1a537f167fa4/download/bioetanol.csv",
+      "fecha_descarga": "2026-11-26",
+      "hash": "sha256:0ca08a9f96046a4e3aab458e61a9011ef3d21c65bde6185398a1310ee44f530d",
+      "cita_ubicacion": "bioetanol.csv (La Florida, Depto. Cruz Alta, Tucumán)",
+      "confianza": "alta"
+    }
   }
 ]

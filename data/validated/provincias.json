@@ -28,8 +28,8 @@
     "nombre": "Córdoba",
     "iso_3166_2": "AR-X",
     "region": "Centro",
-    "cobertura_datos": "sin_datos",
-    "nota_cobertura": "Sin cadenas productivas cargadas todavía."
+    "cobertura_datos": "completa",
+    "nota_cobertura": "Polo bioenergético de bioetanol de maíz (Río Cuarto y Villa María) verificado con SAGyP 2026, Secretaría de Energía, Bio4, ACA Bio y UN Comtrade HS 2207.10."
   },
   {
     "provincia_id": "18",
@@ -100,8 +100,8 @@
     "nombre": "Mendoza",
     "iso_3166_2": "AR-M",
     "region": "Cuyo",
-    "cobertura_datos": "sin_datos",
-    "nota_cobertura": "Sin cadenas productivas cargadas todavía."
+    "cobertura_datos": "completa",
+    "nota_cobertura": "Polo refinador y de polipropileno en Luján de Cuyo (YPF CILC y Petrocuyo) verificado con EU POL BREF, Petrocuyo y UN Comtrade HS 3902.10."
   },
   {
     "provincia_id": "54",
@@ -116,8 +116,8 @@
     "nombre": "Neuquén",
     "iso_3166_2": "AR-Q",
     "region": "Patagonia",
-    "cobertura_datos": "sin_datos",
-    "nota_cobertura": "Sin cadenas productivas cargadas todavía."
+    "cobertura_datos": "completa",
+    "nota_cobertura": "Cadena de metanol desde gas natural (Complejo Industrial Plaza Huincul, Depto. Confluencia) verificada con IPCC Cap. 3.9, EU LVOC BREF, YPF y UN Comtrade HS 2905.11."
   },
   {
     "provincia_id": "62",
@@ -180,8 +180,8 @@
     "nombre": "Tucumán",
     "iso_3166_2": "AR-T",
     "region": "NOA",
-    "cobertura_datos": "sin_datos",
-    "nota_cobertura": "Sin cadenas productivas cargadas todavía."
+    "cobertura_datos": "completa",
+    "nota_cobertura": "Complejo sucroalcoholero de bioetanol y azúcar de caña (Depto. Cruz Alta) verificado con Secretaría de Energía, Centro Azucarero Argentino y UN Comtrade HS 2207.10/1701.99."
   },
   {
     "provincia_id": "94",
