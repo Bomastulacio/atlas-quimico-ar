@@ -21,16 +21,20 @@ export interface AluarPhaseDef {
   index: number;
   code: string;
   name: string;
-  nick: string;
   short: string;
   pasoId: string;
   startDeg: number;
   endDeg: number;
   color: string;
   cameraTarget: [number, number, number];
+  cameraDir: [number, number, number];
   cameraRadius: number;
   summary: string;
-  transportDetail: string;
+  inputLabel: string;
+  machineAction: string;
+  outputLabel: string;
+  tempDisplay: string;
+  tempC: number;
 }
 
 export const ALUAR_CYCLE_DEG = 360;
@@ -39,94 +43,109 @@ export const ALUAR_PHASES: AluarPhaseDef[] = [
   {
     index: 0,
     code: '01',
-    name: 'Descarga portuaria y silos',
-    nick: 'puerto',
-    short: 'MUELLE STORNI',
+    name: 'Recepción en Muelle Storni y silos',
+    short: 'Muelle y silos',
     pasoId: 'al-p1-alumina',
     startDeg: 0,
     endDeg: 72,
     color: ATLAS_PHASE_HUES.cobalt,
-    cameraTarget: [-4.7, 1.35, 0.25],
-    cameraRadius: 3.55,
+    cameraTarget: [-4.55, 1.25, 0.35],
+    cameraDir: [3.2, 3.6, 7.8],
+    cameraRadius: 3.1,
     summary:
-      'El buque granelero amarra en el Muelle Almirante Storni sobre aguas profundas del Golfo Nuevo. La torre neumática succiona la alúmina calcinada desde las bodegas sin levantar polvo.',
-    transportDetail:
-      'Transporte: succión vertical desde bodega -> cinta cerrada hermética sobre pilotes del muelle -> elevación a los 2 silos cónicos en costa.',
+      'La alúmina calcinada (polvo blanco de óxido de aluminio) llega por barco al Golfo Nuevo. En el Muelle Almirante Storni, una torre neumática la succiona directo desde las bodegas sin contacto con el aire y la envía por un conducto hermético hasta los silos en costa.',
+    inputLabel: 'Alúmina calcinada (Al2O3) importada en buque granelero',
+    machineAction: 'Grúa succionadora neumática + cinta cerrada sobre pilotes',
+    outputLabel: 'Polvo de Al2O3 almacenado en silos cónicos secos',
+    tempDisplay: 'Ambiente',
+    tempC: 25,
   },
   {
     index: 1,
     code: '02',
-    name: 'Cocción y envarillado de ánodos',
-    nick: 'carbono',
-    short: 'ÁNODOS C',
+    name: 'Fabricación y cocción de ánodos',
+    short: 'Ánodos de carbono',
     pasoId: 'al-p2-anodos',
     startDeg: 72,
     endDeg: 144,
     color: ATLAS_PHASE_HUES.ochre,
-    cameraTarget: [-1.15, 1.45, -1.55],
-    cameraRadius: 3.1,
+    cameraTarget: [-0.35, 1.15, -1.35],
+    cameraDir: [4.2, 3.4, 6.2],
+    cameraRadius: 2.35,
     summary:
-      'En la planta de carbón se hornean bloques de coque de petróleo y brea a 1.150 °C y se sueldan a vástagos conductores de aluminio-cobre que los sostendrán dentro de la cuba.',
-    transportDetail:
-      'Transporte: monorriel aéreo lleva cada ánodo precocido envarillado desde el horno de cocción hasta el puente de la sala de electrólisis.',
+      'El coque de petróleo y la brea se moldean en bloques compactos y se hornean a 1.150 °C. Luego se les fijan varillas conductoras de aluminio-cobre y un monorriel aéreo los transporta listos para sumergirse en las cubas electrolíticas.',
+    inputLabel: 'Coque de petróleo calcinado + brea de alquitrán',
+    machineAction: 'Horno de cocción refractario + monorriel de envarillado',
+    outputLabel: 'Ánodos de carbono precocido con vástago conductor',
+    tempDisplay: '1.150 °C',
+    tempC: 1150,
   },
   {
     index: 2,
     code: '03',
-    name: 'Electrólisis Hall-Héroult',
-    nick: 'cubas',
-    short: 'ELECTRÓLISIS',
+    name: 'Electrólisis en cubas Hall-Héroult',
+    short: 'Electrólisis',
     pasoId: 'al-p3-electrolisis',
     startDeg: 144,
     endDeg: 240,
     color: ATLAS_PHASE_HUES.cobalt,
-    cameraTarget: [1.05, 1.55, 0.2],
-    cameraRadius: 3.25,
+    cameraTarget: [1.1, 1.25, 0.35],
+    cameraDir: [1.8, 2.7, 7.6],
+    cameraRadius: 2.45,
     summary:
-      'Los pistones rompe-costra dosifican alúmina al baño de criolita fundida a 960 °C. La corriente continua reduce el óxido y deposita aluminio líquido puro sobre el cátodo de grafito.',
-    transportDetail:
-      'Transporte: cañería neumática densa desde el cono del silo -> tolva central de cuba -> inyección puntual al baño fundido.',
+      'Es el corazón químico de Aluar. Los pistones rompe-costra dosifican alúmina desde la tolva al baño de criolita fundida a 960 °C. Al pasar una gran corriente continua por los ánodos, el oxígeno reacciona con el carbono (CO2) y el aluminio puro cae líquido al fondo.',
+    inputLabel: 'Al2O3 desde silos + ánodos de C + 13,51 MWh/t de electricidad',
+    machineAction: 'Cuba Hall-Héroult con rompe-costra y barras colectoras DC',
+    outputLabel: 'Aluminio líquido (99,7% pureza) en el fondo + gases CO2/HF',
+    tempDisplay: '960 °C',
+    tempC: 960,
   },
   {
     index: 3,
     code: '04',
-    name: 'Captura seca y reciclo GTC',
-    nick: 'reciclo',
-    short: 'GTC FLUORUROS',
+    name: 'Captura de gases y reciclo GTC',
+    short: 'Reciclo GTC',
     pasoId: 'al-p4-captura-gases',
     startDeg: 240,
     endDeg: 300,
     color: ATLAS_PHASE_HUES.emerald,
-    cameraTarget: [3.4, 1.75, -1.2],
-    cameraRadius: 3.15,
+    cameraTarget: [3.2, 1.45, -0.85],
+    cameraDir: [3.8, 3.1, 6.8],
+    cameraRadius: 2.55,
     summary:
-      'Los gases CO2 y HF aspirados bajo la capota de la cuba atraviesan un reactor seco donde alúmina fresca captura más del 99% del flúor en ciclones y filtros de mangas.',
-    transportDetail:
-      'Transporte: ducto de aspiración de gases calientes -> ciclones y mangas GTC -> retorno neumático de alúmina fluorada a la cuba.',
+      'Los gases aspirados bajo la capota de la cuba arrastran fluoruros (HF). Antes de salir por la chimenea, pasan por ciclones y filtros de mangas donde alúmina fresca absorbe más del 99% del flúor y vuelve a la cuba en circuito cerrado.',
+    inputLabel: 'Gases de cuba (CO2 + fluoruros HF) + alúmina fresca',
+    machineAction: 'Ciclones de adsorción seca y filtro de mangas GTC',
+    outputLabel: 'Alúmina fluorada reciclada a la cuba + aire depurado',
+    tempDisplay: '120 °C',
+    tempC: 120,
   },
   {
     index: 4,
     code: '05',
-    name: 'Sifonado al vacío y colada',
-    nick: 'colada',
-    short: 'FUNDICIÓN',
+    name: 'Sifonado, solidificación y despacho',
+    short: 'Colada y lingotes',
     pasoId: 'al-p5-colada',
     startDeg: 300,
     endDeg: 360,
     color: ATLAS_PHASE_HUES.red,
-    cameraTarget: [4.85, 1.2, 0.95],
-    cameraRadius: 3.25,
+    cameraTarget: [4.95, 0.95, 1.05],
+    cameraDir: [3.6, 3.2, 6.6],
+    cameraRadius: 2.6,
     summary:
-      'Un crisol viajero extrae por vacío el aluminio líquido a 960 °C del fondo de la cuba y lo vuelca en el horno de mantenimiento para moldear lingotes T, barrotes y alambrón.',
-    transportDetail:
-      'Transporte: tubo sifón al vacío -> traslado en crisol térmico sobre vía -> canal de colada hacia mesa de lingotes, barrotes y bobinas.',
+      'Un crisol viajero succiona por vacío el aluminio líquido del fondo de la cuba y lo lleva al horno de mantenimiento. Desde allí corre por el canal de colada hacia moldes refrigerados para solidificar lingotes T, barrotes de extrusión y alambrón.',
+    inputLabel: 'Aluminio líquido a 960 °C extraído de las cubas',
+    machineAction: 'Crisol de sifonado al vacío + horno basculante + mesa de colada',
+    outputLabel: 'Lingotes, placas, barrotes (billets) y bobinas de alambrón',
+    tempDisplay: '720 °C',
+    tempC: 720,
   },
 ];
 
 export const ALUAR_OVERVIEW_CAMERA = {
-  target: [0.35, 1.25, -0.05] as [number, number, number],
-  dir: [5.4, 4.15, 7.6] as [number, number, number],
-  radius: 5.55,
+  target: [-0.2, 1.15, 0.05] as [number, number, number],
+  dir: [4.8, 4.2, 8.6] as [number, number, number],
+  radius: 5.15,
   worldBox: [
     [-8.2, -0.6, -3.1],
     [7.6, 3.8, 2.9],
@@ -802,78 +821,90 @@ export function buildAluarMechanism(kit: InkworksKit): AluarMechanismModel {
   }
 
   /* =========================================================================
-     9. DOCE GLOBOS NUMERADOS CON ANCLAJE 3D EXACTO (SIN SOLAPAMIENTOS)
+     9. ETIQUETAS DESCRIPTIVAS POR ETAPA (SOLO 2-3 VISIBLES A LA VEZ POR DEFECTO)
      ========================================================================= */
   const callouts: CalloutAnchorDef[] = [
     {
       n: 1,
-      name: 'Golfo Nuevo y Muelle Storni',
-      phaseIndex: 0,
-      at: (v) => v.set(-6.5, 0.35, -0.55),
-    },
-    {
-      n: 2,
-      name: 'Buque granelero (Al2O3)',
+      name: 'Buque granelero en Golfo Nuevo',
+      description: 'Trae alúmina calcinada (Al2O3) importada de Australia y Brasil hasta el Muelle Storni.',
       phaseIndex: 0,
       at: (v) => shipGroup.localToWorld(v.set(-0.2, 0.58, 0.15)),
     },
     {
-      n: 3,
-      name: 'Grúa succionadora neumática',
+      n: 2,
+      name: 'Grúa succionadora y conducto cerrado',
+      description: 'Aspira la alúmina desde las bodegas y la transporta por cinta hermética sobre pilotes.',
       phaseIndex: 0,
       at: (v) => unloaderGroup.localToWorld(v.set(0, 1.38, 0.65)),
     },
     {
-      n: 4,
-      name: 'Conducto hermético a silos',
-      phaseIndex: 0,
-      at: (v) => pierConveyorCurve.getPointAt(0.55, v),
-    },
-    {
-      n: 5,
+      n: 3,
       name: 'Silos cónicos de alúmina',
+      description: 'Almacenan el polvo seco de Al2O3 y alimentan por cañería neumática a la sala de cubas.',
       phaseIndex: 0,
       at: (v) => v.copy(siloAnchors[0]!),
     },
     {
-      n: 6,
+      n: 4,
       name: 'Horno de cocción de ánodos',
+      description: 'Hornea bloques prensados de coque de petróleo y brea a 1.150 °C durante días.',
       phaseIndex: 1,
-      at: (v) => v.set(-0.55, 1.25, -1.85),
+      at: (v) => v.set(-0.55, 1.15, -1.85),
     },
     {
-      n: 7,
-      name: 'Monorriel de ánodos (C)',
+      n: 5,
+      name: 'Monorriel de ánodos envarillados',
+      description: 'Traslada cada ánodo con su varilla conductora de aluminio-cobre hacia las cubas.',
       phaseIndex: 1,
       at: (v) => travelingAnode.localToWorld(v.set(0, -0.2, 0)),
     },
     {
-      n: 8,
-      name: 'Barras DC y rompe-costra',
+      n: 6,
+      name: 'Barras DC y pistones rompe-costra',
+      description: 'Inyectan corriente continua y perforan la costra superior para dosificar Al2O3 al baño.',
       phaseIndex: 2,
       at: (v) => v.set(1.1, 2.05, 0.58),
     },
     {
-      n: 9,
-      name: 'Cuba Hall-Héroult (960 °C)',
+      n: 7,
+      name: 'Baño de criolita (960 °C) y aluminio líquido',
+      description: 'La alúmina se disuelve en criolita fundida y el aluminio puro se deposita en el fondo.',
       phaseIndex: 2,
-      at: (v) => v.set(1.1, 0.92, 1.02),
+      at: (v) => v.set(1.1, 0.85, 1.02),
     },
     {
-      n: 10,
-      name: 'Ciclones y reciclo GTC (>99%)',
+      n: 8,
+      name: 'Ducto de gases y ciclones GTC',
+      description: 'Aspiran CO2 y fluoruros (HF) de la cuba y retienen más del 99% en filtros secos.',
       phaseIndex: 3,
       at: (v) => v.set(4.15, 1.65, -1.55),
     },
     {
-      n: 11,
+      n: 9,
+      name: 'Retorno de alúmina fluorada',
+      description: 'Devuelve el polvo enriquecido con flúor desde GTC directo a la tolva de la cuba.',
+      phaseIndex: 3,
+      at: (v) => recycleCurve.getPointAt(0.45, v),
+    },
+    {
+      n: 10,
       name: 'Crisol de sifonado al vacío',
+      description: 'Succiona aluminio líquido del fondo de la cuba y lo traslada sobre vía hasta fundición.',
       phaseIndex: 4,
       at: (v) => siphonCrucible.localToWorld(v.set(0, 0.55, 0)),
     },
     {
+      n: 11,
+      name: 'Horno de mantenimiento y canal de colada',
+      description: 'Ajusta la aleación a 720 °C y dosifica el metal fundido hacia los moldes refrigerados.',
+      phaseIndex: 4,
+      at: (v) => v.set(5.1, 0.95, 1.15),
+    },
+    {
       n: 12,
-      name: 'Horno y colada de lingotes',
+      name: 'Lingotes T, barrotes y alambrón',
+      description: 'Formatos sólidos terminados listos para industria local o exportación desde el mismo puerto.',
       phaseIndex: 4,
       at: (v) => v.set(6.55, 0.42, 1.25),
     },
@@ -882,7 +913,7 @@ export function buildAluarMechanism(kit: InkworksKit): AluarMechanismModel {
   return {
     root,
     callouts,
-    compactCalloutIds: [1, 3, 5, 6, 9, 10, 11, 12],
+    compactCalloutIds: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12],
     pose,
     setLayer(key, visible) {
       if (key === 'casings') casingsGroup.visible = visible;

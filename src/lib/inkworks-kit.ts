@@ -39,6 +39,7 @@ export interface StreamHandle {
 export interface CalloutAnchorDef {
   n: number;
   name: string;
+  description: string;
   phaseIndex: number;
   at: (target: THREE.Vector3) => void;
 }
@@ -46,6 +47,7 @@ export interface CalloutAnchorDef {
 export interface PlacedCallout {
   n: number;
   name: string;
+  description: string;
   phaseIndex: number;
   side: 'L' | 'R';
   ax: number;
@@ -450,6 +452,7 @@ export function projectCallouts2Columns(
       result.push({
         n: item.n,
         name: item.name,
+        description: item.description,
         phaseIndex: item.phaseIndex,
         side,
         ax: item.ax,
