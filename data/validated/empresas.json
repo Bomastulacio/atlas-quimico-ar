@@ -20,7 +20,7 @@
   {
     "empresa_id": "buyatti-saica",
     "razon_social": "Buyatti S.A.I.C.A.",
-    "cuit": null,
+    "cuit": "30-50168439-9",
     "tipo_capital": "nacional",
     "sitio_web_oficial": "https://buyatti.com.ar/",
     "hechos_verificables": "Complejo agroindustrial con planta de desmote y procesamiento de semillas de algodón en Las Breñas (Depto. 9 de Julio, Chaco) y plantas oleaginosas en Reconquista y Puerto General San Martín (Santa Fe).",
@@ -31,14 +31,14 @@
       "url": "https://buyatti.com.ar/",
       "fecha_descarga": "2026-11-24",
       "hash": "sha256:7f9e25e1da5fd7163415c3d5b08c73b5a2d1b577b93b10de4dca14cc16395e01",
-      "cita_ubicacion": "buyatti.com.ar (desmote y procesamiento de semilla de algodón, Las Breñas, Chaco)",
+      "cita_ubicacion": "buyatti.com.ar (desmote y procesamiento de semilla de algodón, Las Breñas, Chaco) · Verificación CUIT 30-50168439-9 vía API oficial BCRA (bcra-cuit-buyatti-saica)",
       "confianza": "alta"
     }
   },
   {
     "empresa_id": "renova-sa",
     "razon_social": "Renova S.A.",
-    "cuit": null,
+    "cuit": "30-70959089-4",
     "tipo_capital": "mixto",
     "sitio_web_oficial": "https://renova.com.ar/",
     "hechos_verificables": "Opera en Timbúes (Depto. San Lorenzo, Santa Fe) uno de los mayores complejos de molienda de soja del mundo (32.400 t/día, recepción 60.000 t/día camiones y 15.000 t/día barcazas), además de planta de biodiésel (1.450 t/día) y glicerina refinada (270 t/día) en San Lorenzo.",
@@ -49,14 +49,14 @@
       "url": "https://renova.com.ar/",
       "fecha_descarga": "2026-11-24",
       "hash": "sha256:2a9c82604e9b4a60998bca222a36e3c5147c0a66dc671730e7b9a2af2421204d",
-      "cita_ubicacion": "renova.com.ar (Planta Timbúes 32.400 t/día molienda; Planta San Lorenzo 1.450 t/día biodiésel)",
+      "cita_ubicacion": "renova.com.ar (Planta Timbúes 32.400 t/día molienda; Planta San Lorenzo 1.450 t/día biodiésel) · Verificación CUIT 30-70959089-4 vía API oficial BCRA (bcra-cuit-renova-sa)",
       "confianza": "alta"
     }
   },
   {
     "empresa_id": "molinos-agro-sa",
     "razon_social": "Molinos Agro S.A.",
-    "cuit": null,
+    "cuit": "30-71511877-3",
     "tipo_capital": "nacional",
     "sitio_web_oficial": "https://molinosagro.com.ar/",
     "hechos_verificables": "Opera el complejo industrial y Puerto San Benito en San Lorenzo (Santa Fe) con capacidad de molienda declarada de 6.000.000 t/año de poroto de soja, embarcando 5% del comercio mundial de harina y 4% del aceite de soja.",
@@ -67,14 +67,14 @@
       "url": "https://molinosagro.com.ar/nuestro-negocio/",
       "fecha_descarga": "2026-11-24",
       "hash": "sha256:cc3b5a0e525cb497f7750c973ad8f134caa4839b7fbaaf9da26cce5d3a0a4875",
-      "cita_ubicacion": "molinosagro.com.ar/nuestro-negocio/ (Puerto San Benito: 6.000.000 t/año molienda soja)",
+      "cita_ubicacion": "molinosagro.com.ar/nuestro-negocio/ (Puerto San Benito: 6.000.000 t/año molienda soja) · Verificación CUIT 30-71511877-3 vía API oficial BCRA (bcra-cuit-molinos-agro-sa)",
       "confianza": "alta"
     }
   },
   {
     "empresa_id": "dow-pbbpolisur",
     "razon_social": "Dow Argentina (PBBPolisur S.R.L.)",
-    "cuit": null,
+    "cuit": "30-56025419-5",
     "tipo_capital": "extranjero",
     "sitio_web_oficial": "https://ar.dow.com/es-ar.html",
     "hechos_verificables": "Opera en Bahía Blanca el complejo petroquímico más grande de América Latina, con seis plantas productivas (2 de etileno y 4 de polietileno LDPE, LLDPE y HDPE).",
@@ -85,14 +85,14 @@
       "url": "https://ar.dow.com/es-ar.html",
       "fecha_descarga": "2026-11-24",
       "hash": "sha256:37eb576cb7e3c6ea56143c9d668799c30fc2ee4bd2019ada561e42cbc6fff323",
-      "cita_ubicacion": "ar.dow.com/es-ar.html (seis plantas: 2 de etileno y 4 de polietileno en Bahía Blanca)",
+      "cita_ubicacion": "ar.dow.com/es-ar.html (seis plantas: 2 de etileno y 4 de polietileno en Bahía Blanca) · Verificación CUIT 30-56025419-5 vía API oficial BCRA (bcra-cuit-dow-pbbpolisur)",
       "confianza": "alta"
     }
   },
   {
     "empresa_id": "unipar-indupa",
     "razon_social": "Unipar Indupa S.A.I.C.",
-    "cuit": null,
+    "cuit": "30-50215081-9",
     "tipo_capital": "extranjero",
     "sitio_web_oficial": "https://unipar.com/es/acerca-de-unipar",
     "hechos_verificables": "Opera en el Polo Petroquímico de Bahía Blanca el complejo cloro-álcali y vinílico que elabora cloro, soda cáustica y policloruro de vinilo (PVC).",
@@ -103,14 +103,14 @@
       "url": "https://unipar.com/es/acerca-de-unipar",
       "fecha_descarga": "2026-11-25",
       "hash": "sha256:078744f42c406f68aa33110931629fe7dfa3cd9c6544791837111532d225a6f8",
-      "cita_ubicacion": "unipar.com/es/acerca-de-unipar (unidad Bahía Blanca: cloro, soda cáustica y PVC)",
+      "cita_ubicacion": "unipar.com/es/acerca-de-unipar (unidad Bahía Blanca: cloro, soda cáustica y PVC) · Verificación CUIT 30-50215081-9 vía API oficial BCRA (bcra-cuit-unipar-indupa)",
       "confianza": "alta"
     }
   },
   {
     "empresa_id": "petrocuyo-saic",
-    "razon_social": "Petrocuyo S.A.I.C.",
-    "cuit": null,
+    "razon_social": "Petroquímica Cuyo S.A.I.C. (Petrocuyo)",
+    "cuit": "30-58342640-6",
     "tipo_capital": "nacional",
     "sitio_web_oficial": "https://www.petrocuyo.com/",
     "hechos_verificables": "Productor líder de polipropileno en Argentina con planta industrial en el Polo Petroquímico de Luján de Cuyo (Mendoza), abastecida por corrientes de propileno de refinería.",
@@ -121,205 +121,7 @@
       "url": "https://www.petrocuyo.com/",
       "fecha_descarga": "2026-11-26",
       "hash": "sha256:5706e3a328532bddf36e6af90c032f40c80e99ce17049403540bb26dec2da3e3",
-      "cita_ubicacion": "petrocuyo.com (operaciones de polipropileno en Luján de Cuyo, Mendoza)",
-      "confianza": "alta"
-    }
-  },
-  {
-    "empresa_id": "bio4-argentina",
-    "razon_social": "Bioetanol Río Cuarto S.A. (Bio4)",
-    "cuit": null,
-    "tipo_capital": "nacional",
-    "sitio_web_oficial": "https://bio4.com.ar/",
-    "hechos_verificables": "Productora cordobesa pionera de bioetanol anhidro a partir de maíz en Río Cuarto (Depto. Río Cuarto, Córdoba), registrada en la Secretaría de Energía con coproducción de burlanda húmeda/seca (WDGS/DDGS) y energía renovable.",
-    "procedencia": {
-      "anio": 2026,
-      "fuente_id": "bio4-web-2026",
-      "fuente": "Portal oficial Bio4 Argentina (Bioetanol Río Cuarto S.A.)",
-      "url": "https://bio4.com.ar/",
-      "fecha_descarga": "2026-11-26",
-      "hash": "sha256:f7d9e9b758e86cdd4a8ae2e9e04f533a1368feca92a5bce3218bc669b6a524b7",
-      "cita_ubicacion": "bio4.com.ar y registro Secretaría de Energía bioetanol.csv (Río Cuarto, Córdoba)",
-      "confianza": "alta"
-    }
-  },
-  {
-    "empresa_id": "aca-bio",
-    "razon_social": "ACA Bio Cooperativa Limitada",
-    "cuit": null,
-    "tipo_capital": "nacional",
-    "sitio_web_oficial": "https://www.acabio.com.ar/",
-    "hechos_verificables": "Biorrefinería cooperativa ubicada en Villa María (Depto. General San Martín, Córdoba) que industrializa maíz en bioetanol anhidro para mezcla en naftas, burlanda proteica y CO2 alimenticio.",
-    "procedencia": {
-      "anio": 2026,
-      "fuente_id": "acabio-web-2026",
-      "fuente": "Portal oficial ACA BIO Cooperativa Limitada (Villa María, Córdoba)",
-      "url": "https://www.acabio.com.ar/",
-      "fecha_descarga": "2026-11-26",
-      "hash": "sha256:23b80444827f78618e30e7d0f0615a69fc7b785a05e649c1e4b4df8fcaa1cf29",
-      "cita_ubicacion": "acabio.com.ar (biorrefinería Villa María, Córdoba)",
-      "confianza": "alta"
-    }
-  },
-  {
-    "empresa_id": "bioenergetica-la-florida",
-    "razon_social": "Compañía Bioenergética La Florida S.A.",
-    "cuit": null,
-    "tipo_capital": "nacional",
-    "sitio_web_oficial": "https://centroazucarero.com.ar/",
-    "hechos_verificables": "Destilería y deshidratadora de bioetanol de caña de azúcar ubicada en La Florida (Depto. Cruz Alta, Tucumán), registrada en los cupos oficiales de la Secretaría de Energía dentro del complejo sucroalcoholero tucumano.",
-    "procedencia": {
-      "anio": 2026,
-      "fuente_id": "se-bioetanol-empresas-csv",
-      "fuente": "Bioetanol: detalle de cupos asignados, producción y ventas por empresa y provincia",
-      "url": "https://datos.energia.gob.ar/dataset/5ce77ad1-c729-42cd-a8b5-2407de005e5b/resource/0df1eeda-854b-44b0-8ea6-1a537f167fa4/download/bioetanol.csv",
-      "fecha_descarga": "2026-11-26",
-      "hash": "sha256:0ca08a9f96046a4e3aab458e61a9011ef3d21c65bde6185398a1310ee44f530d",
-      "cita_ubicacion": "bioetanol.csv (Compañía Bioenergética La Florida S.A., La Florida, Tucumán)",
-      "confianza": "alta"
-    }
-  },
-  {
-    "empresa_id": "alpat-saic",
-    "razon_social": "Álcalis de la Patagonia S.A.I.C. (ALPAT)",
-    "cuit": null,
-    "tipo_capital": "nacional",
-    "sitio_web_oficial": null,
-    "hechos_verificables": "Única planta productora de carbonato de sodio sintético (proceso Solvay) de Sudamérica, localizada en Punta Delgado (San Antonio Oeste, Río Negro), abasteciendo a la industria del vidrio, detergentes y carbonatación de litio.",
-    "procedencia": {
-      "anio": 2025,
-      "fuente_id": "usgs-mcs-2025-soda-ash",
-      "fuente": "USGS Mineral Commodity Summaries 2025: Soda Ash (Sodium Carbonate)",
-      "url": "https://pubs.usgs.gov/periodicals/mcs2025/mcs2025-soda-ash.pdf",
-      "fecha_descarga": "2026-11-26",
-      "hash": "sha256:a386ee59806756e28c72f2fde95eaa3b68068e0614f1e0228fd13007be920ff5",
-      "cita_ubicacion": "USGS MCS 2025 Soda Ash + síntesis Solvay Argentina (San Antonio Oeste)",
-      "confianza": "alta"
-    }
-  },
-  {
-    "empresa_id": "caleras-san-juan-sa",
-    "razon_social": "Caleras San Juan S.A.",
-    "cuit": null,
-    "tipo_capital": "nacional",
-    "sitio_web_oficial": "https://calerassanjuan.com/",
-    "hechos_verificables": "Complejo industrial calero en Los Berros (Depto. Sarmiento, San Juan) con hornos verticales regenerativos (PFRK) de cal viva (CaO) e hidratada para minería de cobre/litio, siderurgia y exportación a Chile.",
-    "procedencia": {
-      "anio": 2026,
-      "fuente_id": "caleras-sj-web-2026",
-      "fuente": "Portal institucional Caleras San Juan S.A. (Polo Calero Los Berros)",
-      "url": "https://calerassanjuan.com/",
-      "fecha_descarga": "2026-11-26",
-      "hash": "sha256:310cab2033ed8e1093226691058715fbf4c90a4c2d0745ec1d6a34d39971587d",
-      "cita_ubicacion": "calerassanjuan.com Sección Operaciones Industriales Los Berros",
-      "confianza": "alta"
-    }
-  },
-  {
-    "empresa_id": "cerro-vanguardia-sa",
-    "razon_social": "Cerro Vanguardia S.A.",
-    "cuit": null,
-    "tipo_capital": "mixto",
-    "sitio_web_oficial": "https://www.cerrovanguardia.com.ar/",
-    "hechos_verificables": "Operación minera y metalúrgica de oro y plata en el Macizo del Deseado (Depto. Magallanes, Santa Cruz) participada por AngloGold Ashanti (92,5%) y Fomicruz S.E. de la Provincia de Santa Cruz (7,5%).",
-    "procedencia": {
-      "anio": 2026,
-      "fuente_id": "cerro-vanguardia-web-2026",
-      "fuente": "Portal institucional Cerro Vanguardia S.A. (AngloGold Ashanti / Fomicruz S.E.)",
-      "url": "https://www.cerrovanguardia.com.ar/",
-      "fecha_descarga": "2026-11-26",
-      "hash": "sha256:2a9633ad89a1b70c4fb6e599959a6635e88c52f360d90df16e897ca5ec3416b0",
-      "cita_ubicacion": "cerrovanguardia.com.ar Información Institucional y Planta Metalúrgica",
-      "confianza": "alta"
-    }
-  },
-  {
-    "empresa_id": "newmont-cerro-negro",
-    "razon_social": "Oroplata S.A. (Cerro Negro · Newmont)",
-    "cuit": null,
-    "tipo_capital": "extranjero",
-    "sitio_web_oficial": null,
-    "hechos_verificables": "Complejo minero subterráneo y planta de procesamiento de oro y plata Cerro Negro en el área de Perito Moreno (Depto. Lago Buenos Aires, Santa Cruz), uno de los principales productores auríferos de Argentina.",
-    "procedencia": {
-      "anio": 2026,
-      "fuente_id": "caem-web-2026",
-      "fuente": "Cámara Argentina de Empresas Mineras (CAEM): polos metalíferos y minería de Santa Cruz",
-      "url": "https://www.caem.com.ar/",
-      "fecha_descarga": "2026-11-26",
-      "hash": "sha256:c87dcc459011138da2f1e13b6de3f3eae07a46092db753f9b443a94fdc9cad22",
-      "cita_ubicacion": "caem.com.ar Operaciones metalíferas activas en Santa Cruz",
-      "confianza": "alta"
-    }
-  },
-  {
-    "empresa_id": "arauco-argentina-sa",
-    "razon_social": "Arauco Argentina S.A.",
-    "cuit": null,
-    "tipo_capital": "extranjero",
-    "sitio_web_oficial": "https://www.arauco.com/",
-    "hechos_verificables": "Operador foresto-industrial con planta de celulosa Kraft blanqueada de fibra larga de pino en Puerto Esperanza (Depto. Iguazú, Misiones), integrada con cogeneración eléctrica por biomasa y licor negro.",
-    "procedencia": {
-      "anio": 2026,
-      "fuente_id": "arauco-web-2026",
-      "fuente": "Portal corporativo Arauco (Operaciones Forestales y Planta de Celulosa Puerto Esperanza)",
-      "url": "https://www.arauco.com/",
-      "fecha_descarga": "2026-11-26",
-      "hash": "sha256:d00e96942269b2c521cd86449c5ff9fe6cec49bff31cdb210f0a7f004b00fad3",
-      "cita_ubicacion": "arauco.com Operaciones Industriales Argentina / Celulosa Puerto Esperanza",
-      "confianza": "alta"
-    }
-  },
-  {
-    "empresa_id": "totalenergies-austral",
-    "razon_social": "Total Austral S.A. (TotalEnergies Argentina · Consorcio CMA-1)",
-    "cuit": null,
-    "tipo_capital": "extranjero",
-    "sitio_web_oficial": "https://totalenergies.com.ar/",
-    "hechos_verificables": "Operador del consorcio Cuenca Marina Austral 1 (CMA-1) en Tierra del Fuego con plantas de tratamiento y fraccionamiento de gas natural y GLP en Río Cullen y Cañadón Alfa (Depto. Río Grande).",
-    "procedencia": {
-      "anio": 2026,
-      "fuente_id": "totalenergies-ar-web-2026",
-      "fuente": "Portal institucional TotalEnergies Argentina (Operaciones Cuenca Austral / Tierra del Fuego)",
-      "url": "https://totalenergies.com.ar/",
-      "fecha_descarga": "2026-11-26",
-      "hash": "sha256:10802742a4141ca4c8839e0901730e56ad931514ade0f59217d355a2f4a41e75",
-      "cita_ubicacion": "totalenergies.com.ar Operaciones Cuenca Austral (Tierra del Fuego)",
-      "confianza": "alta"
-    }
-  },
-  {
-    "empresa_id": "dos-anclas-ciba",
-    "razon_social": "Compañía Introductora de Buenos Aires S.A. (Dos Anclas)",
-    "cuit": null,
-    "tipo_capital": "nacional",
-    "sitio_web_oficial": "https://www.dosanclas.com.ar/",
-    "hechos_verificables": "Principal complejo salinero argentino con cosecha evaporítica y planta de lavado y refinación de cloruro de sodio en Salinas Grandes de Hidalgo (Depto. Atreucó, La Pampa).",
-    "procedencia": {
-      "anio": 2026,
-      "fuente_id": "dosanclas-web-2026",
-      "fuente": "Portal institucional Dos Anclas (Compañía Introductora de Buenos Aires S.A. · Salinas Grandes de Hidalgo)",
-      "url": "https://www.dosanclas.com.ar/",
-      "fecha_descarga": "2026-11-26",
-      "hash": "sha256:2024b46d4239f25130cfc5a4a539b039db0c3a16c9e9cd2e5535e2fbc41e4f9b",
-      "cita_ubicacion": "dosanclas.com.ar Planta Industrial Salinas Grandes de Hidalgo (La Pampa)",
-      "confianza": "alta"
-    }
-  },
-  {
-    "empresa_id": "cementos-avellaneda-sa",
-    "razon_social": "Cementos Avellaneda S.A.",
-    "cuit": null,
-    "tipo_capital": "mixto",
-    "sitio_web_oficial": "https://www.cementosavellaneda.com.ar/",
-    "hechos_verificables": "Productor integrado de clínker y cemento Portland con planta vía seca de alta eficiencia en La Calera (Depto. Belgrano, San Luis), abasteciendo a Cuyo y el Centro argentino.",
-    "procedencia": {
-      "anio": 2026,
-      "fuente_id": "cementos-avellaneda-web-2026",
-      "fuente": "Portal institucional Cementos Avellaneda S.A. (Planta La Calera, San Luis)",
-      "url": "https://www.cementosavellaneda.com.ar/",
-      "fecha_descarga": "2026-11-26",
-      "hash": "sha256:1e5dd8b7e2990f3005f2d7f14bf1385951d074e8d2e46ac8b1e895e5e18cc061",
-      "cita_ubicacion": "cementosavellaneda.com.ar Planta Industrial La Calera (San Luis)",
+      "cita_ubicacion": "petrocuyo.com (operaciones de polipropileno en Luján de Cuyo, Mendoza) · Verificación CUIT 30-58342640-6 vía API oficial BCRA (bcra-cuit-petrocuyo-saic)",
       "confianza": "alta"
     }
   },
@@ -360,114 +162,6 @@
     }
   },
   {
-    "empresa_id": "unitan-saica",
-    "razon_social": "Unitán S.A.I.C.A.",
-    "cuit": null,
-    "tipo_capital": "nacional",
-    "sitio_web_oficial": "https://www.unitan.net/",
-    "hechos_verificables": "Principal productor argentino de extracto de quebracho colorado (Schinopsis balansae) y bioactivos tánicos naturales, con instalaciones industriales en la ciudad de Formosa (y Puerto Tirol, Chaco) y una capacidad conjunta declarada cercana a 40.000 toneladas anuales.",
-    "procedencia": {
-      "anio": 2026,
-      "fuente_id": "unitan-web-2026",
-      "fuente": "Portal institucional Unitán S.A.I.C.A. (Extracto de quebracho y especialidades naturales en Formosa)",
-      "url": "https://www.unitan.net/",
-      "fecha_descarga": "2026-11-26",
-      "hash": "sha256:f518159e3922bf613673d1cb3eb08c56f6e129fdac00d70b3bfa584ef26d7f11",
-      "cita_ubicacion": "unitan.net Operaciones industriales en Formosa (Paraguay 280 Este / Parque Industrial Formosa)",
-      "confianza": "alta"
-    }
-  },
-  {
-    "empresa_id": "valle-de-la-puerta-sa",
-    "razon_social": "Valle de la Puerta S.A.",
-    "cuit": null,
-    "tipo_capital": "nacional",
-    "sitio_web_oficial": "https://valledelapuerta.com.ar/",
-    "hechos_verificables": "Complejo olivícola y almazara industrial sobre Ruta Nacional 74 Km 1186 (Vichigasta, Depto. Chilecito, La Rioja), con 770 hectáreas de olivares y una capacidad declarada de 1.400 toneladas anuales de aceite de oliva virgen extra.",
-    "procedencia": {
-      "anio": 2026,
-      "fuente_id": "valledelapuerta-web-2026",
-      "fuente": "Portal institucional Valle de la Puerta S.A. (Almazara Vichigasta, Chilecito, La Rioja)",
-      "url": "https://valledelapuerta.com.ar/",
-      "fecha_descarga": "2026-11-26",
-      "hash": "sha256:c9f1998a5b29dfb846397cf8fd41563719c832250cabab4725a0d01ebeefbfbf",
-      "cita_ubicacion": "valledelapuerta.com.ar Planta elaboradora de aceite de oliva en Vichigasta (Chilecito, La Rioja)",
-      "confianza": "alta"
-    }
-  },
-  {
-    "empresa_id": "agro-aceitunera-sa",
-    "razon_social": "Agro Aceitunera S.A. (Nucete)",
-    "cuit": null,
-    "tipo_capital": "nacional",
-    "sitio_web_oficial": "https://agroaceitunera.com.ar/",
-    "hechos_verificables": "Uno de los mayores procesadores olivícolas del país, con planta industrial en Aimogasta (Depto. Arauco, La Rioja) de hasta 200 toneladas diarias de molienda de aceitunas y unidad adicional en Chilecito.",
-    "procedencia": {
-      "anio": 2026,
-      "fuente_id": "agroaceitunera-web-2026",
-      "fuente": "Portal institucional Agro Aceitunera S.A. / Nucete (Plantas Aimogasta y Chilecito, La Rioja)",
-      "url": "https://agroaceitunera.com.ar/",
-      "fecha_descarga": "2026-11-26",
-      "hash": "sha256:21cb141ab44abd3a7e8c7be0057e4f929a9ba35f497abc1832ba7b70c2eb2057",
-      "cita_ubicacion": "agroaceitunera.com.ar Plantas industriales Aimogasta y Chilecito (La Rioja)",
-      "confianza": "alta"
-    }
-  },
-  {
-    "empresa_id": "ldc-argentina-sa",
-    "razon_social": "Louis Dreyfus Company Argentina S.A. (LDC)",
-    "cuit": null,
-    "tipo_capital": "extranjero",
-    "sitio_web_oficial": "https://www.ldc.com/ar/es/",
-    "hechos_verificables": "Opera la planta desmotadora de algodón de Quimilí (Depto. Moreno, Santiago del Estero), ampliada en 2024 a 60.000 toneladas anuales de procesamiento en el corazón de la primera cuenca algodonera argentina según SAGyP.",
-    "procedencia": {
-      "anio": 2025,
-      "fuente_id": "sde-gob-2026",
-      "fuente": "Gobierno de la Provincia de Santiago del Estero: polo productivo algodonero e industrial",
-      "url": "https://sde.gob.ar/",
-      "fecha_descarga": "2026-11-26",
-      "hash": "sha256:67eb4b7e987c6cc654ac20b3855791d371046dbd3972ec57bbf0c8ae4bc1187f",
-      "cita_ubicacion": "sde.gob.ar + SAGyP Estimaciones Agrícolas 2026 (cuenca algodonera Depto. Moreno, Quimilí, Santiago del Estero)",
-      "confianza": "alta"
-    }
-  },
-  {
-    "empresa_id": "maprimed-sa",
-    "razon_social": "Maprimed S.A. (Insud Pharma)",
-    "cuit": null,
-    "tipo_capital": "nacional",
-    "sitio_web_oficial": "https://www.insudpharma.com/",
-    "hechos_verificables": "Compañía farmoquímica argentina fundada en 1970 e integrada a Insud Pharma, con planta química de síntesis de Ingredientes Farmacéuticos Activos (IFAs/APIs) y centro de I+D en Av. Directorio 6155 (Comuna 9, CABA) bajo normas GMP/ANMAT/FDA.",
-    "procedencia": {
-      "anio": 2026,
-      "fuente_id": "insudpharma-web-2026",
-      "fuente": "Portal corporativo Insud Pharma (Maprimed S.A., Planta Química de APIs en CABA)",
-      "url": "https://www.insudpharma.com/",
-      "fecha_descarga": "2026-11-26",
-      "hash": "sha256:ee07fff97b4fa4611008b7d994cf642f31c76f1a029387a957fa2454cba4b69e",
-      "cita_ubicacion": "insudpharma.com Planta Química Maprimed S.A. Av. Directorio 6155 (Comuna 9, Mataderos, CABA)",
-      "confianza": "alta"
-    }
-  },
-  {
-    "empresa_id": "druetta-hnos-sa",
-    "razon_social": "Druetta Hnos. S.A.",
-    "cuit": null,
-    "tipo_capital": "nacional",
-    "sitio_web_oficial": "https://www.druetta.com.ar/",
-    "hechos_verificables": "Empresa metalúrgica argentina fundada en 1947 especializada en galvanizado por inmersión en caliente (GIC) para energía, telecomunicaciones, infraestructura, transporte, agro e industria. Opera en General Rodríguez un predio de 55.000 m2 (11.000 m2 cubiertos) con dos cubas de zinc fundido a 450 °C (13,0 x 1,8 x 3,0 m y 4,5 x 1,4 x 2,2 m), laboratorio propio, planta de efluentes líquidos, lavado de humos y certificaciones ISO 9001:2015 e ISO 14001:2015.",
-    "procedencia": {
-      "anio": 2026,
-      "fuente_id": "druetta-web-2026",
-      "fuente": "Portal institucional Druetta Hnos. S.A. (Planta General Rodríguez, Buenos Aires)",
-      "url": "https://www.druetta.com.ar/",
-      "fecha_descarga": "2026-11-27",
-      "hash": "sha256:eb0ee6c4ae621f4c701f4ce06a529ddc45d7cf64324bd8d2c31980849921abaa",
-      "cita_ubicacion": "druetta.com.ar (historia.html, instalaciones2.html, instalaciones4.html, instalaciones7.html, iso.html)",
-      "confianza": "alta"
-    }
-  },
-  {
     "empresa_id": "aluar-saic",
     "razon_social": "Aluar Aluminio Argentino S.A.I.C.",
     "cuit": "30-52278060-6",
@@ -482,6 +176,24 @@
       "fecha_descarga": "2026-11-24",
       "hash": "sha256:3ee6b54bf52a0a4e543e8be2d0c23d7399425b274971ae097867aee312233901",
       "cita_ubicacion": "Memoria 2025 pág. 2 y 10; Estados Financieros Nota 1 pág. 8 y Nota 2.3.1 pág. 11",
+      "confianza": "alta"
+    }
+  },
+  {
+    "empresa_id": "caleras-san-juan-sa",
+    "razon_social": "Caleras San Juan S.A.",
+    "cuit": "30-70076068-1",
+    "tipo_capital": "nacional",
+    "sitio_web_oficial": "https://calerassanjuan.com/",
+    "hechos_verificables": "Complejo industrial calero en Los Berros (Depto. Sarmiento, San Juan) con hornos verticales regenerativos (PFRK) de cal viva (CaO) e hidratada para minería de cobre/litio, siderurgia y exportación a Chile.",
+    "procedencia": {
+      "anio": 2026,
+      "fuente_id": "caleras-sj-web-2026",
+      "fuente": "Portal institucional Caleras San Juan S.A. (Polo Calero Los Berros)",
+      "url": "https://calerassanjuan.com/",
+      "fecha_descarga": "2026-11-26",
+      "hash": "sha256:310cab2033ed8e1093226691058715fbf4c90a4c2d0745ec1d6a34d39971587d",
+      "cita_ubicacion": "calerassanjuan.com Sección Operaciones Industriales Los Berros · Verificación CUIT 30-70076068-1 vía API oficial BCRA (bcra-cuit-caleras-san-juan-sa)",
       "confianza": "alta"
     }
   },
@@ -518,6 +230,294 @@
       "fecha_descarga": "2026-11-27",
       "hash": "sha256:8d9d89011f05c6525bc48aaf98862cf3e985496b6622baddea112f1c020894ac",
       "cita_ubicacion": "Form 20-F FY2025 portada (CUIT 30-54668997-9, 393.312.793 acciones), Item 4 Refining Units y Chemical Unit pág. 34",
+      "confianza": "alta"
+    }
+  },
+  {
+    "empresa_id": "bio4-argentina",
+    "razon_social": "Bioetanol Río Cuarto S.A. (Bio4)",
+    "cuit": "30-70993431-3",
+    "tipo_capital": "nacional",
+    "sitio_web_oficial": "https://bio4.com.ar/",
+    "hechos_verificables": "Productora cordobesa pionera de bioetanol anhidro a partir de maíz en Río Cuarto (Depto. Río Cuarto, Córdoba), registrada en la Secretaría de Energía con coproducción de burlanda húmeda/seca (WDGS/DDGS) y energía renovable.",
+    "procedencia": {
+      "anio": 2026,
+      "fuente_id": "bio4-web-2026",
+      "fuente": "Portal oficial Bio4 Argentina (Bioetanol Río Cuarto S.A.)",
+      "url": "https://bio4.com.ar/",
+      "fecha_descarga": "2026-11-26",
+      "hash": "sha256:f7d9e9b758e86cdd4a8ae2e9e04f533a1368feca92a5bce3218bc669b6a524b7",
+      "cita_ubicacion": "bio4.com.ar y registro Secretaría de Energía bioetanol.csv (Río Cuarto, Córdoba) · Verificación CUIT 30-70993431-3 vía API oficial BCRA (bcra-cuit-bio4-argentina)",
+      "confianza": "alta"
+    }
+  },
+  {
+    "empresa_id": "aca-bio",
+    "razon_social": "ACA Bio Cooperativa Limitada",
+    "cuit": "30-71182906-3",
+    "tipo_capital": "nacional",
+    "sitio_web_oficial": "https://www.acabio.com.ar/",
+    "hechos_verificables": "Biorrefinería cooperativa ubicada en Villa María (Depto. General San Martín, Córdoba) que industrializa maíz en bioetanol anhidro para mezcla en naftas, burlanda proteica y CO2 alimenticio.",
+    "procedencia": {
+      "anio": 2026,
+      "fuente_id": "acabio-web-2026",
+      "fuente": "Portal oficial ACA BIO Cooperativa Limitada (Villa María, Córdoba)",
+      "url": "https://www.acabio.com.ar/",
+      "fecha_descarga": "2026-11-26",
+      "hash": "sha256:23b80444827f78618e30e7d0f0615a69fc7b785a05e649c1e4b4df8fcaa1cf29",
+      "cita_ubicacion": "acabio.com.ar (biorrefinería Villa María, Córdoba) · Verificación CUIT 30-71182906-3 vía API oficial BCRA (bcra-cuit-aca-bio)",
+      "confianza": "alta"
+    }
+  },
+  {
+    "empresa_id": "bioenergetica-la-florida",
+    "razon_social": "Compañía Bioenergética La Florida S.A.",
+    "cuit": "30-71095985-0",
+    "tipo_capital": "nacional",
+    "sitio_web_oficial": "https://centroazucarero.com.ar/",
+    "hechos_verificables": "Destilería y deshidratadora de bioetanol de caña de azúcar ubicada en La Florida (Depto. Cruz Alta, Tucumán), registrada en los cupos oficiales de la Secretaría de Energía dentro del complejo sucroalcoholero tucumano.",
+    "procedencia": {
+      "anio": 2026,
+      "fuente_id": "se-bioetanol-empresas-csv",
+      "fuente": "Bioetanol: detalle de cupos asignados, producción y ventas por empresa y provincia",
+      "url": "https://datos.energia.gob.ar/dataset/5ce77ad1-c729-42cd-a8b5-2407de005e5b/resource/0df1eeda-854b-44b0-8ea6-1a537f167fa4/download/bioetanol.csv",
+      "fecha_descarga": "2026-11-26",
+      "hash": "sha256:0ca08a9f96046a4e3aab458e61a9011ef3d21c65bde6185398a1310ee44f530d",
+      "cita_ubicacion": "bioetanol.csv (Compañía Bioenergética La Florida S.A., La Florida, Tucumán) · Verificación CUIT 30-71095985-0 vía API oficial BCRA (bcra-cuit-bioenergetica-la-florida)",
+      "confianza": "alta"
+    }
+  },
+  {
+    "empresa_id": "alpat-saic",
+    "razon_social": "Álcalis de la Patagonia S.A.I.C. (ALPAT)",
+    "cuit": "30-54891481-3",
+    "tipo_capital": "nacional",
+    "sitio_web_oficial": null,
+    "hechos_verificables": "Única planta productora de carbonato de sodio sintético (proceso Solvay) de Sudamérica, localizada en Punta Delgado (San Antonio Oeste, Río Negro), abasteciendo a la industria del vidrio, detergentes y carbonatación de litio.",
+    "procedencia": {
+      "anio": 2025,
+      "fuente_id": "usgs-mcs-2025-soda-ash",
+      "fuente": "USGS Mineral Commodity Summaries 2025: Soda Ash (Sodium Carbonate)",
+      "url": "https://pubs.usgs.gov/periodicals/mcs2025/mcs2025-soda-ash.pdf",
+      "fecha_descarga": "2026-11-26",
+      "hash": "sha256:a386ee59806756e28c72f2fde95eaa3b68068e0614f1e0228fd13007be920ff5",
+      "cita_ubicacion": "USGS MCS 2025 Soda Ash + síntesis Solvay Argentina (San Antonio Oeste) · Verificación CUIT 30-54891481-3 vía API oficial BCRA (bcra-cuit-alpat-saic)",
+      "confianza": "alta"
+    }
+  },
+  {
+    "empresa_id": "cerro-vanguardia-sa",
+    "razon_social": "Cerro Vanguardia S.A.",
+    "cuit": "30-61872532-0",
+    "tipo_capital": "mixto",
+    "sitio_web_oficial": "https://www.cerrovanguardia.com.ar/",
+    "hechos_verificables": "Operación minera y metalúrgica de oro y plata en el Macizo del Deseado (Depto. Magallanes, Santa Cruz) participada por AngloGold Ashanti (92,5%) y Fomicruz S.E. de la Provincia de Santa Cruz (7,5%).",
+    "procedencia": {
+      "anio": 2026,
+      "fuente_id": "cerro-vanguardia-web-2026",
+      "fuente": "Portal institucional Cerro Vanguardia S.A. (AngloGold Ashanti / Fomicruz S.E.)",
+      "url": "https://www.cerrovanguardia.com.ar/",
+      "fecha_descarga": "2026-11-26",
+      "hash": "sha256:2a9633ad89a1b70c4fb6e599959a6635e88c52f360d90df16e897ca5ec3416b0",
+      "cita_ubicacion": "cerrovanguardia.com.ar Información Institucional y Planta Metalúrgica · Verificación CUIT 30-61872532-0 vía API oficial BCRA (bcra-cuit-cerro-vanguardia-sa)",
+      "confianza": "alta"
+    }
+  },
+  {
+    "empresa_id": "newmont-cerro-negro",
+    "razon_social": "Oroplata S.A. (Cerro Negro · Newmont)",
+    "cuit": "30-70862541-4",
+    "tipo_capital": "extranjero",
+    "sitio_web_oficial": null,
+    "hechos_verificables": "Complejo minero subterráneo y planta de procesamiento de oro y plata Cerro Negro en el área de Perito Moreno (Depto. Lago Buenos Aires, Santa Cruz), uno de los principales productores auríferos de Argentina.",
+    "procedencia": {
+      "anio": 2026,
+      "fuente_id": "caem-web-2026",
+      "fuente": "Cámara Argentina de Empresas Mineras (CAEM): polos metalíferos y minería de Santa Cruz",
+      "url": "https://www.caem.com.ar/",
+      "fecha_descarga": "2026-11-26",
+      "hash": "sha256:c87dcc459011138da2f1e13b6de3f3eae07a46092db753f9b443a94fdc9cad22",
+      "cita_ubicacion": "caem.com.ar Operaciones metalíferas activas en Santa Cruz · Verificación CUIT 30-70862541-4 vía API oficial BCRA (bcra-cuit-newmont-cerro-negro)",
+      "confianza": "alta"
+    }
+  },
+  {
+    "empresa_id": "arauco-argentina-sa",
+    "razon_social": "Arauco Argentina S.A.",
+    "cuit": "33-56324011-9",
+    "tipo_capital": "extranjero",
+    "sitio_web_oficial": "https://www.arauco.com/",
+    "hechos_verificables": "Operador foresto-industrial con planta de celulosa Kraft blanqueada de fibra larga de pino en Puerto Esperanza (Depto. Iguazú, Misiones), integrada con cogeneración eléctrica por biomasa y licor negro.",
+    "procedencia": {
+      "anio": 2026,
+      "fuente_id": "arauco-web-2026",
+      "fuente": "Portal corporativo Arauco (Operaciones Forestales y Planta de Celulosa Puerto Esperanza)",
+      "url": "https://www.arauco.com/",
+      "fecha_descarga": "2026-11-26",
+      "hash": "sha256:d00e96942269b2c521cd86449c5ff9fe6cec49bff31cdb210f0a7f004b00fad3",
+      "cita_ubicacion": "arauco.com Operaciones Industriales Argentina / Celulosa Puerto Esperanza · Verificación CUIT 33-56324011-9 vía API oficial BCRA (bcra-cuit-arauco-argentina-sa)",
+      "confianza": "alta"
+    }
+  },
+  {
+    "empresa_id": "totalenergies-austral",
+    "razon_social": "Total Austral S.A. Sucursal Argentina (TotalEnergies · CMA-1)",
+    "cuit": "30-56971934-4",
+    "tipo_capital": "extranjero",
+    "sitio_web_oficial": "https://totalenergies.com.ar/",
+    "hechos_verificables": "Operador del consorcio Cuenca Marina Austral 1 (CMA-1) en Tierra del Fuego con plantas de tratamiento y fraccionamiento de gas natural y GLP en Río Cullen y Cañadón Alfa (Depto. Río Grande).",
+    "procedencia": {
+      "anio": 2026,
+      "fuente_id": "totalenergies-ar-web-2026",
+      "fuente": "Portal institucional TotalEnergies Argentina (Operaciones Cuenca Austral / Tierra del Fuego)",
+      "url": "https://totalenergies.com.ar/",
+      "fecha_descarga": "2026-11-26",
+      "hash": "sha256:10802742a4141ca4c8839e0901730e56ad931514ade0f59217d355a2f4a41e75",
+      "cita_ubicacion": "totalenergies.com.ar Operaciones Cuenca Austral (Tierra del Fuego) · Verificación CUIT 30-56971934-4 vía API oficial BCRA (bcra-cuit-totalenergies-austral)",
+      "confianza": "alta"
+    }
+  },
+  {
+    "empresa_id": "dos-anclas-ciba",
+    "razon_social": "Compañía Introductora de Buenos Aires S.A. (Dos Anclas)",
+    "cuit": "30-50129032-3",
+    "tipo_capital": "nacional",
+    "sitio_web_oficial": "https://www.dosanclas.com.ar/",
+    "hechos_verificables": "Principal complejo salinero argentino con cosecha evaporítica y planta de lavado y refinación de cloruro de sodio en Salinas Grandes de Hidalgo (Depto. Atreucó, La Pampa).",
+    "procedencia": {
+      "anio": 2026,
+      "fuente_id": "dosanclas-web-2026",
+      "fuente": "Portal institucional Dos Anclas (Compañía Introductora de Buenos Aires S.A. · Salinas Grandes de Hidalgo)",
+      "url": "https://www.dosanclas.com.ar/",
+      "fecha_descarga": "2026-11-26",
+      "hash": "sha256:2024b46d4239f25130cfc5a4a539b039db0c3a16c9e9cd2e5535e2fbc41e4f9b",
+      "cita_ubicacion": "dosanclas.com.ar Planta Industrial Salinas Grandes de Hidalgo (La Pampa) · Verificación CUIT 30-50129032-3 vía API oficial BCRA (bcra-cuit-dos-anclas-ciba)",
+      "confianza": "alta"
+    }
+  },
+  {
+    "empresa_id": "cementos-avellaneda-sa",
+    "razon_social": "Cementos Avellaneda S.A.",
+    "cuit": "30-52604779-2",
+    "tipo_capital": "mixto",
+    "sitio_web_oficial": "https://www.cementosavellaneda.com.ar/",
+    "hechos_verificables": "Productor integrado de clínker y cemento Portland con planta vía seca de alta eficiencia en La Calera (Depto. Belgrano, San Luis), abasteciendo a Cuyo y el Centro argentino.",
+    "procedencia": {
+      "anio": 2026,
+      "fuente_id": "cementos-avellaneda-web-2026",
+      "fuente": "Portal institucional Cementos Avellaneda S.A. (Planta La Calera, San Luis)",
+      "url": "https://www.cementosavellaneda.com.ar/",
+      "fecha_descarga": "2026-11-26",
+      "hash": "sha256:1e5dd8b7e2990f3005f2d7f14bf1385951d074e8d2e46ac8b1e895e5e18cc061",
+      "cita_ubicacion": "cementosavellaneda.com.ar Planta Industrial La Calera (San Luis) · Verificación CUIT 30-52604779-2 vía API oficial BCRA (bcra-cuit-cementos-avellaneda-sa)",
+      "confianza": "alta"
+    }
+  },
+  {
+    "empresa_id": "unitan-saica",
+    "razon_social": "Unitán S.A.I.C.A.",
+    "cuit": "30-50673300-2",
+    "tipo_capital": "nacional",
+    "sitio_web_oficial": "https://www.unitan.net/",
+    "hechos_verificables": "Principal productor argentino de extracto de quebracho colorado (Schinopsis balansae) y bioactivos tánicos naturales, con instalaciones industriales en la ciudad de Formosa (y Puerto Tirol, Chaco) y una capacidad conjunta declarada cercana a 40.000 toneladas anuales.",
+    "procedencia": {
+      "anio": 2026,
+      "fuente_id": "unitan-web-2026",
+      "fuente": "Portal institucional Unitán S.A.I.C.A. (Extracto de quebracho y especialidades naturales en Formosa)",
+      "url": "https://www.unitan.net/",
+      "fecha_descarga": "2026-11-26",
+      "hash": "sha256:f518159e3922bf613673d1cb3eb08c56f6e129fdac00d70b3bfa584ef26d7f11",
+      "cita_ubicacion": "unitan.net Operaciones industriales en Formosa (Paraguay 280 Este / Parque Industrial Formosa) · Verificación CUIT 30-50673300-2 vía API oficial BCRA (bcra-cuit-unitan-saica)",
+      "confianza": "alta"
+    }
+  },
+  {
+    "empresa_id": "valle-de-la-puerta-sa",
+    "razon_social": "Valle de la Puerta S.A.",
+    "cuit": "30-65433591-1",
+    "tipo_capital": "nacional",
+    "sitio_web_oficial": "https://valledelapuerta.com.ar/",
+    "hechos_verificables": "Complejo olivícola y almazara industrial sobre Ruta Nacional 74 Km 1186 (Vichigasta, Depto. Chilecito, La Rioja), con 770 hectáreas de olivares y una capacidad declarada de 1.400 toneladas anuales de aceite de oliva virgen extra.",
+    "procedencia": {
+      "anio": 2026,
+      "fuente_id": "valledelapuerta-web-2026",
+      "fuente": "Portal institucional Valle de la Puerta S.A. (Almazara Vichigasta, Chilecito, La Rioja)",
+      "url": "https://valledelapuerta.com.ar/",
+      "fecha_descarga": "2026-11-26",
+      "hash": "sha256:c9f1998a5b29dfb846397cf8fd41563719c832250cabab4725a0d01ebeefbfbf",
+      "cita_ubicacion": "valledelapuerta.com.ar Planta elaboradora de aceite de oliva en Vichigasta (Chilecito, La Rioja) · Verificación CUIT 30-65433591-1 vía API oficial BCRA (bcra-cuit-valle-de-la-puerta-sa)",
+      "confianza": "alta"
+    }
+  },
+  {
+    "empresa_id": "agro-aceitunera-sa",
+    "razon_social": "Agro Aceitunera S.A. (Nucete)",
+    "cuit": "30-59629816-4",
+    "tipo_capital": "nacional",
+    "sitio_web_oficial": "https://agroaceitunera.com.ar/",
+    "hechos_verificables": "Uno de los mayores procesadores olivícolas del país, con planta industrial en Aimogasta (Depto. Arauco, La Rioja) de hasta 200 toneladas diarias de molienda de aceitunas y unidad adicional en Chilecito.",
+    "procedencia": {
+      "anio": 2026,
+      "fuente_id": "agroaceitunera-web-2026",
+      "fuente": "Portal institucional Agro Aceitunera S.A. / Nucete (Plantas Aimogasta y Chilecito, La Rioja)",
+      "url": "https://agroaceitunera.com.ar/",
+      "fecha_descarga": "2026-11-26",
+      "hash": "sha256:21cb141ab44abd3a7e8c7be0057e4f929a9ba35f497abc1832ba7b70c2eb2057",
+      "cita_ubicacion": "agroaceitunera.com.ar Plantas industriales Aimogasta y Chilecito (La Rioja) · Verificación CUIT 30-59629816-4 vía API oficial BCRA (bcra-cuit-agro-aceitunera-sa)",
+      "confianza": "alta"
+    }
+  },
+  {
+    "empresa_id": "ldc-argentina-sa",
+    "razon_social": "LDC Argentina S.A. (Louis Dreyfus Company)",
+    "cuit": "30-52671272-9",
+    "tipo_capital": "extranjero",
+    "sitio_web_oficial": "https://www.ldc.com/ar/es/",
+    "hechos_verificables": "Opera la planta desmotadora de algodón de Quimilí (Depto. Moreno, Santiago del Estero), ampliada en 2024 a 60.000 toneladas anuales de procesamiento en el corazón de la primera cuenca algodonera argentina según SAGyP.",
+    "procedencia": {
+      "anio": 2025,
+      "fuente_id": "sde-gob-2026",
+      "fuente": "Gobierno de la Provincia de Santiago del Estero: polo productivo algodonero e industrial",
+      "url": "https://sde.gob.ar/",
+      "fecha_descarga": "2026-11-26",
+      "hash": "sha256:67eb4b7e987c6cc654ac20b3855791d371046dbd3972ec57bbf0c8ae4bc1187f",
+      "cita_ubicacion": "sde.gob.ar + SAGyP Estimaciones Agrícolas 2026 (cuenca algodonera Depto. Moreno, Quimilí, Santiago del Estero) · Verificación CUIT 30-52671272-9 vía API oficial BCRA (bcra-cuit-ldc-argentina-sa)",
+      "confianza": "alta"
+    }
+  },
+  {
+    "empresa_id": "maprimed-sa",
+    "razon_social": "Maprimed S.A. (Insud Pharma)",
+    "cuit": "30-59501677-7",
+    "tipo_capital": "nacional",
+    "sitio_web_oficial": "https://www.insudpharma.com/",
+    "hechos_verificables": "Compañía farmoquímica argentina fundada en 1970 e integrada a Insud Pharma, con planta química de síntesis de Ingredientes Farmacéuticos Activos (IFAs/APIs) y centro de I+D en Av. Directorio 6155 (Comuna 9, CABA) bajo normas GMP/ANMAT/FDA.",
+    "procedencia": {
+      "anio": 2026,
+      "fuente_id": "insudpharma-web-2026",
+      "fuente": "Portal corporativo Insud Pharma (Maprimed S.A., Planta Química de APIs en CABA)",
+      "url": "https://www.insudpharma.com/",
+      "fecha_descarga": "2026-11-26",
+      "hash": "sha256:ee07fff97b4fa4611008b7d994cf642f31c76f1a029387a957fa2454cba4b69e",
+      "cita_ubicacion": "insudpharma.com Planta Química Maprimed S.A. Av. Directorio 6155 (Comuna 9, Mataderos, CABA) · Verificación CUIT 30-59501677-7 vía API oficial BCRA (bcra-cuit-maprimed-sa)",
+      "confianza": "alta"
+    }
+  },
+  {
+    "empresa_id": "druetta-hnos-sa",
+    "razon_social": "Druetta Hnos. S.A.",
+    "cuit": "30-65543889-7",
+    "tipo_capital": "nacional",
+    "sitio_web_oficial": "https://www.druetta.com.ar/",
+    "hechos_verificables": "Empresa metalúrgica argentina fundada en 1947 especializada en galvanizado por inmersión en caliente (GIC) para energía, telecomunicaciones, infraestructura, transporte, agro e industria. Opera en General Rodríguez un predio de 55.000 m2 (11.000 m2 cubiertos) con dos cubas de zinc fundido a 450 °C (13,0 x 1,8 x 3,0 m y 4,5 x 1,4 x 2,2 m), laboratorio propio, planta de efluentes líquidos, lavado de humos y certificaciones ISO 9001:2015 e ISO 14001:2015.",
+    "procedencia": {
+      "anio": 2026,
+      "fuente_id": "druetta-web-2026",
+      "fuente": "Portal institucional Druetta Hnos. S.A. (Planta General Rodríguez, Buenos Aires)",
+      "url": "https://www.druetta.com.ar/",
+      "fecha_descarga": "2026-11-27",
+      "hash": "sha256:eb0ee6c4ae621f4c701f4ce06a529ddc45d7cf64324bd8d2c31980849921abaa",
+      "cita_ubicacion": "druetta.com.ar (historia.html, instalaciones2.html, instalaciones4.html, instalaciones7.html, iso.html) · Verificación CUIT 30-65543889-7 vía API oficial BCRA (bcra-cuit-druetta-hnos-sa)",
       "confianza": "alta"
     }
   }

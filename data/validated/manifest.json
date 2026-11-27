@@ -1,13 +1,13 @@
 {
   "version_esquema": "1.0.0",
-  "generado_en": "2026-11-27T20:05:28.961Z",
+  "generado_en": "2026-11-27T20:38:50.094Z",
   "origen": "supabase",
   "es_ejemplo": false,
   "nota": "Dataset oficial sincronizado íntegramente desde Supabase.",
   "tablas": {
     "fuentes": {
-      "registros": 94,
-      "hash": "sha256:f60b40b9288908f6a1ff4bbf7d87df4d52ad8f15ba6b2429bdbfad1aaa3caa30"
+      "registros": 117,
+      "hash": "sha256:56418cc65bb881fee434aaf7328c47d720c6eda86e0e33a0c93d1d4dc93548b2"
     },
     "provincias": {
       "registros": 24,
@@ -39,7 +39,7 @@
     },
     "empresas": {
       "registros": 29,
-      "hash": "sha256:3e160c83b31f86762d04bbcbaaa9f09bf3e0236ffb49e019e5a8a6e2d812fa84"
+      "hash": "sha256:bc51dcb63dd5841ca6b179a9b1e543c0de0da9b27a1f5c8099e7ee62eee9d425"
     },
     "plantas": {
       "registros": 35,
