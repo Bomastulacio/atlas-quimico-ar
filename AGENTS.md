@@ -72,3 +72,29 @@ Decisiones de arquitectura y secuencia aprobadas por el usuario para escalar sin
 3. **Regla estricta para vínculos proveedor-cliente B2B y futuro Agente 4:**
    - **Solo fuentes públicas verificables:** jamás cargar relaciones cliente-proveedor, subcontrataciones ni proyectos por comentarios verbales, inferencias o rumores. Un cruce B2B (ej. proveedor industrial -> operadora energética o minera) solo ingresa a Supabase si consta explícitamente en una fuente pública verificable con URL, fecha, hash `sha256` y `cita_ubicacion` auditable por el Agente 3.
    - Cuando se abra la etapa de red de suministros, sumar **identidad fiscal (`CUIT`)** en `empresas` para evitar duplicados societarios y el **Agente 4 (Cruce de Cadenas y Suministros)** bajo el mismo control determinista e `interrupt()` humano.
+
+## 7. Estándares obligatorios de rendimiento y optimización
+
+Todo código, página, componente, consulta o activo nuevo debe respetar estas reglas de construcción optimizada (detalle y métricas base en `docs/rendimiento.md`):
+
+1. **Renders innecesarios (React):**
+   - Envolver con `React.memo` paneles laterales, tarjetas repetidas, símbolos SVG y nodos de grafos (`ProvinceSidePanel`, `CompanyMarketCard`, `PfdEquipmentSymbol`, `ProcessStepNode`).
+   - Pasar callbacks y derivados referencialmente estables (`useCallback` / `useMemo`) desde componentes con alta frecuencia de eventos (pan, zoom, hover, scroll) para que `React.memo` sea efectivo.
+   - Pre-normalizar índices de búsqueda (`toLowerCase().normalize('NFD')...`) una sola vez en `useMemo`, nunca dentro del filtro por cada tecla.
+   - Registrar listeners globales (`window.addEventListener`) una sola vez usando refs para estado mutable, y evitar `setState` cuando el valor booleano no cambia.
+2. **Bundle y lazy loading (Astro + Vite):**
+   - Nunca importar librerías pesadas (`three`, `@xyflow/react`, `d3-*`) de forma estática en rutas o vistas donde son opcionales: usar `React.lazy` + `<Suspense>` (patrón `ProcessFlowDiagram` -> `ProcessBfdReactFlow`).
+   - Mantener utilidades compartidas (`src/lib/categoryAccent.ts`) fuera de componentes grandes para evitar arrastrar el mapa D3 o visores 3D en otras páginas.
+   - Usar directivas de hidratación adecuadas en `.astro`: `client:idle` para navegación/chrome global (`SiteHeader`), `client:visible={{ rootMargin: '250px' }}` para visores 3D y bloques debajo del pliegue, reservando `client:load` solo para interactivos críticos visibles en el primer pantallazo.
+   - Mantener `manualChunks` en `astro.config.mjs` separando `three-vendor`, `xyflow-vendor`, `d3-vendor` y `motion-vendor`.
+3. **Requests y caching:**
+   - Centralizar fetches compartidos con caché en memoria + `sessionStorage` con TTL, deduplicación de promesas in-flight y timeout explícito (`AbortController` / `AbortSignal.timeout`), como en `src/lib/useLiveMarket.ts`.
+   - En Edge Functions, ejecutar llamadas externas independientes en paralelo en una sola ola y devolver encabezados `Cache-Control` con `stale-while-revalidate`.
+4. **Queries lentas y N+1:**
+   - En `src/data/index.ts`, resolver cruces entre tablas mediante índices `Map` construidos una sola vez en `O(N)` (`loadIndexes()`) y memoizar agregaciones; prohibido encadenar `.find()`/`.filter()` repetidos dentro de bucles.
+   - En Supabase/Edge Functions, consolidar escrituras múltiples en un único `upsert` en lote y evitar lecturas `SELECT` redundantes tras actualizar en memoria.
+   - Auditar periódicamente `get_advisors(type="performance")` en Supabase para garantizar cero foreign keys sin índice y cero políticas RLS permisivas duplicadas.
+5. **Imágenes, fuentes y scripts:**
+   - Servir imágenes fotográficas en `<picture>` con `.webp` optimizado + fallback `.jpg` progresivo (`mozjpeg`), siempre con `width` y `height` explícitos (CLS = 0).
+   - Declarar `<link rel="preload" as="image" fetchpriority="high">` en `BaseLayout.astro` únicamente para la imagen LCP principal.
+   - Cargar Google Fonts de forma no bloqueante (`preload` + `media="print" onload="this.setAttribute('media','all')"` + `<noscript>`) manteniendo `display=swap`.
