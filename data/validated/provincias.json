@@ -4,8 +4,8 @@
     "nombre": "Ciudad Autónoma de Buenos Aires",
     "iso_3166_2": "AR-C",
     "region": "Pampeana",
-    "cobertura_datos": "sin_datos",
-    "nota_cobertura": "Sin cadenas productivas químicas primarias relevadas todavía."
+    "cobertura_datos": "completa",
+    "nota_cobertura": "Polo farmoquímico y de síntesis de Ingredientes Farmacéuticos Activos (IFAs) en Comuna 9 (Maprimed S.A. / Insud Pharma) verificado con INDEC, EU OFC BREF y UN Comtrade HS 3004.90/2933.99."
   },
   {
     "provincia_id": "06",
@@ -36,8 +36,8 @@
     "nombre": "Corrientes",
     "iso_3166_2": "AR-W",
     "region": "NEA",
-    "cobertura_datos": "sin_datos",
-    "nota_cobertura": "Sin cadenas productivas cargadas todavía."
+    "cobertura_datos": "completa",
+    "nota_cobertura": "Polo forestoquímico de resina de pino (colofonia y trementina en Gobernador Virasoro, Depto. Santo Tomé, Grupo San Francisco) verificado con EU LVOC/OFC BREF y UN Comtrade HS 3806.10/3805.10."
   },
   {
     "provincia_id": "22",
@@ -68,8 +68,8 @@
     "nombre": "Formosa",
     "iso_3166_2": "AR-P",
     "region": "NEA",
-    "cobertura_datos": "sin_datos",
-    "nota_cobertura": "Sin cadenas productivas cargadas todavía."
+    "cobertura_datos": "completa",
+    "nota_cobertura": "Polo de química de polifenoles forestales (extracto de quebracho colorado en Formosa Capital, Unitán S.A.I.C.A.) verificado con EU TAN/FDM BREF y UN Comtrade HS 3201.10."
   },
   {
     "provincia_id": "38",
@@ -92,8 +92,8 @@
     "nombre": "La Rioja",
     "iso_3166_2": "AR-F",
     "region": "NOA",
-    "cobertura_datos": "sin_datos",
-    "nota_cobertura": "Sin cadenas productivas cargadas todavía."
+    "cobertura_datos": "completa",
+    "nota_cobertura": "Polo olivícola industrial de aceite de oliva virgen extra en Chilecito y Arauco (Valle de la Puerta y Agro Aceitunera Nucete) verificado con FOA, EU FDM BREF y UN Comtrade HS 1509.20/1509.10."
   },
   {
     "provincia_id": "50",
@@ -172,8 +172,8 @@
     "nombre": "Santiago del Estero",
     "iso_3166_2": "AR-G",
     "region": "NOA",
-    "cobertura_datos": "sin_datos",
-    "nota_cobertura": "Sin cadenas productivas cargadas todavía."
+    "cobertura_datos": "completa",
+    "nota_cobertura": "Principal cuenca algodonera de Argentina (Depto. Moreno y Depto. Belgrano; Desmotadora Quimilí de LDC) verificada con SAGyP Estimaciones Agrícolas 2026 y UN Comtrade HS 5201.00."
   },
   {
     "provincia_id": "90",

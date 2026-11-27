@@ -372,5 +372,107 @@
       "cita_ubicacion": "fecier.org.ar + federcitrus.org Industrialización Citrícola de Entre Ríos",
       "confianza": "alta"
     }
+  },
+  {
+    "empresa_id": "grupo-san-francisco-sa",
+    "razon_social": "Grupo San Francisco S.A.",
+    "tipo_capital": "nacional",
+    "sitio_web_oficial": "https://gruposanfrancisco.com.ar/",
+    "hechos_verificables": "Operador forestoquímico correntino ubicado sobre Ruta Nacional 14 Km 754 (Gobernador Virasoro, Depto. Santo Tomé). Declara una producción de 13.000 toneladas anuales de miera de Pinus elliottii procesada en colofonia y trementina.",
+    "procedencia": {
+      "anio": 2026,
+      "fuente_id": "gruposanfrancisco-web-2026",
+      "fuente": "Portal institucional Grupo San Francisco S.A. (Planta Resinera Gobernador Virasoro, Corrientes)",
+      "url": "https://gruposanfrancisco.com.ar/",
+      "fecha_descarga": "2026-11-26",
+      "hash": "sha256:d336759d72411d4f455a5a8d5b61955d74381d1b4433c2654dcad2fc59b6215f",
+      "cita_ubicacion": "gruposanfrancisco.com.ar Operaciones de resinación y destilación en Gobernador Virasoro (Corrientes)",
+      "confianza": "alta"
+    }
+  },
+  {
+    "empresa_id": "unitan-saica",
+    "razon_social": "Unitán S.A.I.C.A.",
+    "tipo_capital": "nacional",
+    "sitio_web_oficial": "https://www.unitan.net/",
+    "hechos_verificables": "Principal productor argentino de extracto de quebracho colorado (Schinopsis balansae) y bioactivos tánicos naturales, con instalaciones industriales en la ciudad de Formosa (y Puerto Tirol, Chaco) y una capacidad conjunta declarada cercana a 40.000 toneladas anuales.",
+    "procedencia": {
+      "anio": 2026,
+      "fuente_id": "unitan-web-2026",
+      "fuente": "Portal institucional Unitán S.A.I.C.A. (Extracto de quebracho y especialidades naturales en Formosa)",
+      "url": "https://www.unitan.net/",
+      "fecha_descarga": "2026-11-26",
+      "hash": "sha256:f518159e3922bf613673d1cb3eb08c56f6e129fdac00d70b3bfa584ef26d7f11",
+      "cita_ubicacion": "unitan.net Operaciones industriales en Formosa (Paraguay 280 Este / Parque Industrial Formosa)",
+      "confianza": "alta"
+    }
+  },
+  {
+    "empresa_id": "valle-de-la-puerta-sa",
+    "razon_social": "Valle de la Puerta S.A.",
+    "tipo_capital": "nacional",
+    "sitio_web_oficial": "https://valledelapuerta.com.ar/",
+    "hechos_verificables": "Complejo olivícola y almazara industrial sobre Ruta Nacional 74 Km 1186 (Vichigasta, Depto. Chilecito, La Rioja), con 770 hectáreas de olivares y una capacidad declarada de 1.400 toneladas anuales de aceite de oliva virgen extra.",
+    "procedencia": {
+      "anio": 2026,
+      "fuente_id": "valledelapuerta-web-2026",
+      "fuente": "Portal institucional Valle de la Puerta S.A. (Almazara Vichigasta, Chilecito, La Rioja)",
+      "url": "https://valledelapuerta.com.ar/",
+      "fecha_descarga": "2026-11-26",
+      "hash": "sha256:c9f1998a5b29dfb846397cf8fd41563719c832250cabab4725a0d01ebeefbfbf",
+      "cita_ubicacion": "valledelapuerta.com.ar Planta elaboradora de aceite de oliva en Vichigasta (Chilecito, La Rioja)",
+      "confianza": "alta"
+    }
+  },
+  {
+    "empresa_id": "agro-aceitunera-sa",
+    "razon_social": "Agro Aceitunera S.A. (Nucete)",
+    "tipo_capital": "nacional",
+    "sitio_web_oficial": "https://agroaceitunera.com.ar/",
+    "hechos_verificables": "Uno de los mayores procesadores olivícolas del país, con planta industrial en Aimogasta (Depto. Arauco, La Rioja) de hasta 200 toneladas diarias de molienda de aceitunas y unidad adicional en Chilecito.",
+    "procedencia": {
+      "anio": 2026,
+      "fuente_id": "agroaceitunera-web-2026",
+      "fuente": "Portal institucional Agro Aceitunera S.A. / Nucete (Plantas Aimogasta y Chilecito, La Rioja)",
+      "url": "https://agroaceitunera.com.ar/",
+      "fecha_descarga": "2026-11-26",
+      "hash": "sha256:21cb141ab44abd3a7e8c7be0057e4f929a9ba35f497abc1832ba7b70c2eb2057",
+      "cita_ubicacion": "agroaceitunera.com.ar Plantas industriales Aimogasta y Chilecito (La Rioja)",
+      "confianza": "alta"
+    }
+  },
+  {
+    "empresa_id": "ldc-argentina-sa",
+    "razon_social": "Louis Dreyfus Company Argentina S.A. (LDC)",
+    "tipo_capital": "extranjero",
+    "sitio_web_oficial": "https://www.ldc.com/ar/es/",
+    "hechos_verificables": "Opera la planta desmotadora de algodón de Quimilí (Depto. Moreno, Santiago del Estero), ampliada en 2024 a 60.000 toneladas anuales de procesamiento en el corazón de la primera cuenca algodonera argentina según SAGyP.",
+    "procedencia": {
+      "anio": 2025,
+      "fuente_id": "sde-gob-2026",
+      "fuente": "Gobierno de la Provincia de Santiago del Estero: polo productivo algodonero e industrial",
+      "url": "https://sde.gob.ar/",
+      "fecha_descarga": "2026-11-26",
+      "hash": "sha256:67eb4b7e987c6cc654ac20b3855791d371046dbd3972ec57bbf0c8ae4bc1187f",
+      "cita_ubicacion": "sde.gob.ar + SAGyP Estimaciones Agrícolas 2026 (cuenca algodonera Depto. Moreno, Quimilí, Santiago del Estero)",
+      "confianza": "alta"
+    }
+  },
+  {
+    "empresa_id": "maprimed-sa",
+    "razon_social": "Maprimed S.A. (Insud Pharma)",
+    "tipo_capital": "nacional",
+    "sitio_web_oficial": "https://www.insudpharma.com/",
+    "hechos_verificables": "Compañía farmoquímica argentina fundada en 1970 e integrada a Insud Pharma, con planta química de síntesis de Ingredientes Farmacéuticos Activos (IFAs/APIs) y centro de I+D en Av. Directorio 6155 (Comuna 9, CABA) bajo normas GMP/ANMAT/FDA.",
+    "procedencia": {
+      "anio": 2026,
+      "fuente_id": "insudpharma-web-2026",
+      "fuente": "Portal corporativo Insud Pharma (Maprimed S.A., Planta Química de APIs en CABA)",
+      "url": "https://www.insudpharma.com/",
+      "fecha_descarga": "2026-11-26",
+      "hash": "sha256:ee07fff97b4fa4611008b7d994cf642f31c76f1a029387a957fa2454cba4b69e",
+      "cita_ubicacion": "insudpharma.com Planta Química Maprimed S.A. Av. Directorio 6155 (Comuna 9, Mataderos, CABA)",
+      "confianza": "alta"
+    }
   }
 ]

@@ -5578,5 +5578,1307 @@
       "cita_ubicacion": "UN Comtrade 2024 Argentina HS 330112 (Aceite esencial de naranja / D-limoneno)",
       "confianza": "alta"
     }
+  },
+  {
+    "registro_id": "comex-resina-380610-2024-usd",
+    "producto_id": "resina-colofonia",
+    "anio": 2024,
+    "ncm_codigo": "3806.10",
+    "metrica": "valor_usd",
+    "exportacion": {
+      "estado": "dato",
+      "valor": 7.32,
+      "unidad": "millones USD",
+      "procedencia": {
+        "anio": 2024,
+        "fuente_id": "uncomtrade-ar-lote6-2024",
+        "fuente": "UN Comtrade: comercio exterior de Argentina HS 380610/380510 (Colofonia/Trementina), 320110 (Quebracho), 150920/150990 (Oliva) y 300490/293399 (Farmoquímica) 2024",
+        "url": "https://comtradeapi.un.org/public/v1/preview/C/A/HS?reporterCode=32&period=2024&partnerCode=0&partner2Code=0&customsCode=C00&motCode=0&cmdCode=380610,380510,320110,150920,150910,150990,300490,293399",
+        "fecha_descarga": "2026-11-26",
+        "hash": "sha256:04ad52400bfec2549c6e3059edcbb9e1d787b08617dc20d2dac1484b2b47ec98",
+        "cita_ubicacion": "UN Comtrade AR 2024 HS 380610 Colofonia (X=USD 7,32M, M=USD 0,02M)",
+        "confianza": "alta"
+      }
+    },
+    "importacion": {
+      "estado": "dato",
+      "valor": 0.02,
+      "unidad": "millones USD",
+      "procedencia": {
+        "anio": 2024,
+        "fuente_id": "uncomtrade-ar-lote6-2024",
+        "fuente": "UN Comtrade: comercio exterior de Argentina HS 380610/380510 (Colofonia/Trementina), 320110 (Quebracho), 150920/150990 (Oliva) y 300490/293399 (Farmoquímica) 2024",
+        "url": "https://comtradeapi.un.org/public/v1/preview/C/A/HS?reporterCode=32&period=2024&partnerCode=0&partner2Code=0&customsCode=C00&motCode=0&cmdCode=380610,380510,320110,150920,150910,150990,300490,293399",
+        "fecha_descarga": "2026-11-26",
+        "hash": "sha256:04ad52400bfec2549c6e3059edcbb9e1d787b08617dc20d2dac1484b2b47ec98",
+        "cita_ubicacion": "UN Comtrade AR 2024 HS 380610 Colofonia (X=USD 7,32M, M=USD 0,02M)",
+        "confianza": "alta"
+      }
+    },
+    "saldo_comercial": {
+      "estado": "dato",
+      "valor": 7.3,
+      "unidad": "millones USD",
+      "procedencia": {
+        "anio": 2024,
+        "fuente_id": "uncomtrade-ar-lote6-2024",
+        "fuente": "UN Comtrade: comercio exterior de Argentina HS 380610/380510 (Colofonia/Trementina), 320110 (Quebracho), 150920/150990 (Oliva) y 300490/293399 (Farmoquímica) 2024",
+        "url": "https://comtradeapi.un.org/public/v1/preview/C/A/HS?reporterCode=32&period=2024&partnerCode=0&partner2Code=0&customsCode=C00&motCode=0&cmdCode=380610,380510,320110,150920,150910,150990,300490,293399",
+        "fecha_descarga": "2026-11-26",
+        "hash": "sha256:04ad52400bfec2549c6e3059edcbb9e1d787b08617dc20d2dac1484b2b47ec98",
+        "cita_ubicacion": "UN Comtrade AR 2024 HS 380610 Colofonia (X=USD 7,32M, M=USD 0,02M)",
+        "confianza": "alta"
+      }
+    },
+    "procedencia": {
+      "anio": 2024,
+      "fuente_id": "uncomtrade-ar-lote6-2024",
+      "fuente": "UN Comtrade: comercio exterior de Argentina HS 380610/380510 (Colofonia/Trementina), 320110 (Quebracho), 150920/150990 (Oliva) y 300490/293399 (Farmoquímica) 2024",
+      "url": "https://comtradeapi.un.org/public/v1/preview/C/A/HS?reporterCode=32&period=2024&partnerCode=0&partner2Code=0&customsCode=C00&motCode=0&cmdCode=380610,380510,320110,150920,150910,150990,300490,293399",
+      "fecha_descarga": "2026-11-26",
+      "hash": "sha256:04ad52400bfec2549c6e3059edcbb9e1d787b08617dc20d2dac1484b2b47ec98",
+      "cita_ubicacion": "UN Comtrade AR 2024 HS 380610 Colofonia (X=USD 7,32M, M=USD 0,02M)",
+      "confianza": "alta"
+    }
+  },
+  {
+    "registro_id": "comex-resina-380610-2023-usd",
+    "producto_id": "resina-colofonia",
+    "anio": 2023,
+    "ncm_codigo": "3806.10",
+    "metrica": "valor_usd",
+    "exportacion": {
+      "estado": "dato",
+      "valor": 16.68,
+      "unidad": "millones USD",
+      "procedencia": {
+        "anio": 2023,
+        "fuente_id": "uncomtrade-ar-lote6-2023",
+        "fuente": "UN Comtrade: comercio exterior de Argentina HS 380610/380510 (Colofonia/Trementina), 320110 (Quebracho), 150910/150990 (Oliva) y 300490/293399 (Farmoquímica) 2023",
+        "url": "https://comtradeapi.un.org/public/v1/preview/C/A/HS?reporterCode=32&period=2023&partnerCode=0&partner2Code=0&customsCode=C00&motCode=0&cmdCode=380610,380510,320110,150920,150910,150990,300490,293399",
+        "fecha_descarga": "2026-11-26",
+        "hash": "sha256:ae5d764a59b6dfcd2f7003bc4b27f0ad80ab0ad6f5a8d5d3582e3f59a41f2e33",
+        "cita_ubicacion": "UN Comtrade AR 2023 HS 380610 Colofonia (X=USD 16,68M, M=USD 0,01M)",
+        "confianza": "alta"
+      }
+    },
+    "importacion": {
+      "estado": "dato",
+      "valor": 0.01,
+      "unidad": "millones USD",
+      "procedencia": {
+        "anio": 2023,
+        "fuente_id": "uncomtrade-ar-lote6-2023",
+        "fuente": "UN Comtrade: comercio exterior de Argentina HS 380610/380510 (Colofonia/Trementina), 320110 (Quebracho), 150910/150990 (Oliva) y 300490/293399 (Farmoquímica) 2023",
+        "url": "https://comtradeapi.un.org/public/v1/preview/C/A/HS?reporterCode=32&period=2023&partnerCode=0&partner2Code=0&customsCode=C00&motCode=0&cmdCode=380610,380510,320110,150920,150910,150990,300490,293399",
+        "fecha_descarga": "2026-11-26",
+        "hash": "sha256:ae5d764a59b6dfcd2f7003bc4b27f0ad80ab0ad6f5a8d5d3582e3f59a41f2e33",
+        "cita_ubicacion": "UN Comtrade AR 2023 HS 380610 Colofonia (X=USD 16,68M, M=USD 0,01M)",
+        "confianza": "alta"
+      }
+    },
+    "saldo_comercial": {
+      "estado": "dato",
+      "valor": 16.67,
+      "unidad": "millones USD",
+      "procedencia": {
+        "anio": 2023,
+        "fuente_id": "uncomtrade-ar-lote6-2023",
+        "fuente": "UN Comtrade: comercio exterior de Argentina HS 380610/380510 (Colofonia/Trementina), 320110 (Quebracho), 150910/150990 (Oliva) y 300490/293399 (Farmoquímica) 2023",
+        "url": "https://comtradeapi.un.org/public/v1/preview/C/A/HS?reporterCode=32&period=2023&partnerCode=0&partner2Code=0&customsCode=C00&motCode=0&cmdCode=380610,380510,320110,150920,150910,150990,300490,293399",
+        "fecha_descarga": "2026-11-26",
+        "hash": "sha256:ae5d764a59b6dfcd2f7003bc4b27f0ad80ab0ad6f5a8d5d3582e3f59a41f2e33",
+        "cita_ubicacion": "UN Comtrade AR 2023 HS 380610 Colofonia (X=USD 16,68M, M=USD 0,01M)",
+        "confianza": "alta"
+      }
+    },
+    "procedencia": {
+      "anio": 2023,
+      "fuente_id": "uncomtrade-ar-lote6-2023",
+      "fuente": "UN Comtrade: comercio exterior de Argentina HS 380610/380510 (Colofonia/Trementina), 320110 (Quebracho), 150910/150990 (Oliva) y 300490/293399 (Farmoquímica) 2023",
+      "url": "https://comtradeapi.un.org/public/v1/preview/C/A/HS?reporterCode=32&period=2023&partnerCode=0&partner2Code=0&customsCode=C00&motCode=0&cmdCode=380610,380510,320110,150920,150910,150990,300490,293399",
+      "fecha_descarga": "2026-11-26",
+      "hash": "sha256:ae5d764a59b6dfcd2f7003bc4b27f0ad80ab0ad6f5a8d5d3582e3f59a41f2e33",
+      "cita_ubicacion": "UN Comtrade AR 2023 HS 380610 Colofonia (X=USD 16,68M, M=USD 0,01M)",
+      "confianza": "alta"
+    }
+  },
+  {
+    "registro_id": "comex-resina-380610-2024-vol",
+    "producto_id": "resina-colofonia",
+    "anio": 2024,
+    "ncm_codigo": "3806.10",
+    "metrica": "volumen_t",
+    "exportacion": {
+      "estado": "dato",
+      "valor": 8713.8,
+      "unidad": "t",
+      "procedencia": {
+        "anio": 2024,
+        "fuente_id": "uncomtrade-ar-lote6-2024",
+        "fuente": "UN Comtrade: comercio exterior de Argentina HS 380610/380510 (Colofonia/Trementina), 320110 (Quebracho), 150920/150990 (Oliva) y 300490/293399 (Farmoquímica) 2024",
+        "url": "https://comtradeapi.un.org/public/v1/preview/C/A/HS?reporterCode=32&period=2024&partnerCode=0&partner2Code=0&customsCode=C00&motCode=0&cmdCode=380610,380510,320110,150920,150910,150990,300490,293399",
+        "fecha_descarga": "2026-11-26",
+        "hash": "sha256:04ad52400bfec2549c6e3059edcbb9e1d787b08617dc20d2dac1484b2b47ec98",
+        "cita_ubicacion": "UN Comtrade AR 2024 HS 380610 Colofonia volumen (X=8.713,8 t; peso neto M sin declarar)",
+        "confianza": "alta"
+      }
+    },
+    "importacion": {
+      "estado": "sin_datos",
+      "valor": null,
+      "unidad": "t",
+      "procedencia": {
+        "anio": 2024,
+        "fuente_id": "uncomtrade-ar-lote6-2024",
+        "fuente": "UN Comtrade: comercio exterior de Argentina HS 380610/380510 (Colofonia/Trementina), 320110 (Quebracho), 150920/150990 (Oliva) y 300490/293399 (Farmoquímica) 2024",
+        "url": "https://comtradeapi.un.org/public/v1/preview/C/A/HS?reporterCode=32&period=2024&partnerCode=0&partner2Code=0&customsCode=C00&motCode=0&cmdCode=380610,380510,320110,150920,150910,150990,300490,293399",
+        "fecha_descarga": "2026-11-26",
+        "hash": "sha256:04ad52400bfec2549c6e3059edcbb9e1d787b08617dc20d2dac1484b2b47ec98",
+        "cita_ubicacion": "UN Comtrade AR 2024 HS 380610 Colofonia volumen (X=8.713,8 t; peso neto M sin declarar)",
+        "confianza": "alta"
+      }
+    },
+    "saldo_comercial": {
+      "estado": "sin_datos",
+      "valor": null,
+      "unidad": "t",
+      "procedencia": {
+        "anio": 2024,
+        "fuente_id": "uncomtrade-ar-lote6-2024",
+        "fuente": "UN Comtrade: comercio exterior de Argentina HS 380610/380510 (Colofonia/Trementina), 320110 (Quebracho), 150920/150990 (Oliva) y 300490/293399 (Farmoquímica) 2024",
+        "url": "https://comtradeapi.un.org/public/v1/preview/C/A/HS?reporterCode=32&period=2024&partnerCode=0&partner2Code=0&customsCode=C00&motCode=0&cmdCode=380610,380510,320110,150920,150910,150990,300490,293399",
+        "fecha_descarga": "2026-11-26",
+        "hash": "sha256:04ad52400bfec2549c6e3059edcbb9e1d787b08617dc20d2dac1484b2b47ec98",
+        "cita_ubicacion": "UN Comtrade AR 2024 HS 380610 Colofonia volumen (X=8.713,8 t; peso neto M sin declarar)",
+        "confianza": "alta"
+      }
+    },
+    "procedencia": {
+      "anio": 2024,
+      "fuente_id": "uncomtrade-ar-lote6-2024",
+      "fuente": "UN Comtrade: comercio exterior de Argentina HS 380610/380510 (Colofonia/Trementina), 320110 (Quebracho), 150920/150990 (Oliva) y 300490/293399 (Farmoquímica) 2024",
+      "url": "https://comtradeapi.un.org/public/v1/preview/C/A/HS?reporterCode=32&period=2024&partnerCode=0&partner2Code=0&customsCode=C00&motCode=0&cmdCode=380610,380510,320110,150920,150910,150990,300490,293399",
+      "fecha_descarga": "2026-11-26",
+      "hash": "sha256:04ad52400bfec2549c6e3059edcbb9e1d787b08617dc20d2dac1484b2b47ec98",
+      "cita_ubicacion": "UN Comtrade AR 2024 HS 380610 Colofonia volumen (X=8.713,8 t; peso neto M sin declarar)",
+      "confianza": "alta"
+    }
+  },
+  {
+    "registro_id": "comex-resina-380610-2023-vol",
+    "producto_id": "resina-colofonia",
+    "anio": 2023,
+    "ncm_codigo": "3806.10",
+    "metrica": "volumen_t",
+    "exportacion": {
+      "estado": "dato",
+      "valor": 18203.35,
+      "unidad": "t",
+      "procedencia": {
+        "anio": 2023,
+        "fuente_id": "uncomtrade-ar-lote6-2023",
+        "fuente": "UN Comtrade: comercio exterior de Argentina HS 380610/380510 (Colofonia/Trementina), 320110 (Quebracho), 150910/150990 (Oliva) y 300490/293399 (Farmoquímica) 2023",
+        "url": "https://comtradeapi.un.org/public/v1/preview/C/A/HS?reporterCode=32&period=2023&partnerCode=0&partner2Code=0&customsCode=C00&motCode=0&cmdCode=380610,380510,320110,150920,150910,150990,300490,293399",
+        "fecha_descarga": "2026-11-26",
+        "hash": "sha256:ae5d764a59b6dfcd2f7003bc4b27f0ad80ab0ad6f5a8d5d3582e3f59a41f2e33",
+        "cita_ubicacion": "UN Comtrade AR 2023 HS 380610 Colofonia volumen (X=18.203,35 t; peso neto M sin declarar)",
+        "confianza": "alta"
+      }
+    },
+    "importacion": {
+      "estado": "sin_datos",
+      "valor": null,
+      "unidad": "t",
+      "procedencia": {
+        "anio": 2023,
+        "fuente_id": "uncomtrade-ar-lote6-2023",
+        "fuente": "UN Comtrade: comercio exterior de Argentina HS 380610/380510 (Colofonia/Trementina), 320110 (Quebracho), 150910/150990 (Oliva) y 300490/293399 (Farmoquímica) 2023",
+        "url": "https://comtradeapi.un.org/public/v1/preview/C/A/HS?reporterCode=32&period=2023&partnerCode=0&partner2Code=0&customsCode=C00&motCode=0&cmdCode=380610,380510,320110,150920,150910,150990,300490,293399",
+        "fecha_descarga": "2026-11-26",
+        "hash": "sha256:ae5d764a59b6dfcd2f7003bc4b27f0ad80ab0ad6f5a8d5d3582e3f59a41f2e33",
+        "cita_ubicacion": "UN Comtrade AR 2023 HS 380610 Colofonia volumen (X=18.203,35 t; peso neto M sin declarar)",
+        "confianza": "alta"
+      }
+    },
+    "saldo_comercial": {
+      "estado": "sin_datos",
+      "valor": null,
+      "unidad": "t",
+      "procedencia": {
+        "anio": 2023,
+        "fuente_id": "uncomtrade-ar-lote6-2023",
+        "fuente": "UN Comtrade: comercio exterior de Argentina HS 380610/380510 (Colofonia/Trementina), 320110 (Quebracho), 150910/150990 (Oliva) y 300490/293399 (Farmoquímica) 2023",
+        "url": "https://comtradeapi.un.org/public/v1/preview/C/A/HS?reporterCode=32&period=2023&partnerCode=0&partner2Code=0&customsCode=C00&motCode=0&cmdCode=380610,380510,320110,150920,150910,150990,300490,293399",
+        "fecha_descarga": "2026-11-26",
+        "hash": "sha256:ae5d764a59b6dfcd2f7003bc4b27f0ad80ab0ad6f5a8d5d3582e3f59a41f2e33",
+        "cita_ubicacion": "UN Comtrade AR 2023 HS 380610 Colofonia volumen (X=18.203,35 t; peso neto M sin declarar)",
+        "confianza": "alta"
+      }
+    },
+    "procedencia": {
+      "anio": 2023,
+      "fuente_id": "uncomtrade-ar-lote6-2023",
+      "fuente": "UN Comtrade: comercio exterior de Argentina HS 380610/380510 (Colofonia/Trementina), 320110 (Quebracho), 150910/150990 (Oliva) y 300490/293399 (Farmoquímica) 2023",
+      "url": "https://comtradeapi.un.org/public/v1/preview/C/A/HS?reporterCode=32&period=2023&partnerCode=0&partner2Code=0&customsCode=C00&motCode=0&cmdCode=380610,380510,320110,150920,150910,150990,300490,293399",
+      "fecha_descarga": "2026-11-26",
+      "hash": "sha256:ae5d764a59b6dfcd2f7003bc4b27f0ad80ab0ad6f5a8d5d3582e3f59a41f2e33",
+      "cita_ubicacion": "UN Comtrade AR 2023 HS 380610 Colofonia volumen (X=18.203,35 t; peso neto M sin declarar)",
+      "confianza": "alta"
+    }
+  },
+  {
+    "registro_id": "comex-resina-380510-2024-usd",
+    "producto_id": "resina-colofonia",
+    "anio": 2024,
+    "ncm_codigo": "3805.10",
+    "metrica": "valor_usd",
+    "exportacion": {
+      "estado": "dato",
+      "valor": 8.87,
+      "unidad": "millones USD",
+      "procedencia": {
+        "anio": 2024,
+        "fuente_id": "uncomtrade-ar-lote6-2024",
+        "fuente": "UN Comtrade: comercio exterior de Argentina HS 380610/380510 (Colofonia/Trementina), 320110 (Quebracho), 150920/150990 (Oliva) y 300490/293399 (Farmoquímica) 2024",
+        "url": "https://comtradeapi.un.org/public/v1/preview/C/A/HS?reporterCode=32&period=2024&partnerCode=0&partner2Code=0&customsCode=C00&motCode=0&cmdCode=380610,380510,320110,150920,150910,150990,300490,293399",
+        "fecha_descarga": "2026-11-26",
+        "hash": "sha256:04ad52400bfec2549c6e3059edcbb9e1d787b08617dc20d2dac1484b2b47ec98",
+        "cita_ubicacion": "UN Comtrade AR 2024 HS 380510 Trementina (X=USD 8,87M, M=USD 0,01M)",
+        "confianza": "alta"
+      }
+    },
+    "importacion": {
+      "estado": "dato",
+      "valor": 0.01,
+      "unidad": "millones USD",
+      "procedencia": {
+        "anio": 2024,
+        "fuente_id": "uncomtrade-ar-lote6-2024",
+        "fuente": "UN Comtrade: comercio exterior de Argentina HS 380610/380510 (Colofonia/Trementina), 320110 (Quebracho), 150920/150990 (Oliva) y 300490/293399 (Farmoquímica) 2024",
+        "url": "https://comtradeapi.un.org/public/v1/preview/C/A/HS?reporterCode=32&period=2024&partnerCode=0&partner2Code=0&customsCode=C00&motCode=0&cmdCode=380610,380510,320110,150920,150910,150990,300490,293399",
+        "fecha_descarga": "2026-11-26",
+        "hash": "sha256:04ad52400bfec2549c6e3059edcbb9e1d787b08617dc20d2dac1484b2b47ec98",
+        "cita_ubicacion": "UN Comtrade AR 2024 HS 380510 Trementina (X=USD 8,87M, M=USD 0,01M)",
+        "confianza": "alta"
+      }
+    },
+    "saldo_comercial": {
+      "estado": "dato",
+      "valor": 8.86,
+      "unidad": "millones USD",
+      "procedencia": {
+        "anio": 2024,
+        "fuente_id": "uncomtrade-ar-lote6-2024",
+        "fuente": "UN Comtrade: comercio exterior de Argentina HS 380610/380510 (Colofonia/Trementina), 320110 (Quebracho), 150920/150990 (Oliva) y 300490/293399 (Farmoquímica) 2024",
+        "url": "https://comtradeapi.un.org/public/v1/preview/C/A/HS?reporterCode=32&period=2024&partnerCode=0&partner2Code=0&customsCode=C00&motCode=0&cmdCode=380610,380510,320110,150920,150910,150990,300490,293399",
+        "fecha_descarga": "2026-11-26",
+        "hash": "sha256:04ad52400bfec2549c6e3059edcbb9e1d787b08617dc20d2dac1484b2b47ec98",
+        "cita_ubicacion": "UN Comtrade AR 2024 HS 380510 Trementina (X=USD 8,87M, M=USD 0,01M)",
+        "confianza": "alta"
+      }
+    },
+    "procedencia": {
+      "anio": 2024,
+      "fuente_id": "uncomtrade-ar-lote6-2024",
+      "fuente": "UN Comtrade: comercio exterior de Argentina HS 380610/380510 (Colofonia/Trementina), 320110 (Quebracho), 150920/150990 (Oliva) y 300490/293399 (Farmoquímica) 2024",
+      "url": "https://comtradeapi.un.org/public/v1/preview/C/A/HS?reporterCode=32&period=2024&partnerCode=0&partner2Code=0&customsCode=C00&motCode=0&cmdCode=380610,380510,320110,150920,150910,150990,300490,293399",
+      "fecha_descarga": "2026-11-26",
+      "hash": "sha256:04ad52400bfec2549c6e3059edcbb9e1d787b08617dc20d2dac1484b2b47ec98",
+      "cita_ubicacion": "UN Comtrade AR 2024 HS 380510 Trementina (X=USD 8,87M, M=USD 0,01M)",
+      "confianza": "alta"
+    }
+  },
+  {
+    "registro_id": "comex-resina-380510-2024-vol",
+    "producto_id": "resina-colofonia",
+    "anio": 2024,
+    "ncm_codigo": "3805.10",
+    "metrica": "volumen_t",
+    "exportacion": {
+      "estado": "dato",
+      "valor": 5043.46,
+      "unidad": "t",
+      "procedencia": {
+        "anio": 2024,
+        "fuente_id": "uncomtrade-ar-lote6-2024",
+        "fuente": "UN Comtrade: comercio exterior de Argentina HS 380610/380510 (Colofonia/Trementina), 320110 (Quebracho), 150920/150990 (Oliva) y 300490/293399 (Farmoquímica) 2024",
+        "url": "https://comtradeapi.un.org/public/v1/preview/C/A/HS?reporterCode=32&period=2024&partnerCode=0&partner2Code=0&customsCode=C00&motCode=0&cmdCode=380610,380510,320110,150920,150910,150990,300490,293399",
+        "fecha_descarga": "2026-11-26",
+        "hash": "sha256:04ad52400bfec2549c6e3059edcbb9e1d787b08617dc20d2dac1484b2b47ec98",
+        "cita_ubicacion": "UN Comtrade AR 2024 HS 380510 Trementina volumen (X=5.043,46 t, M=1,29 t)",
+        "confianza": "alta"
+      }
+    },
+    "importacion": {
+      "estado": "dato",
+      "valor": 1.29,
+      "unidad": "t",
+      "procedencia": {
+        "anio": 2024,
+        "fuente_id": "uncomtrade-ar-lote6-2024",
+        "fuente": "UN Comtrade: comercio exterior de Argentina HS 380610/380510 (Colofonia/Trementina), 320110 (Quebracho), 150920/150990 (Oliva) y 300490/293399 (Farmoquímica) 2024",
+        "url": "https://comtradeapi.un.org/public/v1/preview/C/A/HS?reporterCode=32&period=2024&partnerCode=0&partner2Code=0&customsCode=C00&motCode=0&cmdCode=380610,380510,320110,150920,150910,150990,300490,293399",
+        "fecha_descarga": "2026-11-26",
+        "hash": "sha256:04ad52400bfec2549c6e3059edcbb9e1d787b08617dc20d2dac1484b2b47ec98",
+        "cita_ubicacion": "UN Comtrade AR 2024 HS 380510 Trementina volumen (X=5.043,46 t, M=1,29 t)",
+        "confianza": "alta"
+      }
+    },
+    "saldo_comercial": {
+      "estado": "dato",
+      "valor": 5042.17,
+      "unidad": "t",
+      "procedencia": {
+        "anio": 2024,
+        "fuente_id": "uncomtrade-ar-lote6-2024",
+        "fuente": "UN Comtrade: comercio exterior de Argentina HS 380610/380510 (Colofonia/Trementina), 320110 (Quebracho), 150920/150990 (Oliva) y 300490/293399 (Farmoquímica) 2024",
+        "url": "https://comtradeapi.un.org/public/v1/preview/C/A/HS?reporterCode=32&period=2024&partnerCode=0&partner2Code=0&customsCode=C00&motCode=0&cmdCode=380610,380510,320110,150920,150910,150990,300490,293399",
+        "fecha_descarga": "2026-11-26",
+        "hash": "sha256:04ad52400bfec2549c6e3059edcbb9e1d787b08617dc20d2dac1484b2b47ec98",
+        "cita_ubicacion": "UN Comtrade AR 2024 HS 380510 Trementina volumen (X=5.043,46 t, M=1,29 t)",
+        "confianza": "alta"
+      }
+    },
+    "procedencia": {
+      "anio": 2024,
+      "fuente_id": "uncomtrade-ar-lote6-2024",
+      "fuente": "UN Comtrade: comercio exterior de Argentina HS 380610/380510 (Colofonia/Trementina), 320110 (Quebracho), 150920/150990 (Oliva) y 300490/293399 (Farmoquímica) 2024",
+      "url": "https://comtradeapi.un.org/public/v1/preview/C/A/HS?reporterCode=32&period=2024&partnerCode=0&partner2Code=0&customsCode=C00&motCode=0&cmdCode=380610,380510,320110,150920,150910,150990,300490,293399",
+      "fecha_descarga": "2026-11-26",
+      "hash": "sha256:04ad52400bfec2549c6e3059edcbb9e1d787b08617dc20d2dac1484b2b47ec98",
+      "cita_ubicacion": "UN Comtrade AR 2024 HS 380510 Trementina volumen (X=5.043,46 t, M=1,29 t)",
+      "confianza": "alta"
+    }
+  },
+  {
+    "registro_id": "comex-tanino-320110-2024-usd",
+    "producto_id": "tanino-quebracho",
+    "anio": 2024,
+    "ncm_codigo": "3201.10",
+    "metrica": "valor_usd",
+    "exportacion": {
+      "estado": "dato",
+      "valor": 17.94,
+      "unidad": "millones USD",
+      "procedencia": {
+        "anio": 2024,
+        "fuente_id": "uncomtrade-ar-lote6-2024",
+        "fuente": "UN Comtrade: comercio exterior de Argentina HS 380610/380510 (Colofonia/Trementina), 320110 (Quebracho), 150920/150990 (Oliva) y 300490/293399 (Farmoquímica) 2024",
+        "url": "https://comtradeapi.un.org/public/v1/preview/C/A/HS?reporterCode=32&period=2024&partnerCode=0&partner2Code=0&customsCode=C00&motCode=0&cmdCode=380610,380510,320110,150920,150910,150990,300490,293399",
+        "fecha_descarga": "2026-11-26",
+        "hash": "sha256:04ad52400bfec2549c6e3059edcbb9e1d787b08617dc20d2dac1484b2b47ec98",
+        "cita_ubicacion": "UN Comtrade AR 2024 HS 320110 Extracto de quebracho (X=USD 17,94M, M=USD 0,01M)",
+        "confianza": "alta"
+      }
+    },
+    "importacion": {
+      "estado": "dato",
+      "valor": 0.01,
+      "unidad": "millones USD",
+      "procedencia": {
+        "anio": 2024,
+        "fuente_id": "uncomtrade-ar-lote6-2024",
+        "fuente": "UN Comtrade: comercio exterior de Argentina HS 380610/380510 (Colofonia/Trementina), 320110 (Quebracho), 150920/150990 (Oliva) y 300490/293399 (Farmoquímica) 2024",
+        "url": "https://comtradeapi.un.org/public/v1/preview/C/A/HS?reporterCode=32&period=2024&partnerCode=0&partner2Code=0&customsCode=C00&motCode=0&cmdCode=380610,380510,320110,150920,150910,150990,300490,293399",
+        "fecha_descarga": "2026-11-26",
+        "hash": "sha256:04ad52400bfec2549c6e3059edcbb9e1d787b08617dc20d2dac1484b2b47ec98",
+        "cita_ubicacion": "UN Comtrade AR 2024 HS 320110 Extracto de quebracho (X=USD 17,94M, M=USD 0,01M)",
+        "confianza": "alta"
+      }
+    },
+    "saldo_comercial": {
+      "estado": "dato",
+      "valor": 17.93,
+      "unidad": "millones USD",
+      "procedencia": {
+        "anio": 2024,
+        "fuente_id": "uncomtrade-ar-lote6-2024",
+        "fuente": "UN Comtrade: comercio exterior de Argentina HS 380610/380510 (Colofonia/Trementina), 320110 (Quebracho), 150920/150990 (Oliva) y 300490/293399 (Farmoquímica) 2024",
+        "url": "https://comtradeapi.un.org/public/v1/preview/C/A/HS?reporterCode=32&period=2024&partnerCode=0&partner2Code=0&customsCode=C00&motCode=0&cmdCode=380610,380510,320110,150920,150910,150990,300490,293399",
+        "fecha_descarga": "2026-11-26",
+        "hash": "sha256:04ad52400bfec2549c6e3059edcbb9e1d787b08617dc20d2dac1484b2b47ec98",
+        "cita_ubicacion": "UN Comtrade AR 2024 HS 320110 Extracto de quebracho (X=USD 17,94M, M=USD 0,01M)",
+        "confianza": "alta"
+      }
+    },
+    "procedencia": {
+      "anio": 2024,
+      "fuente_id": "uncomtrade-ar-lote6-2024",
+      "fuente": "UN Comtrade: comercio exterior de Argentina HS 380610/380510 (Colofonia/Trementina), 320110 (Quebracho), 150920/150990 (Oliva) y 300490/293399 (Farmoquímica) 2024",
+      "url": "https://comtradeapi.un.org/public/v1/preview/C/A/HS?reporterCode=32&period=2024&partnerCode=0&partner2Code=0&customsCode=C00&motCode=0&cmdCode=380610,380510,320110,150920,150910,150990,300490,293399",
+      "fecha_descarga": "2026-11-26",
+      "hash": "sha256:04ad52400bfec2549c6e3059edcbb9e1d787b08617dc20d2dac1484b2b47ec98",
+      "cita_ubicacion": "UN Comtrade AR 2024 HS 320110 Extracto de quebracho (X=USD 17,94M, M=USD 0,01M)",
+      "confianza": "alta"
+    }
+  },
+  {
+    "registro_id": "comex-tanino-320110-2023-usd",
+    "producto_id": "tanino-quebracho",
+    "anio": 2023,
+    "ncm_codigo": "3201.10",
+    "metrica": "valor_usd",
+    "exportacion": {
+      "estado": "dato",
+      "valor": 10.34,
+      "unidad": "millones USD",
+      "procedencia": {
+        "anio": 2023,
+        "fuente_id": "uncomtrade-ar-lote6-2023",
+        "fuente": "UN Comtrade: comercio exterior de Argentina HS 380610/380510 (Colofonia/Trementina), 320110 (Quebracho), 150910/150990 (Oliva) y 300490/293399 (Farmoquímica) 2023",
+        "url": "https://comtradeapi.un.org/public/v1/preview/C/A/HS?reporterCode=32&period=2023&partnerCode=0&partner2Code=0&customsCode=C00&motCode=0&cmdCode=380610,380510,320110,150920,150910,150990,300490,293399",
+        "fecha_descarga": "2026-11-26",
+        "hash": "sha256:ae5d764a59b6dfcd2f7003bc4b27f0ad80ab0ad6f5a8d5d3582e3f59a41f2e33",
+        "cita_ubicacion": "UN Comtrade AR 2023 HS 320110 Extracto de quebracho (X=USD 10,34M; sin importaciones)",
+        "confianza": "alta"
+      }
+    },
+    "importacion": {
+      "estado": "sin_datos",
+      "valor": null,
+      "unidad": "millones USD",
+      "procedencia": {
+        "anio": 2023,
+        "fuente_id": "uncomtrade-ar-lote6-2023",
+        "fuente": "UN Comtrade: comercio exterior de Argentina HS 380610/380510 (Colofonia/Trementina), 320110 (Quebracho), 150910/150990 (Oliva) y 300490/293399 (Farmoquímica) 2023",
+        "url": "https://comtradeapi.un.org/public/v1/preview/C/A/HS?reporterCode=32&period=2023&partnerCode=0&partner2Code=0&customsCode=C00&motCode=0&cmdCode=380610,380510,320110,150920,150910,150990,300490,293399",
+        "fecha_descarga": "2026-11-26",
+        "hash": "sha256:ae5d764a59b6dfcd2f7003bc4b27f0ad80ab0ad6f5a8d5d3582e3f59a41f2e33",
+        "cita_ubicacion": "UN Comtrade AR 2023 HS 320110 Extracto de quebracho (X=USD 10,34M; sin importaciones)",
+        "confianza": "alta"
+      }
+    },
+    "saldo_comercial": {
+      "estado": "dato",
+      "valor": 10.34,
+      "unidad": "millones USD",
+      "procedencia": {
+        "anio": 2023,
+        "fuente_id": "uncomtrade-ar-lote6-2023",
+        "fuente": "UN Comtrade: comercio exterior de Argentina HS 380610/380510 (Colofonia/Trementina), 320110 (Quebracho), 150910/150990 (Oliva) y 300490/293399 (Farmoquímica) 2023",
+        "url": "https://comtradeapi.un.org/public/v1/preview/C/A/HS?reporterCode=32&period=2023&partnerCode=0&partner2Code=0&customsCode=C00&motCode=0&cmdCode=380610,380510,320110,150920,150910,150990,300490,293399",
+        "fecha_descarga": "2026-11-26",
+        "hash": "sha256:ae5d764a59b6dfcd2f7003bc4b27f0ad80ab0ad6f5a8d5d3582e3f59a41f2e33",
+        "cita_ubicacion": "UN Comtrade AR 2023 HS 320110 Extracto de quebracho (X=USD 10,34M; sin importaciones)",
+        "confianza": "alta"
+      }
+    },
+    "procedencia": {
+      "anio": 2023,
+      "fuente_id": "uncomtrade-ar-lote6-2023",
+      "fuente": "UN Comtrade: comercio exterior de Argentina HS 380610/380510 (Colofonia/Trementina), 320110 (Quebracho), 150910/150990 (Oliva) y 300490/293399 (Farmoquímica) 2023",
+      "url": "https://comtradeapi.un.org/public/v1/preview/C/A/HS?reporterCode=32&period=2023&partnerCode=0&partner2Code=0&customsCode=C00&motCode=0&cmdCode=380610,380510,320110,150920,150910,150990,300490,293399",
+      "fecha_descarga": "2026-11-26",
+      "hash": "sha256:ae5d764a59b6dfcd2f7003bc4b27f0ad80ab0ad6f5a8d5d3582e3f59a41f2e33",
+      "cita_ubicacion": "UN Comtrade AR 2023 HS 320110 Extracto de quebracho (X=USD 10,34M; sin importaciones)",
+      "confianza": "alta"
+    }
+  },
+  {
+    "registro_id": "comex-tanino-320110-2024-vol",
+    "producto_id": "tanino-quebracho",
+    "anio": 2024,
+    "ncm_codigo": "3201.10",
+    "metrica": "volumen_t",
+    "exportacion": {
+      "estado": "dato",
+      "valor": 11109.38,
+      "unidad": "t",
+      "procedencia": {
+        "anio": 2024,
+        "fuente_id": "uncomtrade-ar-lote6-2024",
+        "fuente": "UN Comtrade: comercio exterior de Argentina HS 380610/380510 (Colofonia/Trementina), 320110 (Quebracho), 150920/150990 (Oliva) y 300490/293399 (Farmoquímica) 2024",
+        "url": "https://comtradeapi.un.org/public/v1/preview/C/A/HS?reporterCode=32&period=2024&partnerCode=0&partner2Code=0&customsCode=C00&motCode=0&cmdCode=380610,380510,320110,150920,150910,150990,300490,293399",
+        "fecha_descarga": "2026-11-26",
+        "hash": "sha256:04ad52400bfec2549c6e3059edcbb9e1d787b08617dc20d2dac1484b2b47ec98",
+        "cita_ubicacion": "UN Comtrade AR 2024 HS 320110 Extracto de quebracho volumen (X=11.109,38 t, M=5,57 t)",
+        "confianza": "alta"
+      }
+    },
+    "importacion": {
+      "estado": "dato",
+      "valor": 5.57,
+      "unidad": "t",
+      "procedencia": {
+        "anio": 2024,
+        "fuente_id": "uncomtrade-ar-lote6-2024",
+        "fuente": "UN Comtrade: comercio exterior de Argentina HS 380610/380510 (Colofonia/Trementina), 320110 (Quebracho), 150920/150990 (Oliva) y 300490/293399 (Farmoquímica) 2024",
+        "url": "https://comtradeapi.un.org/public/v1/preview/C/A/HS?reporterCode=32&period=2024&partnerCode=0&partner2Code=0&customsCode=C00&motCode=0&cmdCode=380610,380510,320110,150920,150910,150990,300490,293399",
+        "fecha_descarga": "2026-11-26",
+        "hash": "sha256:04ad52400bfec2549c6e3059edcbb9e1d787b08617dc20d2dac1484b2b47ec98",
+        "cita_ubicacion": "UN Comtrade AR 2024 HS 320110 Extracto de quebracho volumen (X=11.109,38 t, M=5,57 t)",
+        "confianza": "alta"
+      }
+    },
+    "saldo_comercial": {
+      "estado": "dato",
+      "valor": 11103.81,
+      "unidad": "t",
+      "procedencia": {
+        "anio": 2024,
+        "fuente_id": "uncomtrade-ar-lote6-2024",
+        "fuente": "UN Comtrade: comercio exterior de Argentina HS 380610/380510 (Colofonia/Trementina), 320110 (Quebracho), 150920/150990 (Oliva) y 300490/293399 (Farmoquímica) 2024",
+        "url": "https://comtradeapi.un.org/public/v1/preview/C/A/HS?reporterCode=32&period=2024&partnerCode=0&partner2Code=0&customsCode=C00&motCode=0&cmdCode=380610,380510,320110,150920,150910,150990,300490,293399",
+        "fecha_descarga": "2026-11-26",
+        "hash": "sha256:04ad52400bfec2549c6e3059edcbb9e1d787b08617dc20d2dac1484b2b47ec98",
+        "cita_ubicacion": "UN Comtrade AR 2024 HS 320110 Extracto de quebracho volumen (X=11.109,38 t, M=5,57 t)",
+        "confianza": "alta"
+      }
+    },
+    "procedencia": {
+      "anio": 2024,
+      "fuente_id": "uncomtrade-ar-lote6-2024",
+      "fuente": "UN Comtrade: comercio exterior de Argentina HS 380610/380510 (Colofonia/Trementina), 320110 (Quebracho), 150920/150990 (Oliva) y 300490/293399 (Farmoquímica) 2024",
+      "url": "https://comtradeapi.un.org/public/v1/preview/C/A/HS?reporterCode=32&period=2024&partnerCode=0&partner2Code=0&customsCode=C00&motCode=0&cmdCode=380610,380510,320110,150920,150910,150990,300490,293399",
+      "fecha_descarga": "2026-11-26",
+      "hash": "sha256:04ad52400bfec2549c6e3059edcbb9e1d787b08617dc20d2dac1484b2b47ec98",
+      "cita_ubicacion": "UN Comtrade AR 2024 HS 320110 Extracto de quebracho volumen (X=11.109,38 t, M=5,57 t)",
+      "confianza": "alta"
+    }
+  },
+  {
+    "registro_id": "comex-tanino-320110-2023-vol",
+    "producto_id": "tanino-quebracho",
+    "anio": 2023,
+    "ncm_codigo": "3201.10",
+    "metrica": "volumen_t",
+    "exportacion": {
+      "estado": "dato",
+      "valor": 5782.19,
+      "unidad": "t",
+      "procedencia": {
+        "anio": 2023,
+        "fuente_id": "uncomtrade-ar-lote6-2023",
+        "fuente": "UN Comtrade: comercio exterior de Argentina HS 380610/380510 (Colofonia/Trementina), 320110 (Quebracho), 150910/150990 (Oliva) y 300490/293399 (Farmoquímica) 2023",
+        "url": "https://comtradeapi.un.org/public/v1/preview/C/A/HS?reporterCode=32&period=2023&partnerCode=0&partner2Code=0&customsCode=C00&motCode=0&cmdCode=380610,380510,320110,150920,150910,150990,300490,293399",
+        "fecha_descarga": "2026-11-26",
+        "hash": "sha256:ae5d764a59b6dfcd2f7003bc4b27f0ad80ab0ad6f5a8d5d3582e3f59a41f2e33",
+        "cita_ubicacion": "UN Comtrade AR 2023 HS 320110 Extracto de quebracho volumen (X=5.782,19 t)",
+        "confianza": "alta"
+      }
+    },
+    "importacion": {
+      "estado": "sin_datos",
+      "valor": null,
+      "unidad": "t",
+      "procedencia": {
+        "anio": 2023,
+        "fuente_id": "uncomtrade-ar-lote6-2023",
+        "fuente": "UN Comtrade: comercio exterior de Argentina HS 380610/380510 (Colofonia/Trementina), 320110 (Quebracho), 150910/150990 (Oliva) y 300490/293399 (Farmoquímica) 2023",
+        "url": "https://comtradeapi.un.org/public/v1/preview/C/A/HS?reporterCode=32&period=2023&partnerCode=0&partner2Code=0&customsCode=C00&motCode=0&cmdCode=380610,380510,320110,150920,150910,150990,300490,293399",
+        "fecha_descarga": "2026-11-26",
+        "hash": "sha256:ae5d764a59b6dfcd2f7003bc4b27f0ad80ab0ad6f5a8d5d3582e3f59a41f2e33",
+        "cita_ubicacion": "UN Comtrade AR 2023 HS 320110 Extracto de quebracho volumen (X=5.782,19 t)",
+        "confianza": "alta"
+      }
+    },
+    "saldo_comercial": {
+      "estado": "sin_datos",
+      "valor": null,
+      "unidad": "t",
+      "procedencia": {
+        "anio": 2023,
+        "fuente_id": "uncomtrade-ar-lote6-2023",
+        "fuente": "UN Comtrade: comercio exterior de Argentina HS 380610/380510 (Colofonia/Trementina), 320110 (Quebracho), 150910/150990 (Oliva) y 300490/293399 (Farmoquímica) 2023",
+        "url": "https://comtradeapi.un.org/public/v1/preview/C/A/HS?reporterCode=32&period=2023&partnerCode=0&partner2Code=0&customsCode=C00&motCode=0&cmdCode=380610,380510,320110,150920,150910,150990,300490,293399",
+        "fecha_descarga": "2026-11-26",
+        "hash": "sha256:ae5d764a59b6dfcd2f7003bc4b27f0ad80ab0ad6f5a8d5d3582e3f59a41f2e33",
+        "cita_ubicacion": "UN Comtrade AR 2023 HS 320110 Extracto de quebracho volumen (X=5.782,19 t)",
+        "confianza": "alta"
+      }
+    },
+    "procedencia": {
+      "anio": 2023,
+      "fuente_id": "uncomtrade-ar-lote6-2023",
+      "fuente": "UN Comtrade: comercio exterior de Argentina HS 380610/380510 (Colofonia/Trementina), 320110 (Quebracho), 150910/150990 (Oliva) y 300490/293399 (Farmoquímica) 2023",
+      "url": "https://comtradeapi.un.org/public/v1/preview/C/A/HS?reporterCode=32&period=2023&partnerCode=0&partner2Code=0&customsCode=C00&motCode=0&cmdCode=380610,380510,320110,150920,150910,150990,300490,293399",
+      "fecha_descarga": "2026-11-26",
+      "hash": "sha256:ae5d764a59b6dfcd2f7003bc4b27f0ad80ab0ad6f5a8d5d3582e3f59a41f2e33",
+      "cita_ubicacion": "UN Comtrade AR 2023 HS 320110 Extracto de quebracho volumen (X=5.782,19 t)",
+      "confianza": "alta"
+    }
+  },
+  {
+    "registro_id": "comex-oliva-150920-2024-usd",
+    "producto_id": "aceite-oliva",
+    "anio": 2024,
+    "ncm_codigo": "1509.20",
+    "metrica": "valor_usd",
+    "exportacion": {
+      "estado": "dato",
+      "valor": 142.72,
+      "unidad": "millones USD",
+      "procedencia": {
+        "anio": 2024,
+        "fuente_id": "uncomtrade-ar-lote6-2024",
+        "fuente": "UN Comtrade: comercio exterior de Argentina HS 380610/380510 (Colofonia/Trementina), 320110 (Quebracho), 150920/150990 (Oliva) y 300490/293399 (Farmoquímica) 2024",
+        "url": "https://comtradeapi.un.org/public/v1/preview/C/A/HS?reporterCode=32&period=2024&partnerCode=0&partner2Code=0&customsCode=C00&motCode=0&cmdCode=380610,380510,320110,150920,150910,150990,300490,293399",
+        "fecha_descarga": "2026-11-26",
+        "hash": "sha256:04ad52400bfec2549c6e3059edcbb9e1d787b08617dc20d2dac1484b2b47ec98",
+        "cita_ubicacion": "UN Comtrade AR 2024 HS 150920 Aceite de oliva virgen extra (X=USD 142,72M, M=USD 2,74M)",
+        "confianza": "alta"
+      }
+    },
+    "importacion": {
+      "estado": "dato",
+      "valor": 2.74,
+      "unidad": "millones USD",
+      "procedencia": {
+        "anio": 2024,
+        "fuente_id": "uncomtrade-ar-lote6-2024",
+        "fuente": "UN Comtrade: comercio exterior de Argentina HS 380610/380510 (Colofonia/Trementina), 320110 (Quebracho), 150920/150990 (Oliva) y 300490/293399 (Farmoquímica) 2024",
+        "url": "https://comtradeapi.un.org/public/v1/preview/C/A/HS?reporterCode=32&period=2024&partnerCode=0&partner2Code=0&customsCode=C00&motCode=0&cmdCode=380610,380510,320110,150920,150910,150990,300490,293399",
+        "fecha_descarga": "2026-11-26",
+        "hash": "sha256:04ad52400bfec2549c6e3059edcbb9e1d787b08617dc20d2dac1484b2b47ec98",
+        "cita_ubicacion": "UN Comtrade AR 2024 HS 150920 Aceite de oliva virgen extra (X=USD 142,72M, M=USD 2,74M)",
+        "confianza": "alta"
+      }
+    },
+    "saldo_comercial": {
+      "estado": "dato",
+      "valor": 139.98,
+      "unidad": "millones USD",
+      "procedencia": {
+        "anio": 2024,
+        "fuente_id": "uncomtrade-ar-lote6-2024",
+        "fuente": "UN Comtrade: comercio exterior de Argentina HS 380610/380510 (Colofonia/Trementina), 320110 (Quebracho), 150920/150990 (Oliva) y 300490/293399 (Farmoquímica) 2024",
+        "url": "https://comtradeapi.un.org/public/v1/preview/C/A/HS?reporterCode=32&period=2024&partnerCode=0&partner2Code=0&customsCode=C00&motCode=0&cmdCode=380610,380510,320110,150920,150910,150990,300490,293399",
+        "fecha_descarga": "2026-11-26",
+        "hash": "sha256:04ad52400bfec2549c6e3059edcbb9e1d787b08617dc20d2dac1484b2b47ec98",
+        "cita_ubicacion": "UN Comtrade AR 2024 HS 150920 Aceite de oliva virgen extra (X=USD 142,72M, M=USD 2,74M)",
+        "confianza": "alta"
+      }
+    },
+    "procedencia": {
+      "anio": 2024,
+      "fuente_id": "uncomtrade-ar-lote6-2024",
+      "fuente": "UN Comtrade: comercio exterior de Argentina HS 380610/380510 (Colofonia/Trementina), 320110 (Quebracho), 150920/150990 (Oliva) y 300490/293399 (Farmoquímica) 2024",
+      "url": "https://comtradeapi.un.org/public/v1/preview/C/A/HS?reporterCode=32&period=2024&partnerCode=0&partner2Code=0&customsCode=C00&motCode=0&cmdCode=380610,380510,320110,150920,150910,150990,300490,293399",
+      "fecha_descarga": "2026-11-26",
+      "hash": "sha256:04ad52400bfec2549c6e3059edcbb9e1d787b08617dc20d2dac1484b2b47ec98",
+      "cita_ubicacion": "UN Comtrade AR 2024 HS 150920 Aceite de oliva virgen extra (X=USD 142,72M, M=USD 2,74M)",
+      "confianza": "alta"
+    }
+  },
+  {
+    "registro_id": "comex-oliva-150910-2023-usd",
+    "producto_id": "aceite-oliva",
+    "anio": 2023,
+    "ncm_codigo": "1509.10",
+    "metrica": "valor_usd",
+    "exportacion": {
+      "estado": "dato",
+      "valor": 213.88,
+      "unidad": "millones USD",
+      "procedencia": {
+        "anio": 2023,
+        "fuente_id": "uncomtrade-ar-lote6-2023",
+        "fuente": "UN Comtrade: comercio exterior de Argentina HS 380610/380510 (Colofonia/Trementina), 320110 (Quebracho), 150910/150990 (Oliva) y 300490/293399 (Farmoquímica) 2023",
+        "url": "https://comtradeapi.un.org/public/v1/preview/C/A/HS?reporterCode=32&period=2023&partnerCode=0&partner2Code=0&customsCode=C00&motCode=0&cmdCode=380610,380510,320110,150920,150910,150990,300490,293399",
+        "fecha_descarga": "2026-11-26",
+        "hash": "sha256:ae5d764a59b6dfcd2f7003bc4b27f0ad80ab0ad6f5a8d5d3582e3f59a41f2e33",
+        "cita_ubicacion": "UN Comtrade AR 2023 HS 150910 Aceite de oliva virgen (X=USD 213,88M, M=USD 0,97M)",
+        "confianza": "alta"
+      }
+    },
+    "importacion": {
+      "estado": "dato",
+      "valor": 0.97,
+      "unidad": "millones USD",
+      "procedencia": {
+        "anio": 2023,
+        "fuente_id": "uncomtrade-ar-lote6-2023",
+        "fuente": "UN Comtrade: comercio exterior de Argentina HS 380610/380510 (Colofonia/Trementina), 320110 (Quebracho), 150910/150990 (Oliva) y 300490/293399 (Farmoquímica) 2023",
+        "url": "https://comtradeapi.un.org/public/v1/preview/C/A/HS?reporterCode=32&period=2023&partnerCode=0&partner2Code=0&customsCode=C00&motCode=0&cmdCode=380610,380510,320110,150920,150910,150990,300490,293399",
+        "fecha_descarga": "2026-11-26",
+        "hash": "sha256:ae5d764a59b6dfcd2f7003bc4b27f0ad80ab0ad6f5a8d5d3582e3f59a41f2e33",
+        "cita_ubicacion": "UN Comtrade AR 2023 HS 150910 Aceite de oliva virgen (X=USD 213,88M, M=USD 0,97M)",
+        "confianza": "alta"
+      }
+    },
+    "saldo_comercial": {
+      "estado": "dato",
+      "valor": 212.91,
+      "unidad": "millones USD",
+      "procedencia": {
+        "anio": 2023,
+        "fuente_id": "uncomtrade-ar-lote6-2023",
+        "fuente": "UN Comtrade: comercio exterior de Argentina HS 380610/380510 (Colofonia/Trementina), 320110 (Quebracho), 150910/150990 (Oliva) y 300490/293399 (Farmoquímica) 2023",
+        "url": "https://comtradeapi.un.org/public/v1/preview/C/A/HS?reporterCode=32&period=2023&partnerCode=0&partner2Code=0&customsCode=C00&motCode=0&cmdCode=380610,380510,320110,150920,150910,150990,300490,293399",
+        "fecha_descarga": "2026-11-26",
+        "hash": "sha256:ae5d764a59b6dfcd2f7003bc4b27f0ad80ab0ad6f5a8d5d3582e3f59a41f2e33",
+        "cita_ubicacion": "UN Comtrade AR 2023 HS 150910 Aceite de oliva virgen (X=USD 213,88M, M=USD 0,97M)",
+        "confianza": "alta"
+      }
+    },
+    "procedencia": {
+      "anio": 2023,
+      "fuente_id": "uncomtrade-ar-lote6-2023",
+      "fuente": "UN Comtrade: comercio exterior de Argentina HS 380610/380510 (Colofonia/Trementina), 320110 (Quebracho), 150910/150990 (Oliva) y 300490/293399 (Farmoquímica) 2023",
+      "url": "https://comtradeapi.un.org/public/v1/preview/C/A/HS?reporterCode=32&period=2023&partnerCode=0&partner2Code=0&customsCode=C00&motCode=0&cmdCode=380610,380510,320110,150920,150910,150990,300490,293399",
+      "fecha_descarga": "2026-11-26",
+      "hash": "sha256:ae5d764a59b6dfcd2f7003bc4b27f0ad80ab0ad6f5a8d5d3582e3f59a41f2e33",
+      "cita_ubicacion": "UN Comtrade AR 2023 HS 150910 Aceite de oliva virgen (X=USD 213,88M, M=USD 0,97M)",
+      "confianza": "alta"
+    }
+  },
+  {
+    "registro_id": "comex-oliva-150920-2024-vol",
+    "producto_id": "aceite-oliva",
+    "anio": 2024,
+    "ncm_codigo": "1509.20",
+    "metrica": "volumen_t",
+    "exportacion": {
+      "estado": "dato",
+      "valor": 18140.15,
+      "unidad": "t",
+      "procedencia": {
+        "anio": 2024,
+        "fuente_id": "uncomtrade-ar-lote6-2024",
+        "fuente": "UN Comtrade: comercio exterior de Argentina HS 380610/380510 (Colofonia/Trementina), 320110 (Quebracho), 150920/150990 (Oliva) y 300490/293399 (Farmoquímica) 2024",
+        "url": "https://comtradeapi.un.org/public/v1/preview/C/A/HS?reporterCode=32&period=2024&partnerCode=0&partner2Code=0&customsCode=C00&motCode=0&cmdCode=380610,380510,320110,150920,150910,150990,300490,293399",
+        "fecha_descarga": "2026-11-26",
+        "hash": "sha256:04ad52400bfec2549c6e3059edcbb9e1d787b08617dc20d2dac1484b2b47ec98",
+        "cita_ubicacion": "UN Comtrade AR 2024 HS 150920 Aceite de oliva virgen extra volumen (X=18.140,15 t, M=323,01 t)",
+        "confianza": "alta"
+      }
+    },
+    "importacion": {
+      "estado": "dato",
+      "valor": 323.01,
+      "unidad": "t",
+      "procedencia": {
+        "anio": 2024,
+        "fuente_id": "uncomtrade-ar-lote6-2024",
+        "fuente": "UN Comtrade: comercio exterior de Argentina HS 380610/380510 (Colofonia/Trementina), 320110 (Quebracho), 150920/150990 (Oliva) y 300490/293399 (Farmoquímica) 2024",
+        "url": "https://comtradeapi.un.org/public/v1/preview/C/A/HS?reporterCode=32&period=2024&partnerCode=0&partner2Code=0&customsCode=C00&motCode=0&cmdCode=380610,380510,320110,150920,150910,150990,300490,293399",
+        "fecha_descarga": "2026-11-26",
+        "hash": "sha256:04ad52400bfec2549c6e3059edcbb9e1d787b08617dc20d2dac1484b2b47ec98",
+        "cita_ubicacion": "UN Comtrade AR 2024 HS 150920 Aceite de oliva virgen extra volumen (X=18.140,15 t, M=323,01 t)",
+        "confianza": "alta"
+      }
+    },
+    "saldo_comercial": {
+      "estado": "dato",
+      "valor": 17817.14,
+      "unidad": "t",
+      "procedencia": {
+        "anio": 2024,
+        "fuente_id": "uncomtrade-ar-lote6-2024",
+        "fuente": "UN Comtrade: comercio exterior de Argentina HS 380610/380510 (Colofonia/Trementina), 320110 (Quebracho), 150920/150990 (Oliva) y 300490/293399 (Farmoquímica) 2024",
+        "url": "https://comtradeapi.un.org/public/v1/preview/C/A/HS?reporterCode=32&period=2024&partnerCode=0&partner2Code=0&customsCode=C00&motCode=0&cmdCode=380610,380510,320110,150920,150910,150990,300490,293399",
+        "fecha_descarga": "2026-11-26",
+        "hash": "sha256:04ad52400bfec2549c6e3059edcbb9e1d787b08617dc20d2dac1484b2b47ec98",
+        "cita_ubicacion": "UN Comtrade AR 2024 HS 150920 Aceite de oliva virgen extra volumen (X=18.140,15 t, M=323,01 t)",
+        "confianza": "alta"
+      }
+    },
+    "procedencia": {
+      "anio": 2024,
+      "fuente_id": "uncomtrade-ar-lote6-2024",
+      "fuente": "UN Comtrade: comercio exterior de Argentina HS 380610/380510 (Colofonia/Trementina), 320110 (Quebracho), 150920/150990 (Oliva) y 300490/293399 (Farmoquímica) 2024",
+      "url": "https://comtradeapi.un.org/public/v1/preview/C/A/HS?reporterCode=32&period=2024&partnerCode=0&partner2Code=0&customsCode=C00&motCode=0&cmdCode=380610,380510,320110,150920,150910,150990,300490,293399",
+      "fecha_descarga": "2026-11-26",
+      "hash": "sha256:04ad52400bfec2549c6e3059edcbb9e1d787b08617dc20d2dac1484b2b47ec98",
+      "cita_ubicacion": "UN Comtrade AR 2024 HS 150920 Aceite de oliva virgen extra volumen (X=18.140,15 t, M=323,01 t)",
+      "confianza": "alta"
+    }
+  },
+  {
+    "registro_id": "comex-oliva-150910-2023-vol",
+    "producto_id": "aceite-oliva",
+    "anio": 2023,
+    "ncm_codigo": "1509.10",
+    "metrica": "volumen_t",
+    "exportacion": {
+      "estado": "dato",
+      "valor": 36103.91,
+      "unidad": "t",
+      "procedencia": {
+        "anio": 2023,
+        "fuente_id": "uncomtrade-ar-lote6-2023",
+        "fuente": "UN Comtrade: comercio exterior de Argentina HS 380610/380510 (Colofonia/Trementina), 320110 (Quebracho), 150910/150990 (Oliva) y 300490/293399 (Farmoquímica) 2023",
+        "url": "https://comtradeapi.un.org/public/v1/preview/C/A/HS?reporterCode=32&period=2023&partnerCode=0&partner2Code=0&customsCode=C00&motCode=0&cmdCode=380610,380510,320110,150920,150910,150990,300490,293399",
+        "fecha_descarga": "2026-11-26",
+        "hash": "sha256:ae5d764a59b6dfcd2f7003bc4b27f0ad80ab0ad6f5a8d5d3582e3f59a41f2e33",
+        "cita_ubicacion": "UN Comtrade AR 2023 HS 150910 Aceite de oliva virgen volumen (X=36.103,91 t, M=209,67 t)",
+        "confianza": "alta"
+      }
+    },
+    "importacion": {
+      "estado": "dato",
+      "valor": 209.67,
+      "unidad": "t",
+      "procedencia": {
+        "anio": 2023,
+        "fuente_id": "uncomtrade-ar-lote6-2023",
+        "fuente": "UN Comtrade: comercio exterior de Argentina HS 380610/380510 (Colofonia/Trementina), 320110 (Quebracho), 150910/150990 (Oliva) y 300490/293399 (Farmoquímica) 2023",
+        "url": "https://comtradeapi.un.org/public/v1/preview/C/A/HS?reporterCode=32&period=2023&partnerCode=0&partner2Code=0&customsCode=C00&motCode=0&cmdCode=380610,380510,320110,150920,150910,150990,300490,293399",
+        "fecha_descarga": "2026-11-26",
+        "hash": "sha256:ae5d764a59b6dfcd2f7003bc4b27f0ad80ab0ad6f5a8d5d3582e3f59a41f2e33",
+        "cita_ubicacion": "UN Comtrade AR 2023 HS 150910 Aceite de oliva virgen volumen (X=36.103,91 t, M=209,67 t)",
+        "confianza": "alta"
+      }
+    },
+    "saldo_comercial": {
+      "estado": "dato",
+      "valor": 35894.24,
+      "unidad": "t",
+      "procedencia": {
+        "anio": 2023,
+        "fuente_id": "uncomtrade-ar-lote6-2023",
+        "fuente": "UN Comtrade: comercio exterior de Argentina HS 380610/380510 (Colofonia/Trementina), 320110 (Quebracho), 150910/150990 (Oliva) y 300490/293399 (Farmoquímica) 2023",
+        "url": "https://comtradeapi.un.org/public/v1/preview/C/A/HS?reporterCode=32&period=2023&partnerCode=0&partner2Code=0&customsCode=C00&motCode=0&cmdCode=380610,380510,320110,150920,150910,150990,300490,293399",
+        "fecha_descarga": "2026-11-26",
+        "hash": "sha256:ae5d764a59b6dfcd2f7003bc4b27f0ad80ab0ad6f5a8d5d3582e3f59a41f2e33",
+        "cita_ubicacion": "UN Comtrade AR 2023 HS 150910 Aceite de oliva virgen volumen (X=36.103,91 t, M=209,67 t)",
+        "confianza": "alta"
+      }
+    },
+    "procedencia": {
+      "anio": 2023,
+      "fuente_id": "uncomtrade-ar-lote6-2023",
+      "fuente": "UN Comtrade: comercio exterior de Argentina HS 380610/380510 (Colofonia/Trementina), 320110 (Quebracho), 150910/150990 (Oliva) y 300490/293399 (Farmoquímica) 2023",
+      "url": "https://comtradeapi.un.org/public/v1/preview/C/A/HS?reporterCode=32&period=2023&partnerCode=0&partner2Code=0&customsCode=C00&motCode=0&cmdCode=380610,380510,320110,150920,150910,150990,300490,293399",
+      "fecha_descarga": "2026-11-26",
+      "hash": "sha256:ae5d764a59b6dfcd2f7003bc4b27f0ad80ab0ad6f5a8d5d3582e3f59a41f2e33",
+      "cita_ubicacion": "UN Comtrade AR 2023 HS 150910 Aceite de oliva virgen volumen (X=36.103,91 t, M=209,67 t)",
+      "confianza": "alta"
+    }
+  },
+  {
+    "registro_id": "comex-oliva-150990-2024-usd",
+    "producto_id": "aceite-oliva",
+    "anio": 2024,
+    "ncm_codigo": "1509.90",
+    "metrica": "valor_usd",
+    "exportacion": {
+      "estado": "dato",
+      "valor": 0.66,
+      "unidad": "millones USD",
+      "procedencia": {
+        "anio": 2024,
+        "fuente_id": "uncomtrade-ar-lote6-2024",
+        "fuente": "UN Comtrade: comercio exterior de Argentina HS 380610/380510 (Colofonia/Trementina), 320110 (Quebracho), 150920/150990 (Oliva) y 300490/293399 (Farmoquímica) 2024",
+        "url": "https://comtradeapi.un.org/public/v1/preview/C/A/HS?reporterCode=32&period=2024&partnerCode=0&partner2Code=0&customsCode=C00&motCode=0&cmdCode=380610,380510,320110,150920,150910,150990,300490,293399",
+        "fecha_descarga": "2026-11-26",
+        "hash": "sha256:04ad52400bfec2549c6e3059edcbb9e1d787b08617dc20d2dac1484b2b47ec98",
+        "cita_ubicacion": "UN Comtrade AR 2024 HS 150990 Otros aceites de oliva (X=USD 0,66M, M=USD 0,01M)",
+        "confianza": "alta"
+      }
+    },
+    "importacion": {
+      "estado": "dato",
+      "valor": 0.01,
+      "unidad": "millones USD",
+      "procedencia": {
+        "anio": 2024,
+        "fuente_id": "uncomtrade-ar-lote6-2024",
+        "fuente": "UN Comtrade: comercio exterior de Argentina HS 380610/380510 (Colofonia/Trementina), 320110 (Quebracho), 150920/150990 (Oliva) y 300490/293399 (Farmoquímica) 2024",
+        "url": "https://comtradeapi.un.org/public/v1/preview/C/A/HS?reporterCode=32&period=2024&partnerCode=0&partner2Code=0&customsCode=C00&motCode=0&cmdCode=380610,380510,320110,150920,150910,150990,300490,293399",
+        "fecha_descarga": "2026-11-26",
+        "hash": "sha256:04ad52400bfec2549c6e3059edcbb9e1d787b08617dc20d2dac1484b2b47ec98",
+        "cita_ubicacion": "UN Comtrade AR 2024 HS 150990 Otros aceites de oliva (X=USD 0,66M, M=USD 0,01M)",
+        "confianza": "alta"
+      }
+    },
+    "saldo_comercial": {
+      "estado": "dato",
+      "valor": 0.65,
+      "unidad": "millones USD",
+      "procedencia": {
+        "anio": 2024,
+        "fuente_id": "uncomtrade-ar-lote6-2024",
+        "fuente": "UN Comtrade: comercio exterior de Argentina HS 380610/380510 (Colofonia/Trementina), 320110 (Quebracho), 150920/150990 (Oliva) y 300490/293399 (Farmoquímica) 2024",
+        "url": "https://comtradeapi.un.org/public/v1/preview/C/A/HS?reporterCode=32&period=2024&partnerCode=0&partner2Code=0&customsCode=C00&motCode=0&cmdCode=380610,380510,320110,150920,150910,150990,300490,293399",
+        "fecha_descarga": "2026-11-26",
+        "hash": "sha256:04ad52400bfec2549c6e3059edcbb9e1d787b08617dc20d2dac1484b2b47ec98",
+        "cita_ubicacion": "UN Comtrade AR 2024 HS 150990 Otros aceites de oliva (X=USD 0,66M, M=USD 0,01M)",
+        "confianza": "alta"
+      }
+    },
+    "procedencia": {
+      "anio": 2024,
+      "fuente_id": "uncomtrade-ar-lote6-2024",
+      "fuente": "UN Comtrade: comercio exterior de Argentina HS 380610/380510 (Colofonia/Trementina), 320110 (Quebracho), 150920/150990 (Oliva) y 300490/293399 (Farmoquímica) 2024",
+      "url": "https://comtradeapi.un.org/public/v1/preview/C/A/HS?reporterCode=32&period=2024&partnerCode=0&partner2Code=0&customsCode=C00&motCode=0&cmdCode=380610,380510,320110,150920,150910,150990,300490,293399",
+      "fecha_descarga": "2026-11-26",
+      "hash": "sha256:04ad52400bfec2549c6e3059edcbb9e1d787b08617dc20d2dac1484b2b47ec98",
+      "cita_ubicacion": "UN Comtrade AR 2024 HS 150990 Otros aceites de oliva (X=USD 0,66M, M=USD 0,01M)",
+      "confianza": "alta"
+    }
+  },
+  {
+    "registro_id": "comex-farma-300490-2024-usd",
+    "producto_id": "farmoquimica-ifa",
+    "anio": 2024,
+    "ncm_codigo": "3004.90",
+    "metrica": "valor_usd",
+    "exportacion": {
+      "estado": "dato",
+      "valor": 322.5,
+      "unidad": "millones USD",
+      "procedencia": {
+        "anio": 2024,
+        "fuente_id": "uncomtrade-ar-lote6-2024",
+        "fuente": "UN Comtrade: comercio exterior de Argentina HS 380610/380510 (Colofonia/Trementina), 320110 (Quebracho), 150920/150990 (Oliva) y 300490/293399 (Farmoquímica) 2024",
+        "url": "https://comtradeapi.un.org/public/v1/preview/C/A/HS?reporterCode=32&period=2024&partnerCode=0&partner2Code=0&customsCode=C00&motCode=0&cmdCode=380610,380510,320110,150920,150910,150990,300490,293399",
+        "fecha_descarga": "2026-11-26",
+        "hash": "sha256:04ad52400bfec2549c6e3059edcbb9e1d787b08617dc20d2dac1484b2b47ec98",
+        "cita_ubicacion": "UN Comtrade AR 2024 HS 300490 Medicamentos dosificados (X=USD 322,50M, M=USD 779,71M)",
+        "confianza": "alta"
+      }
+    },
+    "importacion": {
+      "estado": "dato",
+      "valor": 779.71,
+      "unidad": "millones USD",
+      "procedencia": {
+        "anio": 2024,
+        "fuente_id": "uncomtrade-ar-lote6-2024",
+        "fuente": "UN Comtrade: comercio exterior de Argentina HS 380610/380510 (Colofonia/Trementina), 320110 (Quebracho), 150920/150990 (Oliva) y 300490/293399 (Farmoquímica) 2024",
+        "url": "https://comtradeapi.un.org/public/v1/preview/C/A/HS?reporterCode=32&period=2024&partnerCode=0&partner2Code=0&customsCode=C00&motCode=0&cmdCode=380610,380510,320110,150920,150910,150990,300490,293399",
+        "fecha_descarga": "2026-11-26",
+        "hash": "sha256:04ad52400bfec2549c6e3059edcbb9e1d787b08617dc20d2dac1484b2b47ec98",
+        "cita_ubicacion": "UN Comtrade AR 2024 HS 300490 Medicamentos dosificados (X=USD 322,50M, M=USD 779,71M)",
+        "confianza": "alta"
+      }
+    },
+    "saldo_comercial": {
+      "estado": "dato",
+      "valor": -457.21,
+      "unidad": "millones USD",
+      "procedencia": {
+        "anio": 2024,
+        "fuente_id": "uncomtrade-ar-lote6-2024",
+        "fuente": "UN Comtrade: comercio exterior de Argentina HS 380610/380510 (Colofonia/Trementina), 320110 (Quebracho), 150920/150990 (Oliva) y 300490/293399 (Farmoquímica) 2024",
+        "url": "https://comtradeapi.un.org/public/v1/preview/C/A/HS?reporterCode=32&period=2024&partnerCode=0&partner2Code=0&customsCode=C00&motCode=0&cmdCode=380610,380510,320110,150920,150910,150990,300490,293399",
+        "fecha_descarga": "2026-11-26",
+        "hash": "sha256:04ad52400bfec2549c6e3059edcbb9e1d787b08617dc20d2dac1484b2b47ec98",
+        "cita_ubicacion": "UN Comtrade AR 2024 HS 300490 Medicamentos dosificados (X=USD 322,50M, M=USD 779,71M)",
+        "confianza": "alta"
+      }
+    },
+    "procedencia": {
+      "anio": 2024,
+      "fuente_id": "uncomtrade-ar-lote6-2024",
+      "fuente": "UN Comtrade: comercio exterior de Argentina HS 380610/380510 (Colofonia/Trementina), 320110 (Quebracho), 150920/150990 (Oliva) y 300490/293399 (Farmoquímica) 2024",
+      "url": "https://comtradeapi.un.org/public/v1/preview/C/A/HS?reporterCode=32&period=2024&partnerCode=0&partner2Code=0&customsCode=C00&motCode=0&cmdCode=380610,380510,320110,150920,150910,150990,300490,293399",
+      "fecha_descarga": "2026-11-26",
+      "hash": "sha256:04ad52400bfec2549c6e3059edcbb9e1d787b08617dc20d2dac1484b2b47ec98",
+      "cita_ubicacion": "UN Comtrade AR 2024 HS 300490 Medicamentos dosificados (X=USD 322,50M, M=USD 779,71M)",
+      "confianza": "alta"
+    }
+  },
+  {
+    "registro_id": "comex-farma-300490-2023-usd",
+    "producto_id": "farmoquimica-ifa",
+    "anio": 2023,
+    "ncm_codigo": "3004.90",
+    "metrica": "valor_usd",
+    "exportacion": {
+      "estado": "dato",
+      "valor": 377.29,
+      "unidad": "millones USD",
+      "procedencia": {
+        "anio": 2023,
+        "fuente_id": "uncomtrade-ar-lote6-2023",
+        "fuente": "UN Comtrade: comercio exterior de Argentina HS 380610/380510 (Colofonia/Trementina), 320110 (Quebracho), 150910/150990 (Oliva) y 300490/293399 (Farmoquímica) 2023",
+        "url": "https://comtradeapi.un.org/public/v1/preview/C/A/HS?reporterCode=32&period=2023&partnerCode=0&partner2Code=0&customsCode=C00&motCode=0&cmdCode=380610,380510,320110,150920,150910,150990,300490,293399",
+        "fecha_descarga": "2026-11-26",
+        "hash": "sha256:ae5d764a59b6dfcd2f7003bc4b27f0ad80ab0ad6f5a8d5d3582e3f59a41f2e33",
+        "cita_ubicacion": "UN Comtrade AR 2023 HS 300490 Medicamentos dosificados (X=USD 377,29M, M=USD 828,47M)",
+        "confianza": "alta"
+      }
+    },
+    "importacion": {
+      "estado": "dato",
+      "valor": 828.47,
+      "unidad": "millones USD",
+      "procedencia": {
+        "anio": 2023,
+        "fuente_id": "uncomtrade-ar-lote6-2023",
+        "fuente": "UN Comtrade: comercio exterior de Argentina HS 380610/380510 (Colofonia/Trementina), 320110 (Quebracho), 150910/150990 (Oliva) y 300490/293399 (Farmoquímica) 2023",
+        "url": "https://comtradeapi.un.org/public/v1/preview/C/A/HS?reporterCode=32&period=2023&partnerCode=0&partner2Code=0&customsCode=C00&motCode=0&cmdCode=380610,380510,320110,150920,150910,150990,300490,293399",
+        "fecha_descarga": "2026-11-26",
+        "hash": "sha256:ae5d764a59b6dfcd2f7003bc4b27f0ad80ab0ad6f5a8d5d3582e3f59a41f2e33",
+        "cita_ubicacion": "UN Comtrade AR 2023 HS 300490 Medicamentos dosificados (X=USD 377,29M, M=USD 828,47M)",
+        "confianza": "alta"
+      }
+    },
+    "saldo_comercial": {
+      "estado": "dato",
+      "valor": -451.18,
+      "unidad": "millones USD",
+      "procedencia": {
+        "anio": 2023,
+        "fuente_id": "uncomtrade-ar-lote6-2023",
+        "fuente": "UN Comtrade: comercio exterior de Argentina HS 380610/380510 (Colofonia/Trementina), 320110 (Quebracho), 150910/150990 (Oliva) y 300490/293399 (Farmoquímica) 2023",
+        "url": "https://comtradeapi.un.org/public/v1/preview/C/A/HS?reporterCode=32&period=2023&partnerCode=0&partner2Code=0&customsCode=C00&motCode=0&cmdCode=380610,380510,320110,150920,150910,150990,300490,293399",
+        "fecha_descarga": "2026-11-26",
+        "hash": "sha256:ae5d764a59b6dfcd2f7003bc4b27f0ad80ab0ad6f5a8d5d3582e3f59a41f2e33",
+        "cita_ubicacion": "UN Comtrade AR 2023 HS 300490 Medicamentos dosificados (X=USD 377,29M, M=USD 828,47M)",
+        "confianza": "alta"
+      }
+    },
+    "procedencia": {
+      "anio": 2023,
+      "fuente_id": "uncomtrade-ar-lote6-2023",
+      "fuente": "UN Comtrade: comercio exterior de Argentina HS 380610/380510 (Colofonia/Trementina), 320110 (Quebracho), 150910/150990 (Oliva) y 300490/293399 (Farmoquímica) 2023",
+      "url": "https://comtradeapi.un.org/public/v1/preview/C/A/HS?reporterCode=32&period=2023&partnerCode=0&partner2Code=0&customsCode=C00&motCode=0&cmdCode=380610,380510,320110,150920,150910,150990,300490,293399",
+      "fecha_descarga": "2026-11-26",
+      "hash": "sha256:ae5d764a59b6dfcd2f7003bc4b27f0ad80ab0ad6f5a8d5d3582e3f59a41f2e33",
+      "cita_ubicacion": "UN Comtrade AR 2023 HS 300490 Medicamentos dosificados (X=USD 377,29M, M=USD 828,47M)",
+      "confianza": "alta"
+    }
+  },
+  {
+    "registro_id": "comex-farma-300490-2024-vol",
+    "producto_id": "farmoquimica-ifa",
+    "anio": 2024,
+    "ncm_codigo": "3004.90",
+    "metrica": "volumen_t",
+    "exportacion": {
+      "estado": "dato",
+      "valor": 9826.83,
+      "unidad": "t",
+      "procedencia": {
+        "anio": 2024,
+        "fuente_id": "uncomtrade-ar-lote6-2024",
+        "fuente": "UN Comtrade: comercio exterior de Argentina HS 380610/380510 (Colofonia/Trementina), 320110 (Quebracho), 150920/150990 (Oliva) y 300490/293399 (Farmoquímica) 2024",
+        "url": "https://comtradeapi.un.org/public/v1/preview/C/A/HS?reporterCode=32&period=2024&partnerCode=0&partner2Code=0&customsCode=C00&motCode=0&cmdCode=380610,380510,320110,150920,150910,150990,300490,293399",
+        "fecha_descarga": "2026-11-26",
+        "hash": "sha256:04ad52400bfec2549c6e3059edcbb9e1d787b08617dc20d2dac1484b2b47ec98",
+        "cita_ubicacion": "UN Comtrade AR 2024 HS 300490 Medicamentos volumen (X=9.826,83 t, M=15.954,52 t)",
+        "confianza": "alta"
+      }
+    },
+    "importacion": {
+      "estado": "dato",
+      "valor": 15954.52,
+      "unidad": "t",
+      "procedencia": {
+        "anio": 2024,
+        "fuente_id": "uncomtrade-ar-lote6-2024",
+        "fuente": "UN Comtrade: comercio exterior de Argentina HS 380610/380510 (Colofonia/Trementina), 320110 (Quebracho), 150920/150990 (Oliva) y 300490/293399 (Farmoquímica) 2024",
+        "url": "https://comtradeapi.un.org/public/v1/preview/C/A/HS?reporterCode=32&period=2024&partnerCode=0&partner2Code=0&customsCode=C00&motCode=0&cmdCode=380610,380510,320110,150920,150910,150990,300490,293399",
+        "fecha_descarga": "2026-11-26",
+        "hash": "sha256:04ad52400bfec2549c6e3059edcbb9e1d787b08617dc20d2dac1484b2b47ec98",
+        "cita_ubicacion": "UN Comtrade AR 2024 HS 300490 Medicamentos volumen (X=9.826,83 t, M=15.954,52 t)",
+        "confianza": "alta"
+      }
+    },
+    "saldo_comercial": {
+      "estado": "dato",
+      "valor": -6127.69,
+      "unidad": "t",
+      "procedencia": {
+        "anio": 2024,
+        "fuente_id": "uncomtrade-ar-lote6-2024",
+        "fuente": "UN Comtrade: comercio exterior de Argentina HS 380610/380510 (Colofonia/Trementina), 320110 (Quebracho), 150920/150990 (Oliva) y 300490/293399 (Farmoquímica) 2024",
+        "url": "https://comtradeapi.un.org/public/v1/preview/C/A/HS?reporterCode=32&period=2024&partnerCode=0&partner2Code=0&customsCode=C00&motCode=0&cmdCode=380610,380510,320110,150920,150910,150990,300490,293399",
+        "fecha_descarga": "2026-11-26",
+        "hash": "sha256:04ad52400bfec2549c6e3059edcbb9e1d787b08617dc20d2dac1484b2b47ec98",
+        "cita_ubicacion": "UN Comtrade AR 2024 HS 300490 Medicamentos volumen (X=9.826,83 t, M=15.954,52 t)",
+        "confianza": "alta"
+      }
+    },
+    "procedencia": {
+      "anio": 2024,
+      "fuente_id": "uncomtrade-ar-lote6-2024",
+      "fuente": "UN Comtrade: comercio exterior de Argentina HS 380610/380510 (Colofonia/Trementina), 320110 (Quebracho), 150920/150990 (Oliva) y 300490/293399 (Farmoquímica) 2024",
+      "url": "https://comtradeapi.un.org/public/v1/preview/C/A/HS?reporterCode=32&period=2024&partnerCode=0&partner2Code=0&customsCode=C00&motCode=0&cmdCode=380610,380510,320110,150920,150910,150990,300490,293399",
+      "fecha_descarga": "2026-11-26",
+      "hash": "sha256:04ad52400bfec2549c6e3059edcbb9e1d787b08617dc20d2dac1484b2b47ec98",
+      "cita_ubicacion": "UN Comtrade AR 2024 HS 300490 Medicamentos volumen (X=9.826,83 t, M=15.954,52 t)",
+      "confianza": "alta"
+    }
+  },
+  {
+    "registro_id": "comex-farma-293399-2024-usd",
+    "producto_id": "farmoquimica-ifa",
+    "anio": 2024,
+    "ncm_codigo": "2933.99",
+    "metrica": "valor_usd",
+    "exportacion": {
+      "estado": "dato",
+      "valor": 0.48,
+      "unidad": "millones USD",
+      "procedencia": {
+        "anio": 2024,
+        "fuente_id": "uncomtrade-ar-lote6-2024",
+        "fuente": "UN Comtrade: comercio exterior de Argentina HS 380610/380510 (Colofonia/Trementina), 320110 (Quebracho), 150920/150990 (Oliva) y 300490/293399 (Farmoquímica) 2024",
+        "url": "https://comtradeapi.un.org/public/v1/preview/C/A/HS?reporterCode=32&period=2024&partnerCode=0&partner2Code=0&customsCode=C00&motCode=0&cmdCode=380610,380510,320110,150920,150910,150990,300490,293399",
+        "fecha_descarga": "2026-11-26",
+        "hash": "sha256:04ad52400bfec2549c6e3059edcbb9e1d787b08617dc20d2dac1484b2b47ec98",
+        "cita_ubicacion": "UN Comtrade AR 2024 HS 293399 Compuestos heterocíclicos nitrogenados IFAs (X=USD 0,48M, M=USD 75,92M)",
+        "confianza": "alta"
+      }
+    },
+    "importacion": {
+      "estado": "dato",
+      "valor": 75.92,
+      "unidad": "millones USD",
+      "procedencia": {
+        "anio": 2024,
+        "fuente_id": "uncomtrade-ar-lote6-2024",
+        "fuente": "UN Comtrade: comercio exterior de Argentina HS 380610/380510 (Colofonia/Trementina), 320110 (Quebracho), 150920/150990 (Oliva) y 300490/293399 (Farmoquímica) 2024",
+        "url": "https://comtradeapi.un.org/public/v1/preview/C/A/HS?reporterCode=32&period=2024&partnerCode=0&partner2Code=0&customsCode=C00&motCode=0&cmdCode=380610,380510,320110,150920,150910,150990,300490,293399",
+        "fecha_descarga": "2026-11-26",
+        "hash": "sha256:04ad52400bfec2549c6e3059edcbb9e1d787b08617dc20d2dac1484b2b47ec98",
+        "cita_ubicacion": "UN Comtrade AR 2024 HS 293399 Compuestos heterocíclicos nitrogenados IFAs (X=USD 0,48M, M=USD 75,92M)",
+        "confianza": "alta"
+      }
+    },
+    "saldo_comercial": {
+      "estado": "dato",
+      "valor": -75.44,
+      "unidad": "millones USD",
+      "procedencia": {
+        "anio": 2024,
+        "fuente_id": "uncomtrade-ar-lote6-2024",
+        "fuente": "UN Comtrade: comercio exterior de Argentina HS 380610/380510 (Colofonia/Trementina), 320110 (Quebracho), 150920/150990 (Oliva) y 300490/293399 (Farmoquímica) 2024",
+        "url": "https://comtradeapi.un.org/public/v1/preview/C/A/HS?reporterCode=32&period=2024&partnerCode=0&partner2Code=0&customsCode=C00&motCode=0&cmdCode=380610,380510,320110,150920,150910,150990,300490,293399",
+        "fecha_descarga": "2026-11-26",
+        "hash": "sha256:04ad52400bfec2549c6e3059edcbb9e1d787b08617dc20d2dac1484b2b47ec98",
+        "cita_ubicacion": "UN Comtrade AR 2024 HS 293399 Compuestos heterocíclicos nitrogenados IFAs (X=USD 0,48M, M=USD 75,92M)",
+        "confianza": "alta"
+      }
+    },
+    "procedencia": {
+      "anio": 2024,
+      "fuente_id": "uncomtrade-ar-lote6-2024",
+      "fuente": "UN Comtrade: comercio exterior de Argentina HS 380610/380510 (Colofonia/Trementina), 320110 (Quebracho), 150920/150990 (Oliva) y 300490/293399 (Farmoquímica) 2024",
+      "url": "https://comtradeapi.un.org/public/v1/preview/C/A/HS?reporterCode=32&period=2024&partnerCode=0&partner2Code=0&customsCode=C00&motCode=0&cmdCode=380610,380510,320110,150920,150910,150990,300490,293399",
+      "fecha_descarga": "2026-11-26",
+      "hash": "sha256:04ad52400bfec2549c6e3059edcbb9e1d787b08617dc20d2dac1484b2b47ec98",
+      "cita_ubicacion": "UN Comtrade AR 2024 HS 293399 Compuestos heterocíclicos nitrogenados IFAs (X=USD 0,48M, M=USD 75,92M)",
+      "confianza": "alta"
+    }
+  },
+  {
+    "registro_id": "comex-farma-293399-2023-usd",
+    "producto_id": "farmoquimica-ifa",
+    "anio": 2023,
+    "ncm_codigo": "2933.99",
+    "metrica": "valor_usd",
+    "exportacion": {
+      "estado": "dato",
+      "valor": 0.12,
+      "unidad": "millones USD",
+      "procedencia": {
+        "anio": 2023,
+        "fuente_id": "uncomtrade-ar-lote6-2023",
+        "fuente": "UN Comtrade: comercio exterior de Argentina HS 380610/380510 (Colofonia/Trementina), 320110 (Quebracho), 150910/150990 (Oliva) y 300490/293399 (Farmoquímica) 2023",
+        "url": "https://comtradeapi.un.org/public/v1/preview/C/A/HS?reporterCode=32&period=2023&partnerCode=0&partner2Code=0&customsCode=C00&motCode=0&cmdCode=380610,380510,320110,150920,150910,150990,300490,293399",
+        "fecha_descarga": "2026-11-26",
+        "hash": "sha256:ae5d764a59b6dfcd2f7003bc4b27f0ad80ab0ad6f5a8d5d3582e3f59a41f2e33",
+        "cita_ubicacion": "UN Comtrade AR 2023 HS 293399 Compuestos heterocíclicos nitrogenados IFAs (X=USD 0,12M, M=USD 90,32M)",
+        "confianza": "alta"
+      }
+    },
+    "importacion": {
+      "estado": "dato",
+      "valor": 90.32,
+      "unidad": "millones USD",
+      "procedencia": {
+        "anio": 2023,
+        "fuente_id": "uncomtrade-ar-lote6-2023",
+        "fuente": "UN Comtrade: comercio exterior de Argentina HS 380610/380510 (Colofonia/Trementina), 320110 (Quebracho), 150910/150990 (Oliva) y 300490/293399 (Farmoquímica) 2023",
+        "url": "https://comtradeapi.un.org/public/v1/preview/C/A/HS?reporterCode=32&period=2023&partnerCode=0&partner2Code=0&customsCode=C00&motCode=0&cmdCode=380610,380510,320110,150920,150910,150990,300490,293399",
+        "fecha_descarga": "2026-11-26",
+        "hash": "sha256:ae5d764a59b6dfcd2f7003bc4b27f0ad80ab0ad6f5a8d5d3582e3f59a41f2e33",
+        "cita_ubicacion": "UN Comtrade AR 2023 HS 293399 Compuestos heterocíclicos nitrogenados IFAs (X=USD 0,12M, M=USD 90,32M)",
+        "confianza": "alta"
+      }
+    },
+    "saldo_comercial": {
+      "estado": "dato",
+      "valor": -90.2,
+      "unidad": "millones USD",
+      "procedencia": {
+        "anio": 2023,
+        "fuente_id": "uncomtrade-ar-lote6-2023",
+        "fuente": "UN Comtrade: comercio exterior de Argentina HS 380610/380510 (Colofonia/Trementina), 320110 (Quebracho), 150910/150990 (Oliva) y 300490/293399 (Farmoquímica) 2023",
+        "url": "https://comtradeapi.un.org/public/v1/preview/C/A/HS?reporterCode=32&period=2023&partnerCode=0&partner2Code=0&customsCode=C00&motCode=0&cmdCode=380610,380510,320110,150920,150910,150990,300490,293399",
+        "fecha_descarga": "2026-11-26",
+        "hash": "sha256:ae5d764a59b6dfcd2f7003bc4b27f0ad80ab0ad6f5a8d5d3582e3f59a41f2e33",
+        "cita_ubicacion": "UN Comtrade AR 2023 HS 293399 Compuestos heterocíclicos nitrogenados IFAs (X=USD 0,12M, M=USD 90,32M)",
+        "confianza": "alta"
+      }
+    },
+    "procedencia": {
+      "anio": 2023,
+      "fuente_id": "uncomtrade-ar-lote6-2023",
+      "fuente": "UN Comtrade: comercio exterior de Argentina HS 380610/380510 (Colofonia/Trementina), 320110 (Quebracho), 150910/150990 (Oliva) y 300490/293399 (Farmoquímica) 2023",
+      "url": "https://comtradeapi.un.org/public/v1/preview/C/A/HS?reporterCode=32&period=2023&partnerCode=0&partner2Code=0&customsCode=C00&motCode=0&cmdCode=380610,380510,320110,150920,150910,150990,300490,293399",
+      "fecha_descarga": "2026-11-26",
+      "hash": "sha256:ae5d764a59b6dfcd2f7003bc4b27f0ad80ab0ad6f5a8d5d3582e3f59a41f2e33",
+      "cita_ubicacion": "UN Comtrade AR 2023 HS 293399 Compuestos heterocíclicos nitrogenados IFAs (X=USD 0,12M, M=USD 90,32M)",
+      "confianza": "alta"
+    }
+  },
+  {
+    "registro_id": "comex-farma-293399-2024-vol",
+    "producto_id": "farmoquimica-ifa",
+    "anio": 2024,
+    "ncm_codigo": "2933.99",
+    "metrica": "volumen_t",
+    "exportacion": {
+      "estado": "dato",
+      "valor": 8.32,
+      "unidad": "t",
+      "procedencia": {
+        "anio": 2024,
+        "fuente_id": "uncomtrade-ar-lote6-2024",
+        "fuente": "UN Comtrade: comercio exterior de Argentina HS 380610/380510 (Colofonia/Trementina), 320110 (Quebracho), 150920/150990 (Oliva) y 300490/293399 (Farmoquímica) 2024",
+        "url": "https://comtradeapi.un.org/public/v1/preview/C/A/HS?reporterCode=32&period=2024&partnerCode=0&partner2Code=0&customsCode=C00&motCode=0&cmdCode=380610,380510,320110,150920,150910,150990,300490,293399",
+        "fecha_descarga": "2026-11-26",
+        "hash": "sha256:04ad52400bfec2549c6e3059edcbb9e1d787b08617dc20d2dac1484b2b47ec98",
+        "cita_ubicacion": "UN Comtrade AR 2024 HS 293399 Compuestos heterocíclicos IFAs volumen (X=8,32 t, M=1.797,85 t)",
+        "confianza": "alta"
+      }
+    },
+    "importacion": {
+      "estado": "dato",
+      "valor": 1797.85,
+      "unidad": "t",
+      "procedencia": {
+        "anio": 2024,
+        "fuente_id": "uncomtrade-ar-lote6-2024",
+        "fuente": "UN Comtrade: comercio exterior de Argentina HS 380610/380510 (Colofonia/Trementina), 320110 (Quebracho), 150920/150990 (Oliva) y 300490/293399 (Farmoquímica) 2024",
+        "url": "https://comtradeapi.un.org/public/v1/preview/C/A/HS?reporterCode=32&period=2024&partnerCode=0&partner2Code=0&customsCode=C00&motCode=0&cmdCode=380610,380510,320110,150920,150910,150990,300490,293399",
+        "fecha_descarga": "2026-11-26",
+        "hash": "sha256:04ad52400bfec2549c6e3059edcbb9e1d787b08617dc20d2dac1484b2b47ec98",
+        "cita_ubicacion": "UN Comtrade AR 2024 HS 293399 Compuestos heterocíclicos IFAs volumen (X=8,32 t, M=1.797,85 t)",
+        "confianza": "alta"
+      }
+    },
+    "saldo_comercial": {
+      "estado": "dato",
+      "valor": -1789.53,
+      "unidad": "t",
+      "procedencia": {
+        "anio": 2024,
+        "fuente_id": "uncomtrade-ar-lote6-2024",
+        "fuente": "UN Comtrade: comercio exterior de Argentina HS 380610/380510 (Colofonia/Trementina), 320110 (Quebracho), 150920/150990 (Oliva) y 300490/293399 (Farmoquímica) 2024",
+        "url": "https://comtradeapi.un.org/public/v1/preview/C/A/HS?reporterCode=32&period=2024&partnerCode=0&partner2Code=0&customsCode=C00&motCode=0&cmdCode=380610,380510,320110,150920,150910,150990,300490,293399",
+        "fecha_descarga": "2026-11-26",
+        "hash": "sha256:04ad52400bfec2549c6e3059edcbb9e1d787b08617dc20d2dac1484b2b47ec98",
+        "cita_ubicacion": "UN Comtrade AR 2024 HS 293399 Compuestos heterocíclicos IFAs volumen (X=8,32 t, M=1.797,85 t)",
+        "confianza": "alta"
+      }
+    },
+    "procedencia": {
+      "anio": 2024,
+      "fuente_id": "uncomtrade-ar-lote6-2024",
+      "fuente": "UN Comtrade: comercio exterior de Argentina HS 380610/380510 (Colofonia/Trementina), 320110 (Quebracho), 150920/150990 (Oliva) y 300490/293399 (Farmoquímica) 2024",
+      "url": "https://comtradeapi.un.org/public/v1/preview/C/A/HS?reporterCode=32&period=2024&partnerCode=0&partner2Code=0&customsCode=C00&motCode=0&cmdCode=380610,380510,320110,150920,150910,150990,300490,293399",
+      "fecha_descarga": "2026-11-26",
+      "hash": "sha256:04ad52400bfec2549c6e3059edcbb9e1d787b08617dc20d2dac1484b2b47ec98",
+      "cita_ubicacion": "UN Comtrade AR 2024 HS 293399 Compuestos heterocíclicos IFAs volumen (X=8,32 t, M=1.797,85 t)",
+      "confianza": "alta"
+    }
   }
 ]

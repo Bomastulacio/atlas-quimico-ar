@@ -823,5 +823,137 @@
     "hash": "sha256:61025f78ba4210e751d23e1a27cad605fe6b7a69036b3524586d71efb9466878",
     "archivo_raw": null,
     "notas": "Cámara nacional citrícola que documenta el complejo agroindustrial de cítricos dulces de Entre Ríos."
+  },
+  {
+    "fuente_id": "uncomtrade-ar-lote6-2023",
+    "nombre": "UN Comtrade: comercio exterior de Argentina HS 380610/380510 (Colofonia/Trementina), 320110 (Quebracho), 150910/150990 (Oliva) y 300490/293399 (Farmoquímica) 2023",
+    "organismo": "UN Comtrade (Naciones Unidas)",
+    "tipo": "oficial",
+    "url": "https://comtradeapi.un.org/public/v1/preview/C/A/HS?reporterCode=32&period=2023&partnerCode=0&partner2Code=0&customsCode=C00&motCode=0&cmdCode=380610,380510,320110,150920,150910,150990,300490,293399",
+    "fecha_descarga": "2026-11-26",
+    "hash": "sha256:ae5d764a59b6dfcd2f7003bc4b27f0ad80ab0ad6f5a8d5d3582e3f59a41f2e33",
+    "archivo_raw": null,
+    "notas": "Flujos oficiales 2023 de colofonia (18.203 t), trementina (5.681 t), extracto de quebracho (5.782 t), aceite de oliva virgen (36.104 t) y especialidades/IFAs farmacéuticos."
+  },
+  {
+    "fuente_id": "uncomtrade-ar-lote6-2024",
+    "nombre": "UN Comtrade: comercio exterior de Argentina HS 380610/380510 (Colofonia/Trementina), 320110 (Quebracho), 150920/150990 (Oliva) y 300490/293399 (Farmoquímica) 2024",
+    "organismo": "UN Comtrade (Naciones Unidas)",
+    "tipo": "oficial",
+    "url": "https://comtradeapi.un.org/public/v1/preview/C/A/HS?reporterCode=32&period=2024&partnerCode=0&partner2Code=0&customsCode=C00&motCode=0&cmdCode=380610,380510,320110,150920,150910,150990,300490,293399",
+    "fecha_descarga": "2026-11-26",
+    "hash": "sha256:04ad52400bfec2549c6e3059edcbb9e1d787b08617dc20d2dac1484b2b47ec98",
+    "archivo_raw": null,
+    "notas": "Flujos oficiales 2024 de colofonia (8.714 t), trementina (5.043 t), extracto de quebracho (11.109 t), aceite de oliva virgen extra HS 1509.20 (18.140 t) y farmoquímica."
+  },
+  {
+    "fuente_id": "gruposanfrancisco-web-2026",
+    "nombre": "Portal institucional Grupo San Francisco S.A. (Planta Resinera Gobernador Virasoro, Corrientes)",
+    "organismo": "Grupo San Francisco S.A.",
+    "tipo": "empresa",
+    "url": "https://gruposanfrancisco.com.ar/",
+    "fecha_descarga": "2026-11-26",
+    "hash": "sha256:d336759d72411d4f455a5a8d5b61955d74381d1b4433c2654dcad2fc59b6215f",
+    "archivo_raw": null,
+    "notas": "Productor forestoquímico sobre RN 14 Km 754 (Gobernador Virasoro, Corrientes): declara 13.000 t/año de miera de pino destilada en colofonia y trementina."
+  },
+  {
+    "fuente_id": "unitan-web-2026",
+    "nombre": "Portal institucional Unitán S.A.I.C.A. (Extracto de quebracho y especialidades naturales en Formosa)",
+    "organismo": "Unitán S.A.I.C.A.",
+    "tipo": "empresa",
+    "url": "https://www.unitan.net/",
+    "fecha_descarga": "2026-11-26",
+    "hash": "sha256:f518159e3922bf613673d1cb3eb08c56f6e129fdac00d70b3bfa584ef26d7f11",
+    "archivo_raw": null,
+    "notas": "Productor argentino líder de extractos tánicos de quebracho colorado (Schinopsis balansae) con planta industrial en la ciudad de Formosa y capacidad conjunta de 40.000 t/año."
+  },
+  {
+    "fuente_id": "valledelapuerta-web-2026",
+    "nombre": "Portal institucional Valle de la Puerta S.A. (Almazara Vichigasta, Chilecito, La Rioja)",
+    "organismo": "Valle de la Puerta S.A.",
+    "tipo": "empresa",
+    "url": "https://valledelapuerta.com.ar/",
+    "fecha_descarga": "2026-11-26",
+    "hash": "sha256:c9f1998a5b29dfb846397cf8fd41563719c832250cabab4725a0d01ebeefbfbf",
+    "archivo_raw": null,
+    "notas": "Finca y planta elaboradora de aceite de oliva virgen extra sobre RN 74 Km 1186 (Vichigasta, Chilecito, La Rioja); declara 1.400 t/año de aceite."
+  },
+  {
+    "fuente_id": "agroaceitunera-web-2026",
+    "nombre": "Portal institucional Agro Aceitunera S.A. / Nucete (Plantas Aimogasta y Chilecito, La Rioja)",
+    "organismo": "Agro Aceitunera S.A.",
+    "tipo": "empresa",
+    "url": "https://agroaceitunera.com.ar/",
+    "fecha_descarga": "2026-11-26",
+    "hash": "sha256:21cb141ab44abd3a7e8c7be0057e4f929a9ba35f497abc1832ba7b70c2eb2057",
+    "archivo_raw": null,
+    "notas": "Complejo olivícola en Aimogasta (Depto. Arauco, La Rioja) con capacidad de molienda declarada de 200 t/día de aceitunas."
+  },
+  {
+    "fuente_id": "foa-web-2026",
+    "nombre": "Federación Olivícola Argentina (FOA): cadena nacional del aceite de oliva y polo riojano",
+    "organismo": "Federación Olivícola Argentina (FOA)",
+    "tipo": "tecnica",
+    "url": "https://federacionolivicolaargentina.com.ar/",
+    "fecha_descarga": "2026-11-26",
+    "hash": "sha256:e3729256698dc15c06d30c39fe6f9f25c354de21023d89bd260c65a7c6fda098",
+    "archivo_raw": null,
+    "notas": "Entidad sectorial de la olivicultura argentina (La Rioja concentra cerca de un tercio de la superficie implantada y eje exportador de aceite de oliva)."
+  },
+  {
+    "fuente_id": "sde-gob-2026",
+    "nombre": "Gobierno de la Provincia de Santiago del Estero: polo productivo algodonero e industrial",
+    "organismo": "Gobierno de la Provincia de Santiago del Estero",
+    "tipo": "oficial",
+    "url": "https://sde.gob.ar/",
+    "fecha_descarga": "2026-11-26",
+    "hash": "sha256:67eb4b7e987c6cc654ac20b3855791d371046dbd3972ec57bbf0c8ae4bc1187f",
+    "archivo_raw": null,
+    "notas": "Marco institucional de Santiago del Estero, principal jurisdicción algodonera de Argentina según SAGyP (Quimilí / Depto. Moreno y Bandera / Depto. Belgrano)."
+  },
+  {
+    "fuente_id": "insudpharma-web-2026",
+    "nombre": "Portal corporativo Insud Pharma (Maprimed S.A., Planta Química de APIs en CABA)",
+    "organismo": "Insud Pharma / Maprimed S.A.",
+    "tipo": "empresa",
+    "url": "https://www.insudpharma.com/",
+    "fecha_descarga": "2026-11-26",
+    "hash": "sha256:ee07fff97b4fa4611008b7d994cf642f31c76f1a029387a957fa2454cba4b69e",
+    "archivo_raw": null,
+    "notas": "Planta química de síntesis de Ingredientes Farmacéuticos Activos (IFAs/APIs) y centro de I+D de Maprimed S.A. en Av. Directorio 6155 (Comuna 9, CABA), bajo normas GMP/ANMAT/FDA."
+  },
+  {
+    "fuente_id": "indec-farmaceutica-2026",
+    "nombre": "INDEC: Industria farmacéutica en la Argentina (producción nacional, ventas y comercio exterior)",
+    "organismo": "INDEC (República Argentina)",
+    "tipo": "oficial",
+    "url": "https://www.indec.gob.ar/indec/web/Nivel4-Tema-3-6-15",
+    "fecha_descarga": "2026-11-26",
+    "hash": "sha256:9cda8351bdd21468e8ca7187dc330d141ba37992c54acf7aafd4e457874a5c45",
+    "archivo_raw": null,
+    "notas": "Estadística oficial trimestral de la industria farmacéutica argentina (facturación de producción nacional, exportaciones y origen de principios activos)."
+  },
+  {
+    "fuente_id": "eu-bref-ofc-2006",
+    "nombre": "Reference Document on Best Available Techniques for the Manufacture of Organic Fine Chemicals (OFC BREF)",
+    "organismo": "Comisión Europea · Joint Research Centre (JRC / EU-BRITE)",
+    "tipo": "tecnica",
+    "url": "https://bureau-industrial-transformation.jrc.ec.europa.eu/reference/manufacture-organic-fine-chemicals",
+    "fecha_descarga": "2026-11-26",
+    "hash": "sha256:e626ff725b025d75d5c7f8f5c66d3603ae3c19e4252fcee386a308e144e49a7a",
+    "archivo_raw": null,
+    "notas": "Referencia técnica BAT para síntesis orgánica fina multipropósito batch (IFAs farmacéuticos, recuperación de solventes, cristalización, secado al vacío y destilación orgánica)."
+  },
+  {
+    "fuente_id": "eu-bref-tan-2013",
+    "nombre": "Best Available Techniques (BAT) Reference Document for the Tanning of Hides and Skins (TAN BREF · Vegetable Tannins)",
+    "organismo": "Comisión Europea · Joint Research Centre (JRC / EU-BRITE)",
+    "tipo": "tecnica",
+    "url": "https://bureau-industrial-transformation.jrc.ec.europa.eu/reference/tanning-hides-and-skins",
+    "fecha_descarga": "2026-11-26",
+    "hash": "sha256:00fcedb65645d9f2e754355046e25d6e5788a3664441200b9fcd5fad3a0cfad7",
+    "archivo_raw": null,
+    "notas": "Referencia internacional BAT sobre agentes curtientes vegetales (extracto de quebracho, polifenoles condensados y estándares ambientales de uso industrial)."
   }
 ]

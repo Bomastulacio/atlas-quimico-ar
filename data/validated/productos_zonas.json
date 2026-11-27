@@ -448,5 +448,131 @@
       "cita_ubicacion": "federcitrus.org Cuenca productora de cítricos dulces (Depto. Federación, Entre Ríos)",
       "confianza": "alta"
     }
+  },
+  {
+    "relacion_id": "resina-colofonia-18-18168",
+    "producto_id": "resina-colofonia",
+    "provincia_id": "18",
+    "departamento_id": "18168",
+    "es_dominante": true,
+    "rol_en_cadena": "procesamiento",
+    "procedencia": {
+      "anio": 2026,
+      "fuente_id": "gruposanfrancisco-web-2026",
+      "fuente": "Portal institucional Grupo San Francisco S.A. (Planta Resinera Gobernador Virasoro, Corrientes)",
+      "url": "https://gruposanfrancisco.com.ar/",
+      "fecha_descarga": "2026-11-26",
+      "hash": "sha256:d336759d72411d4f455a5a8d5b61955d74381d1b4433c2654dcad2fc59b6215f",
+      "cita_ubicacion": "gruposanfrancisco.com.ar Planta Resinera RN 14 Km 754 (Gobernador Virasoro, Depto. Santo Tomé, Corrientes)",
+      "confianza": "alta"
+    }
+  },
+  {
+    "relacion_id": "tanino-quebracho-34-34014",
+    "producto_id": "tanino-quebracho",
+    "provincia_id": "34",
+    "departamento_id": "34014",
+    "es_dominante": true,
+    "rol_en_cadena": "procesamiento",
+    "procedencia": {
+      "anio": 2026,
+      "fuente_id": "unitan-web-2026",
+      "fuente": "Portal institucional Unitán S.A.I.C.A. (Extracto de quebracho y especialidades naturales en Formosa)",
+      "url": "https://www.unitan.net/",
+      "fecha_descarga": "2026-11-26",
+      "hash": "sha256:f518159e3922bf613673d1cb3eb08c56f6e129fdac00d70b3bfa584ef26d7f11",
+      "cita_ubicacion": "unitan.net Planta Formosa de extracto de quebracho y especialidades naturales (Depto. Formosa)",
+      "confianza": "alta"
+    }
+  },
+  {
+    "relacion_id": "aceite-oliva-46-46042",
+    "producto_id": "aceite-oliva",
+    "provincia_id": "46",
+    "departamento_id": "46042",
+    "es_dominante": true,
+    "rol_en_cadena": "procesamiento",
+    "procedencia": {
+      "anio": 2026,
+      "fuente_id": "valledelapuerta-web-2026",
+      "fuente": "Portal institucional Valle de la Puerta S.A. (Almazara Vichigasta, Chilecito, La Rioja)",
+      "url": "https://valledelapuerta.com.ar/",
+      "fecha_descarga": "2026-11-26",
+      "hash": "sha256:c9f1998a5b29dfb846397cf8fd41563719c832250cabab4725a0d01ebeefbfbf",
+      "cita_ubicacion": "valledelapuerta.com.ar Almazara Vichigasta RN 74 Km 1186 (Depto. Chilecito, La Rioja)",
+      "confianza": "alta"
+    }
+  },
+  {
+    "relacion_id": "aceite-oliva-46-46007",
+    "producto_id": "aceite-oliva",
+    "provincia_id": "46",
+    "departamento_id": "46007",
+    "es_dominante": false,
+    "rol_en_cadena": "procesamiento",
+    "procedencia": {
+      "anio": 2026,
+      "fuente_id": "agroaceitunera-web-2026",
+      "fuente": "Portal institucional Agro Aceitunera S.A. / Nucete (Plantas Aimogasta y Chilecito, La Rioja)",
+      "url": "https://agroaceitunera.com.ar/",
+      "fecha_descarga": "2026-11-26",
+      "hash": "sha256:21cb141ab44abd3a7e8c7be0057e4f929a9ba35f497abc1832ba7b70c2eb2057",
+      "cita_ubicacion": "agroaceitunera.com.ar Planta Aimogasta (Depto. Arauco, La Rioja)",
+      "confianza": "alta"
+    }
+  },
+  {
+    "relacion_id": "algodon-86-86119",
+    "producto_id": "algodon",
+    "provincia_id": "86",
+    "departamento_id": "86119",
+    "es_dominante": true,
+    "rol_en_cadena": "procesamiento",
+    "procedencia": {
+      "anio": 2025,
+      "fuente_id": "sagyp-estimaciones-2026-03",
+      "fuente": "Estimaciones Agrícolas por provincia y departamento (actualización marzo 2026)",
+      "url": "https://datos.magyp.gob.ar/dataset/9e1e77ba-267e-4eaa-a59f-3296e86b5f36/resource/95d066e6-8a0f-4a80-b59d-6f28f88eacd5/download/estimaciones-agricolas-2026-03.csv",
+      "fecha_descarga": "2026-11-24",
+      "hash": "sha256:7a47a6d356258a69ce0010031f9b2f45ea4c873901d8f812c7c394d9946f9395",
+      "cita_ubicacion": "estimaciones-agricolas-2026-03.csv cultivo=Algodón provincia_id=86 departamento_id=86119 (Moreno, Quimilí)",
+      "confianza": "alta"
+    }
+  },
+  {
+    "relacion_id": "algodon-86-86042",
+    "producto_id": "algodon",
+    "provincia_id": "86",
+    "departamento_id": "86042",
+    "es_dominante": false,
+    "rol_en_cadena": "extraccion",
+    "procedencia": {
+      "anio": 2025,
+      "fuente_id": "sagyp-estimaciones-2026-03",
+      "fuente": "Estimaciones Agrícolas por provincia y departamento (actualización marzo 2026)",
+      "url": "https://datos.magyp.gob.ar/dataset/9e1e77ba-267e-4eaa-a59f-3296e86b5f36/resource/95d066e6-8a0f-4a80-b59d-6f28f88eacd5/download/estimaciones-agricolas-2026-03.csv",
+      "fecha_descarga": "2026-11-24",
+      "hash": "sha256:7a47a6d356258a69ce0010031f9b2f45ea4c873901d8f812c7c394d9946f9395",
+      "cita_ubicacion": "estimaciones-agricolas-2026-03.csv cultivo=Algodón provincia_id=86 departamento_id=86042 (Belgrano, 72.120 t en 2024/25)",
+      "confianza": "alta"
+    }
+  },
+  {
+    "relacion_id": "farmoquimica-ifa-02-02063",
+    "producto_id": "farmoquimica-ifa",
+    "provincia_id": "02",
+    "departamento_id": "02063",
+    "es_dominante": true,
+    "rol_en_cadena": "sintesis",
+    "procedencia": {
+      "anio": 2026,
+      "fuente_id": "insudpharma-web-2026",
+      "fuente": "Portal corporativo Insud Pharma (Maprimed S.A., Planta Química de APIs en CABA)",
+      "url": "https://www.insudpharma.com/",
+      "fecha_descarga": "2026-11-26",
+      "hash": "sha256:ee07fff97b4fa4611008b7d994cf642f31c76f1a029387a957fa2454cba4b69e",
+      "cita_ubicacion": "insudpharma.com Planta Maprimed S.A. Av. Directorio 6155 (Comuna 9, Mataderos, CABA)",
+      "confianza": "alta"
+    }
   }
 ]

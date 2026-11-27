@@ -241,5 +241,68 @@
     "tiene_datos_confiables": true,
     "cobertura_datos": "completa",
     "nota_cobertura": "Cuenca productora primaria de naranjas y mandarinas que abastece a las plantas de jugos concentrados y aceites esenciales de Entre Ríos."
+  },
+  {
+    "departamento_id": "02063",
+    "provincia_id": "02",
+    "nombre": "Comuna 9",
+    "tipo_zona": "polo_industrial",
+    "tiene_datos_confiables": true,
+    "cobertura_datos": "completa",
+    "nota_cobertura": "Barrio de Mataderos (Av. Directorio 6155): sede de la planta química de síntesis de Ingredientes Farmacéuticos Activos (IFAs) y centro de I+D de Maprimed S.A. (Insud Pharma)."
+  },
+  {
+    "departamento_id": "18168",
+    "provincia_id": "18",
+    "nombre": "Santo Tomé",
+    "tipo_zona": "agro",
+    "tiene_datos_confiables": true,
+    "cobertura_datos": "completa",
+    "nota_cobertura": "Eje forestoquímico Gobernador Virasoro y Santo Tomé: extracción de miera de Pinus elliottii y destilación industrial a colofonia y trementina (Grupo San Francisco)."
+  },
+  {
+    "departamento_id": "34014",
+    "provincia_id": "34",
+    "nombre": "Formosa",
+    "tipo_zona": "polo_industrial",
+    "tiene_datos_confiables": true,
+    "cobertura_datos": "completa",
+    "nota_cobertura": "Ciudad de Formosa: sede de la planta de Unitán S.A.I.C.A. para extracción acuosa y secado spray de extracto de quebracho colorado y bioactivos tánicos."
+  },
+  {
+    "departamento_id": "46007",
+    "provincia_id": "46",
+    "nombre": "Arauco",
+    "tipo_zona": "agro",
+    "tiene_datos_confiables": true,
+    "cobertura_datos": "completa",
+    "nota_cobertura": "Aimogasta (Capital Nacional del Olivo): polo de molienda e industrialización olivícola de Agro Aceitunera S.A. (Nucete) y almazaras de variedad Arauco."
+  },
+  {
+    "departamento_id": "46042",
+    "provincia_id": "46",
+    "nombre": "Chilecito",
+    "tipo_zona": "agro",
+    "tiene_datos_confiables": true,
+    "cobertura_datos": "completa",
+    "nota_cobertura": "Valle de Vichigasta y Chilecito: complejo agroindustrial de Valle de la Puerta S.A. para extracción continua en frío de aceite de oliva virgen extra."
+  },
+  {
+    "departamento_id": "86042",
+    "provincia_id": "86",
+    "nombre": "Belgrano",
+    "tipo_zona": "agro",
+    "tiene_datos_confiables": true,
+    "cobertura_datos": "completa",
+    "nota_cobertura": "Bandera (Santiago del Estero): primer departamento productor de algodón en bruto de la provincia en campaña 2024/25 (72.120 t según SAGyP)."
+  },
+  {
+    "departamento_id": "86119",
+    "provincia_id": "86",
+    "nombre": "Moreno",
+    "tipo_zona": "agro",
+    "tiene_datos_confiables": true,
+    "cobertura_datos": "completa",
+    "nota_cobertura": "Quimilí (Santiago del Estero): núcleo algodonero provincial (95.887 t en 2023/24 según SAGyP) y planta desmotadora ampliada de Louis Dreyfus Company (60.000 t/año)."
   }
 ]

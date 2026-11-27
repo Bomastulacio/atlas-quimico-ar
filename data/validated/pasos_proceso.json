@@ -6995,5 +6995,1227 @@
       "cita_ubicacion": "fecier.org.ar Aprovechamiento integral de subproductos cítricos",
       "confianza": "alta"
     }
+  },
+  {
+    "paso_id": "res-p1-acopio-fusion",
+    "proceso_id": "resina-destilacion-colofonia",
+    "orden": 1,
+    "nombre": "Recepción y fusión de miera",
+    "tipo_paso": "materia_prima",
+    "reaccion_balanceada": null,
+    "temperatura_c": "90-95",
+    "presion_bar": "1.0",
+    "reactivos": [
+      {
+        "especie": "Oleorresina cruda (miera de Pinus elliottii)",
+        "cantidad": 1.43,
+        "unidad": "t/t colofonia"
+      }
+    ],
+    "productos": [
+      {
+        "especie": "Miera diluida fluida",
+        "cantidad": null,
+        "unidad": "t/t"
+      }
+    ],
+    "insumos": [
+      {
+        "especie": "Trementina de dilución (reciclo)",
+        "cantidad": null,
+        "unidad": "reciclo"
+      }
+    ],
+    "subproductos": [],
+    "energia": {
+      "estado": "sin_datos",
+      "valor": null,
+      "unidad": null,
+      "procedencia": {
+        "anio": 2026,
+        "fuente_id": "gruposanfrancisco-web-2026",
+        "fuente": "Portal institucional Grupo San Francisco S.A. (Planta Resinera Gobernador Virasoro, Corrientes)",
+        "url": "https://gruposanfrancisco.com.ar/",
+        "fecha_descarga": "2026-11-26",
+        "hash": "sha256:d336759d72411d4f455a5a8d5b61955d74381d1b4433c2654dcad2fc59b6215f",
+        "cita_ubicacion": "gruposanfrancisco.com.ar Planta Virasoro (13.000 t/año miera)",
+        "confianza": "alta"
+      }
+    },
+    "descripcion": "La miera cosechada en pinares de Santo Tomé y Virasoro se funde con vapor indirecto y se diluye con trementina reciclada para reducir viscosidad.",
+    "pos_x": 20,
+    "pos_y": 170,
+    "procedencia": {
+      "anio": 2026,
+      "fuente_id": "gruposanfrancisco-web-2026",
+      "fuente": "Portal institucional Grupo San Francisco S.A. (Planta Resinera Gobernador Virasoro, Corrientes)",
+      "url": "https://gruposanfrancisco.com.ar/",
+      "fecha_descarga": "2026-11-26",
+      "hash": "sha256:d336759d72411d4f455a5a8d5b61955d74381d1b4433c2654dcad2fc59b6215f",
+      "cita_ubicacion": "gruposanfrancisco.com.ar Planta Virasoro (13.000 t/año miera)",
+      "confianza": "alta"
+    }
+  },
+  {
+    "paso_id": "res-p2-filtracion-lavado",
+    "proceso_id": "resina-destilacion-colofonia",
+    "orden": 2,
+    "nombre": "Filtración y lavado acuoso",
+    "tipo_paso": "preparacion",
+    "reaccion_balanceada": null,
+    "temperatura_c": "85-90",
+    "presion_bar": "2.5",
+    "reactivos": [
+      {
+        "especie": "Miera diluida con acículas y corteza",
+        "cantidad": null,
+        "unidad": "t/t"
+      }
+    ],
+    "productos": [
+      {
+        "especie": "Solución de resina limpia",
+        "cantidad": null,
+        "unidad": "t/t"
+      }
+    ],
+    "insumos": [
+      {
+        "especie": "Agua caliente de lavado",
+        "cantidad": null,
+        "unidad": "t/t"
+      }
+    ],
+    "subproductos": [
+      {
+        "especie": "Restos vegetales (corteza/acículas)",
+        "cantidad": null,
+        "unidad": "residuo"
+      }
+    ],
+    "energia": {
+      "estado": "sin_datos",
+      "valor": null,
+      "unidad": null,
+      "procedencia": {
+        "anio": 2006,
+        "fuente_id": "eu-bref-ofc-2006",
+        "fuente": "Reference Document on Best Available Techniques for the Manufacture of Organic Fine Chemicals (OFC BREF)",
+        "url": "https://bureau-industrial-transformation.jrc.ec.europa.eu/reference/manufacture-organic-fine-chemicals",
+        "fecha_descarga": "2026-11-26",
+        "hash": "sha256:e626ff725b025d75d5c7f8f5c66d3603ae3c19e4252fcee386a308e144e49a7a",
+        "cita_ubicacion": "EU OFC BREF solid-liquid filtration & washing",
+        "confianza": "alta"
+      }
+    },
+    "descripcion": "Filtración en prensa cerrada y lavado acuoso para remover impurezas sólidas y sales minerales que oscurecerían el color Gardner de la colofonia.",
+    "pos_x": 320,
+    "pos_y": 170,
+    "procedencia": {
+      "anio": 2006,
+      "fuente_id": "eu-bref-ofc-2006",
+      "fuente": "Reference Document on Best Available Techniques for the Manufacture of Organic Fine Chemicals (OFC BREF)",
+      "url": "https://bureau-industrial-transformation.jrc.ec.europa.eu/reference/manufacture-organic-fine-chemicals",
+      "fecha_descarga": "2026-11-26",
+      "hash": "sha256:e626ff725b025d75d5c7f8f5c66d3603ae3c19e4252fcee386a308e144e49a7a",
+      "cita_ubicacion": "EU OFC BREF solid-liquid filtration & washing",
+      "confianza": "alta"
+    }
+  },
+  {
+    "paso_id": "res-p3-decantacion",
+    "proceso_id": "resina-destilacion-colofonia",
+    "orden": 3,
+    "nombre": "Decantación agua-resina",
+    "tipo_paso": "separacion",
+    "reaccion_balanceada": null,
+    "temperatura_c": "80-85",
+    "presion_bar": "1.0",
+    "reactivos": [
+      {
+        "especie": "Emulsión resina-agua lavada",
+        "cantidad": null,
+        "unidad": "t/t"
+      }
+    ],
+    "productos": [
+      {
+        "especie": "Oleorresina clarificada anhidra",
+        "cantidad": null,
+        "unidad": "t/t"
+      }
+    ],
+    "insumos": [],
+    "subproductos": [
+      {
+        "especie": "Agua ácida decantada",
+        "cantidad": null,
+        "unidad": "efluente"
+      }
+    ],
+    "energia": {
+      "estado": "sin_datos",
+      "valor": null,
+      "unidad": null,
+      "procedencia": {
+        "anio": 2006,
+        "fuente_id": "eu-bref-ofc-2006",
+        "fuente": "Reference Document on Best Available Techniques for the Manufacture of Organic Fine Chemicals (OFC BREF)",
+        "url": "https://bureau-industrial-transformation.jrc.ec.europa.eu/reference/manufacture-organic-fine-chemicals",
+        "fecha_descarga": "2026-11-26",
+        "hash": "sha256:e626ff725b025d75d5c7f8f5c66d3603ae3c19e4252fcee386a308e144e49a7a",
+        "cita_ubicacion": "EU OFC BREF phase decantation",
+        "confianza": "alta"
+      }
+    },
+    "descripcion": "Separación gravitacional por diferencia de densidad para eliminar el agua libre antes de alimentar la columna destiladora.",
+    "pos_x": 620,
+    "pos_y": 170,
+    "procedencia": {
+      "anio": 2006,
+      "fuente_id": "eu-bref-ofc-2006",
+      "fuente": "Reference Document on Best Available Techniques for the Manufacture of Organic Fine Chemicals (OFC BREF)",
+      "url": "https://bureau-industrial-transformation.jrc.ec.europa.eu/reference/manufacture-organic-fine-chemicals",
+      "fecha_descarga": "2026-11-26",
+      "hash": "sha256:e626ff725b025d75d5c7f8f5c66d3603ae3c19e4252fcee386a308e144e49a7a",
+      "cita_ubicacion": "EU OFC BREF phase decantation",
+      "confianza": "alta"
+    }
+  },
+  {
+    "paso_id": "res-p4-destilacion-vapor",
+    "proceso_id": "resina-destilacion-colofonia",
+    "orden": 4,
+    "nombre": "Destilación por arrastre de vapor",
+    "tipo_paso": "reaccion",
+    "reaccion_balanceada": "Oleorresina -> Colofonia (C20H30O2) + Trementina (C10H16)",
+    "temperatura_c": "165-175",
+    "presion_bar": "1.0",
+    "reactivos": [
+      {
+        "especie": "Oleorresina clarificada",
+        "cantidad": null,
+        "unidad": "t/t"
+      }
+    ],
+    "productos": [
+      {
+        "especie": "Colofonia fundida (ácidos resínicos)",
+        "cantidad": 1.0,
+        "unidad": "t/t colofonia"
+      },
+      {
+        "especie": "Vapor de trementina (α/β-pineno)",
+        "cantidad": 0.25,
+        "unidad": "t/t colofonia"
+      }
+    ],
+    "insumos": [
+      {
+        "especie": "Vapor vivo de arrastre (3 bar)",
+        "cantidad": null,
+        "unidad": "t/t"
+      }
+    ],
+    "subproductos": [],
+    "energia": {
+      "estado": "sin_datos",
+      "valor": null,
+      "unidad": null,
+      "procedencia": {
+        "anio": 2017,
+        "fuente_id": "eu-bref-lvoc-2017",
+        "fuente": "Best Available Techniques (BAT) Reference Document for the Production of Large Volume Organic Chemicals (LVOC BREF)",
+        "url": "https://bureau-industrial-transformation.jrc.ec.europa.eu/reference/production-large-volume-organic-chemicals",
+        "fecha_descarga": "2026-11-26",
+        "hash": "sha256:fb75a48a3620f76be5994c385048921a27c0dffdfad33ab595aac4654cfe8a34",
+        "cita_ubicacion": "EU LVOC BREF steam stripping & fractionation",
+        "confianza": "alta"
+      }
+    },
+    "descripcion": "Fraccionamiento térmico en columna con vapor vivo: los terpenos volátiles (trementina) salen por cabeza hacia condensador y la colofonia fundida sale por fondo.",
+    "pos_x": 920,
+    "pos_y": 170,
+    "procedencia": {
+      "anio": 2017,
+      "fuente_id": "eu-bref-lvoc-2017",
+      "fuente": "Best Available Techniques (BAT) Reference Document for the Production of Large Volume Organic Chemicals (LVOC BREF)",
+      "url": "https://bureau-industrial-transformation.jrc.ec.europa.eu/reference/production-large-volume-organic-chemicals",
+      "fecha_descarga": "2026-11-26",
+      "hash": "sha256:fb75a48a3620f76be5994c385048921a27c0dffdfad33ab595aac4654cfe8a34",
+      "cita_ubicacion": "EU LVOC BREF steam stripping & fractionation",
+      "confianza": "alta"
+    }
+  },
+  {
+    "paso_id": "res-p5-condensacion-envasado",
+    "proceso_id": "resina-destilacion-colofonia",
+    "orden": 5,
+    "nombre": "Condensación de trementina y escamado",
+    "tipo_paso": "producto",
+    "reaccion_balanceada": null,
+    "temperatura_c": "35-45",
+    "presion_bar": "1.0",
+    "reactivos": [
+      {
+        "especie": "Colofonia fundida + Vapor de trementina",
+        "cantidad": null,
+        "unidad": "t/t"
+      }
+    ],
+    "productos": [
+      {
+        "especie": "Colofonia sólida grado WW/WG (HS 3806.10)",
+        "cantidad": 1.0,
+        "unidad": "t/t colofonia"
+      },
+      {
+        "especie": "Trementina refinada (HS 3805.10)",
+        "cantidad": 0.25,
+        "unidad": "t/t colofonia"
+      }
+    ],
+    "insumos": [
+      {
+        "especie": "Agua de enfriamiento",
+        "cantidad": null,
+        "unidad": "m3/t"
+      }
+    ],
+    "subproductos": [],
+    "energia": {
+      "estado": "sin_datos",
+      "valor": null,
+      "unidad": null,
+      "procedencia": {
+        "anio": 2024,
+        "fuente_id": "uncomtrade-ar-lote6-2024",
+        "fuente": "UN Comtrade: comercio exterior de Argentina HS 380610/380510 (Colofonia/Trementina), 320110 (Quebracho), 150920/150990 (Oliva) y 300490/293399 (Farmoquímica) 2024",
+        "url": "https://comtradeapi.un.org/public/v1/preview/C/A/HS?reporterCode=32&period=2024&partnerCode=0&partner2Code=0&customsCode=C00&motCode=0&cmdCode=380610,380510,320110,150920,150910,150990,300490,293399",
+        "fecha_descarga": "2026-11-26",
+        "hash": "sha256:04ad52400bfec2549c6e3059edcbb9e1d787b08617dc20d2dac1484b2b47ec98",
+        "cita_ubicacion": "UN Comtrade AR 2024 HS 3806.10 (8.714 t) y HS 3805.10 (5.043 t)",
+        "confianza": "alta"
+      }
+    },
+    "descripcion": "Condensación y decantación del aguarrás vegetal (trementina) y enfriamiento en banda/tambores de la colofonia sólida para exportación.",
+    "pos_x": 1220,
+    "pos_y": 170,
+    "procedencia": {
+      "anio": 2024,
+      "fuente_id": "uncomtrade-ar-lote6-2024",
+      "fuente": "UN Comtrade: comercio exterior de Argentina HS 380610/380510 (Colofonia/Trementina), 320110 (Quebracho), 150920/150990 (Oliva) y 300490/293399 (Farmoquímica) 2024",
+      "url": "https://comtradeapi.un.org/public/v1/preview/C/A/HS?reporterCode=32&period=2024&partnerCode=0&partner2Code=0&customsCode=C00&motCode=0&cmdCode=380610,380510,320110,150920,150910,150990,300490,293399",
+      "fecha_descarga": "2026-11-26",
+      "hash": "sha256:04ad52400bfec2549c6e3059edcbb9e1d787b08617dc20d2dac1484b2b47ec98",
+      "cita_ubicacion": "UN Comtrade AR 2024 HS 3806.10 (8.714 t) y HS 3805.10 (5.043 t)",
+      "confianza": "alta"
+    }
+  },
+  {
+    "paso_id": "tan-p1-chipeado",
+    "proceso_id": "tanino-extraccion-quebracho",
+    "orden": 1,
+    "nombre": "Desbaste y aserrado de quebracho",
+    "tipo_paso": "materia_prima",
+    "reaccion_balanceada": null,
+    "temperatura_c": "25-30",
+    "presion_bar": "1.0",
+    "reactivos": [
+      {
+        "especie": "Rollizos de Schinopsis balansae (quebracho colorado)",
+        "cantidad": 3.3,
+        "unidad": "t/t extracto"
+      }
+    ],
+    "productos": [
+      {
+        "especie": "Aserrín y chips calibrados de duramen",
+        "cantidad": 3.3,
+        "unidad": "t/t extracto"
+      }
+    ],
+    "insumos": [],
+    "subproductos": [],
+    "energia": {
+      "estado": "sin_datos",
+      "valor": null,
+      "unidad": null,
+      "procedencia": {
+        "anio": 2026,
+        "fuente_id": "unitan-web-2026",
+        "fuente": "Portal institucional Unitán S.A.I.C.A. (Extracto de quebracho y especialidades naturales en Formosa)",
+        "url": "https://www.unitan.net/",
+        "fecha_descarga": "2026-11-26",
+        "hash": "sha256:f518159e3922bf613673d1cb3eb08c56f6e129fdac00d70b3bfa584ef26d7f11",
+        "cita_ubicacion": "unitan.net aprovechamiento forestal sostenible Formosa",
+        "confianza": "alta"
+      }
+    },
+    "descripcion": "Descortezado y reducción mecánica del duramen rico en polifenoles condensados (~25-30% p/p de taninos extraíbles) para maximizar área interfacial.",
+    "pos_x": 20,
+    "pos_y": 170,
+    "procedencia": {
+      "anio": 2026,
+      "fuente_id": "unitan-web-2026",
+      "fuente": "Portal institucional Unitán S.A.I.C.A. (Extracto de quebracho y especialidades naturales en Formosa)",
+      "url": "https://www.unitan.net/",
+      "fecha_descarga": "2026-11-26",
+      "hash": "sha256:f518159e3922bf613673d1cb3eb08c56f6e129fdac00d70b3bfa584ef26d7f11",
+      "cita_ubicacion": "unitan.net aprovechamiento forestal sostenible Formosa",
+      "confianza": "alta"
+    }
+  },
+  {
+    "paso_id": "tan-p2-extraccion-difusores",
+    "proceso_id": "tanino-extraccion-quebracho",
+    "orden": 2,
+    "nombre": "Extracción sólido-líquido en autoclaves",
+    "tipo_paso": "reaccion",
+    "reaccion_balanceada": "Duramen + H2O (110 °C) -> Licor tánico (polifenoles) + Aserrín agotado",
+    "temperatura_c": "105-115",
+    "presion_bar": "2.0",
+    "reactivos": [
+      {
+        "especie": "Chips de quebracho colorado",
+        "cantidad": 3.3,
+        "unidad": "t/t extracto"
+      }
+    ],
+    "productos": [
+      {
+        "especie": "Licor tánico diluido (6-8 °Bé)",
+        "cantidad": null,
+        "unidad": "m3/t"
+      }
+    ],
+    "insumos": [
+      {
+        "especie": "Agua desmineralizada caliente",
+        "cantidad": null,
+        "unidad": "m3/t"
+      }
+    ],
+    "subproductos": [
+      {
+        "especie": "Aserrín agotado (a caldera de biomasa)",
+        "cantidad": 2.3,
+        "unidad": "t/t extracto"
+      }
+    ],
+    "energia": {
+      "estado": "sin_datos",
+      "valor": null,
+      "unidad": null,
+      "procedencia": {
+        "anio": 2013,
+        "fuente_id": "eu-bref-tan-2013",
+        "fuente": "Best Available Techniques (BAT) Reference Document for the Tanning of Hides and Skins (TAN BREF · Vegetable Tannins)",
+        "url": "https://bureau-industrial-transformation.jrc.ec.europa.eu/reference/tanning-hides-and-skins",
+        "fecha_descarga": "2026-11-26",
+        "hash": "sha256:00fcedb65645d9f2e754355046e25d6e5788a3664441200b9fcd5fad3a0cfad7",
+        "cita_ubicacion": "EU TAN BREF vegetable tannin extraction + unitan.net",
+        "confianza": "alta"
+      }
+    },
+    "descripcion": "Batería de autoclaves difusores en contracorriente: el agua presurizada a 110 °C extrae los taninos; el aserrín agotado alimenta la caldera de cogeneración.",
+    "pos_x": 320,
+    "pos_y": 170,
+    "procedencia": {
+      "anio": 2013,
+      "fuente_id": "eu-bref-tan-2013",
+      "fuente": "Best Available Techniques (BAT) Reference Document for the Tanning of Hides and Skins (TAN BREF · Vegetable Tannins)",
+      "url": "https://bureau-industrial-transformation.jrc.ec.europa.eu/reference/tanning-hides-and-skins",
+      "fecha_descarga": "2026-11-26",
+      "hash": "sha256:00fcedb65645d9f2e754355046e25d6e5788a3664441200b9fcd5fad3a0cfad7",
+      "cita_ubicacion": "EU TAN BREF vegetable tannin extraction + unitan.net",
+      "confianza": "alta"
+    }
+  },
+  {
+    "paso_id": "tan-p3-evaporacion-multiefecto",
+    "proceso_id": "tanino-extraccion-quebracho",
+    "orden": 3,
+    "nombre": "Evaporación multiefecto al vacío",
+    "tipo_paso": "separacion",
+    "reaccion_balanceada": null,
+    "temperatura_c": "65-85",
+    "presion_bar": "0.35",
+    "reactivos": [
+      {
+        "especie": "Licor tánico diluido",
+        "cantidad": null,
+        "unidad": "m3/t"
+      }
+    ],
+    "productos": [
+      {
+        "especie": "Licor tánico concentrado (~50% sólidos)",
+        "cantidad": null,
+        "unidad": "t/t"
+      }
+    ],
+    "insumos": [
+      {
+        "especie": "Vapor de baja presión (desde biomasa)",
+        "cantidad": null,
+        "unidad": "t/t"
+      }
+    ],
+    "subproductos": [
+      {
+        "especie": "Condensado vegetal reciclado a difusores",
+        "cantidad": null,
+        "unidad": "reciclo"
+      }
+    ],
+    "energia": {
+      "estado": "sin_datos",
+      "valor": null,
+      "unidad": null,
+      "procedencia": {
+        "anio": 2026,
+        "fuente_id": "eu-bref-fdm",
+        "fuente": "Reference Document on Best Available Techniques in the Food, Drink and Milk Industries (FDM BREF)",
+        "url": "https://bureau-industrial-transformation.jrc.ec.europa.eu/reference/food-drink-and-milk-industries",
+        "fecha_descarga": "2026-11-26",
+        "hash": "sha256:5c44b5656510d12b3e8bd7c74f2095b18f1f106e949fa98b392429ac0847851b",
+        "cita_ubicacion": "EU FDM BREF multi-effect vacuum evaporation",
+        "confianza": "alta"
+      }
+    },
+    "descripcion": "Concentración térmica en evaporadores de triple/cuádruple efecto al vacío para evitar oxidación y polimerización excesiva de los polifenoles.",
+    "pos_x": 620,
+    "pos_y": 170,
+    "procedencia": {
+      "anio": 2026,
+      "fuente_id": "eu-bref-fdm",
+      "fuente": "Reference Document on Best Available Techniques in the Food, Drink and Milk Industries (FDM BREF)",
+      "url": "https://bureau-industrial-transformation.jrc.ec.europa.eu/reference/food-drink-and-milk-industries",
+      "fecha_descarga": "2026-11-26",
+      "hash": "sha256:5c44b5656510d12b3e8bd7c74f2095b18f1f106e949fa98b392429ac0847851b",
+      "cita_ubicacion": "EU FDM BREF multi-effect vacuum evaporation",
+      "confianza": "alta"
+    }
+  },
+  {
+    "paso_id": "tan-p4-sulfitacion",
+    "proceso_id": "tanino-extraccion-quebracho",
+    "orden": 4,
+    "nombre": "Sulfitación y solubilización en frío",
+    "tipo_paso": "refinacion",
+    "reaccion_balanceada": "Polifenol insoluble + NaHSO3 -> Tanino sulfonado soluble en agua fría",
+    "temperatura_c": "85-95",
+    "presion_bar": "1.2",
+    "reactivos": [
+      {
+        "especie": "Licor tánico concentrado",
+        "cantidad": null,
+        "unidad": "t/t"
+      }
+    ],
+    "productos": [
+      {
+        "especie": "Extracto tánico solubilizado",
+        "cantidad": null,
+        "unidad": "t/t"
+      }
+    ],
+    "insumos": [
+      {
+        "especie": "Bisulfito de sodio (NaHSO3)",
+        "cantidad": null,
+        "unidad": "kg/t"
+      }
+    ],
+    "subproductos": [],
+    "energia": {
+      "estado": "sin_datos",
+      "valor": null,
+      "unidad": null,
+      "procedencia": {
+        "anio": 2013,
+        "fuente_id": "eu-bref-tan-2013",
+        "fuente": "Best Available Techniques (BAT) Reference Document for the Tanning of Hides and Skins (TAN BREF · Vegetable Tannins)",
+        "url": "https://bureau-industrial-transformation.jrc.ec.europa.eu/reference/tanning-hides-and-skins",
+        "fecha_descarga": "2026-11-26",
+        "hash": "sha256:00fcedb65645d9f2e754355046e25d6e5788a3664441200b9fcd5fad3a0cfad7",
+        "cita_ubicacion": "EU TAN BREF sulfited quebracho extract",
+        "confianza": "alta"
+      }
+    },
+    "descripcion": "Tratamiento controlado con bisulfito de sodio en reactores agitados para romper agregados insolubles y producir grados solubles en frío (curtiembre, enología y nutrición).",
+    "pos_x": 920,
+    "pos_y": 170,
+    "procedencia": {
+      "anio": 2013,
+      "fuente_id": "eu-bref-tan-2013",
+      "fuente": "Best Available Techniques (BAT) Reference Document for the Tanning of Hides and Skins (TAN BREF · Vegetable Tannins)",
+      "url": "https://bureau-industrial-transformation.jrc.ec.europa.eu/reference/tanning-hides-and-skins",
+      "fecha_descarga": "2026-11-26",
+      "hash": "sha256:00fcedb65645d9f2e754355046e25d6e5788a3664441200b9fcd5fad3a0cfad7",
+      "cita_ubicacion": "EU TAN BREF sulfited quebracho extract",
+      "confianza": "alta"
+    }
+  },
+  {
+    "paso_id": "tan-p5-secado-spray",
+    "proceso_id": "tanino-extraccion-quebracho",
+    "orden": 5,
+    "nombre": "Secado por atomización (spray drying)",
+    "tipo_paso": "producto",
+    "reaccion_balanceada": null,
+    "temperatura_c": "160-180",
+    "presion_bar": "1.0",
+    "reactivos": [
+      {
+        "especie": "Extracto tánico concentrado",
+        "cantidad": null,
+        "unidad": "t/t"
+      }
+    ],
+    "productos": [
+      {
+        "especie": "Extracto de quebracho en polvo (HS 3201.10)",
+        "cantidad": 1.0,
+        "unidad": "t/t extracto"
+      }
+    ],
+    "insumos": [
+      {
+        "especie": "Aire caliente de secado",
+        "cantidad": null,
+        "unidad": "Nm3/t"
+      }
+    ],
+    "subproductos": [],
+    "energia": {
+      "estado": "sin_datos",
+      "valor": null,
+      "unidad": null,
+      "procedencia": {
+        "anio": 2024,
+        "fuente_id": "uncomtrade-ar-lote6-2024",
+        "fuente": "UN Comtrade: comercio exterior de Argentina HS 380610/380510 (Colofonia/Trementina), 320110 (Quebracho), 150920/150990 (Oliva) y 300490/293399 (Farmoquímica) 2024",
+        "url": "https://comtradeapi.un.org/public/v1/preview/C/A/HS?reporterCode=32&period=2024&partnerCode=0&partner2Code=0&customsCode=C00&motCode=0&cmdCode=380610,380510,320110,150920,150910,150990,300490,293399",
+        "fecha_descarga": "2026-11-26",
+        "hash": "sha256:04ad52400bfec2549c6e3059edcbb9e1d787b08617dc20d2dac1484b2b47ec98",
+        "cita_ubicacion": "UN Comtrade AR 2024 HS 3201.10 (11.109 t exportadas)",
+        "confianza": "alta"
+      }
+    },
+    "descripcion": "Atomización instantánea en torre spray con ciclones y filtros de mangas obteniendo polvo homogéneo (<7% humedad) despachado en bolsas de 25 kg y big-bags.",
+    "pos_x": 1220,
+    "pos_y": 170,
+    "procedencia": {
+      "anio": 2024,
+      "fuente_id": "uncomtrade-ar-lote6-2024",
+      "fuente": "UN Comtrade: comercio exterior de Argentina HS 380610/380510 (Colofonia/Trementina), 320110 (Quebracho), 150920/150990 (Oliva) y 300490/293399 (Farmoquímica) 2024",
+      "url": "https://comtradeapi.un.org/public/v1/preview/C/A/HS?reporterCode=32&period=2024&partnerCode=0&partner2Code=0&customsCode=C00&motCode=0&cmdCode=380610,380510,320110,150920,150910,150990,300490,293399",
+      "fecha_descarga": "2026-11-26",
+      "hash": "sha256:04ad52400bfec2549c6e3059edcbb9e1d787b08617dc20d2dac1484b2b47ec98",
+      "cita_ubicacion": "UN Comtrade AR 2024 HS 3201.10 (11.109 t exportadas)",
+      "confianza": "alta"
+    }
+  },
+  {
+    "paso_id": "oli-p1-limpieza-molienda",
+    "proceso_id": "oliva-extraccion-dos-fases",
+    "orden": 1,
+    "nombre": "Deshojado, lavado y molienda",
+    "tipo_paso": "materia_prima",
+    "reaccion_balanceada": null,
+    "temperatura_c": "20-24",
+    "presion_bar": "1.0",
+    "reactivos": [
+      {
+        "especie": "Aceitunas frescas (Arauco, Arbequina, Picual)",
+        "cantidad": 5.5,
+        "unidad": "t/t aceite"
+      }
+    ],
+    "productos": [
+      {
+        "especie": "Pasta de aceituna molida",
+        "cantidad": 5.5,
+        "unidad": "t/t aceite"
+      }
+    ],
+    "insumos": [
+      {
+        "especie": "Agua de lavado en circuito cerrado",
+        "cantidad": null,
+        "unidad": "m3/t"
+      }
+    ],
+    "subproductos": [],
+    "energia": {
+      "estado": "sin_datos",
+      "valor": null,
+      "unidad": null,
+      "procedencia": {
+        "anio": 2026,
+        "fuente_id": "valledelapuerta-web-2026",
+        "fuente": "Portal institucional Valle de la Puerta S.A. (Almazara Vichigasta, Chilecito, La Rioja)",
+        "url": "https://valledelapuerta.com.ar/",
+        "fecha_descarga": "2026-11-26",
+        "hash": "sha256:c9f1998a5b29dfb846397cf8fd41563719c832250cabab4725a0d01ebeefbfbf",
+        "cita_ubicacion": "valledelapuerta.com.ar + agroaceitunera.com.ar",
+        "confianza": "alta"
+      }
+    },
+    "descripcion": "Recepción dentro de las 24 h de cosecha en Chilecito y Arauco, remoción neumática de hojas, lavado y trituración en molino de martillos de acero inoxidable.",
+    "pos_x": 20,
+    "pos_y": 170,
+    "procedencia": {
+      "anio": 2026,
+      "fuente_id": "valledelapuerta-web-2026",
+      "fuente": "Portal institucional Valle de la Puerta S.A. (Almazara Vichigasta, Chilecito, La Rioja)",
+      "url": "https://valledelapuerta.com.ar/",
+      "fecha_descarga": "2026-11-26",
+      "hash": "sha256:c9f1998a5b29dfb846397cf8fd41563719c832250cabab4725a0d01ebeefbfbf",
+      "cita_ubicacion": "valledelapuerta.com.ar + agroaceitunera.com.ar",
+      "confianza": "alta"
+    }
+  },
+  {
+    "paso_id": "oli-p2-malaxado",
+    "proceso_id": "oliva-extraccion-dos-fases",
+    "orden": 2,
+    "nombre": "Batido termo-controlado (malaxado)",
+    "tipo_paso": "preparacion",
+    "reaccion_balanceada": null,
+    "temperatura_c": "25-27",
+    "presion_bar": "1.0",
+    "reactivos": [
+      {
+        "especie": "Pasta de aceituna molida",
+        "cantidad": 5.5,
+        "unidad": "t/t aceite"
+      }
+    ],
+    "productos": [
+      {
+        "especie": "Pasta coalescida con gotas libres de aceite",
+        "cantidad": 5.5,
+        "unidad": "t/t aceite"
+      }
+    ],
+    "insumos": [
+      {
+        "especie": "Agua tibia en camisa (<=27 °C)",
+        "cantidad": null,
+        "unidad": "servicio"
+      }
+    ],
+    "subproductos": [],
+    "energia": {
+      "estado": "sin_datos",
+      "valor": null,
+      "unidad": null,
+      "procedencia": {
+        "anio": 2026,
+        "fuente_id": "eu-bref-fdm",
+        "fuente": "Reference Document on Best Available Techniques in the Food, Drink and Milk Industries (FDM BREF)",
+        "url": "https://bureau-industrial-transformation.jrc.ec.europa.eu/reference/food-drink-and-milk-industries",
+        "fecha_descarga": "2026-11-26",
+        "hash": "sha256:5c44b5656510d12b3e8bd7c74f2095b18f1f106e949fa98b392429ac0847851b",
+        "cita_ubicacion": "EU FDM BREF cold malaxation <= 27 °C",
+        "confianza": "alta"
+      }
+    },
+    "descripcion": "Amasado lento (30-40 min) estricto por debajo de 27 °C (extracción en frío) para romper emulsiones celulares y preservar polifenoles y aromas volátiles.",
+    "pos_x": 320,
+    "pos_y": 170,
+    "procedencia": {
+      "anio": 2026,
+      "fuente_id": "eu-bref-fdm",
+      "fuente": "Reference Document on Best Available Techniques in the Food, Drink and Milk Industries (FDM BREF)",
+      "url": "https://bureau-industrial-transformation.jrc.ec.europa.eu/reference/food-drink-and-milk-industries",
+      "fecha_descarga": "2026-11-26",
+      "hash": "sha256:5c44b5656510d12b3e8bd7c74f2095b18f1f106e949fa98b392429ac0847851b",
+      "cita_ubicacion": "EU FDM BREF cold malaxation <= 27 °C",
+      "confianza": "alta"
+    }
+  },
+  {
+    "paso_id": "oli-p3-decanter-2f",
+    "proceso_id": "oliva-extraccion-dos-fases",
+    "orden": 3,
+    "nombre": "Centrifugación decanter 2 fases",
+    "tipo_paso": "separacion",
+    "reaccion_balanceada": "Pasta de oliva -> Mosto oleoso + Alperujo húmedo (sin alpechín)",
+    "temperatura_c": "26-27",
+    "presion_bar": "1.0",
+    "reactivos": [
+      {
+        "especie": "Pasta coalescida",
+        "cantidad": 5.5,
+        "unidad": "t/t aceite"
+      }
+    ],
+    "productos": [
+      {
+        "especie": "Mosto oleoso virgen",
+        "cantidad": 1.03,
+        "unidad": "t/t aceite"
+      }
+    ],
+    "insumos": [],
+    "subproductos": [
+      {
+        "especie": "Alperujo (orujo húmedo + carozo)",
+        "cantidad": 4.47,
+        "unidad": "t/t aceite"
+      }
+    ],
+    "energia": {
+      "estado": "sin_datos",
+      "valor": null,
+      "unidad": null,
+      "procedencia": {
+        "anio": 2026,
+        "fuente_id": "eu-bref-fdm",
+        "fuente": "Reference Document on Best Available Techniques in the Food, Drink and Milk Industries (FDM BREF)",
+        "url": "https://bureau-industrial-transformation.jrc.ec.europa.eu/reference/food-drink-and-milk-industries",
+        "fecha_descarga": "2026-11-26",
+        "hash": "sha256:5c44b5656510d12b3e8bd7c74f2095b18f1f106e949fa98b392429ac0847851b",
+        "cita_ubicacion": "EU FDM BREF two-phase horizontal decanter",
+        "confianza": "alta"
+      }
+    },
+    "descripcion": "Separación centrífuga horizontal a 3.200 rpm en tecnología ecológica de 2 fases: separa el aceite sin agregar agua de dilución y reduce efluentes líquidos.",
+    "pos_x": 620,
+    "pos_y": 170,
+    "procedencia": {
+      "anio": 2026,
+      "fuente_id": "eu-bref-fdm",
+      "fuente": "Reference Document on Best Available Techniques in the Food, Drink and Milk Industries (FDM BREF)",
+      "url": "https://bureau-industrial-transformation.jrc.ec.europa.eu/reference/food-drink-and-milk-industries",
+      "fecha_descarga": "2026-11-26",
+      "hash": "sha256:5c44b5656510d12b3e8bd7c74f2095b18f1f106e949fa98b392429ac0847851b",
+      "cita_ubicacion": "EU FDM BREF two-phase horizontal decanter",
+      "confianza": "alta"
+    }
+  },
+  {
+    "paso_id": "oli-p4-centrifuga-vertical",
+    "proceso_id": "oliva-extraccion-dos-fases",
+    "orden": 4,
+    "nombre": "Clarificación centrífuga vertical",
+    "tipo_paso": "refinacion",
+    "reaccion_balanceada": null,
+    "temperatura_c": "24-26",
+    "presion_bar": "1.0",
+    "reactivos": [
+      {
+        "especie": "Mosto oleoso virgen",
+        "cantidad": 1.03,
+        "unidad": "t/t aceite"
+      }
+    ],
+    "productos": [
+      {
+        "especie": "Aceite de oliva virgen extra clarificado",
+        "cantidad": 1.0,
+        "unidad": "t/t aceite"
+      }
+    ],
+    "insumos": [],
+    "subproductos": [
+      {
+        "especie": "Micro-borras y trazas de agua vegetal",
+        "cantidad": 0.03,
+        "unidad": "t/t aceite"
+      }
+    ],
+    "energia": {
+      "estado": "sin_datos",
+      "valor": null,
+      "unidad": null,
+      "procedencia": {
+        "anio": 2026,
+        "fuente_id": "foa-web-2026",
+        "fuente": "Federación Olivícola Argentina (FOA): cadena nacional del aceite de oliva y polo riojano",
+        "url": "https://federacionolivicolaargentina.com.ar/",
+        "fecha_descarga": "2026-11-26",
+        "hash": "sha256:e3729256698dc15c06d30c39fe6f9f25c354de21023d89bd260c65a7c6fda098",
+        "cita_ubicacion": "FOA estándares de acidez <=0,8% AOVE",
+        "confianza": "alta"
+      }
+    },
+    "descripcion": "Pulido final en centrífuga de platos a 6.500 rpm para eliminar trazas de humedad y sólidos finos antes de la bodega.",
+    "pos_x": 920,
+    "pos_y": 170,
+    "procedencia": {
+      "anio": 2026,
+      "fuente_id": "foa-web-2026",
+      "fuente": "Federación Olivícola Argentina (FOA): cadena nacional del aceite de oliva y polo riojano",
+      "url": "https://federacionolivicolaargentina.com.ar/",
+      "fecha_descarga": "2026-11-26",
+      "hash": "sha256:e3729256698dc15c06d30c39fe6f9f25c354de21023d89bd260c65a7c6fda098",
+      "cita_ubicacion": "FOA estándares de acidez <=0,8% AOVE",
+      "confianza": "alta"
+    }
+  },
+  {
+    "paso_id": "oli-p5-bodega-n2",
+    "proceso_id": "oliva-extraccion-dos-fases",
+    "orden": 5,
+    "nombre": "Conservación inerte N2 y despacho",
+    "tipo_paso": "producto",
+    "reaccion_balanceada": null,
+    "temperatura_c": "16-18",
+    "presion_bar": "1.05",
+    "reactivos": [
+      {
+        "especie": "Aceite de oliva virgen extra clarificado",
+        "cantidad": 1.0,
+        "unidad": "t/t aceite"
+      }
+    ],
+    "productos": [
+      {
+        "especie": "Aceite de oliva virgen extra (HS 1509.20)",
+        "cantidad": 1.0,
+        "unidad": "t/t aceite"
+      }
+    ],
+    "insumos": [
+      {
+        "especie": "Nitrógeno inerte de inertización (N2)",
+        "cantidad": null,
+        "unidad": "Nm3/t"
+      }
+    ],
+    "subproductos": [],
+    "energia": {
+      "estado": "sin_datos",
+      "valor": null,
+      "unidad": null,
+      "procedencia": {
+        "anio": 2024,
+        "fuente_id": "uncomtrade-ar-lote6-2024",
+        "fuente": "UN Comtrade: comercio exterior de Argentina HS 380610/380510 (Colofonia/Trementina), 320110 (Quebracho), 150920/150990 (Oliva) y 300490/293399 (Farmoquímica) 2024",
+        "url": "https://comtradeapi.un.org/public/v1/preview/C/A/HS?reporterCode=32&period=2024&partnerCode=0&partner2Code=0&customsCode=C00&motCode=0&cmdCode=380610,380510,320110,150920,150910,150990,300490,293399",
+        "fecha_descarga": "2026-11-26",
+        "hash": "sha256:04ad52400bfec2549c6e3059edcbb9e1d787b08617dc20d2dac1484b2b47ec98",
+        "cita_ubicacion": "UN Comtrade AR 2024 HS 1509.20 (18.140 t, USD 142,72 M)",
+        "confianza": "alta"
+      }
+    },
+    "descripcion": "Almacenamiento en tanques de acero inoxidable termostatizados bajo manta de N2 para evitar rancidez oxidativa hasta su envasado o despacho a granel.",
+    "pos_x": 1220,
+    "pos_y": 170,
+    "procedencia": {
+      "anio": 2024,
+      "fuente_id": "uncomtrade-ar-lote6-2024",
+      "fuente": "UN Comtrade: comercio exterior de Argentina HS 380610/380510 (Colofonia/Trementina), 320110 (Quebracho), 150920/150990 (Oliva) y 300490/293399 (Farmoquímica) 2024",
+      "url": "https://comtradeapi.un.org/public/v1/preview/C/A/HS?reporterCode=32&period=2024&partnerCode=0&partner2Code=0&customsCode=C00&motCode=0&cmdCode=380610,380510,320110,150920,150910,150990,300490,293399",
+      "fecha_descarga": "2026-11-26",
+      "hash": "sha256:04ad52400bfec2549c6e3059edcbb9e1d787b08617dc20d2dac1484b2b47ec98",
+      "cita_ubicacion": "UN Comtrade AR 2024 HS 1509.20 (18.140 t, USD 142,72 M)",
+      "confianza": "alta"
+    }
+  },
+  {
+    "paso_id": "ifa-p1-sintesis-batch",
+    "proceso_id": "farmoquimica-sintesis-ifa",
+    "orden": 1,
+    "nombre": "Síntesis orgánica en reactor batch",
+    "tipo_paso": "reaccion",
+    "reaccion_balanceada": "Intermedios orgánicos + Reactivos -> IFA crudo en solución",
+    "temperatura_c": "20-120",
+    "presion_bar": "1.5",
+    "reactivos": [
+      {
+        "especie": "Intermedios heterocíclicos y reactivos finos (HS 2933.99)",
+        "cantidad": null,
+        "unidad": "kg/lote"
+      }
+    ],
+    "productos": [
+      {
+        "especie": "Masa de reacción con IFA crudo",
+        "cantidad": null,
+        "unidad": "kg/lote"
+      }
+    ],
+    "insumos": [
+      {
+        "especie": "Solventes orgánicos grado farmacéutico",
+        "cantidad": null,
+        "unidad": "reciclo"
+      }
+    ],
+    "subproductos": [],
+    "energia": {
+      "estado": "sin_datos",
+      "valor": null,
+      "unidad": null,
+      "procedencia": {
+        "anio": 2006,
+        "fuente_id": "eu-bref-ofc-2006",
+        "fuente": "Reference Document on Best Available Techniques for the Manufacture of Organic Fine Chemicals (OFC BREF)",
+        "url": "https://bureau-industrial-transformation.jrc.ec.europa.eu/reference/manufacture-organic-fine-chemicals",
+        "fecha_descarga": "2026-11-26",
+        "hash": "sha256:e626ff725b025d75d5c7f8f5c66d3603ae3c19e4252fcee386a308e144e49a7a",
+        "cita_ubicacion": "EU OFC BREF Chapter 2 multipurpose batch reactors",
+        "confianza": "alta"
+      }
+    },
+    "descripcion": "Reacciones multipaso en reactores batch vitrificados/acero inoxidable con control preciso de temperatura (-20 a 140 °C), inertización con N2 y agitación GMP.",
+    "pos_x": 20,
+    "pos_y": 170,
+    "procedencia": {
+      "anio": 2006,
+      "fuente_id": "eu-bref-ofc-2006",
+      "fuente": "Reference Document on Best Available Techniques for the Manufacture of Organic Fine Chemicals (OFC BREF)",
+      "url": "https://bureau-industrial-transformation.jrc.ec.europa.eu/reference/manufacture-organic-fine-chemicals",
+      "fecha_descarga": "2026-11-26",
+      "hash": "sha256:e626ff725b025d75d5c7f8f5c66d3603ae3c19e4252fcee386a308e144e49a7a",
+      "cita_ubicacion": "EU OFC BREF Chapter 2 multipurpose batch reactors",
+      "confianza": "alta"
+    }
+  },
+  {
+    "paso_id": "ifa-p2-extraccion-solventes",
+    "proceso_id": "farmoquimica-sintesis-ifa",
+    "orden": 2,
+    "nombre": "Extracción y recuperación de solventes",
+    "tipo_paso": "separacion",
+    "reaccion_balanceada": null,
+    "temperatura_c": "45-85",
+    "presion_bar": "0.6",
+    "reactivos": [
+      {
+        "especie": "Masa de reacción con IFA crudo",
+        "cantidad": null,
+        "unidad": "kg/lote"
+      }
+    ],
+    "productos": [
+      {
+        "especie": "Solución concentrada de IFA purificado",
+        "cantidad": null,
+        "unidad": "kg/lote"
+      }
+    ],
+    "insumos": [],
+    "subproductos": [
+      {
+        "especie": "Solvente recuperado (reciclo cerrado)",
+        "cantidad": null,
+        "unidad": "reciclo"
+      }
+    ],
+    "energia": {
+      "estado": "sin_datos",
+      "valor": null,
+      "unidad": null,
+      "procedencia": {
+        "anio": 2006,
+        "fuente_id": "eu-bref-ofc-2006",
+        "fuente": "Reference Document on Best Available Techniques for the Manufacture of Organic Fine Chemicals (OFC BREF)",
+        "url": "https://bureau-industrial-transformation.jrc.ec.europa.eu/reference/manufacture-organic-fine-chemicals",
+        "fecha_descarga": "2026-11-26",
+        "hash": "sha256:e626ff725b025d75d5c7f8f5c66d3603ae3c19e4252fcee386a308e144e49a7a",
+        "cita_ubicacion": "EU OFC BREF solvent recovery & VOC abatement",
+        "confianza": "alta"
+      }
+    },
+    "descripcion": "Lavados líquido-líquido, filtración clarificante con carbón activado y destilación al vacío para recuperar solventes y minimizar emisiones de COVs.",
+    "pos_x": 320,
+    "pos_y": 170,
+    "procedencia": {
+      "anio": 2006,
+      "fuente_id": "eu-bref-ofc-2006",
+      "fuente": "Reference Document on Best Available Techniques for the Manufacture of Organic Fine Chemicals (OFC BREF)",
+      "url": "https://bureau-industrial-transformation.jrc.ec.europa.eu/reference/manufacture-organic-fine-chemicals",
+      "fecha_descarga": "2026-11-26",
+      "hash": "sha256:e626ff725b025d75d5c7f8f5c66d3603ae3c19e4252fcee386a308e144e49a7a",
+      "cita_ubicacion": "EU OFC BREF solvent recovery & VOC abatement",
+      "confianza": "alta"
+    }
+  },
+  {
+    "paso_id": "ifa-p3-cristalizacion",
+    "proceso_id": "farmoquimica-sintesis-ifa",
+    "orden": 3,
+    "nombre": "Cristalización controlada",
+    "tipo_paso": "refinacion",
+    "reaccion_balanceada": null,
+    "temperatura_c": "5-50",
+    "presion_bar": "1.0",
+    "reactivos": [
+      {
+        "especie": "Solución concentrada de IFA",
+        "cantidad": null,
+        "unidad": "kg/lote"
+      }
+    ],
+    "productos": [
+      {
+        "especie": "Suspensión de cristales polimórficos puros",
+        "cantidad": null,
+        "unidad": "kg/lote"
+      }
+    ],
+    "insumos": [
+      {
+        "especie": "Antisolvente / agua purificada USP",
+        "cantidad": null,
+        "unidad": "L/lote"
+      }
+    ],
+    "subproductos": [],
+    "energia": {
+      "estado": "sin_datos",
+      "valor": null,
+      "unidad": null,
+      "procedencia": {
+        "anio": 2006,
+        "fuente_id": "eu-bref-ofc-2006",
+        "fuente": "Reference Document on Best Available Techniques for the Manufacture of Organic Fine Chemicals (OFC BREF)",
+        "url": "https://bureau-industrial-transformation.jrc.ec.europa.eu/reference/manufacture-organic-fine-chemicals",
+        "fecha_descarga": "2026-11-26",
+        "hash": "sha256:e626ff725b025d75d5c7f8f5c66d3603ae3c19e4252fcee386a308e144e49a7a",
+        "cita_ubicacion": "EU OFC BREF API crystallization",
+        "confianza": "alta"
+      }
+    },
+    "descripcion": "Enfriamiento programado y siembra controlada para alcanzar la pureza química (>=99,5%) y la forma cristalina especificada por farmacopea.",
+    "pos_x": 620,
+    "pos_y": 170,
+    "procedencia": {
+      "anio": 2006,
+      "fuente_id": "eu-bref-ofc-2006",
+      "fuente": "Reference Document on Best Available Techniques for the Manufacture of Organic Fine Chemicals (OFC BREF)",
+      "url": "https://bureau-industrial-transformation.jrc.ec.europa.eu/reference/manufacture-organic-fine-chemicals",
+      "fecha_descarga": "2026-11-26",
+      "hash": "sha256:e626ff725b025d75d5c7f8f5c66d3603ae3c19e4252fcee386a308e144e49a7a",
+      "cita_ubicacion": "EU OFC BREF API crystallization",
+      "confianza": "alta"
+    }
+  },
+  {
+    "paso_id": "ifa-p4-centrifugacion-lavado",
+    "proceso_id": "farmoquimica-sintesis-ifa",
+    "orden": 4,
+    "nombre": "Centrifugación y lavado de torta",
+    "tipo_paso": "separacion",
+    "reaccion_balanceada": null,
+    "temperatura_c": "15-20",
+    "presion_bar": "1.0",
+    "reactivos": [
+      {
+        "especie": "Suspensión cristalina",
+        "cantidad": null,
+        "unidad": "kg/lote"
+      }
+    ],
+    "productos": [
+      {
+        "especie": "Torta húmeda de IFA purificado",
+        "cantidad": null,
+        "unidad": "kg/lote"
+      }
+    ],
+    "insumos": [],
+    "subproductos": [
+      {
+        "especie": "Aguas madres hacia recuperación",
+        "cantidad": null,
+        "unidad": "reciclo"
+      }
+    ],
+    "energia": {
+      "estado": "sin_datos",
+      "valor": null,
+      "unidad": null,
+      "procedencia": {
+        "anio": 2026,
+        "fuente_id": "insudpharma-web-2026",
+        "fuente": "Portal corporativo Insud Pharma (Maprimed S.A., Planta Química de APIs en CABA)",
+        "url": "https://www.insudpharma.com/",
+        "fecha_descarga": "2026-11-26",
+        "hash": "sha256:ee07fff97b4fa4611008b7d994cf642f31c76f1a029387a957fa2454cba4b69e",
+        "cita_ubicacion": "insudpharma.com Maprimed planta GMP ANMAT/FDA",
+        "confianza": "alta"
+      }
+    },
+    "descripcion": "Aislamiento sólido-líquido en centrífuga cerrada inertizada con nitrógeno o filtro-secador Nutsche en sala limpia.",
+    "pos_x": 920,
+    "pos_y": 170,
+    "procedencia": {
+      "anio": 2026,
+      "fuente_id": "insudpharma-web-2026",
+      "fuente": "Portal corporativo Insud Pharma (Maprimed S.A., Planta Química de APIs en CABA)",
+      "url": "https://www.insudpharma.com/",
+      "fecha_descarga": "2026-11-26",
+      "hash": "sha256:ee07fff97b4fa4611008b7d994cf642f31c76f1a029387a957fa2454cba4b69e",
+      "cita_ubicacion": "insudpharma.com Maprimed planta GMP ANMAT/FDA",
+      "confianza": "alta"
+    }
+  },
+  {
+    "paso_id": "ifa-p5-secado-micronizacion",
+    "proceso_id": "farmoquimica-sintesis-ifa",
+    "orden": 5,
+    "nombre": "Secado al vacío, micronización y QC",
+    "tipo_paso": "producto",
+    "reaccion_balanceada": null,
+    "temperatura_c": "40-60",
+    "presion_bar": "0.05",
+    "reactivos": [
+      {
+        "especie": "Torta húmeda de IFA",
+        "cantidad": null,
+        "unidad": "kg/lote"
+      }
+    ],
+    "productos": [
+      {
+        "especie": "Ingrediente Farmacéutico Activo GMP (HS 2933 / 3004)",
+        "cantidad": null,
+        "unidad": "kg/lote"
+      }
+    ],
+    "insumos": [
+      {
+        "especie": "Vacío + aire filtrado HEPA clase ISO 8",
+        "cantidad": null,
+        "unidad": "servicio"
+      }
+    ],
+    "subproductos": [],
+    "energia": {
+      "estado": "sin_datos",
+      "valor": null,
+      "unidad": null,
+      "procedencia": {
+        "anio": 2026,
+        "fuente_id": "indec-farmaceutica-2026",
+        "fuente": "INDEC: Industria farmacéutica en la Argentina (producción nacional, ventas y comercio exterior)",
+        "url": "https://www.indec.gob.ar/indec/web/Nivel4-Tema-3-6-15",
+        "fecha_descarga": "2026-11-26",
+        "hash": "sha256:9cda8351bdd21468e8ca7187dc330d141ba37992c54acf7aafd4e457874a5c45",
+        "cita_ubicacion": "INDEC Industria Farmacéutica + UN Comtrade AR 2024 HS 3004.90",
+        "confianza": "alta"
+      }
+    },
+    "descripcion": "Secado al vacío a baja temperatura, micronización granulométrica y liberación analítica HPLC/GC para laboratorios locales y exportación.",
+    "pos_x": 1220,
+    "pos_y": 170,
+    "procedencia": {
+      "anio": 2026,
+      "fuente_id": "indec-farmaceutica-2026",
+      "fuente": "INDEC: Industria farmacéutica en la Argentina (producción nacional, ventas y comercio exterior)",
+      "url": "https://www.indec.gob.ar/indec/web/Nivel4-Tema-3-6-15",
+      "fecha_descarga": "2026-11-26",
+      "hash": "sha256:9cda8351bdd21468e8ca7187dc330d141ba37992c54acf7aafd4e457874a5c45",
+      "cita_ubicacion": "INDEC Industria Farmacéutica + UN Comtrade AR 2024 HS 3004.90",
+      "confianza": "alta"
+    }
   }
 ]

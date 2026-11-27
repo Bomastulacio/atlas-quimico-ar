@@ -21,16 +21,16 @@
       "hash": "sha256:fc8120130c0a3468a6a573c4c16ed11dd28c6f22292c9993627b25ba068d0860"
     },
     "departamentos_activos.geojson": {
-      "departamentos": 27,
-      "bytes": 33641,
-      "hash": "sha256:660ff69a6c90fdbd08f1fbf11245c8b00753c868c74b1474908ab462a142f033"
+      "departamentos": 34,
+      "bytes": 41057,
+      "hash": "sha256:342a69565c7608249a769929a845c78dddeda76c9d1957c0cafde48c9edbe943"
     }
   },
   "departamentos_oficial": {
     "fuente": "API Georef — División político-territorial de Departamentos (IGN / datos.gob.ar)",
     "organismo": "IGN / Secretaría de Innovación, Ciencia y Tecnología",
     "url": "https://apis.datos.gob.ar/georef/api/v2.0/departamentos.geojson",
-    "fecha_descarga": "2026-11-26",
+    "fecha_descarga": "2026-11-27",
     "hash_raw": "sha256:31afdfe5983b6d7648eba1eafc7a5a8fe3c591abdca4b17c311c08c75d361e92",
     "criterio": "Solo departamentos con tiene_datos_confiables = true en departamentos.json"
   }

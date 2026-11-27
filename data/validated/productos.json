@@ -35,7 +35,7 @@
     "categoria": "agroindustria",
     "formula_quimica": null,
     "icono_id": "algodon-fibra",
-    "descripcion_corta": "Fibra de celulosa obtenida por desmote mecánico y refinación química húmeda en Chaco y el NEA.",
+    "descripcion_corta": "Fibra de celulosa obtenida por desmote mecánico y refinación química húmeda en Santiago del Estero y Chaco.",
     "mdx_slug": "algodon",
     "estado_mvp": "validado"
   },
@@ -187,6 +187,46 @@
     "icono_id": "citricos-limoneno",
     "descripcion_corta": "Extracción en frío de D-limoneno desde cáscara cítrica, evaporación multiefecto TASTE de jugos y secado de pectinas en Concordia (Entre Ríos).",
     "mdx_slug": "citricos-limoneno",
+    "estado_mvp": "validado"
+  },
+  {
+    "producto_id": "resina-colofonia",
+    "nombre": "Resina de pino, colofonia y trementina",
+    "categoria": "agroindustria",
+    "formula_quimica": "C20H30O2 / C10H16",
+    "icono_id": "resina-colofonia",
+    "descripcion_corta": "Destilación térmica y fraccionamiento por arrastre de vapor de oleorresina de Pinus elliottii en Corrientes para obtener colofonia y trementina.",
+    "mdx_slug": null,
+    "estado_mvp": "validado"
+  },
+  {
+    "producto_id": "tanino-quebracho",
+    "nombre": "Extracto de quebracho (tanino vegetal)",
+    "categoria": "agroindustria",
+    "formula_quimica": "(C15H12O6)n",
+    "icono_id": "tanino-quebracho",
+    "descripcion_corta": "Extracción sólido-líquido contracorriente, evaporación multiefecto y secado spray de polifenoles de Schinopsis balansae en Formosa.",
+    "mdx_slug": null,
+    "estado_mvp": "validado"
+  },
+  {
+    "producto_id": "aceite-oliva",
+    "nombre": "Aceite de oliva virgen extra",
+    "categoria": "agroindustria",
+    "formula_quimica": "C57H104O6",
+    "icono_id": "aceite-oliva",
+    "descripcion_corta": "Extracción físico-química continua en frío de dos fases (malaxado y centrifugación decanter) en los valles de Chilecito y Arauco (La Rioja).",
+    "mdx_slug": null,
+    "estado_mvp": "validado"
+  },
+  {
+    "producto_id": "farmoquimica-ifa",
+    "nombre": "Farmoquímica y principios activos (IFAs)",
+    "categoria": "petroquimica",
+    "formula_quimica": "API / GMP",
+    "icono_id": "farmoquimica-ifa",
+    "descripcion_corta": "Síntesis orgánica fina multipropósito en reactores batch GMP, cristalización, centrifugación y secado al vacío de principios activos en CABA.",
+    "mdx_slug": null,
     "estado_mvp": "validado"
   }
 ]

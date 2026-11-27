@@ -1548,5 +1548,253 @@
       "cita_ubicacion": "Sin balance industrial anual abierto por planta en Concordia; declarado sin_datos",
       "confianza": "alta"
     }
+  },
+  {
+    "registro_id": "prod-algodon-sde-2025",
+    "producto_id": "algodon",
+    "provincia_id": "86",
+    "anio": 2025,
+    "medicion": {
+      "estado": "dato",
+      "valor": 440033,
+      "unidad": "t algodón en bruto (camp. 2024/25)",
+      "procedencia": {
+        "anio": 2025,
+        "fuente_id": "sagyp-estimaciones-2026-03",
+        "fuente": "Estimaciones Agrícolas por provincia y departamento (actualización marzo 2026)",
+        "url": "https://datos.magyp.gob.ar/dataset/9e1e77ba-267e-4eaa-a59f-3296e86b5f36/resource/95d066e6-8a0f-4a80-b59d-6f28f88eacd5/download/estimaciones-agricolas-2026-03.csv",
+        "fecha_descarga": "2026-11-24",
+        "hash": "sha256:7a47a6d356258a69ce0010031f9b2f45ea4c873901d8f812c7c394d9946f9395",
+        "cita_ubicacion": "estimaciones-agricolas-2026-03.csv cultivo=Algodón provincia_id=86 campania=2024/2025",
+        "confianza": "alta"
+      }
+    },
+    "procedencia": {
+      "anio": 2025,
+      "fuente_id": "sagyp-estimaciones-2026-03",
+      "fuente": "Estimaciones Agrícolas por provincia y departamento (actualización marzo 2026)",
+      "url": "https://datos.magyp.gob.ar/dataset/9e1e77ba-267e-4eaa-a59f-3296e86b5f36/resource/95d066e6-8a0f-4a80-b59d-6f28f88eacd5/download/estimaciones-agricolas-2026-03.csv",
+      "fecha_descarga": "2026-11-24",
+      "hash": "sha256:7a47a6d356258a69ce0010031f9b2f45ea4c873901d8f812c7c394d9946f9395",
+      "cita_ubicacion": "estimaciones-agricolas-2026-03.csv cultivo=Algodón provincia_id=86 campania=2024/2025",
+      "confianza": "alta"
+    }
+  },
+  {
+    "registro_id": "prod-algodon-sde-2024",
+    "producto_id": "algodon",
+    "provincia_id": "86",
+    "anio": 2024,
+    "medicion": {
+      "estado": "dato",
+      "valor": 595011,
+      "unidad": "t algodón en bruto (camp. 2023/24)",
+      "procedencia": {
+        "anio": 2024,
+        "fuente_id": "sagyp-estimaciones-2026-03",
+        "fuente": "Estimaciones Agrícolas por provincia y departamento (actualización marzo 2026)",
+        "url": "https://datos.magyp.gob.ar/dataset/9e1e77ba-267e-4eaa-a59f-3296e86b5f36/resource/95d066e6-8a0f-4a80-b59d-6f28f88eacd5/download/estimaciones-agricolas-2026-03.csv",
+        "fecha_descarga": "2026-11-24",
+        "hash": "sha256:7a47a6d356258a69ce0010031f9b2f45ea4c873901d8f812c7c394d9946f9395",
+        "cita_ubicacion": "estimaciones-agricolas-2026-03.csv cultivo=Algodón provincia_id=86 campania=2023/2024",
+        "confianza": "alta"
+      }
+    },
+    "procedencia": {
+      "anio": 2024,
+      "fuente_id": "sagyp-estimaciones-2026-03",
+      "fuente": "Estimaciones Agrícolas por provincia y departamento (actualización marzo 2026)",
+      "url": "https://datos.magyp.gob.ar/dataset/9e1e77ba-267e-4eaa-a59f-3296e86b5f36/resource/95d066e6-8a0f-4a80-b59d-6f28f88eacd5/download/estimaciones-agricolas-2026-03.csv",
+      "fecha_descarga": "2026-11-24",
+      "hash": "sha256:7a47a6d356258a69ce0010031f9b2f45ea4c873901d8f812c7c394d9946f9395",
+      "cita_ubicacion": "estimaciones-agricolas-2026-03.csv cultivo=Algodón provincia_id=86 campania=2023/2024",
+      "confianza": "alta"
+    }
+  },
+  {
+    "registro_id": "prod-algodon-sde-2023",
+    "producto_id": "algodon",
+    "provincia_id": "86",
+    "anio": 2023,
+    "medicion": {
+      "estado": "dato",
+      "valor": 339228,
+      "unidad": "t algodón en bruto (camp. 2022/23)",
+      "procedencia": {
+        "anio": 2023,
+        "fuente_id": "sagyp-estimaciones-2026-03",
+        "fuente": "Estimaciones Agrícolas por provincia y departamento (actualización marzo 2026)",
+        "url": "https://datos.magyp.gob.ar/dataset/9e1e77ba-267e-4eaa-a59f-3296e86b5f36/resource/95d066e6-8a0f-4a80-b59d-6f28f88eacd5/download/estimaciones-agricolas-2026-03.csv",
+        "fecha_descarga": "2026-11-24",
+        "hash": "sha256:7a47a6d356258a69ce0010031f9b2f45ea4c873901d8f812c7c394d9946f9395",
+        "cita_ubicacion": "estimaciones-agricolas-2026-03.csv cultivo=Algodón provincia_id=86 campania=2022/2023",
+        "confianza": "alta"
+      }
+    },
+    "procedencia": {
+      "anio": 2023,
+      "fuente_id": "sagyp-estimaciones-2026-03",
+      "fuente": "Estimaciones Agrícolas por provincia y departamento (actualización marzo 2026)",
+      "url": "https://datos.magyp.gob.ar/dataset/9e1e77ba-267e-4eaa-a59f-3296e86b5f36/resource/95d066e6-8a0f-4a80-b59d-6f28f88eacd5/download/estimaciones-agricolas-2026-03.csv",
+      "fecha_descarga": "2026-11-24",
+      "hash": "sha256:7a47a6d356258a69ce0010031f9b2f45ea4c873901d8f812c7c394d9946f9395",
+      "cita_ubicacion": "estimaciones-agricolas-2026-03.csv cultivo=Algodón provincia_id=86 campania=2022/2023",
+      "confianza": "alta"
+    }
+  },
+  {
+    "registro_id": "prod-algodon-sde-2022",
+    "producto_id": "algodon",
+    "provincia_id": "86",
+    "anio": 2022,
+    "medicion": {
+      "estado": "dato",
+      "valor": 642082,
+      "unidad": "t algodón en bruto (camp. 2021/22)",
+      "procedencia": {
+        "anio": 2022,
+        "fuente_id": "sagyp-estimaciones-2026-03",
+        "fuente": "Estimaciones Agrícolas por provincia y departamento (actualización marzo 2026)",
+        "url": "https://datos.magyp.gob.ar/dataset/9e1e77ba-267e-4eaa-a59f-3296e86b5f36/resource/95d066e6-8a0f-4a80-b59d-6f28f88eacd5/download/estimaciones-agricolas-2026-03.csv",
+        "fecha_descarga": "2026-11-24",
+        "hash": "sha256:7a47a6d356258a69ce0010031f9b2f45ea4c873901d8f812c7c394d9946f9395",
+        "cita_ubicacion": "estimaciones-agricolas-2026-03.csv cultivo=Algodón provincia_id=86 campania=2021/2022",
+        "confianza": "alta"
+      }
+    },
+    "procedencia": {
+      "anio": 2022,
+      "fuente_id": "sagyp-estimaciones-2026-03",
+      "fuente": "Estimaciones Agrícolas por provincia y departamento (actualización marzo 2026)",
+      "url": "https://datos.magyp.gob.ar/dataset/9e1e77ba-267e-4eaa-a59f-3296e86b5f36/resource/95d066e6-8a0f-4a80-b59d-6f28f88eacd5/download/estimaciones-agricolas-2026-03.csv",
+      "fecha_descarga": "2026-11-24",
+      "hash": "sha256:7a47a6d356258a69ce0010031f9b2f45ea4c873901d8f812c7c394d9946f9395",
+      "cita_ubicacion": "estimaciones-agricolas-2026-03.csv cultivo=Algodón provincia_id=86 campania=2021/2022",
+      "confianza": "alta"
+    }
+  },
+  {
+    "registro_id": "prod-resina-corrientes-2024",
+    "producto_id": "resina-colofonia",
+    "provincia_id": "18",
+    "anio": 2024,
+    "medicion": {
+      "estado": "sin_datos",
+      "valor": null,
+      "unidad": "t colofonia y trementina",
+      "procedencia": {
+        "anio": 2026,
+        "fuente_id": "gruposanfrancisco-web-2026",
+        "fuente": "Portal institucional Grupo San Francisco S.A. (Planta Resinera Gobernador Virasoro, Corrientes)",
+        "url": "https://gruposanfrancisco.com.ar/",
+        "fecha_descarga": "2026-11-26",
+        "hash": "sha256:d336759d72411d4f455a5a8d5b61955d74381d1b4433c2654dcad2fc59b6215f",
+        "cita_ubicacion": "Sin serie estadística oficial anual abierta por provincia; se consignan exportaciones aduaneras UN Comtrade HS 3806.10 y 3805.10",
+        "confianza": "alta"
+      }
+    },
+    "procedencia": {
+      "anio": 2026,
+      "fuente_id": "gruposanfrancisco-web-2026",
+      "fuente": "Portal institucional Grupo San Francisco S.A. (Planta Resinera Gobernador Virasoro, Corrientes)",
+      "url": "https://gruposanfrancisco.com.ar/",
+      "fecha_descarga": "2026-11-26",
+      "hash": "sha256:d336759d72411d4f455a5a8d5b61955d74381d1b4433c2654dcad2fc59b6215f",
+      "cita_ubicacion": "Sin serie anual abierta descargable de toneladas provinciales; capacidad declarada planta Virasoro 13.000 t/año miera",
+      "confianza": "alta"
+    }
+  },
+  {
+    "registro_id": "prod-tanino-formosa-2024",
+    "producto_id": "tanino-quebracho",
+    "provincia_id": "34",
+    "anio": 2024,
+    "medicion": {
+      "estado": "sin_datos",
+      "valor": null,
+      "unidad": "t extracto de quebracho",
+      "procedencia": {
+        "anio": 2026,
+        "fuente_id": "unitan-web-2026",
+        "fuente": "Portal institucional Unitán S.A.I.C.A. (Extracto de quebracho y especialidades naturales en Formosa)",
+        "url": "https://www.unitan.net/",
+        "fecha_descarga": "2026-11-26",
+        "hash": "sha256:f518159e3922bf613673d1cb3eb08c56f6e129fdac00d70b3bfa584ef26d7f11",
+        "cita_ubicacion": "Sin serie anual abierta desagregada para la planta de Formosa; se consignan exportaciones oficiales UN Comtrade HS 3201.10",
+        "confianza": "alta"
+      }
+    },
+    "procedencia": {
+      "anio": 2026,
+      "fuente_id": "unitan-web-2026",
+      "fuente": "Portal institucional Unitán S.A.I.C.A. (Extracto de quebracho y especialidades naturales en Formosa)",
+      "url": "https://www.unitan.net/",
+      "fecha_descarga": "2026-11-26",
+      "hash": "sha256:f518159e3922bf613673d1cb3eb08c56f6e129fdac00d70b3bfa584ef26d7f11",
+      "cita_ubicacion": "Sin serie provincial abierta descargable; se muestran flujos aduaneros verificados HS 3201.10",
+      "confianza": "alta"
+    }
+  },
+  {
+    "registro_id": "prod-oliva-larioja-2024",
+    "producto_id": "aceite-oliva",
+    "provincia_id": "46",
+    "anio": 2024,
+    "medicion": {
+      "estado": "sin_datos",
+      "valor": null,
+      "unidad": "t aceite de oliva",
+      "procedencia": {
+        "anio": 2026,
+        "fuente_id": "foa-web-2026",
+        "fuente": "Federación Olivícola Argentina (FOA): cadena nacional del aceite de oliva y polo riojano",
+        "url": "https://federacionolivicolaargentina.com.ar/",
+        "fecha_descarga": "2026-11-26",
+        "hash": "sha256:e3729256698dc15c06d30c39fe6f9f25c354de21023d89bd260c65a7c6fda098",
+        "cita_ubicacion": "SAGyP Estimaciones Agrícolas CSV no publica serie anual desagregada de aceite de oliva por provincia; se consignan exportaciones UN Comtrade HS 1509.20/1509.10",
+        "confianza": "alta"
+      }
+    },
+    "procedencia": {
+      "anio": 2026,
+      "fuente_id": "foa-web-2026",
+      "fuente": "Federación Olivícola Argentina (FOA): cadena nacional del aceite de oliva y polo riojano",
+      "url": "https://federacionolivicolaargentina.com.ar/",
+      "fecha_descarga": "2026-11-26",
+      "hash": "sha256:e3729256698dc15c06d30c39fe6f9f25c354de21023d89bd260c65a7c6fda098",
+      "cita_ubicacion": "Sin serie anual abierta CSV de aceite de oliva por provincia; capacidades de almazara y exportaciones verificadas",
+      "confianza": "alta"
+    }
+  },
+  {
+    "registro_id": "prod-farmoquimica-caba-2024",
+    "producto_id": "farmoquimica-ifa",
+    "provincia_id": "02",
+    "anio": 2024,
+    "medicion": {
+      "estado": "sin_datos",
+      "valor": null,
+      "unidad": "t principios activos (IFAs)",
+      "procedencia": {
+        "anio": 2026,
+        "fuente_id": "indec-farmaceutica-2026",
+        "fuente": "INDEC: Industria farmacéutica en la Argentina (producción nacional, ventas y comercio exterior)",
+        "url": "https://www.indec.gob.ar/indec/web/Nivel4-Tema-3-6-15",
+        "fecha_descarga": "2026-11-26",
+        "hash": "sha256:9cda8351bdd21468e8ca7187dc330d141ba37992c54acf7aafd4e457874a5c45",
+        "cita_ubicacion": "INDEC publica facturación monetaria de industria farmacéutica sin tonelaje físico de principios activos; se consignan flujos UN Comtrade HS 3004.90 y 2933.99",
+        "confianza": "alta"
+      }
+    },
+    "procedencia": {
+      "anio": 2026,
+      "fuente_id": "indec-farmaceutica-2026",
+      "fuente": "INDEC: Industria farmacéutica en la Argentina (producción nacional, ventas y comercio exterior)",
+      "url": "https://www.indec.gob.ar/indec/web/Nivel4-Tema-3-6-15",
+      "fecha_descarga": "2026-11-26",
+      "hash": "sha256:9cda8351bdd21468e8ca7187dc330d141ba37992c54acf7aafd4e457874a5c45",
+      "cita_ubicacion": "INDEC Industria Farmacéutica publica facturación en ARS sin serie física en toneladas de IFAs",
+      "confianza": "alta"
+    }
   }
 ]

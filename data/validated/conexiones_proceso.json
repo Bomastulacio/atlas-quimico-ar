@@ -3727,5 +3727,632 @@
       "cita_ubicacion": "EU FDM BREF",
       "confianza": "alta"
     }
+  },
+  {
+    "conexion_id": "res-c1-fusion-filtro",
+    "proceso_id": "resina-destilacion-colofonia",
+    "origen_paso_id": "res-p1-acopio-fusion",
+    "destino_paso_id": "res-p2-filtracion-lavado",
+    "corriente_nombre": "Miera fundida diluida",
+    "tipo_corriente": "principal",
+    "flujo": {
+      "estado": "sin_datos",
+      "valor": null,
+      "unidad": "t/t",
+      "procedencia": {
+        "anio": 2026,
+        "fuente_id": "gruposanfrancisco-web-2026",
+        "fuente": "Portal institucional Grupo San Francisco S.A. (Planta Resinera Gobernador Virasoro, Corrientes)",
+        "url": "https://gruposanfrancisco.com.ar/",
+        "fecha_descarga": "2026-11-26",
+        "hash": "sha256:d336759d72411d4f455a5a8d5b61955d74381d1b4433c2654dcad2fc59b6215f",
+        "cita_ubicacion": "Planta Virasoro",
+        "confianza": "alta"
+      }
+    },
+    "procedencia": {
+      "anio": 2026,
+      "fuente_id": "gruposanfrancisco-web-2026",
+      "fuente": "Portal institucional Grupo San Francisco S.A. (Planta Resinera Gobernador Virasoro, Corrientes)",
+      "url": "https://gruposanfrancisco.com.ar/",
+      "fecha_descarga": "2026-11-26",
+      "hash": "sha256:d336759d72411d4f455a5a8d5b61955d74381d1b4433c2654dcad2fc59b6215f",
+      "cita_ubicacion": "Planta Virasoro",
+      "confianza": "alta"
+    }
+  },
+  {
+    "conexion_id": "res-c2-filtro-decant",
+    "proceso_id": "resina-destilacion-colofonia",
+    "origen_paso_id": "res-p2-filtracion-lavado",
+    "destino_paso_id": "res-p3-decantacion",
+    "corriente_nombre": "Emulsión filtrada",
+    "tipo_corriente": "principal",
+    "flujo": {
+      "estado": "sin_datos",
+      "valor": null,
+      "unidad": "t/t",
+      "procedencia": {
+        "anio": 2006,
+        "fuente_id": "eu-bref-ofc-2006",
+        "fuente": "Reference Document on Best Available Techniques for the Manufacture of Organic Fine Chemicals (OFC BREF)",
+        "url": "https://bureau-industrial-transformation.jrc.ec.europa.eu/reference/manufacture-organic-fine-chemicals",
+        "fecha_descarga": "2026-11-26",
+        "hash": "sha256:e626ff725b025d75d5c7f8f5c66d3603ae3c19e4252fcee386a308e144e49a7a",
+        "cita_ubicacion": "EU OFC BREF",
+        "confianza": "alta"
+      }
+    },
+    "procedencia": {
+      "anio": 2006,
+      "fuente_id": "eu-bref-ofc-2006",
+      "fuente": "Reference Document on Best Available Techniques for the Manufacture of Organic Fine Chemicals (OFC BREF)",
+      "url": "https://bureau-industrial-transformation.jrc.ec.europa.eu/reference/manufacture-organic-fine-chemicals",
+      "fecha_descarga": "2026-11-26",
+      "hash": "sha256:e626ff725b025d75d5c7f8f5c66d3603ae3c19e4252fcee386a308e144e49a7a",
+      "cita_ubicacion": "EU OFC BREF",
+      "confianza": "alta"
+    }
+  },
+  {
+    "conexion_id": "res-c3-decant-destil",
+    "proceso_id": "resina-destilacion-colofonia",
+    "origen_paso_id": "res-p3-decantacion",
+    "destino_paso_id": "res-p4-destilacion-vapor",
+    "corriente_nombre": "Oleorresina clarificada",
+    "tipo_corriente": "principal",
+    "flujo": {
+      "estado": "sin_datos",
+      "valor": null,
+      "unidad": "t/t",
+      "procedencia": {
+        "anio": 2006,
+        "fuente_id": "eu-bref-ofc-2006",
+        "fuente": "Reference Document on Best Available Techniques for the Manufacture of Organic Fine Chemicals (OFC BREF)",
+        "url": "https://bureau-industrial-transformation.jrc.ec.europa.eu/reference/manufacture-organic-fine-chemicals",
+        "fecha_descarga": "2026-11-26",
+        "hash": "sha256:e626ff725b025d75d5c7f8f5c66d3603ae3c19e4252fcee386a308e144e49a7a",
+        "cita_ubicacion": "EU OFC BREF",
+        "confianza": "alta"
+      }
+    },
+    "procedencia": {
+      "anio": 2006,
+      "fuente_id": "eu-bref-ofc-2006",
+      "fuente": "Reference Document on Best Available Techniques for the Manufacture of Organic Fine Chemicals (OFC BREF)",
+      "url": "https://bureau-industrial-transformation.jrc.ec.europa.eu/reference/manufacture-organic-fine-chemicals",
+      "fecha_descarga": "2026-11-26",
+      "hash": "sha256:e626ff725b025d75d5c7f8f5c66d3603ae3c19e4252fcee386a308e144e49a7a",
+      "cita_ubicacion": "EU OFC BREF",
+      "confianza": "alta"
+    }
+  },
+  {
+    "conexion_id": "res-c4-destil-envasado",
+    "proceso_id": "resina-destilacion-colofonia",
+    "origen_paso_id": "res-p4-destilacion-vapor",
+    "destino_paso_id": "res-p5-condensacion-envasado",
+    "corriente_nombre": "Colofonia fundida + trementina",
+    "tipo_corriente": "principal",
+    "flujo": {
+      "estado": "dato",
+      "valor": 1.0,
+      "unidad": "t/t colofonia",
+      "procedencia": {
+        "anio": 2017,
+        "fuente_id": "eu-bref-lvoc-2017",
+        "fuente": "Best Available Techniques (BAT) Reference Document for the Production of Large Volume Organic Chemicals (LVOC BREF)",
+        "url": "https://bureau-industrial-transformation.jrc.ec.europa.eu/reference/production-large-volume-organic-chemicals",
+        "fecha_descarga": "2026-11-26",
+        "hash": "sha256:fb75a48a3620f76be5994c385048921a27c0dffdfad33ab595aac4654cfe8a34",
+        "cita_ubicacion": "Base 1 t colofonia",
+        "confianza": "alta"
+      }
+    },
+    "procedencia": {
+      "anio": 2017,
+      "fuente_id": "eu-bref-lvoc-2017",
+      "fuente": "Best Available Techniques (BAT) Reference Document for the Production of Large Volume Organic Chemicals (LVOC BREF)",
+      "url": "https://bureau-industrial-transformation.jrc.ec.europa.eu/reference/production-large-volume-organic-chemicals",
+      "fecha_descarga": "2026-11-26",
+      "hash": "sha256:fb75a48a3620f76be5994c385048921a27c0dffdfad33ab595aac4654cfe8a34",
+      "cita_ubicacion": "Base 1 t colofonia",
+      "confianza": "alta"
+    }
+  },
+  {
+    "conexion_id": "res-c5-reciclo-trem",
+    "proceso_id": "resina-destilacion-colofonia",
+    "origen_paso_id": "res-p5-condensacion-envasado",
+    "destino_paso_id": "res-p1-acopio-fusion",
+    "corriente_nombre": "Trementina de dilución (reciclo)",
+    "tipo_corriente": "reciclo",
+    "flujo": {
+      "estado": "sin_datos",
+      "valor": null,
+      "unidad": "t/t",
+      "procedencia": {
+        "anio": 2017,
+        "fuente_id": "eu-bref-lvoc-2017",
+        "fuente": "Best Available Techniques (BAT) Reference Document for the Production of Large Volume Organic Chemicals (LVOC BREF)",
+        "url": "https://bureau-industrial-transformation.jrc.ec.europa.eu/reference/production-large-volume-organic-chemicals",
+        "fecha_descarga": "2026-11-26",
+        "hash": "sha256:fb75a48a3620f76be5994c385048921a27c0dffdfad33ab595aac4654cfe8a34",
+        "cita_ubicacion": "Reciclo solvente terpénico",
+        "confianza": "alta"
+      }
+    },
+    "procedencia": {
+      "anio": 2017,
+      "fuente_id": "eu-bref-lvoc-2017",
+      "fuente": "Best Available Techniques (BAT) Reference Document for the Production of Large Volume Organic Chemicals (LVOC BREF)",
+      "url": "https://bureau-industrial-transformation.jrc.ec.europa.eu/reference/production-large-volume-organic-chemicals",
+      "fecha_descarga": "2026-11-26",
+      "hash": "sha256:fb75a48a3620f76be5994c385048921a27c0dffdfad33ab595aac4654cfe8a34",
+      "cita_ubicacion": "Reciclo solvente terpénico",
+      "confianza": "alta"
+    }
+  },
+  {
+    "conexion_id": "tan-c1-chips-difusor",
+    "proceso_id": "tanino-extraccion-quebracho",
+    "origen_paso_id": "tan-p1-chipeado",
+    "destino_paso_id": "tan-p2-extraccion-difusores",
+    "corriente_nombre": "Chips de duramen",
+    "tipo_corriente": "principal",
+    "flujo": {
+      "estado": "dato",
+      "valor": 3.3,
+      "unidad": "t/t extracto",
+      "procedencia": {
+        "anio": 2026,
+        "fuente_id": "unitan-web-2026",
+        "fuente": "Portal institucional Unitán S.A.I.C.A. (Extracto de quebracho y especialidades naturales en Formosa)",
+        "url": "https://www.unitan.net/",
+        "fecha_descarga": "2026-11-26",
+        "hash": "sha256:f518159e3922bf613673d1cb3eb08c56f6e129fdac00d70b3bfa584ef26d7f11",
+        "cita_ubicacion": "Unitán Formosa",
+        "confianza": "alta"
+      }
+    },
+    "procedencia": {
+      "anio": 2026,
+      "fuente_id": "unitan-web-2026",
+      "fuente": "Portal institucional Unitán S.A.I.C.A. (Extracto de quebracho y especialidades naturales en Formosa)",
+      "url": "https://www.unitan.net/",
+      "fecha_descarga": "2026-11-26",
+      "hash": "sha256:f518159e3922bf613673d1cb3eb08c56f6e129fdac00d70b3bfa584ef26d7f11",
+      "cita_ubicacion": "Unitán Formosa",
+      "confianza": "alta"
+    }
+  },
+  {
+    "conexion_id": "tan-c2-difusor-evap",
+    "proceso_id": "tanino-extraccion-quebracho",
+    "origen_paso_id": "tan-p2-extraccion-difusores",
+    "destino_paso_id": "tan-p3-evaporacion-multiefecto",
+    "corriente_nombre": "Licor tánico diluido",
+    "tipo_corriente": "principal",
+    "flujo": {
+      "estado": "sin_datos",
+      "valor": null,
+      "unidad": "m3/t",
+      "procedencia": {
+        "anio": 2013,
+        "fuente_id": "eu-bref-tan-2013",
+        "fuente": "Best Available Techniques (BAT) Reference Document for the Tanning of Hides and Skins (TAN BREF · Vegetable Tannins)",
+        "url": "https://bureau-industrial-transformation.jrc.ec.europa.eu/reference/tanning-hides-and-skins",
+        "fecha_descarga": "2026-11-26",
+        "hash": "sha256:00fcedb65645d9f2e754355046e25d6e5788a3664441200b9fcd5fad3a0cfad7",
+        "cita_ubicacion": "EU TAN BREF",
+        "confianza": "alta"
+      }
+    },
+    "procedencia": {
+      "anio": 2013,
+      "fuente_id": "eu-bref-tan-2013",
+      "fuente": "Best Available Techniques (BAT) Reference Document for the Tanning of Hides and Skins (TAN BREF · Vegetable Tannins)",
+      "url": "https://bureau-industrial-transformation.jrc.ec.europa.eu/reference/tanning-hides-and-skins",
+      "fecha_descarga": "2026-11-26",
+      "hash": "sha256:00fcedb65645d9f2e754355046e25d6e5788a3664441200b9fcd5fad3a0cfad7",
+      "cita_ubicacion": "EU TAN BREF",
+      "confianza": "alta"
+    }
+  },
+  {
+    "conexion_id": "tan-c3-evap-sulf",
+    "proceso_id": "tanino-extraccion-quebracho",
+    "origen_paso_id": "tan-p3-evaporacion-multiefecto",
+    "destino_paso_id": "tan-p4-sulfitacion",
+    "corriente_nombre": "Licor concentrado 50%",
+    "tipo_corriente": "principal",
+    "flujo": {
+      "estado": "sin_datos",
+      "valor": null,
+      "unidad": "t/t",
+      "procedencia": {
+        "anio": 2026,
+        "fuente_id": "eu-bref-fdm",
+        "fuente": "Reference Document on Best Available Techniques in the Food, Drink and Milk Industries (FDM BREF)",
+        "url": "https://bureau-industrial-transformation.jrc.ec.europa.eu/reference/food-drink-and-milk-industries",
+        "fecha_descarga": "2026-11-26",
+        "hash": "sha256:5c44b5656510d12b3e8bd7c74f2095b18f1f106e949fa98b392429ac0847851b",
+        "cita_ubicacion": "EU FDM BREF",
+        "confianza": "alta"
+      }
+    },
+    "procedencia": {
+      "anio": 2026,
+      "fuente_id": "eu-bref-fdm",
+      "fuente": "Reference Document on Best Available Techniques in the Food, Drink and Milk Industries (FDM BREF)",
+      "url": "https://bureau-industrial-transformation.jrc.ec.europa.eu/reference/food-drink-and-milk-industries",
+      "fecha_descarga": "2026-11-26",
+      "hash": "sha256:5c44b5656510d12b3e8bd7c74f2095b18f1f106e949fa98b392429ac0847851b",
+      "cita_ubicacion": "EU FDM BREF",
+      "confianza": "alta"
+    }
+  },
+  {
+    "conexion_id": "tan-c4-sulf-spray",
+    "proceso_id": "tanino-extraccion-quebracho",
+    "origen_paso_id": "tan-p4-sulfitacion",
+    "destino_paso_id": "tan-p5-secado-spray",
+    "corriente_nombre": "Extracto solubilizado",
+    "tipo_corriente": "principal",
+    "flujo": {
+      "estado": "dato",
+      "valor": 1.0,
+      "unidad": "t/t extracto",
+      "procedencia": {
+        "anio": 2013,
+        "fuente_id": "eu-bref-tan-2013",
+        "fuente": "Best Available Techniques (BAT) Reference Document for the Tanning of Hides and Skins (TAN BREF · Vegetable Tannins)",
+        "url": "https://bureau-industrial-transformation.jrc.ec.europa.eu/reference/tanning-hides-and-skins",
+        "fecha_descarga": "2026-11-26",
+        "hash": "sha256:00fcedb65645d9f2e754355046e25d6e5788a3664441200b9fcd5fad3a0cfad7",
+        "cita_ubicacion": "Base 1 t extracto",
+        "confianza": "alta"
+      }
+    },
+    "procedencia": {
+      "anio": 2013,
+      "fuente_id": "eu-bref-tan-2013",
+      "fuente": "Best Available Techniques (BAT) Reference Document for the Tanning of Hides and Skins (TAN BREF · Vegetable Tannins)",
+      "url": "https://bureau-industrial-transformation.jrc.ec.europa.eu/reference/tanning-hides-and-skins",
+      "fecha_descarga": "2026-11-26",
+      "hash": "sha256:00fcedb65645d9f2e754355046e25d6e5788a3664441200b9fcd5fad3a0cfad7",
+      "cita_ubicacion": "Base 1 t extracto",
+      "confianza": "alta"
+    }
+  },
+  {
+    "conexion_id": "tan-c5-reciclo-cond",
+    "proceso_id": "tanino-extraccion-quebracho",
+    "origen_paso_id": "tan-p3-evaporacion-multiefecto",
+    "destino_paso_id": "tan-p2-extraccion-difusores",
+    "corriente_nombre": "Condensado vegetal (reciclo)",
+    "tipo_corriente": "reciclo",
+    "flujo": {
+      "estado": "sin_datos",
+      "valor": null,
+      "unidad": "m3/t",
+      "procedencia": {
+        "anio": 2026,
+        "fuente_id": "eu-bref-fdm",
+        "fuente": "Reference Document on Best Available Techniques in the Food, Drink and Milk Industries (FDM BREF)",
+        "url": "https://bureau-industrial-transformation.jrc.ec.europa.eu/reference/food-drink-and-milk-industries",
+        "fecha_descarga": "2026-11-26",
+        "hash": "sha256:5c44b5656510d12b3e8bd7c74f2095b18f1f106e949fa98b392429ac0847851b",
+        "cita_ubicacion": "Reciclo agua caliente a difusores",
+        "confianza": "alta"
+      }
+    },
+    "procedencia": {
+      "anio": 2026,
+      "fuente_id": "eu-bref-fdm",
+      "fuente": "Reference Document on Best Available Techniques in the Food, Drink and Milk Industries (FDM BREF)",
+      "url": "https://bureau-industrial-transformation.jrc.ec.europa.eu/reference/food-drink-and-milk-industries",
+      "fecha_descarga": "2026-11-26",
+      "hash": "sha256:5c44b5656510d12b3e8bd7c74f2095b18f1f106e949fa98b392429ac0847851b",
+      "cita_ubicacion": "Reciclo agua caliente a difusores",
+      "confianza": "alta"
+    }
+  },
+  {
+    "conexion_id": "oli-c1-molino-malax",
+    "proceso_id": "oliva-extraccion-dos-fases",
+    "origen_paso_id": "oli-p1-limpieza-molienda",
+    "destino_paso_id": "oli-p2-malaxado",
+    "corriente_nombre": "Pasta de aceituna",
+    "tipo_corriente": "principal",
+    "flujo": {
+      "estado": "dato",
+      "valor": 5.5,
+      "unidad": "t/t aceite",
+      "procedencia": {
+        "anio": 2026,
+        "fuente_id": "eu-bref-fdm",
+        "fuente": "Reference Document on Best Available Techniques in the Food, Drink and Milk Industries (FDM BREF)",
+        "url": "https://bureau-industrial-transformation.jrc.ec.europa.eu/reference/food-drink-and-milk-industries",
+        "fecha_descarga": "2026-11-26",
+        "hash": "sha256:5c44b5656510d12b3e8bd7c74f2095b18f1f106e949fa98b392429ac0847851b",
+        "cita_ubicacion": "Rendimiento industrial ~18%",
+        "confianza": "alta"
+      }
+    },
+    "procedencia": {
+      "anio": 2026,
+      "fuente_id": "eu-bref-fdm",
+      "fuente": "Reference Document on Best Available Techniques in the Food, Drink and Milk Industries (FDM BREF)",
+      "url": "https://bureau-industrial-transformation.jrc.ec.europa.eu/reference/food-drink-and-milk-industries",
+      "fecha_descarga": "2026-11-26",
+      "hash": "sha256:5c44b5656510d12b3e8bd7c74f2095b18f1f106e949fa98b392429ac0847851b",
+      "cita_ubicacion": "Rendimiento industrial ~18%",
+      "confianza": "alta"
+    }
+  },
+  {
+    "conexion_id": "oli-c2-malax-decant",
+    "proceso_id": "oliva-extraccion-dos-fases",
+    "origen_paso_id": "oli-p2-malaxado",
+    "destino_paso_id": "oli-p3-decanter-2f",
+    "corriente_nombre": "Pasta coalescida (27 °C)",
+    "tipo_corriente": "principal",
+    "flujo": {
+      "estado": "dato",
+      "valor": 5.5,
+      "unidad": "t/t aceite",
+      "procedencia": {
+        "anio": 2026,
+        "fuente_id": "eu-bref-fdm",
+        "fuente": "Reference Document on Best Available Techniques in the Food, Drink and Milk Industries (FDM BREF)",
+        "url": "https://bureau-industrial-transformation.jrc.ec.europa.eu/reference/food-drink-and-milk-industries",
+        "fecha_descarga": "2026-11-26",
+        "hash": "sha256:5c44b5656510d12b3e8bd7c74f2095b18f1f106e949fa98b392429ac0847851b",
+        "cita_ubicacion": "EU FDM BREF",
+        "confianza": "alta"
+      }
+    },
+    "procedencia": {
+      "anio": 2026,
+      "fuente_id": "eu-bref-fdm",
+      "fuente": "Reference Document on Best Available Techniques in the Food, Drink and Milk Industries (FDM BREF)",
+      "url": "https://bureau-industrial-transformation.jrc.ec.europa.eu/reference/food-drink-and-milk-industries",
+      "fecha_descarga": "2026-11-26",
+      "hash": "sha256:5c44b5656510d12b3e8bd7c74f2095b18f1f106e949fa98b392429ac0847851b",
+      "cita_ubicacion": "EU FDM BREF",
+      "confianza": "alta"
+    }
+  },
+  {
+    "conexion_id": "oli-c3-decant-centr",
+    "proceso_id": "oliva-extraccion-dos-fases",
+    "origen_paso_id": "oli-p3-decanter-2f",
+    "destino_paso_id": "oli-p4-centrifuga-vertical",
+    "corriente_nombre": "Mosto oleoso virgen",
+    "tipo_corriente": "principal",
+    "flujo": {
+      "estado": "dato",
+      "valor": 1.03,
+      "unidad": "t/t aceite",
+      "procedencia": {
+        "anio": 2026,
+        "fuente_id": "eu-bref-fdm",
+        "fuente": "Reference Document on Best Available Techniques in the Food, Drink and Milk Industries (FDM BREF)",
+        "url": "https://bureau-industrial-transformation.jrc.ec.europa.eu/reference/food-drink-and-milk-industries",
+        "fecha_descarga": "2026-11-26",
+        "hash": "sha256:5c44b5656510d12b3e8bd7c74f2095b18f1f106e949fa98b392429ac0847851b",
+        "cita_ubicacion": "EU FDM BREF",
+        "confianza": "alta"
+      }
+    },
+    "procedencia": {
+      "anio": 2026,
+      "fuente_id": "eu-bref-fdm",
+      "fuente": "Reference Document on Best Available Techniques in the Food, Drink and Milk Industries (FDM BREF)",
+      "url": "https://bureau-industrial-transformation.jrc.ec.europa.eu/reference/food-drink-and-milk-industries",
+      "fecha_descarga": "2026-11-26",
+      "hash": "sha256:5c44b5656510d12b3e8bd7c74f2095b18f1f106e949fa98b392429ac0847851b",
+      "cita_ubicacion": "EU FDM BREF",
+      "confianza": "alta"
+    }
+  },
+  {
+    "conexion_id": "oli-c4-centr-bodega",
+    "proceso_id": "oliva-extraccion-dos-fases",
+    "origen_paso_id": "oli-p4-centrifuga-vertical",
+    "destino_paso_id": "oli-p5-bodega-n2",
+    "corriente_nombre": "Aceite virgen extra clarificado",
+    "tipo_corriente": "principal",
+    "flujo": {
+      "estado": "dato",
+      "valor": 1.0,
+      "unidad": "t/t aceite",
+      "procedencia": {
+        "anio": 2026,
+        "fuente_id": "foa-web-2026",
+        "fuente": "Federación Olivícola Argentina (FOA): cadena nacional del aceite de oliva y polo riojano",
+        "url": "https://federacionolivicolaargentina.com.ar/",
+        "fecha_descarga": "2026-11-26",
+        "hash": "sha256:e3729256698dc15c06d30c39fe6f9f25c354de21023d89bd260c65a7c6fda098",
+        "cita_ubicacion": "Base 1 t AOVE",
+        "confianza": "alta"
+      }
+    },
+    "procedencia": {
+      "anio": 2026,
+      "fuente_id": "foa-web-2026",
+      "fuente": "Federación Olivícola Argentina (FOA): cadena nacional del aceite de oliva y polo riojano",
+      "url": "https://federacionolivicolaargentina.com.ar/",
+      "fecha_descarga": "2026-11-26",
+      "hash": "sha256:e3729256698dc15c06d30c39fe6f9f25c354de21023d89bd260c65a7c6fda098",
+      "cita_ubicacion": "Base 1 t AOVE",
+      "confianza": "alta"
+    }
+  },
+  {
+    "conexion_id": "ifa-c1-reac-extr",
+    "proceso_id": "farmoquimica-sintesis-ifa",
+    "origen_paso_id": "ifa-p1-sintesis-batch",
+    "destino_paso_id": "ifa-p2-extraccion-solventes",
+    "corriente_nombre": "Masa de reacción",
+    "tipo_corriente": "principal",
+    "flujo": {
+      "estado": "sin_datos",
+      "valor": null,
+      "unidad": "kg/lote",
+      "procedencia": {
+        "anio": 2006,
+        "fuente_id": "eu-bref-ofc-2006",
+        "fuente": "Reference Document on Best Available Techniques for the Manufacture of Organic Fine Chemicals (OFC BREF)",
+        "url": "https://bureau-industrial-transformation.jrc.ec.europa.eu/reference/manufacture-organic-fine-chemicals",
+        "fecha_descarga": "2026-11-26",
+        "hash": "sha256:e626ff725b025d75d5c7f8f5c66d3603ae3c19e4252fcee386a308e144e49a7a",
+        "cita_ubicacion": "EU OFC BREF",
+        "confianza": "alta"
+      }
+    },
+    "procedencia": {
+      "anio": 2006,
+      "fuente_id": "eu-bref-ofc-2006",
+      "fuente": "Reference Document on Best Available Techniques for the Manufacture of Organic Fine Chemicals (OFC BREF)",
+      "url": "https://bureau-industrial-transformation.jrc.ec.europa.eu/reference/manufacture-organic-fine-chemicals",
+      "fecha_descarga": "2026-11-26",
+      "hash": "sha256:e626ff725b025d75d5c7f8f5c66d3603ae3c19e4252fcee386a308e144e49a7a",
+      "cita_ubicacion": "EU OFC BREF",
+      "confianza": "alta"
+    }
+  },
+  {
+    "conexion_id": "ifa-c2-extr-crist",
+    "proceso_id": "farmoquimica-sintesis-ifa",
+    "origen_paso_id": "ifa-p2-extraccion-solventes",
+    "destino_paso_id": "ifa-p3-cristalizacion",
+    "corriente_nombre": "Solución concentrada IFA",
+    "tipo_corriente": "principal",
+    "flujo": {
+      "estado": "sin_datos",
+      "valor": null,
+      "unidad": "kg/lote",
+      "procedencia": {
+        "anio": 2006,
+        "fuente_id": "eu-bref-ofc-2006",
+        "fuente": "Reference Document on Best Available Techniques for the Manufacture of Organic Fine Chemicals (OFC BREF)",
+        "url": "https://bureau-industrial-transformation.jrc.ec.europa.eu/reference/manufacture-organic-fine-chemicals",
+        "fecha_descarga": "2026-11-26",
+        "hash": "sha256:e626ff725b025d75d5c7f8f5c66d3603ae3c19e4252fcee386a308e144e49a7a",
+        "cita_ubicacion": "EU OFC BREF",
+        "confianza": "alta"
+      }
+    },
+    "procedencia": {
+      "anio": 2006,
+      "fuente_id": "eu-bref-ofc-2006",
+      "fuente": "Reference Document on Best Available Techniques for the Manufacture of Organic Fine Chemicals (OFC BREF)",
+      "url": "https://bureau-industrial-transformation.jrc.ec.europa.eu/reference/manufacture-organic-fine-chemicals",
+      "fecha_descarga": "2026-11-26",
+      "hash": "sha256:e626ff725b025d75d5c7f8f5c66d3603ae3c19e4252fcee386a308e144e49a7a",
+      "cita_ubicacion": "EU OFC BREF",
+      "confianza": "alta"
+    }
+  },
+  {
+    "conexion_id": "ifa-c3-crist-centr",
+    "proceso_id": "farmoquimica-sintesis-ifa",
+    "origen_paso_id": "ifa-p3-cristalizacion",
+    "destino_paso_id": "ifa-p4-centrifugacion-lavado",
+    "corriente_nombre": "Suspensión cristalina",
+    "tipo_corriente": "principal",
+    "flujo": {
+      "estado": "sin_datos",
+      "valor": null,
+      "unidad": "kg/lote",
+      "procedencia": {
+        "anio": 2006,
+        "fuente_id": "eu-bref-ofc-2006",
+        "fuente": "Reference Document on Best Available Techniques for the Manufacture of Organic Fine Chemicals (OFC BREF)",
+        "url": "https://bureau-industrial-transformation.jrc.ec.europa.eu/reference/manufacture-organic-fine-chemicals",
+        "fecha_descarga": "2026-11-26",
+        "hash": "sha256:e626ff725b025d75d5c7f8f5c66d3603ae3c19e4252fcee386a308e144e49a7a",
+        "cita_ubicacion": "EU OFC BREF",
+        "confianza": "alta"
+      }
+    },
+    "procedencia": {
+      "anio": 2006,
+      "fuente_id": "eu-bref-ofc-2006",
+      "fuente": "Reference Document on Best Available Techniques for the Manufacture of Organic Fine Chemicals (OFC BREF)",
+      "url": "https://bureau-industrial-transformation.jrc.ec.europa.eu/reference/manufacture-organic-fine-chemicals",
+      "fecha_descarga": "2026-11-26",
+      "hash": "sha256:e626ff725b025d75d5c7f8f5c66d3603ae3c19e4252fcee386a308e144e49a7a",
+      "cita_ubicacion": "EU OFC BREF",
+      "confianza": "alta"
+    }
+  },
+  {
+    "conexion_id": "ifa-c4-centr-secado",
+    "proceso_id": "farmoquimica-sintesis-ifa",
+    "origen_paso_id": "ifa-p4-centrifugacion-lavado",
+    "destino_paso_id": "ifa-p5-secado-micronizacion",
+    "corriente_nombre": "Torta húmeda IFA",
+    "tipo_corriente": "principal",
+    "flujo": {
+      "estado": "sin_datos",
+      "valor": null,
+      "unidad": "kg/lote",
+      "procedencia": {
+        "anio": 2026,
+        "fuente_id": "insudpharma-web-2026",
+        "fuente": "Portal corporativo Insud Pharma (Maprimed S.A., Planta Química de APIs en CABA)",
+        "url": "https://www.insudpharma.com/",
+        "fecha_descarga": "2026-11-26",
+        "hash": "sha256:ee07fff97b4fa4611008b7d994cf642f31c76f1a029387a957fa2454cba4b69e",
+        "cita_ubicacion": "Planta GMP Maprimed",
+        "confianza": "alta"
+      }
+    },
+    "procedencia": {
+      "anio": 2026,
+      "fuente_id": "insudpharma-web-2026",
+      "fuente": "Portal corporativo Insud Pharma (Maprimed S.A., Planta Química de APIs en CABA)",
+      "url": "https://www.insudpharma.com/",
+      "fecha_descarga": "2026-11-26",
+      "hash": "sha256:ee07fff97b4fa4611008b7d994cf642f31c76f1a029387a957fa2454cba4b69e",
+      "cita_ubicacion": "Planta GMP Maprimed",
+      "confianza": "alta"
+    }
+  },
+  {
+    "conexion_id": "ifa-c5-reciclo-solv",
+    "proceso_id": "farmoquimica-sintesis-ifa",
+    "origen_paso_id": "ifa-p2-extraccion-solventes",
+    "destino_paso_id": "ifa-p1-sintesis-batch",
+    "corriente_nombre": "Solvente destilado (reciclo)",
+    "tipo_corriente": "reciclo",
+    "flujo": {
+      "estado": "sin_datos",
+      "valor": null,
+      "unidad": "L/lote",
+      "procedencia": {
+        "anio": 2006,
+        "fuente_id": "eu-bref-ofc-2006",
+        "fuente": "Reference Document on Best Available Techniques for the Manufacture of Organic Fine Chemicals (OFC BREF)",
+        "url": "https://bureau-industrial-transformation.jrc.ec.europa.eu/reference/manufacture-organic-fine-chemicals",
+        "fecha_descarga": "2026-11-26",
+        "hash": "sha256:e626ff725b025d75d5c7f8f5c66d3603ae3c19e4252fcee386a308e144e49a7a",
+        "cita_ubicacion": "Recuperación cerrada de solventes",
+        "confianza": "alta"
+      }
+    },
+    "procedencia": {
+      "anio": 2006,
+      "fuente_id": "eu-bref-ofc-2006",
+      "fuente": "Reference Document on Best Available Techniques for the Manufacture of Organic Fine Chemicals (OFC BREF)",
+      "url": "https://bureau-industrial-transformation.jrc.ec.europa.eu/reference/manufacture-organic-fine-chemicals",
+      "fecha_descarga": "2026-11-26",
+      "hash": "sha256:e626ff725b025d75d5c7f8f5c66d3603ae3c19e4252fcee386a308e144e49a7a",
+      "cita_ubicacion": "Recuperación cerrada de solventes",
+      "confianza": "alta"
+    }
   }
 ]

@@ -14103,5 +14103,2523 @@
         "fuente_id": "fecier-web-2026"
       }
     ]
+  },
+  {
+    "proceso_id": "resina-destilacion-colofonia",
+    "producto_id": "resina-colofonia",
+    "titulo": "PFD: Destilación de Oleorresina de Pino a Colofonia (C20H30O2) y Trementina (C10H16)",
+    "norma_simbologia": "ISO 10628 / ASME",
+    "base_calculo": "1,00 t colofonia sólida (~1,43 t miera) · Polo Gobernador Virasoro (Corrientes)",
+    "resumen_tecnico": "Fusión de oleorresina con trementina reciclada, filtración de impurezas vegetales, lavado y decantación acuosa, destilación por arrastre de vapor a 175 °C y condensación de trementina grado comercial.",
+    "nota_metodologica": "Topología de separación orgánica y balance de masa respaldados por EU OFC/LVOC BREF, Grupo San Francisco Virasoro y UN Comtrade HS 3806.10/3805.10.",
+    "canvas_width": 1880,
+    "canvas_height": 760,
+    "secciones": [
+      {
+        "area_id": "area-100",
+        "titulo": "Área 100 · Fusión y filtración",
+        "x": 224,
+        "y": 40,
+        "width": 352,
+        "height": 665
+      },
+      {
+        "area_id": "area-200",
+        "titulo": "Área 200 · Lavado y decantación",
+        "x": 594,
+        "y": 40,
+        "width": 338,
+        "height": 665
+      },
+      {
+        "area_id": "area-300",
+        "titulo": "Área 300 · Destilación a vapor",
+        "x": 950,
+        "y": 40,
+        "width": 356,
+        "height": 665
+      },
+      {
+        "area_id": "area-400",
+        "titulo": "Área 400 · Condensación y escamado",
+        "x": 1324,
+        "y": 40,
+        "width": 332,
+        "height": 665
+      }
+    ],
+    "equipos": [
+      {
+        "tag": "V-101",
+        "nombre": "Fundidor de miera",
+        "simbolo": "tank",
+        "area_id": "area-100",
+        "x": 300,
+        "y": 245,
+        "temperatura_op": "92 °C",
+        "presion_op": "1,0 bar",
+        "reaccion": null,
+        "condicion_critica": "TC 92 °C",
+        "descripcion": "Disuelve la oleorresina cruda con trementina reciclada y vapor indirecto.",
+        "fuente_id": "gruposanfrancisco-web-2026",
+        "cita_ubicacion": "Planta Virasoro"
+      },
+      {
+        "tag": "F-101",
+        "nombre": "Filtro prensa cerrado",
+        "simbolo": "filter_baghouse",
+        "area_id": "area-100",
+        "x": 485,
+        "y": 245,
+        "temperatura_op": "88 °C",
+        "presion_op": "2,5 bar",
+        "reaccion": null,
+        "condicion_critica": "Retiene sólidos",
+        "descripcion": "Separa acículas, corteza e impurezas forestales de la solución resinosa.",
+        "fuente_id": "eu-bref-ofc-2006",
+        "cita_ubicacion": "EU OFC BREF"
+      },
+      {
+        "tag": "M-201",
+        "nombre": "Lavador agitador",
+        "simbolo": "reactor",
+        "area_id": "area-200",
+        "x": 675,
+        "y": 245,
+        "temperatura_op": "85 °C",
+        "presion_op": "1,2 bar",
+        "reaccion": null,
+        "condicion_critica": "Lavado H2O",
+        "descripcion": "Remueve sales e impurezas hidrosolubles para mejorar el color Gardner.",
+        "fuente_id": "eu-bref-ofc-2006",
+        "cita_ubicacion": "EU OFC BREF"
+      },
+      {
+        "tag": "V-201",
+        "nombre": "Decantador continuo",
+        "simbolo": "separator",
+        "area_id": "area-200",
+        "x": 850,
+        "y": 245,
+        "temperatura_op": "82 °C",
+        "presion_op": "1,0 bar",
+        "reaccion": null,
+        "condicion_critica": "Fase anhidra",
+        "descripcion": "Separa por gravedad la fase acuosa de la oleorresina clarificada.",
+        "fuente_id": "eu-bref-ofc-2006",
+        "cita_ubicacion": "EU OFC BREF"
+      },
+      {
+        "tag": "E-301",
+        "nombre": "Precalentador carga",
+        "simbolo": "heat_exchanger",
+        "area_id": "area-300",
+        "x": 1030,
+        "y": 245,
+        "temperatura_op": "145 °C",
+        "presion_op": "1,5 bar",
+        "reaccion": null,
+        "condicion_critica": "Vapor 6 bar",
+        "descripcion": "Eleva la temperatura de la oleorresina antes de la columna de destilación.",
+        "fuente_id": "eu-bref-lvoc-2017",
+        "cita_ubicacion": "EU LVOC BREF"
+      },
+      {
+        "tag": "T-301",
+        "nombre": "Columna destiladora",
+        "simbolo": "column",
+        "area_id": "area-300",
+        "x": 1215,
+        "y": 245,
+        "temperatura_op": "175 °C",
+        "presion_op": "1,0 bar",
+        "reaccion": "Oleorresina -> Colofonia + Trementina",
+        "condicion_critica": "Arrastre vapor",
+        "descripcion": "Separa trementina volátil por cabeza y colofonia fundida por fondo.",
+        "fuente_id": "eu-bref-lvoc-2017",
+        "cita_ubicacion": "EU LVOC BREF"
+      },
+      {
+        "tag": "E-401",
+        "nombre": "Condensador trementina",
+        "simbolo": "condenser",
+        "area_id": "area-400",
+        "x": 1410,
+        "y": 175,
+        "temperatura_op": "38 °C",
+        "presion_op": "1,0 bar",
+        "reaccion": null,
+        "condicion_critica": "HS 3805.10",
+        "descripcion": "Condensa vapores de trementina y separa el agua de arrastre en florentino.",
+        "fuente_id": "uncomtrade-ar-lote6-2024",
+        "cita_ubicacion": "UN Comtrade 2024"
+      },
+      {
+        "tag": "S-401",
+        "nombre": "Enfriador y escamado",
+        "simbolo": "granulator",
+        "area_id": "area-400",
+        "x": 1555,
+        "y": 390,
+        "temperatura_op": "45 °C",
+        "presion_op": "1,0 bar",
+        "reaccion": null,
+        "condicion_critica": "HS 3806.10",
+        "descripcion": "Solidifica colofonia grado WW/WG en escamas o tambores metálicos.",
+        "fuente_id": "uncomtrade-ar-lote6-2024",
+        "cita_ubicacion": "UN Comtrade 2024"
+      }
+    ],
+    "corrientes": [
+      {
+        "numero": 1,
+        "nombre": "Oleorresina cruda (miera)",
+        "tipo": "proceso",
+        "origen_tag": null,
+        "destino_tag": "V-101",
+        "puntos": [
+          [
+            208,
+            245
+          ],
+          [
+            262,
+            245
+          ]
+        ],
+        "flag_pos": [
+          235,
+          245
+        ],
+        "especies": "Miera Pinus elliottii",
+        "fase": "Sólido",
+        "temperatura_c": "25",
+        "presion_bar": "1,0",
+        "flujo_especifico": {
+          "estado": "dato",
+          "valor": 1.43,
+          "unidad": "t/t colofonia"
+        },
+        "nota_tecnica": "Resina cosechada en pinares de Corrientes.",
+        "fuente_id": "gruposanfrancisco-web-2026",
+        "cita_ubicacion": "Planta Virasoro"
+      },
+      {
+        "numero": 2,
+        "nombre": "Miera fluida diluida",
+        "tipo": "proceso",
+        "origen_tag": "V-101",
+        "destino_tag": "F-101",
+        "puntos": [
+          [
+            338,
+            245
+          ],
+          [
+            447,
+            245
+          ]
+        ],
+        "flag_pos": [
+          392,
+          245
+        ],
+        "especies": "Resina + trementina",
+        "fase": "Líquido",
+        "temperatura_c": "92",
+        "presion_bar": "1,5",
+        "flujo_especifico": {
+          "estado": "sin_datos",
+          "valor": null,
+          "unidad": "t/t"
+        },
+        "nota_tecnica": "Solución bombeable a filtración.",
+        "fuente_id": "eu-bref-ofc-2006",
+        "cita_ubicacion": "EU OFC BREF"
+      },
+      {
+        "numero": 3,
+        "nombre": "Restos forestales filtrados",
+        "tipo": "subproducto",
+        "origen_tag": "F-101",
+        "destino_tag": null,
+        "puntos": [
+          [
+            485,
+            290
+          ],
+          [
+            485,
+            520
+          ],
+          [
+            565,
+            520
+          ]
+        ],
+        "flag_pos": [
+          525,
+          520
+        ],
+        "especies": "Acículas y corteza",
+        "fase": "Sólido",
+        "temperatura_c": "85",
+        "presion_bar": "1,0",
+        "flujo_especifico": {
+          "estado": "sin_datos",
+          "valor": null,
+          "unidad": "kg/t"
+        },
+        "nota_tecnica": "Biomasa retenida en filtro prensa.",
+        "fuente_id": "eu-bref-ofc-2006",
+        "cita_ubicacion": "EU OFC BREF"
+      },
+      {
+        "numero": 4,
+        "nombre": "Solución filtrada",
+        "tipo": "proceso",
+        "origen_tag": "F-101",
+        "destino_tag": "M-201",
+        "puntos": [
+          [
+            523,
+            245
+          ],
+          [
+            637,
+            245
+          ]
+        ],
+        "flag_pos": [
+          580,
+          245
+        ],
+        "especies": "Resina filtrada",
+        "fase": "Líquido",
+        "temperatura_c": "88",
+        "presion_bar": "2,0",
+        "flujo_especifico": {
+          "estado": "sin_datos",
+          "valor": null,
+          "unidad": "t/t"
+        },
+        "nota_tecnica": "Alimentación al lavado acuoso.",
+        "fuente_id": "eu-bref-ofc-2006",
+        "cita_ubicacion": "EU OFC BREF"
+      },
+      {
+        "numero": 5,
+        "nombre": "Emulsión lavada",
+        "tipo": "proceso",
+        "origen_tag": "M-201",
+        "destino_tag": "V-201",
+        "puntos": [
+          [
+            713,
+            245
+          ],
+          [
+            812,
+            245
+          ]
+        ],
+        "flag_pos": [
+          762,
+          245
+        ],
+        "especies": "Resina + H2O",
+        "fase": "Bifásico",
+        "temperatura_c": "85",
+        "presion_bar": "1,2",
+        "flujo_especifico": {
+          "estado": "sin_datos",
+          "valor": null,
+          "unidad": "t/t"
+        },
+        "nota_tecnica": "Hacia separación por densidad.",
+        "fuente_id": "eu-bref-ofc-2006",
+        "cita_ubicacion": "EU OFC BREF"
+      },
+      {
+        "numero": 6,
+        "nombre": "Agua decantada",
+        "tipo": "emision",
+        "origen_tag": "V-201",
+        "destino_tag": null,
+        "puntos": [
+          [
+            850,
+            290
+          ],
+          [
+            850,
+            520
+          ],
+          [
+            925,
+            520
+          ]
+        ],
+        "flag_pos": [
+          885,
+          520
+        ],
+        "especies": "H2O ácida",
+        "fase": "Líquido",
+        "temperatura_c": "80",
+        "presion_bar": "1,0",
+        "flujo_especifico": {
+          "estado": "sin_datos",
+          "valor": null,
+          "unidad": "m3/t"
+        },
+        "nota_tecnica": "Efluente hacia planta de tratamiento.",
+        "fuente_id": "eu-bref-ofc-2006",
+        "cita_ubicacion": "EU OFC BREF"
+      },
+      {
+        "numero": 7,
+        "nombre": "Oleorresina clarificada",
+        "tipo": "proceso",
+        "origen_tag": "V-201",
+        "destino_tag": "E-301",
+        "puntos": [
+          [
+            888,
+            245
+          ],
+          [
+            992,
+            245
+          ]
+        ],
+        "flag_pos": [
+          940,
+          245
+        ],
+        "especies": "Resina anhidra",
+        "fase": "Líquido",
+        "temperatura_c": "82",
+        "presion_bar": "1,5",
+        "flujo_especifico": {
+          "estado": "sin_datos",
+          "valor": null,
+          "unidad": "t/t"
+        },
+        "nota_tecnica": "Carga limpia al precalentador.",
+        "fuente_id": "eu-bref-lvoc-2017",
+        "cita_ubicacion": "EU LVOC BREF"
+      },
+      {
+        "numero": 8,
+        "nombre": "Carga precalentada",
+        "tipo": "proceso",
+        "origen_tag": "E-301",
+        "destino_tag": "T-301",
+        "puntos": [
+          [
+            1068,
+            245
+          ],
+          [
+            1183,
+            245
+          ]
+        ],
+        "flag_pos": [
+          1125,
+          245
+        ],
+        "especies": "Resina 145 °C",
+        "fase": "Líquido",
+        "temperatura_c": "145",
+        "presion_bar": "1,5",
+        "flujo_especifico": {
+          "estado": "sin_datos",
+          "valor": null,
+          "unidad": "t/t"
+        },
+        "nota_tecnica": "Alimentación a columna de vapor.",
+        "fuente_id": "eu-bref-lvoc-2017",
+        "cita_ubicacion": "EU LVOC BREF"
+      },
+      {
+        "numero": 9,
+        "nombre": "Vapores de trementina",
+        "tipo": "proceso",
+        "origen_tag": "T-301",
+        "destino_tag": "E-401",
+        "puntos": [
+          [
+            1215,
+            195
+          ],
+          [
+            1215,
+            175
+          ],
+          [
+            1370,
+            175
+          ]
+        ],
+        "flag_pos": [
+          1295,
+          175
+        ],
+        "especies": "C10H16 + H2O(v)",
+        "fase": "Gas",
+        "temperatura_c": "168",
+        "presion_bar": "1,0",
+        "flujo_especifico": {
+          "estado": "dato",
+          "valor": 0.25,
+          "unidad": "t/t colofonia"
+        },
+        "nota_tecnica": "Destilado terpénico por cabeza.",
+        "fuente_id": "eu-bref-lvoc-2017",
+        "cita_ubicacion": "EU LVOC BREF"
+      },
+      {
+        "numero": 10,
+        "nombre": "Trementina refinada",
+        "tipo": "subproducto",
+        "origen_tag": "E-401",
+        "destino_tag": null,
+        "puntos": [
+          [
+            1450,
+            175
+          ],
+          [
+            1672,
+            175
+          ]
+        ],
+        "flag_pos": [
+          1565,
+          175
+        ],
+        "especies": "C10H16 (α/β-pineno)",
+        "fase": "Líquido",
+        "temperatura_c": "38",
+        "presion_bar": "1,0",
+        "flujo_especifico": {
+          "estado": "dato",
+          "valor": 0.25,
+          "unidad": "t/t colofonia"
+        },
+        "nota_tecnica": "Producto exportable HS 3805.10.",
+        "fuente_id": "uncomtrade-ar-lote6-2024",
+        "cita_ubicacion": "UN Comtrade 2024"
+      },
+      {
+        "numero": 11,
+        "nombre": "Colofonia fundida",
+        "tipo": "proceso",
+        "origen_tag": "T-301",
+        "destino_tag": "S-401",
+        "puntos": [
+          [
+            1247,
+            290
+          ],
+          [
+            1295,
+            290
+          ],
+          [
+            1295,
+            390
+          ],
+          [
+            1508,
+            390
+          ]
+        ],
+        "flag_pos": [
+          1395,
+          390
+        ],
+        "especies": "C20H30O2 fundida",
+        "fase": "Líquido",
+        "temperatura_c": "175",
+        "presion_bar": "1,0",
+        "flujo_especifico": {
+          "estado": "dato",
+          "valor": 1.0,
+          "unidad": "t/t colofonia"
+        },
+        "nota_tecnica": "Fondo destilado hacia escamadora.",
+        "fuente_id": "gruposanfrancisco-web-2026",
+        "cita_ubicacion": "Planta Virasoro"
+      },
+      {
+        "numero": 12,
+        "nombre": "Colofonia sólida WW/WG",
+        "tipo": "proceso",
+        "origen_tag": "S-401",
+        "destino_tag": null,
+        "puntos": [
+          [
+            1602,
+            390
+          ],
+          [
+            1672,
+            390
+          ]
+        ],
+        "flag_pos": [
+          1637,
+          390
+        ],
+        "especies": "C20H30O2 sólida",
+        "fase": "Sólido",
+        "temperatura_c": "45",
+        "presion_bar": "1,0",
+        "flujo_especifico": {
+          "estado": "dato",
+          "valor": 1.0,
+          "unidad": "t/t colofonia"
+        },
+        "nota_tecnica": "Producto final HS 3806.10.",
+        "fuente_id": "uncomtrade-ar-lote6-2024",
+        "cita_ubicacion": "UN Comtrade 2024"
+      },
+      {
+        "numero": 13,
+        "nombre": "Reciclo trementina dilución",
+        "tipo": "reciclo",
+        "origen_tag": "E-401",
+        "destino_tag": "V-101",
+        "puntos": [
+          [
+            1410,
+            215
+          ],
+          [
+            1410,
+            615
+          ],
+          [
+            300,
+            615
+          ],
+          [
+            300,
+            290
+          ]
+        ],
+        "flag_pos": [
+          855,
+          615
+        ],
+        "especies": "C10H16 reciclo",
+        "fase": "Líquido",
+        "temperatura_c": "40",
+        "presion_bar": "1,2",
+        "flujo_especifico": {
+          "estado": "sin_datos",
+          "valor": null,
+          "unidad": "t/t"
+        },
+        "nota_tecnica": "Diluyente interno para fusión de miera.",
+        "fuente_id": "eu-bref-lvoc-2017",
+        "cita_ubicacion": "EU LVOC BREF"
+      }
+    ],
+    "servicios": [
+      {
+        "id": "srv-res-1",
+        "equipo_tag": "V-101",
+        "etiqueta": "Vapor 6 bar",
+        "direccion": "entrada",
+        "x": 300,
+        "y": 155,
+        "dx": 0,
+        "dy": 42
+      },
+      {
+        "id": "srv-res-2",
+        "equipo_tag": "T-301",
+        "etiqueta": "Vapor arrastre",
+        "direccion": "entrada",
+        "x": 1215,
+        "y": 365,
+        "dx": 0,
+        "dy": -42
+      },
+      {
+        "id": "srv-res-3",
+        "equipo_tag": "E-401",
+        "etiqueta": "CW agua enfr.",
+        "direccion": "entrada",
+        "x": 1410,
+        "y": 95,
+        "dx": 0,
+        "dy": 42
+      }
+    ],
+    "limites_bateria": [
+      {
+        "id": "lb-res-in1",
+        "lado": "entrada",
+        "categoria": "materia_prima",
+        "nombre": "Oleorresina (miera)",
+        "formula": "Pinus elliottii",
+        "cantidad_masa": "1,43 t/t colof.",
+        "cantidad_molar": null,
+        "fraccion_pureza": "~70% ácidos resín.",
+        "corriente_num": 1,
+        "y": 140,
+        "nota": "Cosecha en pinares de Santo Tomé / Virasoro.",
+        "fuente_id": "gruposanfrancisco-web-2026"
+      },
+      {
+        "id": "lb-res-in2",
+        "lado": "entrada",
+        "categoria": "servicio",
+        "nombre": "Vapor de arrastre",
+        "formula": "H2O (v)",
+        "cantidad_masa": "Sin dato público",
+        "cantidad_molar": null,
+        "fraccion_pureza": "3-6 bar saturado",
+        "corriente_num": null,
+        "y": 310,
+        "nota": "Caldera de biomasa forestal.",
+        "fuente_id": "eu-bref-lvoc-2017"
+      },
+      {
+        "id": "lb-res-out1",
+        "lado": "salida",
+        "categoria": "producto",
+        "nombre": "Colofonia sólida",
+        "formula": "C20H30O2",
+        "cantidad_masa": "1,00 t/t colof.",
+        "cantidad_molar": "3,31 kmol/t",
+        "fraccion_pureza": "Grado WW / WG",
+        "corriente_num": 12,
+        "y": 330,
+        "nota": "Exportación AR 2024: 8.714 t (HS 3806.10).",
+        "fuente_id": "uncomtrade-ar-lote6-2024"
+      },
+      {
+        "id": "lb-res-out2",
+        "lado": "salida",
+        "categoria": "subproducto",
+        "nombre": "Trementina vegetal",
+        "formula": "C10H16",
+        "cantidad_masa": "0,25 t/t colof.",
+        "cantidad_molar": "1,84 kmol/t",
+        "fraccion_pureza": "α/β-pineno",
+        "corriente_num": 10,
+        "y": 120,
+        "nota": "Exportación AR 2024: 5.043 t (HS 3805.10).",
+        "fuente_id": "uncomtrade-ar-lote6-2024"
+      }
+    ]
+  },
+  {
+    "proceso_id": "tanino-extraccion-quebracho",
+    "producto_id": "tanino-quebracho",
+    "titulo": "PFD: Extracción Sólido-Líquido y Secado Spray de Extracto de Quebracho (Formosa)",
+    "norma_simbologia": "ISO 10628 / ASME",
+    "base_calculo": "1,00 t extracto de quebracho en polvo (~3,3 t duramen) · Planta Formosa (Unitán)",
+    "resumen_tecnico": "Chipeado de duramen de Schinopsis balansae, lixiviación presurizada contracorriente en batería de autoclaves a 110 °C, evaporación multiefecto al vacío con reciclo de condensado, sulfitación opcional y atomización en torre spray.",
+    "nota_metodologica": "Topología de extracción acuosa y evaporación verificada desde EU TAN BREF, EU FDM BREF, Unitán S.A.I.C.A. y UN Comtrade HS 3201.10.",
+    "canvas_width": 1880,
+    "canvas_height": 760,
+    "secciones": [
+      {
+        "area_id": "area-100",
+        "titulo": "Área 100 · Chipeado y extracción",
+        "x": 224,
+        "y": 40,
+        "width": 352,
+        "height": 665
+      },
+      {
+        "area_id": "area-200",
+        "titulo": "Área 200 · Evaporación al vacío",
+        "x": 594,
+        "y": 40,
+        "width": 338,
+        "height": 665
+      },
+      {
+        "area_id": "area-300",
+        "titulo": "Área 300 · Sulfitación y ajuste",
+        "x": 950,
+        "y": 40,
+        "width": 356,
+        "height": 665
+      },
+      {
+        "area_id": "area-400",
+        "titulo": "Área 400 · Secado spray y despacho",
+        "x": 1324,
+        "y": 40,
+        "width": 332,
+        "height": 665
+      }
+    ],
+    "equipos": [
+      {
+        "tag": "M-101",
+        "nombre": "Chipeadora duramen",
+        "simbolo": "mill_gin",
+        "area_id": "area-100",
+        "x": 300,
+        "y": 245,
+        "temperatura_op": "28 °C",
+        "presion_op": "1,0 bar",
+        "reaccion": null,
+        "condicion_critica": "Aserrín calibrado",
+        "descripcion": "Reduce los rollizos de quebracho colorado a chips y aserrín fino.",
+        "fuente_id": "unitan-web-2026",
+        "cita_ubicacion": "Unitán Formosa"
+      },
+      {
+        "tag": "X-101",
+        "nombre": "Autoclaves difusores",
+        "simbolo": "extractor",
+        "area_id": "area-100",
+        "x": 485,
+        "y": 245,
+        "temperatura_op": "110 °C",
+        "presion_op": "2,0 bar",
+        "reaccion": "Duramen + H2O -> Taninos",
+        "condicion_critica": "Contracorriente",
+        "descripcion": "Batería de difusores presurizados que extrae polifenoles y separa aserrín agotado.",
+        "fuente_id": "eu-bref-tan-2013",
+        "cita_ubicacion": "EU TAN BREF"
+      },
+      {
+        "tag": "E-201",
+        "nombre": "Evaporador multiefecto",
+        "simbolo": "column",
+        "area_id": "area-200",
+        "x": 755,
+        "y": 245,
+        "temperatura_op": "75 °C",
+        "presion_op": "0,35 bar",
+        "reaccion": null,
+        "condicion_critica": "Vacío ~50% sól.",
+        "descripcion": "Concentra el licor tánico al vacío recuperando condensados para lixiviación.",
+        "fuente_id": "eu-bref-fdm",
+        "cita_ubicacion": "EU FDM BREF"
+      },
+      {
+        "tag": "R-301",
+        "nombre": "Reactor sulfitación",
+        "simbolo": "reactor",
+        "area_id": "area-300",
+        "x": 1035,
+        "y": 245,
+        "temperatura_op": "90 °C",
+        "presion_op": "1,2 bar",
+        "reaccion": "Polifenol + NaHSO3 -> Soluble",
+        "condicion_critica": "Soluble en frío",
+        "descripcion": "Trata el extracto con bisulfito de sodio para grados solubles en agua fría.",
+        "fuente_id": "eu-bref-tan-2013",
+        "cita_ubicacion": "EU TAN BREF"
+      },
+      {
+        "tag": "V-301",
+        "nombre": "Tanque pulmón licor",
+        "simbolo": "tank",
+        "area_id": "area-300",
+        "x": 1215,
+        "y": 245,
+        "temperatura_op": "75 °C",
+        "presion_op": "1,0 bar",
+        "reaccion": null,
+        "condicion_critica": "Estabilización",
+        "descripcion": "Homogeneiza concentración y pH antes de la bomba de alta presión del spray.",
+        "fuente_id": "unitan-web-2026",
+        "cita_ubicacion": "Unitán Formosa"
+      },
+      {
+        "tag": "S-401",
+        "nombre": "Torre secado spray",
+        "simbolo": "granulator",
+        "area_id": "area-400",
+        "x": 1410,
+        "y": 245,
+        "temperatura_op": "170 °C",
+        "presion_op": "1,0 bar",
+        "reaccion": null,
+        "condicion_critica": "Humedad < 7%",
+        "descripcion": "Atomiza el licor en corriente de aire caliente formando polvo tánico uniforme.",
+        "fuente_id": "eu-bref-fdm",
+        "cita_ubicacion": "EU FDM BREF"
+      },
+      {
+        "tag": "F-401",
+        "nombre": "Ciclón y filtro mangas",
+        "simbolo": "filter_baghouse",
+        "area_id": "area-400",
+        "x": 1575,
+        "y": 245,
+        "temperatura_op": "85 °C",
+        "presion_op": "1,0 bar",
+        "reaccion": null,
+        "condicion_critica": "HS 3201.10",
+        "descripcion": "Recupera finos de extracto en polvo y limpia los gases de escape.",
+        "fuente_id": "uncomtrade-ar-lote6-2024",
+        "cita_ubicacion": "UN Comtrade 2024"
+      }
+    ],
+    "corrientes": [
+      {
+        "numero": 1,
+        "nombre": "Rollizos de quebracho",
+        "tipo": "proceso",
+        "origen_tag": null,
+        "destino_tag": "M-101",
+        "puntos": [
+          [
+            208,
+            245
+          ],
+          [
+            262,
+            245
+          ]
+        ],
+        "flag_pos": [
+          235,
+          245
+        ],
+        "especies": "Schinopsis balansae",
+        "fase": "Sólido",
+        "temperatura_c": "25",
+        "presion_bar": "1,0",
+        "flujo_especifico": {
+          "estado": "dato",
+          "valor": 3.3,
+          "unidad": "t/t extracto"
+        },
+        "nota_tecnica": "Madera de manejo forestal certificado.",
+        "fuente_id": "unitan-web-2026",
+        "cita_ubicacion": "Unitán Formosa"
+      },
+      {
+        "numero": 2,
+        "nombre": "Chips de duramen",
+        "tipo": "proceso",
+        "origen_tag": "M-101",
+        "destino_tag": "X-101",
+        "puntos": [
+          [
+            338,
+            245
+          ],
+          [
+            437,
+            245
+          ]
+        ],
+        "flag_pos": [
+          388,
+          245
+        ],
+        "especies": "Aserrín tánico",
+        "fase": "Sólido",
+        "temperatura_c": "28",
+        "presion_bar": "1,0",
+        "flujo_especifico": {
+          "estado": "dato",
+          "valor": 3.3,
+          "unidad": "t/t extracto"
+        },
+        "nota_tecnica": "Carga a batería de difusores.",
+        "fuente_id": "unitan-web-2026",
+        "cita_ubicacion": "Unitán Formosa"
+      },
+      {
+        "numero": 3,
+        "nombre": "Aserrín agotado (biomasa)",
+        "tipo": "subproducto",
+        "origen_tag": "X-101",
+        "destino_tag": null,
+        "puntos": [
+          [
+            485,
+            290
+          ],
+          [
+            485,
+            515
+          ],
+          [
+            570,
+            515
+          ]
+        ],
+        "flag_pos": [
+          525,
+          515
+        ],
+        "especies": "Lignocelulosa agotada",
+        "fase": "Sólido",
+        "temperatura_c": "95",
+        "presion_bar": "1,0",
+        "flujo_especifico": {
+          "estado": "dato",
+          "valor": 2.3,
+          "unidad": "t/t extracto"
+        },
+        "nota_tecnica": "Combustible para caldera de cogeneración.",
+        "fuente_id": "unitan-web-2026",
+        "cita_ubicacion": "Unitán economía circular"
+      },
+      {
+        "numero": 4,
+        "nombre": "Licor tánico diluido",
+        "tipo": "proceso",
+        "origen_tag": "X-101",
+        "destino_tag": "E-201",
+        "puntos": [
+          [
+            533,
+            245
+          ],
+          [
+            723,
+            245
+          ]
+        ],
+        "flag_pos": [
+          628,
+          245
+        ],
+        "especies": "Polifenoles + H2O (6-8 °Bé)",
+        "fase": "Líquido",
+        "temperatura_c": "95",
+        "presion_bar": "1,5",
+        "flujo_especifico": {
+          "estado": "sin_datos",
+          "valor": null,
+          "unidad": "m3/t"
+        },
+        "nota_tecnica": "Alimentación a evaporación al vacío.",
+        "fuente_id": "eu-bref-tan-2013",
+        "cita_ubicacion": "EU TAN BREF"
+      },
+      {
+        "numero": 5,
+        "nombre": "Reciclo condensado vegetal",
+        "tipo": "reciclo",
+        "origen_tag": "E-201",
+        "destino_tag": "X-101",
+        "puntos": [
+          [
+            755,
+            295
+          ],
+          [
+            755,
+            610
+          ],
+          [
+            485,
+            610
+          ],
+          [
+            485,
+            290
+          ]
+        ],
+        "flag_pos": [
+          620,
+          610
+        ],
+        "especies": "H2O condensada 70 °C",
+        "fase": "Líquido",
+        "temperatura_c": "70",
+        "presion_bar": "1,5",
+        "flujo_especifico": {
+          "estado": "sin_datos",
+          "valor": null,
+          "unidad": "m3/t"
+        },
+        "nota_tecnica": "Reutilizado como agua de lixiviación.",
+        "fuente_id": "eu-bref-fdm",
+        "cita_ubicacion": "EU FDM BREF"
+      },
+      {
+        "numero": 6,
+        "nombre": "Licor concentrado 50%",
+        "tipo": "proceso",
+        "origen_tag": "E-201",
+        "destino_tag": "R-301",
+        "puntos": [
+          [
+            787,
+            245
+          ],
+          [
+            997,
+            245
+          ]
+        ],
+        "flag_pos": [
+          892,
+          245
+        ],
+        "especies": "Extracto 50% p/p",
+        "fase": "Líquido",
+        "temperatura_c": "75",
+        "presion_bar": "1,0",
+        "flujo_especifico": {
+          "estado": "sin_datos",
+          "valor": null,
+          "unidad": "t/t"
+        },
+        "nota_tecnica": "Salida del último efecto evaporador.",
+        "fuente_id": "eu-bref-fdm",
+        "cita_ubicacion": "EU FDM BREF"
+      },
+      {
+        "numero": 7,
+        "nombre": "Extracto sulfitado",
+        "tipo": "proceso",
+        "origen_tag": "R-301",
+        "destino_tag": "V-301",
+        "puntos": [
+          [
+            1073,
+            245
+          ],
+          [
+            1177,
+            245
+          ]
+        ],
+        "flag_pos": [
+          1125,
+          245
+        ],
+        "especies": "Tanino soluble",
+        "fase": "Líquido",
+        "temperatura_c": "90",
+        "presion_bar": "1,2",
+        "flujo_especifico": {
+          "estado": "sin_datos",
+          "valor": null,
+          "unidad": "t/t"
+        },
+        "nota_tecnica": "Solución estabilizada para secado.",
+        "fuente_id": "eu-bref-tan-2013",
+        "cita_ubicacion": "EU TAN BREF"
+      },
+      {
+        "numero": 8,
+        "nombre": "Licor a atomización",
+        "tipo": "proceso",
+        "origen_tag": "V-301",
+        "destino_tag": "S-401",
+        "puntos": [
+          [
+            1253,
+            245
+          ],
+          [
+            1362,
+            245
+          ]
+        ],
+        "flag_pos": [
+          1308,
+          245
+        ],
+        "especies": "Licor 50% p/p",
+        "fase": "Líquido",
+        "temperatura_c": "75",
+        "presion_bar": "20",
+        "flujo_especifico": {
+          "estado": "sin_datos",
+          "valor": null,
+          "unidad": "t/t"
+        },
+        "nota_tecnica": "Atomizado por boquillas de alta presión.",
+        "fuente_id": "eu-bref-fdm",
+        "cita_ubicacion": "EU FDM BREF"
+      },
+      {
+        "numero": 9,
+        "nombre": "Aerosol polvo + aire",
+        "tipo": "proceso",
+        "origen_tag": "S-401",
+        "destino_tag": "F-401",
+        "puntos": [
+          [
+            1458,
+            245
+          ],
+          [
+            1537,
+            245
+          ]
+        ],
+        "flag_pos": [
+          1498,
+          245
+        ],
+        "especies": "Polvo tánico + aire",
+        "fase": "Bifásico",
+        "temperatura_c": "90",
+        "presion_bar": "1,0",
+        "flujo_especifico": {
+          "estado": "dato",
+          "valor": 1.0,
+          "unidad": "t/t extracto"
+        },
+        "nota_tecnica": "Separación neumática de producto.",
+        "fuente_id": "eu-bref-fdm",
+        "cita_ubicacion": "EU FDM BREF"
+      },
+      {
+        "numero": 10,
+        "nombre": "Extracto quebracho polvo",
+        "tipo": "proceso",
+        "origen_tag": "F-401",
+        "destino_tag": null,
+        "puntos": [
+          [
+            1613,
+            245
+          ],
+          [
+            1672,
+            245
+          ]
+        ],
+        "flag_pos": [
+          1642,
+          245
+        ],
+        "especies": "(C15H12O6)n polvo",
+        "fase": "Sólido",
+        "temperatura_c": "45",
+        "presion_bar": "1,0",
+        "flujo_especifico": {
+          "estado": "dato",
+          "valor": 1.0,
+          "unidad": "t/t extracto"
+        },
+        "nota_tecnica": "Producto final HS 3201.10.",
+        "fuente_id": "uncomtrade-ar-lote6-2024",
+        "cita_ubicacion": "UN Comtrade 2024"
+      }
+    ],
+    "servicios": [
+      {
+        "id": "srv-tan-1",
+        "equipo_tag": "X-101",
+        "etiqueta": "H2O 110 °C",
+        "direccion": "entrada",
+        "x": 485,
+        "y": 150,
+        "dx": 0,
+        "dy": 42
+      },
+      {
+        "id": "srv-tan-2",
+        "equipo_tag": "E-201",
+        "etiqueta": "Vapor biomasa",
+        "direccion": "entrada",
+        "x": 755,
+        "y": 145,
+        "dx": 0,
+        "dy": 42
+      },
+      {
+        "id": "srv-tan-3",
+        "equipo_tag": "R-301",
+        "etiqueta": "NaHSO3",
+        "direccion": "entrada",
+        "x": 1035,
+        "y": 150,
+        "dx": 0,
+        "dy": 42
+      },
+      {
+        "id": "srv-tan-4",
+        "equipo_tag": "S-401",
+        "etiqueta": "Aire 170 °C",
+        "direccion": "entrada",
+        "x": 1410,
+        "y": 150,
+        "dx": 0,
+        "dy": 42
+      }
+    ],
+    "limites_bateria": [
+      {
+        "id": "lb-tan-in1",
+        "lado": "entrada",
+        "categoria": "materia_prima",
+        "nombre": "Quebracho colorado",
+        "formula": "Schinopsis balansae",
+        "cantidad_masa": "3,30 t/t extr.",
+        "cantidad_molar": null,
+        "fraccion_pureza": "~25-30% tanino",
+        "corriente_num": 1,
+        "y": 140,
+        "nota": "Duramen forestal de Formosa y NEA.",
+        "fuente_id": "unitan-web-2026"
+      },
+      {
+        "id": "lb-tan-in2",
+        "lado": "entrada",
+        "categoria": "servicio",
+        "nombre": "Vapor de biomasa",
+        "formula": "H2O (v) / NaHSO3",
+        "cantidad_masa": "Sin dato público",
+        "cantidad_molar": null,
+        "fraccion_pureza": "Cogeneración propia",
+        "corriente_num": null,
+        "y": 310,
+        "nota": "Generado con aserrín agotado.",
+        "fuente_id": "unitan-web-2026"
+      },
+      {
+        "id": "lb-tan-out1",
+        "lado": "salida",
+        "categoria": "producto",
+        "nombre": "Extracto de quebracho",
+        "formula": "(C15H12O6)n",
+        "cantidad_masa": "1,00 t/t extr.",
+        "cantidad_molar": null,
+        "fraccion_pureza": "Humedad < 7%",
+        "corriente_num": 10,
+        "y": 140,
+        "nota": "Exportación AR 2024: 11.109 t (HS 3201.10).",
+        "fuente_id": "uncomtrade-ar-lote6-2024"
+      },
+      {
+        "id": "lb-tan-out2",
+        "lado": "salida",
+        "categoria": "subproducto",
+        "nombre": "Aserrín agotado",
+        "formula": "Biomasa celulósica",
+        "cantidad_masa": "2,30 t/t extr.",
+        "cantidad_molar": null,
+        "fraccion_pureza": "A caldera vapor",
+        "corriente_num": 3,
+        "y": 310,
+        "nota": "Valorización energética interna.",
+        "fuente_id": "unitan-web-2026"
+      }
+    ]
+  },
+  {
+    "proceso_id": "oliva-extraccion-dos-fases",
+    "producto_id": "aceite-oliva",
+    "titulo": "PFD: Extracción Continua en Frío (2 Fases) de Aceite de Oliva Virgen Extra (La Rioja)",
+    "norma_simbologia": "ISO 10628 / ASME",
+    "base_calculo": "1,00 t aceite de oliva virgen extra (~5,5 t aceituna fresca) · Chilecito y Arauco",
+    "resumen_tecnico": "Limpieza y molienda de aceitunas frescas, malaxado termo-controlado por debajo de 27 °C, separación centrífuga horizontal en decanter de dos fases, clarificación en centrífuga vertical y almacenamiento bajo atmósfera inerte de nitrógeno.",
+    "nota_metodologica": "Condiciones de proceso en frío y esquema de 2 fases verificados en EU FDM BREF, FOA, Valle de la Puerta S.A. y Agro Aceitunera S.A.",
+    "canvas_width": 1880,
+    "canvas_height": 760,
+    "secciones": [
+      {
+        "area_id": "area-100",
+        "titulo": "Área 100 · Lavado y molienda",
+        "x": 224,
+        "y": 40,
+        "width": 352,
+        "height": 665
+      },
+      {
+        "area_id": "area-200",
+        "titulo": "Área 200 · Malaxado en frío",
+        "x": 594,
+        "y": 40,
+        "width": 338,
+        "height": 665
+      },
+      {
+        "area_id": "area-300",
+        "titulo": "Área 300 · Decanter 2 fases",
+        "x": 950,
+        "y": 40,
+        "width": 356,
+        "height": 665
+      },
+      {
+        "area_id": "area-400",
+        "titulo": "Área 400 · Clarificación y bodega N2",
+        "x": 1324,
+        "y": 40,
+        "width": 332,
+        "height": 665
+      }
+    ],
+    "equipos": [
+      {
+        "tag": "V-101",
+        "nombre": "Deshojadora y lavadora",
+        "simbolo": "separator",
+        "area_id": "area-100",
+        "x": 300,
+        "y": 245,
+        "temperatura_op": "20 °C",
+        "presion_op": "1,0 bar",
+        "reaccion": null,
+        "condicion_critica": "Reciclo agua",
+        "descripcion": "Remueve hojas, ramas y tierra del fruto recién cosechado.",
+        "fuente_id": "valledelapuerta-web-2026",
+        "cita_ubicacion": "Almazara Vichigasta"
+      },
+      {
+        "tag": "M-101",
+        "nombre": "Molino de martillos",
+        "simbolo": "mill_gin",
+        "area_id": "area-100",
+        "x": 485,
+        "y": 245,
+        "temperatura_op": "22 °C",
+        "presion_op": "1,0 bar",
+        "reaccion": null,
+        "condicion_critica": "Inox 304",
+        "descripcion": "Tritura pulpa y carozo formando una pasta homogénea en minutos.",
+        "fuente_id": "eu-bref-fdm",
+        "cita_ubicacion": "EU FDM BREF"
+      },
+      {
+        "tag": "R-201",
+        "nombre": "Amasadoras malaxado",
+        "simbolo": "reactor",
+        "area_id": "area-200",
+        "x": 755,
+        "y": 245,
+        "temperatura_op": "27 °C",
+        "presion_op": "1,0 bar",
+        "reaccion": null,
+        "condicion_critica": "TC <= 27 °C",
+        "descripcion": "Amasado lento (30-40 min) que favorece la coalescencia de gotas de aceite.",
+        "fuente_id": "eu-bref-fdm",
+        "cita_ubicacion": "EU FDM BREF"
+      },
+      {
+        "tag": "P-301",
+        "nombre": "Bomba pasta a decanter",
+        "simbolo": "pump",
+        "area_id": "area-300",
+        "x": 1020,
+        "y": 245,
+        "temperatura_op": "27 °C",
+        "presion_op": "2,5 bar",
+        "reaccion": null,
+        "condicion_critica": "Flujo estable",
+        "descripcion": "Alimenta caudal constante hacia el decanter horizontal.",
+        "fuente_id": "eu-bref-fdm",
+        "cita_ubicacion": "EU FDM BREF"
+      },
+      {
+        "tag": "C-301",
+        "nombre": "Decanter 2 fases",
+        "simbolo": "centrifuge",
+        "area_id": "area-300",
+        "x": 1210,
+        "y": 245,
+        "temperatura_op": "27 °C",
+        "presion_op": "1,0 bar",
+        "reaccion": "Pasta -> AOVE + Alperujo",
+        "condicion_critica": "3.200 rpm · sin H2O",
+        "descripcion": "Separa aceite virgen y alperujo húmedo sin generar alpechín líquido.",
+        "fuente_id": "eu-bref-fdm",
+        "cita_ubicacion": "EU FDM BREF"
+      },
+      {
+        "tag": "C-401",
+        "nombre": "Centrífuga vertical",
+        "simbolo": "centrifuge",
+        "area_id": "area-400",
+        "x": 1410,
+        "y": 245,
+        "temperatura_op": "25 °C",
+        "presion_op": "1,0 bar",
+        "reaccion": null,
+        "condicion_critica": "6.500 rpm",
+        "descripcion": "Elimina micro-borras y trazas de agua vegetal del mosto oleoso.",
+        "fuente_id": "foa-web-2026",
+        "cita_ubicacion": "FOA Argentina"
+      },
+      {
+        "tag": "V-401",
+        "nombre": "Bodega inerte N2",
+        "simbolo": "tank",
+        "area_id": "area-400",
+        "x": 1575,
+        "y": 245,
+        "temperatura_op": "17 °C",
+        "presion_op": "1,05 bar",
+        "reaccion": null,
+        "condicion_critica": "Acidez <= 0,8%",
+        "descripcion": "Tanques inox termostatizados bajo manta de N2 para conservar AOVE.",
+        "fuente_id": "uncomtrade-ar-lote6-2024",
+        "cita_ubicacion": "UN Comtrade 2024"
+      }
+    ],
+    "corrientes": [
+      {
+        "numero": 1,
+        "nombre": "Aceitunas frescas",
+        "tipo": "proceso",
+        "origen_tag": null,
+        "destino_tag": "V-101",
+        "puntos": [
+          [
+            208,
+            245
+          ],
+          [
+            262,
+            245
+          ]
+        ],
+        "flag_pos": [
+          235,
+          245
+        ],
+        "especies": "Fruto Olea europaea",
+        "fase": "Sólido",
+        "temperatura_c": "20",
+        "presion_bar": "1,0",
+        "flujo_especifico": {
+          "estado": "dato",
+          "valor": 5.5,
+          "unidad": "t/t aceite"
+        },
+        "nota_tecnica": "Cosecha valles de Chilecito y Arauco.",
+        "fuente_id": "valledelapuerta-web-2026",
+        "cita_ubicacion": "Almazara Vichigasta"
+      },
+      {
+        "numero": 2,
+        "nombre": "Fruto lavado limpio",
+        "tipo": "proceso",
+        "origen_tag": "V-101",
+        "destino_tag": "M-101",
+        "puntos": [
+          [
+            338,
+            245
+          ],
+          [
+            447,
+            245
+          ]
+        ],
+        "flag_pos": [
+          392,
+          245
+        ],
+        "especies": "Aceituna limpia",
+        "fase": "Sólido",
+        "temperatura_c": "20",
+        "presion_bar": "1,0",
+        "flujo_especifico": {
+          "estado": "dato",
+          "valor": 5.5,
+          "unidad": "t/t aceite"
+        },
+        "nota_tecnica": "Hacia molienda inmediata.",
+        "fuente_id": "valledelapuerta-web-2026",
+        "cita_ubicacion": "Almazara Vichigasta"
+      },
+      {
+        "numero": 3,
+        "nombre": "Pasta de aceituna",
+        "tipo": "proceso",
+        "origen_tag": "M-101",
+        "destino_tag": "R-201",
+        "puntos": [
+          [
+            523,
+            245
+          ],
+          [
+            717,
+            245
+          ]
+        ],
+        "flag_pos": [
+          620,
+          245
+        ],
+        "especies": "Pulpa + carozo molido",
+        "fase": "Bifásico",
+        "temperatura_c": "22",
+        "presion_bar": "1,0",
+        "flujo_especifico": {
+          "estado": "dato",
+          "valor": 5.5,
+          "unidad": "t/t aceite"
+        },
+        "nota_tecnica": "Alimentación a batido en frío.",
+        "fuente_id": "eu-bref-fdm",
+        "cita_ubicacion": "EU FDM BREF"
+      },
+      {
+        "numero": 4,
+        "nombre": "Pasta coalescida",
+        "tipo": "proceso",
+        "origen_tag": "R-201",
+        "destino_tag": "P-301",
+        "puntos": [
+          [
+            793,
+            245
+          ],
+          [
+            988,
+            245
+          ]
+        ],
+        "flag_pos": [
+          890,
+          245
+        ],
+        "especies": "Pasta 27 °C",
+        "fase": "Bifásico",
+        "temperatura_c": "27",
+        "presion_bar": "1,0",
+        "flujo_especifico": {
+          "estado": "dato",
+          "valor": 5.5,
+          "unidad": "t/t aceite"
+        },
+        "nota_tecnica": "Gotas de aceite listas para separación.",
+        "fuente_id": "eu-bref-fdm",
+        "cita_ubicacion": "EU FDM BREF"
+      },
+      {
+        "numero": 5,
+        "nombre": "Alimentación decanter",
+        "tipo": "proceso",
+        "origen_tag": "P-301",
+        "destino_tag": "C-301",
+        "puntos": [
+          [
+            1052,
+            245
+          ],
+          [
+            1166,
+            245
+          ]
+        ],
+        "flag_pos": [
+          1110,
+          245
+        ],
+        "especies": "Pasta presurizada",
+        "fase": "Bifásico",
+        "temperatura_c": "27",
+        "presion_bar": "2,5",
+        "flujo_especifico": {
+          "estado": "dato",
+          "valor": 5.5,
+          "unidad": "t/t aceite"
+        },
+        "nota_tecnica": "Ingreso axial al rotor horizontal.",
+        "fuente_id": "eu-bref-fdm",
+        "cita_ubicacion": "EU FDM BREF"
+      },
+      {
+        "numero": 6,
+        "nombre": "Alperujo húmedo",
+        "tipo": "subproducto",
+        "origen_tag": "C-301",
+        "destino_tag": null,
+        "puntos": [
+          [
+            1210,
+            285
+          ],
+          [
+            1210,
+            520
+          ],
+          [
+            1672,
+            520
+          ]
+        ],
+        "flag_pos": [
+          1440,
+          520
+        ],
+        "especies": "Orujo + agua vegetal",
+        "fase": "Sólido",
+        "temperatura_c": "26",
+        "presion_bar": "1,0",
+        "flujo_especifico": {
+          "estado": "dato",
+          "valor": 4.47,
+          "unidad": "t/t aceite"
+        },
+        "nota_tecnica": "Subproducto para compostaje o extracción de orujo.",
+        "fuente_id": "eu-bref-fdm",
+        "cita_ubicacion": "EU FDM BREF"
+      },
+      {
+        "numero": 7,
+        "nombre": "Mosto oleoso virgen",
+        "tipo": "proceso",
+        "origen_tag": "C-301",
+        "destino_tag": "C-401",
+        "puntos": [
+          [
+            1254,
+            245
+          ],
+          [
+            1366,
+            245
+          ]
+        ],
+        "flag_pos": [
+          1310,
+          245
+        ],
+        "especies": "AOVE crudo",
+        "fase": "Líquido",
+        "temperatura_c": "26",
+        "presion_bar": "1,0",
+        "flujo_especifico": {
+          "estado": "dato",
+          "valor": 1.03,
+          "unidad": "t/t aceite"
+        },
+        "nota_tecnica": "Con trazas de humedad y finos.",
+        "fuente_id": "eu-bref-fdm",
+        "cita_ubicacion": "EU FDM BREF"
+      },
+      {
+        "numero": 8,
+        "nombre": "Micro-borras vegetales",
+        "tipo": "emision",
+        "origen_tag": "C-401",
+        "destino_tag": null,
+        "puntos": [
+          [
+            1410,
+            285
+          ],
+          [
+            1410,
+            445
+          ],
+          [
+            1485,
+            445
+          ]
+        ],
+        "flag_pos": [
+          1450,
+          445
+        ],
+        "especies": "Agua vegetal + finos",
+        "fase": "Líquido",
+        "temperatura_c": "25",
+        "presion_bar": "1,0",
+        "flujo_especifico": {
+          "estado": "dato",
+          "valor": 0.03,
+          "unidad": "t/t aceite"
+        },
+        "nota_tecnica": "Purga periódica de centrífuga vertical.",
+        "fuente_id": "eu-bref-fdm",
+        "cita_ubicacion": "EU FDM BREF"
+      },
+      {
+        "numero": 9,
+        "nombre": "AOVE clarificado",
+        "tipo": "proceso",
+        "origen_tag": "C-401",
+        "destino_tag": "V-401",
+        "puntos": [
+          [
+            1454,
+            245
+          ],
+          [
+            1537,
+            245
+          ]
+        ],
+        "flag_pos": [
+          1495,
+          245
+        ],
+        "especies": "Triglicéridos (ác. oleico)",
+        "fase": "Líquido",
+        "temperatura_c": "24",
+        "presion_bar": "1,0",
+        "flujo_especifico": {
+          "estado": "dato",
+          "valor": 1.0,
+          "unidad": "t/t aceite"
+        },
+        "nota_tecnica": "Ingreso a bodega climatizada.",
+        "fuente_id": "foa-web-2026",
+        "cita_ubicacion": "FOA Argentina"
+      },
+      {
+        "numero": 10,
+        "nombre": "Aceite de oliva virgen extra",
+        "tipo": "proceso",
+        "origen_tag": "V-401",
+        "destino_tag": null,
+        "puntos": [
+          [
+            1613,
+            245
+          ],
+          [
+            1672,
+            245
+          ]
+        ],
+        "flag_pos": [
+          1642,
+          245
+        ],
+        "especies": "AOVE (HS 1509.20)",
+        "fase": "Líquido",
+        "temperatura_c": "17",
+        "presion_bar": "1,0",
+        "flujo_especifico": {
+          "estado": "dato",
+          "valor": 1.0,
+          "unidad": "t/t aceite"
+        },
+        "nota_tecnica": "Despacho a granel o envasado.",
+        "fuente_id": "uncomtrade-ar-lote6-2024",
+        "cita_ubicacion": "UN Comtrade 2024"
+      }
+    ],
+    "servicios": [
+      {
+        "id": "srv-oli-1",
+        "equipo_tag": "R-201",
+        "etiqueta": "Camisa 27 °C",
+        "direccion": "entrada",
+        "x": 755,
+        "y": 150,
+        "dx": 0,
+        "dy": 42
+      },
+      {
+        "id": "srv-oli-2",
+        "equipo_tag": "V-401",
+        "etiqueta": "Manta N2",
+        "direccion": "entrada",
+        "x": 1575,
+        "y": 150,
+        "dx": 0,
+        "dy": 42
+      }
+    ],
+    "limites_bateria": [
+      {
+        "id": "lb-oli-in1",
+        "lado": "entrada",
+        "categoria": "materia_prima",
+        "nombre": "Aceituna fresca",
+        "formula": "Olea europaea",
+        "cantidad_masa": "5,50 t/t AOVE",
+        "cantidad_molar": null,
+        "fraccion_pureza": "~18% rendimiento",
+        "corriente_num": 1,
+        "y": 140,
+        "nota": "Variedades Arauco, Arbequina y Picual.",
+        "fuente_id": "valledelapuerta-web-2026"
+      },
+      {
+        "id": "lb-oli-in2",
+        "lado": "entrada",
+        "categoria": "servicio",
+        "nombre": "Nitrógeno inerte",
+        "formula": "N2 (g)",
+        "cantidad_masa": "Sin dato público",
+        "cantidad_molar": null,
+        "fraccion_pureza": "Inertización bodega",
+        "corriente_num": null,
+        "y": 310,
+        "nota": "Evita oxidación de polifenoles.",
+        "fuente_id": "foa-web-2026"
+      },
+      {
+        "id": "lb-oli-out1",
+        "lado": "salida",
+        "categoria": "producto",
+        "nombre": "Aceite virgen extra",
+        "formula": "C57H104O6 (oleína)",
+        "cantidad_masa": "1,00 t/t AOVE",
+        "cantidad_molar": null,
+        "fraccion_pureza": "Acidez <= 0,8%",
+        "corriente_num": 10,
+        "y": 140,
+        "nota": "Exportación AR 2024: 18.140 t (HS 1509.20).",
+        "fuente_id": "uncomtrade-ar-lote6-2024"
+      },
+      {
+        "id": "lb-oli-out2",
+        "lado": "salida",
+        "categoria": "subproducto",
+        "nombre": "Alperujo húmedo",
+        "formula": "Orujo 2 fases",
+        "cantidad_masa": "4,47 t/t AOVE",
+        "cantidad_molar": null,
+        "fraccion_pureza": "Sin alpechín libre",
+        "corriente_num": 6,
+        "y": 460,
+        "nota": "Aprovechado en compostaje o biomasa.",
+        "fuente_id": "eu-bref-fdm"
+      }
+    ]
+  },
+  {
+    "proceso_id": "farmoquimica-sintesis-ifa",
+    "producto_id": "farmoquimica-ifa",
+    "titulo": "PFD: Síntesis Orgánica Multipropósito GMP de Ingredientes Farmacéuticos Activos (CABA)",
+    "norma_simbologia": "ISO 10628 / ASME",
+    "base_calculo": "1 lote comercial de IFA purificado (GMP / ANMAT / FDA) · Comuna 9 (CABA)",
+    "resumen_tecnico": "Reacción química fina en reactor batch esmaltado inertizado con N2, extracción líquido-líquido y destilación de recuperación de solventes, cristalización controlada, aislamiento centrífugo y secado al vacío en sala limpia.",
+    "nota_metodologica": "Topología multipropósito GMP y recuperación de solventes verificadas en EU OFC BREF (Organic Fine Chemicals), Insud Pharma / Maprimed S.A. e INDEC Industria Farmacéutica.",
+    "canvas_width": 1880,
+    "canvas_height": 760,
+    "secciones": [
+      {
+        "area_id": "area-100",
+        "titulo": "Área 100 · Síntesis batch GMP",
+        "x": 224,
+        "y": 40,
+        "width": 352,
+        "height": 665
+      },
+      {
+        "area_id": "area-200",
+        "titulo": "Área 200 · Solventes y purificación",
+        "x": 594,
+        "y": 40,
+        "width": 338,
+        "height": 665
+      },
+      {
+        "area_id": "area-300",
+        "titulo": "Área 300 · Cristalización y aislamiento",
+        "x": 950,
+        "y": 40,
+        "width": 356,
+        "height": 665
+      },
+      {
+        "area_id": "area-400",
+        "titulo": "Área 400 · Secado al vacío y QC",
+        "x": 1324,
+        "y": 40,
+        "width": 332,
+        "height": 665
+      }
+    ],
+    "equipos": [
+      {
+        "tag": "V-101",
+        "nombre": "Tanques dosificación",
+        "simbolo": "tank",
+        "area_id": "area-100",
+        "x": 300,
+        "y": 245,
+        "temperatura_op": "25 °C",
+        "presion_op": "1,1 bar",
+        "reaccion": null,
+        "condicion_critica": "Inertizado N2",
+        "descripcion": "Almacenan solventes grado farma e intermedios orgánicos medidos por masa.",
+        "fuente_id": "eu-bref-ofc-2006",
+        "cita_ubicacion": "EU OFC BREF"
+      },
+      {
+        "tag": "R-101",
+        "nombre": "Reactor batch vitrificado",
+        "simbolo": "reactor",
+        "area_id": "area-100",
+        "x": 485,
+        "y": 245,
+        "temperatura_op": "65 °C",
+        "presion_op": "1,5 bar",
+        "reaccion": "Intermedios -> IFA crudo",
+        "condicion_critica": "TC -20 a 140 °C",
+        "descripcion": "Reactor multipropósito encamisado con condensador de reflujo y control preciso.",
+        "fuente_id": "eu-bref-ofc-2006",
+        "cita_ubicacion": "EU OFC BREF"
+      },
+      {
+        "tag": "T-201",
+        "nombre": "Columna recup. solventes",
+        "simbolo": "column",
+        "area_id": "area-200",
+        "x": 755,
+        "y": 445,
+        "temperatura_op": "78 °C",
+        "presion_op": "0,5 bar",
+        "reaccion": null,
+        "condicion_critica": "Reciclo cerrado",
+        "descripcion": "Destila y recupera solventes orgánicos minimizando consumo y emisiones COV.",
+        "fuente_id": "eu-bref-ofc-2006",
+        "cita_ubicacion": "EU OFC BREF"
+      },
+      {
+        "tag": "F-201",
+        "nombre": "Filtro pulidor carbón",
+        "simbolo": "filter_baghouse",
+        "area_id": "area-200",
+        "x": 755,
+        "y": 215,
+        "temperatura_op": "55 °C",
+        "presion_op": "2,0 bar",
+        "reaccion": null,
+        "condicion_critica": "Clarificación",
+        "descripcion": "Remueve impurezas coloreadas y trazas catalíticas antes de cristalizar.",
+        "fuente_id": "eu-bref-ofc-2006",
+        "cita_ubicacion": "EU OFC BREF"
+      },
+      {
+        "tag": "R-301",
+        "nombre": "Cristalizador controlado",
+        "simbolo": "reactor",
+        "area_id": "area-300",
+        "x": 1035,
+        "y": 215,
+        "temperatura_op": "15 °C",
+        "presion_op": "1,0 bar",
+        "reaccion": null,
+        "condicion_critica": "Polimorfismo GMP",
+        "descripcion": "Rampa térmica y antisolvente para precipitar cristales de pureza >=99,5%.",
+        "fuente_id": "eu-bref-ofc-2006",
+        "cita_ubicacion": "EU OFC BREF"
+      },
+      {
+        "tag": "C-301",
+        "nombre": "Centrífuga / Nutsche",
+        "simbolo": "centrifuge",
+        "area_id": "area-300",
+        "x": 1215,
+        "y": 215,
+        "temperatura_op": "18 °C",
+        "presion_op": "1,0 bar",
+        "reaccion": null,
+        "condicion_critica": "Aislamiento N2",
+        "descripcion": "Separa la torta cristalina húmeda y envía aguas madres a recuperación.",
+        "fuente_id": "insudpharma-web-2026",
+        "cita_ubicacion": "Maprimed CABA"
+      },
+      {
+        "tag": "D-401",
+        "nombre": "Secador al vacío GMP",
+        "simbolo": "dryer_bed",
+        "area_id": "area-400",
+        "x": 1410,
+        "y": 215,
+        "temperatura_op": "50 °C",
+        "presion_op": "0,05 bar",
+        "reaccion": null,
+        "condicion_critica": "Solventes ICH Q3C",
+        "descripcion": "Elimina solventes residuales a baja temperatura sin degradar el principio activo.",
+        "fuente_id": "insudpharma-web-2026",
+        "cita_ubicacion": "Maprimed CABA"
+      },
+      {
+        "tag": "M-401",
+        "nombre": "Micronizador y envasado",
+        "simbolo": "mill_gin",
+        "area_id": "area-400",
+        "x": 1575,
+        "y": 215,
+        "temperatura_op": "22 °C",
+        "presion_op": "1,0 bar",
+        "reaccion": null,
+        "condicion_critica": "Sala limpia ISO 8",
+        "descripcion": "Ajusta distribución de tamaño de partícula y libera lotes tras HPLC/GC.",
+        "fuente_id": "indec-farmaceutica-2026",
+        "cita_ubicacion": "INDEC Farmacéutica"
+      }
+    ],
+    "corrientes": [
+      {
+        "numero": 1,
+        "nombre": "Intermedios y solventes",
+        "tipo": "proceso",
+        "origen_tag": null,
+        "destino_tag": "V-101",
+        "puntos": [
+          [
+            208,
+            245
+          ],
+          [
+            262,
+            245
+          ]
+        ],
+        "flag_pos": [
+          235,
+          245
+        ],
+        "especies": "Intermedios HS 2933.99",
+        "fase": "Líquido",
+        "temperatura_c": "25",
+        "presion_bar": "1,0",
+        "flujo_especifico": {
+          "estado": "sin_datos",
+          "valor": null,
+          "unidad": "kg/lote"
+        },
+        "nota_tecnica": "Materias primas certificadas.",
+        "fuente_id": "uncomtrade-ar-lote6-2024",
+        "cita_ubicacion": "UN Comtrade 2024"
+      },
+      {
+        "numero": 2,
+        "nombre": "Carga dosificada a reactor",
+        "tipo": "proceso",
+        "origen_tag": "V-101",
+        "destino_tag": "R-101",
+        "puntos": [
+          [
+            338,
+            245
+          ],
+          [
+            447,
+            245
+          ]
+        ],
+        "flag_pos": [
+          392,
+          245
+        ],
+        "especies": "Reactivos + solvente",
+        "fase": "Líquido",
+        "temperatura_c": "25",
+        "presion_bar": "1,2",
+        "flujo_especifico": {
+          "estado": "sin_datos",
+          "valor": null,
+          "unidad": "kg/lote"
+        },
+        "nota_tecnica": "Alimentación pesada al reactor.",
+        "fuente_id": "eu-bref-ofc-2006",
+        "cita_ubicacion": "EU OFC BREF"
+      },
+      {
+        "numero": 3,
+        "nombre": "Masa de reacción clarif.",
+        "tipo": "proceso",
+        "origen_tag": "R-101",
+        "destino_tag": "F-201",
+        "puntos": [
+          [
+            523,
+            215
+          ],
+          [
+            717,
+            215
+          ]
+        ],
+        "flag_pos": [
+          620,
+          215
+        ],
+        "especies": "IFA crudo en solución",
+        "fase": "Líquido",
+        "temperatura_c": "55",
+        "presion_bar": "2,0",
+        "flujo_especifico": {
+          "estado": "sin_datos",
+          "valor": null,
+          "unidad": "kg/lote"
+        },
+        "nota_tecnica": "Paso por filtro de carbón activado.",
+        "fuente_id": "eu-bref-ofc-2006",
+        "cita_ubicacion": "EU OFC BREF"
+      },
+      {
+        "numero": 4,
+        "nombre": "Solución filtrada de IFA",
+        "tipo": "proceso",
+        "origen_tag": "F-201",
+        "destino_tag": "R-301",
+        "puntos": [
+          [
+            793,
+            215
+          ],
+          [
+            997,
+            215
+          ]
+        ],
+        "flag_pos": [
+          895,
+          215
+        ],
+        "especies": "Solución purificada",
+        "fase": "Líquido",
+        "temperatura_c": "50",
+        "presion_bar": "1,0",
+        "flujo_especifico": {
+          "estado": "sin_datos",
+          "valor": null,
+          "unidad": "kg/lote"
+        },
+        "nota_tecnica": "Ingreso a cristalización.",
+        "fuente_id": "eu-bref-ofc-2006",
+        "cita_ubicacion": "EU OFC BREF"
+      },
+      {
+        "numero": 5,
+        "nombre": "Suspensión cristalina",
+        "tipo": "proceso",
+        "origen_tag": "R-301",
+        "destino_tag": "C-301",
+        "puntos": [
+          [
+            1073,
+            215
+          ],
+          [
+            1171,
+            215
+          ]
+        ],
+        "flag_pos": [
+          1122,
+          215
+        ],
+        "especies": "Cristales IFA + licor",
+        "fase": "Bifásico",
+        "temperatura_c": "15",
+        "presion_bar": "1,0",
+        "flujo_especifico": {
+          "estado": "sin_datos",
+          "valor": null,
+          "unidad": "kg/lote"
+        },
+        "nota_tecnica": "Alimentación a centrífuga cerrada.",
+        "fuente_id": "eu-bref-ofc-2006",
+        "cita_ubicacion": "EU OFC BREF"
+      },
+      {
+        "numero": 6,
+        "nombre": "Aguas madres a destilar",
+        "tipo": "reciclo",
+        "origen_tag": "C-301",
+        "destino_tag": "T-201",
+        "puntos": [
+          [
+            1215,
+            255
+          ],
+          [
+            1215,
+            445
+          ],
+          [
+            787,
+            445
+          ]
+        ],
+        "flag_pos": [
+          1010,
+          445
+        ],
+        "especies": "Solventes usados",
+        "fase": "Líquido",
+        "temperatura_c": "20",
+        "presion_bar": "1,0",
+        "flujo_especifico": {
+          "estado": "sin_datos",
+          "valor": null,
+          "unidad": "L/lote"
+        },
+        "nota_tecnica": "Enviadas a columna de recuperación.",
+        "fuente_id": "eu-bref-ofc-2006",
+        "cita_ubicacion": "EU OFC BREF"
+      },
+      {
+        "numero": 7,
+        "nombre": "Solvente recuperado",
+        "tipo": "reciclo",
+        "origen_tag": "T-201",
+        "destino_tag": "V-101",
+        "puntos": [
+          [
+            723,
+            445
+          ],
+          [
+            300,
+            445
+          ],
+          [
+            300,
+            290
+          ]
+        ],
+        "flag_pos": [
+          510,
+          445
+        ],
+        "especies": "Solvente destilado",
+        "fase": "Líquido",
+        "temperatura_c": "30",
+        "presion_bar": "1,0",
+        "flujo_especifico": {
+          "estado": "sin_datos",
+          "valor": null,
+          "unidad": "L/lote"
+        },
+        "nota_tecnica": "Reutilizado en campañas compatibles.",
+        "fuente_id": "eu-bref-ofc-2006",
+        "cita_ubicacion": "EU OFC BREF"
+      },
+      {
+        "numero": 8,
+        "nombre": "Fondos de destilación",
+        "tipo": "emision",
+        "origen_tag": "T-201",
+        "destino_tag": null,
+        "puntos": [
+          [
+            755,
+            495
+          ],
+          [
+            755,
+            610
+          ],
+          [
+            860,
+            610
+          ]
+        ],
+        "flag_pos": [
+          810,
+          610
+        ],
+        "especies": "Residuo orgánico Y",
+        "fase": "Líquido",
+        "temperatura_c": "85",
+        "presion_bar": "1,0",
+        "flujo_especifico": {
+          "estado": "sin_datos",
+          "valor": null,
+          "unidad": "kg/lote"
+        },
+        "nota_tecnica": "Gestión controlada de residuos peligrosos.",
+        "fuente_id": "eu-bref-ofc-2006",
+        "cita_ubicacion": "EU OFC BREF"
+      },
+      {
+        "numero": 9,
+        "nombre": "Torta húmeda de IFA",
+        "tipo": "proceso",
+        "origen_tag": "C-301",
+        "destino_tag": "D-401",
+        "puntos": [
+          [
+            1259,
+            215
+          ],
+          [
+            1372,
+            215
+          ]
+        ],
+        "flag_pos": [
+          1315,
+          215
+        ],
+        "especies": "IFA cristalino húmedo",
+        "fase": "Sólido",
+        "temperatura_c": "18",
+        "presion_bar": "1,0",
+        "flujo_especifico": {
+          "estado": "sin_datos",
+          "valor": null,
+          "unidad": "kg/lote"
+        },
+        "nota_tecnica": "Descarga en sala limpia hacia secador.",
+        "fuente_id": "insudpharma-web-2026",
+        "cita_ubicacion": "Maprimed CABA"
+      },
+      {
+        "numero": 10,
+        "nombre": "IFA seco a micronizar",
+        "tipo": "proceso",
+        "origen_tag": "D-401",
+        "destino_tag": "M-401",
+        "puntos": [
+          [
+            1448,
+            215
+          ],
+          [
+            1537,
+            215
+          ]
+        ],
+        "flag_pos": [
+          1492,
+          215
+        ],
+        "especies": "IFA seco (>=99,5%)",
+        "fase": "Sólido",
+        "temperatura_c": "35",
+        "presion_bar": "1,0",
+        "flujo_especifico": {
+          "estado": "sin_datos",
+          "valor": null,
+          "unidad": "kg/lote"
+        },
+        "nota_tecnica": "Cumple límites ICH de solventes residuales.",
+        "fuente_id": "insudpharma-web-2026",
+        "cita_ubicacion": "Maprimed CABA"
+      },
+      {
+        "numero": 11,
+        "nombre": "Principio activo GMP",
+        "tipo": "proceso",
+        "origen_tag": "M-401",
+        "destino_tag": null,
+        "puntos": [
+          [
+            1613,
+            215
+          ],
+          [
+            1672,
+            215
+          ]
+        ],
+        "flag_pos": [
+          1642,
+          215
+        ],
+        "especies": "IFA / API liberado",
+        "fase": "Sólido",
+        "temperatura_c": "22",
+        "presion_bar": "1,0",
+        "flujo_especifico": {
+          "estado": "sin_datos",
+          "valor": null,
+          "unidad": "kg/lote"
+        },
+        "nota_tecnica": "Insumo para formulaciones HS 3004.90.",
+        "fuente_id": "indec-farmaceutica-2026",
+        "cita_ubicacion": "INDEC Farmacéutica"
+      }
+    ],
+    "servicios": [
+      {
+        "id": "srv-ifa-1",
+        "equipo_tag": "R-101",
+        "etiqueta": "Salmuera / Vapor",
+        "direccion": "entrada",
+        "x": 485,
+        "y": 150,
+        "dx": 0,
+        "dy": 42
+      },
+      {
+        "id": "srv-ifa-2",
+        "equipo_tag": "R-301",
+        "etiqueta": "Glicol frío",
+        "direccion": "entrada",
+        "x": 1035,
+        "y": 120,
+        "dx": 0,
+        "dy": 42
+      },
+      {
+        "id": "srv-ifa-3",
+        "equipo_tag": "D-401",
+        "etiqueta": "Vacío 50 mbar",
+        "direccion": "salida",
+        "x": 1410,
+        "y": 120,
+        "dx": 0,
+        "dy": 42
+      }
+    ],
+    "limites_bateria": [
+      {
+        "id": "lb-ifa-in1",
+        "lado": "entrada",
+        "categoria": "materia_prima",
+        "nombre": "Intermedios orgánicos",
+        "formula": "HS 2933.99 / finos",
+        "cantidad_masa": "Según campaña",
+        "cantidad_molar": null,
+        "fraccion_pureza": "Grado síntesis",
+        "corriente_num": 1,
+        "y": 140,
+        "nota": "Imp. AR 2024 HS 2933.99: 1.798 t (USD 75,92 M).",
+        "fuente_id": "uncomtrade-ar-lote6-2024"
+      },
+      {
+        "id": "lb-ifa-in2",
+        "lado": "entrada",
+        "categoria": "servicio",
+        "nombre": "N2 / Agua USP / HEPA",
+        "formula": "Servicios GMP",
+        "cantidad_masa": "Sin dato público",
+        "cantidad_molar": null,
+        "fraccion_pureza": "Sala ISO 8",
+        "corriente_num": null,
+        "y": 310,
+        "nota": "Control térmico -20 a 140 °C y vacío.",
+        "fuente_id": "eu-bref-ofc-2006"
+      },
+      {
+        "id": "lb-ifa-out1",
+        "lado": "salida",
+        "categoria": "producto",
+        "nombre": "Principio activo (IFA)",
+        "formula": "API farmacéutico",
+        "cantidad_masa": "Según lote GMP",
+        "cantidad_molar": null,
+        "fraccion_pureza": "Pureza >= 99,5%",
+        "corriente_num": 11,
+        "y": 140,
+        "nota": "Base para especialidades HS 3004.90 (Exp. USD 322,5 M).",
+        "fuente_id": "uncomtrade-ar-lote6-2024"
+      },
+      {
+        "id": "lb-ifa-out2",
+        "lado": "salida",
+        "categoria": "emision",
+        "nombre": "Fondos y aguas madres",
+        "formula": "Residuo orgánico",
+        "cantidad_masa": "Sin dato público",
+        "cantidad_molar": null,
+        "fraccion_pureza": "Tratamiento COV",
+        "corriente_num": 8,
+        "y": 310,
+        "nota": "Recuperación cerrada de solventes (EU OFC BREF).",
+        "fuente_id": "eu-bref-ofc-2006"
+      }
+    ]
   }
 ]

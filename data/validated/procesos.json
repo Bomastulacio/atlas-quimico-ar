@@ -691,5 +691,137 @@
       "cita_ubicacion": "EU FDM BREF Fruit Juice Evaporation & Essential Oil Recovery + FeCiER",
       "confianza": "alta"
     }
+  },
+  {
+    "proceso_id": "resina-destilacion-colofonia",
+    "producto_id": "resina-colofonia",
+    "nombre": "Destilación de oleorresina de pino a colofonia y trementina (Corrientes)",
+    "ruta_tecnologica": "Fusión y dilución en trementina + filtración de impurezas forestales + decantación de agua + destilación con arrastre de vapor (175 °C) + enfriamiento de colofonia",
+    "reaccion_global": "Oleorresina de Pinus elliottii -> Colofonia (C20H30O2, ~70%) + Trementina (C10H16, ~18%) + H2O",
+    "energia_especifica": {
+      "estado": "sin_datos",
+      "valor": null,
+      "unidad": null,
+      "procedencia": {
+        "anio": 2006,
+        "fuente_id": "eu-bref-ofc-2006",
+        "fuente": "Reference Document on Best Available Techniques for the Manufacture of Organic Fine Chemicals (OFC BREF)",
+        "url": "https://bureau-industrial-transformation.jrc.ec.europa.eu/reference/manufacture-organic-fine-chemicals",
+        "fecha_descarga": "2026-11-26",
+        "hash": "sha256:e626ff725b025d75d5c7f8f5c66d3603ae3c19e4252fcee386a308e144e49a7a",
+        "cita_ubicacion": "EU OFC BREF Organic Fine Chemicals + Grupo San Francisco Virasoro",
+        "confianza": "alta"
+      }
+    },
+    "descripcion": "Separación físico-química de la miera de Pinus elliottii en Gobernador Virasoro (Corrientes): limpieza, decantación y destilación continua por arrastre de vapor para obtener trementina volátil (α/β-pineno) y colofonia vítrea de alta pureza.",
+    "procedencia": {
+      "anio": 2006,
+      "fuente_id": "eu-bref-ofc-2006",
+      "fuente": "Reference Document on Best Available Techniques for the Manufacture of Organic Fine Chemicals (OFC BREF)",
+      "url": "https://bureau-industrial-transformation.jrc.ec.europa.eu/reference/manufacture-organic-fine-chemicals",
+      "fecha_descarga": "2026-11-26",
+      "hash": "sha256:e626ff725b025d75d5c7f8f5c66d3603ae3c19e4252fcee386a308e144e49a7a",
+      "cita_ubicacion": "EU OFC BREF distillation & solvent separation + gruposanfrancisco.com.ar",
+      "confianza": "alta"
+    }
+  },
+  {
+    "proceso_id": "tanino-extraccion-quebracho",
+    "producto_id": "tanino-quebracho",
+    "nombre": "Extracción sólido-líquido y atomización de extracto de quebracho (Formosa)",
+    "ruta_tecnologica": "Chipeado y aserrado de duramen + batería de autoclaves difusores contracorriente (110 °C) + evaporación multiefecto al vacío + sulfitación opcional + secado spray",
+    "reaccion_global": "Duramen de Schinopsis balansae + H2O (110 °C) -> Polifenoles tánicos (C15H12O6)n + Aserrín agotado (biomasa)",
+    "energia_especifica": {
+      "estado": "sin_datos",
+      "valor": null,
+      "unidad": null,
+      "procedencia": {
+        "anio": 2013,
+        "fuente_id": "eu-bref-tan-2013",
+        "fuente": "Best Available Techniques (BAT) Reference Document for the Tanning of Hides and Skins (TAN BREF · Vegetable Tannins)",
+        "url": "https://bureau-industrial-transformation.jrc.ec.europa.eu/reference/tanning-hides-and-skins",
+        "fecha_descarga": "2026-11-26",
+        "hash": "sha256:00fcedb65645d9f2e754355046e25d6e5788a3664441200b9fcd5fad3a0cfad7",
+        "cita_ubicacion": "EU TAN BREF Vegetable Tannins + EU FDM BREF Evaporation & Spray Drying + Unitán Formosa",
+        "confianza": "alta"
+      }
+    },
+    "descripcion": "Lixiviación acuosa presurizada en contracorriente de chips de quebracho colorado en Formosa, concentración del licor tánico en evaporadores de múltiple efecto, tratamiento soluble con bisulfito y secado por atomización en polvo, con valorización energética del aserrín agotado.",
+    "procedencia": {
+      "anio": 2013,
+      "fuente_id": "eu-bref-tan-2013",
+      "fuente": "Best Available Techniques (BAT) Reference Document for the Tanning of Hides and Skins (TAN BREF · Vegetable Tannins)",
+      "url": "https://bureau-industrial-transformation.jrc.ec.europa.eu/reference/tanning-hides-and-skins",
+      "fecha_descarga": "2026-11-26",
+      "hash": "sha256:00fcedb65645d9f2e754355046e25d6e5788a3664441200b9fcd5fad3a0cfad7",
+      "cita_ubicacion": "EU TAN BREF vegetable tanning agents + unitan.net",
+      "confianza": "alta"
+    }
+  },
+  {
+    "proceso_id": "oliva-extraccion-dos-fases",
+    "producto_id": "aceite-oliva",
+    "nombre": "Extracción continua en frío de aceite de oliva virgen extra (La Rioja)",
+    "ruta_tecnologica": "Limpieza y molienda de aceitunas + malaxado termo-controlado (27 °C) + centrifugación decanter horizontal 2 fases + separadora vertical + conservación bajo N2",
+    "reaccion_global": "Fruto Olea europaea (en frío < 27 °C) -> Aceite de oliva virgen extra (C57H104O6, ~18%) + Alperujo húmedo",
+    "energia_especifica": {
+      "estado": "sin_datos",
+      "valor": null,
+      "unidad": null,
+      "procedencia": {
+        "anio": 2026,
+        "fuente_id": "eu-bref-fdm",
+        "fuente": "Reference Document on Best Available Techniques in the Food, Drink and Milk Industries (FDM BREF)",
+        "url": "https://bureau-industrial-transformation.jrc.ec.europa.eu/reference/food-drink-and-milk-industries",
+        "fecha_descarga": "2026-11-26",
+        "hash": "sha256:5c44b5656510d12b3e8bd7c74f2095b18f1f106e949fa98b392429ac0847851b",
+        "cita_ubicacion": "EU FDM BREF Vegetable Oil Mechanical Extraction + FOA + Valle de la Puerta / Agro Aceitunera",
+        "confianza": "alta"
+      }
+    },
+    "descripcion": "Extracción exclusivamente mecánica y en frío (< 27 °C) en los valles de Chilecito y Arauco: molienda, coalescencia en amasadoras, separación sólido-líquido en decanter horizontal de dos fases (que minimiza agua residual) y clarificación centrífuga bajo atmósfera inerte de nitrógeno.",
+    "procedencia": {
+      "anio": 2026,
+      "fuente_id": "eu-bref-fdm",
+      "fuente": "Reference Document on Best Available Techniques in the Food, Drink and Milk Industries (FDM BREF)",
+      "url": "https://bureau-industrial-transformation.jrc.ec.europa.eu/reference/food-drink-and-milk-industries",
+      "fecha_descarga": "2026-11-26",
+      "hash": "sha256:5c44b5656510d12b3e8bd7c74f2095b18f1f106e949fa98b392429ac0847851b",
+      "cita_ubicacion": "EU FDM BREF mechanical olive oil extraction + federacionolivicolaargentina.com.ar",
+      "confianza": "alta"
+    }
+  },
+  {
+    "proceso_id": "farmoquimica-sintesis-ifa",
+    "producto_id": "farmoquimica-ifa",
+    "nombre": "Síntesis orgánica fina multipropósito GMP de principios activos (CABA)",
+    "ruta_tecnologica": "Reacción orgánica en reactor batch esmaltado + recuperación de solventes por destilación + cristalización controlada + centrifugación de torta + secado al vacío y micronización GMP",
+    "reaccion_global": "Intermedios orgánicos + Reactivos finos (GMP) -> Ingrediente Farmacéutico Activo (IFA >=99,5%) + Solvente recuperado",
+    "energia_especifica": {
+      "estado": "sin_datos",
+      "valor": null,
+      "unidad": null,
+      "procedencia": {
+        "anio": 2006,
+        "fuente_id": "eu-bref-ofc-2006",
+        "fuente": "Reference Document on Best Available Techniques for the Manufacture of Organic Fine Chemicals (OFC BREF)",
+        "url": "https://bureau-industrial-transformation.jrc.ec.europa.eu/reference/manufacture-organic-fine-chemicals",
+        "fecha_descarga": "2026-11-26",
+        "hash": "sha256:e626ff725b025d75d5c7f8f5c66d3603ae3c19e4252fcee386a308e144e49a7a",
+        "cita_ubicacion": "EU OFC BREF Multipurpose Batch API Synthesis + INDEC + Maprimed / Insud Pharma",
+        "confianza": "alta"
+      }
+    },
+    "descripcion": "Síntesis química fina en campañas GMP en Comuna 9 (CABA): reacciones orgánicas controladas térmicamente en reactores multipropósito, recuperación cerrada de solventes, purificación por cristalización, separación centrífuga y secado al vacío en salas limpias.",
+    "procedencia": {
+      "anio": 2006,
+      "fuente_id": "eu-bref-ofc-2006",
+      "fuente": "Reference Document on Best Available Techniques for the Manufacture of Organic Fine Chemicals (OFC BREF)",
+      "url": "https://bureau-industrial-transformation.jrc.ec.europa.eu/reference/manufacture-organic-fine-chemicals",
+      "fecha_descarga": "2026-11-26",
+      "hash": "sha256:e626ff725b025d75d5c7f8f5c66d3603ae3c19e4252fcee386a308e144e49a7a",
+      "cita_ubicacion": "EU OFC BREF Chapter 2 API multipurpose synthesis + insudpharma.com + INDEC",
+      "confianza": "alta"
+    }
   }
 ]
