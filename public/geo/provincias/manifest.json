@@ -1,0 +1,156 @@
+{
+  "version": 1,
+  "fuente": "https://apis.datos.gob.ar/georef/api/v2.0/departamentos.geojson",
+  "organismo": "IGN / API Georef v2.0",
+  "fecha_descarga": "2026-11-27",
+  "hash_raw": "sha256:31afdfe5983b6d7648eba1eafc7a5a8fe3c591abdca4b17c311c08c75d361e92",
+  "total_provincias": 24,
+  "total_departamentos": 527,
+  "total_bytes": 524900,
+  "provincias": {
+    "10": {
+      "departamentos": 16,
+      "activos": 1,
+      "bytes": 20683,
+      "hash": "sha256:7eb9ccda8685cd344ba0ae7e7f5edd9b4279e6670dcd454bd2cc7043390af5fa"
+    },
+    "14": {
+      "departamentos": 26,
+      "activos": 2,
+      "bytes": 29728,
+      "hash": "sha256:cc7073dcbd434dc607c081952d6e01c63c4c7ee1dfdc1d86e76a94e66bf7748b"
+    },
+    "18": {
+      "departamentos": 25,
+      "activos": 1,
+      "bytes": 31537,
+      "hash": "sha256:15283d05b0f7a5fef63987b05f995f7e3a4647f52bb7490334bad275d5d9ac6d"
+    },
+    "22": {
+      "departamentos": 25,
+      "activos": 3,
+      "bytes": 16731,
+      "hash": "sha256:a81efa12f2e7bbd3ba74c5d7d8d6d8eecf290db01d5a6aa61b12b2d438149f80"
+    },
+    "26": {
+      "departamentos": 15,
+      "activos": 1,
+      "bytes": 16895,
+      "hash": "sha256:0f07becd0d15022989a9eb17cea374aa795b0adaf7d60e306350304633843742"
+    },
+    "30": {
+      "departamentos": 17,
+      "activos": 2,
+      "bytes": 28958,
+      "hash": "sha256:ea1f219084848f3347c6a132a02d477b3671b8edc3b127c926a3ebfc7e999703"
+    },
+    "34": {
+      "departamentos": 9,
+      "activos": 1,
+      "bytes": 12594,
+      "hash": "sha256:9a6ddb312cc51ebfacfd1587479ca4b060c741a390504bd63fd8e225bbe261de"
+    },
+    "38": {
+      "departamentos": 16,
+      "activos": 1,
+      "bytes": 16102,
+      "hash": "sha256:60b38bbf8b146258614c0902c1804248851e5aaade4debde65c6c18bebb34140"
+    },
+    "42": {
+      "departamentos": 22,
+      "activos": 2,
+      "bytes": 9576,
+      "hash": "sha256:975e8bbf4732d6f940893dbadeb6acf75a4776f9bbaba2847f42c6b57cc99476"
+    },
+    "46": {
+      "departamentos": 18,
+      "activos": 2,
+      "bytes": 11741,
+      "hash": "sha256:542764c2b67b057ec393d216f82d5d2e29dc91f6e15a4451171695cc20ca9c1f"
+    },
+    "50": {
+      "departamentos": 18,
+      "activos": 1,
+      "bytes": 20014,
+      "hash": "sha256:8dbb084c76561c027a4a137613c06667d2ef82ba25b1f08eb10bbd47f9b46ea0"
+    },
+    "54": {
+      "departamentos": 17,
+      "activos": 2,
+      "bytes": 22322,
+      "hash": "sha256:48032c16ca9176164b2d09a44a350798b88ab76b8989dcf136a74dd72d2fb650"
+    },
+    "58": {
+      "departamentos": 16,
+      "activos": 1,
+      "bytes": 22815,
+      "hash": "sha256:a954aca378ceb2c77842f6234f00275a96f7c284c7dfbd43a73f3cf5ab602366"
+    },
+    "62": {
+      "departamentos": 13,
+      "activos": 1,
+      "bytes": 13456,
+      "hash": "sha256:42a3dd13682fcea494cf86bd918707747b869d1b3dbdcb914defbd8cbfc3d6a6"
+    },
+    "66": {
+      "departamentos": 23,
+      "activos": 1,
+      "bytes": 30395,
+      "hash": "sha256:de6793e64fd6a574c8cc239bb22b855e4067efa55b91799d32a76247f4c77fcb"
+    },
+    "70": {
+      "departamentos": 19,
+      "activos": 1,
+      "bytes": 19256,
+      "hash": "sha256:b4d112fd99a3531954aa71e1342854c6dd7dda02934852b2b6958352add291b0"
+    },
+    "74": {
+      "departamentos": 9,
+      "activos": 1,
+      "bytes": 13109,
+      "hash": "sha256:69903befec1fb00312c73b6f411363fe05ef162866e26e8114ec9b3da70fa762"
+    },
+    "78": {
+      "departamentos": 7,
+      "activos": 2,
+      "bytes": 12758,
+      "hash": "sha256:4afa92718650cd77f459247ebc8384df774266a53c7bd7845f26946498a746cc"
+    },
+    "82": {
+      "departamentos": 19,
+      "activos": 2,
+      "bytes": 25280,
+      "hash": "sha256:59ed512447041ffc88ac4a3ee9b73e44cabd78dd3607b0f97f9c134bde806657"
+    },
+    "86": {
+      "departamentos": 27,
+      "activos": 2,
+      "bytes": 28771,
+      "hash": "sha256:c420b25c0df2fb6e4f65f58850e9c6e03be3c29f2f906fff1c6a0fc5f535cfbd"
+    },
+    "90": {
+      "departamentos": 17,
+      "activos": 1,
+      "bytes": 14321,
+      "hash": "sha256:6588a78f89acf1d09ee27edde453c39a7ad5619f3a230ed3ac64143bc514bc2b"
+    },
+    "94": {
+      "departamentos": 3,
+      "activos": 1,
+      "bytes": 7223,
+      "hash": "sha256:b06be2a6fd04990c0a942debf3e1e2b3c3567ab282384a692cd247da213e15da"
+    },
+    "02": {
+      "departamentos": 15,
+      "activos": 1,
+      "bytes": 8691,
+      "hash": "sha256:b50ce913f892b4c5a6f781a64ee557f7a6f544472ccdc43ccfb4038d5745579c"
+    },
+    "06": {
+      "departamentos": 135,
+      "activos": 2,
+      "bytes": 91944,
+      "hash": "sha256:bad92ed306eba51f0ad9fae7021fed890addd633bfcc3dddde81f14103533937"
+    }
+  }
+}
