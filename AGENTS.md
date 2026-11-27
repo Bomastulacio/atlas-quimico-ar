@@ -32,6 +32,7 @@ Este archivo define las reglas operativas obligatorias para cualquier agente o c
 - **Código determinista primero:** descargas con SHA-256, parseo tabular, validación de esquema, balances atómicos/másicos/estequiométricos, verificación energética, coherencia de grafos y generación de SQL/PR son código Python determinista, no LLMs.
 - **Modelos por variables de entorno:** nunca hardcodear modelos en código (`AGENT1_MODEL`, `AGENT2_MODEL`, `AGENT3_MODEL` en `.env`). Respetar cuotas gratuitas de Gemini (`PIPELINE_MAX_RPM`, cache por hash de archivo, máximo 2 reintentos por paso).
 - **Verificador independiente (Agente 3):** evalúa con contexto limpio, sin ver razonamientos de Agentes 1 y 2; devuelve únicamente `APROBADO`, `RECHAZADO` o `REQUIERE_REVISION_HUMANA` con motivo.
+- **Descubrimiento multi-agente previo (`atlas-deep-research`):** para relevamientos amplios de empresas, cadenas nuevas o vínculos B2B públicos antes de descargar crudos, activar `.agents/skills/atlas-deep-research/SKILL.md` (adaptada de `google-gemini/demolab` `deep-research` v1.0.0) en el asistente interactivo; entrega tablas de URLs primarias y citas literales para alimentar el descargador determinista `sha256` sin meter búsqueda web libre dentro de los Agentes 1–3 offline.
 
 ## 4. Convenciones de código, diseño y Git
 
