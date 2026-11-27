@@ -1,0 +1,1322 @@
+[
+  {
+    "unidad_id": "u-ypf-cie-btx",
+    "planta_id": "ypf-cie-ensenada",
+    "proceso_id": "petroquimica-reformado-btx-ensenada",
+    "producto_id": "petroquimica",
+    "nombre_unidad": "Unidad Aromáticos BTX (Benceno, Tolueno y Xilenos)",
+    "rol_unidad": "principal",
+    "capacidad": {
+      "estado": "dato",
+      "valor": 526000,
+      "unidad": "t/año BTX",
+      "procedencia": {
+        "anio": 2025,
+        "fuente_id": "ypf-sec-20f-2025",
+        "fuente": "YPF Sociedad Anónima — Form 20-F Annual Report (Ejercicio finalizado el 31/12/2025)",
+        "url": "https://www.sec.gov/Archives/edgar/data/904851/000119312526126363/d95578d20f.htm",
+        "fecha_descarga": "2026-11-27",
+        "hash": "sha256:8d9d89011f05c6525bc48aaf98862cf3e985496b6622baddea112f1c020894ac",
+        "cita_ubicacion": "Form 20-F FY2025 Item 4 pág. 34 (CIE BTX 526.000 t/año)",
+        "confianza": "alta"
+      }
+    },
+    "procedencia": {
+      "anio": 2025,
+      "fuente_id": "ypf-sec-20f-2025",
+      "fuente": "YPF Sociedad Anónima — Form 20-F Annual Report (Ejercicio finalizado el 31/12/2025)",
+      "url": "https://www.sec.gov/Archives/edgar/data/904851/000119312526126363/d95578d20f.htm",
+      "fecha_descarga": "2026-11-27",
+      "hash": "sha256:8d9d89011f05c6525bc48aaf98862cf3e985496b6622baddea112f1c020894ac",
+      "cita_ubicacion": "Form 20-F FY2025 Item 4 pág. 34 (CIE BTX 526.000 t/año)",
+      "confianza": "alta"
+    }
+  },
+  {
+    "unidad_id": "u-ypf-cie-reformado",
+    "planta_id": "ypf-cie-ensenada",
+    "proceso_id": "petroquimica-reformado-btx-ensenada",
+    "producto_id": "petroquimica",
+    "nombre_unidad": "Unidad de Reformado Catalítico de Nafta (CIE)",
+    "rol_unidad": "integrada",
+    "capacidad": {
+      "estado": "dato",
+      "valor": 520760,
+      "unidad": "t/año reformado",
+      "procedencia": {
+        "anio": 2025,
+        "fuente_id": "ypf-sec-20f-2025",
+        "fuente": "YPF Sociedad Anónima — Form 20-F Annual Report (Ejercicio finalizado el 31/12/2025)",
+        "url": "https://www.sec.gov/Archives/edgar/data/904851/000119312526126363/d95578d20f.htm",
+        "fecha_descarga": "2026-11-27",
+        "hash": "sha256:8d9d89011f05c6525bc48aaf98862cf3e985496b6622baddea112f1c020894ac",
+        "cita_ubicacion": "Form 20-F FY2025 Item 4 pág. 34 (CIE Reforming 520.760 t/año)",
+        "confianza": "alta"
+      }
+    },
+    "procedencia": {
+      "anio": 2025,
+      "fuente_id": "ypf-sec-20f-2025",
+      "fuente": "YPF Sociedad Anónima — Form 20-F Annual Report (Ejercicio finalizado el 31/12/2025)",
+      "url": "https://www.sec.gov/Archives/edgar/data/904851/000119312526126363/d95578d20f.htm",
+      "fecha_descarga": "2026-11-27",
+      "hash": "sha256:8d9d89011f05c6525bc48aaf98862cf3e985496b6622baddea112f1c020894ac",
+      "cita_ubicacion": "Form 20-F FY2025 Item 4 pág. 34 (CIE Reforming 520.760 t/año)",
+      "confianza": "alta"
+    }
+  },
+  {
+    "unidad_id": "u-ypf-cie-propileno",
+    "planta_id": "ypf-cie-ensenada",
+    "proceso_id": "petroquimica-reformado-btx-ensenada",
+    "producto_id": "petroquimica",
+    "nombre_unidad": "Unidad Propileno, Ciclohexano (95 kt) y LAB (53 kt)",
+    "rol_unidad": "integrada",
+    "capacidad": {
+      "estado": "dato",
+      "valor": 120000,
+      "unidad": "t/año propileno",
+      "procedencia": {
+        "anio": 2025,
+        "fuente_id": "ypf-sec-20f-2025",
+        "fuente": "YPF Sociedad Anónima — Form 20-F Annual Report (Ejercicio finalizado el 31/12/2025)",
+        "url": "https://www.sec.gov/Archives/edgar/data/904851/000119312526126363/d95578d20f.htm",
+        "fecha_descarga": "2026-11-27",
+        "hash": "sha256:8d9d89011f05c6525bc48aaf98862cf3e985496b6622baddea112f1c020894ac",
+        "cita_ubicacion": "Form 20-F FY2025 Item 4 pág. 34 (CIE Propylene 120.000 t/año; Cyclohexane 95.000; LAB 53.000)",
+        "confianza": "alta"
+      }
+    },
+    "procedencia": {
+      "anio": 2025,
+      "fuente_id": "ypf-sec-20f-2025",
+      "fuente": "YPF Sociedad Anónima — Form 20-F Annual Report (Ejercicio finalizado el 31/12/2025)",
+      "url": "https://www.sec.gov/Archives/edgar/data/904851/000119312526126363/d95578d20f.htm",
+      "fecha_descarga": "2026-11-27",
+      "hash": "sha256:8d9d89011f05c6525bc48aaf98862cf3e985496b6622baddea112f1c020894ac",
+      "cita_ubicacion": "Form 20-F FY2025 Item 4 pág. 34 (CIE Propylene 120.000 t/año; Cyclohexane 95.000; LAB 53.000)",
+      "confianza": "alta"
+    }
+  },
+  {
+    "unidad_id": "u-ypf-cie-refineria",
+    "planta_id": "ypf-cie-ensenada",
+    "proceso_id": "petroquimica-reformado-btx-ensenada",
+    "producto_id": "petroquimica",
+    "nombre_unidad": "Refinería La Plata (Destilación, Coqueo y FCC)",
+    "rol_unidad": "integrada",
+    "capacidad": {
+      "estado": "dato",
+      "valor": 198.9,
+      "unidad": "kbbl/d crudo",
+      "procedencia": {
+        "anio": 2025,
+        "fuente_id": "ypf-sec-20f-2025",
+        "fuente": "YPF Sociedad Anónima — Form 20-F Annual Report (Ejercicio finalizado el 31/12/2025)",
+        "url": "https://www.sec.gov/Archives/edgar/data/904851/000119312526126363/d95578d20f.htm",
+        "fecha_descarga": "2026-11-27",
+        "hash": "sha256:8d9d89011f05c6525bc48aaf98862cf3e985496b6622baddea112f1c020894ac",
+        "cita_ubicacion": "Form 20-F FY2025 Item 4 Refining Units (La Plata nominal capacity 198,9 kbbl/d; 2025 throughput 190,2 kbbl/d)",
+        "confianza": "alta"
+      }
+    },
+    "procedencia": {
+      "anio": 2025,
+      "fuente_id": "ypf-sec-20f-2025",
+      "fuente": "YPF Sociedad Anónima — Form 20-F Annual Report (Ejercicio finalizado el 31/12/2025)",
+      "url": "https://www.sec.gov/Archives/edgar/data/904851/000119312526126363/d95578d20f.htm",
+      "fecha_descarga": "2026-11-27",
+      "hash": "sha256:8d9d89011f05c6525bc48aaf98862cf3e985496b6622baddea112f1c020894ac",
+      "cita_ubicacion": "Form 20-F FY2025 Item 4 Refining Units (La Plata nominal capacity 198,9 kbbl/d; 2025 throughput 190,2 kbbl/d)",
+      "confianza": "alta"
+    }
+  },
+  {
+    "unidad_id": "u-ypf-cilc-propileno",
+    "planta_id": "ypf-cilc-lujan-de-cuyo",
+    "proceso_id": "polipropileno-fcc-polimerizacion",
+    "producto_id": "polipropileno",
+    "nombre_unidad": "Unidad de Recuperación de Propileno (FCC)",
+    "rol_unidad": "principal",
+    "capacidad": {
+      "estado": "dato",
+      "valor": 100000,
+      "unidad": "t/año propileno",
+      "procedencia": {
+        "anio": 2025,
+        "fuente_id": "ypf-sec-20f-2025",
+        "fuente": "YPF Sociedad Anónima — Form 20-F Annual Report (Ejercicio finalizado el 31/12/2025)",
+        "url": "https://www.sec.gov/Archives/edgar/data/904851/000119312526126363/d95578d20f.htm",
+        "fecha_descarga": "2026-11-27",
+        "hash": "sha256:8d9d89011f05c6525bc48aaf98862cf3e985496b6622baddea112f1c020894ac",
+        "cita_ubicacion": "Form 20-F FY2025 Item 4 pág. 34 (Luján de Cuyo Propylene 100.000 t/año)",
+        "confianza": "alta"
+      }
+    },
+    "procedencia": {
+      "anio": 2025,
+      "fuente_id": "ypf-sec-20f-2025",
+      "fuente": "YPF Sociedad Anónima — Form 20-F Annual Report (Ejercicio finalizado el 31/12/2025)",
+      "url": "https://www.sec.gov/Archives/edgar/data/904851/000119312526126363/d95578d20f.htm",
+      "fecha_descarga": "2026-11-27",
+      "hash": "sha256:8d9d89011f05c6525bc48aaf98862cf3e985496b6622baddea112f1c020894ac",
+      "cita_ubicacion": "Form 20-F FY2025 Item 4 pág. 34 (Luján de Cuyo Propylene 100.000 t/año)",
+      "confianza": "alta"
+    }
+  },
+  {
+    "unidad_id": "u-ypf-cilc-refineria",
+    "planta_id": "ypf-cilc-lujan-de-cuyo",
+    "proceso_id": "polipropileno-fcc-polimerizacion",
+    "producto_id": "polipropileno",
+    "nombre_unidad": "Refinería Luján de Cuyo (Topping, Coqueo y Hydrocracker)",
+    "rol_unidad": "integrada",
+    "capacidad": {
+      "estado": "dato",
+      "valor": 113.9,
+      "unidad": "kbbl/d crudo",
+      "procedencia": {
+        "anio": 2025,
+        "fuente_id": "ypf-sec-20f-2025",
+        "fuente": "YPF Sociedad Anónima — Form 20-F Annual Report (Ejercicio finalizado el 31/12/2025)",
+        "url": "https://www.sec.gov/Archives/edgar/data/904851/000119312526126363/d95578d20f.htm",
+        "fecha_descarga": "2026-11-27",
+        "hash": "sha256:8d9d89011f05c6525bc48aaf98862cf3e985496b6622baddea112f1c020894ac",
+        "cita_ubicacion": "Form 20-F FY2025 Item 4 Refining Units (Luján de Cuyo nominal capacity 113,9 kbbl/d; 2025 throughput 108,6 kbbl/d)",
+        "confianza": "alta"
+      }
+    },
+    "procedencia": {
+      "anio": 2025,
+      "fuente_id": "ypf-sec-20f-2025",
+      "fuente": "YPF Sociedad Anónima — Form 20-F Annual Report (Ejercicio finalizado el 31/12/2025)",
+      "url": "https://www.sec.gov/Archives/edgar/data/904851/000119312526126363/d95578d20f.htm",
+      "fecha_descarga": "2026-11-27",
+      "hash": "sha256:8d9d89011f05c6525bc48aaf98862cf3e985496b6622baddea112f1c020894ac",
+      "cita_ubicacion": "Form 20-F FY2025 Item 4 Refining Units (Luján de Cuyo nominal capacity 113,9 kbbl/d; 2025 throughput 108,6 kbbl/d)",
+      "confianza": "alta"
+    }
+  },
+  {
+    "unidad_id": "u-ypf-ciph-metanol",
+    "planta_id": "ypf-metanol-plaza-huincul",
+    "proceso_id": "metanol-reformado-sintesis",
+    "producto_id": "metanol",
+    "nombre_unidad": "Planta de Síntesis de Metanol (CH3OH)",
+    "rol_unidad": "principal",
+    "capacidad": {
+      "estado": "dato",
+      "valor": 411000,
+      "unidad": "t/año CH3OH",
+      "procedencia": {
+        "anio": 2025,
+        "fuente_id": "ypf-sec-20f-2025",
+        "fuente": "YPF Sociedad Anónima — Form 20-F Annual Report (Ejercicio finalizado el 31/12/2025)",
+        "url": "https://www.sec.gov/Archives/edgar/data/904851/000119312526126363/d95578d20f.htm",
+        "fecha_descarga": "2026-11-27",
+        "hash": "sha256:8d9d89011f05c6525bc48aaf98862cf3e985496b6622baddea112f1c020894ac",
+        "cita_ubicacion": "Form 20-F FY2025 Item 4 pág. 34 (Plaza Huincul Methanol 411.000 t/año)",
+        "confianza": "alta"
+      }
+    },
+    "procedencia": {
+      "anio": 2025,
+      "fuente_id": "ypf-sec-20f-2025",
+      "fuente": "YPF Sociedad Anónima — Form 20-F Annual Report (Ejercicio finalizado el 31/12/2025)",
+      "url": "https://www.sec.gov/Archives/edgar/data/904851/000119312526126363/d95578d20f.htm",
+      "fecha_descarga": "2026-11-27",
+      "hash": "sha256:8d9d89011f05c6525bc48aaf98862cf3e985496b6622baddea112f1c020894ac",
+      "cita_ubicacion": "Form 20-F FY2025 Item 4 pág. 34 (Plaza Huincul Methanol 411.000 t/año)",
+      "confianza": "alta"
+    }
+  },
+  {
+    "unidad_id": "u-ypf-ciph-refineria",
+    "planta_id": "ypf-metanol-plaza-huincul",
+    "proceso_id": "metanol-reformado-sintesis",
+    "producto_id": "metanol",
+    "nombre_unidad": "Refinería Plaza Huincul (Naftas, Gasoil y Jet Fuel)",
+    "rol_unidad": "integrada",
+    "capacidad": {
+      "estado": "dato",
+      "valor": 25.2,
+      "unidad": "kbbl/d crudo",
+      "procedencia": {
+        "anio": 2025,
+        "fuente_id": "ypf-sec-20f-2025",
+        "fuente": "YPF Sociedad Anónima — Form 20-F Annual Report (Ejercicio finalizado el 31/12/2025)",
+        "url": "https://www.sec.gov/Archives/edgar/data/904851/000119312526126363/d95578d20f.htm",
+        "fecha_descarga": "2026-11-27",
+        "hash": "sha256:8d9d89011f05c6525bc48aaf98862cf3e985496b6622baddea112f1c020894ac",
+        "cita_ubicacion": "Form 20-F FY2025 Item 4 Refining Units (Plaza Huincul nominal capacity 25,2 kbbl/d; 2025 throughput 21,4 kbbl/d)",
+        "confianza": "alta"
+      }
+    },
+    "procedencia": {
+      "anio": 2025,
+      "fuente_id": "ypf-sec-20f-2025",
+      "fuente": "YPF Sociedad Anónima — Form 20-F Annual Report (Ejercicio finalizado el 31/12/2025)",
+      "url": "https://www.sec.gov/Archives/edgar/data/904851/000119312526126363/d95578d20f.htm",
+      "fecha_descarga": "2026-11-27",
+      "hash": "sha256:8d9d89011f05c6525bc48aaf98862cf3e985496b6622baddea112f1c020894ac",
+      "cita_ubicacion": "Form 20-F FY2025 Item 4 Refining Units (Plaza Huincul nominal capacity 25,2 kbbl/d; 2025 throughput 21,4 kbbl/d)",
+      "confianza": "alta"
+    }
+  },
+  {
+    "unidad_id": "u-aluar-puerto-madryn",
+    "planta_id": "aluar-puerto-madryn",
+    "proceso_id": "aluminio-hall-heroult",
+    "producto_id": "aluminio",
+    "nombre_unidad": "Planta Aluar (División Aluminio Primario)",
+    "rol_unidad": "principal",
+    "capacidad": {
+      "estado": "dato",
+      "valor": 460000,
+      "unidad": "t/año",
+      "procedencia": {
+        "anio": 2025,
+        "fuente_id": "aluar-web-institucional",
+        "fuente": "Portal institucional y cifras operativas (Aluar)",
+        "url": "https://www.aluar.com.ar/",
+        "fecha_descarga": "2026-11-24",
+        "hash": "sha256:a48420cd0884320a8a077268515d54811636d964ef983048fd8e231e56362496",
+        "cita_ubicacion": "aluar.com.ar sección Aluar en cifras (460.000 t/año) y Memoria 2025 Nota 35 pág. 50 (Ruta Prov. A010 Parque Industrial Pesado)",
+        "confianza": "alta"
+      }
+    },
+    "procedencia": {
+      "anio": 2025,
+      "fuente_id": "aluar-web-institucional",
+      "fuente": "Portal institucional y cifras operativas (Aluar)",
+      "url": "https://www.aluar.com.ar/",
+      "fecha_descarga": "2026-11-24",
+      "hash": "sha256:a48420cd0884320a8a077268515d54811636d964ef983048fd8e231e56362496",
+      "cita_ubicacion": "aluar.com.ar sección Aluar en cifras (460.000 t/año) y Memoria 2025 Nota 35 pág. 50 (Ruta Prov. A010 Parque Industrial Pesado)",
+      "confianza": "alta"
+    }
+  },
+  {
+    "unidad_id": "u-fenix-hombre-muerto",
+    "planta_id": "fenix-hombre-muerto",
+    "proceso_id": "litio-dle-adsorcion",
+    "producto_id": "litio",
+    "nombre_unidad": "Planta Fénix (Salar del Hombre Muerto)",
+    "rol_unidad": "principal",
+    "capacidad": {
+      "estado": "dato",
+      "valor": 32000,
+      "unidad": "t/año LCE",
+      "procedencia": {
+        "anio": 2026,
+        "fuente_id": "riotinto-fenix-2026",
+        "fuente": "Ficha oficial de operación Fénix (Salar del Hombre Muerto, Catamarca)",
+        "url": "https://www.riotinto.com/en/operations/south-america/fenix",
+        "fecha_descarga": "2026-11-24",
+        "hash": "sha256:424d17d8d2353a97a4848a105ca616c6a483e4d0e4ced5360b1cec7cb9127e2b",
+        "cita_ubicacion": "riotinto.com/en/operations/south-america/fenix (100% Rio Tinto, 32 ktpa LCE, inicio 1997)",
+        "confianza": "alta"
+      }
+    },
+    "procedencia": {
+      "anio": 2026,
+      "fuente_id": "riotinto-fenix-2026",
+      "fuente": "Ficha oficial de operación Fénix (Salar del Hombre Muerto, Catamarca)",
+      "url": "https://www.riotinto.com/en/operations/south-america/fenix",
+      "fecha_descarga": "2026-11-24",
+      "hash": "sha256:424d17d8d2353a97a4848a105ca616c6a483e4d0e4ced5360b1cec7cb9127e2b",
+      "cita_ubicacion": "riotinto.com/en/operations/south-america/fenix (100% Rio Tinto, 32 ktpa LCE, inicio 1997)",
+      "confianza": "alta"
+    }
+  },
+  {
+    "unidad_id": "u-olaroz-sales-de-jujuy",
+    "planta_id": "olaroz-sales-de-jujuy",
+    "proceso_id": "litio-salmuera-carbonatacion",
+    "producto_id": "litio",
+    "nombre_unidad": "Planta Olaroz (Salar de Olaroz)",
+    "rol_unidad": "principal",
+    "capacidad": {
+      "estado": "sin_datos",
+      "valor": null,
+      "unidad": "t/año LCE",
+      "procedencia": {
+        "anio": 2026,
+        "fuente_id": "riotinto-olaroz-2026",
+        "fuente": "Ficha oficial de operación Olaroz (Jujuy)",
+        "url": "https://www.riotinto.com/en/operations/south-america/olaroz",
+        "fecha_descarga": "2026-11-24",
+        "hash": "sha256:af95dbcdee6cf821222e0bee00681f65512903c7271cb576e0a0c6b5ae7a13a0",
+        "cita_ubicacion": "riotinto.com/en/operations/south-america/olaroz (operativa desde 2014, 66,5% JV)",
+        "confianza": "alta"
+      }
+    },
+    "procedencia": {
+      "anio": 2026,
+      "fuente_id": "riotinto-olaroz-2026",
+      "fuente": "Ficha oficial de operación Olaroz (Jujuy)",
+      "url": "https://www.riotinto.com/en/operations/south-america/olaroz",
+      "fecha_descarga": "2026-11-24",
+      "hash": "sha256:af95dbcdee6cf821222e0bee00681f65512903c7271cb576e0a0c6b5ae7a13a0",
+      "cita_ubicacion": "riotinto.com/en/operations/south-america/olaroz (operativa desde 2014, 66,5% JV)",
+      "confianza": "alta"
+    }
+  },
+  {
+    "unidad_id": "u-rincon-salta",
+    "planta_id": "rincon-salta",
+    "proceso_id": "litio-dle-adsorcion",
+    "producto_id": "litio",
+    "nombre_unidad": "Planta Rincón 3000 y expansión (Salar del Rincón)",
+    "rol_unidad": "principal",
+    "capacidad": {
+      "estado": "dato",
+      "valor": 3000,
+      "unidad": "t/año LCE (planta inicial)",
+      "procedencia": {
+        "anio": 2026,
+        "fuente_id": "riotinto-rincon-2026",
+        "fuente": "Ficha oficial del proyecto Rincón (Salta)",
+        "url": "https://www.riotinto.com/en/operations/south-america/rincon",
+        "fecha_descarga": "2026-11-24",
+        "hash": "sha256:b3668429bd53a4e754b1459208fe4f7b3cc80273f893a99d272588d30b599f45",
+        "cita_ubicacion": "riotinto.com/en/operations/south-america/rincon (planta inicial 3.000 t/año nov 2024; ampliación 60 ktpa)",
+        "confianza": "alta"
+      }
+    },
+    "procedencia": {
+      "anio": 2026,
+      "fuente_id": "riotinto-rincon-2026",
+      "fuente": "Ficha oficial del proyecto Rincón (Salta)",
+      "url": "https://www.riotinto.com/en/operations/south-america/rincon",
+      "fecha_descarga": "2026-11-24",
+      "hash": "sha256:b3668429bd53a4e754b1459208fe4f7b3cc80273f893a99d272588d30b599f45",
+      "cita_ubicacion": "riotinto.com/en/operations/south-america/rincon (planta inicial 3.000 t/año nov 2024; ampliación 60 ktpa)",
+      "confianza": "alta"
+    }
+  },
+  {
+    "unidad_id": "u-profertil-ingeniero-white",
+    "planta_id": "profertil-ingeniero-white",
+    "proceso_id": "urea-haber-bosch-sintesis",
+    "producto_id": "urea",
+    "nombre_unidad": "Planta Profertil (Ingeniero White)",
+    "rol_unidad": "principal",
+    "capacidad": {
+      "estado": "dato",
+      "valor": 1320000,
+      "unidad": "t/año urea granulada",
+      "procedencia": {
+        "anio": 2026,
+        "fuente_id": "profertil-web-que-hacemos",
+        "fuente": "Proceso productivo y capacidades declaradas (Profertil S.A.)",
+        "url": "https://www.profertil.com.ar/index.php/que-hacemos",
+        "fecha_descarga": "2026-11-24",
+        "hash": "sha256:4a6b91bc6f405399b277d565c1e98a356b3a91165fddf4bc25b3f9f322e9c679",
+        "cita_ubicacion": "profertil.com.ar/index.php/que-hacemos (capacidad 1.320.000 t urea y 790.000 t amoníaco)",
+        "confianza": "alta"
+      }
+    },
+    "procedencia": {
+      "anio": 2026,
+      "fuente_id": "profertil-web-que-hacemos",
+      "fuente": "Proceso productivo y capacidades declaradas (Profertil S.A.)",
+      "url": "https://www.profertil.com.ar/index.php/que-hacemos",
+      "fecha_descarga": "2026-11-24",
+      "hash": "sha256:4a6b91bc6f405399b277d565c1e98a356b3a91165fddf4bc25b3f9f322e9c679",
+      "cita_ubicacion": "profertil.com.ar/index.php/que-hacemos (capacidad 1.320.000 t urea y 790.000 t amoníaco)",
+      "confianza": "alta"
+    }
+  },
+  {
+    "unidad_id": "u-buyatti-las-brenas",
+    "planta_id": "buyatti-las-brenas",
+    "proceso_id": "algodon-desmote-refinacion-celulosa",
+    "producto_id": "algodon",
+    "nombre_unidad": "Planta Desmotadora Buyatti (Las Breñas)",
+    "rol_unidad": "principal",
+    "capacidad": {
+      "estado": "sin_datos",
+      "valor": null,
+      "unidad": "t/año fibra",
+      "procedencia": {
+        "anio": 2026,
+        "fuente_id": "buyatti-web-2026",
+        "fuente": "Plantas industriales y desmote de algodón (Buyatti S.A.I.C.A.)",
+        "url": "https://buyatti.com.ar/",
+        "fecha_descarga": "2026-11-24",
+        "hash": "sha256:7f9e25e1da5fd7163415c3d5b08c73b5a2d1b577b93b10de4dca14cc16395e01",
+        "cita_ubicacion": "buyatti.com.ar (desmote y procesamiento de semilla de algodón, Las Breñas, Chaco)",
+        "confianza": "alta"
+      }
+    },
+    "procedencia": {
+      "anio": 2026,
+      "fuente_id": "buyatti-web-2026",
+      "fuente": "Plantas industriales y desmote de algodón (Buyatti S.A.I.C.A.)",
+      "url": "https://buyatti.com.ar/",
+      "fecha_descarga": "2026-11-24",
+      "hash": "sha256:7f9e25e1da5fd7163415c3d5b08c73b5a2d1b577b93b10de4dca14cc16395e01",
+      "cita_ubicacion": "buyatti.com.ar (desmote y procesamiento de semilla de algodón, Las Breñas, Chaco)",
+      "confianza": "alta"
+    }
+  },
+  {
+    "unidad_id": "u-renova-timbues-crushing",
+    "planta_id": "renova-timbues-crushing",
+    "proceso_id": "soja-molienda-extraccion-solvente",
+    "producto_id": "soja",
+    "nombre_unidad": "Complejo Renova Timbúes (Molienda de soja)",
+    "rol_unidad": "principal",
+    "capacidad": {
+      "estado": "dato",
+      "valor": 32400,
+      "unidad": "t/día molienda de soja",
+      "procedencia": {
+        "anio": 2026,
+        "fuente_id": "renova-web-2026",
+        "fuente": "Fichas operativas oficiales de Plantas Timbúes y San Lorenzo (Renova S.A.)",
+        "url": "https://renova.com.ar/",
+        "fecha_descarga": "2026-11-24",
+        "hash": "sha256:2a9c82604e9b4a60998bca222a36e3c5147c0a66dc671730e7b9a2af2421204d",
+        "cita_ubicacion": "renova.com.ar (Planta Timbúes 32.400 t/día molienda; Planta San Lorenzo 1.450 t/día biodiésel)",
+        "confianza": "alta"
+      }
+    },
+    "procedencia": {
+      "anio": 2026,
+      "fuente_id": "renova-web-2026",
+      "fuente": "Fichas operativas oficiales de Plantas Timbúes y San Lorenzo (Renova S.A.)",
+      "url": "https://renova.com.ar/",
+      "fecha_descarga": "2026-11-24",
+      "hash": "sha256:2a9c82604e9b4a60998bca222a36e3c5147c0a66dc671730e7b9a2af2421204d",
+      "cita_ubicacion": "renova.com.ar (Planta Timbúes 32.400 t/día molienda; Planta San Lorenzo 1.450 t/día biodiésel)",
+      "confianza": "alta"
+    }
+  },
+  {
+    "unidad_id": "u-molinos-agro-san-lorenzo",
+    "planta_id": "molinos-agro-san-lorenzo",
+    "proceso_id": "soja-molienda-extraccion-solvente",
+    "producto_id": "soja",
+    "nombre_unidad": "Complejo Molinos Agro (Puerto San Benito)",
+    "rol_unidad": "principal",
+    "capacidad": {
+      "estado": "dato",
+      "valor": 6000000,
+      "unidad": "t/año molienda de soja",
+      "procedencia": {
+        "anio": 2026,
+        "fuente_id": "molinosagro-web-2026",
+        "fuente": "Ficha de capacidad industrial Puerto San Benito (Molinos Agro S.A.)",
+        "url": "https://molinosagro.com.ar/nuestro-negocio/",
+        "fecha_descarga": "2026-11-24",
+        "hash": "sha256:cc3b5a0e525cb497f7750c973ad8f134caa4839b7fbaaf9da26cce5d3a0a4875",
+        "cita_ubicacion": "molinosagro.com.ar/nuestro-negocio/ (Puerto San Benito: 6.000.000 t/año molienda soja)",
+        "confianza": "alta"
+      }
+    },
+    "procedencia": {
+      "anio": 2026,
+      "fuente_id": "molinosagro-web-2026",
+      "fuente": "Ficha de capacidad industrial Puerto San Benito (Molinos Agro S.A.)",
+      "url": "https://molinosagro.com.ar/nuestro-negocio/",
+      "fecha_descarga": "2026-11-24",
+      "hash": "sha256:cc3b5a0e525cb497f7750c973ad8f134caa4839b7fbaaf9da26cce5d3a0a4875",
+      "cita_ubicacion": "molinosagro.com.ar/nuestro-negocio/ (Puerto San Benito: 6.000.000 t/año molienda soja)",
+      "confianza": "alta"
+    }
+  },
+  {
+    "unidad_id": "u-dow-polo-bahia-blanca",
+    "planta_id": "dow-polo-bahia-blanca",
+    "proceso_id": "petroquimica-steam-cracking-polietileno",
+    "producto_id": "petroquimica",
+    "nombre_unidad": "Complejo Dow Bahía Blanca (2 Crackers Etileno + 4 Polietileno)",
+    "rol_unidad": "principal",
+    "capacidad": {
+      "estado": "sin_datos",
+      "valor": null,
+      "unidad": "t/año etileno/PE",
+      "procedencia": {
+        "anio": 2026,
+        "fuente_id": "dow-argentina-web-2026",
+        "fuente": "Perfil oficial de operaciones en Argentina y Complejo Bahía Blanca (Dow Argentina)",
+        "url": "https://ar.dow.com/es-ar.html",
+        "fecha_descarga": "2026-11-24",
+        "hash": "sha256:37eb576cb7e3c6ea56143c9d668799c30fc2ee4bd2019ada561e42cbc6fff323",
+        "cita_ubicacion": "ar.dow.com/es-ar.html (seis plantas: 2 de etileno y 4 de polietileno en Bahía Blanca)",
+        "confianza": "alta"
+      }
+    },
+    "procedencia": {
+      "anio": 2026,
+      "fuente_id": "dow-argentina-web-2026",
+      "fuente": "Perfil oficial de operaciones en Argentina y Complejo Bahía Blanca (Dow Argentina)",
+      "url": "https://ar.dow.com/es-ar.html",
+      "fecha_descarga": "2026-11-24",
+      "hash": "sha256:37eb576cb7e3c6ea56143c9d668799c30fc2ee4bd2019ada561e42cbc6fff323",
+      "cita_ubicacion": "ar.dow.com/es-ar.html (seis plantas: 2 de etileno y 4 de polietileno en Bahía Blanca)",
+      "confianza": "alta"
+    }
+  },
+  {
+    "unidad_id": "u-unipar-indupa-bahia-blanca",
+    "planta_id": "unipar-indupa-bahia-blanca",
+    "proceso_id": "petroquimica-cloro-alcali-pvc",
+    "producto_id": "petroquimica",
+    "nombre_unidad": "Complejo Unipar Indupa (Cloro-Soda y PVC)",
+    "rol_unidad": "principal",
+    "capacidad": {
+      "estado": "sin_datos",
+      "valor": null,
+      "unidad": "t/año PVC",
+      "procedencia": {
+        "anio": 2026,
+        "fuente_id": "unipar-acerca-2026",
+        "fuente": "Perfil institucional y unidad productiva Bahía Blanca (Unipar Indupa S.A.I.C.)",
+        "url": "https://unipar.com/es/acerca-de-unipar",
+        "fecha_descarga": "2026-11-25",
+        "hash": "sha256:078744f42c406f68aa33110931629fe7dfa3cd9c6544791837111532d225a6f8",
+        "cita_ubicacion": "unipar.com/es/acerca-de-unipar (unidad Bahía Blanca: cloro, soda cáustica y PVC)",
+        "confianza": "alta"
+      }
+    },
+    "procedencia": {
+      "anio": 2026,
+      "fuente_id": "unipar-acerca-2026",
+      "fuente": "Perfil institucional y unidad productiva Bahía Blanca (Unipar Indupa S.A.I.C.)",
+      "url": "https://unipar.com/es/acerca-de-unipar",
+      "fecha_descarga": "2026-11-25",
+      "hash": "sha256:078744f42c406f68aa33110931629fe7dfa3cd9c6544791837111532d225a6f8",
+      "cita_ubicacion": "unipar.com/es/acerca-de-unipar (unidad Bahía Blanca: cloro, soda cáustica y PVC)",
+      "confianza": "alta"
+    }
+  },
+  {
+    "unidad_id": "u-renova-san-lorenzo-biodiesel",
+    "planta_id": "renova-san-lorenzo-biodiesel",
+    "proceso_id": "biodiesel-transesterificacion-soja",
+    "producto_id": "biodiesel",
+    "nombre_unidad": "Planta Renova San Lorenzo (Biodiésel y Glicerina Refinada)",
+    "rol_unidad": "principal",
+    "capacidad": {
+      "estado": "dato",
+      "valor": 1450,
+      "unidad": "t/día biodiésel",
+      "procedencia": {
+        "anio": 2026,
+        "fuente_id": "renova-web-2026",
+        "fuente": "Fichas operativas oficiales de Plantas Timbúes y San Lorenzo (Renova S.A.)",
+        "url": "https://renova.com.ar/",
+        "fecha_descarga": "2026-11-24",
+        "hash": "sha256:2a9c82604e9b4a60998bca222a36e3c5147c0a66dc671730e7b9a2af2421204d",
+        "cita_ubicacion": "renova.com.ar (Planta Timbúes 32.400 t/día molienda; Planta San Lorenzo 1.450 t/día biodiésel)",
+        "confianza": "alta"
+      }
+    },
+    "procedencia": {
+      "anio": 2026,
+      "fuente_id": "renova-web-2026",
+      "fuente": "Fichas operativas oficiales de Plantas Timbúes y San Lorenzo (Renova S.A.)",
+      "url": "https://renova.com.ar/",
+      "fecha_descarga": "2026-11-24",
+      "hash": "sha256:2a9c82604e9b4a60998bca222a36e3c5147c0a66dc671730e7b9a2af2421204d",
+      "cita_ubicacion": "renova.com.ar (Planta Timbúes 32.400 t/día molienda; Planta San Lorenzo 1.450 t/día biodiésel)",
+      "confianza": "alta"
+    }
+  },
+  {
+    "unidad_id": "u-petrocuyo-lujan-de-cuyo",
+    "planta_id": "petrocuyo-lujan-de-cuyo",
+    "proceso_id": "polipropileno-fcc-polimerizacion",
+    "producto_id": "polipropileno",
+    "nombre_unidad": "Planta Petrocuyo Luján de Cuyo (Polipropileno)",
+    "rol_unidad": "principal",
+    "capacidad": {
+      "estado": "sin_datos",
+      "valor": null,
+      "unidad": "t/año PP",
+      "procedencia": {
+        "anio": 2026,
+        "fuente_id": "petrocuyo-web-2026",
+        "fuente": "Portal institucional y operaciones de polipropileno (Petrocuyo S.A.I.C.)",
+        "url": "https://www.petrocuyo.com/",
+        "fecha_descarga": "2026-11-26",
+        "hash": "sha256:5706e3a328532bddf36e6af90c032f40c80e99ce17049403540bb26dec2da3e3",
+        "cita_ubicacion": "petrocuyo.com (Polo Petroquímico Luján de Cuyo, Mendoza)",
+        "confianza": "alta"
+      }
+    },
+    "procedencia": {
+      "anio": 2026,
+      "fuente_id": "petrocuyo-web-2026",
+      "fuente": "Portal institucional y operaciones de polipropileno (Petrocuyo S.A.I.C.)",
+      "url": "https://www.petrocuyo.com/",
+      "fecha_descarga": "2026-11-26",
+      "hash": "sha256:5706e3a328532bddf36e6af90c032f40c80e99ce17049403540bb26dec2da3e3",
+      "cita_ubicacion": "petrocuyo.com (Polo Petroquímico Luján de Cuyo, Mendoza)",
+      "confianza": "alta"
+    }
+  },
+  {
+    "unidad_id": "u-bio4-rio-cuarto",
+    "planta_id": "bio4-rio-cuarto",
+    "proceso_id": "bioetanol-maiz-molienda-seca",
+    "producto_id": "bioetanol-maiz",
+    "nombre_unidad": "Planta Bio4 (Bioetanol de Maíz y Burlanda)",
+    "rol_unidad": "principal",
+    "capacidad": {
+      "estado": "sin_datos",
+      "valor": null,
+      "unidad": "m3/año bioetanol",
+      "procedencia": {
+        "anio": 2026,
+        "fuente_id": "bio4-web-2026",
+        "fuente": "Portal oficial Bio4 Argentina (Bioetanol Río Cuarto S.A.)",
+        "url": "https://bio4.com.ar/",
+        "fecha_descarga": "2026-11-26",
+        "hash": "sha256:f7d9e9b758e86cdd4a8ae2e9e04f533a1368feca92a5bce3218bc669b6a524b7",
+        "cita_ubicacion": "bio4.com.ar (Río Cuarto, Córdoba)",
+        "confianza": "alta"
+      }
+    },
+    "procedencia": {
+      "anio": 2026,
+      "fuente_id": "bio4-web-2026",
+      "fuente": "Portal oficial Bio4 Argentina (Bioetanol Río Cuarto S.A.)",
+      "url": "https://bio4.com.ar/",
+      "fecha_descarga": "2026-11-26",
+      "hash": "sha256:f7d9e9b758e86cdd4a8ae2e9e04f533a1368feca92a5bce3218bc669b6a524b7",
+      "cita_ubicacion": "bio4.com.ar (Río Cuarto, Córdoba)",
+      "confianza": "alta"
+    }
+  },
+  {
+    "unidad_id": "u-acabio-villa-maria",
+    "planta_id": "acabio-villa-maria",
+    "proceso_id": "bioetanol-maiz-molienda-seca",
+    "producto_id": "bioetanol-maiz",
+    "nombre_unidad": "Biorrefinería ACA Bio (Bioetanol de Maíz)",
+    "rol_unidad": "principal",
+    "capacidad": {
+      "estado": "sin_datos",
+      "valor": null,
+      "unidad": "m3/año bioetanol",
+      "procedencia": {
+        "anio": 2026,
+        "fuente_id": "acabio-web-2026",
+        "fuente": "Portal oficial ACA BIO Cooperativa Limitada (Villa María, Córdoba)",
+        "url": "https://www.acabio.com.ar/",
+        "fecha_descarga": "2026-11-26",
+        "hash": "sha256:23b80444827f78618e30e7d0f0615a69fc7b785a05e649c1e4b4df8fcaa1cf29",
+        "cita_ubicacion": "acabio.com.ar (Villa María, Córdoba)",
+        "confianza": "alta"
+      }
+    },
+    "procedencia": {
+      "anio": 2026,
+      "fuente_id": "acabio-web-2026",
+      "fuente": "Portal oficial ACA BIO Cooperativa Limitada (Villa María, Córdoba)",
+      "url": "https://www.acabio.com.ar/",
+      "fecha_descarga": "2026-11-26",
+      "hash": "sha256:23b80444827f78618e30e7d0f0615a69fc7b785a05e649c1e4b4df8fcaa1cf29",
+      "cita_ubicacion": "acabio.com.ar (Villa María, Córdoba)",
+      "confianza": "alta"
+    }
+  },
+  {
+    "unidad_id": "u-la-florida-cruz-alta",
+    "planta_id": "la-florida-cruz-alta",
+    "proceso_id": "bioetanol-cana-fermentacion",
+    "producto_id": "bioetanol-cana",
+    "nombre_unidad": "Complejo Sucroalcoholero La Florida (Destilería y Deshidratadora)",
+    "rol_unidad": "principal",
+    "capacidad": {
+      "estado": "sin_datos",
+      "valor": null,
+      "unidad": "m3/año bioetanol",
+      "procedencia": {
+        "anio": 2026,
+        "fuente_id": "se-bioetanol-empresas-csv",
+        "fuente": "Bioetanol: detalle de cupos asignados, producción y ventas por empresa y provincia",
+        "url": "https://datos.energia.gob.ar/dataset/5ce77ad1-c729-42cd-a8b5-2407de005e5b/resource/0df1eeda-854b-44b0-8ea6-1a537f167fa4/download/bioetanol.csv",
+        "fecha_descarga": "2026-11-26",
+        "hash": "sha256:0ca08a9f96046a4e3aab458e61a9011ef3d21c65bde6185398a1310ee44f530d",
+        "cita_ubicacion": "bioetanol.csv (La Florida, Depto. Cruz Alta, Tucumán)",
+        "confianza": "alta"
+      }
+    },
+    "procedencia": {
+      "anio": 2026,
+      "fuente_id": "se-bioetanol-empresas-csv",
+      "fuente": "Bioetanol: detalle de cupos asignados, producción y ventas por empresa y provincia",
+      "url": "https://datos.energia.gob.ar/dataset/5ce77ad1-c729-42cd-a8b5-2407de005e5b/resource/0df1eeda-854b-44b0-8ea6-1a537f167fa4/download/bioetanol.csv",
+      "fecha_descarga": "2026-11-26",
+      "hash": "sha256:0ca08a9f96046a4e3aab458e61a9011ef3d21c65bde6185398a1310ee44f530d",
+      "cita_ubicacion": "bioetanol.csv (La Florida, Depto. Cruz Alta, Tucumán)",
+      "confianza": "alta"
+    }
+  },
+  {
+    "unidad_id": "u-alpat-san-antonio-oeste",
+    "planta_id": "alpat-san-antonio-oeste",
+    "proceso_id": "soda-solvay-proceso",
+    "producto_id": "soda-solvay",
+    "nombre_unidad": "Planta Industrial ALPAT (Punta Delgado)",
+    "rol_unidad": "principal",
+    "capacidad": {
+      "estado": "sin_datos",
+      "valor": null,
+      "unidad": "t/año Na2CO3",
+      "procedencia": {
+        "anio": 2025,
+        "fuente_id": "usgs-mcs-2025-soda-ash",
+        "fuente": "USGS Mineral Commodity Summaries 2025: Soda Ash (Sodium Carbonate)",
+        "url": "https://pubs.usgs.gov/periodicals/mcs2025/mcs2025-soda-ash.pdf",
+        "fecha_descarga": "2026-11-26",
+        "hash": "sha256:a386ee59806756e28c72f2fde95eaa3b68068e0614f1e0228fd13007be920ff5",
+        "cita_ubicacion": "Operación industrial Solvay Punta Delgado, San Antonio Oeste (Depto. San Antonio, Río Negro)",
+        "confianza": "alta"
+      }
+    },
+    "procedencia": {
+      "anio": 2025,
+      "fuente_id": "usgs-mcs-2025-soda-ash",
+      "fuente": "USGS Mineral Commodity Summaries 2025: Soda Ash (Sodium Carbonate)",
+      "url": "https://pubs.usgs.gov/periodicals/mcs2025/mcs2025-soda-ash.pdf",
+      "fecha_descarga": "2026-11-26",
+      "hash": "sha256:a386ee59806756e28c72f2fde95eaa3b68068e0614f1e0228fd13007be920ff5",
+      "cita_ubicacion": "Operación industrial Solvay Punta Delgado, San Antonio Oeste (Depto. San Antonio, Río Negro)",
+      "confianza": "alta"
+    }
+  },
+  {
+    "unidad_id": "u-caleras-san-juan-los-berros",
+    "planta_id": "caleras-san-juan-los-berros",
+    "proceso_id": "cal-industrial-calcinacion",
+    "producto_id": "cal-industrial",
+    "nombre_unidad": "Planta Calera Los Berros (Hornos Maerz/PFRK)",
+    "rol_unidad": "principal",
+    "capacidad": {
+      "estado": "sin_datos",
+      "valor": null,
+      "unidad": "t/año CaO",
+      "procedencia": {
+        "anio": 2026,
+        "fuente_id": "caleras-sj-web-2026",
+        "fuente": "Portal institucional Caleras San Juan S.A. (Polo Calero Los Berros)",
+        "url": "https://calerassanjuan.com/",
+        "fecha_descarga": "2026-11-26",
+        "hash": "sha256:310cab2033ed8e1093226691058715fbf4c90a4c2d0745ec1d6a34d39971587d",
+        "cita_ubicacion": "calerassanjuan.com Planta Los Berros, Sarmiento (San Juan)",
+        "confianza": "alta"
+      }
+    },
+    "procedencia": {
+      "anio": 2026,
+      "fuente_id": "caleras-sj-web-2026",
+      "fuente": "Portal institucional Caleras San Juan S.A. (Polo Calero Los Berros)",
+      "url": "https://calerassanjuan.com/",
+      "fecha_descarga": "2026-11-26",
+      "hash": "sha256:310cab2033ed8e1093226691058715fbf4c90a4c2d0745ec1d6a34d39971587d",
+      "cita_ubicacion": "calerassanjuan.com Planta Los Berros, Sarmiento (San Juan)",
+      "confianza": "alta"
+    }
+  },
+  {
+    "unidad_id": "u-cerro-vanguardia-san-julian",
+    "planta_id": "cerro-vanguardia-san-julian",
+    "proceso_id": "oro-plata-lixiviacion-dore",
+    "producto_id": "oro-plata",
+    "nombre_unidad": "Planta Metalúrgica Cerro Vanguardia",
+    "rol_unidad": "principal",
+    "capacidad": {
+      "estado": "sin_datos",
+      "valor": null,
+      "unidad": "koz Au eq/año",
+      "procedencia": {
+        "anio": 2026,
+        "fuente_id": "cerro-vanguardia-web-2026",
+        "fuente": "Portal institucional Cerro Vanguardia S.A. (AngloGold Ashanti / Fomicruz S.E.)",
+        "url": "https://www.cerrovanguardia.com.ar/",
+        "fecha_descarga": "2026-11-26",
+        "hash": "sha256:2a9633ad89a1b70c4fb6e599959a6635e88c52f360d90df16e897ca5ec3416b0",
+        "cita_ubicacion": "cerrovanguardia.com.ar Macizo del Deseado, Depto. Magallanes (Santa Cruz)",
+        "confianza": "alta"
+      }
+    },
+    "procedencia": {
+      "anio": 2026,
+      "fuente_id": "cerro-vanguardia-web-2026",
+      "fuente": "Portal institucional Cerro Vanguardia S.A. (AngloGold Ashanti / Fomicruz S.E.)",
+      "url": "https://www.cerrovanguardia.com.ar/",
+      "fecha_descarga": "2026-11-26",
+      "hash": "sha256:2a9633ad89a1b70c4fb6e599959a6635e88c52f360d90df16e897ca5ec3416b0",
+      "cita_ubicacion": "cerrovanguardia.com.ar Macizo del Deseado, Depto. Magallanes (Santa Cruz)",
+      "confianza": "alta"
+    }
+  },
+  {
+    "unidad_id": "u-cerro-negro-perito-moreno",
+    "planta_id": "cerro-negro-perito-moreno",
+    "proceso_id": "oro-plata-lixiviacion-dore",
+    "producto_id": "oro-plata",
+    "nombre_unidad": "Complejo Minero y Planta Cerro Negro",
+    "rol_unidad": "principal",
+    "capacidad": {
+      "estado": "sin_datos",
+      "valor": null,
+      "unidad": "koz Au/año",
+      "procedencia": {
+        "anio": 2026,
+        "fuente_id": "caem-web-2026",
+        "fuente": "Cámara Argentina de Empresas Mineras (CAEM): polos metalíferos y minería de Santa Cruz",
+        "url": "https://www.caem.com.ar/",
+        "fecha_descarga": "2026-11-26",
+        "hash": "sha256:c87dcc459011138da2f1e13b6de3f3eae07a46092db753f9b443a94fdc9cad22",
+        "cita_ubicacion": "caem.com.ar Complejo Cerro Negro, Depto. Lago Buenos Aires (Santa Cruz)",
+        "confianza": "alta"
+      }
+    },
+    "procedencia": {
+      "anio": 2026,
+      "fuente_id": "caem-web-2026",
+      "fuente": "Cámara Argentina de Empresas Mineras (CAEM): polos metalíferos y minería de Santa Cruz",
+      "url": "https://www.caem.com.ar/",
+      "fecha_descarga": "2026-11-26",
+      "hash": "sha256:c87dcc459011138da2f1e13b6de3f3eae07a46092db753f9b443a94fdc9cad22",
+      "cita_ubicacion": "caem.com.ar Complejo Cerro Negro, Depto. Lago Buenos Aires (Santa Cruz)",
+      "confianza": "alta"
+    }
+  },
+  {
+    "unidad_id": "u-arauco-puerto-esperanza",
+    "planta_id": "arauco-puerto-esperanza",
+    "proceso_id": "celulosa-kraft-blanqueada",
+    "producto_id": "celulosa-kraft",
+    "nombre_unidad": "Planta de Celulosa Kraft Puerto Esperanza",
+    "rol_unidad": "principal",
+    "capacidad": {
+      "estado": "sin_datos",
+      "valor": null,
+      "unidad": "t/año pulpa ADt",
+      "procedencia": {
+        "anio": 2026,
+        "fuente_id": "arauco-web-2026",
+        "fuente": "Portal corporativo Arauco (Operaciones Forestales y Planta de Celulosa Puerto Esperanza)",
+        "url": "https://www.arauco.com/",
+        "fecha_descarga": "2026-11-26",
+        "hash": "sha256:d00e96942269b2c521cd86449c5ff9fe6cec49bff31cdb210f0a7f004b00fad3",
+        "cita_ubicacion": "arauco.com Planta de celulosa fibra larga, Depto. Iguazú (Misiones)",
+        "confianza": "alta"
+      }
+    },
+    "procedencia": {
+      "anio": 2026,
+      "fuente_id": "arauco-web-2026",
+      "fuente": "Portal corporativo Arauco (Operaciones Forestales y Planta de Celulosa Puerto Esperanza)",
+      "url": "https://www.arauco.com/",
+      "fecha_descarga": "2026-11-26",
+      "hash": "sha256:d00e96942269b2c521cd86449c5ff9fe6cec49bff31cdb210f0a7f004b00fad3",
+      "cita_ubicacion": "arauco.com Planta de celulosa fibra larga, Depto. Iguazú (Misiones)",
+      "confianza": "alta"
+    }
+  },
+  {
+    "unidad_id": "u-totalenergies-rio-cullen-tdf",
+    "planta_id": "totalenergies-rio-cullen-tdf",
+    "proceso_id": "glp-fraccionamiento-austral",
+    "producto_id": "glp-gas-natural",
+    "nombre_unidad": "Planta de Tratamiento y GLP Río Cullen / Cañadón Alfa",
+    "rol_unidad": "principal",
+    "capacidad": {
+      "estado": "sin_datos",
+      "valor": null,
+      "unidad": "t/año GLP",
+      "procedencia": {
+        "anio": 2026,
+        "fuente_id": "totalenergies-ar-web-2026",
+        "fuente": "Portal institucional TotalEnergies Argentina (Operaciones Cuenca Austral / Tierra del Fuego)",
+        "url": "https://totalenergies.com.ar/",
+        "fecha_descarga": "2026-11-26",
+        "hash": "sha256:10802742a4141ca4c8839e0901730e56ad931514ade0f59217d355a2f4a41e75",
+        "cita_ubicacion": "totalenergies.com.ar Complejo terrestre Cuenca Marina Austral 1 (Depto. Río Grande, Tierra del Fuego)",
+        "confianza": "alta"
+      }
+    },
+    "procedencia": {
+      "anio": 2026,
+      "fuente_id": "totalenergies-ar-web-2026",
+      "fuente": "Portal institucional TotalEnergies Argentina (Operaciones Cuenca Austral / Tierra del Fuego)",
+      "url": "https://totalenergies.com.ar/",
+      "fecha_descarga": "2026-11-26",
+      "hash": "sha256:10802742a4141ca4c8839e0901730e56ad931514ade0f59217d355a2f4a41e75",
+      "cita_ubicacion": "totalenergies.com.ar Complejo terrestre Cuenca Marina Austral 1 (Depto. Río Grande, Tierra del Fuego)",
+      "confianza": "alta"
+    }
+  },
+  {
+    "unidad_id": "u-dos-anclas-salinas-grandes-lp",
+    "planta_id": "dos-anclas-salinas-grandes-lp",
+    "proceso_id": "sal-evaporitica-refinacion",
+    "producto_id": "sal-industrial",
+    "nombre_unidad": "Complejo Salinero y Refinería Salinas Grandes de Hidalgo",
+    "rol_unidad": "principal",
+    "capacidad": {
+      "estado": "sin_datos",
+      "valor": null,
+      "unidad": "t/año NaCl",
+      "procedencia": {
+        "anio": 2026,
+        "fuente_id": "dosanclas-web-2026",
+        "fuente": "Portal institucional Dos Anclas (Compañía Introductora de Buenos Aires S.A. · Salinas Grandes de Hidalgo)",
+        "url": "https://www.dosanclas.com.ar/",
+        "fecha_descarga": "2026-11-26",
+        "hash": "sha256:2024b46d4239f25130cfc5a4a539b039db0c3a16c9e9cd2e5535e2fbc41e4f9b",
+        "cita_ubicacion": "dosanclas.com.ar Planta Salinas Grandes de Hidalgo (Depto. Atreucó, La Pampa)",
+        "confianza": "alta"
+      }
+    },
+    "procedencia": {
+      "anio": 2026,
+      "fuente_id": "dosanclas-web-2026",
+      "fuente": "Portal institucional Dos Anclas (Compañía Introductora de Buenos Aires S.A. · Salinas Grandes de Hidalgo)",
+      "url": "https://www.dosanclas.com.ar/",
+      "fecha_descarga": "2026-11-26",
+      "hash": "sha256:2024b46d4239f25130cfc5a4a539b039db0c3a16c9e9cd2e5535e2fbc41e4f9b",
+      "cita_ubicacion": "dosanclas.com.ar Planta Salinas Grandes de Hidalgo (Depto. Atreucó, La Pampa)",
+      "confianza": "alta"
+    }
+  },
+  {
+    "unidad_id": "u-salina-colorada-grande-lp",
+    "planta_id": "salina-colorada-grande-lp",
+    "proceso_id": "sal-evaporitica-refinacion",
+    "producto_id": "sal-industrial",
+    "nombre_unidad": "Cuenca Salinera Colorada Grande (General San Martín)",
+    "rol_unidad": "principal",
+    "capacidad": {
+      "estado": "sin_datos",
+      "valor": null,
+      "unidad": "t/año NaCl",
+      "procedencia": {
+        "anio": 2025,
+        "fuente_id": "usgs-mcs-2025-salt",
+        "fuente": "USGS Mineral Commodity Summaries 2025: Salt (Sodium Chloride)",
+        "url": "https://pubs.usgs.gov/periodicals/mcs2025/mcs2025-salt.pdf",
+        "fecha_descarga": "2026-11-26",
+        "hash": "sha256:2c5bbbdd435f1fd29f1acbc2806bcf2b2f80eb1490a72f4f08af3583f0b8cd0d",
+        "cita_ubicacion": "USGS MCS 2025 Salt + explotación evaporítica Salina Colorada Grande (Depto. Hucal, La Pampa)",
+        "confianza": "alta"
+      }
+    },
+    "procedencia": {
+      "anio": 2025,
+      "fuente_id": "usgs-mcs-2025-salt",
+      "fuente": "USGS Mineral Commodity Summaries 2025: Salt (Sodium Chloride)",
+      "url": "https://pubs.usgs.gov/periodicals/mcs2025/mcs2025-salt.pdf",
+      "fecha_descarga": "2026-11-26",
+      "hash": "sha256:2c5bbbdd435f1fd29f1acbc2806bcf2b2f80eb1490a72f4f08af3583f0b8cd0d",
+      "cita_ubicacion": "USGS MCS 2025 Salt + explotación evaporítica Salina Colorada Grande (Depto. Hucal, La Pampa)",
+      "confianza": "alta"
+    }
+  },
+  {
+    "unidad_id": "u-cementos-avellaneda-la-calera-sl",
+    "planta_id": "cementos-avellaneda-la-calera-sl",
+    "proceso_id": "cemento-horno-seco-san-luis",
+    "producto_id": "cemento-clinker",
+    "nombre_unidad": "Planta Cementera Integrada La Calera",
+    "rol_unidad": "principal",
+    "capacidad": {
+      "estado": "sin_datos",
+      "valor": null,
+      "unidad": "t/año clínker",
+      "procedencia": {
+        "anio": 2026,
+        "fuente_id": "cementos-avellaneda-web-2026",
+        "fuente": "Portal institucional Cementos Avellaneda S.A. (Planta La Calera, San Luis)",
+        "url": "https://www.cementosavellaneda.com.ar/",
+        "fecha_descarga": "2026-11-26",
+        "hash": "sha256:1e5dd8b7e2990f3005f2d7f14bf1385951d074e8d2e46ac8b1e895e5e18cc061",
+        "cita_ubicacion": "cementosavellaneda.com.ar Planta La Calera (Depto. Belgrano, San Luis)",
+        "confianza": "alta"
+      }
+    },
+    "procedencia": {
+      "anio": 2026,
+      "fuente_id": "cementos-avellaneda-web-2026",
+      "fuente": "Portal institucional Cementos Avellaneda S.A. (Planta La Calera, San Luis)",
+      "url": "https://www.cementosavellaneda.com.ar/",
+      "fecha_descarga": "2026-11-26",
+      "hash": "sha256:1e5dd8b7e2990f3005f2d7f14bf1385951d074e8d2e46ac8b1e895e5e18cc061",
+      "cita_ubicacion": "cementosavellaneda.com.ar Planta La Calera (Depto. Belgrano, San Luis)",
+      "confianza": "alta"
+    }
+  },
+  {
+    "unidad_id": "u-polo-citricola-concordia-er",
+    "planta_id": "polo-citricola-concordia-er",
+    "proceso_id": "citricos-aceite-jugo-concordia",
+    "producto_id": "citricos-limoneno",
+    "nombre_unidad": "Polo Agroindustrial Citrícola de Concordia",
+    "rol_unidad": "principal",
+    "capacidad": {
+      "estado": "sin_datos",
+      "valor": null,
+      "unidad": "t fruta procesada/año",
+      "procedencia": {
+        "anio": 2026,
+        "fuente_id": "fecier-web-2026",
+        "fuente": "Federación del Citrus de Entre Ríos (FeCiER): polo citrícola e industrialización en Concordia y Federación",
+        "url": "https://www.fecier.org.ar/",
+        "fecha_descarga": "2026-11-26",
+        "hash": "sha256:8acb03caa8d432a636771bc3a0d27bec96086245e1344850401beee9b3d91094",
+        "cita_ubicacion": "fecier.org.ar Complejo de jugos concentrados y aceites esenciales (Depto. Concordia, Entre Ríos)",
+        "confianza": "alta"
+      }
+    },
+    "procedencia": {
+      "anio": 2026,
+      "fuente_id": "fecier-web-2026",
+      "fuente": "Federación del Citrus de Entre Ríos (FeCiER): polo citrícola e industrialización en Concordia y Federación",
+      "url": "https://www.fecier.org.ar/",
+      "fecha_descarga": "2026-11-26",
+      "hash": "sha256:8acb03caa8d432a636771bc3a0d27bec96086245e1344850401beee9b3d91094",
+      "cita_ubicacion": "fecier.org.ar Complejo de jugos concentrados y aceites esenciales (Depto. Concordia, Entre Ríos)",
+      "confianza": "alta"
+    }
+  },
+  {
+    "unidad_id": "u-grupo-san-francisco-virasoro-ct",
+    "planta_id": "grupo-san-francisco-virasoro-ct",
+    "proceso_id": "resina-destilacion-colofonia",
+    "producto_id": "resina-colofonia",
+    "nombre_unidad": "Planta Resinera Gobernador Virasoro",
+    "rol_unidad": "principal",
+    "capacidad": {
+      "estado": "dato",
+      "valor": 13000,
+      "unidad": "t/año miera de pino",
+      "procedencia": {
+        "anio": 2026,
+        "fuente_id": "gruposanfrancisco-web-2026",
+        "fuente": "Portal institucional Grupo San Francisco S.A. (Planta Resinera Gobernador Virasoro, Corrientes)",
+        "url": "https://gruposanfrancisco.com.ar/",
+        "fecha_descarga": "2026-11-26",
+        "hash": "sha256:d336759d72411d4f455a5a8d5b61955d74381d1b4433c2654dcad2fc59b6215f",
+        "cita_ubicacion": "gruposanfrancisco.com.ar Planta Industrial RN 14 Km 754 (Depto. Santo Tomé, Corrientes)",
+        "confianza": "alta"
+      }
+    },
+    "procedencia": {
+      "anio": 2026,
+      "fuente_id": "gruposanfrancisco-web-2026",
+      "fuente": "Portal institucional Grupo San Francisco S.A. (Planta Resinera Gobernador Virasoro, Corrientes)",
+      "url": "https://gruposanfrancisco.com.ar/",
+      "fecha_descarga": "2026-11-26",
+      "hash": "sha256:d336759d72411d4f455a5a8d5b61955d74381d1b4433c2654dcad2fc59b6215f",
+      "cita_ubicacion": "gruposanfrancisco.com.ar Planta Industrial RN 14 Km 754 (Depto. Santo Tomé, Corrientes)",
+      "confianza": "alta"
+    }
+  },
+  {
+    "unidad_id": "u-unitan-formosa-fm",
+    "planta_id": "unitan-formosa-fm",
+    "proceso_id": "tanino-extraccion-quebracho",
+    "producto_id": "tanino-quebracho",
+    "nombre_unidad": "Planta de Extracto de Quebracho Formosa",
+    "rol_unidad": "principal",
+    "capacidad": {
+      "estado": "sin_datos",
+      "valor": null,
+      "unidad": null,
+      "procedencia": {
+        "anio": 2026,
+        "fuente_id": "unitan-web-2026",
+        "fuente": "Portal institucional Unitán S.A.I.C.A. (Extracto de quebracho y especialidades naturales en Formosa)",
+        "url": "https://www.unitan.net/",
+        "fecha_descarga": "2026-11-26",
+        "hash": "sha256:f518159e3922bf613673d1cb3eb08c56f6e129fdac00d70b3bfa584ef26d7f11",
+        "cita_ubicacion": "unitan.net Planta Industrial Formosa (Paraguay 280 Este / Parque Industrial Formosa)",
+        "confianza": "alta"
+      }
+    },
+    "procedencia": {
+      "anio": 2026,
+      "fuente_id": "unitan-web-2026",
+      "fuente": "Portal institucional Unitán S.A.I.C.A. (Extracto de quebracho y especialidades naturales en Formosa)",
+      "url": "https://www.unitan.net/",
+      "fecha_descarga": "2026-11-26",
+      "hash": "sha256:f518159e3922bf613673d1cb3eb08c56f6e129fdac00d70b3bfa584ef26d7f11",
+      "cita_ubicacion": "unitan.net Planta Industrial Formosa (Paraguay 280 Este / Parque Industrial Formosa)",
+      "confianza": "alta"
+    }
+  },
+  {
+    "unidad_id": "u-valle-puerta-vichigasta-lr",
+    "planta_id": "valle-puerta-vichigasta-lr",
+    "proceso_id": "oliva-extraccion-dos-fases",
+    "producto_id": "aceite-oliva",
+    "nombre_unidad": "Almazara Industrial Vichigasta",
+    "rol_unidad": "principal",
+    "capacidad": {
+      "estado": "dato",
+      "valor": 1400,
+      "unidad": "t/año aceite de oliva",
+      "procedencia": {
+        "anio": 2026,
+        "fuente_id": "valledelapuerta-web-2026",
+        "fuente": "Portal institucional Valle de la Puerta S.A. (Almazara Vichigasta, Chilecito, La Rioja)",
+        "url": "https://valledelapuerta.com.ar/",
+        "fecha_descarga": "2026-11-26",
+        "hash": "sha256:c9f1998a5b29dfb846397cf8fd41563719c832250cabab4725a0d01ebeefbfbf",
+        "cita_ubicacion": "valledelapuerta.com.ar RN 74 Km 1186, Vichigasta (Depto. Chilecito, La Rioja)",
+        "confianza": "alta"
+      }
+    },
+    "procedencia": {
+      "anio": 2026,
+      "fuente_id": "valledelapuerta-web-2026",
+      "fuente": "Portal institucional Valle de la Puerta S.A. (Almazara Vichigasta, Chilecito, La Rioja)",
+      "url": "https://valledelapuerta.com.ar/",
+      "fecha_descarga": "2026-11-26",
+      "hash": "sha256:c9f1998a5b29dfb846397cf8fd41563719c832250cabab4725a0d01ebeefbfbf",
+      "cita_ubicacion": "valledelapuerta.com.ar RN 74 Km 1186, Vichigasta (Depto. Chilecito, La Rioja)",
+      "confianza": "alta"
+    }
+  },
+  {
+    "unidad_id": "u-agro-aceitunera-aimogasta-lr",
+    "planta_id": "agro-aceitunera-aimogasta-lr",
+    "proceso_id": "oliva-extraccion-dos-fases",
+    "producto_id": "aceite-oliva",
+    "nombre_unidad": "Planta Olivícola Aimogasta (Nucete)",
+    "rol_unidad": "principal",
+    "capacidad": {
+      "estado": "dato",
+      "valor": 200,
+      "unidad": "t/día molienda de aceitunas",
+      "procedencia": {
+        "anio": 2026,
+        "fuente_id": "agroaceitunera-web-2026",
+        "fuente": "Portal institucional Agro Aceitunera S.A. / Nucete (Plantas Aimogasta y Chilecito, La Rioja)",
+        "url": "https://agroaceitunera.com.ar/",
+        "fecha_descarga": "2026-11-26",
+        "hash": "sha256:21cb141ab44abd3a7e8c7be0057e4f929a9ba35f497abc1832ba7b70c2eb2057",
+        "cita_ubicacion": "agroaceitunera.com.ar Planta Aimogasta (Depto. Arauco, La Rioja)",
+        "confianza": "alta"
+      }
+    },
+    "procedencia": {
+      "anio": 2026,
+      "fuente_id": "agroaceitunera-web-2026",
+      "fuente": "Portal institucional Agro Aceitunera S.A. / Nucete (Plantas Aimogasta y Chilecito, La Rioja)",
+      "url": "https://agroaceitunera.com.ar/",
+      "fecha_descarga": "2026-11-26",
+      "hash": "sha256:21cb141ab44abd3a7e8c7be0057e4f929a9ba35f497abc1832ba7b70c2eb2057",
+      "cita_ubicacion": "agroaceitunera.com.ar Planta Aimogasta (Depto. Arauco, La Rioja)",
+      "confianza": "alta"
+    }
+  },
+  {
+    "unidad_id": "u-ldc-desmotadora-quimili-se",
+    "planta_id": "ldc-desmotadora-quimili-se",
+    "proceso_id": "algodon-desmote-refinacion-celulosa",
+    "producto_id": "algodon",
+    "nombre_unidad": "Planta Desmotadora de Algodón Quimilí",
+    "rol_unidad": "principal",
+    "capacidad": {
+      "estado": "dato",
+      "valor": 60000,
+      "unidad": "t/año algodón en bruto",
+      "procedencia": {
+        "anio": 2025,
+        "fuente_id": "sde-gob-2026",
+        "fuente": "Gobierno de la Provincia de Santiago del Estero: polo productivo algodonero e industrial",
+        "url": "https://sde.gob.ar/",
+        "fecha_descarga": "2026-11-26",
+        "hash": "sha256:67eb4b7e987c6cc654ac20b3855791d371046dbd3972ec57bbf0c8ae4bc1187f",
+        "cita_ubicacion": "sde.gob.ar + SAGyP 2026 Polo algodonero Quimilí (Depto. Moreno, Santiago del Estero)",
+        "confianza": "alta"
+      }
+    },
+    "procedencia": {
+      "anio": 2025,
+      "fuente_id": "sde-gob-2026",
+      "fuente": "Gobierno de la Provincia de Santiago del Estero: polo productivo algodonero e industrial",
+      "url": "https://sde.gob.ar/",
+      "fecha_descarga": "2026-11-26",
+      "hash": "sha256:67eb4b7e987c6cc654ac20b3855791d371046dbd3972ec57bbf0c8ae4bc1187f",
+      "cita_ubicacion": "sde.gob.ar + SAGyP 2026 Polo algodonero Quimilí (Depto. Moreno, Santiago del Estero)",
+      "confianza": "alta"
+    }
+  },
+  {
+    "unidad_id": "u-maprimed-mataderos-caba",
+    "planta_id": "maprimed-mataderos-caba",
+    "proceso_id": "farmoquimica-sintesis-ifa",
+    "producto_id": "farmoquimica-ifa",
+    "nombre_unidad": "Planta Química de APIs y Centro I+D Maprimed",
+    "rol_unidad": "principal",
+    "capacidad": {
+      "estado": "sin_datos",
+      "valor": null,
+      "unidad": null,
+      "procedencia": {
+        "anio": 2026,
+        "fuente_id": "insudpharma-web-2026",
+        "fuente": "Portal corporativo Insud Pharma (Maprimed S.A., Planta Química de APIs en CABA)",
+        "url": "https://www.insudpharma.com/",
+        "fecha_descarga": "2026-11-26",
+        "hash": "sha256:ee07fff97b4fa4611008b7d994cf642f31c76f1a029387a957fa2454cba4b69e",
+        "cita_ubicacion": "insudpharma.com Planta Maprimed S.A., Av. Directorio 6155 (Comuna 9, CABA)",
+        "confianza": "alta"
+      }
+    },
+    "procedencia": {
+      "anio": 2026,
+      "fuente_id": "insudpharma-web-2026",
+      "fuente": "Portal corporativo Insud Pharma (Maprimed S.A., Planta Química de APIs en CABA)",
+      "url": "https://www.insudpharma.com/",
+      "fecha_descarga": "2026-11-26",
+      "hash": "sha256:ee07fff97b4fa4611008b7d994cf642f31c76f1a029387a957fa2454cba4b69e",
+      "cita_ubicacion": "insudpharma.com Planta Maprimed S.A., Av. Directorio 6155 (Comuna 9, CABA)",
+      "confianza": "alta"
+    }
+  },
+  {
+    "unidad_id": "u-druetta-general-rodriguez",
+    "planta_id": "druetta-general-rodriguez",
+    "proceso_id": "galvanizado-inmersion-caliente",
+    "producto_id": "galvanizado-caliente",
+    "nombre_unidad": "Planta Industrial Druetta Hnos. S.A. (Galvanizado por Inmersión en Caliente)",
+    "rol_unidad": "principal",
+    "capacidad": {
+      "estado": "sin_datos",
+      "valor": null,
+      "unidad": "t/año acero galvanizado",
+      "procedencia": {
+        "anio": 2026,
+        "fuente_id": "druetta-hornos-2026",
+        "fuente": "Ficha técnica de Hornos e Instalaciones de Galvanizado (Druetta Hnos. S.A.)",
+        "url": "https://www.druetta.com.ar/instalaciones4.html",
+        "fecha_descarga": "2026-11-27",
+        "hash": "sha256:42167c1b8abd99865a7b4584942733699aed7ff57cc2df388da60857722f5de7",
+        "cita_ubicacion": "druetta.com.ar/instalaciones4.html + Chaco 1155, Acceso Oeste Km 47, General Rodríguez (Buenos Aires)",
+        "confianza": "alta"
+      }
+    },
+    "procedencia": {
+      "anio": 2026,
+      "fuente_id": "druetta-hornos-2026",
+      "fuente": "Ficha técnica de Hornos e Instalaciones de Galvanizado (Druetta Hnos. S.A.)",
+      "url": "https://www.druetta.com.ar/instalaciones4.html",
+      "fecha_descarga": "2026-11-27",
+      "hash": "sha256:42167c1b8abd99865a7b4584942733699aed7ff57cc2df388da60857722f5de7",
+      "cita_ubicacion": "druetta.com.ar/instalaciones4.html + Chaco 1155, Acceso Oeste Km 47, General Rodríguez (Buenos Aires)",
+      "confianza": "alta"
+    }
+  }
+]

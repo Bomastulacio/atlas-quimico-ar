@@ -908,18 +908,18 @@
       "valor": null,
       "unidad": "t",
       "procedencia": {
-        "anio": 2026,
+        "anio": 2024,
         "fuente_id": "ypf-inversores-2026",
         "fuente": "Portal oficial de Inversores e Infraestructura Industrial (YPF S.A.)",
         "url": "https://inversores.ypf.com/",
         "fecha_descarga": "2026-11-26",
         "hash": "sha256:f39c95b1076dd0e8513a2df3785151328c44a6b26ce435b9eaf1465bc2d4917e",
-        "cita_ubicacion": "Sin serie anual pública auditada abierta en datos.gob.ar para metanol físico",
+        "cita_ubicacion": "Auditoría de fuentes abiertas 2026: producción física declarada sin datos públicos auditados",
         "confianza": "alta"
       }
     },
     "procedencia": {
-      "anio": 2026,
+      "anio": 2024,
       "fuente_id": "ypf-inversores-2026",
       "fuente": "Portal oficial de Inversores e Infraestructura Industrial (YPF S.A.)",
       "url": "https://inversores.ypf.com/",
@@ -939,18 +939,18 @@
       "valor": null,
       "unidad": "t",
       "procedencia": {
-        "anio": 2026,
+        "anio": 2024,
         "fuente_id": "petrocuyo-web-2026",
         "fuente": "Portal institucional y operaciones de polipropileno (Petrocuyo S.A.I.C.)",
         "url": "https://www.petrocuyo.com/",
         "fecha_descarga": "2026-11-26",
         "hash": "sha256:5706e3a328532bddf36e6af90c032f40c80e99ce17049403540bb26dec2da3e3",
-        "cita_ubicacion": "Sin serie anual pública auditada abierta para producción física de polipropileno en Mendoza",
+        "cita_ubicacion": "Auditoría de fuentes abiertas 2026: producción física declarada sin datos públicos auditados",
         "confianza": "alta"
       }
     },
     "procedencia": {
-      "anio": 2026,
+      "anio": 2024,
       "fuente_id": "petrocuyo-web-2026",
       "fuente": "Portal institucional y operaciones de polipropileno (Petrocuyo S.A.I.C.)",
       "url": "https://www.petrocuyo.com/",
@@ -1280,18 +1280,18 @@
       "valor": null,
       "unidad": "t Na2CO3",
       "procedencia": {
-        "anio": 2025,
+        "anio": 2024,
         "fuente_id": "usgs-mcs-2025-soda-ash",
         "fuente": "USGS Mineral Commodity Summaries 2025: Soda Ash (Sodium Carbonate)",
         "url": "https://pubs.usgs.gov/periodicals/mcs2025/mcs2025-soda-ash.pdf",
         "fecha_descarga": "2026-11-26",
         "hash": "sha256:a386ee59806756e28c72f2fde95eaa3b68068e0614f1e0228fd13007be920ff5",
-        "cita_ubicacion": "USGS MCS 2025 no desagrega tonelaje anual individual de Argentina",
+        "cita_ubicacion": "Sin serie pública abierta auditada por planta; declarado sin_datos",
         "confianza": "alta"
       }
     },
     "procedencia": {
-      "anio": 2025,
+      "anio": 2024,
       "fuente_id": "usgs-mcs-2025-soda-ash",
       "fuente": "USGS Mineral Commodity Summaries 2025: Soda Ash (Sodium Carbonate)",
       "url": "https://pubs.usgs.gov/periodicals/mcs2025/mcs2025-soda-ash.pdf",
@@ -1311,18 +1311,18 @@
       "valor": null,
       "unidad": "t CaO",
       "procedencia": {
-        "anio": 2025,
+        "anio": 2024,
         "fuente_id": "usgs-mcs-2025-lime",
         "fuente": "USGS Mineral Commodity Summaries 2025: Lime (Quicklime & Hydrated Lime)",
         "url": "https://pubs.usgs.gov/periodicals/mcs2025/mcs2025-lime.pdf",
         "fecha_descarga": "2026-11-26",
         "hash": "sha256:0855c314c9e11fa32e12551877dfe16c586e30c210b0e67eb64bfcb813aa1774",
-        "cita_ubicacion": "USGS MCS 2025 no desagrega producción anual individual de Argentina",
+        "cita_ubicacion": "Sin serie anual oficial desagregada en USGS/INDEC; declarado sin_datos",
         "confianza": "alta"
       }
     },
     "procedencia": {
-      "anio": 2025,
+      "anio": 2024,
       "fuente_id": "usgs-mcs-2025-lime",
       "fuente": "USGS Mineral Commodity Summaries 2025: Lime (Quicklime & Hydrated Lime)",
       "url": "https://pubs.usgs.gov/periodicals/mcs2025/mcs2025-lime.pdf",
@@ -1342,18 +1342,18 @@
       "valor": 808,
       "unidad": "t Ag",
       "procedencia": {
-        "anio": 2025,
+        "anio": 2023,
         "fuente_id": "usgs-mcs-2025-silver",
         "fuente": "USGS Mineral Commodity Summaries 2025: Silver (World Mine Production & Reserves)",
         "url": "https://pubs.usgs.gov/periodicals/mcs2025/mcs2025-silver.pdf",
         "fecha_descarga": "2026-11-26",
         "hash": "sha256:1aa6e68c9700f88e97d4cbf31fc039d45d4b1b738a09f6bfece8edac0ec59b24",
-        "cita_ubicacion": "mcs2025-silver.pdf pág. 2 tabla World Mine Production: Argentina 2023 = 808 t",
+        "cita_ubicacion": "mcs2025-silver.pdf pág. 2: producción minera argentina de plata 2023 (808 t)",
         "confianza": "alta"
       }
     },
     "procedencia": {
-      "anio": 2025,
+      "anio": 2023,
       "fuente_id": "usgs-mcs-2025-silver",
       "fuente": "USGS Mineral Commodity Summaries 2025: Silver (World Mine Production & Reserves)",
       "url": "https://pubs.usgs.gov/periodicals/mcs2025/mcs2025-silver.pdf",
@@ -1373,18 +1373,18 @@
       "valor": 800,
       "unidad": "t Ag",
       "procedencia": {
-        "anio": 2025,
+        "anio": 2024,
         "fuente_id": "usgs-mcs-2025-silver",
         "fuente": "USGS Mineral Commodity Summaries 2025: Silver (World Mine Production & Reserves)",
         "url": "https://pubs.usgs.gov/periodicals/mcs2025/mcs2025-silver.pdf",
         "fecha_descarga": "2026-11-26",
         "hash": "sha256:1aa6e68c9700f88e97d4cbf31fc039d45d4b1b738a09f6bfece8edac0ec59b24",
-        "cita_ubicacion": "mcs2025-silver.pdf pág. 2 tabla World Mine Production: Argentina 2024e = 800 t",
+        "cita_ubicacion": "mcs2025-silver.pdf pág. 2: producción minera argentina de plata 2024e (800 t)",
         "confianza": "media"
       }
     },
     "procedencia": {
-      "anio": 2025,
+      "anio": 2024,
       "fuente_id": "usgs-mcs-2025-silver",
       "fuente": "USGS Mineral Commodity Summaries 2025: Silver (World Mine Production & Reserves)",
       "url": "https://pubs.usgs.gov/periodicals/mcs2025/mcs2025-silver.pdf",
@@ -1404,18 +1404,18 @@
       "valor": null,
       "unidad": "t ADt pulpa",
       "procedencia": {
-        "anio": 2026,
+        "anio": 2024,
         "fuente_id": "afcp-web-2026",
         "fuente": "Asociación de Fabricantes de Celulosa y Papel de Argentina (AFCP)",
         "url": "https://www.afcparg.org.ar/",
         "fecha_descarga": "2026-11-26",
         "hash": "sha256:73ffa42bcdafb3b30bd402b9926346d165be4aee30f6585843701da9fdd3862a",
-        "cita_ubicacion": "Sin serie anual pública descargable en CSV oficial; declarado sin_datos",
+        "cita_ubicacion": "Sin dataset abierto auditado por planta en Misiones; declarado sin_datos",
         "confianza": "alta"
       }
     },
     "procedencia": {
-      "anio": 2026,
+      "anio": 2024,
       "fuente_id": "afcp-web-2026",
       "fuente": "Asociación de Fabricantes de Celulosa y Papel de Argentina (AFCP)",
       "url": "https://www.afcparg.org.ar/",
@@ -1433,7 +1433,7 @@
     "medicion": {
       "estado": "sin_datos",
       "valor": null,
-      "unidad": null,
+      "unidad": "t GLP",
       "procedencia": {
         "anio": 2024,
         "fuente_id": "enargas-web-2026",
@@ -1464,7 +1464,7 @@
     "medicion": {
       "estado": "sin_datos",
       "valor": null,
-      "unidad": null,
+      "unidad": "t NaCl",
       "procedencia": {
         "anio": 2024,
         "fuente_id": "usgs-mcs-2025-salt",
@@ -1495,7 +1495,7 @@
     "medicion": {
       "estado": "sin_datos",
       "valor": null,
-      "unidad": null,
+      "unidad": "t clínker",
       "procedencia": {
         "anio": 2024,
         "fuente_id": "afcp-cemento-web-2026",
@@ -1526,7 +1526,7 @@
     "medicion": {
       "estado": "sin_datos",
       "valor": null,
-      "unidad": null,
+      "unidad": "t concentrado + aceite",
       "procedencia": {
         "anio": 2024,
         "fuente_id": "fecier-web-2026",
@@ -1683,18 +1683,18 @@
       "valor": null,
       "unidad": "t colofonia y trementina",
       "procedencia": {
-        "anio": 2026,
+        "anio": 2024,
         "fuente_id": "gruposanfrancisco-web-2026",
         "fuente": "Portal institucional Grupo San Francisco S.A. (Planta Resinera Gobernador Virasoro, Corrientes)",
         "url": "https://gruposanfrancisco.com.ar/",
         "fecha_descarga": "2026-11-26",
         "hash": "sha256:d336759d72411d4f455a5a8d5b61955d74381d1b4433c2654dcad2fc59b6215f",
-        "cita_ubicacion": "Sin serie estadística oficial anual abierta por provincia; se consignan exportaciones aduaneras UN Comtrade HS 3806.10 y 3805.10",
+        "cita_ubicacion": "Sin serie anual abierta descargable de toneladas provinciales; capacidad declarada planta Virasoro 13.000 t/año miera",
         "confianza": "alta"
       }
     },
     "procedencia": {
-      "anio": 2026,
+      "anio": 2024,
       "fuente_id": "gruposanfrancisco-web-2026",
       "fuente": "Portal institucional Grupo San Francisco S.A. (Planta Resinera Gobernador Virasoro, Corrientes)",
       "url": "https://gruposanfrancisco.com.ar/",
@@ -1714,18 +1714,18 @@
       "valor": null,
       "unidad": "t extracto de quebracho",
       "procedencia": {
-        "anio": 2026,
+        "anio": 2024,
         "fuente_id": "unitan-web-2026",
         "fuente": "Portal institucional Unitán S.A.I.C.A. (Extracto de quebracho y especialidades naturales en Formosa)",
         "url": "https://www.unitan.net/",
         "fecha_descarga": "2026-11-26",
         "hash": "sha256:f518159e3922bf613673d1cb3eb08c56f6e129fdac00d70b3bfa584ef26d7f11",
-        "cita_ubicacion": "Sin serie anual abierta desagregada para la planta de Formosa; se consignan exportaciones oficiales UN Comtrade HS 3201.10",
+        "cita_ubicacion": "Sin serie provincial abierta descargable; se muestran flujos aduaneros verificados HS 3201.10",
         "confianza": "alta"
       }
     },
     "procedencia": {
-      "anio": 2026,
+      "anio": 2024,
       "fuente_id": "unitan-web-2026",
       "fuente": "Portal institucional Unitán S.A.I.C.A. (Extracto de quebracho y especialidades naturales en Formosa)",
       "url": "https://www.unitan.net/",
@@ -1745,18 +1745,18 @@
       "valor": null,
       "unidad": "t aceite de oliva",
       "procedencia": {
-        "anio": 2026,
+        "anio": 2024,
         "fuente_id": "foa-web-2026",
         "fuente": "Federación Olivícola Argentina (FOA): cadena nacional del aceite de oliva y polo riojano",
         "url": "https://federacionolivicolaargentina.com.ar/",
         "fecha_descarga": "2026-11-26",
         "hash": "sha256:e3729256698dc15c06d30c39fe6f9f25c354de21023d89bd260c65a7c6fda098",
-        "cita_ubicacion": "SAGyP Estimaciones Agrícolas CSV no publica serie anual desagregada de aceite de oliva por provincia; se consignan exportaciones UN Comtrade HS 1509.20/1509.10",
+        "cita_ubicacion": "Sin serie anual abierta CSV de aceite de oliva por provincia; capacidades de almazara y exportaciones verificadas",
         "confianza": "alta"
       }
     },
     "procedencia": {
-      "anio": 2026,
+      "anio": 2024,
       "fuente_id": "foa-web-2026",
       "fuente": "Federación Olivícola Argentina (FOA): cadena nacional del aceite de oliva y polo riojano",
       "url": "https://federacionolivicolaargentina.com.ar/",
@@ -1776,18 +1776,18 @@
       "valor": null,
       "unidad": "t principios activos (IFAs)",
       "procedencia": {
-        "anio": 2026,
+        "anio": 2024,
         "fuente_id": "indec-farmaceutica-2026",
         "fuente": "INDEC: Industria farmacéutica en la Argentina (producción nacional, ventas y comercio exterior)",
         "url": "https://www.indec.gob.ar/indec/web/Nivel4-Tema-3-6-15",
         "fecha_descarga": "2026-11-26",
         "hash": "sha256:9cda8351bdd21468e8ca7187dc330d141ba37992c54acf7aafd4e457874a5c45",
-        "cita_ubicacion": "INDEC publica facturación monetaria de industria farmacéutica sin tonelaje físico de principios activos; se consignan flujos UN Comtrade HS 3004.90 y 2933.99",
+        "cita_ubicacion": "INDEC Industria Farmacéutica publica facturación en ARS sin serie física en toneladas de IFAs",
         "confianza": "alta"
       }
     },
     "procedencia": {
-      "anio": 2026,
+      "anio": 2024,
       "fuente_id": "indec-farmaceutica-2026",
       "fuente": "INDEC: Industria farmacéutica en la Argentina (producción nacional, ventas y comercio exterior)",
       "url": "https://www.indec.gob.ar/indec/web/Nivel4-Tema-3-6-15",
@@ -1807,7 +1807,7 @@
       "valor": null,
       "unidad": "t acero galvanizado",
       "procedencia": {
-        "anio": 2026,
+        "anio": 2024,
         "fuente_id": "druetta-hornos-2026",
         "fuente": "Ficha técnica de Hornos e Instalaciones de Galvanizado (Druetta Hnos. S.A.)",
         "url": "https://www.druetta.com.ar/instalaciones4.html",
@@ -1818,7 +1818,7 @@
       }
     },
     "procedencia": {
-      "anio": 2026,
+      "anio": 2024,
       "fuente_id": "druetta-hornos-2026",
       "fuente": "Ficha técnica de Hornos e Instalaciones de Galvanizado (Druetta Hnos. S.A.)",
       "url": "https://www.druetta.com.ar/instalaciones4.html",

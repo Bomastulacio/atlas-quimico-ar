@@ -6,7 +6,7 @@
   "hash_raw": "sha256:31afdfe5983b6d7648eba1eafc7a5a8fe3c591abdca4b17c311c08c75d361e92",
   "total_provincias": 24,
   "total_departamentos": 527,
-  "total_bytes": 524900,
+  "total_bytes": 524899,
   "provincias": {
     "10": {
       "departamentos": 16,
@@ -148,9 +148,9 @@
     },
     "06": {
       "departamentos": 135,
-      "activos": 2,
-      "bytes": 91944,
-      "hash": "sha256:bad92ed306eba51f0ad9fae7021fed890addd633bfcc3dddde81f14103533937"
+      "activos": 3,
+      "bytes": 91943,
+      "hash": "sha256:49e604089058e923147a5282f3801b181a67799f097b50068e9438b68daf72c9"
     }
   }
 }

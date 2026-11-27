@@ -1,57 +1,61 @@
 {
   "version_esquema": "1.0.0",
-  "generado_en": "2026-11-27T04:15:00Z",
+  "generado_en": "2026-11-27T20:05:28.961Z",
   "origen": "supabase",
   "es_ejemplo": false,
-  "nota": "24/24 jurisdicciones argentinas completas + piloto industrial Druetta Hnos. S.A. (General Rodríguez, Buenos Aires · galvanizado por inmersión en caliente): 35 departamentos, 24 productos, 26 procesos/PFDs ISO 10628, 29 empresas y 34 plantas verificadas con trazabilidad SHA-256.",
+  "nota": "Dataset oficial sincronizado íntegramente desde Supabase.",
   "tablas": {
     "fuentes": {
-      "registros": 93,
-      "hash": "sha256:fc19333562fb3f7dbd66ab5a90e97aace872017759712e78baa59b87bf499f77"
+      "registros": 94,
+      "hash": "sha256:f60b40b9288908f6a1ff4bbf7d87df4d52ad8f15ba6b2429bdbfad1aaa3caa30"
     },
     "provincias": {
       "registros": 24,
-      "hash": "sha256:780e2478879bc42161ccc58ccb95770e42dbd89a851a7d645a63421a8441b0db"
+      "hash": "sha256:26f75fb6ce3021dfe9bc468189002c8d86cb4783df2e6685e030552050c52fef"
     },
     "departamentos": {
-      "registros": 35,
-      "hash": "sha256:ae3dc65e66ca8c3921d1f5f0e78cae8cfd5b839808887f01c2e44512703ff498"
+      "registros": 36,
+      "hash": "sha256:cfef963098f0f3c2677e18d48bf19994a29a08c949633e6995c355531f27f9bc"
     },
     "productos": {
       "registros": 24,
-      "hash": "sha256:ae14fda5d79071d0539a8c2012fed3df2b66758ead8700e0753fc83a51414632"
+      "hash": "sha256:ae2d1120d53fd1f983a6456571857748aea3582441e0c5088f44a36692e45654"
     },
     "productos_zonas": {
-      "registros": 33,
-      "hash": "sha256:1f99884c8390e4db4566a468fffecbfa3154dec3644ba7897c5112b60e7791d4"
+      "registros": 34,
+      "hash": "sha256:54e039f40f25656ff03483ed4986a7a859cffd19a10a41faf04575a1daa2244c"
     },
     "procesos": {
-      "registros": 26,
-      "hash": "sha256:150c748313b271b9c45cc68fb84b05a70f7e08b781197de568914e4eecbc4553"
+      "registros": 27,
+      "hash": "sha256:f1437cc9f1d1663a571c6ef3a1ce29297125c1302c9de56eb8e78129d51d4bcd"
     },
     "pasos_proceso": {
-      "registros": 131,
-      "hash": "sha256:9104d2669d7baa36163ee9c09b0d725e5dddc0c09f3921ca3906834178aea685"
+      "registros": 136,
+      "hash": "sha256:571f987afd5def4e57ba0caba4cf4fc44cf687142fe2783c9a9a282b80c0576e"
     },
     "conexiones_proceso": {
-      "registros": 136,
-      "hash": "sha256:94f7a4c3197a7efb16c42141c023ba2e20462c770bab960d8e89fa19ec8569fc"
+      "registros": 140,
+      "hash": "sha256:b0edea84b1c150f71c428304338e22ef3d6b730c054891090aa9d1f13939e98a"
     },
     "empresas": {
       "registros": 29,
-      "hash": "sha256:7f2c7069e7239e12ae39d67d3abed2558bf063a7d8e722e6301a4b06e9e9383c"
+      "hash": "sha256:3e160c83b31f86762d04bbcbaaa9f09bf3e0236ffb49e019e5a8a6e2d812fa84"
     },
     "plantas": {
-      "registros": 34,
-      "hash": "sha256:e91215712f04ea210a87a419612d5e1e9d84b3b30bb7f97d646ec673a974e5ff"
+      "registros": 35,
+      "hash": "sha256:86d5289eacb01284c4dad51debb8939728c0dba8f932a93f0abcb2273e8a4ffd"
+    },
+    "unidades_planta": {
+      "registros": 40,
+      "hash": "sha256:db9f765075bf25563a96fd1bcc8e5794f9613d0439ad30e18257e5eaf99a5233"
     },
     "produccion": {
       "registros": 59,
-      "hash": "sha256:bcb2f9308c75f69a4807b443e4a39280f8bb6a3cdaee874c4d2c577d873a751c"
+      "hash": "sha256:65308319311723b24cbf95905d7e3da060956f19bddade2d31a6e3a954fcfa04"
     },
     "comercio_exterior": {
       "registros": 121,
-      "hash": "sha256:646e8b5c55734d5a343e13a8f62182adaa0156ab92e598b5d30b3496b2a1b6c3"
+      "hash": "sha256:3d12930f7985860428d65b6436e88a413c3418537a80e99376c6757fbef8f071"
     }
   }
 }

@@ -407,6 +407,17 @@
     "notas": "Consumo eléctrico BAT en celdas de membrana (2,5-3,0 MWh DC / t Cl2 o ECU = 1 t Cl2 + 1,1 t NaOH + 0,03 t H2) y concentración de soda cáustica al 50%."
   },
   {
+    "fuente_id": "enargas-web-2026",
+    "nombre": "Ente Nacional Regulador del Gas (ENARGAS): especificaciones de gas natural y GLP",
+    "organismo": "ENARGAS (República Argentina)",
+    "tipo": "oficial",
+    "url": "https://www.enargas.gob.ar/",
+    "fecha_descarga": "2026-11-26",
+    "hash": "sha256:348c0397955f862040024be7428db528ba23952b4dec6c360c53f8ae6b9411e4",
+    "archivo_raw": null,
+    "notas": "Marco regulatorio oficial del acondicionamiento de gas natural de cabecera en Cuenca Austral e inyección al Gasoducto San Martín."
+  },
+  {
     "fuente_id": "uncomtrade-ar-lote3-2023",
     "nombre": "UN Comtrade: comercio exterior de Argentina HS 290511 (Metanol), 390210 (Polipropileno), 220710/220720 (Alcohol etílico) y 170199 (Azúcar) 2023",
     "organismo": "UN Comtrade (Naciones Unidas)",
@@ -759,17 +770,6 @@
     "notas": "Operador de plantas de tratamiento de gas natural y líquidos (Río Cullen / Cañadón Alfa) en el Depto. Río Grande, Tierra del Fuego."
   },
   {
-    "fuente_id": "enargas-web-2026",
-    "nombre": "Ente Nacional Regulador del Gas (ENARGAS): especificaciones de gas natural y GLP",
-    "organismo": "ENARGAS (República Argentina)",
-    "tipo": "oficial",
-    "url": "https://www.enargas.gob.ar/",
-    "fecha_descarga": "2026-11-26",
-    "hash": "sha256:348c0397955f862040024be7428db528ba23952b4dec6c360c53f8ae6b9411e4",
-    "archivo_raw": null,
-    "notas": "Marco regulatorio oficial del acondicionamiento de gas natural de cabecera en Cuenca Austral e inyección al Gasoducto San Martín."
-  },
-  {
     "fuente_id": "dosanclas-web-2026",
     "nombre": "Portal institucional Dos Anclas (Compañía Introductora de Buenos Aires S.A. · Salinas Grandes de Hidalgo)",
     "organismo": "Dos Anclas / CIBA S.A.",
@@ -1021,5 +1021,16 @@
     "hash": "sha256:93dfbdfc57f8246c22b9e8a0c42d086a914a9c5f50a1b0601d1b6eefc38dbd7c",
     "archivo_raw": null,
     "notas": "Datos oficiales aduaneros 2024 para zinc en bruto sin alear (HS 7901.11/7901.12) y estructuras metálicas de acero (HS 7308.90) en Argentina."
+  },
+  {
+    "fuente_id": "ypf-sec-20f-2025",
+    "nombre": "YPF Sociedad Anónima — Form 20-F Annual Report (Ejercicio finalizado el 31/12/2025)",
+    "organismo": "YPF S.A. / U.S. Securities and Exchange Commission (SEC EDGAR · CIK 0000904851)",
+    "tipo": "empresa",
+    "url": "https://www.sec.gov/Archives/edgar/data/904851/000119312526126363/d95578d20f.htm",
+    "fecha_descarga": "2026-11-27",
+    "hash": "sha256:8d9d89011f05c6525bc48aaf98862cf3e985496b6622baddea112f1c020894ac",
+    "archivo_raw": null,
+    "notas": "Presentado ante la SEC el 26/03/2026 (Accession 0001193125-26-126363). Incluye CUIT 30-54668997-9, 393.312.793 acciones ordinarias y tabla auditada Item 4 de capacidades de refinación (338,0 kbbl/d) y petroquímica (CIE Ensenada, Luján de Cuyo y Plaza Huincul)."
   }
 ]

@@ -1485,6 +1485,39 @@
     }
   },
   {
+    "conexion_id": "cit-c4",
+    "proceso_id": "citricos-aceite-jugo-concordia",
+    "origen_paso_id": "cit-p1-lavado-extraccion",
+    "destino_paso_id": "cit-p5-secado-cascara",
+    "corriente_nombre": "Cáscara húmeda y pulpa prensada",
+    "tipo_corriente": "subproducto",
+    "flujo": {
+      "estado": "dato",
+      "valor": 6.8,
+      "unidad": "t/t concentrado",
+      "procedencia": {
+        "anio": 2026,
+        "fuente_id": "fecier-web-2026",
+        "fuente": "Federación del Citrus de Entre Ríos (FeCiER): polo citrícola e industrialización en Concordia y Federación",
+        "url": "https://www.fecier.org.ar/",
+        "fecha_descarga": "2026-11-26",
+        "hash": "sha256:8acb03caa8d432a636771bc3a0d27bec96086245e1344850401beee9b3d91094",
+        "cita_ubicacion": "FeCiER",
+        "confianza": "alta"
+      }
+    },
+    "procedencia": {
+      "anio": 2026,
+      "fuente_id": "fecier-web-2026",
+      "fuente": "Federación del Citrus de Entre Ríos (FeCiER): polo citrícola e industrialización en Concordia y Federación",
+      "url": "https://www.fecier.org.ar/",
+      "fecha_descarga": "2026-11-26",
+      "hash": "sha256:8acb03caa8d432a636771bc3a0d27bec96086245e1344850401beee9b3d91094",
+      "cita_ubicacion": "FeCiER",
+      "confianza": "alta"
+    }
+  },
+  {
     "conexion_id": "pvc-c4-reciclo-hcl",
     "proceso_id": "petroquimica-cloro-alcali-pvc",
     "origen_paso_id": "pvc-p4-craqueo-mvc",
@@ -3045,7 +3078,7 @@
     "flujo": {
       "estado": "sin_datos",
       "valor": null,
-      "unidad": null,
+      "unidad": "MMm3/d",
       "procedencia": {
         "anio": 2026,
         "fuente_id": "eu-bref-ref",
@@ -3078,7 +3111,7 @@
     "flujo": {
       "estado": "sin_datos",
       "valor": null,
-      "unidad": null,
+      "unidad": "MMm3/d",
       "procedencia": {
         "anio": 2026,
         "fuente_id": "eu-bref-ref",
@@ -3111,7 +3144,7 @@
     "flujo": {
       "estado": "sin_datos",
       "valor": null,
-      "unidad": null,
+      "unidad": "t/d",
       "procedencia": {
         "anio": 2026,
         "fuente_id": "eu-bref-ref",
@@ -3144,7 +3177,7 @@
     "flujo": {
       "estado": "sin_datos",
       "valor": null,
-      "unidad": null,
+      "unidad": "m3/d",
       "procedencia": {
         "anio": 2026,
         "fuente_id": "eu-bref-ref",
@@ -3177,7 +3210,7 @@
     "flujo": {
       "estado": "sin_datos",
       "valor": null,
-      "unidad": null,
+      "unidad": "t/d",
       "procedencia": {
         "anio": 2026,
         "fuente_id": "enargas-web-2026",
@@ -3210,7 +3243,7 @@
     "flujo": {
       "estado": "sin_datos",
       "valor": null,
-      "unidad": null,
+      "unidad": "MMm3/d",
       "procedencia": {
         "anio": 2026,
         "fuente_id": "eu-bref-ref",
@@ -3309,7 +3342,7 @@
     "flujo": {
       "estado": "sin_datos",
       "valor": null,
-      "unidad": null,
+      "unidad": "m3/t",
       "procedencia": {
         "anio": 2026,
         "fuente_id": "dosanclas-web-2026",
@@ -3507,7 +3540,7 @@
     "flujo": {
       "estado": "sin_datos",
       "valor": null,
-      "unidad": null,
+      "unidad": "Nm3/t",
       "procedencia": {
         "anio": 2006,
         "fuente_id": "eu-bref-clm",
@@ -3573,7 +3606,7 @@
     "flujo": {
       "estado": "sin_datos",
       "valor": null,
-      "unidad": null,
+      "unidad": "m3/t",
       "procedencia": {
         "anio": 2026,
         "fuente_id": "eu-bref-fdm",
@@ -3663,39 +3696,6 @@
     }
   },
   {
-    "conexion_id": "cit-c4",
-    "proceso_id": "citricos-aceite-jugo-concordia",
-    "origen_paso_id": "cit-p1-lavado-extraccion",
-    "destino_paso_id": "cit-p5-secado-cascara",
-    "corriente_nombre": "Cáscara húmeda y pulpa prensada",
-    "tipo_corriente": "subproducto",
-    "flujo": {
-      "estado": "dato",
-      "valor": 6.8,
-      "unidad": "t/t concentrado",
-      "procedencia": {
-        "anio": 2026,
-        "fuente_id": "fecier-web-2026",
-        "fuente": "Federación del Citrus de Entre Ríos (FeCiER): polo citrícola e industrialización en Concordia y Federación",
-        "url": "https://www.fecier.org.ar/",
-        "fecha_descarga": "2026-11-26",
-        "hash": "sha256:8acb03caa8d432a636771bc3a0d27bec96086245e1344850401beee9b3d91094",
-        "cita_ubicacion": "FeCiER",
-        "confianza": "alta"
-      }
-    },
-    "procedencia": {
-      "anio": 2026,
-      "fuente_id": "fecier-web-2026",
-      "fuente": "Federación del Citrus de Entre Ríos (FeCiER): polo citrícola e industrialización en Concordia y Federación",
-      "url": "https://www.fecier.org.ar/",
-      "fecha_descarga": "2026-11-26",
-      "hash": "sha256:8acb03caa8d432a636771bc3a0d27bec96086245e1344850401beee9b3d91094",
-      "cita_ubicacion": "FeCiER",
-      "confianza": "alta"
-    }
-  },
-  {
     "conexion_id": "cit-c5",
     "proceso_id": "citricos-aceite-jugo-concordia",
     "origen_paso_id": "cit-p2-centrifugacion-aceite",
@@ -3705,7 +3705,7 @@
     "flujo": {
       "estado": "sin_datos",
       "valor": null,
-      "unidad": null,
+      "unidad": "m3/t",
       "procedencia": {
         "anio": 2026,
         "fuente_id": "eu-bref-fdm",
@@ -4484,6 +4484,138 @@
       "fecha_descarga": "2026-11-27",
       "hash": "sha256:78b05da2694e9bb944dc252146eb27b48ec63193936bd19d43aa8c1aa33ec5f4",
       "cita_ubicacion": "druetta.com.ar/galvanizado3.html",
+      "confianza": "alta"
+    }
+  },
+  {
+    "conexion_id": "btx-c1",
+    "proceso_id": "petroquimica-reformado-btx-ensenada",
+    "origen_paso_id": "btx-01-nafta-hds",
+    "destino_paso_id": "btx-02-reformado-ccr",
+    "corriente_nombre": "Nafta hidrotratada libre de S",
+    "tipo_corriente": "principal",
+    "flujo": {
+      "estado": "sin_datos",
+      "valor": null,
+      "unidad": "t/h",
+      "procedencia": {
+        "anio": 2015,
+        "fuente_id": "eu-bref-ref",
+        "fuente": "Reference Document on Best Available Techniques for the Refining of Mineral Oil and Gas (REF BREF)",
+        "url": "https://bureau-industrial-transformation.jrc.ec.europa.eu/reference/refining-mineral-oil-and-gas",
+        "fecha_descarga": "2026-11-26",
+        "hash": "sha256:682ce5d7c61e02b0442cdb38770c98735dd7406ddb30321e2338b5bdcf05a1c7",
+        "cita_ubicacion": "EU BREF REF (2015) Catalytic Reforming feed",
+        "confianza": "alta"
+      }
+    },
+    "procedencia": {
+      "anio": 2015,
+      "fuente_id": "eu-bref-ref",
+      "fuente": "Reference Document on Best Available Techniques for the Refining of Mineral Oil and Gas (REF BREF)",
+      "url": "https://bureau-industrial-transformation.jrc.ec.europa.eu/reference/refining-mineral-oil-and-gas",
+      "fecha_descarga": "2026-11-26",
+      "hash": "sha256:682ce5d7c61e02b0442cdb38770c98735dd7406ddb30321e2338b5bdcf05a1c7",
+      "cita_ubicacion": "EU BREF REF (2015) Catalytic Reforming feed",
+      "confianza": "alta"
+    }
+  },
+  {
+    "conexion_id": "btx-c2",
+    "proceso_id": "petroquimica-reformado-btx-ensenada",
+    "origen_paso_id": "btx-02-reformado-ccr",
+    "destino_paso_id": "btx-03-extraccion-sulfolano",
+    "corriente_nombre": "Reformado rico en aromáticos",
+    "tipo_corriente": "principal",
+    "flujo": {
+      "estado": "sin_datos",
+      "valor": null,
+      "unidad": "t/h",
+      "procedencia": {
+        "anio": 2017,
+        "fuente_id": "eu-bref-lvoc-2017",
+        "fuente": "Best Available Techniques (BAT) Reference Document for the Production of Large Volume Organic Chemicals (LVOC BREF)",
+        "url": "https://bureau-industrial-transformation.jrc.ec.europa.eu/reference/production-large-volume-organic-chemicals",
+        "fecha_descarga": "2026-11-26",
+        "hash": "sha256:fb75a48a3620f76be5994c385048921a27c0dffdfad33ab595aac4654cfe8a34",
+        "cita_ubicacion": "EU BREF LVOC (2017) Aromatics extraction",
+        "confianza": "alta"
+      }
+    },
+    "procedencia": {
+      "anio": 2017,
+      "fuente_id": "eu-bref-lvoc-2017",
+      "fuente": "Best Available Techniques (BAT) Reference Document for the Production of Large Volume Organic Chemicals (LVOC BREF)",
+      "url": "https://bureau-industrial-transformation.jrc.ec.europa.eu/reference/production-large-volume-organic-chemicals",
+      "fecha_descarga": "2026-11-26",
+      "hash": "sha256:fb75a48a3620f76be5994c385048921a27c0dffdfad33ab595aac4654cfe8a34",
+      "cita_ubicacion": "EU BREF LVOC (2017) Aromatics extraction",
+      "confianza": "alta"
+    }
+  },
+  {
+    "conexion_id": "btx-c3",
+    "proceso_id": "petroquimica-reformado-btx-ensenada",
+    "origen_paso_id": "btx-03-extraccion-sulfolano",
+    "destino_paso_id": "btx-04-fraccionamiento",
+    "corriente_nombre": "Extracto BTX purificado",
+    "tipo_corriente": "principal",
+    "flujo": {
+      "estado": "sin_datos",
+      "valor": null,
+      "unidad": "t/h",
+      "procedencia": {
+        "anio": 2017,
+        "fuente_id": "eu-bref-lvoc-2017",
+        "fuente": "Best Available Techniques (BAT) Reference Document for the Production of Large Volume Organic Chemicals (LVOC BREF)",
+        "url": "https://bureau-industrial-transformation.jrc.ec.europa.eu/reference/production-large-volume-organic-chemicals",
+        "fecha_descarga": "2026-11-26",
+        "hash": "sha256:fb75a48a3620f76be5994c385048921a27c0dffdfad33ab595aac4654cfe8a34",
+        "cita_ubicacion": "EU BREF LVOC (2017) BTX distillation train",
+        "confianza": "alta"
+      }
+    },
+    "procedencia": {
+      "anio": 2017,
+      "fuente_id": "eu-bref-lvoc-2017",
+      "fuente": "Best Available Techniques (BAT) Reference Document for the Production of Large Volume Organic Chemicals (LVOC BREF)",
+      "url": "https://bureau-industrial-transformation.jrc.ec.europa.eu/reference/production-large-volume-organic-chemicals",
+      "fecha_descarga": "2026-11-26",
+      "hash": "sha256:fb75a48a3620f76be5994c385048921a27c0dffdfad33ab595aac4654cfe8a34",
+      "cita_ubicacion": "EU BREF LVOC (2017) BTX distillation train",
+      "confianza": "alta"
+    }
+  },
+  {
+    "conexion_id": "btx-c4",
+    "proceso_id": "petroquimica-reformado-btx-ensenada",
+    "origen_paso_id": "btx-04-fraccionamiento",
+    "destino_paso_id": "btx-05-derivados-cie",
+    "corriente_nombre": "Benceno, tolueno y xilenos grado químico",
+    "tipo_corriente": "principal",
+    "flujo": {
+      "estado": "sin_datos",
+      "valor": null,
+      "unidad": "t/h",
+      "procedencia": {
+        "anio": 2025,
+        "fuente_id": "ypf-sec-20f-2025",
+        "fuente": "YPF Sociedad Anónima — Form 20-F Annual Report (Ejercicio finalizado el 31/12/2025)",
+        "url": "https://www.sec.gov/Archives/edgar/data/904851/000119312526126363/d95578d20f.htm",
+        "fecha_descarga": "2026-11-27",
+        "hash": "sha256:8d9d89011f05c6525bc48aaf98862cf3e985496b6622baddea112f1c020894ac",
+        "cita_ubicacion": "Form 20-F FY2025 pág. 34 (BTX 526.000 t/año)",
+        "confianza": "alta"
+      }
+    },
+    "procedencia": {
+      "anio": 2025,
+      "fuente_id": "ypf-sec-20f-2025",
+      "fuente": "YPF Sociedad Anónima — Form 20-F Annual Report (Ejercicio finalizado el 31/12/2025)",
+      "url": "https://www.sec.gov/Archives/edgar/data/904851/000119312526126363/d95578d20f.htm",
+      "fecha_descarga": "2026-11-27",
+      "hash": "sha256:8d9d89011f05c6525bc48aaf98862cf3e985496b6622baddea112f1c020894ac",
+      "cita_ubicacion": "Form 20-F FY2025 pág. 34 (BTX 526.000 t/año)",
       "confianza": "alta"
     }
   }

@@ -17259,5 +17259,663 @@
         "fuente_id": "eu-bref-fmp-2022"
       }
     ]
+  },
+  {
+    "proceso_id": "petroquimica-reformado-btx-ensenada",
+    "producto_id": "petroquimica",
+    "titulo": "PFD: Reformado Catalítico de Nafta (CCR) y Extracción de Aromáticos BTX (CIE Ensenada)",
+    "norma_simbologia": "ISO 10628 / ASME",
+    "base_calculo": "1,00 t de aromáticos BTX (benceno, tolueno y xilenos) · Complejo Industrial Ensenada (YPF CIE · 526.000 t/año)",
+    "resumen_tecnico": "Esquema representativo de la integración Refinería La Plata <-> Complejo Industrial Ensenada (YPF CIE): hidrotratamiento catalítico de nafta virgen, reformado catalítico continuo (520.760 t/año) con coproducción de hidrógeno, extracción líquido-líquido con sulfolano en circuito cerrado y tren de fraccionamiento de benceno, tolueno y xilenos.",
+    "nota_metodologica": "Topología y rangos típicos de T y P verificados con EU BREF REF (2015, Catalytic Reforming) y EU BREF LVOC (2017, Aromatics BTX). Capacidades nominales auditadas desde YPF Form 20-F FY2025 Item 4 pág. 34 (BTX 526.000 t/año, Reformado 520.760 t/año, Ciclohexano 95.000 t/año, LAB 53.000 t/año). Caudales internos propietarios figuran como s/d.",
+    "canvas_width": 1880,
+    "canvas_height": 760,
+    "secciones": [
+      {
+        "area_id": "area-100",
+        "titulo": "Área 100 · Hidrotratamiento HDS",
+        "x": 224,
+        "y": 40,
+        "width": 340,
+        "height": 665
+      },
+      {
+        "area_id": "area-200",
+        "titulo": "Área 200 · Reformado Catalítico CCR",
+        "x": 584,
+        "y": 40,
+        "width": 350,
+        "height": 665
+      },
+      {
+        "area_id": "area-300",
+        "titulo": "Área 300 · Extracción Sulfolano",
+        "x": 954,
+        "y": 40,
+        "width": 340,
+        "height": 665
+      },
+      {
+        "area_id": "area-400",
+        "titulo": "Área 400 · Tren BTX y Derivados",
+        "x": 1314,
+        "y": 40,
+        "width": 342,
+        "height": 665
+      }
+    ],
+    "equipos": [
+      {
+        "tag": "E-101",
+        "nombre": "Precalentador nafta/efluente",
+        "simbolo": "heat_exchanger",
+        "area_id": "area-100",
+        "x": 314,
+        "y": 240,
+        "temperatura_op": "25 -> 310 °C",
+        "presion_op": "25-35 bar",
+        "reaccion": null,
+        "condicion_critica": "ΔT recuperación",
+        "descripcion": "Intercambiador carga-efluente que precalienta la nafta virgen de Refinería La Plata aprovechando el calor del reactor HDS.",
+        "fuente_id": "eu-bref-ref",
+        "cita_ubicacion": "EU BREF REF (2015) Naphtha hydrotreating preheat"
+      },
+      {
+        "tag": "R-101",
+        "nombre": "Reactor hidrotratamiento (HDS)",
+        "simbolo": "reactor",
+        "area_id": "area-100",
+        "x": 478,
+        "y": 240,
+        "temperatura_op": "310-350 °C",
+        "presion_op": "25-35 bar",
+        "reaccion": "R-SH + H2 -> R-H + H2S",
+        "condicion_critica": "<1 ppm S",
+        "descripcion": "Lecho fijo CoMo/NiMo que elimina compuestos de azufre y nitrógeno para evitar el envenenamiento del catalizador de platino del reformador.",
+        "fuente_id": "eu-bref-ref",
+        "cita_ubicacion": "EU BREF REF (2015) Catalytic Reforming feed hydrotreatment"
+      },
+      {
+        "tag": "F-201",
+        "nombre": "Horno de carga reformado",
+        "simbolo": "furnace",
+        "area_id": "area-200",
+        "x": 674,
+        "y": 240,
+        "temperatura_op": "490-525 °C",
+        "presion_op": "5-15 bar",
+        "reaccion": null,
+        "condicion_critica": "TC 515 °C",
+        "descripcion": "Horno radiante multicámara que aporta el calor endotérmico necesario para la deshidrogenación de naftenos a aromáticos.",
+        "fuente_id": "eu-bref-ref",
+        "cita_ubicacion": "EU BREF REF (2015) Catalytic Reforming fired heaters"
+      },
+      {
+        "tag": "R-201",
+        "nombre": "Reactores reformado catalítico",
+        "simbolo": "reactor",
+        "area_id": "area-200",
+        "x": 846,
+        "y": 240,
+        "temperatura_op": "490-525 °C",
+        "presion_op": "5-15 bar",
+        "reaccion": "C6H12 -> C6H6 + 3 H2",
+        "condicion_critica": "520,8 kt/año",
+        "descripcion": "Tren catalítico Pt-Sn/Al2O3 (520.760 t/año en CIE) que aromatiza naftenos y parafinas y coproduce hidrógeno de alta pureza para la refinería.",
+        "fuente_id": "ypf-sec-20f-2025",
+        "cita_ubicacion": "YPF Form 20-F FY2025 Item 4 pág. 34 (Reforming 520.760 t/año)"
+      },
+      {
+        "tag": "V-201",
+        "nombre": "Separador gas rico en H2",
+        "simbolo": "separator",
+        "area_id": "area-200",
+        "x": 846,
+        "y": 505,
+        "temperatura_op": "35-45 °C",
+        "presion_op": "5-12 bar",
+        "reaccion": null,
+        "condicion_critica": "Reciclo H2",
+        "descripcion": "Separa el gas rico en hidrógeno (parte recircula al reformador y el excedente alimenta hidrotratamiento e hidrogenación a ciclohexano) del reformado líquido.",
+        "fuente_id": "eu-bref-ref",
+        "cita_ubicacion": "EU BREF REF (2015) Catalytic Reforming product separator"
+      },
+      {
+        "tag": "T-301",
+        "nombre": "Columna extracción sulfolano",
+        "simbolo": "extractor",
+        "area_id": "area-300",
+        "x": 1044,
+        "y": 240,
+        "temperatura_op": "80-115 °C",
+        "presion_op": "4-8 bar",
+        "reaccion": null,
+        "condicion_critica": "Solvente cerrado",
+        "descripcion": "Extracción líquido-líquido selectiva de hidrocarburos aromáticos BTX respecto del rafinado alifático usando sulfolano en circuito cerrado.",
+        "fuente_id": "eu-bref-lvoc-2017",
+        "cita_ubicacion": "EU BREF LVOC (2017) Aromatics BTX sulfolane extraction"
+      },
+      {
+        "tag": "T-302",
+        "nombre": "Recuperadora de sulfolano",
+        "simbolo": "column",
+        "area_id": "area-300",
+        "x": 1210,
+        "y": 505,
+        "temperatura_op": "150-185 °C",
+        "presion_op": "0,5-1,2 bar",
+        "reaccion": null,
+        "condicion_critica": "Vacío suave",
+        "descripcion": "Destila al vacío los aromáticos BTX del solvente rico y devuelve el sulfolano regenerado a la torre extractora.",
+        "fuente_id": "eu-bref-lvoc-2017",
+        "cita_ubicacion": "EU BREF LVOC (2017) Aromatics BTX solvent recovery column"
+      },
+      {
+        "tag": "T-401",
+        "nombre": "Tren fraccionamiento BTX",
+        "simbolo": "column",
+        "area_id": "area-400",
+        "x": 1490,
+        "y": 240,
+        "temperatura_op": "80-165 °C",
+        "presion_op": "1,0-2,0 bar",
+        "reaccion": null,
+        "condicion_critica": "526 kt/año BTX",
+        "descripcion": "Columnas secuenciales de benceno (80 °C), tolueno (111 °C) y xilenos/ortoxileno (138-145 °C) con capacidad nominal de 526.000 t/año en CIE Ensenada.",
+        "fuente_id": "ypf-sec-20f-2025",
+        "cita_ubicacion": "YPF Form 20-F FY2025 Item 4 pág. 34 (BTX 526.000 t/año; Ortoxileno 25.000 t/año)"
+      }
+    ],
+    "corrientes": [
+      {
+        "numero": 1,
+        "nombre": "Nafta virgen de Refinería La Plata",
+        "tipo": "proceso",
+        "origen_tag": null,
+        "destino_tag": "E-101",
+        "puntos": [
+          [
+            188,
+            240
+          ],
+          [
+            276,
+            240
+          ]
+        ],
+        "flag_pos": [
+          230,
+          224
+        ],
+        "especies": "Hidrocarburos C6-C10 (naftenos y parafinas)",
+        "fase": "Líquido",
+        "temperatura_c": "25-40",
+        "presion_bar": "25-35",
+        "flujo_especifico": {
+          "estado": "sin_datos",
+          "valor": null,
+          "unidad": "t/t BTX"
+        },
+        "nota_tecnica": "Corriente directa desde las unidades de destilación de Refinería La Plata (198,9 kbbl/d).",
+        "fuente_id": "ypf-sec-20f-2025",
+        "cita_ubicacion": "YPF Form 20-F FY2025 pág. 34 (virgin naphtha supplied by La Plata Refinery)"
+      },
+      {
+        "numero": 2,
+        "nombre": "Nafta precalentada a HDS",
+        "tipo": "proceso",
+        "origen_tag": "E-101",
+        "destino_tag": "R-101",
+        "puntos": [
+          [
+            352,
+            240
+          ],
+          [
+            440,
+            240
+          ]
+        ],
+        "flag_pos": [
+          396,
+          224
+        ],
+        "especies": "Nafta C6-C10 + H2",
+        "fase": "Bifásico",
+        "temperatura_c": "300-320",
+        "presion_bar": "25-35",
+        "flujo_especifico": {
+          "estado": "sin_datos",
+          "valor": null,
+          "unidad": "t/t BTX"
+        },
+        "nota_tecnica": "Mezcla precalentada ingresa al lecho hidrotratador para remoción profunda de S y N.",
+        "fuente_id": "eu-bref-ref",
+        "cita_ubicacion": "EU BREF REF (2015) Naphtha hydrotreating"
+      },
+      {
+        "numero": 3,
+        "nombre": "Nafta hidrotratada libre de S",
+        "tipo": "proceso",
+        "origen_tag": "R-101",
+        "destino_tag": "F-201",
+        "puntos": [
+          [
+            516,
+            240
+          ],
+          [
+            634,
+            240
+          ]
+        ],
+        "flag_pos": [
+          575,
+          224
+        ],
+        "especies": "Nafta C6-C10 (<1 ppm S)",
+        "fase": "Líquido",
+        "temperatura_c": "150-200",
+        "presion_bar": "10-15",
+        "flujo_especifico": {
+          "estado": "sin_datos",
+          "valor": null,
+          "unidad": "t/t BTX"
+        },
+        "nota_tecnica": "Alimentación desulfurada apta para el catalizador bimetálico de platino.",
+        "fuente_id": "eu-bref-ref",
+        "cita_ubicacion": "EU BREF REF (2015) Catalytic Reforming feed"
+      },
+      {
+        "numero": 4,
+        "nombre": "Carga vaporizada a reactores CCR",
+        "tipo": "proceso",
+        "origen_tag": "F-201",
+        "destino_tag": "R-201",
+        "puntos": [
+          [
+            714,
+            240
+          ],
+          [
+            808,
+            240
+          ]
+        ],
+        "flag_pos": [
+          760,
+          224
+        ],
+        "especies": "Naftenos, parafinas + H2 reciclo",
+        "fase": "Gas",
+        "temperatura_c": "490-525",
+        "presion_bar": "5-15",
+        "flujo_especifico": {
+          "estado": "sin_datos",
+          "valor": null,
+          "unidad": "t/t BTX"
+        },
+        "nota_tecnica": "Alimentación en fase vapor hacia los reactores catalíticos de aromatización.",
+        "fuente_id": "eu-bref-ref",
+        "cita_ubicacion": "EU BREF REF (2015) Catalytic Reforming reactors"
+      },
+      {
+        "numero": 5,
+        "nombre": "Efluente reformado al separador",
+        "tipo": "proceso",
+        "origen_tag": "R-201",
+        "destino_tag": "V-201",
+        "puntos": [
+          [
+            846,
+            292
+          ],
+          [
+            846,
+            455
+          ]
+        ],
+        "flag_pos": [
+          864,
+          376
+        ],
+        "especies": "Aromáticos BTX + H2 + C1-C4",
+        "fase": "Bifásico",
+        "temperatura_c": "40-55",
+        "presion_bar": "5-12",
+        "flujo_especifico": {
+          "estado": "sin_datos",
+          "valor": null,
+          "unidad": "t/t BTX"
+        },
+        "nota_tecnica": "Corriente enfriada tras intercambio térmico rumbo al separador de fases.",
+        "fuente_id": "eu-bref-ref",
+        "cita_ubicacion": "EU BREF REF (2015) Catalytic Reforming separator"
+      },
+      {
+        "numero": 6,
+        "nombre": "Hidrógeno (H2) a refinería y ciclohexano",
+        "tipo": "subproducto",
+        "origen_tag": "V-201",
+        "destino_tag": null,
+        "puntos": [
+          [
+            846,
+            555
+          ],
+          [
+            846,
+            640
+          ],
+          [
+            1680,
+            640
+          ]
+        ],
+        "flag_pos": [
+          1100,
+          624
+        ],
+        "especies": "H2 (75-90% mol) + C1-C2",
+        "fase": "Gas",
+        "temperatura_c": "35-45",
+        "presion_bar": "10-20",
+        "flujo_especifico": {
+          "estado": "sin_datos",
+          "valor": null,
+          "unidad": "t/t BTX"
+        },
+        "nota_tecnica": "El H2 coproducido abastece hidrotratamiento de Refinería La Plata y la unidad de ciclohexano (95.000 t/año).",
+        "fuente_id": "ypf-sec-20f-2025",
+        "cita_ubicacion": "YPF Form 20-F FY2025 pág. 34 (efficient use of by-products, such as hydrogen)"
+      },
+      {
+        "numero": 7,
+        "nombre": "Reformado líquido estabilizado",
+        "tipo": "proceso",
+        "origen_tag": "V-201",
+        "destino_tag": "T-301",
+        "puntos": [
+          [
+            884,
+            505
+          ],
+          [
+            934,
+            505
+          ],
+          [
+            934,
+            240
+          ],
+          [
+            1006,
+            240
+          ]
+        ],
+        "flag_pos": [
+          934,
+          376
+        ],
+        "especies": "BTX + rafinado alifático C6-C9",
+        "fase": "Líquido",
+        "temperatura_c": "80-100",
+        "presion_bar": "5-8",
+        "flujo_especifico": {
+          "estado": "sin_datos",
+          "valor": null,
+          "unidad": "t/t BTX"
+        },
+        "nota_tecnica": "Reformado líquido entra a la columna de extracción con sulfolano.",
+        "fuente_id": "eu-bref-lvoc-2017",
+        "cita_ubicacion": "EU BREF LVOC (2017) Aromatics extraction feed"
+      },
+      {
+        "numero": 8,
+        "nombre": "Extracto rico y solvente a recuperación",
+        "tipo": "proceso",
+        "origen_tag": "T-301",
+        "destino_tag": "T-302",
+        "puntos": [
+          [
+            1082,
+            272
+          ],
+          [
+            1146,
+            272
+          ],
+          [
+            1146,
+            505
+          ],
+          [
+            1172,
+            505
+          ]
+        ],
+        "flag_pos": [
+          1146,
+          388
+        ],
+        "especies": "Sulfolano + Benceno/Tolueno/Xilenos",
+        "fase": "Líquido",
+        "temperatura_c": "100-120",
+        "presion_bar": "3-6",
+        "flujo_especifico": {
+          "estado": "sin_datos",
+          "valor": null,
+          "unidad": "t/t BTX"
+        },
+        "nota_tecnica": "Fase extracto cargada en aromáticos dirigida a la columna recuperadora de solvente.",
+        "fuente_id": "eu-bref-lvoc-2017",
+        "cita_ubicacion": "EU BREF LVOC (2017) Sulfolane extract stripping"
+      },
+      {
+        "numero": 9,
+        "nombre": "Reciclo cerrado de sulfolano regenerado",
+        "tipo": "reciclo",
+        "origen_tag": "T-302",
+        "destino_tag": "T-301",
+        "puntos": [
+          [
+            1210,
+            560
+          ],
+          [
+            1210,
+            602
+          ],
+          [
+            1044,
+            602
+          ],
+          [
+            1044,
+            296
+          ]
+        ],
+        "flag_pos": [
+          1128,
+          586
+        ],
+        "especies": "Sulfolano pobre regenerado",
+        "fase": "Líquido",
+        "temperatura_c": "110-140",
+        "presion_bar": "4-6",
+        "flujo_especifico": {
+          "estado": "sin_datos",
+          "valor": null,
+          "unidad": "t/t BTX"
+        },
+        "nota_tecnica": "Solvente recuperado por fondo retorna en circuito cerrado al tope de la extractora.",
+        "fuente_id": "eu-bref-lvoc-2017",
+        "cita_ubicacion": "EU BREF LVOC (2017) Closed-loop sulfolane recycle"
+      },
+      {
+        "numero": 10,
+        "nombre": "Extracto BTX puro al tren de destilación",
+        "tipo": "proceso",
+        "origen_tag": "T-302",
+        "destino_tag": "T-401",
+        "puntos": [
+          [
+            1248,
+            472
+          ],
+          [
+            1340,
+            472
+          ],
+          [
+            1340,
+            240
+          ],
+          [
+            1452,
+            240
+          ]
+        ],
+        "flag_pos": [
+          1340,
+          356
+        ],
+        "especies": "Benceno, Tolueno, Xilenos (BTX)",
+        "fase": "Líquido",
+        "temperatura_c": "90-120",
+        "presion_bar": "1,5-2,5",
+        "flujo_especifico": {
+          "estado": "sin_datos",
+          "valor": null,
+          "unidad": "t/t BTX"
+        },
+        "nota_tecnica": "Aromáticos libres de solvente tratados en torres de arcilla hacia fraccionamiento final.",
+        "fuente_id": "eu-bref-lvoc-2017",
+        "cita_ubicacion": "EU BREF LVOC (2017) BTX clay treating & distillation"
+      },
+      {
+        "numero": 11,
+        "nombre": "Benceno, Tolueno y Xilenos (BTX) grado químico",
+        "tipo": "proceso",
+        "origen_tag": "T-401",
+        "destino_tag": null,
+        "puntos": [
+          [
+            1528,
+            240
+          ],
+          [
+            1680,
+            240
+          ]
+        ],
+        "flag_pos": [
+          1604,
+          224
+        ],
+        "especies": "C6H6, C7H8, C8H10 (526.000 t/año CIE)",
+        "fase": "Líquido",
+        "temperatura_c": "35-50",
+        "presion_bar": "1,0-2,0",
+        "flujo_especifico": {
+          "estado": "dato",
+          "valor": 1,
+          "unidad": "t BTX/t base"
+        },
+        "nota_tecnica": "Productos finales para mercado interno, exportación y derivados del CIE (ciclohexano, LAB, ortoxileno).",
+        "fuente_id": "ypf-sec-20f-2025",
+        "cita_ubicacion": "YPF Form 20-F FY2025 Item 4 pág. 34 (BTX 526.000 t/año)"
+      }
+    ],
+    "servicios": [
+      {
+        "id": "u-fuel",
+        "equipo_tag": "F-201",
+        "etiqueta": "Gas combustible",
+        "direccion": "entrada",
+        "x": 674,
+        "y": 154,
+        "dx": 0,
+        "dy": 26
+      },
+      {
+        "id": "u-flue",
+        "equipo_tag": "F-201",
+        "etiqueta": "Gases de combustión",
+        "direccion": "salida",
+        "x": 710,
+        "y": 154,
+        "dx": 0,
+        "dy": -26
+      },
+      {
+        "id": "u-steam",
+        "equipo_tag": "T-401",
+        "etiqueta": "Vapor MP/HP",
+        "direccion": "entrada",
+        "x": 1490,
+        "y": 330,
+        "dx": 0,
+        "dy": -26
+      }
+    ],
+    "limites_bateria": [
+      {
+        "id": "lb-in-nafta",
+        "lado": "entrada",
+        "categoria": "materia_prima",
+        "nombre": "Nafta virgen (Refinería La Plata)",
+        "formula": "C6-C10",
+        "cantidad_masa": "s/d",
+        "cantidad_molar": null,
+        "fraccion_pureza": "Corte 70-180 °C",
+        "corriente_num": 1,
+        "y": 240,
+        "nota": "Alimentación directa integrada desde Refinería La Plata (198,9 kbbl/d).",
+        "fuente_id": "ypf-sec-20f-2025"
+      },
+      {
+        "id": "lb-in-sulfolano",
+        "lado": "entrada",
+        "categoria": "servicio",
+        "nombre": "Sulfolano (reposición)",
+        "formula": "C4H8O2S",
+        "cantidad_masa": "Reciclo cerrado",
+        "cantidad_molar": null,
+        "fraccion_pureza": "Circuito cerrado",
+        "corriente_num": 9,
+        "y": 440,
+        "nota": "Solvente selectivo de extracción aromática con recuperación al vacío.",
+        "fuente_id": "eu-bref-lvoc-2017"
+      },
+      {
+        "id": "lb-out-btx",
+        "lado": "salida",
+        "categoria": "producto",
+        "nombre": "Aromáticos BTX (Benceno/Tolueno/Xilenos)",
+        "formula": "C6H6 / C7H8 / C8H10",
+        "cantidad_masa": "1,00 t/t base",
+        "cantidad_molar": "526.000 t/año CIE",
+        "fraccion_pureza": "Grado petroquímico",
+        "corriente_num": 11,
+        "y": 240,
+        "nota": "Capacidad nominal auditada YPF Form 20-F FY2025 pág. 34 (CIE Ensenada).",
+        "fuente_id": "ypf-sec-20f-2025"
+      },
+      {
+        "id": "lb-out-h2",
+        "lado": "salida",
+        "categoria": "subproducto",
+        "nombre": "Hidrógeno de reformado",
+        "formula": "H2",
+        "cantidad_masa": "s/d",
+        "cantidad_molar": "3 mol H2/mol C6H6",
+        "fraccion_pureza": "75-90% mol",
+        "corriente_num": 6,
+        "y": 540,
+        "nota": "Aprovechado en hidrotratamiento de refinería e hidrogenación a ciclohexano (95 kt/año).",
+        "fuente_id": "ypf-sec-20f-2025"
+      }
+    ]
   }
 ]

@@ -313,7 +313,7 @@
         "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/pdf/3_Volume3/V3_3_Ch3_Chemical_Industry.pdf",
         "fecha_descarga": "2026-11-24",
         "hash": "sha256:f25c2817eecdae6a1f930b342eb09b2d8a6065b12bfce632502a01e1a61bbaa2",
-        "cita_ubicacion": "IPCC 2006 Vol. 3 Cap. 3.9 Methanol Production (consumo real de planta no auditado públicamente)",
+        "cita_ubicacion": "IPCC 2006 Vol. 3 Cap. 3.9 Table 3.12 (Methanol conventional SMR: 0,67 t CO2/t CH3OH)",
         "confianza": "alta"
       }
     },
@@ -346,7 +346,7 @@
         "url": "https://bureau-industrial-transformation.jrc.ec.europa.eu/reference/production-polymers",
         "fecha_descarga": "2026-11-26",
         "hash": "sha256:f49403eab2439da283626fd50341b5094c00bc4ca1ccf663dd3461e65fb80f63",
-        "cita_ubicacion": "EU POL BREF: Polypropylene production (consumo local sin reporte auditado)",
+        "cita_ubicacion": "EU POL BREF: Polypropylene gas-phase/slurry polymerization & monomer recovery",
         "confianza": "alta"
       }
     },
@@ -379,7 +379,7 @@
         "url": "https://afdc.energy.gov/fuels/ethanol-production",
         "fecha_descarga": "2026-11-26",
         "hash": "sha256:ca1aaedc23f4f8346503693ec5f40e36132a9476c51434d6536ffd7ff6a2eaf0",
-        "cita_ubicacion": "US DOE AFDC Ethanol Production (dry-mill corn process)",
+        "cita_ubicacion": "afdc.energy.gov/fuels/ethanol-production (dry milling: starch hydrolysis, fermentation, distillation & DDGS)",
         "confianza": "alta"
       }
     },
@@ -412,7 +412,7 @@
         "url": "https://centroazucarero.com.ar/",
         "fecha_descarga": "2026-11-26",
         "hash": "sha256:54ab9f6bc96dd294e57a929811b13d7f2e204facedf9e02bc6911fb14b60e35a",
-        "cita_ubicacion": "Centro Azucarero Argentino: complejos sucroalcoholeros con cogeneración desde bagazo",
+        "cita_ubicacion": "centroazucarero.com.ar y US DOE AFDC Ethanol Production",
         "confianza": "alta"
       }
     },
@@ -569,7 +569,7 @@
     "energia_especifica": {
       "estado": "sin_datos",
       "valor": null,
-      "unidad": null,
+      "unidad": "GJ/t GLP",
       "procedencia": {
         "anio": 2026,
         "fuente_id": "eu-bref-ref",
@@ -602,7 +602,7 @@
     "energia_especifica": {
       "estado": "sin_datos",
       "valor": null,
-      "unidad": null,
+      "unidad": "kWh/t NaCl",
       "procedencia": {
         "anio": 2025,
         "fuente_id": "usgs-mcs-2025-salt",
@@ -635,7 +635,7 @@
     "energia_especifica": {
       "estado": "sin_datos",
       "valor": null,
-      "unidad": null,
+      "unidad": "GJ/t clínker",
       "procedencia": {
         "anio": 2006,
         "fuente_id": "ipcc-2006-mineral-cap2",
@@ -668,7 +668,7 @@
     "energia_especifica": {
       "estado": "sin_datos",
       "valor": null,
-      "unidad": null,
+      "unidad": "MWh/t concentrado",
       "procedencia": {
         "anio": 2026,
         "fuente_id": "eu-bref-fdm",
@@ -709,7 +709,7 @@
         "url": "https://bureau-industrial-transformation.jrc.ec.europa.eu/reference/manufacture-organic-fine-chemicals",
         "fecha_descarga": "2026-11-26",
         "hash": "sha256:e626ff725b025d75d5c7f8f5c66d3603ae3c19e4252fcee386a308e144e49a7a",
-        "cita_ubicacion": "EU OFC BREF Organic Fine Chemicals + Grupo San Francisco Virasoro",
+        "cita_ubicacion": "EU OFC BREF distillation & solvent separation + gruposanfrancisco.com.ar",
         "confianza": "alta"
       }
     },
@@ -742,7 +742,7 @@
         "url": "https://bureau-industrial-transformation.jrc.ec.europa.eu/reference/tanning-hides-and-skins",
         "fecha_descarga": "2026-11-26",
         "hash": "sha256:00fcedb65645d9f2e754355046e25d6e5788a3664441200b9fcd5fad3a0cfad7",
-        "cita_ubicacion": "EU TAN BREF Vegetable Tannins + EU FDM BREF Evaporation & Spray Drying + Unitán Formosa",
+        "cita_ubicacion": "EU TAN BREF vegetable tanning agents + unitan.net",
         "confianza": "alta"
       }
     },
@@ -775,7 +775,7 @@
         "url": "https://bureau-industrial-transformation.jrc.ec.europa.eu/reference/food-drink-and-milk-industries",
         "fecha_descarga": "2026-11-26",
         "hash": "sha256:5c44b5656510d12b3e8bd7c74f2095b18f1f106e949fa98b392429ac0847851b",
-        "cita_ubicacion": "EU FDM BREF Vegetable Oil Mechanical Extraction + FOA + Valle de la Puerta / Agro Aceitunera",
+        "cita_ubicacion": "EU FDM BREF mechanical olive oil extraction + federacionolivicolaargentina.com.ar",
         "confianza": "alta"
       }
     },
@@ -808,7 +808,7 @@
         "url": "https://bureau-industrial-transformation.jrc.ec.europa.eu/reference/manufacture-organic-fine-chemicals",
         "fecha_descarga": "2026-11-26",
         "hash": "sha256:e626ff725b025d75d5c7f8f5c66d3603ae3c19e4252fcee386a308e144e49a7a",
-        "cita_ubicacion": "EU OFC BREF Multipurpose Batch API Synthesis + INDEC + Maprimed / Insud Pharma",
+        "cita_ubicacion": "EU OFC BREF Chapter 2 API multipurpose synthesis + insudpharma.com + INDEC",
         "confianza": "alta"
       }
     },
@@ -835,13 +835,13 @@
       "valor": null,
       "unidad": "MWh/t acero galvanizado",
       "procedencia": {
-        "anio": 2022,
-        "fuente_id": "eu-bref-fmp-2022",
-        "fuente": "EU BAT Reference Document (BREF) for the Ferrous Metals Processing Industry (FMP)",
-        "url": "https://bureau-industrial-transformation.jrc.ec.europa.eu/reference/ferrous-metals-processing-industry",
+        "anio": 2026,
+        "fuente_id": "druetta-procesos-2026",
+        "fuente": "Descripción oficial de etapas del proceso de Galvanizado por Inmersión en Caliente (Druetta Hnos. S.A.)",
+        "url": "https://www.druetta.com.ar/galvanizado3.html",
         "fecha_descarga": "2026-11-27",
-        "hash": "sha256:8248df53c2e5bc1b07c8fc357085b57bfdb9192fd64d22757917f96c13dcea8b",
-        "cita_ubicacion": "EU FMP BREF 2022 (Batch Galvanizing): el consumo térmico depende de geometría, espesor de pieza y factor de carga del horno",
+        "hash": "sha256:78b05da2694e9bb944dc252146eb27b48ec63193936bd19d43aa8c1aa33ec5f4",
+        "cita_ubicacion": "druetta.com.ar/galvanizado3.html + EU FMP BREF 2022 (Ferrous Metals Processing)",
         "confianza": "alta"
       }
     },
@@ -854,6 +854,39 @@
       "fecha_descarga": "2026-11-27",
       "hash": "sha256:78b05da2694e9bb944dc252146eb27b48ec63193936bd19d43aa8c1aa33ec5f4",
       "cita_ubicacion": "druetta.com.ar/galvanizado3.html + EU FMP BREF 2022 (Ferrous Metals Processing)",
+      "confianza": "alta"
+    }
+  },
+  {
+    "proceso_id": "petroquimica-reformado-btx-ensenada",
+    "producto_id": "petroquimica",
+    "nombre": "Reformado catalítico de nafta y extracción de aromáticos BTX (CIE Ensenada)",
+    "ruta_tecnologica": "Nafta virgen de refinería -> hidrotratamiento (HDS/HDN) -> reformado catalítico continuo (500 °C) -> extracción con sulfolano -> fraccionamiento de benceno, tolueno y xilenos (BTX)",
+    "reaccion_global": "C6H12 -> C6H6 + 3 H2",
+    "energia_especifica": {
+      "estado": "sin_datos",
+      "valor": null,
+      "unidad": "GJ/t BTX",
+      "procedencia": {
+        "anio": 2025,
+        "fuente_id": "ypf-sec-20f-2025",
+        "fuente": "YPF Sociedad Anónima — Form 20-F Annual Report (Ejercicio finalizado el 31/12/2025)",
+        "url": "https://www.sec.gov/Archives/edgar/data/904851/000119312526126363/d95578d20f.htm",
+        "fecha_descarga": "2026-11-27",
+        "hash": "sha256:8d9d89011f05c6525bc48aaf98862cf3e985496b6622baddea112f1c020894ac",
+        "cita_ubicacion": "Form 20-F FY2025 Item 4 Chemical unit pág. 34 + EU BREF REF (2015) Catalytic Reforming + EU BREF LVOC (2017) Aromatics BTX",
+        "confianza": "alta"
+      }
+    },
+    "descripcion": "Ruta petroquímica integrada a refinería en el Complejo Industrial Ensenada (YPF CIE): transforma nafta virgen de Refinería La Plata mediante reformado catalítico (520.760 t/año) y extracción líquido-líquido con sulfolano en aromáticos BTX (526.000 t/año), ciclohexano (95.000 t/año), ortoxileno (25.000 t/año), LAB (53.000 t/año) e hidrógeno de proceso.",
+    "procedencia": {
+      "anio": 2025,
+      "fuente_id": "ypf-sec-20f-2025",
+      "fuente": "YPF Sociedad Anónima — Form 20-F Annual Report (Ejercicio finalizado el 31/12/2025)",
+      "url": "https://www.sec.gov/Archives/edgar/data/904851/000119312526126363/d95578d20f.htm",
+      "fecha_descarga": "2026-11-27",
+      "hash": "sha256:8d9d89011f05c6525bc48aaf98862cf3e985496b6622baddea112f1c020894ac",
+      "cita_ubicacion": "Form 20-F FY2025 Item 4 Chemical unit pág. 34 + EU BREF REF (2015) Catalytic Reforming + EU BREF LVOC (2017) Aromatics BTX",
       "confianza": "alta"
     }
   }

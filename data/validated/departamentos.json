@@ -1,5 +1,14 @@
 [
   {
+    "departamento_id": "02063",
+    "provincia_id": "02",
+    "nombre": "Comuna 9",
+    "tipo_zona": "polo_industrial",
+    "tiene_datos_confiables": true,
+    "cobertura_datos": "completa",
+    "nota_cobertura": "Barrio de Mataderos (Av. Directorio 6155): sede de la planta química de síntesis de Ingredientes Farmacéuticos Activos (IFAs) y centro de I+D de Maprimed S.A. (Insud Pharma)."
+  },
+  {
     "departamento_id": "06056",
     "provincia_id": "06",
     "nombre": "Bahía Blanca",
@@ -9,6 +18,24 @@
     "nota_cobertura": "Polo petroquímico (Dow, Unipar Indupa) y fertilizantes nitrogenados (Profertil) verificados con fuentes oficiales, IPCC y UN Comtrade."
   },
   {
+    "departamento_id": "06245",
+    "provincia_id": "06",
+    "nombre": "Ensenada",
+    "tipo_zona": "polo_industrial",
+    "tiene_datos_confiables": true,
+    "cobertura_datos": "completa",
+    "nota_cobertura": "Sede del Complejo Industrial La Plata / Ensenada (YPF CIE): mayor refinería del país (198,9 kbbl/d) e industria petroquímica de aromáticos BTX (526.000 t/año), reformado catalítico, propileno, ciclohexano y LAB."
+  },
+  {
+    "departamento_id": "06364",
+    "provincia_id": "06",
+    "nombre": "General Rodríguez",
+    "tipo_zona": "polo_industrial",
+    "tiene_datos_confiables": true,
+    "cobertura_datos": "completa",
+    "nota_cobertura": "Acceso Oeste Km 47 (Chaco 1155, General Rodríguez): sede de la planta industrial de galvanizado por inmersión en caliente de Druetta Hnos. S.A. (hornos de 13 m y 4,5 m a 450 °C, ISO 9001 e ISO 14001)."
+  },
+  {
     "departamento_id": "10028",
     "provincia_id": "10",
     "nombre": "Antofagasta de la Sierra",
@@ -16,6 +43,33 @@
     "tiene_datos_confiables": true,
     "cobertura_datos": "completa",
     "nota_cobertura": "Salar del Hombre Muerto (Catamarca): Planta Fénix (Rio Tinto) operando Extracción Directa de Litio (DLE por adsorción) desde 1997 (32 ktpa LCE)."
+  },
+  {
+    "departamento_id": "14042",
+    "provincia_id": "14",
+    "nombre": "General San Martín",
+    "tipo_zona": "agro",
+    "tiene_datos_confiables": true,
+    "cobertura_datos": "completa",
+    "nota_cobertura": "Villa María (Córdoba): biorrefinería cooperativa ACA Bio para bioetanol anhidro de maíz y recuperación de CO2."
+  },
+  {
+    "departamento_id": "14098",
+    "provincia_id": "14",
+    "nombre": "Río Cuarto",
+    "tipo_zona": "agro",
+    "tiene_datos_confiables": true,
+    "cobertura_datos": "completa",
+    "nota_cobertura": "Núcleo maicero del sur cordobés: sede de Bio4 Argentina (molienda seca de maíz, bioetanol anhidro y burlanda DDGS)."
+  },
+  {
+    "departamento_id": "18168",
+    "provincia_id": "18",
+    "nombre": "Santo Tomé",
+    "tipo_zona": "agro",
+    "tiene_datos_confiables": true,
+    "cobertura_datos": "completa",
+    "nota_cobertura": "Eje forestoquímico Gobernador Virasoro y Santo Tomé: extracción de miera de Pinus elliottii y destilación industrial a colofonia y trementina (Grupo San Francisco)."
   },
   {
     "departamento_id": "22021",
@@ -54,6 +108,33 @@
     "nota_cobertura": "Puerto Madryn: sede del único complejo productor de aluminio primario del país (Parque Industrial Pesado y Muelle Almirante Storni)."
   },
   {
+    "departamento_id": "30015",
+    "provincia_id": "30",
+    "nombre": "Concordia",
+    "tipo_zona": "agro",
+    "tiene_datos_confiables": true,
+    "cobertura_datos": "completa",
+    "nota_cobertura": "Eje industrial citrícola de Entre Ríos para extracción en frío de aceite esencial D-limoneno y evaporación de jugo concentrado."
+  },
+  {
+    "departamento_id": "30028",
+    "provincia_id": "30",
+    "nombre": "Federación",
+    "tipo_zona": "agro",
+    "tiene_datos_confiables": true,
+    "cobertura_datos": "completa",
+    "nota_cobertura": "Cuenca productora primaria de naranjas y mandarinas que abastece a las plantas de jugos concentrados y aceites esenciales de Entre Ríos."
+  },
+  {
+    "departamento_id": "34014",
+    "provincia_id": "34",
+    "nombre": "Formosa",
+    "tipo_zona": "polo_industrial",
+    "tiene_datos_confiables": true,
+    "cobertura_datos": "completa",
+    "nota_cobertura": "Ciudad de Formosa: sede de la planta de Unitán S.A.I.C.A. para extracción acuosa y secado spray de extracto de quebracho colorado y bioactivos tánicos."
+  },
+  {
     "departamento_id": "38084",
     "provincia_id": "38",
     "nombre": "Susques",
@@ -61,141 +142,6 @@
     "tiene_datos_confiables": true,
     "cobertura_datos": "completa",
     "nota_cobertura": "Salares de Olaroz y Cauchari-Olaroz (Jujuy): ruta evaporítica en piletas solares hacia carbonato de litio."
-  },
-  {
-    "departamento_id": "66105",
-    "provincia_id": "66",
-    "nombre": "Los Andes",
-    "tipo_zona": "minero",
-    "tiene_datos_confiables": true,
-    "cobertura_datos": "parcial",
-    "nota_cobertura": "Puna salteña (Salar del Rincón): planta inicial DLE (3.000 t/año desde nov. 2024) y expansión DLE comercial hacia 60 ktpa LCE."
-  },
-  {
-    "departamento_id": "82084",
-    "provincia_id": "82",
-    "nombre": "Rosario",
-    "tipo_zona": "agro",
-    "tiene_datos_confiables": true,
-    "cobertura_datos": "completa",
-    "nota_cobertura": "Nodo portuario e industrial del Gran Rosario vinculado a molienda de soja y biodiésel (SAGyP, Secretaría de Energía y UN Comtrade)."
-  },
-  {
-    "departamento_id": "82119",
-    "provincia_id": "82",
-    "nombre": "San Lorenzo",
-    "tipo_zona": "polo_industrial",
-    "tiene_datos_confiables": true,
-    "cobertura_datos": "completa",
-    "nota_cobertura": "Cordón industrial Up-River (Timbúes y San Lorenzo): mayor polo mundial de molienda de soja y biodiésel (Renova, Molinos Agro)."
-  },
-  {
-    "departamento_id": "58035",
-    "provincia_id": "58",
-    "nombre": "Confluencia",
-    "tipo_zona": "energetico",
-    "tiene_datos_confiables": true,
-    "cobertura_datos": "completa",
-    "nota_cobertura": "Plaza Huincul y cuenca gasífera neuquina: sede de la principal planta de metanol a partir de gas natural del país (YPF CIPH)."
-  },
-  {
-    "departamento_id": "50063",
-    "provincia_id": "50",
-    "nombre": "Luján de Cuyo",
-    "tipo_zona": "polo_industrial",
-    "tiene_datos_confiables": true,
-    "cobertura_datos": "completa",
-    "nota_cobertura": "Polo Petroquímico y Refinador mendocino: Complejo Industrial YPF (FCC y propileno) integrado con Petrocuyo (polipropileno)."
-  },
-  {
-    "departamento_id": "14098",
-    "provincia_id": "14",
-    "nombre": "Río Cuarto",
-    "tipo_zona": "agro",
-    "tiene_datos_confiables": true,
-    "cobertura_datos": "completa",
-    "nota_cobertura": "Núcleo maicero del sur cordobés: sede de Bio4 Argentina (molienda seca de maíz, bioetanol anhidro y burlanda DDGS)."
-  },
-  {
-    "departamento_id": "14042",
-    "provincia_id": "14",
-    "nombre": "General San Martín",
-    "tipo_zona": "agro",
-    "tiene_datos_confiables": true,
-    "cobertura_datos": "completa",
-    "nota_cobertura": "Villa María (Córdoba): biorrefinería cooperativa ACA Bio para bioetanol anhidro de maíz y recuperación de CO2."
-  },
-  {
-    "departamento_id": "90014",
-    "provincia_id": "90",
-    "nombre": "Cruz Alta",
-    "tipo_zona": "agro",
-    "tiene_datos_confiables": true,
-    "cobertura_datos": "completa",
-    "nota_cobertura": "Cordón sucroalcoholero del este tucumano (La Florida / Banda del Río Salí): molienda de caña, destilerías y deshidratadoras de bioetanol."
-  },
-  {
-    "departamento_id": "62077",
-    "provincia_id": "62",
-    "nombre": "San Antonio",
-    "tipo_zona": "polo_industrial",
-    "tiene_datos_confiables": true,
-    "cobertura_datos": "completa",
-    "nota_cobertura": "Sede de ALPAT en Punta Delgado (San Antonio Oeste), única planta Solvay de carbonato de sodio de Sudamérica."
-  },
-  {
-    "departamento_id": "70105",
-    "provincia_id": "70",
-    "nombre": "Sarmiento",
-    "tipo_zona": "minero",
-    "tiene_datos_confiables": true,
-    "cobertura_datos": "completa",
-    "nota_cobertura": "Polo calero de Los Berros, principal concentrador argentino de cal viva (CaO) e hidratada para minería y siderurgia."
-  },
-  {
-    "departamento_id": "78042",
-    "provincia_id": "78",
-    "nombre": "Magallanes",
-    "tipo_zona": "minero",
-    "tiene_datos_confiables": true,
-    "cobertura_datos": "completa",
-    "nota_cobertura": "Área Puerto San Julián / Cerro Vanguardia (oro y plata en lingote doré en el Macizo del Deseado)."
-  },
-  {
-    "departamento_id": "78035",
-    "provincia_id": "78",
-    "nombre": "Lago Buenos Aires",
-    "tipo_zona": "minero",
-    "tiene_datos_confiables": true,
-    "cobertura_datos": "completa",
-    "nota_cobertura": "Área Perito Moreno / Cerro Negro (operación subterránea y planta de lixiviación de oro y plata)."
-  },
-  {
-    "departamento_id": "54063",
-    "provincia_id": "54",
-    "nombre": "Iguazú",
-    "tipo_zona": "agro",
-    "tiene_datos_confiables": true,
-    "cobertura_datos": "completa",
-    "nota_cobertura": "Puerto Esperanza, sede de la planta de celulosa Kraft blanqueada de fibra larga de pino de Arauco Argentina."
-  },
-  {
-    "departamento_id": "54077",
-    "provincia_id": "54",
-    "nombre": "Libertador General San Martín",
-    "tipo_zona": "agro",
-    "tiene_datos_confiables": true,
-    "cobertura_datos": "completa",
-    "nota_cobertura": "Corredor foresto-industrial del Alto Paraná misionero (abastecimiento de madera de pino y pasta Kraft)."
-  },
-  {
-    "departamento_id": "94008",
-    "provincia_id": "94",
-    "nombre": "Río Grande",
-    "tipo_zona": "polo_industrial",
-    "tiene_datos_confiables": true,
-    "cobertura_datos": "completa",
-    "nota_cobertura": "Cabecera terrestre de la Cuenca Austral (Río Cullen / Cañadón Alfa): acondicionamiento de gas natural y fraccionamiento de GLP y gasolina natural."
   },
   {
     "departamento_id": "42007",
@@ -216,60 +162,6 @@
     "nota_cobertura": "Salina Colorada Grande (General San Martín), cuenca evaporítica pampeana de cloruro de sodio para industria química y ganadera."
   },
   {
-    "departamento_id": "74014",
-    "provincia_id": "74",
-    "nombre": "Belgrano",
-    "tipo_zona": "minero",
-    "tiene_datos_confiables": true,
-    "cobertura_datos": "completa",
-    "nota_cobertura": "Localidad de La Calera, sede de la planta integrada de clínker y cemento Portland vía seca de Cementos Avellaneda S.A."
-  },
-  {
-    "departamento_id": "30015",
-    "provincia_id": "30",
-    "nombre": "Concordia",
-    "tipo_zona": "agro",
-    "tiene_datos_confiables": true,
-    "cobertura_datos": "completa",
-    "nota_cobertura": "Eje industrial citrícola de Entre Ríos para extracción en frío de aceite esencial D-limoneno y evaporación de jugo concentrado."
-  },
-  {
-    "departamento_id": "30028",
-    "provincia_id": "30",
-    "nombre": "Federación",
-    "tipo_zona": "agro",
-    "tiene_datos_confiables": true,
-    "cobertura_datos": "completa",
-    "nota_cobertura": "Cuenca productora primaria de naranjas y mandarinas que abastece a las plantas de jugos concentrados y aceites esenciales de Entre Ríos."
-  },
-  {
-    "departamento_id": "02063",
-    "provincia_id": "02",
-    "nombre": "Comuna 9",
-    "tipo_zona": "polo_industrial",
-    "tiene_datos_confiables": true,
-    "cobertura_datos": "completa",
-    "nota_cobertura": "Barrio de Mataderos (Av. Directorio 6155): sede de la planta química de síntesis de Ingredientes Farmacéuticos Activos (IFAs) y centro de I+D de Maprimed S.A. (Insud Pharma)."
-  },
-  {
-    "departamento_id": "18168",
-    "provincia_id": "18",
-    "nombre": "Santo Tomé",
-    "tipo_zona": "agro",
-    "tiene_datos_confiables": true,
-    "cobertura_datos": "completa",
-    "nota_cobertura": "Eje forestoquímico Gobernador Virasoro y Santo Tomé: extracción de miera de Pinus elliottii y destilación industrial a colofonia y trementina (Grupo San Francisco)."
-  },
-  {
-    "departamento_id": "34014",
-    "provincia_id": "34",
-    "nombre": "Formosa",
-    "tipo_zona": "polo_industrial",
-    "tiene_datos_confiables": true,
-    "cobertura_datos": "completa",
-    "nota_cobertura": "Ciudad de Formosa: sede de la planta de Unitán S.A.I.C.A. para extracción acuosa y secado spray de extracto de quebracho colorado y bioactivos tánicos."
-  },
-  {
     "departamento_id": "46007",
     "provincia_id": "46",
     "nombre": "Arauco",
@@ -286,6 +178,114 @@
     "tiene_datos_confiables": true,
     "cobertura_datos": "completa",
     "nota_cobertura": "Valle de Vichigasta y Chilecito: complejo agroindustrial de Valle de la Puerta S.A. para extracción continua en frío de aceite de oliva virgen extra."
+  },
+  {
+    "departamento_id": "50063",
+    "provincia_id": "50",
+    "nombre": "Luján de Cuyo",
+    "tipo_zona": "polo_industrial",
+    "tiene_datos_confiables": true,
+    "cobertura_datos": "completa",
+    "nota_cobertura": "Polo Petroquímico y Refinador mendocino: Complejo Industrial YPF (FCC y propileno) integrado con Petrocuyo (polipropileno)."
+  },
+  {
+    "departamento_id": "54063",
+    "provincia_id": "54",
+    "nombre": "Iguazú",
+    "tipo_zona": "agro",
+    "tiene_datos_confiables": true,
+    "cobertura_datos": "completa",
+    "nota_cobertura": "Puerto Esperanza, sede de la planta de celulosa Kraft blanqueada de fibra larga de pino de Arauco Argentina."
+  },
+  {
+    "departamento_id": "54077",
+    "provincia_id": "54",
+    "nombre": "Libertador General San Martín",
+    "tipo_zona": "agro",
+    "tiene_datos_confiables": true,
+    "cobertura_datos": "completa",
+    "nota_cobertura": "Corredor foresto-industrial del Alto Paraná misionero (abastecimiento de madera de pino y pasta Kraft)."
+  },
+  {
+    "departamento_id": "58035",
+    "provincia_id": "58",
+    "nombre": "Confluencia",
+    "tipo_zona": "energetico",
+    "tiene_datos_confiables": true,
+    "cobertura_datos": "completa",
+    "nota_cobertura": "Plaza Huincul y cuenca gasífera neuquina: sede de la principal planta de metanol a partir de gas natural del país (YPF CIPH)."
+  },
+  {
+    "departamento_id": "62077",
+    "provincia_id": "62",
+    "nombre": "San Antonio",
+    "tipo_zona": "polo_industrial",
+    "tiene_datos_confiables": true,
+    "cobertura_datos": "completa",
+    "nota_cobertura": "Sede de ALPAT en Punta Delgado (San Antonio Oeste), única planta Solvay de carbonato de sodio de Sudamérica."
+  },
+  {
+    "departamento_id": "66105",
+    "provincia_id": "66",
+    "nombre": "Los Andes",
+    "tipo_zona": "minero",
+    "tiene_datos_confiables": true,
+    "cobertura_datos": "parcial",
+    "nota_cobertura": "Puna salteña (Salar del Rincón): planta inicial DLE (3.000 t/año desde nov. 2024) y expansión DLE comercial hacia 60 ktpa LCE."
+  },
+  {
+    "departamento_id": "70105",
+    "provincia_id": "70",
+    "nombre": "Sarmiento",
+    "tipo_zona": "minero",
+    "tiene_datos_confiables": true,
+    "cobertura_datos": "completa",
+    "nota_cobertura": "Polo calero de Los Berros, principal concentrador argentino de cal viva (CaO) e hidratada para minería y siderurgia."
+  },
+  {
+    "departamento_id": "74014",
+    "provincia_id": "74",
+    "nombre": "Belgrano",
+    "tipo_zona": "minero",
+    "tiene_datos_confiables": true,
+    "cobertura_datos": "completa",
+    "nota_cobertura": "Localidad de La Calera, sede de la planta integrada de clínker y cemento Portland vía seca de Cementos Avellaneda S.A."
+  },
+  {
+    "departamento_id": "78035",
+    "provincia_id": "78",
+    "nombre": "Lago Buenos Aires",
+    "tipo_zona": "minero",
+    "tiene_datos_confiables": true,
+    "cobertura_datos": "completa",
+    "nota_cobertura": "Área Perito Moreno / Cerro Negro (operación subterránea y planta de lixiviación de oro y plata)."
+  },
+  {
+    "departamento_id": "78042",
+    "provincia_id": "78",
+    "nombre": "Magallanes",
+    "tipo_zona": "minero",
+    "tiene_datos_confiables": true,
+    "cobertura_datos": "completa",
+    "nota_cobertura": "Área Puerto San Julián / Cerro Vanguardia (oro y plata en lingote doré en el Macizo del Deseado)."
+  },
+  {
+    "departamento_id": "82084",
+    "provincia_id": "82",
+    "nombre": "Rosario",
+    "tipo_zona": "agro",
+    "tiene_datos_confiables": true,
+    "cobertura_datos": "completa",
+    "nota_cobertura": "Nodo portuario e industrial del Gran Rosario vinculado a molienda de soja y biodiésel (SAGyP, Secretaría de Energía y UN Comtrade)."
+  },
+  {
+    "departamento_id": "82119",
+    "provincia_id": "82",
+    "nombre": "San Lorenzo",
+    "tipo_zona": "polo_industrial",
+    "tiene_datos_confiables": true,
+    "cobertura_datos": "completa",
+    "nota_cobertura": "Cordón industrial Up-River (Timbúes y San Lorenzo): mayor polo mundial de molienda de soja y biodiésel (Renova, Molinos Agro)."
   },
   {
     "departamento_id": "86042",
@@ -306,12 +306,21 @@
     "nota_cobertura": "Quimilí (Santiago del Estero): núcleo algodonero provincial (95.887 t en 2023/24 según SAGyP) y planta desmotadora ampliada de Louis Dreyfus Company (60.000 t/año)."
   },
   {
-    "departamento_id": "06364",
-    "provincia_id": "06",
-    "nombre": "General Rodríguez",
+    "departamento_id": "90014",
+    "provincia_id": "90",
+    "nombre": "Cruz Alta",
+    "tipo_zona": "agro",
+    "tiene_datos_confiables": true,
+    "cobertura_datos": "completa",
+    "nota_cobertura": "Cordón sucroalcoholero del este tucumano (La Florida / Banda del Río Salí): molienda de caña, destilerías y deshidratadoras de bioetanol."
+  },
+  {
+    "departamento_id": "94008",
+    "provincia_id": "94",
+    "nombre": "Río Grande",
     "tipo_zona": "polo_industrial",
     "tiene_datos_confiables": true,
     "cobertura_datos": "completa",
-    "nota_cobertura": "Acceso Oeste Km 47 (Chaco 1155, General Rodríguez): sede de la planta industrial de galvanizado por inmersión en caliente de Druetta Hnos. S.A. (hornos de 13 m y 4,5 m a 450 °C, ISO 9001 e ISO 14001)."
+    "nota_cobertura": "Cabecera terrestre de la Cuenca Austral (Río Cullen / Cañadón Alfa): acondicionamiento de gas natural y fraccionamiento de GLP y gasolina natural."
   }
 ]

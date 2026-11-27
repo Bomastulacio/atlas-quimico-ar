@@ -1,24 +1,8 @@
 [
   {
-    "empresa_id": "aluar-saic",
-    "razon_social": "Aluar Aluminio Argentino S.A.I.C.",
-    "tipo_capital": "nacional",
-    "sitio_web_oficial": "https://www.aluar.com.ar/",
-    "hechos_verificables": "Único productor de aluminio primario en Argentina (CUIT 30-52278060-6). Creada en 1970, cotiza en la Bolsa de Comercio de Buenos Aires bajo fiscalización de CNV desde 1980. Controla el 60,20% de Hidroeléctrica Futaleufú S.A. y opera un Parque Eólico propio en Puerto Madryn (ampliación en curso hacia 582 MW). Dotación al 30/06/2025: 2.330 personas (1.582 en División Aluminio Primario).",
-    "procedencia": {
-      "anio": 2025,
-      "fuente_id": "aluar-eeff-2025",
-      "fuente": "Memoria y Estados Financieros: 56° Ejercicio Económico (al 30/06/2025 y 30/06/2024)",
-      "url": "https://cdn.aluar.com.ar/assets/uploads/EEFF_Aluar_Ejercicio_2024_2025_4_T_7869bb3511.pdf",
-      "fecha_descarga": "2026-11-24",
-      "hash": "sha256:3ee6b54bf52a0a4e543e8be2d0c23d7399425b274971ae097867aee312233901",
-      "cita_ubicacion": "Memoria 2025 pág. 2 y 10; Estados Financieros Nota 1 pág. 8 y Nota 2.3.1 pág. 11",
-      "confianza": "alta"
-    }
-  },
-  {
     "empresa_id": "rio-tinto-litio-ar",
     "razon_social": "Rio Tinto Lithium Argentina (operaciones Fénix, Olaroz y Rincón)",
+    "cuit": null,
     "tipo_capital": "mixto",
     "sitio_web_oficial": "https://www.riotinto.com/en/operations/south-america/fenix",
     "hechos_verificables": "Opera tres complejos de salmuera en la Puna argentina: Fénix en Salar del Hombre Muerto (Catamarca, 100% propia, activa desde 1997, 32.000 t/año LCE), Olaroz en Jujuy (66,5% en JV con Toyota Tsusho y participación provincial, activa desde 2014) y el proyecto Rincón en Salta (planta inicial de 3.000 t/año con primer litio en noviembre 2024 y ampliación aprobada hacia 60.000 t/año).",
@@ -34,25 +18,9 @@
     }
   },
   {
-    "empresa_id": "profertil-sa",
-    "razon_social": "Profertil S.A.",
-    "tipo_capital": "mixto",
-    "sitio_web_oficial": "https://www.profertil.com.ar/",
-    "hechos_verificables": "Único productor integrado de urea granulada y amoníaco a gran escala en Argentina (CUIT 30-69157651-1). Inició producción comercial en enero de 2001 en Zona Cangrejales del Puerto de Bahía Blanca (predio de 605.110 m2). Capacidad nominal: 1.320.000 t/año de urea granulada y 790.000 t/año de amoníaco; contratos de gas natural hasta 2.500.000 m3/día. Al 31/12/2025 su capital pertenece 90% al Grupo Adecoagro y 10% a ACA (hasta dic. 2025: 50% YPF y 50% Nutrien).",
-    "procedencia": {
-      "anio": 2025,
-      "fuente_id": "profertil-eecc-2025",
-      "fuente": "Memoria y Estados Financieros al 31 de diciembre de 2025 (Profertil S.A.)",
-      "url": "https://www.profertil.com.ar/wp-content/uploads/2021/04/EECC-31-12-25.pdf",
-      "fecha_descarga": "2026-11-24",
-      "hash": "sha256:d7bf53b4394beebd03259645c41196aaa27ce657ded8cfc71fc1f007f34843f3",
-      "cita_ubicacion": "EECC-31-12-25.pdf pág. 4, 6, 78-79 y 88 (Memoria y Reseña Informativa)",
-      "confianza": "alta"
-    }
-  },
-  {
     "empresa_id": "buyatti-saica",
     "razon_social": "Buyatti S.A.I.C.A.",
+    "cuit": null,
     "tipo_capital": "nacional",
     "sitio_web_oficial": "https://buyatti.com.ar/",
     "hechos_verificables": "Complejo agroindustrial con planta de desmote y procesamiento de semillas de algodón en Las Breñas (Depto. 9 de Julio, Chaco) y plantas oleaginosas en Reconquista y Puerto General San Martín (Santa Fe).",
@@ -70,6 +38,7 @@
   {
     "empresa_id": "renova-sa",
     "razon_social": "Renova S.A.",
+    "cuit": null,
     "tipo_capital": "mixto",
     "sitio_web_oficial": "https://renova.com.ar/",
     "hechos_verificables": "Opera en Timbúes (Depto. San Lorenzo, Santa Fe) uno de los mayores complejos de molienda de soja del mundo (32.400 t/día, recepción 60.000 t/día camiones y 15.000 t/día barcazas), además de planta de biodiésel (1.450 t/día) y glicerina refinada (270 t/día) en San Lorenzo.",
@@ -87,6 +56,7 @@
   {
     "empresa_id": "molinos-agro-sa",
     "razon_social": "Molinos Agro S.A.",
+    "cuit": null,
     "tipo_capital": "nacional",
     "sitio_web_oficial": "https://molinosagro.com.ar/",
     "hechos_verificables": "Opera el complejo industrial y Puerto San Benito en San Lorenzo (Santa Fe) con capacidad de molienda declarada de 6.000.000 t/año de poroto de soja, embarcando 5% del comercio mundial de harina y 4% del aceite de soja.",
@@ -104,6 +74,7 @@
   {
     "empresa_id": "dow-pbbpolisur",
     "razon_social": "Dow Argentina (PBBPolisur S.R.L.)",
+    "cuit": null,
     "tipo_capital": "extranjero",
     "sitio_web_oficial": "https://ar.dow.com/es-ar.html",
     "hechos_verificables": "Opera en Bahía Blanca el complejo petroquímico más grande de América Latina, con seis plantas productivas (2 de etileno y 4 de polietileno LDPE, LLDPE y HDPE).",
@@ -121,6 +92,7 @@
   {
     "empresa_id": "unipar-indupa",
     "razon_social": "Unipar Indupa S.A.I.C.",
+    "cuit": null,
     "tipo_capital": "extranjero",
     "sitio_web_oficial": "https://unipar.com/es/acerca-de-unipar",
     "hechos_verificables": "Opera en el Polo Petroquímico de Bahía Blanca el complejo cloro-álcali y vinílico que elabora cloro, soda cáustica y policloruro de vinilo (PVC).",
@@ -136,25 +108,9 @@
     }
   },
   {
-    "empresa_id": "ypf-sa",
-    "razon_social": "YPF S.A.",
-    "tipo_capital": "mixto",
-    "sitio_web_oficial": "https://inversores.ypf.com/",
-    "hechos_verificables": "Principal compañía integrada de energía de Argentina con participación estatal mayoritaria (51%) y cotización en BYMA (YPFD) y NYSE (YPF). Opera los complejos industriales de Plaza Huincul (metanol desde gas natural y refinería en Neuquén) y Luján de Cuyo (refinación y propileno en Mendoza).",
-    "procedencia": {
-      "anio": 2026,
-      "fuente_id": "ypf-inversores-2026",
-      "fuente": "Portal oficial de Inversores e Infraestructura Industrial (YPF S.A.)",
-      "url": "https://inversores.ypf.com/",
-      "fecha_descarga": "2026-11-26",
-      "hash": "sha256:f39c95b1076dd0e8513a2df3785151328c44a6b26ce435b9eaf1465bc2d4917e",
-      "cita_ubicacion": "inversores.ypf.com (operaciones industriales Plaza Huincul y Luján de Cuyo)",
-      "confianza": "alta"
-    }
-  },
-  {
     "empresa_id": "petrocuyo-saic",
     "razon_social": "Petrocuyo S.A.I.C.",
+    "cuit": null,
     "tipo_capital": "nacional",
     "sitio_web_oficial": "https://www.petrocuyo.com/",
     "hechos_verificables": "Productor líder de polipropileno en Argentina con planta industrial en el Polo Petroquímico de Luján de Cuyo (Mendoza), abastecida por corrientes de propileno de refinería.",
@@ -172,6 +128,7 @@
   {
     "empresa_id": "bio4-argentina",
     "razon_social": "Bioetanol Río Cuarto S.A. (Bio4)",
+    "cuit": null,
     "tipo_capital": "nacional",
     "sitio_web_oficial": "https://bio4.com.ar/",
     "hechos_verificables": "Productora cordobesa pionera de bioetanol anhidro a partir de maíz en Río Cuarto (Depto. Río Cuarto, Córdoba), registrada en la Secretaría de Energía con coproducción de burlanda húmeda/seca (WDGS/DDGS) y energía renovable.",
@@ -189,6 +146,7 @@
   {
     "empresa_id": "aca-bio",
     "razon_social": "ACA Bio Cooperativa Limitada",
+    "cuit": null,
     "tipo_capital": "nacional",
     "sitio_web_oficial": "https://www.acabio.com.ar/",
     "hechos_verificables": "Biorrefinería cooperativa ubicada en Villa María (Depto. General San Martín, Córdoba) que industrializa maíz en bioetanol anhidro para mezcla en naftas, burlanda proteica y CO2 alimenticio.",
@@ -206,6 +164,7 @@
   {
     "empresa_id": "bioenergetica-la-florida",
     "razon_social": "Compañía Bioenergética La Florida S.A.",
+    "cuit": null,
     "tipo_capital": "nacional",
     "sitio_web_oficial": "https://centroazucarero.com.ar/",
     "hechos_verificables": "Destilería y deshidratadora de bioetanol de caña de azúcar ubicada en La Florida (Depto. Cruz Alta, Tucumán), registrada en los cupos oficiales de la Secretaría de Energía dentro del complejo sucroalcoholero tucumano.",
@@ -223,6 +182,7 @@
   {
     "empresa_id": "alpat-saic",
     "razon_social": "Álcalis de la Patagonia S.A.I.C. (ALPAT)",
+    "cuit": null,
     "tipo_capital": "nacional",
     "sitio_web_oficial": null,
     "hechos_verificables": "Única planta productora de carbonato de sodio sintético (proceso Solvay) de Sudamérica, localizada en Punta Delgado (San Antonio Oeste, Río Negro), abasteciendo a la industria del vidrio, detergentes y carbonatación de litio.",
@@ -240,6 +200,7 @@
   {
     "empresa_id": "caleras-san-juan-sa",
     "razon_social": "Caleras San Juan S.A.",
+    "cuit": null,
     "tipo_capital": "nacional",
     "sitio_web_oficial": "https://calerassanjuan.com/",
     "hechos_verificables": "Complejo industrial calero en Los Berros (Depto. Sarmiento, San Juan) con hornos verticales regenerativos (PFRK) de cal viva (CaO) e hidratada para minería de cobre/litio, siderurgia y exportación a Chile.",
@@ -257,6 +218,7 @@
   {
     "empresa_id": "cerro-vanguardia-sa",
     "razon_social": "Cerro Vanguardia S.A.",
+    "cuit": null,
     "tipo_capital": "mixto",
     "sitio_web_oficial": "https://www.cerrovanguardia.com.ar/",
     "hechos_verificables": "Operación minera y metalúrgica de oro y plata en el Macizo del Deseado (Depto. Magallanes, Santa Cruz) participada por AngloGold Ashanti (92,5%) y Fomicruz S.E. de la Provincia de Santa Cruz (7,5%).",
@@ -274,6 +236,7 @@
   {
     "empresa_id": "newmont-cerro-negro",
     "razon_social": "Oroplata S.A. (Cerro Negro · Newmont)",
+    "cuit": null,
     "tipo_capital": "extranjero",
     "sitio_web_oficial": null,
     "hechos_verificables": "Complejo minero subterráneo y planta de procesamiento de oro y plata Cerro Negro en el área de Perito Moreno (Depto. Lago Buenos Aires, Santa Cruz), uno de los principales productores auríferos de Argentina.",
@@ -291,6 +254,7 @@
   {
     "empresa_id": "arauco-argentina-sa",
     "razon_social": "Arauco Argentina S.A.",
+    "cuit": null,
     "tipo_capital": "extranjero",
     "sitio_web_oficial": "https://www.arauco.com/",
     "hechos_verificables": "Operador foresto-industrial con planta de celulosa Kraft blanqueada de fibra larga de pino en Puerto Esperanza (Depto. Iguazú, Misiones), integrada con cogeneración eléctrica por biomasa y licor negro.",
@@ -308,6 +272,7 @@
   {
     "empresa_id": "totalenergies-austral",
     "razon_social": "Total Austral S.A. (TotalEnergies Argentina · Consorcio CMA-1)",
+    "cuit": null,
     "tipo_capital": "extranjero",
     "sitio_web_oficial": "https://totalenergies.com.ar/",
     "hechos_verificables": "Operador del consorcio Cuenca Marina Austral 1 (CMA-1) en Tierra del Fuego con plantas de tratamiento y fraccionamiento de gas natural y GLP en Río Cullen y Cañadón Alfa (Depto. Río Grande).",
@@ -325,6 +290,7 @@
   {
     "empresa_id": "dos-anclas-ciba",
     "razon_social": "Compañía Introductora de Buenos Aires S.A. (Dos Anclas)",
+    "cuit": null,
     "tipo_capital": "nacional",
     "sitio_web_oficial": "https://www.dosanclas.com.ar/",
     "hechos_verificables": "Principal complejo salinero argentino con cosecha evaporítica y planta de lavado y refinación de cloruro de sodio en Salinas Grandes de Hidalgo (Depto. Atreucó, La Pampa).",
@@ -342,6 +308,7 @@
   {
     "empresa_id": "cementos-avellaneda-sa",
     "razon_social": "Cementos Avellaneda S.A.",
+    "cuit": null,
     "tipo_capital": "mixto",
     "sitio_web_oficial": "https://www.cementosavellaneda.com.ar/",
     "hechos_verificables": "Productor integrado de clínker y cemento Portland con planta vía seca de alta eficiencia en La Calera (Depto. Belgrano, San Luis), abasteciendo a Cuyo y el Centro argentino.",
@@ -359,6 +326,7 @@
   {
     "empresa_id": "polo-citricola-concordia",
     "razon_social": "Complejos Citrícolas Industriales de Concordia (FeCiER)",
+    "cuit": null,
     "tipo_capital": "nacional",
     "sitio_web_oficial": "https://www.fecier.org.ar/",
     "hechos_verificables": "Agrupamiento agroindustrial del noreste entrerriano (Concordia y Federación) dedicado a la extracción de aceites esenciales cítricos (D-limoneno), jugos concentrados y derivados de cáscara.",
@@ -376,6 +344,7 @@
   {
     "empresa_id": "grupo-san-francisco-sa",
     "razon_social": "Grupo San Francisco S.A.",
+    "cuit": null,
     "tipo_capital": "nacional",
     "sitio_web_oficial": "https://gruposanfrancisco.com.ar/",
     "hechos_verificables": "Operador forestoquímico correntino ubicado sobre Ruta Nacional 14 Km 754 (Gobernador Virasoro, Depto. Santo Tomé). Declara una producción de 13.000 toneladas anuales de miera de Pinus elliottii procesada en colofonia y trementina.",
@@ -393,6 +362,7 @@
   {
     "empresa_id": "unitan-saica",
     "razon_social": "Unitán S.A.I.C.A.",
+    "cuit": null,
     "tipo_capital": "nacional",
     "sitio_web_oficial": "https://www.unitan.net/",
     "hechos_verificables": "Principal productor argentino de extracto de quebracho colorado (Schinopsis balansae) y bioactivos tánicos naturales, con instalaciones industriales en la ciudad de Formosa (y Puerto Tirol, Chaco) y una capacidad conjunta declarada cercana a 40.000 toneladas anuales.",
@@ -410,6 +380,7 @@
   {
     "empresa_id": "valle-de-la-puerta-sa",
     "razon_social": "Valle de la Puerta S.A.",
+    "cuit": null,
     "tipo_capital": "nacional",
     "sitio_web_oficial": "https://valledelapuerta.com.ar/",
     "hechos_verificables": "Complejo olivícola y almazara industrial sobre Ruta Nacional 74 Km 1186 (Vichigasta, Depto. Chilecito, La Rioja), con 770 hectáreas de olivares y una capacidad declarada de 1.400 toneladas anuales de aceite de oliva virgen extra.",
@@ -427,6 +398,7 @@
   {
     "empresa_id": "agro-aceitunera-sa",
     "razon_social": "Agro Aceitunera S.A. (Nucete)",
+    "cuit": null,
     "tipo_capital": "nacional",
     "sitio_web_oficial": "https://agroaceitunera.com.ar/",
     "hechos_verificables": "Uno de los mayores procesadores olivícolas del país, con planta industrial en Aimogasta (Depto. Arauco, La Rioja) de hasta 200 toneladas diarias de molienda de aceitunas y unidad adicional en Chilecito.",
@@ -444,6 +416,7 @@
   {
     "empresa_id": "ldc-argentina-sa",
     "razon_social": "Louis Dreyfus Company Argentina S.A. (LDC)",
+    "cuit": null,
     "tipo_capital": "extranjero",
     "sitio_web_oficial": "https://www.ldc.com/ar/es/",
     "hechos_verificables": "Opera la planta desmotadora de algodón de Quimilí (Depto. Moreno, Santiago del Estero), ampliada en 2024 a 60.000 toneladas anuales de procesamiento en el corazón de la primera cuenca algodonera argentina según SAGyP.",
@@ -461,6 +434,7 @@
   {
     "empresa_id": "maprimed-sa",
     "razon_social": "Maprimed S.A. (Insud Pharma)",
+    "cuit": null,
     "tipo_capital": "nacional",
     "sitio_web_oficial": "https://www.insudpharma.com/",
     "hechos_verificables": "Compañía farmoquímica argentina fundada en 1970 e integrada a Insud Pharma, con planta química de síntesis de Ingredientes Farmacéuticos Activos (IFAs/APIs) y centro de I+D en Av. Directorio 6155 (Comuna 9, CABA) bajo normas GMP/ANMAT/FDA.",
@@ -478,6 +452,7 @@
   {
     "empresa_id": "druetta-hnos-sa",
     "razon_social": "Druetta Hnos. S.A.",
+    "cuit": null,
     "tipo_capital": "nacional",
     "sitio_web_oficial": "https://www.druetta.com.ar/",
     "hechos_verificables": "Empresa metalúrgica argentina fundada en 1947 especializada en galvanizado por inmersión en caliente (GIC) para energía, telecomunicaciones, infraestructura, transporte, agro e industria. Opera en General Rodríguez un predio de 55.000 m2 (11.000 m2 cubiertos) con dos cubas de zinc fundido a 450 °C (13,0 x 1,8 x 3,0 m y 4,5 x 1,4 x 2,2 m), laboratorio propio, planta de efluentes líquidos, lavado de humos y certificaciones ISO 9001:2015 e ISO 14001:2015.",
@@ -489,6 +464,60 @@
       "fecha_descarga": "2026-11-27",
       "hash": "sha256:eb0ee6c4ae621f4c701f4ce06a529ddc45d7cf64324bd8d2c31980849921abaa",
       "cita_ubicacion": "druetta.com.ar (historia.html, instalaciones2.html, instalaciones4.html, instalaciones7.html, iso.html)",
+      "confianza": "alta"
+    }
+  },
+  {
+    "empresa_id": "aluar-saic",
+    "razon_social": "Aluar Aluminio Argentino S.A.I.C.",
+    "cuit": "30-52278060-6",
+    "tipo_capital": "nacional",
+    "sitio_web_oficial": "https://www.aluar.com.ar/",
+    "hechos_verificables": "Único productor de aluminio primario en Argentina (CUIT 30-52278060-6). Creada en 1970, cotiza en la Bolsa de Comercio de Buenos Aires bajo fiscalización de CNV desde 1980. Controla el 60,20% de Hidroeléctrica Futaleufú S.A. y opera un Parque Eólico propio en Puerto Madryn (ampliación en curso hacia 582 MW). Dotación al 30/06/2025: 2.330 personas (1.582 en División Aluminio Primario).",
+    "procedencia": {
+      "anio": 2025,
+      "fuente_id": "aluar-eeff-2025",
+      "fuente": "Memoria y Estados Financieros: 56° Ejercicio Económico (al 30/06/2025 y 30/06/2024)",
+      "url": "https://cdn.aluar.com.ar/assets/uploads/EEFF_Aluar_Ejercicio_2024_2025_4_T_7869bb3511.pdf",
+      "fecha_descarga": "2026-11-24",
+      "hash": "sha256:3ee6b54bf52a0a4e543e8be2d0c23d7399425b274971ae097867aee312233901",
+      "cita_ubicacion": "Memoria 2025 pág. 2 y 10; Estados Financieros Nota 1 pág. 8 y Nota 2.3.1 pág. 11",
+      "confianza": "alta"
+    }
+  },
+  {
+    "empresa_id": "profertil-sa",
+    "razon_social": "Profertil S.A.",
+    "cuit": "30-69157651-1",
+    "tipo_capital": "mixto",
+    "sitio_web_oficial": "https://www.profertil.com.ar/",
+    "hechos_verificables": "Único productor integrado de urea granulada y amoníaco a gran escala en Argentina (CUIT 30-69157651-1). Inició producción comercial en enero de 2001 en Zona Cangrejales del Puerto de Bahía Blanca (predio de 605.110 m2). Capacidad nominal: 1.320.000 t/año de urea granulada y 790.000 t/año de amoníaco; contratos de gas natural hasta 2.500.000 m3/día. Al 31/12/2025 su capital pertenece 90% al Grupo Adecoagro y 10% a ACA (hasta dic. 2025: 50% YPF y 50% Nutrien).",
+    "procedencia": {
+      "anio": 2025,
+      "fuente_id": "profertil-eecc-2025",
+      "fuente": "Memoria y Estados Financieros al 31 de diciembre de 2025 (Profertil S.A.)",
+      "url": "https://www.profertil.com.ar/wp-content/uploads/2021/04/EECC-31-12-25.pdf",
+      "fecha_descarga": "2026-11-24",
+      "hash": "sha256:d7bf53b4394beebd03259645c41196aaa27ce657ded8cfc71fc1f007f34843f3",
+      "cita_ubicacion": "EECC-31-12-25.pdf pág. 4, 6, 78-79 y 88 (Memoria y Reseña Informativa)",
+      "confianza": "alta"
+    }
+  },
+  {
+    "empresa_id": "ypf-sa",
+    "razon_social": "YPF S.A.",
+    "cuit": "30-54668997-9",
+    "tipo_capital": "mixto",
+    "sitio_web_oficial": "https://inversores.ypf.com/",
+    "hechos_verificables": "Principal compañía integrada de energía de Argentina (CUIT 30-54668997-9, sede Macacha Güemes 515, CABA) con 51% de participación estatal y cotización en NYSE (YPF) y BYMA (YPFD) sobre 393.312.793 acciones ordinarias. Opera en forma directa 3 complejos industriales propios con 338,0 kbbl/d de capacidad nominal de refinación (utilización 94,5% en 2025): Complejo Industrial La Plata / Ensenada en Buenos Aires (198,9 kbbl/d + 526.000 t/año aromáticos BTX, 520.760 t/año reformado, 120.000 t/año propileno, 95.000 t/año ciclohexano y 53.000 t/año LAB), Complejo Industrial Luján de Cuyo en Mendoza (113,9 kbbl/d + 100.000 t/año propileno FCC) y Complejo Industrial Plaza Huincul en Neuquén (25,2 kbbl/d + 411.000 t/año metanol). Mantiene 38% en Compañía Mega S.A. y vendió su participación en Profertil S.A. a fines de 2025.",
+    "procedencia": {
+      "anio": 2025,
+      "fuente_id": "ypf-sec-20f-2025",
+      "fuente": "YPF Sociedad Anónima — Form 20-F Annual Report (Ejercicio finalizado el 31/12/2025)",
+      "url": "https://www.sec.gov/Archives/edgar/data/904851/000119312526126363/d95578d20f.htm",
+      "fecha_descarga": "2026-11-27",
+      "hash": "sha256:8d9d89011f05c6525bc48aaf98862cf3e985496b6622baddea112f1c020894ac",
+      "cita_ubicacion": "Form 20-F FY2025 portada (CUIT 30-54668997-9, 393.312.793 acciones), Item 4 Refining Units y Chemical Unit pág. 34",
       "confianza": "alta"
     }
   }

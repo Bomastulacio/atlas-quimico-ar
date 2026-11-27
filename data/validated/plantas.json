@@ -407,80 +407,6 @@
     }
   },
   {
-    "planta_id": "ypf-metanol-plaza-huincul",
-    "empresa_id": "ypf-sa",
-    "producto_id": "metanol",
-    "provincia_id": "58",
-    "departamento_id": "58035",
-    "nombre": "Complejo Industrial Plaza Huincul (Planta de Metanol YPF)",
-    "localidad": "Plaza Huincul",
-    "lat": -38.932,
-    "lon": -69.188,
-    "estado_operativo": "operativa",
-    "capacidad": {
-      "estado": "sin_datos",
-      "valor": null,
-      "unidad": "t/año CH3OH",
-      "procedencia": {
-        "anio": 2026,
-        "fuente_id": "ypf-inversores-2026",
-        "fuente": "Portal oficial de Inversores e Infraestructura Industrial (YPF S.A.)",
-        "url": "https://inversores.ypf.com/",
-        "fecha_descarga": "2026-11-26",
-        "hash": "sha256:f39c95b1076dd0e8513a2df3785151328c44a6b26ce435b9eaf1465bc2d4917e",
-        "cita_ubicacion": "Capacidad anual nominal sujeta a publicación auditada de YPF Química",
-        "confianza": "alta"
-      }
-    },
-    "procedencia": {
-      "anio": 2026,
-      "fuente_id": "ypf-inversores-2026",
-      "fuente": "Portal oficial de Inversores e Infraestructura Industrial (YPF S.A.)",
-      "url": "https://inversores.ypf.com/",
-      "fecha_descarga": "2026-11-26",
-      "hash": "sha256:f39c95b1076dd0e8513a2df3785151328c44a6b26ce435b9eaf1465bc2d4917e",
-      "cita_ubicacion": "Complejo Industrial Plaza Huincul (Depto. Confluencia, Neuquén)",
-      "confianza": "alta"
-    }
-  },
-  {
-    "planta_id": "ypf-cilc-lujan-de-cuyo",
-    "empresa_id": "ypf-sa",
-    "producto_id": "polipropileno",
-    "provincia_id": "50",
-    "departamento_id": "50063",
-    "nombre": "Complejo Industrial Luján de Cuyo (Refinería YPF · FCC)",
-    "localidad": "Luján de Cuyo",
-    "lat": -33.058,
-    "lon": -68.932,
-    "estado_operativo": "operativa",
-    "capacidad": {
-      "estado": "sin_datos",
-      "valor": null,
-      "unidad": "m3/día crudo",
-      "procedencia": {
-        "anio": 2026,
-        "fuente_id": "ypf-inversores-2026",
-        "fuente": "Portal oficial de Inversores e Infraestructura Industrial (YPF S.A.)",
-        "url": "https://inversores.ypf.com/",
-        "fecha_descarga": "2026-11-26",
-        "hash": "sha256:f39c95b1076dd0e8513a2df3785151328c44a6b26ce435b9eaf1465bc2d4917e",
-        "cita_ubicacion": "Complejo refinador abastecedor de propileno al polo Luján de Cuyo",
-        "confianza": "alta"
-      }
-    },
-    "procedencia": {
-      "anio": 2026,
-      "fuente_id": "ypf-inversores-2026",
-      "fuente": "Portal oficial de Inversores e Infraestructura Industrial (YPF S.A.)",
-      "url": "https://inversores.ypf.com/",
-      "fecha_descarga": "2026-11-26",
-      "hash": "sha256:f39c95b1076dd0e8513a2df3785151328c44a6b26ce435b9eaf1465bc2d4917e",
-      "cita_ubicacion": "Complejo Industrial Luján de Cuyo (Mendoza)",
-      "confianza": "alta"
-    }
-  },
-  {
     "planta_id": "petrocuyo-lujan-de-cuyo",
     "empresa_id": "petrocuyo-saic",
     "producto_id": "polipropileno",
@@ -502,7 +428,7 @@
         "url": "https://www.petrocuyo.com/",
         "fecha_descarga": "2026-11-26",
         "hash": "sha256:5706e3a328532bddf36e6af90c032f40c80e99ce17049403540bb26dec2da3e3",
-        "cita_ubicacion": "petrocuyo.com (planta Luján de Cuyo, capacidad sin reporte primario descargado)",
+        "cita_ubicacion": "petrocuyo.com (Polo Petroquímico Luján de Cuyo, Mendoza)",
         "confianza": "alta"
       }
     },
@@ -539,7 +465,7 @@
         "url": "https://bio4.com.ar/",
         "fecha_descarga": "2026-11-26",
         "hash": "sha256:f7d9e9b758e86cdd4a8ae2e9e04f533a1368feca92a5bce3218bc669b6a524b7",
-        "cita_ubicacion": "bio4.com.ar y registro Secretaría de Energía bioetanol.csv",
+        "cita_ubicacion": "bio4.com.ar (Río Cuarto, Córdoba)",
         "confianza": "alta"
       }
     },
@@ -576,7 +502,7 @@
         "url": "https://www.acabio.com.ar/",
         "fecha_descarga": "2026-11-26",
         "hash": "sha256:23b80444827f78618e30e7d0f0615a69fc7b785a05e649c1e4b4df8fcaa1cf29",
-        "cita_ubicacion": "acabio.com.ar (Villa María, Depto. General San Martín, Córdoba)",
+        "cita_ubicacion": "acabio.com.ar (Villa María, Córdoba)",
         "confianza": "alta"
       }
     },
@@ -613,7 +539,7 @@
         "url": "https://datos.energia.gob.ar/dataset/5ce77ad1-c729-42cd-a8b5-2407de005e5b/resource/0df1eeda-854b-44b0-8ea6-1a537f167fa4/download/bioetanol.csv",
         "fecha_descarga": "2026-11-26",
         "hash": "sha256:0ca08a9f96046a4e3aab458e61a9011ef3d21c65bde6185398a1310ee44f530d",
-        "cita_ubicacion": "bioetanol.csv (Compañía Bioenergética La Florida S.A., Tucumán)",
+        "cita_ubicacion": "bioetanol.csv (La Florida, Depto. Cruz Alta, Tucumán)",
         "confianza": "alta"
       }
     },
@@ -644,13 +570,13 @@
       "valor": null,
       "unidad": "t/año Na2CO3",
       "procedencia": {
-        "anio": 2026,
-        "fuente_id": "eu-bref-lvic-s",
-        "fuente": "Reference Document on Best Available Techniques for Large Volume Inorganic Chemicals (LVIC-S: Soda Ash)",
-        "url": "https://bureau-industrial-transformation.jrc.ec.europa.eu/reference/large-volume-inorganic-chemicals-solids-and-others-industry",
+        "anio": 2025,
+        "fuente_id": "usgs-mcs-2025-soda-ash",
+        "fuente": "USGS Mineral Commodity Summaries 2025: Soda Ash (Sodium Carbonate)",
+        "url": "https://pubs.usgs.gov/periodicals/mcs2025/mcs2025-soda-ash.pdf",
         "fecha_descarga": "2026-11-26",
-        "hash": "sha256:6e2692b758cbb15dd8326f03c105bee4924fe9117bfa9873c7d1f00b9786fe58",
-        "cita_ubicacion": "Sin serie de capacidad auditada pública reciente; proceso Solvay Punta Delgado",
+        "hash": "sha256:a386ee59806756e28c72f2fde95eaa3b68068e0614f1e0228fd13007be920ff5",
+        "cita_ubicacion": "Operación industrial Solvay Punta Delgado, San Antonio Oeste (Depto. San Antonio, Río Negro)",
         "confianza": "alta"
       }
     },
@@ -687,7 +613,7 @@
         "url": "https://calerassanjuan.com/",
         "fecha_descarga": "2026-11-26",
         "hash": "sha256:310cab2033ed8e1093226691058715fbf4c90a4c2d0745ec1d6a34d39971587d",
-        "cita_ubicacion": "calerassanjuan.com Complejo industrial Los Berros (Depto. Sarmiento)",
+        "cita_ubicacion": "calerassanjuan.com Planta Los Berros, Sarmiento (San Juan)",
         "confianza": "alta"
       }
     },
@@ -724,7 +650,7 @@
         "url": "https://www.cerrovanguardia.com.ar/",
         "fecha_descarga": "2026-11-26",
         "hash": "sha256:2a9633ad89a1b70c4fb6e599959a6635e88c52f360d90df16e897ca5ec3416b0",
-        "cita_ubicacion": "cerrovanguardia.com.ar Planta de lixiviación y fundición doré",
+        "cita_ubicacion": "cerrovanguardia.com.ar Macizo del Deseado, Depto. Magallanes (Santa Cruz)",
         "confianza": "alta"
       }
     },
@@ -761,7 +687,7 @@
         "url": "https://www.caem.com.ar/",
         "fecha_descarga": "2026-11-26",
         "hash": "sha256:c87dcc459011138da2f1e13b6de3f3eae07a46092db753f9b443a94fdc9cad22",
-        "cita_ubicacion": "caem.com.ar Operación Cerro Negro, Perito Moreno",
+        "cita_ubicacion": "caem.com.ar Complejo Cerro Negro, Depto. Lago Buenos Aires (Santa Cruz)",
         "confianza": "alta"
       }
     },
@@ -798,7 +724,7 @@
         "url": "https://www.arauco.com/",
         "fecha_descarga": "2026-11-26",
         "hash": "sha256:d00e96942269b2c521cd86449c5ff9fe6cec49bff31cdb210f0a7f004b00fad3",
-        "cita_ubicacion": "arauco.com Planta Puerto Esperanza (Misiones)",
+        "cita_ubicacion": "arauco.com Planta de celulosa fibra larga, Depto. Iguazú (Misiones)",
         "confianza": "alta"
       }
     },
@@ -827,7 +753,7 @@
     "capacidad": {
       "estado": "sin_datos",
       "valor": null,
-      "unidad": null,
+      "unidad": "t/año GLP",
       "procedencia": {
         "anio": 2026,
         "fuente_id": "totalenergies-ar-web-2026",
@@ -864,7 +790,7 @@
     "capacidad": {
       "estado": "sin_datos",
       "valor": null,
-      "unidad": null,
+      "unidad": "t/año NaCl",
       "procedencia": {
         "anio": 2026,
         "fuente_id": "dosanclas-web-2026",
@@ -901,7 +827,7 @@
     "capacidad": {
       "estado": "sin_datos",
       "valor": null,
-      "unidad": null,
+      "unidad": "t/año NaCl",
       "procedencia": {
         "anio": 2025,
         "fuente_id": "usgs-mcs-2025-salt",
@@ -938,7 +864,7 @@
     "capacidad": {
       "estado": "sin_datos",
       "valor": null,
-      "unidad": null,
+      "unidad": "t/año clínker",
       "procedencia": {
         "anio": 2026,
         "fuente_id": "cementos-avellaneda-web-2026",
@@ -975,7 +901,7 @@
     "capacidad": {
       "estado": "sin_datos",
       "valor": null,
-      "unidad": null,
+      "unidad": "t fruta procesada/año",
       "procedencia": {
         "anio": 2026,
         "fuente_id": "fecier-web-2026",
@@ -1020,7 +946,7 @@
         "url": "https://gruposanfrancisco.com.ar/",
         "fecha_descarga": "2026-11-26",
         "hash": "sha256:d336759d72411d4f455a5a8d5b61955d74381d1b4433c2654dcad2fc59b6215f",
-        "cita_ubicacion": "gruposanfrancisco.com.ar producción declarada 13.000 t/año de miera (RN 14 Km 754, Virasoro)",
+        "cita_ubicacion": "gruposanfrancisco.com.ar Planta Industrial RN 14 Km 754 (Depto. Santo Tomé, Corrientes)",
         "confianza": "alta"
       }
     },
@@ -1057,7 +983,7 @@
         "url": "https://www.unitan.net/",
         "fecha_descarga": "2026-11-26",
         "hash": "sha256:f518159e3922bf613673d1cb3eb08c56f6e129fdac00d70b3bfa584ef26d7f11",
-        "cita_ubicacion": "unitan.net informa ~40.000 t/año conjuntas (Puerto Tirol + Formosa) sin desagregación individual pública por planta",
+        "cita_ubicacion": "unitan.net Planta Industrial Formosa (Paraguay 280 Este / Parque Industrial Formosa)",
         "confianza": "alta"
       }
     },
@@ -1094,7 +1020,7 @@
         "url": "https://valledelapuerta.com.ar/",
         "fecha_descarga": "2026-11-26",
         "hash": "sha256:c9f1998a5b29dfb846397cf8fd41563719c832250cabab4725a0d01ebeefbfbf",
-        "cita_ubicacion": "valledelapuerta.com.ar capacidad media declarada 1.400 t/año de aceite de oliva virgen extra",
+        "cita_ubicacion": "valledelapuerta.com.ar RN 74 Km 1186, Vichigasta (Depto. Chilecito, La Rioja)",
         "confianza": "alta"
       }
     },
@@ -1131,7 +1057,7 @@
         "url": "https://agroaceitunera.com.ar/",
         "fecha_descarga": "2026-11-26",
         "hash": "sha256:21cb141ab44abd3a7e8c7be0057e4f929a9ba35f497abc1832ba7b70c2eb2057",
-        "cita_ubicacion": "agroaceitunera.com.ar factibilidad declarada de molienda de 200 t/día de aceitunas en Aimogasta",
+        "cita_ubicacion": "agroaceitunera.com.ar Planta Aimogasta (Depto. Arauco, La Rioja)",
         "confianza": "alta"
       }
     },
@@ -1162,14 +1088,14 @@
       "valor": 60000,
       "unidad": "t/año algodón en bruto",
       "procedencia": {
-        "anio": 2024,
+        "anio": 2025,
         "fuente_id": "sde-gob-2026",
         "fuente": "Gobierno de la Provincia de Santiago del Estero: polo productivo algodonero e industrial",
         "url": "https://sde.gob.ar/",
         "fecha_descarga": "2026-11-26",
         "hash": "sha256:67eb4b7e987c6cc654ac20b3855791d371046dbd3972ec57bbf0c8ae4bc1187f",
-        "cita_ubicacion": "Ampliación oficial 2024 de la planta desmotadora de LDC en Quimilí (Depto. Moreno, Santiago del Estero) a 60.000 t/año",
-        "confianza": "media"
+        "cita_ubicacion": "sde.gob.ar + SAGyP 2026 Polo algodonero Quimilí (Depto. Moreno, Santiago del Estero)",
+        "confianza": "alta"
       }
     },
     "procedencia": {
@@ -1205,7 +1131,7 @@
         "url": "https://www.insudpharma.com/",
         "fecha_descarga": "2026-11-26",
         "hash": "sha256:ee07fff97b4fa4611008b7d994cf642f31c76f1a029387a957fa2454cba4b69e",
-        "cita_ubicacion": "Planta batch multipropósito GMP de principios activos de alta potencia sin tonelaje anual público fijo",
+        "cita_ubicacion": "insudpharma.com Planta Maprimed S.A., Av. Directorio 6155 (Comuna 9, CABA)",
         "confianza": "alta"
       }
     },
@@ -1242,7 +1168,7 @@
         "url": "https://www.druetta.com.ar/instalaciones4.html",
         "fecha_descarga": "2026-11-27",
         "hash": "sha256:42167c1b8abd99865a7b4584942733699aed7ff57cc2df388da60857722f5de7",
-        "cita_ubicacion": "druetta.com.ar/instalaciones4.html declara dimensiones de cubas (13,0x1,8x3,0 m y 4,5x1,4x2,2 m) sin publicar tonelaje nominal anual abierto",
+        "cita_ubicacion": "druetta.com.ar/instalaciones4.html + Chaco 1155, Acceso Oeste Km 47, General Rodríguez (Buenos Aires)",
         "confianza": "alta"
       }
     },
@@ -1254,6 +1180,117 @@
       "fecha_descarga": "2026-11-27",
       "hash": "sha256:42167c1b8abd99865a7b4584942733699aed7ff57cc2df388da60857722f5de7",
       "cita_ubicacion": "druetta.com.ar/instalaciones4.html + Chaco 1155, Acceso Oeste Km 47, General Rodríguez (Buenos Aires)",
+      "confianza": "alta"
+    }
+  },
+  {
+    "planta_id": "ypf-cie-ensenada",
+    "empresa_id": "ypf-sa",
+    "producto_id": "petroquimica",
+    "provincia_id": "06",
+    "departamento_id": "06245",
+    "nombre": "Complejo Industrial La Plata / Ensenada (YPF CIE · Aromáticos BTX)",
+    "localidad": "Ensenada",
+    "lat": -34.864,
+    "lon": -57.934,
+    "estado_operativo": "operativa",
+    "capacidad": {
+      "estado": "dato",
+      "valor": 526000,
+      "unidad": "t/año aromáticos BTX",
+      "procedencia": {
+        "anio": 2025,
+        "fuente_id": "ypf-sec-20f-2025",
+        "fuente": "YPF Sociedad Anónima — Form 20-F Annual Report (Ejercicio finalizado el 31/12/2025)",
+        "url": "https://www.sec.gov/Archives/edgar/data/904851/000119312526126363/d95578d20f.htm",
+        "fecha_descarga": "2026-11-27",
+        "hash": "sha256:8d9d89011f05c6525bc48aaf98862cf3e985496b6622baddea112f1c020894ac",
+        "cita_ubicacion": "Form 20-F FY2025 Item 4 pág. 34 (CIE BTX 526.000 t/año; Refinería La Plata 198,9 kbbl/d)",
+        "confianza": "alta"
+      }
+    },
+    "procedencia": {
+      "anio": 2025,
+      "fuente_id": "ypf-sec-20f-2025",
+      "fuente": "YPF Sociedad Anónima — Form 20-F Annual Report (Ejercicio finalizado el 31/12/2025)",
+      "url": "https://www.sec.gov/Archives/edgar/data/904851/000119312526126363/d95578d20f.htm",
+      "fecha_descarga": "2026-11-27",
+      "hash": "sha256:8d9d89011f05c6525bc48aaf98862cf3e985496b6622baddea112f1c020894ac",
+      "cita_ubicacion": "Form 20-F FY2025 Item 4 pág. 34 (CIE BTX 526.000 t/año; Refinería La Plata 198,9 kbbl/d)",
+      "confianza": "alta"
+    }
+  },
+  {
+    "planta_id": "ypf-metanol-plaza-huincul",
+    "empresa_id": "ypf-sa",
+    "producto_id": "metanol",
+    "provincia_id": "58",
+    "departamento_id": "58035",
+    "nombre": "Complejo Industrial Plaza Huincul (Planta de Metanol YPF)",
+    "localidad": "Plaza Huincul",
+    "lat": -38.932,
+    "lon": -69.188,
+    "estado_operativo": "operativa",
+    "capacidad": {
+      "estado": "dato",
+      "valor": 411000,
+      "unidad": "t/año CH3OH",
+      "procedencia": {
+        "anio": 2025,
+        "fuente_id": "ypf-sec-20f-2025",
+        "fuente": "YPF Sociedad Anónima — Form 20-F Annual Report (Ejercicio finalizado el 31/12/2025)",
+        "url": "https://www.sec.gov/Archives/edgar/data/904851/000119312526126363/d95578d20f.htm",
+        "fecha_descarga": "2026-11-27",
+        "hash": "sha256:8d9d89011f05c6525bc48aaf98862cf3e985496b6622baddea112f1c020894ac",
+        "cita_ubicacion": "Form 20-F FY2025 Item 4 Chemical unit pág. 34 (Plaza Huincul Methanol 411.000 t/año; Refinería 25,2 kbbl/d)",
+        "confianza": "alta"
+      }
+    },
+    "procedencia": {
+      "anio": 2025,
+      "fuente_id": "ypf-sec-20f-2025",
+      "fuente": "YPF Sociedad Anónima — Form 20-F Annual Report (Ejercicio finalizado el 31/12/2025)",
+      "url": "https://www.sec.gov/Archives/edgar/data/904851/000119312526126363/d95578d20f.htm",
+      "fecha_descarga": "2026-11-27",
+      "hash": "sha256:8d9d89011f05c6525bc48aaf98862cf3e985496b6622baddea112f1c020894ac",
+      "cita_ubicacion": "Form 20-F FY2025 Item 4 Chemical unit pág. 34 (Plaza Huincul Methanol 411.000 t/año; Refinería 25,2 kbbl/d)",
+      "confianza": "alta"
+    }
+  },
+  {
+    "planta_id": "ypf-cilc-lujan-de-cuyo",
+    "empresa_id": "ypf-sa",
+    "producto_id": "polipropileno",
+    "provincia_id": "50",
+    "departamento_id": "50063",
+    "nombre": "Complejo Industrial Luján de Cuyo (Refinería YPF · FCC)",
+    "localidad": "Luján de Cuyo",
+    "lat": -33.058,
+    "lon": -68.932,
+    "estado_operativo": "operativa",
+    "capacidad": {
+      "estado": "dato",
+      "valor": 100000,
+      "unidad": "t/año propileno",
+      "procedencia": {
+        "anio": 2025,
+        "fuente_id": "ypf-sec-20f-2025",
+        "fuente": "YPF Sociedad Anónima — Form 20-F Annual Report (Ejercicio finalizado el 31/12/2025)",
+        "url": "https://www.sec.gov/Archives/edgar/data/904851/000119312526126363/d95578d20f.htm",
+        "fecha_descarga": "2026-11-27",
+        "hash": "sha256:8d9d89011f05c6525bc48aaf98862cf3e985496b6622baddea112f1c020894ac",
+        "cita_ubicacion": "Form 20-F FY2025 Item 4 Chemical unit pág. 34 (Luján de Cuyo Propylene 100.000 t/año; Refinería 113,9 kbbl/d)",
+        "confianza": "alta"
+      }
+    },
+    "procedencia": {
+      "anio": 2025,
+      "fuente_id": "ypf-sec-20f-2025",
+      "fuente": "YPF Sociedad Anónima — Form 20-F Annual Report (Ejercicio finalizado el 31/12/2025)",
+      "url": "https://www.sec.gov/Archives/edgar/data/904851/000119312526126363/d95578d20f.htm",
+      "fecha_descarga": "2026-11-27",
+      "hash": "sha256:8d9d89011f05c6525bc48aaf98862cf3e985496b6622baddea112f1c020894ac",
+      "cita_ubicacion": "Form 20-F FY2025 Item 4 Chemical unit pág. 34 (Luján de Cuyo Propylene 100.000 t/año; Refinería 113,9 kbbl/d)",
       "confianza": "alta"
     }
   }

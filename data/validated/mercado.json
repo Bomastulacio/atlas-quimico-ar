@@ -1,5 +1,5 @@
 {
-  "generado_en": "2026-11-25T19:37:43.167Z",
+  "generado_en": "2026-11-27T20:05:31.318Z",
   "fuente_edge_url": "https://rbjymgrimmrbetgbeios.supabase.co/functions/v1/market-quotes",
   "tipos_cambio": [
     {
@@ -7,33 +7,33 @@
       "nombre": "Dólar Oficial",
       "moneda_base": "USD",
       "moneda_destino": "ARS",
-      "compra": 1580,
-      "venta": 1630,
+      "compra": 1575,
+      "venta": 1625,
       "fuente": "DolarApi.com / BCRA (Oficial)",
       "fuente_url": "https://dolarapi.com/v1/dolares",
-      "fecha_actualizacion": "2026-11-25T16:00:00.000Z"
+      "fecha_actualizacion": "2026-11-27T17:00:00.000Z"
     },
     {
       "casa": "bolsa",
       "nombre": "Dólar MEP",
       "moneda_base": "USD",
       "moneda_destino": "ARS",
-      "compra": 1678.8,
-      "venta": 1680.8,
+      "compra": 1647.9,
+      "venta": 1661.9,
       "fuente": "DolarApi.com (referencia MEP)",
       "fuente_url": "https://dolarapi.com/v1/dolares",
-      "fecha_actualizacion": "2026-11-25T18:55:00.000Z"
+      "fecha_actualizacion": "2026-11-27T19:59:00.000Z"
     },
     {
       "casa": "contadoconliqui",
       "nombre": "Dólar CCL",
       "moneda_base": "USD",
       "moneda_destino": "ARS",
-      "compra": 1775.9,
-      "venta": 1776.2,
+      "compra": 1748.3,
+      "venta": 1751.3,
       "fuente": "DolarApi.com (referencia CCL)",
       "fuente_url": "https://dolarapi.com/v1/dolares",
-      "fecha_actualizacion": "2026-11-25T18:55:00.000Z"
+      "fecha_actualizacion": "2026-11-27T19:59:00.000Z"
     },
     {
       "casa": "usd_brl",
@@ -41,13 +41,31 @@
       "moneda_base": "USD",
       "moneda_destino": "BRL",
       "compra": null,
-      "venta": 5.8116,
+      "venta": 5.5146,
       "fuente": "Yahoo Finance (BRL=X)",
       "fuente_url": "https://finance.yahoo.com/quote/BRL=X",
-      "fecha_actualizacion": "2026-11-25T19:37:42.000Z"
+      "fecha_actualizacion": "2026-11-27T20:05:31.000Z"
     }
   ],
   "empresas": [
+    {
+      "empresa_id": "ypf-sa",
+      "tipo_cotizacion": "directa_local",
+      "entidad_cotizante": "YPF S.A. (NYSE: YPF / BYMA: YPFD)",
+      "ticker": "YPF",
+      "ticker_feed": "YPF",
+      "bolsa": "NYSE",
+      "moneda_origen": "USD",
+      "acciones_circulacion": 393312793,
+      "ultimo_precio": 31.85,
+      "cierre_previo": 33.28,
+      "variacion_dia_pct": -4.3,
+      "market_cap_origen": 12527012457.050001,
+      "nota_cotizacion": "Cotización ADR en NYSE (YPF) y acciones Clase D en BYMA (YPFD). Capitalización calculada sobre 393.312.793 acciones ordinarias totales auditadas al 31/12/2025.",
+      "fuente_acciones": "YPF S.A. Form 20-F FY2025 ante SEC (393.312.793 acciones ordinarias Clases A+B+C+D al 31/12/2025)",
+      "fuente_precio": "NYSE vía Yahoo Finance (YPF)",
+      "mercado_actualizado_en": "2026-11-27T18:00:23.000Z"
+    },
     {
       "empresa_id": "aluar-saic",
       "tipo_cotizacion": "directa_local",
@@ -57,14 +75,14 @@
       "bolsa": "BYMA",
       "moneda_origen": "ARS",
       "acciones_circulacion": 2800000000,
-      "ultimo_precio": 811.5,
-      "cierre_previo": 798.5,
-      "variacion_dia_pct": 1.63,
-      "market_cap_origen": 2272200000000,
+      "ultimo_precio": 848,
+      "cierre_previo": 846.5,
+      "variacion_dia_pct": 0.18,
+      "market_cap_origen": 2374400000000,
       "nota_cotizacion": "Cotización directa en BYMA (acciones ordinarias VN $1). Capitalización calculada sobre 2.800.000.000 acciones auditadas ante CNV.",
       "fuente_acciones": "Estados Financieros Aluar 56° Ejercicio (CNV, 2.800.000.000 acciones)",
       "fuente_precio": "BYMA vía Yahoo Finance (ALUA.BA)",
-      "mercado_actualizado_en": "2026-11-25T19:17:40.000Z"
+      "mercado_actualizado_en": "2026-11-27T19:44:52.000Z"
     },
     {
       "empresa_id": "molinos-agro-sa",
@@ -75,14 +93,14 @@
       "bolsa": "BYMA",
       "moneda_origen": "ARS",
       "acciones_circulacion": 49082024,
-      "ultimo_precio": 18400,
-      "cierre_previo": 18925,
-      "variacion_dia_pct": -2.77,
-      "market_cap_origen": 903109241600,
+      "ultimo_precio": 18600,
+      "cierre_previo": 19150,
+      "variacion_dia_pct": -2.87,
+      "market_cap_origen": 912925646400,
       "nota_cotizacion": "Cotización directa en BYMA (MOLA). Capitalización calculada sobre 49.082.024 acciones ordinarias totales (Clase A + Clase B, CNV/BYMA).",
       "fuente_acciones": "Estados Contables y registro CNV/BYMA de Molinos Agro S.A. (49.082.024 acciones)",
       "fuente_precio": "BYMA vía Yahoo Finance (MOLA.BA)",
-      "mercado_actualizado_en": "2026-11-25T19:14:03.000Z"
+      "mercado_actualizado_en": "2026-11-27T19:41:31.000Z"
     },
     {
       "empresa_id": "rio-tinto-litio-ar",
@@ -93,14 +111,14 @@
       "bolsa": "NYSE",
       "moneda_origen": "USD",
       "acciones_circulacion": 1627226528,
-      "ultimo_precio": 74.595,
-      "cierre_previo": 75.9,
-      "variacion_dia_pct": -1.72,
-      "market_cap_origen": 121382962856.16,
+      "ultimo_precio": 76.47,
+      "cierre_previo": 74.7,
+      "variacion_dia_pct": 2.37,
+      "market_cap_origen": 124434012596.16,
       "nota_cotizacion": "Cotización del grupo matriz global (NYSE: RIO). Refleja la valuación mundial de Rio Tinto y no exclusivamente sus operaciones de litio en Argentina.",
       "fuente_acciones": "Rio Tinto Form 20-F 2025 ante SEC (1.627.226.528 acciones ordinarias DLC al 31/12/2025)",
       "fuente_precio": "NYSE vía Yahoo Finance (RIO)",
-      "mercado_actualizado_en": "2026-11-25T19:37:42.000Z"
+      "mercado_actualizado_en": "2026-11-27T18:00:02.000Z"
     },
     {
       "empresa_id": "dow-pbbpolisur",
@@ -111,14 +129,14 @@
       "bolsa": "NYSE",
       "moneda_origen": "USD",
       "acciones_circulacion": 717534072,
-      "ultimo_precio": 29.72,
-      "cierre_previo": 30.37,
-      "variacion_dia_pct": -2.14,
-      "market_cap_origen": 21325112619.84,
+      "ultimo_precio": 30.2,
+      "cierre_previo": 30.25,
+      "variacion_dia_pct": -0.17,
+      "market_cap_origen": 21669528974.399998,
       "nota_cotizacion": "Cotización del grupo matriz global (NYSE: DOW). Refleja la valuación mundial de Dow Inc. y no exclusivamente el complejo PBBPolisur de Bahía Blanca.",
       "fuente_acciones": "Dow Inc. Form 10-K 2025 ante SEC (717.534.072 acciones ordinarias al 15/01/2026)",
       "fuente_precio": "NYSE vía Yahoo Finance (DOW)",
-      "mercado_actualizado_en": "2026-11-25T19:37:43.000Z"
+      "mercado_actualizado_en": "2026-11-27T18:00:02.000Z"
     },
     {
       "empresa_id": "unipar-indupa",
@@ -129,14 +147,14 @@
       "bolsa": "B3",
       "moneda_origen": "BRL",
       "acciones_circulacion": 113173265,
-      "ultimo_precio": 49.25,
-      "cierre_previo": 49.5,
-      "variacion_dia_pct": -0.51,
-      "market_cap_origen": 5573783301.25,
+      "ultimo_precio": 51.93,
+      "cierre_previo": 48.4,
+      "variacion_dia_pct": 7.29,
+      "market_cap_origen": 5877087651.45,
       "nota_cotizacion": "Cotización del grupo matriz regional en Brasil (B3: UNIP6). Refleja la valuación consolidada de Unipar y no exclusivamente la planta de Bahía Blanca.",
       "fuente_acciones": "Unipar RI / B3 (113.173.265 acciones totales: ON UNIP3 + PNA UNIP5 + PNB UNIP6)",
       "fuente_precio": "B3 vía Yahoo Finance (UNIP6.SA)",
-      "mercado_actualizado_en": "2026-11-25T19:22:10.000Z"
+      "mercado_actualizado_en": "2026-11-27T19:50:23.000Z"
     },
     {
       "empresa_id": "profertil-sa",

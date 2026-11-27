@@ -3364,7 +3364,7 @@
         "url": "https://comtradeapi.un.org/public/v1/preview/C/A/HS?reporterCode=32&period=2023&partnerCode=0&partner2Code=0&customsCode=C00&motCode=0&cmdCode=283620,252210,710812,710691,470321",
         "fecha_descarga": "2026-11-26",
         "hash": "sha256:b2e8fc8903de1c4c163a8594b3f2283f01a71f1d01d51b3829fa091c883f3811",
-        "cita_ubicacion": "UN Comtrade 2023 HS 283620 flow=X",
+        "cita_ubicacion": "UN Comtrade 2023 Argentina HS 283620 (Disodium carbonate)",
         "confianza": "alta"
       }
     },
@@ -3379,7 +3379,7 @@
         "url": "https://comtradeapi.un.org/public/v1/preview/C/A/HS?reporterCode=32&period=2023&partnerCode=0&partner2Code=0&customsCode=C00&motCode=0&cmdCode=283620,252210,710812,710691,470321",
         "fecha_descarga": "2026-11-26",
         "hash": "sha256:b2e8fc8903de1c4c163a8594b3f2283f01a71f1d01d51b3829fa091c883f3811",
-        "cita_ubicacion": "UN Comtrade 2023 HS 283620 flow=M",
+        "cita_ubicacion": "UN Comtrade 2023 Argentina HS 283620 (Disodium carbonate)",
         "confianza": "alta"
       }
     },
@@ -3394,7 +3394,7 @@
         "url": "https://comtradeapi.un.org/public/v1/preview/C/A/HS?reporterCode=32&period=2023&partnerCode=0&partner2Code=0&customsCode=C00&motCode=0&cmdCode=283620,252210,710812,710691,470321",
         "fecha_descarga": "2026-11-26",
         "hash": "sha256:b2e8fc8903de1c4c163a8594b3f2283f01a71f1d01d51b3829fa091c883f3811",
-        "cita_ubicacion": "Saldo 2023 HS 283620 (Exp - Imp)",
+        "cita_ubicacion": "UN Comtrade 2023 Argentina HS 283620 (Disodium carbonate)",
         "confianza": "alta"
       }
     },
@@ -3426,7 +3426,7 @@
         "url": "https://comtradeapi.un.org/public/v1/preview/C/A/HS?reporterCode=32&period=2024&partnerCode=0&partner2Code=0&customsCode=C00&motCode=0&cmdCode=283620,252210,710812,710691,470321",
         "fecha_descarga": "2026-11-26",
         "hash": "sha256:8e39bec4f655267e2407e7dc81b90463946717a97d4588d65fc540ababd0739c",
-        "cita_ubicacion": "UN Comtrade 2024 HS 283620 sin registro de exportación",
+        "cita_ubicacion": "UN Comtrade 2024 Argentina HS 283620 (Disodium carbonate)",
         "confianza": "alta"
       }
     },
@@ -3441,7 +3441,7 @@
         "url": "https://comtradeapi.un.org/public/v1/preview/C/A/HS?reporterCode=32&period=2024&partnerCode=0&partner2Code=0&customsCode=C00&motCode=0&cmdCode=283620,252210,710812,710691,470321",
         "fecha_descarga": "2026-11-26",
         "hash": "sha256:8e39bec4f655267e2407e7dc81b90463946717a97d4588d65fc540ababd0739c",
-        "cita_ubicacion": "UN Comtrade 2024 HS 283620 flow=M",
+        "cita_ubicacion": "UN Comtrade 2024 Argentina HS 283620 (Disodium carbonate)",
         "confianza": "alta"
       }
     },
@@ -3456,7 +3456,7 @@
         "url": "https://comtradeapi.un.org/public/v1/preview/C/A/HS?reporterCode=32&period=2024&partnerCode=0&partner2Code=0&customsCode=C00&motCode=0&cmdCode=283620,252210,710812,710691,470321",
         "fecha_descarga": "2026-11-26",
         "hash": "sha256:8e39bec4f655267e2407e7dc81b90463946717a97d4588d65fc540ababd0739c",
-        "cita_ubicacion": "Saldo omitido al faltar exportación 2024",
+        "cita_ubicacion": "UN Comtrade 2024 Argentina HS 283620 (Disodium carbonate)",
         "confianza": "alta"
       }
     },
@@ -3488,7 +3488,7 @@
         "url": "https://comtradeapi.un.org/public/v1/preview/C/A/HS?reporterCode=32&period=2023&partnerCode=0&partner2Code=0&customsCode=C00&motCode=0&cmdCode=283620,252210,710812,710691,470321",
         "fecha_descarga": "2026-11-26",
         "hash": "sha256:b2e8fc8903de1c4c163a8594b3f2283f01a71f1d01d51b3829fa091c883f3811",
-        "cita_ubicacion": "UN Comtrade 2023 HS 252210 flow=X",
+        "cita_ubicacion": "UN Comtrade 2023 Argentina HS 252210 (Quicklime)",
         "confianza": "alta"
       }
     },
@@ -3503,7 +3503,7 @@
         "url": "https://comtradeapi.un.org/public/v1/preview/C/A/HS?reporterCode=32&period=2023&partnerCode=0&partner2Code=0&customsCode=C00&motCode=0&cmdCode=283620,252210,710812,710691,470321",
         "fecha_descarga": "2026-11-26",
         "hash": "sha256:b2e8fc8903de1c4c163a8594b3f2283f01a71f1d01d51b3829fa091c883f3811",
-        "cita_ubicacion": "UN Comtrade 2023 HS 252210 flow=M",
+        "cita_ubicacion": "UN Comtrade 2023 Argentina HS 252210 (Quicklime)",
         "confianza": "alta"
       }
     },
@@ -3518,7 +3518,7 @@
         "url": "https://comtradeapi.un.org/public/v1/preview/C/A/HS?reporterCode=32&period=2023&partnerCode=0&partner2Code=0&customsCode=C00&motCode=0&cmdCode=283620,252210,710812,710691,470321",
         "fecha_descarga": "2026-11-26",
         "hash": "sha256:b2e8fc8903de1c4c163a8594b3f2283f01a71f1d01d51b3829fa091c883f3811",
-        "cita_ubicacion": "Saldo 2023 HS 252210 (32.66 - 0.58)",
+        "cita_ubicacion": "UN Comtrade 2023 Argentina HS 252210 (Quicklime)",
         "confianza": "alta"
       }
     },
@@ -3550,7 +3550,7 @@
         "url": "https://comtradeapi.un.org/public/v1/preview/C/A/HS?reporterCode=32&period=2023&partnerCode=0&partner2Code=0&customsCode=C00&motCode=0&cmdCode=283620,252210,710812,710691,470321",
         "fecha_descarga": "2026-11-26",
         "hash": "sha256:b2e8fc8903de1c4c163a8594b3f2283f01a71f1d01d51b3829fa091c883f3811",
-        "cita_ubicacion": "UN Comtrade 2023 HS 252210 flow=X netWgt",
+        "cita_ubicacion": "UN Comtrade 2023 Argentina HS 252210 volumen físico",
         "confianza": "alta"
       }
     },
@@ -3565,7 +3565,7 @@
         "url": "https://comtradeapi.un.org/public/v1/preview/C/A/HS?reporterCode=32&period=2023&partnerCode=0&partner2Code=0&customsCode=C00&motCode=0&cmdCode=283620,252210,710812,710691,470321",
         "fecha_descarga": "2026-11-26",
         "hash": "sha256:b2e8fc8903de1c4c163a8594b3f2283f01a71f1d01d51b3829fa091c883f3811",
-        "cita_ubicacion": "UN Comtrade 2023 HS 252210 flow=M netWgt",
+        "cita_ubicacion": "UN Comtrade 2023 Argentina HS 252210 volumen físico",
         "confianza": "alta"
       }
     },
@@ -3580,7 +3580,7 @@
         "url": "https://comtradeapi.un.org/public/v1/preview/C/A/HS?reporterCode=32&period=2023&partnerCode=0&partner2Code=0&customsCode=C00&motCode=0&cmdCode=283620,252210,710812,710691,470321",
         "fecha_descarga": "2026-11-26",
         "hash": "sha256:b2e8fc8903de1c4c163a8594b3f2283f01a71f1d01d51b3829fa091c883f3811",
-        "cita_ubicacion": "Saldo físico 2023 HS 252210",
+        "cita_ubicacion": "UN Comtrade 2023 Argentina HS 252210 volumen físico",
         "confianza": "alta"
       }
     },
@@ -3612,7 +3612,7 @@
         "url": "https://comtradeapi.un.org/public/v1/preview/C/A/HS?reporterCode=32&period=2024&partnerCode=0&partner2Code=0&customsCode=C00&motCode=0&cmdCode=283620,252210,710812,710691,470321",
         "fecha_descarga": "2026-11-26",
         "hash": "sha256:8e39bec4f655267e2407e7dc81b90463946717a97d4588d65fc540ababd0739c",
-        "cita_ubicacion": "UN Comtrade 2024 HS 252210 flow=X",
+        "cita_ubicacion": "UN Comtrade 2024 Argentina HS 252210 (Quicklime)",
         "confianza": "alta"
       }
     },
@@ -3627,7 +3627,7 @@
         "url": "https://comtradeapi.un.org/public/v1/preview/C/A/HS?reporterCode=32&period=2024&partnerCode=0&partner2Code=0&customsCode=C00&motCode=0&cmdCode=283620,252210,710812,710691,470321",
         "fecha_descarga": "2026-11-26",
         "hash": "sha256:8e39bec4f655267e2407e7dc81b90463946717a97d4588d65fc540ababd0739c",
-        "cita_ubicacion": "UN Comtrade 2024 HS 252210 flow=M",
+        "cita_ubicacion": "UN Comtrade 2024 Argentina HS 252210 (Quicklime)",
         "confianza": "alta"
       }
     },
@@ -3642,7 +3642,7 @@
         "url": "https://comtradeapi.un.org/public/v1/preview/C/A/HS?reporterCode=32&period=2024&partnerCode=0&partner2Code=0&customsCode=C00&motCode=0&cmdCode=283620,252210,710812,710691,470321",
         "fecha_descarga": "2026-11-26",
         "hash": "sha256:8e39bec4f655267e2407e7dc81b90463946717a97d4588d65fc540ababd0739c",
-        "cita_ubicacion": "Saldo 2024 HS 252210 (43.50 - 0.54)",
+        "cita_ubicacion": "UN Comtrade 2024 Argentina HS 252210 (Quicklime)",
         "confianza": "alta"
       }
     },
@@ -3674,7 +3674,7 @@
         "url": "https://comtradeapi.un.org/public/v1/preview/C/A/HS?reporterCode=32&period=2024&partnerCode=0&partner2Code=0&customsCode=C00&motCode=0&cmdCode=283620,252210,710812,710691,470321",
         "fecha_descarga": "2026-11-26",
         "hash": "sha256:8e39bec4f655267e2407e7dc81b90463946717a97d4588d65fc540ababd0739c",
-        "cita_ubicacion": "UN Comtrade 2024 HS 252210 flow=X netWgt",
+        "cita_ubicacion": "UN Comtrade 2024 Argentina HS 252210 volumen físico",
         "confianza": "alta"
       }
     },
@@ -3689,7 +3689,7 @@
         "url": "https://comtradeapi.un.org/public/v1/preview/C/A/HS?reporterCode=32&period=2024&partnerCode=0&partner2Code=0&customsCode=C00&motCode=0&cmdCode=283620,252210,710812,710691,470321",
         "fecha_descarga": "2026-11-26",
         "hash": "sha256:8e39bec4f655267e2407e7dc81b90463946717a97d4588d65fc540ababd0739c",
-        "cita_ubicacion": "UN Comtrade 2024 HS 252210 flow=M netWgt",
+        "cita_ubicacion": "UN Comtrade 2024 Argentina HS 252210 volumen físico",
         "confianza": "alta"
       }
     },
@@ -3704,7 +3704,7 @@
         "url": "https://comtradeapi.un.org/public/v1/preview/C/A/HS?reporterCode=32&period=2024&partnerCode=0&partner2Code=0&customsCode=C00&motCode=0&cmdCode=283620,252210,710812,710691,470321",
         "fecha_descarga": "2026-11-26",
         "hash": "sha256:8e39bec4f655267e2407e7dc81b90463946717a97d4588d65fc540ababd0739c",
-        "cita_ubicacion": "Saldo físico 2024 HS 252210",
+        "cita_ubicacion": "UN Comtrade 2024 Argentina HS 252210 volumen físico",
         "confianza": "alta"
       }
     },
@@ -3736,7 +3736,7 @@
         "url": "https://comtradeapi.un.org/public/v1/preview/C/A/HS?reporterCode=32&period=2023&partnerCode=0&partner2Code=0&customsCode=C00&motCode=0&cmdCode=283620,252210,710812,710691,470321",
         "fecha_descarga": "2026-11-26",
         "hash": "sha256:b2e8fc8903de1c4c163a8594b3f2283f01a71f1d01d51b3829fa091c883f3811",
-        "cita_ubicacion": "UN Comtrade 2023 HS 710812 flow=X",
+        "cita_ubicacion": "UN Comtrade 2023 Argentina HS 710812 (Oro en bruto / doré)",
         "confianza": "alta"
       }
     },
@@ -3751,7 +3751,7 @@
         "url": "https://comtradeapi.un.org/public/v1/preview/C/A/HS?reporterCode=32&period=2023&partnerCode=0&partner2Code=0&customsCode=C00&motCode=0&cmdCode=283620,252210,710812,710691,470321",
         "fecha_descarga": "2026-11-26",
         "hash": "sha256:b2e8fc8903de1c4c163a8594b3f2283f01a71f1d01d51b3829fa091c883f3811",
-        "cita_ubicacion": "UN Comtrade 2023 HS 710812 sin importación reportada",
+        "cita_ubicacion": "UN Comtrade 2023 Argentina HS 710812 (Oro en bruto / doré)",
         "confianza": "alta"
       }
     },
@@ -3766,7 +3766,7 @@
         "url": "https://comtradeapi.un.org/public/v1/preview/C/A/HS?reporterCode=32&period=2023&partnerCode=0&partner2Code=0&customsCode=C00&motCode=0&cmdCode=283620,252210,710812,710691,470321",
         "fecha_descarga": "2026-11-26",
         "hash": "sha256:b2e8fc8903de1c4c163a8594b3f2283f01a71f1d01d51b3829fa091c883f3811",
-        "cita_ubicacion": "Saldo omitido al no figurar importación 2023",
+        "cita_ubicacion": "UN Comtrade 2023 Argentina HS 710812 (Oro en bruto / doré)",
         "confianza": "alta"
       }
     },
@@ -3798,7 +3798,7 @@
         "url": "https://comtradeapi.un.org/public/v1/preview/C/A/HS?reporterCode=32&period=2024&partnerCode=0&partner2Code=0&customsCode=C00&motCode=0&cmdCode=283620,252210,710812,710691,470321",
         "fecha_descarga": "2026-11-26",
         "hash": "sha256:8e39bec4f655267e2407e7dc81b90463946717a97d4588d65fc540ababd0739c",
-        "cita_ubicacion": "UN Comtrade 2024 HS 710812 flow=X",
+        "cita_ubicacion": "UN Comtrade 2024 Argentina HS 710812 (Oro en bruto / doré)",
         "confianza": "alta"
       }
     },
@@ -3813,7 +3813,7 @@
         "url": "https://comtradeapi.un.org/public/v1/preview/C/A/HS?reporterCode=32&period=2024&partnerCode=0&partner2Code=0&customsCode=C00&motCode=0&cmdCode=283620,252210,710812,710691,470321",
         "fecha_descarga": "2026-11-26",
         "hash": "sha256:8e39bec4f655267e2407e7dc81b90463946717a97d4588d65fc540ababd0739c",
-        "cita_ubicacion": "UN Comtrade 2024 HS 710812 flow=M",
+        "cita_ubicacion": "UN Comtrade 2024 Argentina HS 710812 (Oro en bruto / doré)",
         "confianza": "alta"
       }
     },
@@ -3828,7 +3828,7 @@
         "url": "https://comtradeapi.un.org/public/v1/preview/C/A/HS?reporterCode=32&period=2024&partnerCode=0&partner2Code=0&customsCode=C00&motCode=0&cmdCode=283620,252210,710812,710691,470321",
         "fecha_descarga": "2026-11-26",
         "hash": "sha256:8e39bec4f655267e2407e7dc81b90463946717a97d4588d65fc540ababd0739c",
-        "cita_ubicacion": "Saldo 2024 HS 710812",
+        "cita_ubicacion": "UN Comtrade 2024 Argentina HS 710812 (Oro en bruto / doré)",
         "confianza": "alta"
       }
     },
@@ -3860,7 +3860,7 @@
         "url": "https://comtradeapi.un.org/public/v1/preview/C/A/HS?reporterCode=32&period=2024&partnerCode=0&partner2Code=0&customsCode=C00&motCode=0&cmdCode=283620,252210,710812,710691,470321",
         "fecha_descarga": "2026-11-26",
         "hash": "sha256:8e39bec4f655267e2407e7dc81b90463946717a97d4588d65fc540ababd0739c",
-        "cita_ubicacion": "UN Comtrade 2024 HS 710812 flow=X peso bruto doré",
+        "cita_ubicacion": "UN Comtrade 2024 Argentina HS 710812 peso neto aduanero doré",
         "confianza": "alta"
       }
     },
@@ -3875,7 +3875,7 @@
         "url": "https://comtradeapi.un.org/public/v1/preview/C/A/HS?reporterCode=32&period=2024&partnerCode=0&partner2Code=0&customsCode=C00&motCode=0&cmdCode=283620,252210,710812,710691,470321",
         "fecha_descarga": "2026-11-26",
         "hash": "sha256:8e39bec4f655267e2407e7dc81b90463946717a97d4588d65fc540ababd0739c",
-        "cita_ubicacion": "UN Comtrade 2024 HS 710812 flow=M",
+        "cita_ubicacion": "UN Comtrade 2024 Argentina HS 710812 peso neto aduanero doré",
         "confianza": "alta"
       }
     },
@@ -3890,7 +3890,7 @@
         "url": "https://comtradeapi.un.org/public/v1/preview/C/A/HS?reporterCode=32&period=2024&partnerCode=0&partner2Code=0&customsCode=C00&motCode=0&cmdCode=283620,252210,710812,710691,470321",
         "fecha_descarga": "2026-11-26",
         "hash": "sha256:8e39bec4f655267e2407e7dc81b90463946717a97d4588d65fc540ababd0739c",
-        "cita_ubicacion": "Saldo físico 2024 HS 710812",
+        "cita_ubicacion": "UN Comtrade 2024 Argentina HS 710812 peso neto aduanero doré",
         "confianza": "alta"
       }
     },
@@ -3922,7 +3922,7 @@
         "url": "https://comtradeapi.un.org/public/v1/preview/C/A/HS?reporterCode=32&period=2023&partnerCode=0&partner2Code=0&customsCode=C00&motCode=0&cmdCode=283620,252210,710812,710691,470321",
         "fecha_descarga": "2026-11-26",
         "hash": "sha256:b2e8fc8903de1c4c163a8594b3f2283f01a71f1d01d51b3829fa091c883f3811",
-        "cita_ubicacion": "UN Comtrade 2023 HS 710691 flow=X",
+        "cita_ubicacion": "UN Comtrade 2023 Argentina HS 710691 (Plata en bruto)",
         "confianza": "alta"
       }
     },
@@ -3937,7 +3937,7 @@
         "url": "https://comtradeapi.un.org/public/v1/preview/C/A/HS?reporterCode=32&period=2023&partnerCode=0&partner2Code=0&customsCode=C00&motCode=0&cmdCode=283620,252210,710812,710691,470321",
         "fecha_descarga": "2026-11-26",
         "hash": "sha256:b2e8fc8903de1c4c163a8594b3f2283f01a71f1d01d51b3829fa091c883f3811",
-        "cita_ubicacion": "UN Comtrade 2023 HS 710691 flow=M",
+        "cita_ubicacion": "UN Comtrade 2023 Argentina HS 710691 (Plata en bruto)",
         "confianza": "alta"
       }
     },
@@ -3952,7 +3952,7 @@
         "url": "https://comtradeapi.un.org/public/v1/preview/C/A/HS?reporterCode=32&period=2023&partnerCode=0&partner2Code=0&customsCode=C00&motCode=0&cmdCode=283620,252210,710812,710691,470321",
         "fecha_descarga": "2026-11-26",
         "hash": "sha256:b2e8fc8903de1c4c163a8594b3f2283f01a71f1d01d51b3829fa091c883f3811",
-        "cita_ubicacion": "Saldo 2023 HS 710691 (196.42 - 2.15)",
+        "cita_ubicacion": "UN Comtrade 2023 Argentina HS 710691 (Plata en bruto)",
         "confianza": "alta"
       }
     },
@@ -3984,7 +3984,7 @@
         "url": "https://comtradeapi.un.org/public/v1/preview/C/A/HS?reporterCode=32&period=2024&partnerCode=0&partner2Code=0&customsCode=C00&motCode=0&cmdCode=283620,252210,710812,710691,470321",
         "fecha_descarga": "2026-11-26",
         "hash": "sha256:8e39bec4f655267e2407e7dc81b90463946717a97d4588d65fc540ababd0739c",
-        "cita_ubicacion": "UN Comtrade 2024 HS 710691 flow=X",
+        "cita_ubicacion": "UN Comtrade 2024 Argentina HS 710691 (Plata en bruto)",
         "confianza": "alta"
       }
     },
@@ -3999,7 +3999,7 @@
         "url": "https://comtradeapi.un.org/public/v1/preview/C/A/HS?reporterCode=32&period=2024&partnerCode=0&partner2Code=0&customsCode=C00&motCode=0&cmdCode=283620,252210,710812,710691,470321",
         "fecha_descarga": "2026-11-26",
         "hash": "sha256:8e39bec4f655267e2407e7dc81b90463946717a97d4588d65fc540ababd0739c",
-        "cita_ubicacion": "UN Comtrade 2024 HS 710691 flow=M",
+        "cita_ubicacion": "UN Comtrade 2024 Argentina HS 710691 (Plata en bruto)",
         "confianza": "alta"
       }
     },
@@ -4014,7 +4014,7 @@
         "url": "https://comtradeapi.un.org/public/v1/preview/C/A/HS?reporterCode=32&period=2024&partnerCode=0&partner2Code=0&customsCode=C00&motCode=0&cmdCode=283620,252210,710812,710691,470321",
         "fecha_descarga": "2026-11-26",
         "hash": "sha256:8e39bec4f655267e2407e7dc81b90463946717a97d4588d65fc540ababd0739c",
-        "cita_ubicacion": "Saldo 2024 HS 710691 (80.95 - 1.33)",
+        "cita_ubicacion": "UN Comtrade 2024 Argentina HS 710691 (Plata en bruto)",
         "confianza": "alta"
       }
     },
@@ -4046,7 +4046,7 @@
         "url": "https://comtradeapi.un.org/public/v1/preview/C/A/HS?reporterCode=32&period=2023&partnerCode=0&partner2Code=0&customsCode=C00&motCode=0&cmdCode=283620,252210,710812,710691,470321",
         "fecha_descarga": "2026-11-26",
         "hash": "sha256:b2e8fc8903de1c4c163a8594b3f2283f01a71f1d01d51b3829fa091c883f3811",
-        "cita_ubicacion": "UN Comtrade 2023 HS 470321 sin exportación pública desagregada",
+        "cita_ubicacion": "UN Comtrade 2023 Argentina HS 470321 (Pasta Kraft coníferas blanqueada)",
         "confianza": "alta"
       }
     },
@@ -4061,7 +4061,7 @@
         "url": "https://comtradeapi.un.org/public/v1/preview/C/A/HS?reporterCode=32&period=2023&partnerCode=0&partner2Code=0&customsCode=C00&motCode=0&cmdCode=283620,252210,710812,710691,470321",
         "fecha_descarga": "2026-11-26",
         "hash": "sha256:b2e8fc8903de1c4c163a8594b3f2283f01a71f1d01d51b3829fa091c883f3811",
-        "cita_ubicacion": "UN Comtrade 2023 HS 470321 flow=M",
+        "cita_ubicacion": "UN Comtrade 2023 Argentina HS 470321 (Pasta Kraft coníferas blanqueada)",
         "confianza": "alta"
       }
     },
@@ -4076,7 +4076,7 @@
         "url": "https://comtradeapi.un.org/public/v1/preview/C/A/HS?reporterCode=32&period=2023&partnerCode=0&partner2Code=0&customsCode=C00&motCode=0&cmdCode=283620,252210,710812,710691,470321",
         "fecha_descarga": "2026-11-26",
         "hash": "sha256:b2e8fc8903de1c4c163a8594b3f2283f01a71f1d01d51b3829fa091c883f3811",
-        "cita_ubicacion": "Saldo omitido al faltar exportación desagregada",
+        "cita_ubicacion": "UN Comtrade 2023 Argentina HS 470321 (Pasta Kraft coníferas blanqueada)",
         "confianza": "alta"
       }
     },
@@ -4108,7 +4108,7 @@
         "url": "https://comtradeapi.un.org/public/v1/preview/C/A/HS?reporterCode=32&period=2023&partnerCode=0&partner2Code=0&customsCode=C00&motCode=0&cmdCode=283620,252210,710812,710691,470321",
         "fecha_descarga": "2026-11-26",
         "hash": "sha256:b2e8fc8903de1c4c163a8594b3f2283f01a71f1d01d51b3829fa091c883f3811",
-        "cita_ubicacion": "UN Comtrade 2023 HS 470321 sin exportación pública desagregada",
+        "cita_ubicacion": "UN Comtrade 2023 Argentina HS 470321 volumen importado",
         "confianza": "alta"
       }
     },
@@ -4123,7 +4123,7 @@
         "url": "https://comtradeapi.un.org/public/v1/preview/C/A/HS?reporterCode=32&period=2023&partnerCode=0&partner2Code=0&customsCode=C00&motCode=0&cmdCode=283620,252210,710812,710691,470321",
         "fecha_descarga": "2026-11-26",
         "hash": "sha256:b2e8fc8903de1c4c163a8594b3f2283f01a71f1d01d51b3829fa091c883f3811",
-        "cita_ubicacion": "UN Comtrade 2023 HS 470321 flow=M netWgt",
+        "cita_ubicacion": "UN Comtrade 2023 Argentina HS 470321 volumen importado",
         "confianza": "alta"
       }
     },
@@ -4138,7 +4138,7 @@
         "url": "https://comtradeapi.un.org/public/v1/preview/C/A/HS?reporterCode=32&period=2023&partnerCode=0&partner2Code=0&customsCode=C00&motCode=0&cmdCode=283620,252210,710812,710691,470321",
         "fecha_descarga": "2026-11-26",
         "hash": "sha256:b2e8fc8903de1c4c163a8594b3f2283f01a71f1d01d51b3829fa091c883f3811",
-        "cita_ubicacion": "Saldo omitido al faltar exportación desagregada",
+        "cita_ubicacion": "UN Comtrade 2023 Argentina HS 470321 volumen importado",
         "confianza": "alta"
       }
     },
@@ -4170,7 +4170,7 @@
         "url": "https://comtradeapi.un.org/public/v1/preview/C/A/HS?reporterCode=32&period=2024&partnerCode=0&partner2Code=0&customsCode=C00&motCode=0&cmdCode=283620,252210,710812,710691,470321",
         "fecha_descarga": "2026-11-26",
         "hash": "sha256:8e39bec4f655267e2407e7dc81b90463946717a97d4588d65fc540ababd0739c",
-        "cita_ubicacion": "UN Comtrade 2024 HS 470321 sin exportación pública desagregada",
+        "cita_ubicacion": "UN Comtrade 2024 Argentina HS 470321 (Pasta Kraft coníferas blanqueada)",
         "confianza": "alta"
       }
     },
@@ -4185,7 +4185,7 @@
         "url": "https://comtradeapi.un.org/public/v1/preview/C/A/HS?reporterCode=32&period=2024&partnerCode=0&partner2Code=0&customsCode=C00&motCode=0&cmdCode=283620,252210,710812,710691,470321",
         "fecha_descarga": "2026-11-26",
         "hash": "sha256:8e39bec4f655267e2407e7dc81b90463946717a97d4588d65fc540ababd0739c",
-        "cita_ubicacion": "UN Comtrade 2024 HS 470321 flow=M",
+        "cita_ubicacion": "UN Comtrade 2024 Argentina HS 470321 (Pasta Kraft coníferas blanqueada)",
         "confianza": "alta"
       }
     },
@@ -4200,7 +4200,7 @@
         "url": "https://comtradeapi.un.org/public/v1/preview/C/A/HS?reporterCode=32&period=2024&partnerCode=0&partner2Code=0&customsCode=C00&motCode=0&cmdCode=283620,252210,710812,710691,470321",
         "fecha_descarga": "2026-11-26",
         "hash": "sha256:8e39bec4f655267e2407e7dc81b90463946717a97d4588d65fc540ababd0739c",
-        "cita_ubicacion": "Saldo omitido al faltar exportación desagregada",
+        "cita_ubicacion": "UN Comtrade 2024 Argentina HS 470321 (Pasta Kraft coníferas blanqueada)",
         "confianza": "alta"
       }
     },
@@ -4232,7 +4232,7 @@
         "url": "https://comtradeapi.un.org/public/v1/preview/C/A/HS?reporterCode=32&period=2024&partnerCode=0&partner2Code=0&customsCode=C00&motCode=0&cmdCode=283620,252210,710812,710691,470321",
         "fecha_descarga": "2026-11-26",
         "hash": "sha256:8e39bec4f655267e2407e7dc81b90463946717a97d4588d65fc540ababd0739c",
-        "cita_ubicacion": "UN Comtrade 2024 HS 470321 sin exportación pública desagregada",
+        "cita_ubicacion": "UN Comtrade 2024 Argentina HS 470321 volumen importado",
         "confianza": "alta"
       }
     },
@@ -4247,7 +4247,7 @@
         "url": "https://comtradeapi.un.org/public/v1/preview/C/A/HS?reporterCode=32&period=2024&partnerCode=0&partner2Code=0&customsCode=C00&motCode=0&cmdCode=283620,252210,710812,710691,470321",
         "fecha_descarga": "2026-11-26",
         "hash": "sha256:8e39bec4f655267e2407e7dc81b90463946717a97d4588d65fc540ababd0739c",
-        "cita_ubicacion": "UN Comtrade 2024 HS 470321 flow=M netWgt",
+        "cita_ubicacion": "UN Comtrade 2024 Argentina HS 470321 volumen importado",
         "confianza": "alta"
       }
     },
@@ -4262,7 +4262,7 @@
         "url": "https://comtradeapi.un.org/public/v1/preview/C/A/HS?reporterCode=32&period=2024&partnerCode=0&partner2Code=0&customsCode=C00&motCode=0&cmdCode=283620,252210,710812,710691,470321",
         "fecha_descarga": "2026-11-26",
         "hash": "sha256:8e39bec4f655267e2407e7dc81b90463946717a97d4588d65fc540ababd0739c",
-        "cita_ubicacion": "Saldo omitido al faltar exportación desagregada",
+        "cita_ubicacion": "UN Comtrade 2024 Argentina HS 470321 volumen importado",
         "confianza": "alta"
       }
     },
@@ -4549,7 +4549,7 @@
     "importacion": {
       "estado": "sin_datos",
       "valor": null,
-      "unidad": null,
+      "unidad": "t",
       "procedencia": {
         "anio": 2024,
         "fuente_id": "uncomtrade-ar-lote5-2024",
@@ -4564,7 +4564,7 @@
     "saldo_comercial": {
       "estado": "sin_datos",
       "valor": null,
-      "unidad": null,
+      "unidad": "t",
       "procedencia": {
         "anio": 2024,
         "fuente_id": "uncomtrade-ar-lote5-2024",
@@ -5030,7 +5030,7 @@
     "exportacion": {
       "estado": "sin_datos",
       "valor": null,
-      "unidad": null,
+      "unidad": "millones USD",
       "procedencia": {
         "anio": 2023,
         "fuente_id": "uncomtrade-ar-lote5-2023",
@@ -5060,7 +5060,7 @@
     "saldo_comercial": {
       "estado": "sin_datos",
       "valor": null,
-      "unidad": null,
+      "unidad": "millones USD",
       "procedencia": {
         "anio": 2023,
         "fuente_id": "uncomtrade-ar-lote5-2023",
@@ -5092,7 +5092,7 @@
     "exportacion": {
       "estado": "sin_datos",
       "valor": null,
-      "unidad": null,
+      "unidad": "millones USD",
       "procedencia": {
         "anio": 2024,
         "fuente_id": "uncomtrade-ar-lote5-2024",
@@ -5122,7 +5122,7 @@
     "saldo_comercial": {
       "estado": "sin_datos",
       "valor": null,
-      "unidad": null,
+      "unidad": "millones USD",
       "procedencia": {
         "anio": 2024,
         "fuente_id": "uncomtrade-ar-lote5-2024",
@@ -5154,7 +5154,7 @@
     "exportacion": {
       "estado": "sin_datos",
       "valor": null,
-      "unidad": null,
+      "unidad": "millones USD",
       "procedencia": {
         "anio": 2024,
         "fuente_id": "uncomtrade-ar-lote5-2024",
@@ -5184,7 +5184,7 @@
     "saldo_comercial": {
       "estado": "sin_datos",
       "valor": null,
-      "unidad": null,
+      "unidad": "millones USD",
       "procedencia": {
         "anio": 2024,
         "fuente_id": "uncomtrade-ar-lote5-2024",
@@ -5216,7 +5216,7 @@
     "exportacion": {
       "estado": "sin_datos",
       "valor": null,
-      "unidad": null,
+      "unidad": "t",
       "procedencia": {
         "anio": 2024,
         "fuente_id": "uncomtrade-ar-lote5-2024",
@@ -5246,7 +5246,7 @@
     "saldo_comercial": {
       "estado": "sin_datos",
       "valor": null,
-      "unidad": null,
+      "unidad": "t",
       "procedencia": {
         "anio": 2024,
         "fuente_id": "uncomtrade-ar-lote5-2024",

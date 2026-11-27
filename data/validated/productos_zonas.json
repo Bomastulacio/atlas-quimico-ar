@@ -592,5 +592,23 @@
       "cita_ubicacion": "druetta.com.ar: planta industrial en Chaco 1155, Acceso Oeste Km 47, Partido de General Rodríguez (Buenos Aires)",
       "confianza": "alta"
     }
+  },
+  {
+    "relacion_id": "pz-petroquimica-ba-ensenada",
+    "producto_id": "petroquimica",
+    "provincia_id": "06",
+    "departamento_id": "06245",
+    "es_dominante": false,
+    "rol_en_cadena": "sintesis",
+    "procedencia": {
+      "anio": 2025,
+      "fuente_id": "ypf-sec-20f-2025",
+      "fuente": "YPF Sociedad Anónima — Form 20-F Annual Report (Ejercicio finalizado el 31/12/2025)",
+      "url": "https://www.sec.gov/Archives/edgar/data/904851/000119312526126363/d95578d20f.htm",
+      "fecha_descarga": "2026-11-27",
+      "hash": "sha256:8d9d89011f05c6525bc48aaf98862cf3e985496b6622baddea112f1c020894ac",
+      "cita_ubicacion": "Form 20-F FY2025 Item 4 Chemical unit pág. 34 (Complejo Industrial Ensenada CIE: BTX 526.000 t/año)",
+      "confianza": "alta"
+    }
   }
 ]

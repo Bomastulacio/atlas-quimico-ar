@@ -30,16 +30,6 @@
     "estado_mvp": "validado"
   },
   {
-    "producto_id": "algodon",
-    "nombre": "Algodón y fibra textil",
-    "categoria": "agroindustria",
-    "formula_quimica": null,
-    "icono_id": "algodon-fibra",
-    "descripcion_corta": "Fibra de celulosa obtenida por desmote mecánico y refinación química húmeda en Santiago del Estero y Chaco.",
-    "mdx_slug": "algodon",
-    "estado_mvp": "validado"
-  },
-  {
     "producto_id": "soja",
     "nombre": "Soja y derivados oleaginosos",
     "categoria": "agroindustria",
@@ -187,6 +177,16 @@
     "icono_id": "citricos-limoneno",
     "descripcion_corta": "Extracción en frío de D-limoneno desde cáscara cítrica, evaporación multiefecto TASTE de jugos y secado de pectinas en Concordia (Entre Ríos).",
     "mdx_slug": "citricos-limoneno",
+    "estado_mvp": "validado"
+  },
+  {
+    "producto_id": "algodon",
+    "nombre": "Algodón y fibra textil",
+    "categoria": "agroindustria",
+    "formula_quimica": null,
+    "icono_id": "algodon-fibra",
+    "descripcion_corta": "Fibra de celulosa obtenida por desmote mecánico y refinación química húmeda en Santiago del Estero y Chaco.",
+    "mdx_slug": "algodon",
     "estado_mvp": "validado"
   },
   {
