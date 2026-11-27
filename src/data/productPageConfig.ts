@@ -127,6 +127,30 @@ const ANATOMY_BY_PRODUCT: Record<string, ProductAnatomyHeader> = {
       'Lámina interactiva en 3D del complejo citrícola entrerriano: extracción integral en frío, centrifugación y winterización de aceite esencial D-limoneno, evaporación multiefecto TASTE a 65 °Brix y secado de cáscara.',
     hint: 'Orbitá en 3D, cambiá de etapa o grabá un clip WebM a 60 fps',
   },
+  'resina-colofonia': {
+    title: 'Circuito 3D en movimiento en Corrientes (Gobernador Virasoro)',
+    description:
+      'Lámina interactiva en 3D del proceso forestoquímico: fusión de miera de Pinus elliottii, filtración prensa y lavado, decantación continua, destilación por arrastre de vapor a 175 °C y recuperación de trementina y colofonia.',
+    hint: 'Orbitá en 3D, cambiá de etapa o grabá un clip WebM a 60 fps',
+  },
+  'tanino-quebracho': {
+    title: 'Circuito 3D en movimiento en Formosa (Unitán Planta Formosa)',
+    description:
+      'Lámina interactiva en 3D de la extracción de polifenoles de quebracho colorado: chipeado de duramen, batería de autoclaves difusores a 110 °C, caldera de biomasa, evaporación al vacío, sulfitación y torre spray.',
+    hint: 'Orbitá en 3D, cambiá de etapa o grabá un clip WebM a 60 fps',
+  },
+  'aceite-oliva': {
+    title: 'Circuito 3D en movimiento en La Rioja (Chilecito y Aimogasta)',
+    description:
+      'Lámina interactiva en 3D de la almazara continua de dos fases: deshojado y molienda, malaxado en frío por debajo de 27 °C, decanter horizontal ecológico, centrífuga vertical y bodega inox bajo manta de N2.',
+    hint: 'Orbitá en 3D, cambiá de etapa o grabá un clip WebM a 60 fps',
+  },
+  'farmoquimica-ifa': {
+    title: 'Circuito 3D en movimiento en CABA (Comuna 9, Mataderos)',
+    description:
+      'Lámina interactiva en 3D de síntesis orgánica fina GMP: reactor batch vitrificado inertizado, clarificación y columna recuperadora de solventes en ciclo cerrado, cristalización, centrífuga Nutsche y secador al vacío ISO 8.',
+    hint: 'Orbitá en 3D, cambiá de etapa o grabá un clip WebM a 60 fps',
+  },
 };
 
 const PROCESO_META_BY_PRODUCT: Record<
@@ -184,6 +208,14 @@ const NCM_LABELS: Record<string, string> = {
   '2523.10': 'Clínker de cemento hidráulico (HS 2523.10)',
   '2009.11': 'Jugo de naranja congelado / concentrado (HS 2009.11)',
   '3301.12': 'Aceite esencial de naranja / D-limoneno (HS 3301.12)',
+  '3806.10': 'Colofonia y ácidos resínicos de pino (HS 3806.10)',
+  '3805.10': 'Esencias de trementina / aguarrás vegetal (HS 3805.10)',
+  '3201.10': 'Extracto de quebracho / tanino vegetal (HS 3201.10)',
+  '1509.20': 'Aceite de oliva virgen extra (HS 1509.20)',
+  '1509.10': 'Aceite de oliva virgen (HS 1509.10)',
+  '1509.90': 'Otros aceites de oliva refinados/mezcla (HS 1509.90)',
+  '3004.90': 'Especialidades medicinales dosificadas (HS 3004.90)',
+  '2933.99': 'Compuestos heterocíclicos nitrogenados / IFAs (HS 2933.99)',
 };
 
 const SIN_DATOS_PRODUCCION_COPY: Record<string, string> = {
@@ -207,6 +239,14 @@ const SIN_DATOS_PRODUCCION_COPY: Record<string, string> = {
     'No existe serie pública abierta descargable desagregada por planta provincial para La Calera (San Luis). El campo de producción física permanece explícitamente sin datos mientras se consigna la trazabilidad del proceso vía seca (IPCC Cap. 2.2) y comercio exterior HS 2523.',
   'citricos-limoneno':
     'No existe balance industrial abierto descargable por planta para jugo concentrado y aceite esencial en Concordia. Se declaran sin datos las toneladas producidas por planta y se exhiben las exportaciones nacionales verificadas de jugo concentrado (HS 2009.11) y aceite esencial (HS 3301.12).',
+  'resina-colofonia':
+    'No existe serie anual pública abierta desagregada por provincia para colofonia y trementina en Corrientes. Se declara sin datos la serie anual física y se informan la capacidad declarada en Virasoro (13.000 t/año miera) y las exportaciones oficiales UN Comtrade HS 3806.10 y 3805.10.',
+  'tanino-quebracho':
+    'No existe serie anual oficial abierta desagregada para la planta de Formosa (Unitán publica una capacidad conjunta de ~40.000 t/año entre Formosa y Chaco). Se declara sin datos la producción individual y se consignan las exportaciones oficiales UN Comtrade HS 3201.10.',
+  'aceite-oliva':
+    'El CSV abierto de SAGyP Estimaciones Agrícolas no desagrega serie anual de aceite de oliva por provincia. El campo de producción anual queda declarado sin datos mientras se consignan las capacidades de almazaras riojanas y las exportaciones verificadas UN Comtrade HS 1509.20 y 1509.10.',
+  'farmoquimica-ifa':
+    'El informe oficial de INDEC Industria Farmacéutica releva facturación en pesos por ventas internas y exportaciones sin desagregar tonelaje físico de principios activos (IFAs). Se declara sin datos la serie física y se muestran los flujos aduaneros verificados UN Comtrade HS 3004.90 y 2933.99.',
 };
 
 function fmtNum(v: number, decimals = 0): string {

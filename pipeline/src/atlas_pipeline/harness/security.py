@@ -104,6 +104,13 @@ DEFAULT_ALLOWED_DOMAINS: frozenset[str] = frozenset(
         "www.cementosavellaneda.com.ar",
         "www.fecier.org.ar",
         "www.federcitrus.org",
+        "gruposanfrancisco.com.ar",
+        "www.unitan.net",
+        "valledelapuerta.com.ar",
+        "agroaceitunera.com.ar",
+        "federacionolivicolaargentina.com.ar",
+        "sde.gob.ar",
+        "www.insudpharma.com",
     }
 )
 

@@ -16,6 +16,10 @@ import { GlpGasNaturalProcessAnatomy } from '@/components/GlpGasNaturalProcessAn
 import { SalIndustrialProcessAnatomy } from '@/components/SalIndustrialProcessAnatomy';
 import { CementoClinkerProcessAnatomy } from '@/components/CementoClinkerProcessAnatomy';
 import { CitricosLimonenoProcessAnatomy } from '@/components/CitricosLimonenoProcessAnatomy';
+import { ResinaColofoniaProcessAnatomy } from '@/components/ResinaColofoniaProcessAnatomy';
+import { TaninoQuebrachoProcessAnatomy } from '@/components/TaninoQuebrachoProcessAnatomy';
+import { AceiteOlivaProcessAnatomy } from '@/components/AceiteOlivaProcessAnatomy';
+import { FarmoquimicaIfaProcessAnatomy } from '@/components/FarmoquimicaIfaProcessAnatomy';
 import { StandaloneCompanyMarket } from '@/components/CompanyMarketCard';
 import { ProcessFlowDiagram } from '@/components/ProcessFlowDiagram';
 import { ProductIcon } from '@/components/ProductIcon';
@@ -132,6 +136,22 @@ const glpPropanoExp2024T = (() => {
 })();
 const jugoNaranjaExp2024T = (() => {
   const r = comexVol.find((x) => x.ncm_codigo === '2009.11' && x.anio === 2024);
+  return r?.exportacion.estado === 'dato' ? r.exportacion.valor : null;
+})();
+const colofoniaExp2024T = (() => {
+  const r = comexVol.find((x) => x.ncm_codigo === '3806.10' && x.anio === 2024);
+  return r?.exportacion.estado === 'dato' ? r.exportacion.valor : null;
+})();
+const quebrachoExp2024T = (() => {
+  const r = comexVol.find((x) => x.ncm_codigo === '3201.10' && x.anio === 2024);
+  return r?.exportacion.estado === 'dato' ? r.exportacion.valor : null;
+})();
+const olivaExp2024T = (() => {
+  const r = comexVol.find((x) => x.ncm_codigo === '1509.20' && x.anio === 2024);
+  return r?.exportacion.estado === 'dato' ? r.exportacion.valor : null;
+})();
+const farmaExp2024UsdM = (() => {
+  const r = comexUsd.find((x) => x.ncm_codigo === '3004.90' && x.anio === 2024);
   return r?.exportacion.estado === 'dato' ? r.exportacion.valor : null;
 })();
 
@@ -345,6 +365,34 @@ const ESTADO_PLANTA_LABEL: Record<string, string> = {
             client:visible={{ rootMargin: '250px' }}
             pasos={procesoPrincipal.pasos}
             exportJugo2024T={jugoNaranjaExp2024T}
+          />
+        )}
+        {slug === 'resina-colofonia' && (
+          <ResinaColofoniaProcessAnatomy
+            client:visible={{ rootMargin: '250px' }}
+            pasos={procesoPrincipal.pasos}
+            exportColofonia2024T={colofoniaExp2024T}
+          />
+        )}
+        {slug === 'tanino-quebracho' && (
+          <TaninoQuebrachoProcessAnatomy
+            client:visible={{ rootMargin: '250px' }}
+            pasos={procesoPrincipal.pasos}
+            exportQuebracho2024T={quebrachoExp2024T}
+          />
+        )}
+        {slug === 'aceite-oliva' && (
+          <AceiteOlivaProcessAnatomy
+            client:visible={{ rootMargin: '250px' }}
+            pasos={procesoPrincipal.pasos}
+            exportOliva2024T={olivaExp2024T}
+          />
+        )}
+        {slug === 'farmoquimica-ifa' && (
+          <FarmoquimicaIfaProcessAnatomy
+            client:visible={{ rootMargin: '250px' }}
+            pasos={procesoPrincipal.pasos}
+            exportFarma2024UsdM={farmaExp2024UsdM}
           />
         )}
       </section>

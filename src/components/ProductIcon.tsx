@@ -219,6 +219,46 @@ export function ProductIcon({ iconId, size = 18, className = '', ...props }: Pro
         </svg>
       );
 
+    // Resina de pino y colofonia: conífera geométrica + gota resinosa
+    case 'resina-colofonia':
+      return (
+        <svg {...common}>
+          <path d="M12 3.5L6.5 11H17.5L12 3.5Z" />
+          <path d="M12 8.5L5.5 16.5H18.5L12 8.5Z" />
+          <path d="M12 16.5V20.5" />
+        </svg>
+      );
+
+    // Extracto de quebracho (tanino): anillo polifenólico + matraz difusor
+    case 'tanino-quebracho':
+      return (
+        <svg {...common}>
+          <polygon points="12 4 17.5 7.2 17.5 13.6 12 16.8 6.5 13.6 6.5 7.2" />
+          <path d="M9 19.5H15M12 16.8V19.5" />
+          <circle cx="12" cy="10.4" r="1.8" />
+        </svg>
+      );
+
+    // Aceite de oliva virgen extra: aceituna + hoja + gota dorada
+    case 'aceite-oliva':
+      return (
+        <svg {...common}>
+          <ellipse cx="10.5" cy="13.5" rx="4.5" ry="6" />
+          <path d="M12 7.5C13.5 5 16.5 4 19 4.5C18.5 7.5 16 9.5 13 9" />
+          <circle cx="10.5" cy="13.5" r="1.4" fill="currentColor" stroke="none" />
+        </svg>
+      );
+
+    // Farmoquímica e IFAs: cápsula farmacéutica + retículo molecular
+    case 'farmoquimica-ifa':
+      return (
+        <svg {...common}>
+          <rect x="6" y="4.5" width="12" height="15" rx="6" />
+          <path d="M6 12H18" />
+          <path d="M12 7.5V10.5M10.5 9H13.5" />
+        </svg>
+      );
+
     default:
       return (
         <svg {...common}>
