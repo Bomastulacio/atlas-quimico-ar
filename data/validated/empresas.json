@@ -474,5 +474,22 @@
       "cita_ubicacion": "insudpharma.com Planta Química Maprimed S.A. Av. Directorio 6155 (Comuna 9, Mataderos, CABA)",
       "confianza": "alta"
     }
+  },
+  {
+    "empresa_id": "druetta-hnos-sa",
+    "razon_social": "Druetta Hnos. S.A.",
+    "tipo_capital": "nacional",
+    "sitio_web_oficial": "https://www.druetta.com.ar/",
+    "hechos_verificables": "Empresa metalúrgica argentina fundada en 1947 especializada en galvanizado por inmersión en caliente (GIC) para energía, telecomunicaciones, infraestructura, transporte, agro e industria. Opera en General Rodríguez un predio de 55.000 m2 (11.000 m2 cubiertos) con dos cubas de zinc fundido a 450 °C (13,0 x 1,8 x 3,0 m y 4,5 x 1,4 x 2,2 m), laboratorio propio, planta de efluentes líquidos, lavado de humos y certificaciones ISO 9001:2015 e ISO 14001:2015.",
+    "procedencia": {
+      "anio": 2026,
+      "fuente_id": "druetta-web-2026",
+      "fuente": "Portal institucional Druetta Hnos. S.A. (Planta General Rodríguez, Buenos Aires)",
+      "url": "https://www.druetta.com.ar/",
+      "fecha_descarga": "2026-11-27",
+      "hash": "sha256:eb0ee6c4ae621f4c701f4ce06a529ddc45d7cf64324bd8d2c31980849921abaa",
+      "cita_ubicacion": "druetta.com.ar (historia.html, instalaciones2.html, instalaciones4.html, instalaciones7.html, iso.html)",
+      "confianza": "alta"
+    }
   }
 ]

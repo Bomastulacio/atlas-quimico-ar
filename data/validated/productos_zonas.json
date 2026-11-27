@@ -574,5 +574,23 @@
       "cita_ubicacion": "insudpharma.com Planta Maprimed S.A. Av. Directorio 6155 (Comuna 9, Mataderos, CABA)",
       "confianza": "alta"
     }
+  },
+  {
+    "relacion_id": "galvanizado-caliente-06-06364",
+    "producto_id": "galvanizado-caliente",
+    "provincia_id": "06",
+    "departamento_id": "06364",
+    "es_dominante": true,
+    "rol_en_cadena": "procesamiento",
+    "procedencia": {
+      "anio": 2026,
+      "fuente_id": "druetta-web-2026",
+      "fuente": "Portal institucional Druetta Hnos. S.A. (Planta General Rodríguez, Buenos Aires)",
+      "url": "https://www.druetta.com.ar/",
+      "fecha_descarga": "2026-11-27",
+      "hash": "sha256:eb0ee6c4ae621f4c701f4ce06a529ddc45d7cf64324bd8d2c31980849921abaa",
+      "cita_ubicacion": "druetta.com.ar: planta industrial en Chaco 1155, Acceso Oeste Km 47, Partido de General Rodríguez (Buenos Aires)",
+      "confianza": "alta"
+    }
   }
 ]

@@ -955,5 +955,71 @@
     "hash": "sha256:00fcedb65645d9f2e754355046e25d6e5788a3664441200b9fcd5fad3a0cfad7",
     "archivo_raw": null,
     "notas": "Referencia internacional BAT sobre agentes curtientes vegetales (extracto de quebracho, polifenoles condensados y estándares ambientales de uso industrial)."
+  },
+  {
+    "fuente_id": "druetta-web-2026",
+    "nombre": "Portal institucional Druetta Hnos. S.A. (Planta General Rodríguez, Buenos Aires)",
+    "organismo": "Druetta Hnos. S.A.",
+    "tipo": "empresa",
+    "url": "https://www.druetta.com.ar/",
+    "fecha_descarga": "2026-11-27",
+    "hash": "sha256:eb0ee6c4ae621f4c701f4ce06a529ddc45d7cf64324bd8d2c31980849921abaa",
+    "archivo_raw": null,
+    "notas": "Planta industrial en Chaco 1155, Acceso Oeste Km 47, General Rodríguez (Buenos Aires). Predio de 55.000 m2, 11.000 m2 cubiertos, laboratorio propio, ISO 9001:2015 e ISO 14001:2015."
+  },
+  {
+    "fuente_id": "druetta-hornos-2026",
+    "nombre": "Ficha técnica de Hornos e Instalaciones de Galvanizado (Druetta Hnos. S.A.)",
+    "organismo": "Druetta Hnos. S.A.",
+    "tipo": "empresa",
+    "url": "https://www.druetta.com.ar/instalaciones4.html",
+    "fecha_descarga": "2026-11-27",
+    "hash": "sha256:42167c1b8abd99865a7b4584942733699aed7ff57cc2df388da60857722f5de7",
+    "archivo_raw": null,
+    "notas": "Horno 1 de 13,0 x 1,8 x 3,0 m para inmersión única de grandes estructuras y Horno 2 de 4,5 x 1,4 x 2,2 m para piezas menores y centrifugado a 450 °C con control automático."
+  },
+  {
+    "fuente_id": "druetta-procesos-2026",
+    "nombre": "Descripción oficial de etapas del proceso de Galvanizado por Inmersión en Caliente (Druetta Hnos. S.A.)",
+    "organismo": "Druetta Hnos. S.A.",
+    "tipo": "empresa",
+    "url": "https://www.druetta.com.ar/galvanizado3.html",
+    "fecha_descarga": "2026-11-27",
+    "hash": "sha256:78b05da2694e9bb944dc252146eb27b48ec63193936bd19d43aa8c1aa33ec5f4",
+    "archivo_raw": null,
+    "notas": "Secuencia completa verificada: desengrase alcalino, enjuague, decapado ácido, enjuague, flux, secado (60-100 °C), baño de zinc fundido (450 °C), enfriamiento e inspección."
+  },
+  {
+    "fuente_id": "eu-bref-fmp-2022",
+    "nombre": "EU BAT Reference Document (BREF) for the Ferrous Metals Processing Industry (FMP)",
+    "organismo": "Comisión Europea (JRC / EU-BRITE)",
+    "tipo": "tecnica",
+    "url": "https://bureau-industrial-transformation.jrc.ec.europa.eu/reference/ferrous-metals-processing-industry",
+    "fecha_descarga": "2026-11-27",
+    "hash": "sha256:8248df53c2e5bc1b07c8fc357085b57bfdb9192fd64d22757917f96c13dcea8b",
+    "archivo_raw": null,
+    "notas": "Documento técnico de referencia europeo para batch galvanizing (galvanizado por inmersión en caliente), decapado en HCl, fluxado, captación de humos, tratamiento de efluentes y recuperación de zinc."
+  },
+  {
+    "fuente_id": "uncomtrade-ar-lote7-2023",
+    "nombre": "UN Comtrade: comercio exterior de Argentina HS 7901.11/7901.12 (Zinc sin alear), 7210.49, 7308.90 (Estructuras) y 2806.10 (HCl) 2023",
+    "organismo": "UN Comtrade (Naciones Unidas)",
+    "tipo": "oficial",
+    "url": "https://comtradeapi.un.org/public/v1/preview/C/A/HS?reporterCode=32&period=2023&partnerCode=0&partner2Code=0&customsCode=C00&motCode=0&cmdCode=790111,790112,721049,730890,280610",
+    "fecha_descarga": "2026-11-27",
+    "hash": "sha256:dc1b298e30a29c9d141a6857192f58d2ba5a0cdba045c292e582d76c93cdac1c",
+    "archivo_raw": null,
+    "notas": "Datos oficiales aduaneros 2023 para zinc en bruto sin alear (insumo directo del galvanizado) y estructuras metálicas de acero en Argentina."
+  },
+  {
+    "fuente_id": "uncomtrade-ar-lote7-2024",
+    "nombre": "UN Comtrade: comercio exterior de Argentina HS 7901.11/7901.12 (Zinc sin alear), 7210.49, 7308.90 (Estructuras) y 2806.10 (HCl) 2024",
+    "organismo": "UN Comtrade (Naciones Unidas)",
+    "tipo": "oficial",
+    "url": "https://comtradeapi.un.org/public/v1/preview/C/A/HS?reporterCode=32&period=2024&partnerCode=0&partner2Code=0&customsCode=C00&motCode=0&cmdCode=790111,790112,721049,730890,280610",
+    "fecha_descarga": "2026-11-27",
+    "hash": "sha256:93dfbdfc57f8246c22b9e8a0c42d086a914a9c5f50a1b0601d1b6eefc38dbd7c",
+    "archivo_raw": null,
+    "notas": "Datos oficiales aduaneros 2024 para zinc en bruto sin alear (HS 7901.11/7901.12) y estructuras metálicas de acero (HS 7308.90) en Argentina."
   }
 ]

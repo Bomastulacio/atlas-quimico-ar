@@ -14647,7 +14647,7 @@
         "presion_bar": "1,0",
         "flujo_especifico": {
           "estado": "dato",
-          "valor": 1.0,
+          "valor": 1,
           "unidad": "t/t colofonia"
         },
         "nota_tecnica": "Fondo destilado hacia escamadora.",
@@ -14680,7 +14680,7 @@
         "presion_bar": "1,0",
         "flujo_especifico": {
           "estado": "dato",
-          "valor": 1.0,
+          "valor": 1,
           "unidad": "t/t colofonia"
         },
         "nota_tecnica": "Producto final HS 3806.10.",
@@ -15274,7 +15274,7 @@
         "presion_bar": "1,0",
         "flujo_especifico": {
           "estado": "dato",
-          "valor": 1.0,
+          "valor": 1,
           "unidad": "t/t extracto"
         },
         "nota_tecnica": "Separación neumática de producto.",
@@ -15307,7 +15307,7 @@
         "presion_bar": "1,0",
         "flujo_especifico": {
           "estado": "dato",
-          "valor": 1.0,
+          "valor": 1,
           "unidad": "t/t extracto"
         },
         "nota_tecnica": "Producto final HS 3201.10.",
@@ -15866,7 +15866,7 @@
         "presion_bar": "1,0",
         "flujo_especifico": {
           "estado": "dato",
-          "valor": 1.0,
+          "valor": 1,
           "unidad": "t/t aceite"
         },
         "nota_tecnica": "Ingreso a bodega climatizada.",
@@ -15899,7 +15899,7 @@
         "presion_bar": "1,0",
         "flujo_especifico": {
           "estado": "dato",
-          "valor": 1.0,
+          "valor": 1,
           "unidad": "t/t aceite"
         },
         "nota_tecnica": "Despacho a granel o envasado.",
@@ -16619,6 +16619,644 @@
         "y": 310,
         "nota": "Recuperación cerrada de solventes (EU OFC BREF).",
         "fuente_id": "eu-bref-ofc-2006"
+      }
+    ]
+  },
+  {
+    "proceso_id": "galvanizado-inmersion-caliente",
+    "producto_id": "galvanizado-caliente",
+    "titulo": "PFD: Galvanizado por Inmersión en Caliente por Lotes (General Rodríguez, Buenos Aires)",
+    "norma_simbologia": "ISO 10628 / ASME",
+    "base_calculo": "1 lote de estructuras de acero negro · Planta Druetta Hnos. S.A. (Cuba 13,0 x 1,8 x 3,0 m)",
+    "resumen_tecnico": "Pretratamiento químico húmedo en bateas cerradas (desengrase alcalino, decapado en HCl y fluxado en ZnCl2·2NH4Cl), horno de secado a 60-100 °C, inmersión en zinc fundido a 450 °C con difusión metalúrgica Fe-Zn, enfriamiento e inspección bajo ISO 9001/14001 con lavado de humos y planta de efluentes.",
+    "nota_metodologica": "Secuencia operativa y dimensiones de cubas verificadas en Druetta Hnos. S.A. (galvanizado3.html, instalaciones4.html, instalaciones7.html) y topología de captación/tratamiento respaldada por EU FMP BREF 2022.",
+    "canvas_width": 1880,
+    "canvas_height": 760,
+    "secciones": [
+      {
+        "area_id": "area-100",
+        "titulo": "Área 100 · Desengrase y decapado HCl",
+        "x": 224,
+        "y": 40,
+        "width": 352,
+        "height": 665
+      },
+      {
+        "area_id": "area-200",
+        "titulo": "Área 200 · Fluxado y secado",
+        "x": 594,
+        "y": 40,
+        "width": 338,
+        "height": 665
+      },
+      {
+        "area_id": "area-300",
+        "titulo": "Área 300 · Baño de zinc fundido 450 °C",
+        "x": 950,
+        "y": 40,
+        "width": 356,
+        "height": 665
+      },
+      {
+        "area_id": "area-400",
+        "titulo": "Área 400 · Enfriamiento, lavado y QC",
+        "x": 1324,
+        "y": 40,
+        "width": 332,
+        "height": 665
+      }
+    ],
+    "equipos": [
+      {
+        "tag": "V-101",
+        "nombre": "Batea desengrase alcalino",
+        "simbolo": "tank",
+        "area_id": "area-100",
+        "x": 300,
+        "y": 245,
+        "temperatura_op": "60 °C",
+        "presion_op": "1,0 bar",
+        "reaccion": null,
+        "condicion_critica": "Remueve grasas + enjuague",
+        "descripcion": "Sumerge las piezas en solución desengrasante alcalina para eliminar aceites de laminado y mecanizado.",
+        "fuente_id": "druetta-procesos-2026",
+        "cita_ubicacion": "galvanizado3.html Desengrase"
+      },
+      {
+        "tag": "R-101",
+        "nombre": "Bateas decapado HCl",
+        "simbolo": "reactor",
+        "area_id": "area-100",
+        "x": 485,
+        "y": 245,
+        "temperatura_op": "25 °C",
+        "presion_op": "1,0 bar",
+        "reaccion": "Fe2O3 + 6 HCl -> 2 FeCl3 + 3 H2O",
+        "condicion_critica": "Acero químicamente limpio",
+        "descripcion": "Disuelve calamina y óxidos en ácido clorhídrico con enjuague de neutralización y extracción de vapores.",
+        "fuente_id": "druetta-procesos-2026",
+        "cita_ubicacion": "galvanizado3.html Decapado"
+      },
+      {
+        "tag": "V-201",
+        "nombre": "Batea de fluxado",
+        "simbolo": "tank",
+        "area_id": "area-200",
+        "x": 675,
+        "y": 245,
+        "temperatura_op": "60 °C",
+        "presion_op": "1,0 bar",
+        "reaccion": null,
+        "condicion_critica": "ZnCl2·2NH4Cl",
+        "descripcion": "Deposita una película salina que evita reoxidación y favorece la reacción metalúrgica Fe-Zn.",
+        "fuente_id": "druetta-procesos-2026",
+        "cita_ubicacion": "galvanizado3.html Flux"
+      },
+      {
+        "tag": "D-201",
+        "nombre": "Horno de secado",
+        "simbolo": "dryer_bed",
+        "area_id": "area-200",
+        "x": 850,
+        "y": 245,
+        "temperatura_op": "80 °C",
+        "presion_op": "1,0 bar",
+        "reaccion": null,
+        "condicion_critica": "60-100 °C sin humedad",
+        "descripcion": "Elimina toda humedad superficial antes de sumergir la carga en el baño de zinc fundido.",
+        "fuente_id": "druetta-procesos-2026",
+        "cita_ubicacion": "galvanizado3.html Secado"
+      },
+      {
+        "tag": "H-301",
+        "nombre": "Cuba zinc fundido 13 m",
+        "simbolo": "furnace",
+        "area_id": "area-300",
+        "x": 1095,
+        "y": 245,
+        "temperatura_op": "450 °C",
+        "presion_op": "1,0 bar",
+        "reaccion": "Fe + Zn(l) -> Capas Fe-Zn + Zn",
+        "condicion_critica": "13,0 x 1,8 x 3,0 m · 450 °C",
+        "descripcion": "Horno principal con control automático de temperatura y cuba auxiliar de 4,5 m con centrifugado.",
+        "fuente_id": "druetta-hornos-2026",
+        "cita_ubicacion": "instalaciones4.html Hornos"
+      },
+      {
+        "tag": "F-301",
+        "nombre": "Lavador y filtro humos",
+        "simbolo": "filter_baghouse",
+        "area_id": "area-300",
+        "x": 1235,
+        "y": 485,
+        "temperatura_op": "55 °C",
+        "presion_op": "1,0 bar",
+        "reaccion": null,
+        "condicion_critica": "Control HCl / NH4Cl / ZnO",
+        "descripcion": "Planta de tratamiento y lavado de humos ácidos y salinos captados en bateas y horno.",
+        "fuente_id": "eu-bref-fmp-2022",
+        "cita_ubicacion": "EU FMP BREF + instalaciones7.html"
+      },
+      {
+        "tag": "V-401",
+        "nombre": "Pileta enfriamiento",
+        "simbolo": "tank",
+        "area_id": "area-400",
+        "x": 1410,
+        "y": 245,
+        "temperatura_op": "35 °C",
+        "presion_op": "1,0 bar",
+        "reaccion": null,
+        "condicion_critica": "Agua o aire ambiente",
+        "descripcion": "Estabiliza la estructura cristalina del recubrimiento de zinc tras retirar las piezas de la cuba.",
+        "fuente_id": "druetta-procesos-2026",
+        "cita_ubicacion": "galvanizado3.html Enfriamiento"
+      },
+      {
+        "tag": "M-401",
+        "nombre": "Laboratorio y despacho",
+        "simbolo": "separator",
+        "area_id": "area-400",
+        "x": 1575,
+        "y": 245,
+        "temperatura_op": "22 °C",
+        "presion_op": "1,0 bar",
+        "reaccion": null,
+        "condicion_critica": "ISO 9001 / ISO 14001",
+        "descripcion": "Control de espesor magnético, adherencia, aspecto visual, pesaje en báscula y despacho.",
+        "fuente_id": "druetta-web-2026",
+        "cita_ubicacion": "iso.html + instalaciones6.html"
+      }
+    ],
+    "corrientes": [
+      {
+        "numero": 1,
+        "nombre": "Acero negro en estructuras",
+        "tipo": "proceso",
+        "origen_tag": null,
+        "destino_tag": "V-101",
+        "puntos": [
+          [
+            208,
+            245
+          ],
+          [
+            262,
+            245
+          ]
+        ],
+        "flag_pos": [
+          235,
+          245
+        ],
+        "especies": "Acero al carbono (Fe)",
+        "fase": "Sólido",
+        "temperatura_c": "22",
+        "presion_bar": "1,0",
+        "flujo_especifico": {
+          "estado": "sin_datos",
+          "valor": null,
+          "unidad": "t/lote"
+        },
+        "nota_tecnica": "Recepción en báscula certificada y control de venteo/drenaje.",
+        "fuente_id": "druetta-web-2026",
+        "cita_ubicacion": "instalaciones3.html Recepción"
+      },
+      {
+        "numero": 2,
+        "nombre": "Acero desengrasado",
+        "tipo": "proceso",
+        "origen_tag": "V-101",
+        "destino_tag": "R-101",
+        "puntos": [
+          [
+            338,
+            245
+          ],
+          [
+            447,
+            245
+          ]
+        ],
+        "flag_pos": [
+          392,
+          245
+        ],
+        "especies": "Acero libre de aceites",
+        "fase": "Sólido",
+        "temperatura_c": "50",
+        "presion_bar": "1,0",
+        "flujo_especifico": {
+          "estado": "sin_datos",
+          "valor": null,
+          "unidad": "t/lote"
+        },
+        "nota_tecnica": "Tras enjuague e inspección visual de humectabilidad.",
+        "fuente_id": "druetta-procesos-2026",
+        "cita_ubicacion": "galvanizado3.html"
+      },
+      {
+        "numero": 3,
+        "nombre": "Acero decapado limpio",
+        "tipo": "proceso",
+        "origen_tag": "R-101",
+        "destino_tag": "V-201",
+        "puntos": [
+          [
+            523,
+            245
+          ],
+          [
+            637,
+            245
+          ]
+        ],
+        "flag_pos": [
+          580,
+          245
+        ],
+        "especies": "Acero libre de óxidos",
+        "fase": "Sólido",
+        "temperatura_c": "25",
+        "presion_bar": "1,0",
+        "flujo_especifico": {
+          "estado": "sin_datos",
+          "valor": null,
+          "unidad": "t/lote"
+        },
+        "nota_tecnica": "Enjuagado para neutralizar arrastres de HCl.",
+        "fuente_id": "druetta-procesos-2026",
+        "cita_ubicacion": "galvanizado3.html"
+      },
+      {
+        "numero": 4,
+        "nombre": "Acero fluxado húmedo",
+        "tipo": "proceso",
+        "origen_tag": "V-201",
+        "destino_tag": "D-201",
+        "puntos": [
+          [
+            713,
+            245
+          ],
+          [
+            812,
+            245
+          ]
+        ],
+        "flag_pos": [
+          762,
+          245
+        ],
+        "especies": "Acero + ZnCl2·2NH4Cl",
+        "fase": "Sólido",
+        "temperatura_c": "60",
+        "presion_bar": "1,0",
+        "flujo_especifico": {
+          "estado": "sin_datos",
+          "valor": null,
+          "unidad": "t/lote"
+        },
+        "nota_tecnica": "Película protectora salina lista para secado.",
+        "fuente_id": "druetta-procesos-2026",
+        "cita_ubicacion": "galvanizado3.html"
+      },
+      {
+        "numero": 5,
+        "nombre": "Acero precalentado seco",
+        "tipo": "proceso",
+        "origen_tag": "D-201",
+        "destino_tag": "H-301",
+        "puntos": [
+          [
+            888,
+            245
+          ],
+          [
+            1052,
+            245
+          ]
+        ],
+        "flag_pos": [
+          970,
+          245
+        ],
+        "especies": "Acero seco 60-100 °C",
+        "fase": "Sólido",
+        "temperatura_c": "80",
+        "presion_bar": "1,0",
+        "flujo_especifico": {
+          "estado": "sin_datos",
+          "valor": null,
+          "unidad": "t/lote"
+        },
+        "nota_tecnica": "Izado con puente grúa de 12 t hacia el horno de zinc.",
+        "fuente_id": "druetta-procesos-2026",
+        "cita_ubicacion": "galvanizado3.html Secado"
+      },
+      {
+        "numero": 6,
+        "nombre": "Vapores ácidos y humos GIC",
+        "tipo": "emision",
+        "origen_tag": "R-101",
+        "destino_tag": "F-301",
+        "puntos": [
+          [
+            485,
+            290
+          ],
+          [
+            485,
+            485
+          ],
+          [
+            1197,
+            485
+          ]
+        ],
+        "flag_pos": [
+          830,
+          485
+        ],
+        "especies": "HCl(g) + NH4Cl + ZnO",
+        "fase": "Gas",
+        "temperatura_c": "65",
+        "presion_bar": "1,0",
+        "flujo_especifico": {
+          "estado": "sin_datos",
+          "valor": null,
+          "unidad": "Nm3/h"
+        },
+        "nota_tecnica": "Captación cerrada desde decapado y campana de horno hacia lavador.",
+        "fuente_id": "eu-bref-fmp-2022",
+        "cita_ubicacion": "EU FMP BREF 2022 + instalaciones7.html"
+      },
+      {
+        "numero": 7,
+        "nombre": "Humos captados de cuba Zn",
+        "tipo": "emision",
+        "origen_tag": "H-301",
+        "destino_tag": "F-301",
+        "puntos": [
+          [
+            1095,
+            290
+          ],
+          [
+            1095,
+            445
+          ],
+          [
+            1235,
+            445
+          ],
+          [
+            1235,
+            445
+          ]
+        ],
+        "flag_pos": [
+          1165,
+          445
+        ],
+        "especies": "Humos NH4Cl / ZnO",
+        "fase": "Gas",
+        "temperatura_c": "110",
+        "presion_bar": "1,0",
+        "flujo_especifico": {
+          "estado": "sin_datos",
+          "valor": null,
+          "unidad": "Nm3/h"
+        },
+        "nota_tecnica": "Aspiración en boca del horno hacia planta de lavado.",
+        "fuente_id": "eu-bref-fmp-2022",
+        "cita_ubicacion": "EU FMP BREF 2022"
+      },
+      {
+        "numero": 8,
+        "nombre": "Cenizas y matas de zinc",
+        "tipo": "subproducto",
+        "origen_tag": "H-301",
+        "destino_tag": null,
+        "puntos": [
+          [
+            1135,
+            290
+          ],
+          [
+            1135,
+            610
+          ],
+          [
+            1672,
+            610
+          ]
+        ],
+        "flag_pos": [
+          1420,
+          610
+        ],
+        "especies": "ZnO / aleación FeZn13",
+        "fase": "Sólido",
+        "temperatura_c": "440",
+        "presion_bar": "1,0",
+        "flujo_especifico": {
+          "estado": "sin_datos",
+          "valor": null,
+          "unidad": "kg/t"
+        },
+        "nota_tecnica": "Subproducto metálico enviado a valorización/reciclaje de zinc.",
+        "fuente_id": "eu-bref-fmp-2022",
+        "cita_ubicacion": "EU FMP BREF 2022"
+      },
+      {
+        "numero": 9,
+        "nombre": "Piezas galvanizadas 450 °C",
+        "tipo": "proceso",
+        "origen_tag": "H-301",
+        "destino_tag": "V-401",
+        "puntos": [
+          [
+            1138,
+            245
+          ],
+          [
+            1372,
+            245
+          ]
+        ],
+        "flag_pos": [
+          1255,
+          245
+        ],
+        "especies": "Acero con capas Fe-Zn",
+        "fase": "Sólido",
+        "temperatura_c": "450",
+        "presion_bar": "1,0",
+        "flujo_especifico": {
+          "estado": "sin_datos",
+          "valor": null,
+          "unidad": "t/lote"
+        },
+        "nota_tecnica": "Recubrimiento metalúrgico continuo interior y exterior.",
+        "fuente_id": "druetta-procesos-2026",
+        "cita_ubicacion": "galvanizado3.html Baño de Zinc"
+      },
+      {
+        "numero": 10,
+        "nombre": "Acero galvanizado enfriado",
+        "tipo": "proceso",
+        "origen_tag": "V-401",
+        "destino_tag": "M-401",
+        "puntos": [
+          [
+            1448,
+            245
+          ],
+          [
+            1537,
+            245
+          ]
+        ],
+        "flag_pos": [
+          1492,
+          245
+        ],
+        "especies": "Acero GIC enfriado",
+        "fase": "Sólido",
+        "temperatura_c": "30",
+        "presion_bar": "1,0",
+        "flujo_especifico": {
+          "estado": "sin_datos",
+          "valor": null,
+          "unidad": "t/lote"
+        },
+        "nota_tecnica": "Pasa a ensayos de espesor y adherencia en laboratorio.",
+        "fuente_id": "druetta-procesos-2026",
+        "cita_ubicacion": "galvanizado3.html Inspección"
+      },
+      {
+        "numero": 11,
+        "nombre": "Estructuras galvanizadas GIC",
+        "tipo": "proceso",
+        "origen_tag": "M-401",
+        "destino_tag": null,
+        "puntos": [
+          [
+            1613,
+            245
+          ],
+          [
+            1672,
+            245
+          ]
+        ],
+        "flag_pos": [
+          1642,
+          245
+        ],
+        "especies": "Acero galvanizado ISO/ASTM",
+        "fase": "Sólido",
+        "temperatura_c": "22",
+        "presion_bar": "1,0",
+        "flujo_especifico": {
+          "estado": "sin_datos",
+          "valor": null,
+          "unidad": "t/lote"
+        },
+        "nota_tecnica": "Producto final liberado con trazabilidad ISO 9001/14001.",
+        "fuente_id": "druetta-web-2026",
+        "cita_ubicacion": "iso.html + instalaciones6.html"
+      }
+    ],
+    "servicios": [
+      {
+        "id": "srv-gic-1",
+        "equipo_tag": "R-101",
+        "etiqueta": "HCl reposición",
+        "direccion": "entrada",
+        "x": 485,
+        "y": 150,
+        "dx": 0,
+        "dy": 42
+      },
+      {
+        "id": "srv-gic-2",
+        "equipo_tag": "H-301",
+        "etiqueta": "Lingotes Zn + Gas",
+        "direccion": "entrada",
+        "x": 1095,
+        "y": 145,
+        "dx": 0,
+        "dy": 42
+      },
+      {
+        "id": "srv-gic-3",
+        "equipo_tag": "F-301",
+        "etiqueta": "Gases lavados",
+        "direccion": "salida",
+        "x": 1235,
+        "y": 575,
+        "dx": 0,
+        "dy": 42
+      }
+    ],
+    "limites_bateria": [
+      {
+        "id": "lb-gic-in1",
+        "lado": "entrada",
+        "categoria": "materia_prima",
+        "nombre": "Estructuras de acero",
+        "formula": "Acero al carbono (Fe)",
+        "cantidad_masa": "Según lote industrial",
+        "cantidad_molar": null,
+        "fraccion_pureza": "Hasta 13 m en 1 baño",
+        "corriente_num": 1,
+        "y": 140,
+        "nota": "Piezas de energía, vial, agro, telecomunicaciones y minería.",
+        "fuente_id": "druetta-hornos-2026"
+      },
+      {
+        "id": "lb-gic-in2",
+        "lado": "entrada",
+        "categoria": "materia_prima",
+        "nombre": "Zinc sin alear + HCl",
+        "formula": "Zn (SHG) / HCl / Flux",
+        "cantidad_masa": "Imp. AR Zn 2024: USD 81,3 M",
+        "cantidad_molar": null,
+        "fraccion_pureza": "HS 7901.11 / 7901.12",
+        "corriente_num": null,
+        "y": 310,
+        "nota": "Zinc SHG (USD 36,14 M) y <99,99% (USD 45,16 M) en UN Comtrade 2024.",
+        "fuente_id": "uncomtrade-ar-lote7-2024"
+      },
+      {
+        "id": "lb-gic-out1",
+        "lado": "salida",
+        "categoria": "producto",
+        "nombre": "Acero galvanizado GIC",
+        "formula": "Aleación Fe-Zn + Zn",
+        "cantidad_masa": "Sin dato anual abierto",
+        "cantidad_molar": null,
+        "fraccion_pureza": "ISO 9001 / 14001",
+        "corriente_num": 11,
+        "y": 140,
+        "nota": "Vida útil declarada de 20 a 50 años sin corrosión según ambiente.",
+        "fuente_id": "druetta-web-2026"
+      },
+      {
+        "id": "lb-gic-out2",
+        "lado": "salida",
+        "categoria": "subproducto",
+        "nombre": "Cenizas y matas Zn",
+        "formula": "ZnO / FeZn13 reciclable",
+        "cantidad_masa": "Sin dato público",
+        "cantidad_molar": null,
+        "fraccion_pureza": "A recuperación de Zn",
+        "corriente_num": 8,
+        "y": 550,
+        "nota": "Recuperación metalúrgica + planta de efluentes y lavado de humos.",
+        "fuente_id": "eu-bref-fmp-2022"
       }
     ]
   }

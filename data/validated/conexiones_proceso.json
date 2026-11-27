@@ -3836,7 +3836,7 @@
     "tipo_corriente": "principal",
     "flujo": {
       "estado": "dato",
-      "valor": 1.0,
+      "valor": 1,
       "unidad": "t/t colofonia",
       "procedencia": {
         "anio": 2017,
@@ -4001,7 +4001,7 @@
     "tipo_corriente": "principal",
     "flujo": {
       "estado": "dato",
-      "valor": 1.0,
+      "valor": 1,
       "unidad": "t/t extracto",
       "procedencia": {
         "anio": 2013,
@@ -4166,7 +4166,7 @@
     "tipo_corriente": "principal",
     "flujo": {
       "estado": "dato",
-      "valor": 1.0,
+      "valor": 1,
       "unidad": "t/t aceite",
       "procedencia": {
         "anio": 2026,
@@ -4352,6 +4352,138 @@
       "fecha_descarga": "2026-11-26",
       "hash": "sha256:e626ff725b025d75d5c7f8f5c66d3603ae3c19e4252fcee386a308e144e49a7a",
       "cita_ubicacion": "Recuperación cerrada de solventes",
+      "confianza": "alta"
+    }
+  },
+  {
+    "conexion_id": "gic-c1-desengrase-a-decapado",
+    "proceso_id": "galvanizado-inmersion-caliente",
+    "origen_paso_id": "gic-p1-desengrase-enjuague",
+    "destino_paso_id": "gic-p2-decapado-hcl",
+    "corriente_nombre": "Acero desengrasado y enjuagado",
+    "tipo_corriente": "principal",
+    "flujo": {
+      "estado": "sin_datos",
+      "valor": null,
+      "unidad": "t/lote",
+      "procedencia": {
+        "anio": 2026,
+        "fuente_id": "druetta-procesos-2026",
+        "fuente": "Descripción oficial de etapas del proceso de Galvanizado por Inmersión en Caliente (Druetta Hnos. S.A.)",
+        "url": "https://www.druetta.com.ar/galvanizado3.html",
+        "fecha_descarga": "2026-11-27",
+        "hash": "sha256:78b05da2694e9bb944dc252146eb27b48ec63193936bd19d43aa8c1aa33ec5f4",
+        "cita_ubicacion": "druetta.com.ar/galvanizado3.html",
+        "confianza": "alta"
+      }
+    },
+    "procedencia": {
+      "anio": 2026,
+      "fuente_id": "druetta-procesos-2026",
+      "fuente": "Descripción oficial de etapas del proceso de Galvanizado por Inmersión en Caliente (Druetta Hnos. S.A.)",
+      "url": "https://www.druetta.com.ar/galvanizado3.html",
+      "fecha_descarga": "2026-11-27",
+      "hash": "sha256:78b05da2694e9bb944dc252146eb27b48ec63193936bd19d43aa8c1aa33ec5f4",
+      "cita_ubicacion": "druetta.com.ar/galvanizado3.html",
+      "confianza": "alta"
+    }
+  },
+  {
+    "conexion_id": "gic-c2-decapado-a-fluxado",
+    "proceso_id": "galvanizado-inmersion-caliente",
+    "origen_paso_id": "gic-p2-decapado-hcl",
+    "destino_paso_id": "gic-p3-fluxado-secado",
+    "corriente_nombre": "Acero químicamente limpio sin óxidos",
+    "tipo_corriente": "principal",
+    "flujo": {
+      "estado": "sin_datos",
+      "valor": null,
+      "unidad": "t/lote",
+      "procedencia": {
+        "anio": 2026,
+        "fuente_id": "druetta-procesos-2026",
+        "fuente": "Descripción oficial de etapas del proceso de Galvanizado por Inmersión en Caliente (Druetta Hnos. S.A.)",
+        "url": "https://www.druetta.com.ar/galvanizado3.html",
+        "fecha_descarga": "2026-11-27",
+        "hash": "sha256:78b05da2694e9bb944dc252146eb27b48ec63193936bd19d43aa8c1aa33ec5f4",
+        "cita_ubicacion": "druetta.com.ar/galvanizado3.html",
+        "confianza": "alta"
+      }
+    },
+    "procedencia": {
+      "anio": 2026,
+      "fuente_id": "druetta-procesos-2026",
+      "fuente": "Descripción oficial de etapas del proceso de Galvanizado por Inmersión en Caliente (Druetta Hnos. S.A.)",
+      "url": "https://www.druetta.com.ar/galvanizado3.html",
+      "fecha_descarga": "2026-11-27",
+      "hash": "sha256:78b05da2694e9bb944dc252146eb27b48ec63193936bd19d43aa8c1aa33ec5f4",
+      "cita_ubicacion": "druetta.com.ar/galvanizado3.html",
+      "confianza": "alta"
+    }
+  },
+  {
+    "conexion_id": "gic-c3-fluxado-a-zinc",
+    "proceso_id": "galvanizado-inmersion-caliente",
+    "origen_paso_id": "gic-p3-fluxado-secado",
+    "destino_paso_id": "gic-p4-inmersion-zinc",
+    "corriente_nombre": "Acero fluxado y precalentado (60-100 °C)",
+    "tipo_corriente": "principal",
+    "flujo": {
+      "estado": "sin_datos",
+      "valor": null,
+      "unidad": "t/lote",
+      "procedencia": {
+        "anio": 2026,
+        "fuente_id": "druetta-procesos-2026",
+        "fuente": "Descripción oficial de etapas del proceso de Galvanizado por Inmersión en Caliente (Druetta Hnos. S.A.)",
+        "url": "https://www.druetta.com.ar/galvanizado3.html",
+        "fecha_descarga": "2026-11-27",
+        "hash": "sha256:78b05da2694e9bb944dc252146eb27b48ec63193936bd19d43aa8c1aa33ec5f4",
+        "cita_ubicacion": "druetta.com.ar/galvanizado3.html",
+        "confianza": "alta"
+      }
+    },
+    "procedencia": {
+      "anio": 2026,
+      "fuente_id": "druetta-procesos-2026",
+      "fuente": "Descripción oficial de etapas del proceso de Galvanizado por Inmersión en Caliente (Druetta Hnos. S.A.)",
+      "url": "https://www.druetta.com.ar/galvanizado3.html",
+      "fecha_descarga": "2026-11-27",
+      "hash": "sha256:78b05da2694e9bb944dc252146eb27b48ec63193936bd19d43aa8c1aa33ec5f4",
+      "cita_ubicacion": "druetta.com.ar/galvanizado3.html",
+      "confianza": "alta"
+    }
+  },
+  {
+    "conexion_id": "gic-c4-zinc-a-enfriamiento",
+    "proceso_id": "galvanizado-inmersion-caliente",
+    "origen_paso_id": "gic-p4-inmersion-zinc",
+    "destino_paso_id": "gic-p5-enfriamiento-control",
+    "corriente_nombre": "Piezas galvanizadas con aleación Fe-Zn (450 °C)",
+    "tipo_corriente": "principal",
+    "flujo": {
+      "estado": "sin_datos",
+      "valor": null,
+      "unidad": "t/lote",
+      "procedencia": {
+        "anio": 2026,
+        "fuente_id": "druetta-procesos-2026",
+        "fuente": "Descripción oficial de etapas del proceso de Galvanizado por Inmersión en Caliente (Druetta Hnos. S.A.)",
+        "url": "https://www.druetta.com.ar/galvanizado3.html",
+        "fecha_descarga": "2026-11-27",
+        "hash": "sha256:78b05da2694e9bb944dc252146eb27b48ec63193936bd19d43aa8c1aa33ec5f4",
+        "cita_ubicacion": "druetta.com.ar/galvanizado3.html",
+        "confianza": "alta"
+      }
+    },
+    "procedencia": {
+      "anio": 2026,
+      "fuente_id": "druetta-procesos-2026",
+      "fuente": "Descripción oficial de etapas del proceso de Galvanizado por Inmersión en Caliente (Druetta Hnos. S.A.)",
+      "url": "https://www.druetta.com.ar/galvanizado3.html",
+      "fecha_descarga": "2026-11-27",
+      "hash": "sha256:78b05da2694e9bb944dc252146eb27b48ec63193936bd19d43aa8c1aa33ec5f4",
+      "cita_ubicacion": "druetta.com.ar/galvanizado3.html",
       "confianza": "alta"
     }
   }

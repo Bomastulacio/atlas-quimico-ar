@@ -304,5 +304,14 @@
     "tiene_datos_confiables": true,
     "cobertura_datos": "completa",
     "nota_cobertura": "Quimilí (Santiago del Estero): núcleo algodonero provincial (95.887 t en 2023/24 según SAGyP) y planta desmotadora ampliada de Louis Dreyfus Company (60.000 t/año)."
+  },
+  {
+    "departamento_id": "06364",
+    "provincia_id": "06",
+    "nombre": "General Rodríguez",
+    "tipo_zona": "polo_industrial",
+    "tiene_datos_confiables": true,
+    "cobertura_datos": "completa",
+    "nota_cobertura": "Acceso Oeste Km 47 (Chaco 1155, General Rodríguez): sede de la planta industrial de galvanizado por inmersión en caliente de Druetta Hnos. S.A. (hornos de 13 m y 4,5 m a 450 °C, ISO 9001 e ISO 14001)."
   }
 ]

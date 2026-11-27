@@ -7201,7 +7201,7 @@
     "productos": [
       {
         "especie": "Colofonia fundida (ácidos resínicos)",
-        "cantidad": 1.0,
+        "cantidad": 1,
         "unidad": "t/t colofonia"
       },
       {
@@ -7266,7 +7266,7 @@
     "productos": [
       {
         "especie": "Colofonia sólida grado WW/WG (HS 3806.10)",
-        "cantidad": 1.0,
+        "cantidad": 1,
         "unidad": "t/t colofonia"
       },
       {
@@ -7577,7 +7577,7 @@
     "productos": [
       {
         "especie": "Extracto de quebracho en polvo (HS 3201.10)",
-        "cantidad": 1.0,
+        "cantidad": 1,
         "unidad": "t/t extracto"
       }
     ],
@@ -7817,7 +7817,7 @@
     "productos": [
       {
         "especie": "Aceite de oliva virgen extra clarificado",
-        "cantidad": 1.0,
+        "cantidad": 1,
         "unidad": "t/t aceite"
       }
     ],
@@ -7870,14 +7870,14 @@
     "reactivos": [
       {
         "especie": "Aceite de oliva virgen extra clarificado",
-        "cantidad": 1.0,
+        "cantidad": 1,
         "unidad": "t/t aceite"
       }
     ],
     "productos": [
       {
         "especie": "Aceite de oliva virgen extra (HS 1509.20)",
-        "cantidad": 1.0,
+        "cantidad": 1,
         "unidad": "t/t aceite"
       }
     ],
@@ -8215,6 +8215,361 @@
       "fecha_descarga": "2026-11-26",
       "hash": "sha256:9cda8351bdd21468e8ca7187dc330d141ba37992c54acf7aafd4e457874a5c45",
       "cita_ubicacion": "INDEC Industria Farmacéutica + UN Comtrade AR 2024 HS 3004.90",
+      "confianza": "alta"
+    }
+  },
+  {
+    "paso_id": "gic-p1-desengrase-enjuague",
+    "proceso_id": "galvanizado-inmersion-caliente",
+    "orden": 1,
+    "nombre": "Desengrase alcalino y enjuague",
+    "tipo_paso": "preparacion",
+    "reaccion_balanceada": null,
+    "temperatura_c": "50-70",
+    "presion_bar": "1.0",
+    "reactivos": [
+      {
+        "especie": "Piezas y estructuras de acero negro",
+        "cantidad": null,
+        "unidad": "t/lote"
+      }
+    ],
+    "productos": [
+      {
+        "especie": "Acero desengrasado y enjuagado",
+        "cantidad": null,
+        "unidad": "t/lote"
+      }
+    ],
+    "insumos": [
+      {
+        "especie": "Solución desengrasante alcalina",
+        "cantidad": null,
+        "unidad": "baño"
+      },
+      {
+        "especie": "Agua de enjuague industrial",
+        "cantidad": null,
+        "unidad": "baño"
+      }
+    ],
+    "subproductos": [
+      {
+        "especie": "Efluente alcalino a planta de tratamiento",
+        "cantidad": null,
+        "unidad": "m3/lote"
+      }
+    ],
+    "energia": {
+      "estado": "sin_datos",
+      "valor": null,
+      "unidad": null,
+      "procedencia": {
+        "anio": 2026,
+        "fuente_id": "druetta-procesos-2026",
+        "fuente": "Descripción oficial de etapas del proceso de Galvanizado por Inmersión en Caliente (Druetta Hnos. S.A.)",
+        "url": "https://www.druetta.com.ar/galvanizado3.html",
+        "fecha_descarga": "2026-11-27",
+        "hash": "sha256:78b05da2694e9bb944dc252146eb27b48ec63193936bd19d43aa8c1aa33ec5f4",
+        "cita_ubicacion": "druetta.com.ar/galvanizado3.html: etapas Desengrase y Enjuague",
+        "confianza": "alta"
+      }
+    },
+    "descripcion": "Inmersión de las piezas de acero en solución desengrasante alcalina para remover aceites y grasas de laminado o mecanizado, seguida de enjuague e inspección visual de humectabilidad.",
+    "pos_x": 40,
+    "pos_y": 160,
+    "procedencia": {
+      "anio": 2026,
+      "fuente_id": "druetta-procesos-2026",
+      "fuente": "Descripción oficial de etapas del proceso de Galvanizado por Inmersión en Caliente (Druetta Hnos. S.A.)",
+      "url": "https://www.druetta.com.ar/galvanizado3.html",
+      "fecha_descarga": "2026-11-27",
+      "hash": "sha256:78b05da2694e9bb944dc252146eb27b48ec63193936bd19d43aa8c1aa33ec5f4",
+      "cita_ubicacion": "druetta.com.ar/galvanizado3.html: Desengrase y Enjuague",
+      "confianza": "alta"
+    }
+  },
+  {
+    "paso_id": "gic-p2-decapado-hcl",
+    "proceso_id": "galvanizado-inmersion-caliente",
+    "orden": 2,
+    "nombre": "Decapado ácido en HCl y enjuague",
+    "tipo_paso": "reaccion",
+    "reaccion_balanceada": "Fe2O3 + 6 HCl -> 2 FeCl3 + 3 H2O",
+    "temperatura_c": "20-35",
+    "presion_bar": "1.0",
+    "reactivos": [
+      {
+        "especie": "Acero con calamina y óxidos (Fe2O3 / Fe3O4)",
+        "cantidad": null,
+        "unidad": "t/lote"
+      },
+      {
+        "especie": "Ácido clorhídrico (HCl acuoso)",
+        "cantidad": null,
+        "unidad": "baño"
+      }
+    ],
+    "productos": [
+      {
+        "especie": "Acero químicamente limpio",
+        "cantidad": null,
+        "unidad": "t/lote"
+      }
+    ],
+    "insumos": [
+      {
+        "especie": "Agua de enjuague y neutralización",
+        "cantidad": null,
+        "unidad": "baño"
+      }
+    ],
+    "subproductos": [
+      {
+        "especie": "Vapores ácidos HCl a torre lavadora de gases",
+        "cantidad": null,
+        "unidad": "Nm3/h"
+      },
+      {
+        "especie": "Licor ácido agotado con FeCl2/FeCl3",
+        "cantidad": null,
+        "unidad": "m3"
+      }
+    ],
+    "energia": {
+      "estado": "sin_datos",
+      "valor": null,
+      "unidad": null,
+      "procedencia": {
+        "anio": 2022,
+        "fuente_id": "eu-bref-fmp-2022",
+        "fuente": "EU BAT Reference Document (BREF) for the Ferrous Metals Processing Industry (FMP)",
+        "url": "https://bureau-industrial-transformation.jrc.ec.europa.eu/reference/ferrous-metals-processing-industry",
+        "fecha_descarga": "2026-11-27",
+        "hash": "sha256:8248df53c2e5bc1b07c8fc357085b57bfdb9192fd64d22757917f96c13dcea8b",
+        "cita_ubicacion": "EU FMP BREF 2022: decapado en HCl y captación de vapores",
+        "confianza": "alta"
+      }
+    },
+    "descripcion": "Inmersión en solución ácida (HCl) para disolver óxidos y calamina superficiales hasta dejar el acero químicamente limpio, seguido de enjuague de neutralización y control visual.",
+    "pos_x": 340,
+    "pos_y": 160,
+    "procedencia": {
+      "anio": 2026,
+      "fuente_id": "druetta-procesos-2026",
+      "fuente": "Descripción oficial de etapas del proceso de Galvanizado por Inmersión en Caliente (Druetta Hnos. S.A.)",
+      "url": "https://www.druetta.com.ar/galvanizado3.html",
+      "fecha_descarga": "2026-11-27",
+      "hash": "sha256:78b05da2694e9bb944dc252146eb27b48ec63193936bd19d43aa8c1aa33ec5f4",
+      "cita_ubicacion": "druetta.com.ar/galvanizado3.html + EU FMP BREF 2022",
+      "confianza": "alta"
+    }
+  },
+  {
+    "paso_id": "gic-p3-fluxado-secado",
+    "proceso_id": "galvanizado-inmersion-caliente",
+    "orden": 3,
+    "nombre": "Fluxado en sales y secado (60-100 °C)",
+    "tipo_paso": "preparacion",
+    "reaccion_balanceada": null,
+    "temperatura_c": "60-100",
+    "presion_bar": "1.0",
+    "reactivos": [
+      {
+        "especie": "Acero decapado y enjuagado",
+        "cantidad": null,
+        "unidad": "t/lote"
+      }
+    ],
+    "productos": [
+      {
+        "especie": "Acero fluxado y precalentado seco",
+        "cantidad": null,
+        "unidad": "t/lote"
+      }
+    ],
+    "insumos": [
+      {
+        "especie": "Solución flux (ZnCl2·2NH4Cl)",
+        "cantidad": null,
+        "unidad": "baño"
+      }
+    ],
+    "subproductos": [
+      {
+        "especie": "Vapor de agua de secado",
+        "cantidad": null,
+        "unidad": "kg/lote"
+      }
+    ],
+    "energia": {
+      "estado": "sin_datos",
+      "valor": null,
+      "unidad": null,
+      "procedencia": {
+        "anio": 2026,
+        "fuente_id": "druetta-procesos-2026",
+        "fuente": "Descripción oficial de etapas del proceso de Galvanizado por Inmersión en Caliente (Druetta Hnos. S.A.)",
+        "url": "https://www.druetta.com.ar/galvanizado3.html",
+        "fecha_descarga": "2026-11-27",
+        "hash": "sha256:78b05da2694e9bb944dc252146eb27b48ec63193936bd19d43aa8c1aa33ec5f4",
+        "cita_ubicacion": "druetta.com.ar/galvanizado3.html: Flux y Secado 60 a 100 °C",
+        "confianza": "alta"
+      }
+    },
+    "descripcion": "Baño en solución de sales dobles (cloruro de zinc y amonio) que protege contra reoxidación y promueve el mojado del zinc, seguido de precalentamiento entre 60 °C y 100 °C para eliminar toda humedad superficial.",
+    "pos_x": 640,
+    "pos_y": 160,
+    "procedencia": {
+      "anio": 2026,
+      "fuente_id": "druetta-procesos-2026",
+      "fuente": "Descripción oficial de etapas del proceso de Galvanizado por Inmersión en Caliente (Druetta Hnos. S.A.)",
+      "url": "https://www.druetta.com.ar/galvanizado3.html",
+      "fecha_descarga": "2026-11-27",
+      "hash": "sha256:78b05da2694e9bb944dc252146eb27b48ec63193936bd19d43aa8c1aa33ec5f4",
+      "cita_ubicacion": "druetta.com.ar/galvanizado3.html + EU FMP BREF 2022",
+      "confianza": "alta"
+    }
+  },
+  {
+    "paso_id": "gic-p4-inmersion-zinc",
+    "proceso_id": "galvanizado-inmersion-caliente",
+    "orden": 4,
+    "nombre": "Inmersión en baño de zinc fundido (450 °C)",
+    "tipo_paso": "reaccion",
+    "reaccion_balanceada": "Fe(s) + Zn(l, 450 °C) -> Aleación intermetálica Fe-Zn + Zn(eta)",
+    "temperatura_c": "445-455",
+    "presion_bar": "1.0",
+    "reactivos": [
+      {
+        "especie": "Acero fluxado seco",
+        "cantidad": null,
+        "unidad": "t/lote"
+      },
+      {
+        "especie": "Zinc fundido en lingotes SHG (HS 7901.11)",
+        "cantidad": null,
+        "unidad": "kg/t acero"
+      }
+    ],
+    "productos": [
+      {
+        "especie": "Acero con recubrimiento metalúrgico Fe-Zn",
+        "cantidad": null,
+        "unidad": "t/lote"
+      }
+    ],
+    "insumos": [
+      {
+        "especie": "Gas natural para calentamiento controlado de cuba",
+        "cantidad": null,
+        "unidad": "Nm3/h"
+      }
+    ],
+    "subproductos": [
+      {
+        "especie": "Humos de NH4Cl/ZnO captados a filtro y lavador",
+        "cantidad": null,
+        "unidad": "Nm3/h"
+      },
+      {
+        "especie": "Cenizas y matas de zinc (reciclables)",
+        "cantidad": null,
+        "unidad": "kg/t"
+      }
+    ],
+    "energia": {
+      "estado": "sin_datos",
+      "valor": null,
+      "unidad": null,
+      "procedencia": {
+        "anio": 2026,
+        "fuente_id": "druetta-hornos-2026",
+        "fuente": "Ficha técnica de Hornos e Instalaciones de Galvanizado (Druetta Hnos. S.A.)",
+        "url": "https://www.druetta.com.ar/instalaciones4.html",
+        "fecha_descarga": "2026-11-27",
+        "hash": "sha256:42167c1b8abd99865a7b4584942733699aed7ff57cc2df388da60857722f5de7",
+        "cita_ubicacion": "druetta.com.ar/instalaciones4.html: cubas de 13,0x1,8x3,0 m y 4,5x1,4x2,2 m a 450 °C",
+        "confianza": "alta"
+      }
+    },
+    "descripcion": "Inmersión mediante puentes grúa de 12 t en horno de zinc fundido a 450 °C (cuba principal de 13,0 x 1,8 x 3,0 m y cuba secundaria de 4,5 x 1,4 x 2,2 m con centrifugado). La difusión metalúrgica forma capas intermetálicas Fe-Zn de alta resistencia mecánica.",
+    "pos_x": 940,
+    "pos_y": 160,
+    "procedencia": {
+      "anio": 2026,
+      "fuente_id": "druetta-hornos-2026",
+      "fuente": "Ficha técnica de Hornos e Instalaciones de Galvanizado (Druetta Hnos. S.A.)",
+      "url": "https://www.druetta.com.ar/instalaciones4.html",
+      "fecha_descarga": "2026-11-27",
+      "hash": "sha256:42167c1b8abd99865a7b4584942733699aed7ff57cc2df388da60857722f5de7",
+      "cita_ubicacion": "druetta.com.ar/instalaciones4.html + galvanizado3.html + EU FMP BREF 2022",
+      "confianza": "alta"
+    }
+  },
+  {
+    "paso_id": "gic-p5-enfriamiento-control",
+    "proceso_id": "galvanizado-inmersion-caliente",
+    "orden": 5,
+    "nombre": "Enfriamiento, laboratorio ISO e inspección final",
+    "tipo_paso": "producto",
+    "reaccion_balanceada": null,
+    "temperatura_c": "20-45",
+    "presion_bar": "1.0",
+    "reactivos": [
+      {
+        "especie": "Acero recién galvanizado a 450 °C",
+        "cantidad": null,
+        "unidad": "t/lote"
+      }
+    ],
+    "productos": [
+      {
+        "especie": "Estructuras y piezas de acero galvanizado certificadas",
+        "cantidad": null,
+        "unidad": "t/lote"
+      }
+    ],
+    "insumos": [
+      {
+        "especie": "Pileta de enfriamiento con agua o aire ambiente",
+        "cantidad": null,
+        "unidad": "baño"
+      }
+    ],
+    "subproductos": [
+      {
+        "especie": "Agua de proceso a planta de tratamiento de efluentes",
+        "cantidad": null,
+        "unidad": "m3"
+      }
+    ],
+    "energia": {
+      "estado": "sin_datos",
+      "valor": null,
+      "unidad": null,
+      "procedencia": {
+        "anio": 2026,
+        "fuente_id": "druetta-web-2026",
+        "fuente": "Portal institucional Druetta Hnos. S.A. (Planta General Rodríguez, Buenos Aires)",
+        "url": "https://www.druetta.com.ar/",
+        "fecha_descarga": "2026-11-27",
+        "hash": "sha256:eb0ee6c4ae621f4c701f4ce06a529ddc45d7cf64324bd8d2c31980849921abaa",
+        "cita_ubicacion": "druetta.com.ar/galvanizado3.html + iso.html + instalaciones7.html",
+        "confianza": "alta"
+      }
+    },
+    "descripcion": "Enfriamiento por inmersión en agua o a temperatura ambiente, seguido de control de espesor de capa, adherencia y aspecto visual en laboratorio propio bajo ISO 9001:2015 e ISO 14001:2015.",
+    "pos_x": 1240,
+    "pos_y": 160,
+    "procedencia": {
+      "anio": 2026,
+      "fuente_id": "druetta-web-2026",
+      "fuente": "Portal institucional Druetta Hnos. S.A. (Planta General Rodríguez, Buenos Aires)",
+      "url": "https://www.druetta.com.ar/",
+      "fecha_descarga": "2026-11-27",
+      "hash": "sha256:eb0ee6c4ae621f4c701f4ce06a529ddc45d7cf64324bd8d2c31980849921abaa",
+      "cita_ubicacion": "druetta.com.ar/galvanizado3.html + iso.html",
       "confianza": "alta"
     }
   }

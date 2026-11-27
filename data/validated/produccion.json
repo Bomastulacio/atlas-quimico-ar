@@ -1796,5 +1796,36 @@
       "cita_ubicacion": "INDEC Industria Farmacéutica publica facturación en ARS sin serie física en toneladas de IFAs",
       "confianza": "alta"
     }
+  },
+  {
+    "registro_id": "prod-galvanizado-06-2024-sd",
+    "producto_id": "galvanizado-caliente",
+    "provincia_id": "06",
+    "anio": 2024,
+    "medicion": {
+      "estado": "sin_datos",
+      "valor": null,
+      "unidad": "t acero galvanizado",
+      "procedencia": {
+        "anio": 2026,
+        "fuente_id": "druetta-hornos-2026",
+        "fuente": "Ficha técnica de Hornos e Instalaciones de Galvanizado (Druetta Hnos. S.A.)",
+        "url": "https://www.druetta.com.ar/instalaciones4.html",
+        "fecha_descarga": "2026-11-27",
+        "hash": "sha256:42167c1b8abd99865a7b4584942733699aed7ff57cc2df388da60857722f5de7",
+        "cita_ubicacion": "Sin serie pública anual abierta de toneladas galvanizadas por lote en datos.gob.ar ni balance publicado",
+        "confianza": "alta"
+      }
+    },
+    "procedencia": {
+      "anio": 2026,
+      "fuente_id": "druetta-hornos-2026",
+      "fuente": "Ficha técnica de Hornos e Instalaciones de Galvanizado (Druetta Hnos. S.A.)",
+      "url": "https://www.druetta.com.ar/instalaciones4.html",
+      "fecha_descarga": "2026-11-27",
+      "hash": "sha256:42167c1b8abd99865a7b4584942733699aed7ff57cc2df388da60857722f5de7",
+      "cita_ubicacion": "Sin serie pública anual abierta de toneladas galvanizadas por lote en datos.gob.ar ni balance publicado",
+      "confianza": "alta"
+    }
   }
 ]

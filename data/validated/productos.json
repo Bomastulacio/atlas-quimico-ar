@@ -228,5 +228,15 @@
     "descripcion_corta": "Síntesis orgánica fina multipropósito en reactores batch GMP, cristalización, centrifugación y secado al vacío de principios activos en CABA.",
     "mdx_slug": null,
     "estado_mvp": "validado"
+  },
+  {
+    "producto_id": "galvanizado-caliente",
+    "nombre": "Galvanizado por inmersión en caliente",
+    "categoria": "metalurgia",
+    "formula_quimica": "Fe-Zn (Zn 450 °C)",
+    "icono_id": "galvanizado-caliente",
+    "descripcion_corta": "Recubrimiento anticorrosivo metalúrgico del acero por inmersión en baño de zinc fundido a 450 °C tras desengrase alcalino, decapado en HCl y fluxado en General Rodríguez (Buenos Aires).",
+    "mdx_slug": null,
+    "estado_mvp": "validado"
   }
 ]

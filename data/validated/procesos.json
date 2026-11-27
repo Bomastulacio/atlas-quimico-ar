@@ -823,5 +823,38 @@
       "cita_ubicacion": "EU OFC BREF Chapter 2 API multipurpose synthesis + insudpharma.com + INDEC",
       "confianza": "alta"
     }
+  },
+  {
+    "proceso_id": "galvanizado-inmersion-caliente",
+    "producto_id": "galvanizado-caliente",
+    "nombre": "Galvanizado por inmersión en caliente por lotes (Batch Hot-Dip Galvanizing)",
+    "ruta_tecnologica": "Desengrase alcalino y enjuague -> decapado ácido en HCl y enjuague -> fluxado en ZnCl2·2NH4Cl y secado (60-100 °C) -> inmersión en baño de zinc fundido (450 °C) -> enfriamiento e inspección metalúrgica",
+    "reaccion_global": "Fe2O3 + 6 HCl -> 2 FeCl3 + 3 H2O; Fe(s) + Zn(l, 450 °C) -> capas Fe-Zn + Zn",
+    "energia_especifica": {
+      "estado": "sin_datos",
+      "valor": null,
+      "unidad": "MWh/t acero galvanizado",
+      "procedencia": {
+        "anio": 2022,
+        "fuente_id": "eu-bref-fmp-2022",
+        "fuente": "EU BAT Reference Document (BREF) for the Ferrous Metals Processing Industry (FMP)",
+        "url": "https://bureau-industrial-transformation.jrc.ec.europa.eu/reference/ferrous-metals-processing-industry",
+        "fecha_descarga": "2026-11-27",
+        "hash": "sha256:8248df53c2e5bc1b07c8fc357085b57bfdb9192fd64d22757917f96c13dcea8b",
+        "cita_ubicacion": "EU FMP BREF 2022 (Batch Galvanizing): el consumo térmico depende de geometría, espesor de pieza y factor de carga del horno",
+        "confianza": "alta"
+      }
+    },
+    "descripcion": "Proceso físico-químico y metalúrgico de recubrimiento anticorrosivo por inmersión en caliente operado en General Rodríguez (Buenos Aires). La preparación química asegura una superficie de acero libre de grasas y óxidos para que, a 450 °C, el zinc fundido difunda en el acero formando capas intermetálicas Fe-Zn de alta adherencia.",
+    "procedencia": {
+      "anio": 2026,
+      "fuente_id": "druetta-procesos-2026",
+      "fuente": "Descripción oficial de etapas del proceso de Galvanizado por Inmersión en Caliente (Druetta Hnos. S.A.)",
+      "url": "https://www.druetta.com.ar/galvanizado3.html",
+      "fecha_descarga": "2026-11-27",
+      "hash": "sha256:78b05da2694e9bb944dc252146eb27b48ec63193936bd19d43aa8c1aa33ec5f4",
+      "cita_ubicacion": "druetta.com.ar/galvanizado3.html + EU FMP BREF 2022 (Ferrous Metals Processing)",
+      "confianza": "alta"
+    }
   }
 ]
