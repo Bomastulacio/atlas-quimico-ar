@@ -1,3 +1,4 @@
+import { memo } from 'react';
 import type { PfdSimboloEquipo } from '@/schemas';
 
 interface PfdEquipmentSymbolProps {
@@ -10,7 +11,7 @@ interface PfdEquipmentSymbolProps {
  * Simbología vectorial normalizada ISO 10628 / ASME para diagramas PFD de ingeniería química.
  * Cada símbolo está centrado en (0, 0) para colocación exacta en coordenadas del plano técnico.
  */
-export function PfdEquipmentSymbol({
+export const PfdEquipmentSymbol = memo(function PfdEquipmentSymbol({
   simbolo,
   selected,
   connected,
@@ -325,4 +326,4 @@ export function PfdEquipmentSymbol({
         </g>
       );
   }
-}
+});

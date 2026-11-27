@@ -92,6 +92,8 @@ export function ProcessPfdDiagram({ pfd, fuentesMap }: ProcessPfdDiagramProps) {
   const [wheelZoomEnabled, setWheelZoomEnabled] = useState(false);
   const [showWheelHint, setShowWheelHint] = useState(false);
   const wheelHintTimerRef = useRef<number | null>(null);
+  const showWheelHintRef = useRef(false);
+  showWheelHintRef.current = showWheelHint;
   const viewportRef = useRef<HTMLDivElement | null>(null);
   const viewRef = useRef({ zoom: 1, pan: { x: 0, y: 0 } });
   viewRef.current = { zoom, pan };
@@ -116,6 +118,11 @@ export function ProcessPfdDiagram({ pfd, fuentesMap }: ProcessPfdDiagramProps) {
     [pfd.equipos]
   );
 
+  const corrienteMap = useMemo(
+    () => new Map(pfd.corrientes.map((c) => [c.numero, c])),
+    [pfd.corrientes]
+  );
+
   const entradasBateria = useMemo(
     () => pfd.limites_bateria.filter((l) => l.lado === 'entrada'),
     [pfd.limites_bateria]
@@ -129,7 +136,7 @@ export function ProcessPfdDiagram({ pfd, fuentesMap }: ProcessPfdDiagramProps) {
     selection.kind === 'equipo' ? (equipoMap.get(selection.tag) ?? null) : null;
   const selectedCorriente: PfdCorriente | null =
     selection.kind === 'corriente'
-      ? (pfd.corrientes.find((c) => c.numero === selection.numero) ?? null)
+      ? (corrienteMap.get(selection.numero) ?? null)
       : null;
 
   const connectedStreamNums = useMemo(() => {
@@ -223,7 +230,7 @@ export function ProcessPfdDiagram({ pfd, fuentesMap }: ProcessPfdDiagramProps) {
       if (e.ctrlKey || e.metaKey || wheelZoomEnabled) {
         e.preventDefault();
         applyWheelZoom(e.clientX, e.clientY, e.deltaY);
-        if (showWheelHint) setShowWheelHint(false);
+        if (showWheelHintRef.current) setShowWheelHint(false);
         return;
       }
 
@@ -252,7 +259,7 @@ export function ProcessPfdDiagram({ pfd, fuentesMap }: ProcessPfdDiagramProps) {
         window.clearTimeout(wheelHintTimerRef.current);
       }
     };
-  }, [wheelZoomEnabled, applyWheelZoom, showWheelHint]);
+  }, [wheelZoomEnabled, applyWheelZoom]);
 
   const handlePointerDown = (e: React.PointerEvent<SVGSVGElement>) => {
     if ((e.target as HTMLElement).closest('[data-pfd-interactive="true"]')) return;

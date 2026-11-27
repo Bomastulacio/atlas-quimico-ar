@@ -61,6 +61,8 @@ export function SiteHeader({
   const [query, setQuery] = useState('');
   const [activeIdx, setActiveIdx] = useState(0);
   const inputRef = useRef<HTMLInputElement | null>(null);
+  const searchOpenRef = useRef(searchOpen);
+  searchOpenRef.current = searchOpen;
 
   const isHeroTop = variant === 'hero' && !scrolled && !mobileMenuOpen;
 
@@ -70,14 +72,15 @@ export function SiteHeader({
       return;
     }
     const onScroll = () => {
-      setScrolled(window.scrollY > 44);
+      const next = window.scrollY > 44;
+      setScrolled((prev) => (prev === next ? prev : next));
     };
     onScroll();
     window.addEventListener('scroll', onScroll, { passive: true });
     return () => window.removeEventListener('scroll', onScroll);
   }, [variant]);
 
-  // Atajos globales Ctrl+K / Cmd+K / "/" y Escape
+  // Atajos globales Ctrl+K / Cmd+K / "/" y Escape (listener único sin re-suscripciones)
   useEffect(() => {
     const onKeyDown = (e: KeyboardEvent) => {
       if ((e.ctrlKey || e.metaKey) && e.key.toLowerCase() === 'k') {
@@ -86,7 +89,7 @@ export function SiteHeader({
         setMobileMenuOpen(false);
       } else if (
         e.key === '/' &&
-        !searchOpen &&
+        !searchOpenRef.current &&
         document.activeElement?.tagName !== 'INPUT' &&
         document.activeElement?.tagName !== 'TEXTAREA'
       ) {
@@ -99,7 +102,7 @@ export function SiteHeader({
     };
     window.addEventListener('keydown', onKeyDown);
     return () => window.removeEventListener('keydown', onKeyDown);
-  }, [searchOpen]);
+  }, []);
 
   useEffect(() => {
     if (searchOpen) {
@@ -110,20 +113,35 @@ export function SiteHeader({
     setQuery('');
   }, [searchOpen]);
 
+  const indexedSearchItems = useMemo(
+    () =>
+      searchItems.map((item) => ({
+        item,
+        haystack: normalizeText(`${item.title} ${item.subtitle} ${item.keywords}`),
+      })),
+    [searchItems]
+  );
+
+  const defaultSuggestions = useMemo(() => {
+    const cadenas = searchItems.filter((i) => i.kind === 'cadena');
+    const provs = searchItems.filter(
+      (i) => i.kind === 'provincia' && ['26', '06', '82', '38'].includes(i.provinciaId ?? '')
+    );
+    return [...cadenas, ...provs].slice(0, 10);
+  }, [searchItems]);
+
   const filteredItems = useMemo(() => {
     const q = normalizeText(query.trim());
-    if (!q) {
-      // Al abrir vacío, mostrar primero las 7 cadenas verificadas y 3 provincias clave
-      const cadenas = searchItems.filter((i) => i.kind === 'cadena');
-      const provs = searchItems.filter(
-        (i) => i.kind === 'provincia' && ['26', '06', '82', '38'].includes(i.provinciaId ?? '')
-      );
-      return [...cadenas, ...provs].slice(0, 10);
+    if (!q) return defaultSuggestions;
+    const matches: SearchIndexItem[] = [];
+    for (const entry of indexedSearchItems) {
+      if (entry.haystack.includes(q)) {
+        matches.push(entry.item);
+        if (matches.length >= 12) break;
+      }
     }
-    return searchItems
-      .filter((item) => normalizeText(`${item.title} ${item.subtitle} ${item.keywords}`).includes(q))
-      .slice(0, 12);
-  }, [query, searchItems]);
+    return matches;
+  }, [query, defaultSuggestions, indexedSearchItems]);
 
   const navigateToItem = (item: SearchIndexItem) => {
     setSearchOpen(false);
@@ -225,15 +243,14 @@ export function SiteHeader({
             </a>
             <a
               href="/comparar"
-              className={`transition-colors duration-150 ${
-                currentPath === '/comparar'
-                  ? isHeroTop
-                    ? 'font-medium text-white'
-                    : 'font-medium text-cobalt'
-                  : isHeroTop
-                    ? 'text-white/85 hover:text-white'
-                    : 'text-ink-muted hover:text-ink'
-              }`}
+              className={`transition-colors duration-150 ${currentPath === '/comparar'
+                ? isHeroTop
+                  ? 'font-medium text-white'
+                  : 'font-medium text-cobalt'
+                : isHeroTop
+                  ? 'text-white/85 hover:text-white'
+                  : 'text-ink-muted hover:text-ink'
+                }`}
             >
               Comparar
             </a>
@@ -368,9 +385,8 @@ export function SiteHeader({
                   <a
                     href="/comparar"
                     onClick={() => setMobileMenuOpen(false)}
-                    className={`py-1 ${
-                      currentPath === '/comparar' ? 'font-medium text-cobalt' : 'text-ink hover:text-cobalt'
-                    }`}
+                    className={`py-1 ${currentPath === '/comparar' ? 'font-medium text-cobalt' : 'text-ink hover:text-cobalt'
+                      }`}
                   >
                     Cadena de valor y comparador
                   </a>

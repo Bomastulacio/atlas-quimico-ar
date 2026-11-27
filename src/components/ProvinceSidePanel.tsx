@@ -1,3 +1,4 @@
+import { memo, useMemo } from 'react';
 import { AnimatePresence, motion } from 'motion/react';
 import { ArrowLeft, ArrowRight, Building2, Crosshair, MapPin, X } from 'lucide-react';
 import type { CoberturaDatos, Departamento, Producto } from '@/schemas';
@@ -64,7 +65,7 @@ const TIPO_ZONA_META: Record<
   mixto: { label: 'Zona mixta', color: '#111214' },
 };
 
-export function ProvinceSidePanel({
+export const ProvinceSidePanel = memo(function ProvinceSidePanel({
   selected,
   selectedDepartamento,
   allProvincias,
@@ -76,14 +77,16 @@ export function ProvinceSidePanel({
   geoManifest,
   categoryAccent,
 }: ProvinceSidePanelProps) {
-  const activas = allProvincias.filter((p) => p.dominante !== null);
-  const sinDatosCount = allProvincias.filter(
-    (p) => p.provincia.cobertura_datos === 'sin_datos'
-  ).length;
-  const totalDeptosConfiables = allProvincias.reduce(
-    (acc, p) => acc + p.departamentosConfiables.length,
-    0
-  );
+  const { activas, sinDatosCount, totalDeptosConfiables } = useMemo(() => {
+    const activeList = allProvincias.filter((p) => p.dominante !== null);
+    let sinDatos = 0;
+    let totalDeptos = 0;
+    for (const p of allProvincias) {
+      if (p.provincia.cobertura_datos === 'sin_datos') sinDatos++;
+      totalDeptos += p.departamentosConfiables.length;
+    }
+    return { activas: activeList, sinDatosCount: sinDatos, totalDeptosConfiables: totalDeptos };
+  }, [allProvincias]);
 
   return (
     <aside
@@ -684,4 +687,4 @@ export function ProvinceSidePanel({
       </AnimatePresence>
     </aside>
   );
-}
+});

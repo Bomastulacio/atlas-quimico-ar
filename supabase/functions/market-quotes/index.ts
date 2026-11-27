@@ -27,7 +27,10 @@ async function fetchYahooQuote(symbol: string): Promise<{
   try {
     const res = await fetch(
       `https://query1.finance.yahoo.com/v8/finance/chart/${encodeURIComponent(symbol)}?interval=1d&range=5d`,
-      { headers: { "User-Agent": "atlas-quimico-ar/1.0" } }
+      {
+        headers: { "User-Agent": "atlas-quimico-ar/1.0" },
+        signal: AbortSignal.timeout(4500),
+      }
     );
     if (!res.ok) return null;
     const json = await res.json();
@@ -89,17 +92,25 @@ Deno.serve(async (req: Request) => {
     ageMs > CACHE_TTL_MS || (forceRefresh && ageMs > FORCE_REFRESH_COOLDOWN_MS);
 
   let source: "live_refreshed" | "cache" | "cache_fallback" = "cache";
+  let freshFx = fxRows ?? [];
+  let freshEmp = empresasRows ?? [];
 
   if (shouldRefresh) {
     let anyUpdated = false;
     try {
-      const [dolarRes, brlQuote] = await Promise.all([
+      const listed = (empresasRows ?? []).filter((r) => r.ticker_feed && r.acciones_circulacion);
+
+      // Todos los fetches externos (DolarApi + BRL=X + tickers Yahoo) corren en una única ola paralela con timeout
+      const [dolarRes, brlQuote, ...yahooQuotes] = await Promise.all([
         fetch("https://dolarapi.com/v1/dolares", {
           headers: { "User-Agent": "atlas-quimico-ar/1.0" },
+          signal: AbortSignal.timeout(4500),
         }),
         fetchYahooQuote("BRL=X"),
+        ...listed.map((row) => fetchYahooQuote(row.ticker_feed)),
       ]);
 
+      const nowIso = new Date().toISOString();
       const fxUpserts: Array<Record<string, unknown>> = [];
       if (dolarRes.ok) {
         const list = (await dolarRes.json()) as DolarApiRow[];
@@ -120,8 +131,8 @@ Deno.serve(async (req: Request) => {
             venta: row.venta,
             fuente: meta.fuente,
             fuente_url: "https://dolarapi.com/v1/dolares",
-            fecha_actualizacion: row.fechaActualizacion || new Date().toISOString(),
-            updated_at: new Date().toISOString(),
+            fecha_actualizacion: row.fechaActualizacion || nowIso,
+            updated_at: nowIso,
           });
         }
       }
@@ -136,34 +147,50 @@ Deno.serve(async (req: Request) => {
           fuente: "Yahoo Finance (BRL=X)",
           fuente_url: "https://finance.yahoo.com/quote/BRL=X",
           fecha_actualizacion: brlQuote.updatedAt,
-          updated_at: new Date().toISOString(),
+          updated_at: nowIso,
         });
       }
+
+      // Eliminamos el N+1 de N UPDATEs individuales: consolidamos un único upsert por lote en empresas_mercado
+      const empUpserts: Array<Record<string, unknown>> = [];
+      const empPatchById = new Map<string, Record<string, unknown>>();
+      listed.forEach((row, idx) => {
+        const q = yahooQuotes[idx];
+        if (!q) return;
+        const patched = {
+          ...row,
+          ultimo_precio: q.price,
+          cierre_previo: q.prevClose,
+          variacion_dia_pct: q.variationPct,
+          market_cap_origen: q.price * Number(row.acciones_circulacion),
+          mercado_actualizado_en: q.updatedAt,
+          updated_at: nowIso,
+        };
+        empUpserts.push(patched);
+        empPatchById.set(row.empresa_id, patched);
+      });
+
+      const writeOps: Array<Promise<unknown>> = [];
       if (fxUpserts.length > 0) {
-        await supabase.from("tipo_cambio_cache").upsert(fxUpserts, { onConflict: "casa" });
+        writeOps.push(
+          Promise.resolve(supabase.from("tipo_cambio_cache").upsert(fxUpserts, { onConflict: "casa" }))
+        );
+        const fxByCasa = new Map(fxUpserts.map((r) => [String(r.casa), r]));
+        freshFx = freshFx.map((r) => fxByCasa.get(String(r.casa)) ?? r);
         anyUpdated = true;
       }
-
-      const listed = (empresasRows ?? []).filter((r) => r.ticker_feed && r.acciones_circulacion);
-      await Promise.all(
-        listed.map(async (row) => {
-          const q = await fetchYahooQuote(row.ticker_feed);
-          if (!q) return;
-          const marketCap = q.price * Number(row.acciones_circulacion);
-          await supabase
-            .from("empresas_mercado")
-            .update({
-              ultimo_precio: q.price,
-              cierre_previo: q.prevClose,
-              variacion_dia_pct: q.variationPct,
-              market_cap_origen: marketCap,
-              mercado_actualizado_en: q.updatedAt,
-              updated_at: new Date().toISOString(),
-            })
-            .eq("empresa_id", row.empresa_id);
-          anyUpdated = true;
-        })
-      );
+      if (empUpserts.length > 0) {
+        writeOps.push(
+          Promise.resolve(
+            supabase.from("empresas_mercado").upsert(empUpserts, { onConflict: "empresa_id" })
+          )
+        );
+        freshEmp = freshEmp.map((r) => empPatchById.get(String(r.empresa_id)) ?? r);
+        anyUpdated = true;
+      }
+      if (writeOps.length > 0) {
+        await Promise.all(writeOps);
+      }
 
       source = anyUpdated ? "live_refreshed" : "cache_fallback";
     } catch {
@@ -171,26 +198,18 @@ Deno.serve(async (req: Request) => {
     }
   }
 
-  const [{ data: freshEmp }, { data: freshFx }] =
-    source === "live_refreshed"
-      ? await Promise.all([
-          supabase.from("empresas_mercado").select("*").order("empresa_id"),
-          supabase.from("tipo_cambio_cache").select("*").order("casa"),
-        ])
-      : [{ data: empresasRows }, { data: fxRows }];
-
   return new Response(
     JSON.stringify({
       source,
       consultado_en: new Date().toISOString(),
-      tipos_cambio: freshFx ?? [],
-      empresas: freshEmp ?? [],
+      tipos_cambio: freshFx,
+      empresas: freshEmp,
     }),
     {
       headers: {
         ...CORS_HEADERS,
         "Content-Type": "application/json",
-        "Cache-Control": "public, max-age=120",
+        "Cache-Control": "public, max-age=120, stale-while-revalidate=600",
       },
     }
   );

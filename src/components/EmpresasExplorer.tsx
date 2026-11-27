@@ -13,9 +13,9 @@ import {
 import type { DolarSelector, Empresa, MercadoSnapshot, Planta, Producto } from '@/schemas';
 import type { EmpresaConPlantas } from '@/data';
 import { useLiveMarket } from '@/lib/useLiveMarket';
+import { getCategoryAccent } from '@/lib/categoryAccent';
 import { CompanyMarketCard } from './CompanyMarketCard';
 import { ProductIcon } from './ProductIcon';
-import { getCategoryAccent } from './ArgentinaMapExplorer';
 
 interface EmpresasExplorerProps {
   empresas: EmpresaConPlantas[];
@@ -91,20 +91,12 @@ export function EmpresasExplorer({
     return (['nacional', 'mixto', 'extranjero', 'estatal'] as const).filter((c) => set.has(c));
   }, [empresas]);
 
-  const filtered = useMemo(() => {
-    const q = normalizeText(query.trim());
-    return empresas.filter((item) => {
-      if (
-        selectedProductId !== null &&
-        !item.productos.some((p) => p.producto_id === selectedProductId)
-      ) {
-        return false;
-      }
-      if (selectedCapital !== 'todos' && item.empresa.tipo_capital !== selectedCapital) {
-        return false;
-      }
-      if (q) {
-        const haystack = normalizeText(
+  const indexedEmpresas = useMemo(
+    () =>
+      empresas.map((item) => ({
+        item,
+        productIds: new Set(item.productos.map((p) => p.producto_id)),
+        haystack: normalizeText(
           [
             item.empresa.razon_social,
             item.empresa.hechos_verificables,
@@ -113,12 +105,28 @@ export function EmpresasExplorer({
                 `${pl.nombre} ${pl.localidad} ${pl.provincia.nombre} ${pl.departamento?.nombre ?? ''} ${pl.producto.nombre}`
             ),
           ].join(' ')
-        );
-        if (!haystack.includes(q)) return false;
+        ),
+      })),
+    [empresas]
+  );
+
+  const filtered = useMemo(() => {
+    const q = normalizeText(query.trim());
+    const out: EmpresaConPlantas[] = [];
+    for (const entry of indexedEmpresas) {
+      if (selectedProductId !== null && !entry.productIds.has(selectedProductId)) {
+        continue;
       }
-      return true;
-    });
-  }, [empresas, selectedProductId, selectedCapital, query]);
+      if (selectedCapital !== 'todos' && entry.item.empresa.tipo_capital !== selectedCapital) {
+        continue;
+      }
+      if (q && !entry.haystack.includes(q)) {
+        continue;
+      }
+      out.push(entry.item);
+    }
+    return out;
+  }, [indexedEmpresas, selectedProductId, selectedCapital, query]);
 
   const totalPlantasFiltradas = useMemo(
     () => filtered.reduce((acc, item) => acc + item.plantas.length, 0),

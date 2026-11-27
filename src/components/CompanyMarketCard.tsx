@@ -1,3 +1,4 @@
+import { memo, useMemo } from 'react';
 import { Globe, Lock, RefreshCw, TrendingDown, TrendingUp } from 'lucide-react';
 import {
   computeValuationArsUsd,
@@ -34,7 +35,7 @@ interface CompanyMarketCardProps {
   dolarCasa: DolarSelector;
 }
 
-export function CompanyMarketCard({
+export const CompanyMarketCard = memo(function CompanyMarketCard({
   mercado,
   tiposCambio,
   dolarCasa,
@@ -171,7 +172,7 @@ export function CompanyMarketCard({
       </div>
     </div>
   );
-}
+});
 
 interface StandaloneCompanyMarketProps {
   empresaId: string;
@@ -196,7 +197,10 @@ export function StandaloneCompanyMarket({
     refreshNow,
   } = useLiveMarket(initialSnapshot);
 
-  const mercado = empresasMercado.find((e) => e.empresa_id === empresaId);
+  const mercado = useMemo(
+    () => empresasMercado.find((e) => e.empresa_id === empresaId),
+    [empresasMercado, empresaId]
+  );
   if (!mercado) return null;
 
   return (

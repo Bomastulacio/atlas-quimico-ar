@@ -41,23 +41,31 @@ const pctCobertura = Math.round(
 );
 ---
 
-<BaseLayout title="Atlas Químico Argentino">
+<BaseLayout
+  title="Atlas Químico Argentino"
+  preloadImage={{ href: '/images/hero-atlas-industria.webp', type: 'image/webp' }}
+>
   {/* Encabezado a ancho completo: transparente sobre el hero y piedra frosted al hacer scroll */}
-  <SiteHeader client:load variant="hero" searchItems={searchItems} currentPath="/" />
+  <SiteHeader client:idle variant="hero" searchItems={searchItems} currentPath="/" />
 
   {/* Portada editorial a sangre desde y = 0 con fotografía industrial y espacio negativo para el titular */}
   <section
     aria-label="Presentación del Atlas Químico Argentino"
     class="relative flex min-h-[540px] items-center overflow-hidden bg-[#0D1117] text-white sm:min-h-[600px] lg:min-h-[650px]"
   >
-    <img
-      src="/images/hero-atlas-industria.jpg"
-      alt=""
-      aria-hidden="true"
-      fetchpriority="high"
-      decoding="async"
-      class="pointer-events-none absolute inset-0 h-full w-full object-cover object-center opacity-90"
-    />
+    <picture class="pointer-events-none absolute inset-0 h-full w-full">
+      <source srcset="/images/hero-atlas-industria.webp" type="image/webp" />
+      <img
+        src="/images/hero-atlas-industria.jpg"
+        alt=""
+        aria-hidden="true"
+        width="1376"
+        height="768"
+        fetchpriority="high"
+        decoding="async"
+        class="h-full w-full object-cover object-center opacity-90"
+      />
+    </picture>
 
     {/* Scrims suaves para lectura AAA del header y la tipografía sobre la fotografía */}
     <div
@@ -113,7 +121,7 @@ const pctCobertura = Math.round(
     {/* Sección interactiva de cadenas y explorador paso a paso */}
     <section id="procesos" class="mt-24 scroll-mt-24">
       <ProcessDeckPreview
-        client:load
+        client:visible={{ rootMargin: '250px' }}
         productos={productos}
         procesosVerificados={procesosVerificados}
         chainSummaries={chainSummaries}

@@ -4,12 +4,20 @@ import '@/styles/global.css';
 interface Props {
   title: string;
   description?: string;
+  preloadImage?: {
+    href: string;
+    type?: string;
+  };
 }
 
 const {
   title,
   description = 'Atlas productivo e industrial de Argentina con foco en procesos químicos, comercio exterior y fuentes oficiales verificables.',
+  preloadImage,
 } = Astro.props;
+
+const GOOGLE_FONTS_URL =
+  'https://fonts.googleapis.com/css2?family=Inter:wght@400;500&family=Space+Grotesk:wght@400;500&display=swap';
 ---
 
 <!doctype html>
@@ -19,12 +27,27 @@ const {
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="description" content={description} />
     <title>{title}</title>
+    {preloadImage && (
+      <link
+        rel="preload"
+        as="image"
+        href={preloadImage.href}
+        type={preloadImage.type}
+        fetchpriority="high"
+      />
+    )}
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="preload" as="style" href={GOOGLE_FONTS_URL} />
     <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&family=Space+Grotesk:wght@400;500&display=swap"
+      href={GOOGLE_FONTS_URL}
       rel="stylesheet"
+      media="print"
+      onload="this.setAttribute('media','all')"
     />
+    <noscript>
+      <link href={GOOGLE_FONTS_URL} rel="stylesheet" />
+    </noscript>
   </head>
   <body class="selection:bg-cobalt selection:text-white">
     <slot />

@@ -4,7 +4,7 @@ import { ArrowRight } from 'lucide-react';
 import type { Producto } from '@/schemas';
 import type { ChainCardSummary, ProcesoCompleto } from '@/data';
 import { ProductIcon } from './ProductIcon';
-import { getCategoryAccent } from './ArgentinaMapExplorer';
+import { getCategoryAccent } from '@/lib/categoryAccent';
 
 interface ProcessDeckPreviewProps {
   productos: Producto[];

@@ -10,9 +10,12 @@ import type {
   MapaProvinciaResumen,
   ProvinciasFeatureCollection,
 } from '@/data';
+import { getCategoryAccent } from '@/lib/categoryAccent';
 import { MapProductTotem3D } from './MapProductTotem3D';
 import { ProductIcon } from './ProductIcon';
 import { ProvinceSidePanel } from './ProvinceSidePanel';
+
+export { getCategoryAccent };
 
 interface ArgentinaMapExplorerProps {
   continentalGeo: ProvinciasFeatureCollection;
@@ -53,23 +56,6 @@ const PIN_OFFSETS: Record<string, [number, number]> = {
   '22': [2, 2],
   '94': [-22, -4],
 };
-
-export function getCategoryAccent(categoria: Producto['categoria']): string {
-  switch (categoria) {
-    case 'metalurgia':
-      return '#0A42E0';
-    case 'mineria_quimica':
-      return '#0B7A53';
-    case 'fertilizantes':
-      return '#0A42E0';
-    case 'agroindustria':
-      return '#C86A11';
-    case 'petroquimica':
-      return '#D93025';
-    case 'bioenergia':
-      return '#0B7A53';
-  }
-}
 
 function getExtrusionSideColor(hex: string): string {
   switch (hex) {
@@ -459,12 +445,12 @@ export function ArgentinaMapExplorer({
     };
   }, [dataById, deptById, userLocked2D, zoomToProvincia, zoomToDepartamento]);
 
-  const resetView = () => {
+  const resetView = useCallback(() => {
     setView({ zoom: 1, x: 0, y: 0 });
     setSelectedDeptId(null);
     setSelectedId(null);
     setIs3D(false);
-  };
+  }, []);
 
   const handleStepZoom = (factor: number) => {
     setView((prev) => {
@@ -567,46 +553,62 @@ export function ArgentinaMapExplorer({
   };
 
   // Drill-down progresivo por click: 1° click -> Provincia | 2° click -> Departamento (zoom profundo + 3D)
-  const handleSelectProvincia = (provinciaId: string | null) => {
-    if (dragRef.current.moved) return;
+  const handleSelectProvincia = useCallback(
+    (provinciaId: string | null) => {
+      if (dragRef.current.moved) return;
 
-    if (provinciaId === null) {
-      resetView();
-      return;
-    }
+      if (provinciaId === null) {
+        resetView();
+        return;
+      }
 
-    // Si estaba en un departamento de esta provincia, un click sobre el resto de la provincia sube al nivel provincial
-    if (provinciaId === selectedId && selectedDeptId !== null) {
+      // Si estaba en un departamento de esta provincia, un click sobre el resto de la provincia sube al nivel provincial
+      if (provinciaId === selectedId && selectedDeptId !== null) {
+        setSelectedDeptId(null);
+        zoomToProvincia(provinciaId);
+        return;
+      }
+
+      if (provinciaId === selectedId && selectedDeptId === null) {
+        resetView();
+        return;
+      }
+
       setSelectedDeptId(null);
+      setSelectedId(provinciaId);
+      if (!userLocked2D) setIs3D(true);
       zoomToProvincia(provinciaId);
-      return;
-    }
+    },
+    [resetView, selectedId, selectedDeptId, userLocked2D, zoomToProvincia]
+  );
 
-    if (provinciaId === selectedId && selectedDeptId === null) {
-      resetView();
-      return;
-    }
+  const handleSelectDepartamento = useCallback(
+    (deptId: string | null) => {
+      if (dragRef.current.moved) return;
+      if (deptId === null) {
+        setSelectedDeptId(null);
+        if (selectedId) zoomToProvincia(selectedId);
+        return;
+      }
+      const info = deptById.get(deptId);
+      if (!info) return;
+      setSelectedId(info.provincia.provincia_id);
+      setSelectedDeptId(deptId);
+      if (!userLocked2D) setIs3D(true);
+      zoomToDepartamento(deptId);
+    },
+    [deptById, selectedId, userLocked2D, zoomToProvincia, zoomToDepartamento]
+  );
 
-    setSelectedDeptId(null);
-    setSelectedId(provinciaId);
-    if (!userLocked2D) setIs3D(true);
-    zoomToProvincia(provinciaId);
-  };
+  const handleZoomToSelected = useMemo(
+    () => (selectedId ? () => zoomToProvincia(selectedId, 1.25) : undefined),
+    [selectedId, zoomToProvincia]
+  );
 
-  const handleSelectDepartamento = (deptId: string | null) => {
-    if (dragRef.current.moved) return;
-    if (deptId === null) {
-      setSelectedDeptId(null);
-      if (selectedId) zoomToProvincia(selectedId);
-      return;
-    }
-    const info = deptById.get(deptId);
-    if (!info) return;
-    setSelectedId(info.provincia.provincia_id);
-    setSelectedDeptId(deptId);
-    if (!userLocked2D) setIs3D(true);
-    zoomToDepartamento(deptId);
-  };
+  const handleZoomToDepartamento = useMemo(
+    () => (selectedDeptId ? () => zoomToDepartamento(selectedDeptId, 1.35) : undefined),
+    [selectedDeptId, zoomToDepartamento]
+  );
 
   const handleProvincePointerMove = (
     e: React.PointerEvent,
@@ -1897,10 +1899,8 @@ export function ArgentinaMapExplorer({
               allProvincias={provinciasData}
               onSelectProvincia={handleSelectProvincia}
               onSelectDepartamento={handleSelectDepartamento}
-              onZoomToSelected={selectedId ? () => zoomToProvincia(selectedId, 1.25) : undefined}
-              onZoomToDepartamento={
-                selectedDeptId ? () => zoomToDepartamento(selectedDeptId, 1.35) : undefined
-              }
+              onZoomToSelected={handleZoomToSelected}
+              onZoomToDepartamento={handleZoomToDepartamento}
               esEjemplo={esEjemplo}
               geoManifest={geoManifest}
               categoryAccent={getCategoryAccent}

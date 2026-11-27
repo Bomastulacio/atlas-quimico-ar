@@ -155,7 +155,7 @@ const ESTADO_PLANTA_LABEL: Record<string, string> = {
 
 <BaseLayout title={view.seoTitle} description={view.seoDescription}>
   <SiteHeader
-    client:load
+    client:idle
     variant="solid"
     searchItems={searchItems}
     currentPath={`/productos/${ficha.producto.producto_id}`}
@@ -249,7 +249,7 @@ const ESTADO_PLANTA_LABEL: Record<string, string> = {
 
         {slug === 'aluminio' && (
           <AluarProcessAnatomy
-            client:load
+            client:visible={{ rootMargin: '250px' }}
             pasos={procesoPrincipal.pasos}
             produccionLiquidaT={ultimaProdVal}
             aluminaImportadaT={aluminaVolVal}
@@ -258,7 +258,7 @@ const ESTADO_PLANTA_LABEL: Record<string, string> = {
         )}
         {slug === 'algodon' && (
           <AlgodonProcessAnatomy
-            client:load
+            client:visible={{ rootMargin: '250px' }}
             pasos={procesoPrincipal.pasos}
             produccionChacoT={prodChacoVal}
             exportacionFibraT={expFibraVal}
@@ -266,21 +266,21 @@ const ESTADO_PLANTA_LABEL: Record<string, string> = {
         )}
         {slug === 'metanol' && (
           <MetanolProcessAnatomy
-            client:load
+            client:visible={{ rootMargin: '250px' }}
             pasos={procesoPrincipal.pasos}
             exportVol2023T={expMetanolVol2023T}
           />
         )}
         {slug === 'polipropileno' && (
           <PolipropilenoProcessAnatomy
-            client:load
+            client:visible={{ rootMargin: '250px' }}
             pasos={procesoPrincipal.pasos}
             exportVol2024T={ultimoComexVolExp}
           />
         )}
         {slug === 'bioetanol-maiz' && (
           <BioetanolMaizProcessAnatomy
-            client:load
+            client:visible={{ rootMargin: '250px' }}
             pasos={procesoPrincipal.pasos}
             maizCordobaT={maizCordobaVal}
             bioetanolPaisM3={etanolNacionalM3}
@@ -288,7 +288,7 @@ const ESTADO_PLANTA_LABEL: Record<string, string> = {
         )}
         {slug === 'bioetanol-cana' && (
           <BioetanolCanaProcessAnatomy
-            client:load
+            client:visible={{ rootMargin: '250px' }}
             pasos={procesoPrincipal.pasos}
             bioetanolCanaM3={etanolNacionalM3}
             azucarExp2024T={expAzucarVol2024T}
@@ -296,21 +296,21 @@ const ESTADO_PLANTA_LABEL: Record<string, string> = {
         )}
         {slug === 'soda-solvay' && (
           <SodaSolvayProcessAnatomy
-            client:load
+            client:visible={{ rootMargin: '250px' }}
             pasos={procesoPrincipal.pasos}
             importUsd2024M={sodaImp2024UsdM}
           />
         )}
         {slug === 'cal-industrial' && (
           <CalIndustrialProcessAnatomy
-            client:load
+            client:visible={{ rootMargin: '250px' }}
             pasos={procesoPrincipal.pasos}
             exportVol2024T={ultimoComexVolExp}
           />
         )}
         {slug === 'oro-plata' && (
           <OroPlataProcessAnatomy
-            client:load
+            client:visible={{ rootMargin: '250px' }}
             pasos={procesoPrincipal.pasos}
             prodPlata2024T={ultimaProdVal}
             exportOro2024UsdM={oroExp2024UsdM}
@@ -318,31 +318,31 @@ const ESTADO_PLANTA_LABEL: Record<string, string> = {
         )}
         {slug === 'celulosa-kraft' && (
           <CelulosaKraftProcessAnatomy
-            client:load
+            client:visible={{ rootMargin: '250px' }}
             pasos={procesoPrincipal.pasos}
             importVol2024T={ultimoComexVolImp}
           />
         )}
         {slug === 'glp-gas-natural' && (
           <GlpGasNaturalProcessAnatomy
-            client:load
+            client:visible={{ rootMargin: '250px' }}
             pasos={procesoPrincipal.pasos}
             exportPropano2024T={glpPropanoExp2024T}
           />
         )}
         {slug === 'sal-industrial' && (
           <SalIndustrialProcessAnatomy
-            client:load
+            client:visible={{ rootMargin: '250px' }}
             pasos={procesoPrincipal.pasos}
             exportVol2024T={ultimoComexVolExp}
           />
         )}
         {slug === 'cemento-clinker' && (
-          <CementoClinkerProcessAnatomy client:load pasos={procesoPrincipal.pasos} />
+          <CementoClinkerProcessAnatomy client:visible={{ rootMargin: '250px' }} pasos={procesoPrincipal.pasos} />
         )}
         {slug === 'citricos-limoneno' && (
           <CitricosLimonenoProcessAnatomy
-            client:load
+            client:visible={{ rootMargin: '250px' }}
             pasos={procesoPrincipal.pasos}
             exportJugo2024T={jugoNaranjaExp2024T}
           />
@@ -369,12 +369,12 @@ const ESTADO_PLANTA_LABEL: Record<string, string> = {
 
       {ficha.procesos.length > 1 ? (
         <ProcessFlowDiagram
-          client:load
+          client:visible={{ rootMargin: '300px' }}
           procesos={ficha.procesos}
           procesoMetaById={view.procesoMetaById}
         />
       ) : (
-        <ProcessFlowDiagram client:load procesoCompleto={procesoPrincipal} />
+        <ProcessFlowDiagram client:visible={{ rootMargin: '300px' }} procesoCompleto={procesoPrincipal} />
       )}
     </section>
 
