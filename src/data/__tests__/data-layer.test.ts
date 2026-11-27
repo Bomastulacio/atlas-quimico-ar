@@ -337,4 +337,34 @@ describe('Capa única de acceso a datos (src/data)', () => {
     expect(ypf.mercado?.ticker).toBe('YPF');
     expect(ypf.fuentesCitadas.some((f) => f.fuente_id === 'ypf-sec-20f-2025')).toBe(true);
   });
+
+  it('valida 26 CUITs verificados con módulo 11, trazabilidad BCRA y 3 sin_datos legales', () => {
+    const empresas = getEmpresasConPlantas().map((e) => e.empresa);
+    const conCuit = empresas.filter((e) => e.cuit !== null);
+    const sinCuit = empresas.filter((e) => e.cuit === null).map((e) => e.empresa_id).sort();
+
+    expect(conCuit).toHaveLength(26);
+    expect(sinCuit).toEqual([
+      'grupo-san-francisco-sa',
+      'polo-citricola-concordia',
+      'rio-tinto-litio-ar',
+    ]);
+
+    const weights = [5, 4, 3, 2, 7, 6, 5, 4, 3, 2];
+    for (const emp of conCuit) {
+      expect(emp.cuit).toMatch(/^\d{2}-\d{8}-\d$/);
+      const digits = emp.cuit!.replaceAll('-', '').split('').map(Number);
+      const sum = weights.reduce((acc, w, idx) => acc + digits[idx] * w, 0);
+      const rem = 11 - (sum % 11);
+      const checkDigit = rem === 11 ? 0 : rem === 10 ? 9 : rem;
+      expect(digits[10]).toBe(checkDigit);
+    }
+
+    const druetta = getFichaEmpresa('druetta-hnos-sa')!;
+    expect(druetta.empresa.cuit).toBe('30-65543889-7');
+    expect(druetta.fuentesCitadas.some((f) => f.fuente_id === 'bcra-cuit-druetta-hnos-sa')).toBe(true);
+
+    expect(getFichaEmpresa('molinos-agro-sa')?.empresa.cuit).toBe('30-71511877-3');
+    expect(getFichaEmpresa('dow-pbbpolisur')?.empresa.cuit).toBe('30-56025419-5');
+  });
 });

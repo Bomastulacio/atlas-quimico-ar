@@ -945,6 +945,10 @@ export function getFichaEmpresa(empresaId: string): FichaEmpresa | undefined {
   const procSeen = new Set<string>();
   const procesosUnicos: Proceso[] = [];
   const citedIds = new Set<string>([base.empresa.procedencia.fuente_id]);
+  const bcraCuitFuenteId = `bcra-cuit-${empresaId}`;
+  if (idx.fuenteById.has(bcraCuitFuenteId)) {
+    citedIds.add(bcraCuitFuenteId);
+  }
 
   for (const pl of base.plantas) {
     citedIds.add(pl.procedencia.fuente_id);
@@ -1245,15 +1249,15 @@ export function getComparadorProductosData(): ComparadorProductoItem[] {
       producto,
       proceso: procCompleto
         ? {
-            proceso_id: procCompleto.proceso.proceso_id,
-            nombre: procCompleto.proceso.nombre,
-            ruta_tecnologica: procCompleto.proceso.ruta_tecnologica,
-            reaccion_global: procCompleto.proceso.reaccion_global,
-            energia_especifica: procCompleto.proceso.energia_especifica,
-            pasosCount: procCompleto.pasos.length,
-            fuente: procCompleto.proceso.procedencia.fuente,
-            anio: procCompleto.proceso.procedencia.anio,
-          }
+          proceso_id: procCompleto.proceso.proceso_id,
+          nombre: procCompleto.proceso.nombre,
+          ruta_tecnologica: procCompleto.proceso.ruta_tecnologica,
+          reaccion_global: procCompleto.proceso.reaccion_global,
+          energia_especifica: procCompleto.proceso.energia_especifica,
+          pasosCount: procCompleto.pasos.length,
+          fuente: procCompleto.proceso.procedencia.fuente,
+          anio: procCompleto.proceso.procedencia.anio,
+        }
         : null,
       ultimoProduccion,
       ultimoComexUsd,
