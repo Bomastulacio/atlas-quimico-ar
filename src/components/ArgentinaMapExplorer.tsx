@@ -2073,8 +2073,8 @@ export function ArgentinaMapExplorer({
                   Depto con datos ({departamentosData.length})
                 </span>
                 <span className="inline-flex items-center gap-2">
-                  <span className="inline-block h-2.5 w-2.5 rotate-45 bg-signal-red" />
-                  Planta / modelo 3D al acercar
+                  <span className="inline-block h-3 w-3 rounded-xs bg-cobalt ring-1 ring-ink/20" />
+                  Emblema de fábrica al acercar
                 </span>
               </div>
               <span className="tabular-nums">Fuente cartográfica: IGN / Georef v2.0</span>
