@@ -32,6 +32,7 @@ const TABS = [
   'conexiones_proceso',
   'empresas',
   'plantas',
+  'unidades_planta',
   'produccion',
   'comercio_exterior',
 ] as const;
@@ -271,6 +272,7 @@ async function main() {
   const empresas = raw.empresas.map((r, i) => ({
     empresa_id: String(r.empresa_id),
     razon_social: String(r.razon_social),
+    cuit: r.cuit ? String(r.cuit).trim() : null,
     tipo_capital: String(r.tipo_capital),
     sitio_web_oficial: r.sitio_web_oficial ? String(r.sitio_web_oficial) : null,
     hechos_verificables: String(r.hechos_verificables),
@@ -296,6 +298,26 @@ async function main() {
         r.capacidad_unidad,
         procedencia,
         `plantas[${i}].capacidad`
+      ),
+      procedencia,
+    };
+  });
+
+  const unidades_planta = raw.unidades_planta.map((r, i) => {
+    const procedencia = resolveProvenance(r, fuentesMap, `unidades_planta[${i}]`);
+    return {
+      unidad_id: String(r.unidad_id),
+      planta_id: String(r.planta_id),
+      proceso_id: String(r.proceso_id),
+      producto_id: String(r.producto_id),
+      nombre_unidad: String(r.nombre_unidad),
+      rol_unidad: String(r.rol_unidad),
+      capacidad: buildValorMedido(
+        r.capacidad_valor,
+        r.capacidad_estado,
+        r.capacidad_unidad,
+        procedencia,
+        `unidades_planta[${i}].capacidad`
       ),
       procedencia,
     };
@@ -360,6 +382,7 @@ async function main() {
     ...conexiones_proceso.map((r) => r.procedencia.fuente_id),
     ...empresas.map((r) => r.procedencia.fuente_id),
     ...plantas.map((r) => r.procedencia.fuente_id),
+    ...unidades_planta.map((r) => r.procedencia.fuente_id),
     ...produccion.map((r) => r.procedencia.fuente_id),
     ...comercio_exterior.map((r) => r.procedencia.fuente_id),
   ]);
@@ -378,6 +401,7 @@ async function main() {
     conexiones_proceso,
     empresas,
     plantas,
+    unidades_planta,
     produccion,
     comercio_exterior,
   };
@@ -427,20 +451,25 @@ async function main() {
   );
 
   // Sincronizar también pfd_procesos cuando la tabla exista y tenga filas
-  const pfdRows = await fetchTable(supabaseUrl, supabaseKey, 'pfd_procesos');
-  if (pfdRows.length > 0) {
-    const cleanedPfds = pfdRows.map(({ updated_at: _u, ...rest }) => rest);
-    const parsedPfds = PfdDatasetSchema.parse(cleanedPfds);
-    await fs.writeFile(
-      path.join(VALIDATED_DIR, 'pfd_procesos.json'),
-      `${JSON.stringify(parsedPfds, null, 2)}\n`,
-      'utf-8'
+  try {
+    const pfdRows = await fetchTable(supabaseUrl, supabaseKey, 'pfd_procesos');
+    if (pfdRows.length > 0) {
+      const cleanedPfds = pfdRows.map(({ updated_at: _u, ...rest }) => rest);
+      const parsedPfds = PfdDatasetSchema.parse(cleanedPfds);
+      await fs.writeFile(
+        path.join(VALIDATED_DIR, 'pfd_procesos.json'),
+        `${JSON.stringify(parsedPfds, null, 2)}\n`,
+        'utf-8'
+      );
+    }
+    console.log(
+      `[supabase-to-json] OK — ${TABS.length} tablas + ${pfdRows.length} PFDs descargados con paginación desde Supabase y escritos en data/validated/.`
+    );
+  } catch {
+    console.log(
+      `[supabase-to-json] OK — ${TABS.length} tablas descargadas con paginación desde Supabase (pfd_procesos mantenido desde data/validated/pfd_procesos.json).`
     );
   }
-
-  console.log(
-    `[supabase-to-json] OK — ${TABS.length} tablas + ${pfdRows.length} PFDs descargados con paginación desde Supabase y escritos en data/validated/.`
-  );
 }
 
 main().catch((err) => {

@@ -18,6 +18,7 @@ import pasosProcesoRaw from '@data/pasos_proceso.json';
 import conexionesProcesoRaw from '@data/conexiones_proceso.json';
 import empresasRaw from '@data/empresas.json';
 import plantasRaw from '@data/plantas.json';
+import unidadesPlantaRaw from '@data/unidades_planta.json';
 import produccionRaw from '@data/produccion.json';
 import comercioExteriorRaw from '@data/comercio_exterior.json';
 import mercadoRaw from '@data/mercado.json';
@@ -45,6 +46,7 @@ import {
   type Producto,
   type ProductoZona,
   type Provincia,
+  type UnidadPlanta,
 } from '@/schemas';
 
 let cachedDataset: AtlasDataset | null = null;
@@ -68,6 +70,7 @@ interface DatasetIndexes {
   plantasByDepartamento: Map<string, Planta[]>;
   plantasByProducto: Map<string, Planta[]>;
   plantasByEmpresa: Map<string, Planta[]>;
+  unidadesByPlanta: Map<string, UnidadPlanta[]>;
   deptosByProvincia: Map<string, Departamento[]>;
   deptosConfiablesByProvincia: Map<string, Departamento[]>;
   produccionByProducto: Map<string, ProduccionRegistro[]>;
@@ -80,6 +83,7 @@ let cachedMercadoByEmpresaId: Map<string, EmpresaMercado> | null = null;
 let cachedProductosPorProvincia: Map<string, ProductosDeProvincia> | null = null;
 let cachedProcesosCompletos: Map<string, ProcesoCompleto> | null = null;
 let cachedFichasProducto: Map<string, FichaProducto> | null = null;
+let cachedFichasEmpresa: Map<string, FichaEmpresa> | null = null;
 let cachedMapaDepartamentos: MapaDepartamentoResumen[] | null = null;
 let cachedMapaProvincias: MapaProvinciaResumen[] | null = null;
 let cachedSearchIndex: SearchIndexItem[] | null = null;
@@ -157,6 +161,11 @@ function loadIndexes(): DatasetIndexes {
     pushToGroup(plantasByEmpresa, pl.empresa_id, pl);
   }
 
+  const unidadesByPlanta = new Map<string, UnidadPlanta[]>();
+  for (const u of ds.unidades_planta) {
+    pushToGroup(unidadesByPlanta, u.planta_id, u);
+  }
+
   const produccionByProducto = new Map<string, ProduccionRegistro[]>();
   for (const r of ds.produccion) pushToGroup(produccionByProducto, r.producto_id, r);
   for (const list of produccionByProducto.values()) list.sort((a, b) => b.anio - a.anio);
@@ -182,6 +191,7 @@ function loadIndexes(): DatasetIndexes {
     plantasByDepartamento,
     plantasByProducto,
     plantasByEmpresa,
+    unidadesByPlanta,
     deptosByProvincia,
     deptosConfiablesByProvincia,
     produccionByProducto,
@@ -232,6 +242,7 @@ function loadDataset(): AtlasDataset {
     conexiones_proceso: conexionesProcesoRaw,
     empresas: empresasRaw,
     plantas: plantasRaw,
+    unidades_planta: unidadesPlantaRaw,
     produccion: produccionRaw,
     comercio_exterior: comercioExteriorRaw,
   });
@@ -458,15 +469,6 @@ const RUTA_TERRITORIAL_FALLBACK: Record<string, Record<string, string[]>> = {
   },
 };
 
-// Mapeo declarativo planta -> procesos operados localmente (base previa a tabla N:M unidades_planta)
-const PLANTA_PROCESOS_MAP: Record<string, string[]> = {
-  'olaroz-sales-de-jujuy': ['litio-salmuera-carbonatacion'],
-  'fenix-hombre-muerto': ['litio-dle-adsorcion'],
-  'rincon-salta': ['litio-dle-adsorcion'],
-  'dow-polo-bahia-blanca': ['petroquimica-steam-cracking-polietileno'],
-  'unipar-indupa-bahia-blanca': ['petroquimica-cloro-alcali-pvc'],
-};
-
 function resolveRutasTerritorialesPorProducto(
   idx: DatasetIndexes,
   provinciaId: string,
@@ -480,13 +482,15 @@ function resolveRutasTerritorialesPorProducto(
     if (procesosProd.length === 0) continue;
 
     const validIds = new Set(procesosProd.map((p) => p.proceso_id));
-    const mappedFromPlants = plantasLocales
-      .flatMap((pl) => PLANTA_PROCESOS_MAP[pl.planta_id] ?? [])
-      .filter((id) => validIds.has(id));
+    // Resolución 100% dirigida por datos desde public.unidades_planta (preserva independencia territorial por localidad)
+    const mappedFromUnits = plantasLocales
+      .flatMap((pl) => idx.unidadesByPlanta.get(pl.planta_id) ?? [])
+      .filter((u) => u.producto_id === prodId && validIds.has(u.proceso_id))
+      .map((u) => u.proceso_id);
 
     const procesoIdsSeleccionados =
-      mappedFromPlants.length > 0
-        ? mappedFromPlants
+      mappedFromUnits.length > 0
+        ? mappedFromUnits
         : (RUTA_TERRITORIAL_FALLBACK[prodId]?.[provinciaId] ?? procesosProd.map((p) => p.proceso_id));
 
     const dedupIds = [...new Set(procesoIdsSeleccionados)];
@@ -731,9 +735,9 @@ export function getSearchIndex(): SearchIndexItem[] {
       id: `empresa-${emp.empresa_id}`,
       kind: 'empresa',
       title: emp.razon_social,
-      subtitle: `Capital ${emp.tipo_capital} · ${empProvs.join(', ') || 'Argentina'}`,
-      href: `/empresas#${emp.empresa_id}`,
-      keywords: `${emp.razon_social} ${emp.tipo_capital} ${emp.hechos_verificables} ${empProvs.join(' ')} ${empProds.join(' ')}`,
+      subtitle: `${emp.cuit ? `CUIT ${emp.cuit} · ` : ''}Capital ${emp.tipo_capital} · ${empProvs.join(', ') || 'Argentina'}`,
+      href: `/empresas/${emp.empresa_id}`,
+      keywords: `${emp.razon_social} ${emp.cuit ?? ''} ${emp.tipo_capital} ${emp.hechos_verificables} ${empProvs.join(' ')} ${empProds.join(' ')}`,
     });
   }
 
@@ -836,10 +840,16 @@ export function getChainCardSummaries(): ChainCardSummary[] {
   return cachedChainCardSummaries;
 }
 
+export interface UnidadPlantaDetalle extends UnidadPlanta {
+  proceso: Proceso;
+  producto: Producto;
+}
+
 export interface PlantaConContexto extends Planta {
   provincia: Provincia;
   departamento: Departamento | null;
   producto: Producto;
+  unidades: UnidadPlantaDetalle[];
 }
 
 export interface EmpresaConPlantas {
@@ -847,7 +857,21 @@ export interface EmpresaConPlantas {
   plantas: PlantaConContexto[];
   productos: Producto[];
   provincias: Provincia[];
+  unidadesCount: number;
   mercado: EmpresaMercado | null;
+}
+
+export interface FichaEmpresaProvinciaGrupo {
+  provincia: Provincia;
+  plantas: PlantaConContexto[];
+  productos: Producto[];
+  unidadesCount: number;
+}
+
+export interface FichaEmpresa extends EmpresaConPlantas {
+  complejosPorProvincia: FichaEmpresaProvinciaGrupo[];
+  procesosUnicos: Proceso[];
+  fuentesCitadas: Fuente[];
 }
 
 export function getEmpresasConPlantas(): EmpresaConPlantas[] {
@@ -864,18 +888,31 @@ export function getEmpresasConPlantas(): EmpresaConPlantas[] {
         const producto = idx.productoById.get(pl.producto_id);
         if (!provincia || !producto) return [];
         const departamento = pl.departamento_id ? (idx.departamentoById.get(pl.departamento_id) ?? null) : null;
-        return [{ ...pl, provincia, departamento, producto }];
+        const unidades: UnidadPlantaDetalle[] = (idx.unidadesByPlanta.get(pl.planta_id) ?? []).flatMap((u) => {
+          const proceso = idx.procesoById.get(u.proceso_id);
+          const uProd = idx.productoById.get(u.producto_id);
+          return proceso && uProd ? [{ ...u, proceso, producto: uProd }] : [];
+        });
+        return [{ ...pl, provincia, departamento, producto, unidades }];
       });
 
       const prodSeen = new Set<string>();
       const productos: Producto[] = [];
       const provSeen = new Set<string>();
       const provincias: Provincia[] = [];
+      let unidadesCount = 0;
 
       for (const pl of plantas) {
+        unidadesCount += pl.unidades.length;
         if (!prodSeen.has(pl.producto.producto_id)) {
           prodSeen.add(pl.producto.producto_id);
           productos.push(pl.producto);
+        }
+        for (const u of pl.unidades) {
+          if (!prodSeen.has(u.producto.producto_id)) {
+            prodSeen.add(u.producto.producto_id);
+            productos.push(u.producto);
+          }
         }
         if (!provSeen.has(pl.provincia.provincia_id)) {
           provSeen.add(pl.provincia.provincia_id);
@@ -888,10 +925,76 @@ export function getEmpresasConPlantas(): EmpresaConPlantas[] {
         plantas,
         productos,
         provincias,
+        unidadesCount,
         mercado: mercadoMap.get(empresa.empresa_id) ?? null,
       };
     });
   return cachedEmpresasConPlantas;
+}
+
+export function getFichaEmpresa(empresaId: string): FichaEmpresa | undefined {
+  if (!cachedFichasEmpresa) cachedFichasEmpresa = new Map();
+  const cached = cachedFichasEmpresa.get(empresaId);
+  if (cached) return cached;
+
+  const base = getEmpresasConPlantas().find((e) => e.empresa.empresa_id === empresaId);
+  if (!base) return undefined;
+
+  const idx = loadIndexes();
+  const byProv = new Map<string, FichaEmpresaProvinciaGrupo>();
+  const procSeen = new Set<string>();
+  const procesosUnicos: Proceso[] = [];
+  const citedIds = new Set<string>([base.empresa.procedencia.fuente_id]);
+
+  for (const pl of base.plantas) {
+    citedIds.add(pl.procedencia.fuente_id);
+    if (pl.capacidad?.procedencia?.fuente_id) {
+      citedIds.add(pl.capacidad.procedencia.fuente_id);
+    }
+
+    let grp = byProv.get(pl.provincia.provincia_id);
+    if (!grp) {
+      grp = {
+        provincia: pl.provincia,
+        plantas: [],
+        productos: [],
+        unidadesCount: 0,
+      };
+      byProv.set(pl.provincia.provincia_id, grp);
+    }
+    grp.plantas.push(pl);
+    grp.unidadesCount += pl.unidades.length;
+    if (!grp.productos.some((p) => p.producto_id === pl.producto.producto_id)) {
+      grp.productos.push(pl.producto);
+    }
+
+    for (const u of pl.unidades) {
+      citedIds.add(u.procedencia.fuente_id);
+      if (!procSeen.has(u.proceso.proceso_id)) {
+        procSeen.add(u.proceso.proceso_id);
+        procesosUnicos.push(u.proceso);
+      }
+      if (!grp.productos.some((p) => p.producto_id === u.producto.producto_id)) {
+        grp.productos.push(u.producto);
+      }
+    }
+  }
+
+  const complejosPorProvincia = [...byProv.values()].sort((a, b) =>
+    a.provincia.nombre.localeCompare(b.provincia.nombre, 'es')
+  );
+  const fuentesCitadas = [...citedIds]
+    .map((id) => idx.fuenteById.get(id))
+    .filter((f): f is Fuente => Boolean(f));
+
+  const ficha: FichaEmpresa = {
+    ...base,
+    complejosPorProvincia,
+    procesosUnicos,
+    fuentesCitadas,
+  };
+  cachedFichasEmpresa.set(empresaId, ficha);
+  return ficha;
 }
 
 export interface ProvinciaCoberturaItem {

@@ -91,12 +91,12 @@ const WORLD_SCALE = 0.042;
 const CENTER_PX = 285;
 const CENTER_PY = 378;
 
-// Alturas arquitectónicas proporcionadas: en reposo en color al ras; al hover sube apenas; al click emerge un podio limpio
-const H_NEIGHBOR_DIM = 0.12;
-const H_STONE_BASE = 0.18;
-const H_COLOR_REST = 0.2;
-const H_HOVER_SUBTLE = 0.28;
-const H_CLICK_SELECTED = 0.48;
+// Alturas contenidas: en reposo queda en color al ras; al hover sube apenas; al click recién emerge el bloque 3D
+const H_NEIGHBOR_DIM = 0.14;
+const H_STONE_BASE = 0.22;
+const H_COLOR_REST = 0.25;
+const H_HOVER_SUBTLE = 0.36;
+const H_CLICK_SELECTED = 0.76;
 
 // Caché en memoria a nivel módulo de geometrías trianguladas para no recalcular ExtrudeGeometry al cambiar de vista
 const provBuiltGeoCache = new Map<string, BuiltGeoEntry>();
@@ -181,6 +181,7 @@ function shortPlantSpecialty(pl: PlantaConEmpresa, prod: Producto): string {
   const n = pl.nombre.toLowerCase();
   if (n.includes('unipar')) return 'Cloro-PVC';
   if (n.includes('dow')) return 'Polietileno';
+  if (n.includes('cie') || n.includes('ensenada')) return 'BTX Ensenada';
   if (n.includes('fenix') || n.includes('fénix') || n.includes('rincón') || n.includes('rincon')) {
     return 'Litio DLE';
   }
@@ -558,21 +559,21 @@ export const ArgentinaMap3DStage = memo(function ArgentinaMap3DStage({
     const deptFeatures =
       selectedId !== null && provinceShard && provinceShard.provincia_id === selectedId
         ? provinceShard.features.map((f) => ({
+          id: f.properties.id,
+          nombre: f.properties.nombre,
+          provinciaId: f.properties.provincia_id,
+          activo: f.properties.activo,
+          geometry: f.geometry,
+        }))
+        : departamentosGeo.features
+          .filter((f) => selectedId === null || showAllDeptos || f.properties.provincia_id === selectedId)
+          .map((f) => ({
             id: f.properties.id,
             nombre: f.properties.nombre,
             provinciaId: f.properties.provincia_id,
-            activo: f.properties.activo,
+            activo: true,
             geometry: f.geometry,
-          }))
-        : departamentosGeo.features
-            .filter((f) => selectedId === null || showAllDeptos || f.properties.provincia_id === selectedId)
-            .map((f) => ({
-              id: f.properties.id,
-              nombre: f.properties.nombre,
-              provinciaId: f.properties.provincia_id,
-              activo: true,
-              geometry: f.geometry,
-            }));
+          }));
 
     const contextCandidates: OverlayDescriptor[] = [];
 
@@ -907,18 +908,18 @@ export const ArgentinaMap3DStage = memo(function ArgentinaMap3DStage({
         const candidatesOffsets: Array<[number, number]> =
           desc.kind === 'plant'
             ? [
-                [baseDx, baseDy],
-                [baseDx, baseDy - 24],
-                [baseDx, baseDy + 26],
-                [baseDx - 44, baseDy - 10],
-                [baseDx + 44, baseDy - 10],
-              ]
+              [baseDx, baseDy],
+              [baseDx, baseDy - 24],
+              [baseDx, baseDy + 26],
+              [baseDx - 44, baseDy - 10],
+              [baseDx + 44, baseDy - 10],
+            ]
             : desc.kind === 'dept-active'
               ? [
-                  [0, baseDy],
-                  [0, -18],
-                  [0, 32],
-                ]
+                [0, baseDy],
+                [0, -18],
+                [0, 32],
+              ]
               : [[baseDx, baseDy]];
 
         let chosenX = ax + baseDx;
@@ -1226,7 +1227,7 @@ export const ArgentinaMap3DStage = memo(function ArgentinaMap3DStage({
           }
         } else {
           // Partido vecino sin plantas: piedra clara; al pasar el mouse levanta una pizca sutil
-          rec.targetH = isHov ? 0.23 : H_STONE_BASE;
+          rec.targetH = isHov ? 0.29 : H_STONE_BASE;
           rec.topMat.color.set(isHov ? '#E6E5DD' : '#F2F1EC');
           rec.sideMat.color.set(isHov ? '#B4BBC7' : '#C8CDD6');
           rec.edgeMat.color.set(isHov ? '#1C1E22' : '#A0A7B4');
@@ -1748,9 +1749,8 @@ export const ArgentinaMap3DStage = memo(function ArgentinaMap3DStage({
   return (
     <div
       ref={stageRef}
-      className={`relative flex w-full items-center justify-center overflow-hidden bg-sea-basin ${
-        isFullscreen ? 'h-screen' : 'h-[520px] sm:h-[640px] lg:h-[720px]'
-      }`}
+      className={`relative flex w-full items-center justify-center overflow-hidden bg-sea-basin ${isFullscreen ? 'h-screen' : 'h-[520px] sm:h-[640px] lg:h-[720px]'
+        }`}
     >
       <canvas
         ref={canvasRef}
@@ -1829,11 +1829,10 @@ export const ArgentinaMap3DStage = memo(function ArgentinaMap3DStage({
                   onSelectPlanta(lbl.planta!);
                 }}
                 style={{ visibility: 'hidden', willChange: 'transform' }}
-                className={`group pointer-events-auto absolute left-0 top-0 inline-flex cursor-pointer items-center gap-2 rounded-lg border p-1 pr-2.5 text-left transition-colors duration-150 ${
-                  lbl.isSelected
-                    ? 'border-ink bg-ink text-white shadow-lg ring-2 ring-white'
-                    : 'border-ink/20 bg-white/96 text-ink shadow-[0_3px_10px_rgba(17,18,20,0.12)] hover:border-ink hover:bg-ink hover:text-white'
-                }`}
+                className={`group pointer-events-auto absolute left-0 top-0 inline-flex cursor-pointer items-center gap-2 rounded-lg border p-1 pr-2.5 text-left transition-colors duration-150 ${lbl.isSelected
+                  ? 'border-ink bg-ink text-white shadow-lg ring-2 ring-white'
+                  : 'border-ink/20 bg-white/96 text-ink shadow-[0_3px_10px_rgba(17,18,20,0.12)] hover:border-ink hover:bg-ink hover:text-white'
+                  }`}
               >
                 {/* Emblema industrial vectorial limpio (cero mallas 3D en GPU) */}
                 <span
@@ -1846,9 +1845,8 @@ export const ArgentinaMap3DStage = memo(function ArgentinaMap3DStage({
                   <span className="text-[11.5px] font-semibold tracking-[-0.01em]">{lbl.title}</span>
                   {lbl.specialty && (
                     <span
-                      className={`text-[10px] font-medium ${
-                        lbl.isSelected ? 'text-white/75' : 'text-ink-muted group-hover:text-white/75'
-                      }`}
+                      className={`text-[10px] font-medium ${lbl.isSelected ? 'text-white/75' : 'text-ink-muted group-hover:text-white/75'
+                        }`}
                     >
                       · {lbl.specialty}
                     </span>
@@ -1869,11 +1867,10 @@ export const ArgentinaMap3DStage = memo(function ArgentinaMap3DStage({
                   if (lbl.deptId) onSelectDepartamento(selectedDeptId === lbl.deptId ? null : lbl.deptId);
                 }}
                 style={{ visibility: 'hidden', willChange: 'transform' }}
-                className={`pointer-events-auto absolute left-0 top-0 inline-flex cursor-pointer items-center gap-1.5 rounded-md border px-2 py-0.5 text-[10.5px] font-semibold shadow-xs transition-colors duration-150 ${
-                  lbl.isSelected
-                    ? 'border-white bg-ink text-white shadow-md'
-                    : 'border-ink/25 bg-stone-surface/94 text-ink hover:border-ink hover:bg-ink hover:text-white'
-                }`}
+                className={`pointer-events-auto absolute left-0 top-0 inline-flex cursor-pointer items-center gap-1.5 rounded-md border px-2 py-0.5 text-[10.5px] font-semibold shadow-xs transition-colors duration-150 ${lbl.isSelected
+                  ? 'border-white bg-ink text-white shadow-md'
+                  : 'border-ink/25 bg-stone-surface/94 text-ink hover:border-ink hover:bg-ink hover:text-white'
+                  }`}
               >
                 <span
                   className="h-2 w-2 shrink-0 rounded-full ring-1 ring-white"
@@ -1929,11 +1926,10 @@ export const ArgentinaMap3DStage = memo(function ArgentinaMap3DStage({
         <button
           type="button"
           onClick={() => setTouchFreeOrbit((v) => !v)}
-          className={`bencho-press absolute bottom-3.5 left-3.5 z-20 inline-flex items-center gap-1.5 rounded-md border px-2.5 py-1.5 text-[12px] font-medium shadow-xs ${
-            touchFreeOrbit
-              ? 'border-cobalt bg-cobalt text-white'
-              : 'border-rule bg-stone-surface/95 text-ink'
-          }`}
+          className={`bencho-press absolute bottom-3.5 left-3.5 z-20 inline-flex items-center gap-1.5 rounded-md border px-2.5 py-1.5 text-[12px] font-medium shadow-xs ${touchFreeOrbit
+            ? 'border-cobalt bg-cobalt text-white'
+            : 'border-rule bg-stone-surface/95 text-ink'
+            }`}
         >
           <MousePointerClick className="h-3.5 w-3.5" />
           <span>{touchFreeOrbit ? 'Órbita 3D activa' : 'Tocá provincia o usá 2 dedos'}</span>
@@ -1974,11 +1970,10 @@ export const ArgentinaMap3DStage = memo(function ArgentinaMap3DStage({
             aria-pressed={wheelUnlocked}
             onClick={() => setWheelUnlocked((v) => !v)}
             title={wheelUnlocked ? 'Rueda libre activa (click para liberar scroll)' : 'Activar zoom directo con rueda'}
-            className={`bencho-press flex h-9 w-9 cursor-pointer items-center justify-center border text-[10px] font-semibold shadow-xs transition-colors duration-150 ${
-              wheelUnlocked
-                ? 'border-cobalt bg-cobalt text-white'
-                : 'border-rule bg-stone-surface/95 text-ink hover:bg-ink hover:text-white'
-            }`}
+            className={`bencho-press flex h-9 w-9 cursor-pointer items-center justify-center border text-[10px] font-semibold shadow-xs transition-colors duration-150 ${wheelUnlocked
+              ? 'border-cobalt bg-cobalt text-white'
+              : 'border-rule bg-stone-surface/95 text-ink hover:bg-ink hover:text-white'
+              }`}
           >
             Z
           </button>

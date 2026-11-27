@@ -16,6 +16,7 @@ const TABS = [
   'conexiones_proceso',
   'empresas',
   'plantas',
+  'unidades_planta',
   'produccion',
   'comercio_exterior',
 ] as const;

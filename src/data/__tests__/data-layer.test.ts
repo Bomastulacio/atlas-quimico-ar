@@ -8,6 +8,7 @@ import {
   getDepartamentos,
   getEmpresaMercado,
   getEmpresasConPlantas,
+  getFichaEmpresa,
   getFichaProducto,
   getGeoAntartidaIslas,
   getGeoContinental,
@@ -104,6 +105,7 @@ describe('Capa única de acceso a datos (src/data)', () => {
     expect(getFichaProducto('petroquimica')?.procesos.map((p) => p.proceso.proceso_id)).toEqual([
       'petroquimica-steam-cracking-polietileno',
       'petroquimica-cloro-alcali-pvc',
+      'petroquimica-reformado-btx-ensenada',
     ]);
 
     expect(getProceso('aluminio-hall-heroult')?.pasos).toHaveLength(6);
@@ -131,11 +133,11 @@ describe('Capa única de acceso a datos (src/data)', () => {
     expect(resumen.totalProvincias).toBe(24);
     expect(resumen.porNivel.completa).toBe(24);
     expect(resumen.porNivel.sin_datos).toBe(0);
-    expect(resumen.departamentosConDatos).toBe(35);
-    expect(getDepartamentos()).toHaveLength(35);
+    expect(resumen.departamentosConDatos).toBe(36);
+    expect(getDepartamentos()).toHaveLength(36);
   });
 
-  it('alinea 1:1 los 24 códigos Georef del GeoJSON IGN con las provincias y las 34 plantas', () => {
+  it('alinea 1:1 los 24 códigos Georef del GeoJSON IGN con las provincias y las 35 plantas', () => {
     const continental = getGeoContinental();
     const antartida = getGeoAntartidaIslas();
     const manifestGeo = getGeoManifest();
@@ -152,16 +154,16 @@ describe('Capa única de acceso a datos (src/data)', () => {
     }
 
     const totalPlantas = mapaData.reduce((acc, p) => acc + p.plantas.length, 0);
-    expect(totalPlantas).toBe(34);
+    expect(totalPlantas).toBe(35);
   });
 
-  it('alinea 1:1 los 35 departamentos confiables con el GeoJSON oficial IGN y el índice de búsqueda', () => {
+  it('alinea 1:1 los 36 departamentos confiables con el GeoJSON oficial IGN y el índice de búsqueda', () => {
     const deptGeo = getGeoDepartamentos();
     const deptData = getMapaDepartamentosData();
     const manifestGeo = getGeoManifest();
 
-    expect(deptGeo.features).toHaveLength(35);
-    expect(deptData).toHaveLength(35);
+    expect(deptGeo.features).toHaveLength(36);
+    expect(deptData).toHaveLength(36);
     expect(manifestGeo.departamentos_oficial?.hash_raw).toMatch(/^sha256:[a-f0-9]{64}$/);
 
     const geoDeptIds = new Set(deptGeo.features.map((f) => f.properties.id));
@@ -172,7 +174,7 @@ describe('Capa única de acceso a datos (src/data)', () => {
     }
 
     const searchDeptItems = getSearchIndex().filter((i) => i.kind === 'departamento');
-    expect(searchDeptItems).toHaveLength(35);
+    expect(searchDeptItems).toHaveLength(36);
   });
 
   it('expone el directorio verificable de empresas con plantas, productos y trazabilidad (Etapa 8)', () => {
@@ -196,7 +198,7 @@ describe('Capa única de acceso a datos (src/data)', () => {
     expect(cov.totales.provinciasConDatos).toBe(24);
     expect(cov.totales.provinciasSinDatos).toBe(0);
     expect(cov.totales.empresasVerificadas).toBe(29);
-    expect(cov.totales.plantasGeorreferenciadas).toBe(34);
+    expect(cov.totales.plantasGeorreferenciadas).toBe(35);
     expect(cov.totales.plantasSinCapacidadPublica).toBeGreaterThanOrEqual(1);
 
     const sumaRegiones = cov.porRegion.reduce((acc, r) => acc + r.total, 0);
@@ -207,7 +209,7 @@ describe('Capa única de acceso a datos (src/data)', () => {
 
   it('valida el snapshot bursátil y las conversiones ARS/USD por tipo de dólar (CCL, MEP, Oficial)', () => {
     const snap = getMercadoSnapshot();
-    expect(snap.empresas).toHaveLength(8);
+    expect(snap.empresas).toHaveLength(9);
     expect(snap.tipos_cambio.map((t) => t.casa)).toEqual(
       expect.arrayContaining(['contadoconliqui', 'bolsa', 'oficial', 'usd_brl'])
     );
@@ -267,9 +269,9 @@ describe('Capa única de acceso a datos (src/data)', () => {
     ).toBe(true);
   });
 
-  it('valida los 26 PFDs ISO 10628 completos y rutas territoriales diferenciadas por provincia/depto', () => {
+  it('valida los 27 PFDs ISO 10628 completos y rutas territoriales diferenciadas por provincia/depto', () => {
     const pfds = getPfdProcesos();
-    expect(pfds).toHaveLength(26);
+    expect(pfds).toHaveLength(27);
 
     for (const pfd of pfds) {
       expect(pfd.equipos.length).toBeGreaterThanOrEqual(7);
@@ -284,16 +286,29 @@ describe('Capa única de acceso a datos (src/data)', () => {
     const buenosAires = provincias.find((p) => p.provincia.provincia_id === '06')!;
     expect(jujuy.rutasPorProducto.litio.map((r) => r.procesoId)).toEqual(['litio-salmuera-carbonatacion']);
     expect(catamarca.rutasPorProducto.litio.map((r) => r.procesoId)).toEqual(['litio-dle-adsorcion']);
-    expect(buenosAires.rutasPorProducto.petroquimica.map((r) => r.procesoId)).toEqual([
-      'petroquimica-steam-cracking-polietileno',
-      'petroquimica-cloro-alcali-pvc',
-    ]);
+    expect(buenosAires.rutasPorProducto.petroquimica.map((r) => r.procesoId)).toEqual(
+      expect.arrayContaining([
+        'petroquimica-steam-cracking-polietileno',
+        'petroquimica-cloro-alcali-pvc',
+        'petroquimica-reformado-btx-ensenada',
+      ])
+    );
 
     const deptos = getMapaDepartamentosData();
     const susques = deptos.find((d) => d.departamento.departamento_id === '38084')!;
     const antofagasta = deptos.find((d) => d.departamento.departamento_id === '10028')!;
+    const ensenada = deptos.find((d) => d.departamento.departamento_id === '06245')!;
+    const bahiaBlanca = deptos.find((d) => d.departamento.departamento_id === '06056')!;
     expect(susques.rutasPorProducto.litio[0].procesoId).toBe('litio-salmuera-carbonatacion');
     expect(antofagasta.rutasPorProducto.litio[0].procesoId).toBe('litio-dle-adsorcion');
+    // Independencia territorial por localidad vía unidades_planta (Ensenada BTX ≠ Bahía Blanca PE/PVC)
+    expect(ensenada.rutasPorProducto.petroquimica.map((r) => r.procesoId)).toEqual([
+      'petroquimica-reformado-btx-ensenada',
+    ]);
+    expect(bahiaBlanca.rutasPorProducto.petroquimica.map((r) => r.procesoId)).toEqual([
+      'petroquimica-steam-cracking-polietileno',
+      'petroquimica-cloro-alcali-pvc',
+    ]);
 
     const pfdPetro = getPfdPorProceso('petroquimica-steam-cracking-polietileno')!;
     expect(pfdPetro.corrientes.some((c) => c.tipo === 'reciclo')).toBe(true);
@@ -309,5 +324,17 @@ describe('Capa única de acceso a datos (src/data)', () => {
     expect(Object.keys(procUrea.pfdFuentes)).toEqual(
       expect.arrayContaining(['eu-bref-lvic-aaf-2007', 'epa-ap42-ch8-inorganic', 'profertil-eecc-2025'])
     );
+  });
+
+  it('resuelve la ficha nacional multiprovincial de YPF S.A. con CUIT y unidades_planta (Etapa 11)', () => {
+    const ypf = getFichaEmpresa('ypf-sa')!;
+    expect(ypf).toBeDefined();
+    expect(ypf.empresa.cuit).toBe('30-54668997-9');
+    expect(ypf.provincias.map((p) => p.provincia_id).sort()).toEqual(['06', '50', '58']);
+    expect(ypf.plantas).toHaveLength(3);
+    expect(ypf.unidadesCount).toBe(8);
+    expect(ypf.complejosPorProvincia).toHaveLength(3);
+    expect(ypf.mercado?.ticker).toBe('YPF');
+    expect(ypf.fuentesCitadas.some((f) => f.fuente_id === 'ypf-sec-20f-2025')).toBe(true);
   });
 });

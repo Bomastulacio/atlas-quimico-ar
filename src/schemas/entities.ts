@@ -169,9 +169,14 @@ export const ConexionProcesoSchema = z
   });
 export type ConexionProceso = z.infer<typeof ConexionProcesoSchema>;
 
+export const CuitSchema = z
+  .string()
+  .regex(/^\d{2}-\d{8}-\d$/, 'El CUIT debe tener formato argentino XX-XXXXXXXX-X');
+
 export const EmpresaSchema = z.object({
   empresa_id: SlugSchema,
   razon_social: z.string().min(1),
+  cuit: CuitSchema.nullable().default(null),
   tipo_capital: z.enum(['nacional', 'extranjero', 'mixto', 'estatal', 'sin_datos']),
   sitio_web_oficial: z.string().url().nullable(),
   hechos_verificables: z.string().min(10),
@@ -194,6 +199,18 @@ export const PlantaSchema = z.object({
   procedencia: ProvenanceSchema,
 });
 export type Planta = z.infer<typeof PlantaSchema>;
+
+export const UnidadPlantaSchema = z.object({
+  unidad_id: SlugSchema,
+  planta_id: SlugSchema,
+  proceso_id: SlugSchema,
+  producto_id: SlugSchema,
+  nombre_unidad: z.string().min(1),
+  rol_unidad: z.enum(['principal', 'integrada', 'subproducto', 'servicios']),
+  capacidad: ValorMedidoSchema,
+  procedencia: ProvenanceSchema,
+});
+export type UnidadPlanta = z.infer<typeof UnidadPlantaSchema>;
 
 export const ProduccionRegistroSchema = z.object({
   registro_id: SlugSchema,
@@ -263,6 +280,7 @@ export const AtlasDatasetSchema = z.object({
   conexiones_proceso: z.array(ConexionProcesoSchema),
   empresas: z.array(EmpresaSchema),
   plantas: z.array(PlantaSchema),
+  unidades_planta: z.array(UnidadPlantaSchema).default([]),
   produccion: z.array(ProduccionRegistroSchema),
   comercio_exterior: z.array(ComercioExteriorRegistroSchema),
 });
@@ -327,7 +345,9 @@ export function validateDatasetIntegrity(
   );
   checkUniqueIds(dataset.conexiones_proceso, (r) => r.conexion_id, 'conexiones_proceso', errors);
   const empresaIds = checkUniqueIds(dataset.empresas, (r) => r.empresa_id, 'empresas', errors);
-  checkUniqueIds(dataset.plantas, (r) => r.planta_id, 'plantas', errors);
+  const plantaIds = checkUniqueIds(dataset.plantas, (r) => r.planta_id, 'plantas', errors);
+  const unidadesPlanta = dataset.unidades_planta ?? [];
+  checkUniqueIds(unidadesPlanta, (r) => r.unidad_id, 'unidades_planta', errors);
   checkUniqueIds(dataset.produccion, (r) => r.registro_id, 'produccion', errors);
   checkUniqueIds(dataset.comercio_exterior, (r) => r.registro_id, 'comercio_exterior', errors);
 
@@ -417,6 +437,19 @@ export function validateDatasetIntegrity(
     checkFuente('plantas', pl.planta_id, pl.procedencia.fuente_id);
   }
 
+  for (const u of unidadesPlanta) {
+    if (!plantaIds.has(u.planta_id)) {
+      errors.push(`[unidades_planta:${u.unidad_id}] planta_id inexistente: "${u.planta_id}"`);
+    }
+    if (!procesoIds.has(u.proceso_id)) {
+      errors.push(`[unidades_planta:${u.unidad_id}] proceso_id inexistente: "${u.proceso_id}"`);
+    }
+    if (!productoIds.has(u.producto_id)) {
+      errors.push(`[unidades_planta:${u.unidad_id}] producto_id inexistente: "${u.producto_id}"`);
+    }
+    checkFuente('unidades_planta', u.unidad_id, u.procedencia.fuente_id);
+  }
+
   for (const pr of dataset.produccion) {
     if (!productoIds.has(pr.producto_id)) {
       errors.push(`[produccion:${pr.registro_id}] producto_id inexistente: "${pr.producto_id}"`);
@@ -445,6 +478,7 @@ export function validateDatasetIntegrity(
       ...dataset.conexiones_proceso.map((r) => ({ ctx: `conexiones_proceso:${r.conexion_id}`, p: r.procedencia })),
       ...dataset.empresas.map((r) => ({ ctx: `empresas:${r.empresa_id}`, p: r.procedencia })),
       ...dataset.plantas.map((r) => ({ ctx: `plantas:${r.planta_id}`, p: r.procedencia })),
+      ...unidadesPlanta.map((r) => ({ ctx: `unidades_planta:${r.unidad_id}`, p: r.procedencia })),
       ...dataset.produccion.map((r) => ({ ctx: `produccion:${r.registro_id}`, p: r.procedencia })),
       ...dataset.comercio_exterior.map((r) => ({ ctx: `comercio_exterior:${r.registro_id}`, p: r.procedencia })),
     ];

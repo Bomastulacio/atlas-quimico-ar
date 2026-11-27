@@ -34,6 +34,21 @@ interface EmpresaCatalogoMercado {
 
 const CATALOGO_EMPRESAS: EmpresaCatalogoMercado[] = [
   {
+    empresa_id: 'ypf-sa',
+    tipo_cotizacion: 'directa_local',
+    entidad_cotizante: 'YPF S.A. (NYSE: YPF / BYMA: YPFD)',
+    ticker: 'YPF',
+    ticker_feed: 'YPF',
+    bolsa: 'NYSE',
+    moneda_origen: 'USD',
+    acciones_circulacion: 393_312_793,
+    nota_cotizacion:
+      'Cotización ADR en NYSE (YPF) y acciones Clase D en BYMA (YPFD). Capitalización calculada sobre 393.312.793 acciones ordinarias totales auditadas al 31/12/2025.',
+    fuente_acciones:
+      'YPF S.A. Form 20-F FY2025 ante SEC (393.312.793 acciones ordinarias Clases A+B+C+D al 31/12/2025)',
+    fuente_precio: 'NYSE vía Yahoo Finance (YPF)',
+  },
+  {
     empresa_id: 'aluar-saic',
     tipo_cotizacion: 'directa_local',
     entidad_cotizante: 'Aluar Aluminio Argentino S.A.I.C.',

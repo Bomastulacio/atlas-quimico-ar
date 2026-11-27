@@ -99,6 +99,7 @@ export function EmpresasExplorer({
         haystack: normalizeText(
           [
             item.empresa.razon_social,
+            item.empresa.cuit ?? '',
             item.empresa.hechos_verificables,
             ...item.plantas.map(
               (pl) =>
@@ -358,25 +359,40 @@ export function EmpresasExplorer({
                         <div className="flex flex-wrap items-start justify-between gap-3">
                           <div>
                             <h2 className="font-display text-[19px] font-medium leading-[1.2] tracking-[-0.018em] text-ink">
-                              {empresa.razon_social}
+                              <a
+                                href={`/empresas/${empresa.empresa_id}`}
+                                className="transition-colors duration-150 hover:text-cobalt"
+                              >
+                                {empresa.razon_social}
+                              </a>
                             </h2>
-                            <p className="mt-1 text-[13px] text-ink-muted">
-                              {CAPITAL_LABEL[empresa.tipo_capital]} ·{' '}
+                            <p className="mt-1 text-[13px] text-ink-muted tabular-nums">
+                              {CAPITAL_LABEL[empresa.tipo_capital]}
+                              {empresa.cuit ? ` · CUIT ${empresa.cuit}` : ''} ·{' '}
                               {empProvs.map((p) => p.nombre).join(', ')}
                             </p>
                           </div>
 
-                          {empresa.sitio_web_oficial && (
+                          <div className="flex flex-wrap items-center gap-2">
                             <a
-                              href={empresa.sitio_web_oficial}
-                              target="_blank"
-                              rel="noopener noreferrer"
-                              className="inline-flex shrink-0 items-center gap-1.5 border border-rule bg-stone-bg px-3 py-1.5 text-[13px] font-medium text-ink transition-colors duration-150 hover:border-ink hover:text-cobalt"
+                              href={`/empresas/${empresa.empresa_id}`}
+                              className="bencho-press inline-flex shrink-0 items-center gap-1.5 bg-ink px-3 py-1.5 text-[13px] font-medium text-white transition-colors duration-150 hover:bg-cobalt"
                             >
-                              <span>Sitio oficial</span>
-                              <ExternalLink className="h-3.5 w-3.5" />
+                              <span>Ficha nacional</span>
+                              <ArrowRight className="h-3.5 w-3.5" />
                             </a>
-                          )}
+                            {empresa.sitio_web_oficial && (
+                              <a
+                                href={empresa.sitio_web_oficial}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="inline-flex shrink-0 items-center gap-1.5 border border-rule bg-stone-bg px-3 py-1.5 text-[13px] font-medium text-ink transition-colors duration-150 hover:border-ink hover:text-cobalt"
+                              >
+                                <span>Sitio oficial</span>
+                                <ExternalLink className="h-3.5 w-3.5" />
+                              </a>
+                            )}
+                          </div>
                         </div>
 
                         {/* Cadenas operadas */}
