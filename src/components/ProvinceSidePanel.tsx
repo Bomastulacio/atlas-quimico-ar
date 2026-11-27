@@ -8,9 +8,11 @@ import { ProductIcon } from './ProductIcon';
 interface ProvinceSidePanelProps {
   selected: MapaProvinciaResumen | null;
   selectedDepartamento: MapaDepartamentoResumen | null;
+  selectedPlantaId?: string | null;
   allProvincias: MapaProvinciaResumen[];
   onSelectProvincia: (provinciaId: string | null) => void;
   onSelectDepartamento: (departamentoId: string | null) => void;
+  onSelectPlantaId?: (plantaId: string | null, departamentoId?: string | null) => void;
   onZoomToSelected?: () => void;
   onZoomToDepartamento?: () => void;
   esEjemplo: boolean;
@@ -68,9 +70,11 @@ const TIPO_ZONA_META: Record<
 export const ProvinceSidePanel = memo(function ProvinceSidePanel({
   selected,
   selectedDepartamento,
+  selectedPlantaId = null,
   allProvincias,
   onSelectProvincia,
   onSelectDepartamento,
+  onSelectPlantaId,
   onZoomToSelected,
   onZoomToDepartamento,
   esEjemplo,
@@ -93,7 +97,7 @@ export const ProvinceSidePanel = memo(function ProvinceSidePanel({
       aria-label="Ficha de jurisdicción o departamento seleccionado"
       className="flex h-full flex-col border-t border-rule bg-stone-surface lg:border-t-0"
     >
-      <AnimatePresence mode="wait">
+      <AnimatePresence initial={false} mode="wait">
         {selectedDepartamento ? (
           <motion.div
             key={`dept-${selectedDepartamento.departamento.departamento_id}`}
@@ -277,36 +281,85 @@ export const ProvinceSidePanel = memo(function ProvinceSidePanel({
                 {/* Plantas georreferenciadas dentro del departamento */}
                 {selectedDepartamento.plantas.length > 0 && (
                   <div className="py-5">
-                    <div className="flex items-center gap-2 text-[13px] font-medium text-ink-muted">
-                      <Building2 className="h-4 w-4 text-ink" />
-                      <span>
-                        Plantas en {selectedDepartamento.departamento.nombre} (
-                        {selectedDepartamento.plantas.length})
+                    <div className="flex items-center justify-between gap-2 text-[13px] font-medium text-ink-muted">
+                      <span className="inline-flex items-center gap-2">
+                        <Building2 className="h-4 w-4 text-ink" />
+                        <span>
+                          Fábricas y plantas en {selectedDepartamento.departamento.nombre} (
+                          {selectedDepartamento.plantas.length})
+                        </span>
                       </span>
+                      {selectedDepartamento.plantas.length > 1 && (
+                        <span className="text-[12px] text-cobalt">Separadas en 3D</span>
+                      )}
                     </div>
-                    <ul className="mt-3 space-y-3">
-                      {selectedDepartamento.plantas.map((pl) => (
-                        <li key={pl.planta_id}>
-                          <p className="text-[15px] font-medium text-ink">{pl.nombre}</p>
-                          <p className="mt-0.5 text-[13px] text-ink-muted tabular-nums">
-                            {pl.localidad} ({pl.lat.toFixed(3)}, {pl.lon.toFixed(3)}) ·{' '}
-                            {pl.empresaNombre ?? 'Operador sin registrar'}
-                          </p>
-                          <p className="mt-0.5 text-[13px] text-ink-muted tabular-nums">
-                            Capacidad:{' '}
-                            {pl.capacidad.estado === 'dato'
-                              ? `${pl.capacidad.valor.toLocaleString('es-AR')} ${pl.capacidad.unidad}`
-                              : 'Sin datos'}
-                          </p>
-                        </li>
-                      ))}
+                    <ul className="mt-3 space-y-2.5">
+                      {selectedDepartamento.plantas.map((pl) => {
+                        const isPlSelected = selectedPlantaId === pl.planta_id;
+                        const prodPl = selectedDepartamento.productos.find(
+                          (p) => p.producto_id === pl.producto_id
+                        );
+                        const plAccent = prodPl ? categoryAccent(prodPl.categoria) : '#0A42E0';
+                        return (
+                          <li key={pl.planta_id}>
+                            <div
+                              onClick={() =>
+                                onSelectPlantaId?.(
+                                  isPlSelected ? null : pl.planta_id,
+                                  pl.departamento_id
+                                )
+                              }
+                              className={`cursor-pointer border p-3 transition-colors duration-150 ${
+                                isPlSelected
+                                  ? 'border-cobalt bg-stone-bg ring-1 ring-cobalt'
+                                  : 'border-rule bg-stone-bg/60 hover:border-ink'
+                              }`}
+                            >
+                              <div className="flex items-start justify-between gap-2.5">
+                                <div className="flex items-start gap-2.5">
+                                  {prodPl && (
+                                    <span
+                                      className="mt-0.5 flex h-6 w-6 shrink-0 items-center justify-center text-white"
+                                      style={{ backgroundColor: plAccent }}
+                                    >
+                                      <ProductIcon iconId={prodPl.icono_id} size={13} />
+                                    </span>
+                                  )}
+                                  <div>
+                                    <p className="text-[14px] font-medium text-ink">{pl.nombre}</p>
+                                    <p className="mt-0.5 text-[12.5px] text-ink-muted tabular-nums">
+                                      {pl.localidad} · {pl.empresaNombre ?? 'Operador registrado'}
+                                    </p>
+                                  </div>
+                                </div>
+                              </div>
+                              <div className="mt-2 flex flex-wrap items-center justify-between gap-2 border-t border-rule/70 pt-2 text-[12px] text-ink-muted tabular-nums">
+                                <span>
+                                  Capacidad:{' '}
+                                  {pl.capacidad.estado === 'dato'
+                                    ? `${pl.capacidad.valor.toLocaleString('es-AR')} ${pl.capacidad.unidad}`
+                                    : 'Sin datos públicos'}
+                                </span>
+                                <a
+                                  href={`/productos/${pl.producto_id}`}
+                                  onClick={(e) => e.stopPropagation()}
+                                  className="inline-flex items-center gap-1 font-medium text-cobalt hover:underline"
+                                >
+                                  <span>Ver planta 3D</span>
+                                  <ArrowRight className="h-3 w-3" />
+                                </a>
+                              </div>
+                            </div>
+                          </li>
+                        );
+                      })}
                     </ul>
                   </div>
                 )}
 
                 <div className="py-4 text-[13px] text-ink-muted">
-                  Solo se cartografían departamentos con datos confiables verificados; el resto del
-                  territorio provincial se consulta a nivel jurisdiccional.
+                  Los departamentos con plantas verificadas se elevan en relieve 3D cromático sobre
+                  los partidos vecinos de referencia cartográfica.
                 </div>
               </div>
             </div>
@@ -553,26 +606,69 @@ export const ProvinceSidePanel = memo(function ProvinceSidePanel({
                 {/* Plantas georreferenciadas */}
                 {selected.plantas.length > 0 && (
                   <div className="py-5">
-                    <div className="flex items-center gap-2 text-[13px] font-medium text-ink-muted">
-                      <Building2 className="h-4 w-4 text-ink" />
-                      <span>Plantas registradas ({selected.plantas.length})</span>
+                    <div className="flex items-center justify-between gap-2 text-[13px] font-medium text-ink-muted">
+                      <span className="inline-flex items-center gap-2">
+                        <Building2 className="h-4 w-4 text-ink" />
+                        <span>Fábricas registradas en la provincia ({selected.plantas.length})</span>
+                      </span>
+                      <span className="text-[12px] text-ink-muted">Click para enfocar</span>
                     </div>
-                    <ul className="mt-3 space-y-3">
-                      {selected.plantas.map((pl) => (
-                        <li key={pl.planta_id}>
-                          <p className="text-[15px] font-medium text-ink">{pl.nombre}</p>
-                          <p className="mt-0.5 text-[13px] text-ink-muted tabular-nums">
-                            {pl.localidad} ({pl.lat.toFixed(3)}, {pl.lon.toFixed(3)}) ·{' '}
-                            {pl.empresaNombre ?? 'Operador sin registrar'}
-                          </p>
-                          <p className="mt-0.5 text-[13px] text-ink-muted tabular-nums">
-                            Capacidad:{' '}
-                            {pl.capacidad.estado === 'dato'
-                              ? `${pl.capacidad.valor.toLocaleString('es-AR')} ${pl.capacidad.unidad}`
-                              : 'Sin datos'}
-                          </p>
-                        </li>
-                      ))}
+                    <ul className="mt-3 space-y-2.5">
+                      {selected.plantas.map((pl) => {
+                        const isPlSelected = selectedPlantaId === pl.planta_id;
+                        const allProdsProv = selected.dominante
+                          ? [selected.dominante, ...selected.secundarios]
+                          : [];
+                        const prodPl = allProdsProv.find((p) => p.producto_id === pl.producto_id);
+                        const plAccent = prodPl ? categoryAccent(prodPl.categoria) : '#0A42E0';
+                        return (
+                          <li key={pl.planta_id}>
+                            <div
+                              onClick={() =>
+                                onSelectPlantaId?.(pl.planta_id, pl.departamento_id)
+                              }
+                              className={`cursor-pointer border p-3 transition-colors duration-150 ${
+                                isPlSelected
+                                  ? 'border-cobalt bg-stone-bg ring-1 ring-cobalt'
+                                  : 'border-rule bg-stone-bg/60 hover:border-ink'
+                              }`}
+                            >
+                              <div className="flex items-start gap-2.5">
+                                {prodPl && (
+                                  <span
+                                    className="mt-0.5 flex h-6 w-6 shrink-0 items-center justify-center text-white"
+                                    style={{ backgroundColor: plAccent }}
+                                  >
+                                    <ProductIcon iconId={prodPl.icono_id} size={13} />
+                                  </span>
+                                )}
+                                <div className="min-w-0 flex-1">
+                                  <p className="text-[14px] font-medium text-ink">{pl.nombre}</p>
+                                  <p className="mt-0.5 text-[12.5px] text-ink-muted tabular-nums">
+                                    {pl.localidad} · {pl.empresaNombre ?? 'Operador registrado'}
+                                  </p>
+                                </div>
+                              </div>
+                              <div className="mt-2 flex flex-wrap items-center justify-between gap-2 border-t border-rule/70 pt-2 text-[12px] text-ink-muted tabular-nums">
+                                <span>
+                                  Capacidad:{' '}
+                                  {pl.capacidad.estado === 'dato'
+                                    ? `${pl.capacidad.valor.toLocaleString('es-AR')} ${pl.capacidad.unidad}`
+                                    : 'Sin datos públicos'}
+                                </span>
+                                <a
+                                  href={`/productos/${pl.producto_id}`}
+                                  onClick={(e) => e.stopPropagation()}
+                                  className="inline-flex items-center gap-1 font-medium text-cobalt hover:underline"
+                                >
+                                  <span>Ver planta 3D</span>
+                                  <ArrowRight className="h-3 w-3" />
+                                </a>
+                              </div>
+                            </div>
+                          </li>
+                        );
+                      })}
                     </ul>
                   </div>
                 )}

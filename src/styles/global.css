@@ -647,6 +647,7 @@
     opacity: 0;
     transform: translateY(6px);
   }
+
   to {
     opacity: 1;
     transform: translateY(0);
@@ -673,6 +674,7 @@
 }
 
 @media (prefers-reduced-motion: reduce) {
+
   .bencho-press,
   .bencho-press:hover:not(:disabled),
   .bencho-press:active:not(:disabled),
@@ -685,4 +687,13 @@
   .pfd-stream-flow {
     animation: none;
   }
+}
+
+.atlas-no-scrollbar {
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+.atlas-no-scrollbar::-webkit-scrollbar {
+  display: none;
 }

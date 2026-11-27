@@ -22,7 +22,8 @@
     "data:validate": "tsx scripts/validate-data.ts",
     "data:validate:strict": "tsx scripts/validate-data.ts --strict-real",
     "geo:prepare": "tsx scripts/prepare-geo.ts",
-    "geo:prepare:departamentos": "tsx scripts/prepare-geo-departamentos.ts"
+    "geo:prepare:departamentos": "tsx scripts/prepare-geo-departamentos.ts",
+    "geo:prepare:provincias": "tsx scripts/prepare-geo-provincias-deptos.ts"
   },
   "dependencies": {
     "@astrojs/mdx": "^4.2.5",
