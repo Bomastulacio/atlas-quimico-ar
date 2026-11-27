@@ -259,6 +259,16 @@ export function ProductIcon({ iconId, size = 18, className = '', ...props }: Pro
         </svg>
       );
 
+    // Galvanizado por inmersión en caliente: viga de acero sumergida en batea de zinc
+    case 'galvanizado-caliente':
+      return (
+        <svg {...common}>
+          <path d="M4 11V19H20V11" />
+          <path d="M4 14.5H20" />
+          <path d="M8.5 5H15.5M12 5V11.5M9 11.5H15" />
+        </svg>
+      );
+
     default:
       return (
         <svg {...common}>

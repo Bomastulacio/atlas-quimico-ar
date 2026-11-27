@@ -111,6 +111,7 @@ DEFAULT_ALLOWED_DOMAINS: frozenset[str] = frozenset(
         "federacionolivicolaargentina.com.ar",
         "sde.gob.ar",
         "www.insudpharma.com",
+        "www.druetta.com.ar",
     }
 )
 

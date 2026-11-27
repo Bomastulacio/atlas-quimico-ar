@@ -20,6 +20,7 @@ import { ResinaColofoniaProcessAnatomy } from '@/components/ResinaColofoniaProce
 import { TaninoQuebrachoProcessAnatomy } from '@/components/TaninoQuebrachoProcessAnatomy';
 import { AceiteOlivaProcessAnatomy } from '@/components/AceiteOlivaProcessAnatomy';
 import { FarmoquimicaIfaProcessAnatomy } from '@/components/FarmoquimicaIfaProcessAnatomy';
+import { GalvanizadoCalienteProcessAnatomy } from '@/components/GalvanizadoCalienteProcessAnatomy';
 import { StandaloneCompanyMarket } from '@/components/CompanyMarketCard';
 import { ProcessFlowDiagram } from '@/components/ProcessFlowDiagram';
 import { ProductIcon } from '@/components/ProductIcon';
@@ -153,6 +154,10 @@ const olivaExp2024T = (() => {
 const farmaExp2024UsdM = (() => {
   const r = comexUsd.find((x) => x.ncm_codigo === '3004.90' && x.anio === 2024);
   return r?.exportacion.estado === 'dato' ? r.exportacion.valor : null;
+})();
+const zincImp2024UsdM = (() => {
+  const r = comexUsd.find((x) => x.ncm_codigo === '7901.11' && x.anio === 2024);
+  return r?.importacion.estado === 'dato' ? r.importacion.valor : null;
 })();
 
 const mercadoEmpresaIds = new Set(mercadoSnapshot.empresas.map((m) => m.empresa_id));
@@ -393,6 +398,13 @@ const ESTADO_PLANTA_LABEL: Record<string, string> = {
             client:visible={{ rootMargin: '250px' }}
             pasos={procesoPrincipal.pasos}
             exportFarma2024UsdM={farmaExp2024UsdM}
+          />
+        )}
+        {slug === 'galvanizado-caliente' && (
+          <GalvanizadoCalienteProcessAnatomy
+            client:visible={{ rootMargin: '250px' }}
+            pasos={procesoPrincipal.pasos}
+            importZinc2024UsdM={zincImp2024UsdM}
           />
         )}
       </section>

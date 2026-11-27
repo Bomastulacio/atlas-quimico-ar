@@ -151,6 +151,12 @@ const ANATOMY_BY_PRODUCT: Record<string, ProductAnatomyHeader> = {
       'Lámina interactiva en 3D de síntesis orgánica fina GMP: reactor batch vitrificado inertizado, clarificación y columna recuperadora de solventes en ciclo cerrado, cristalización, centrífuga Nutsche y secador al vacío ISO 8.',
     hint: 'Orbitá en 3D, cambiá de etapa o grabá un clip WebM a 60 fps',
   },
+  'galvanizado-caliente': {
+    title: 'Circuito 3D en movimiento en General Rodríguez (Druetta Hnos. S.A.)',
+    description:
+      'Lámina interactiva en 3D del galvanizado por inmersión en caliente: puente grúa de 12 t, desengrase alcalino, decapado en HCl, fluxado y secado (60-100 °C), cuba principal de zinc fundido de 13 m a 450 °C, enfriamiento y lavado de humos.',
+    hint: 'Orbitá en 3D, cambiá de etapa o grabá un clip WebM a 60 fps',
+  },
 };
 
 const PROCESO_META_BY_PRODUCT: Record<
@@ -216,6 +222,9 @@ const NCM_LABELS: Record<string, string> = {
   '1509.90': 'Otros aceites de oliva refinados/mezcla (HS 1509.90)',
   '3004.90': 'Especialidades medicinales dosificadas (HS 3004.90)',
   '2933.99': 'Compuestos heterocíclicos nitrogenados / IFAs (HS 2933.99)',
+  '7901.11': 'Zinc en bruto sin alear >= 99,99% SHG (HS 7901.11)',
+  '7901.12': 'Zinc en bruto sin alear < 99,99% (HS 7901.12)',
+  '7308.90': 'Estructuras y partes de hierro o acero (HS 7308.90)',
 };
 
 const SIN_DATOS_PRODUCCION_COPY: Record<string, string> = {
@@ -247,6 +256,8 @@ const SIN_DATOS_PRODUCCION_COPY: Record<string, string> = {
     'El CSV abierto de SAGyP Estimaciones Agrícolas no desagrega serie anual de aceite de oliva por provincia. El campo de producción anual queda declarado sin datos mientras se consignan las capacidades de almazaras riojanas y las exportaciones verificadas UN Comtrade HS 1509.20 y 1509.10.',
   'farmoquimica-ifa':
     'El informe oficial de INDEC Industria Farmacéutica releva facturación en pesos por ventas internas y exportaciones sin desagregar tonelaje físico de principios activos (IFAs). Se declara sin datos la serie física y se muestran los flujos aduaneros verificados UN Comtrade HS 3004.90 y 2933.99.',
+  'galvanizado-caliente':
+    'No existe serie estadística pública abierta de toneladas de acero galvanizado por inmersión en caliente por lote ni capacidad nominal anual publicada para la planta de General Rodríguez. Se declara explícitamente sin datos y se muestran las importaciones oficiales de zinc sin alear (HS 7901.11/7901.12) y el comercio exterior de estructuras de acero (HS 7308.90).',
 };
 
 function fmtNum(v: number, decimals = 0): string {
