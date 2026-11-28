@@ -1,8 +1,8 @@
 ---
-import BaseLayout from '@/layouts/BaseLayout.astro';
-import { SiteHeader } from '@/components/SiteHeader';
-import { ProductIcon } from '@/components/ProductIcon';
-import { CompanyLiveMarketWidget } from '@/components/CompanyLiveMarketWidget';
+import BaseLayout from "@/layouts/BaseLayout.astro";
+import { SiteHeader } from "@/components/SiteHeader";
+import { ProductIcon } from "@/components/ProductIcon";
+import { CompanyLiveMarketWidget } from "@/components/CompanyLiveMarketWidget";
 import {
   getEmpresas,
   getFichaEmpresa,
@@ -10,7 +10,7 @@ import {
   getSearchIndex,
 } from '@/data';
 import { getCategoryAccent } from '@/lib/categoryAccent';
-import type { Empresa, Planta, UnidadPlanta } from '@/schemas';
+import type { Empresa, Planta, UnidadPlanta, VinculoB2B } from '@/schemas';
 
 export function getStaticPaths() {
   return getEmpresas().map((emp) => ({
@@ -22,36 +22,78 @@ const { slug } = Astro.params;
 const ficha = slug ? getFichaEmpresa(slug) : undefined;
 
 if (!ficha) {
-  return Astro.redirect('/empresas');
+  return Astro.redirect("/empresas");
 }
 
 const searchItems = getSearchIndex();
 const mercadoSnapshot = getMercadoSnapshot();
 
-const { empresa, complejosPorProvincia, productos, provincias, plantas, unidadesCount, mercado, fuentesCitadas } = ficha;
+const {
+  empresa,
+  complejosPorProvincia,
+  productos,
+  provincias,
+  plantas,
+  unidadesCount,
+  mercado,
+  fuentesCitadas,
+  empresaMatriz,
+  sociedadesVinculadas,
+  vinculosComoProveedor,
+  vinculosComoCliente,
+} = ficha;
 const primaryAccent = productos[0] ? getCategoryAccent(productos[0].categoria) : '#111214';
 
-const CAPITAL_LABEL: Record<Empresa['tipo_capital'], string> = {
-  nacional: 'Capital nacional',
-  extranjero: 'Capital extranjero',
-  mixto: 'Capital mixto',
-  estatal: 'Capital estatal',
-  sin_datos: 'Sin datos de capital',
+const CAPITAL_LABEL: Record<Empresa["tipo_capital"], string> = {
+  nacional: "Capital nacional",
+  extranjero: "Capital extranjero",
+  mixto: "Capital mixto",
+  estatal: "Capital estatal",
+  sin_datos: "Sin datos de capital",
 };
 
-const ESTADO_META: Record<Planta['estado_operativo'], { label: string; dot: string }> = {
-  operativa: { label: 'Operativa', dot: 'bg-emerald-react' },
-  ampliacion: { label: 'En ampliación', dot: 'bg-cobalt' },
-  en_construccion: { label: 'En construcción', dot: 'bg-ochre-metal' },
-  inactiva: { label: 'Inactiva', dot: 'bg-signal-red' },
-  sin_datos: { label: 'Sin datos', dot: 'bg-ink-muted' },
+const ROL_SOCIETARIO_LABEL: Record<Empresa['rol_societario'], string> = {
+  operadora_industrial: 'Operadora industrial',
+  logistica_puerto: 'Logística y puertos',
+  energia_utilidades: 'Energía y utilidades',
+  comercializadora: 'Comercialización y red minorista',
+  ingenieria_servicios: 'Ingeniería y montajes',
+  vpu_rigi: 'Vehículo de Proyecto Único (RIGI)',
+  holding: 'Grupo / holding corporativo',
+  agrupamiento: 'Agrupamiento sectorial',
 };
 
-const ROL_UNIDAD_LABEL: Record<UnidadPlanta['rol_unidad'], string> = {
-  principal: 'Unidad principal',
-  integrada: 'Unidad integrada',
-  subproducto: 'Subproducto',
-  servicios: 'Servicios',
+const TIPO_VINCULO_LABEL: Record<VinculoB2B['tipo_vinculo'], string> = {
+  suministro_insumo: 'Suministro de insumo',
+  energia_electrica: 'Energía eléctrica',
+  logistica_ducto: 'Transporte por ducto',
+  logistica_puerto: 'Terminal portuaria',
+  ingenieria_montaje: 'Ingeniería y montaje',
+  comercializacion_producto: 'Comercialización',
+};
+
+const RELACION_SOC_LABEL: Record<VinculoB2B['relacion_societaria'], string> = {
+  controlada: 'Controlada',
+  vinculada_jv: 'Vinculada / JV',
+  tercero_independiente: 'Tercero independiente',
+};
+
+const ESTADO_META: Record<
+  Planta["estado_operativo"],
+  { label: string; dot: string }
+> = {
+  operativa: { label: "Operativa", dot: "bg-emerald-react" },
+  ampliacion: { label: "En ampliación", dot: "bg-cobalt" },
+  en_construccion: { label: "En construcción", dot: "bg-ochre-metal" },
+  inactiva: { label: "Inactiva", dot: "bg-signal-red" },
+  sin_datos: { label: "Sin datos", dot: "bg-ink-muted" },
+};
+
+const ROL_UNIDAD_LABEL: Record<UnidadPlanta["rol_unidad"], string> = {
+  principal: "Unidad principal",
+  integrada: "Unidad integrada",
+  subproducto: "Subproducto",
+  servicios: "Servicios",
 };
 ---
 
@@ -59,7 +101,12 @@ const ROL_UNIDAD_LABEL: Record<UnidadPlanta['rol_unidad'], string> = {
   title={`${empresa.razon_social} | Ficha Nacional de Empresa | Atlas Químico Argentino`}
   description={`Línea completa de producción nacional, complejos industriales, unidades de proceso y fuentes primarias verificables de ${empresa.razon_social} en Argentina.`}
 >
-  <SiteHeader client:idle variant="solid" searchItems={searchItems} currentPath="/empresas" />
+  <SiteHeader
+    client:idle
+    variant="solid"
+    searchItems={searchItems}
+    currentPath="/empresas"
+  />
 
   <main class="mx-auto max-w-[1600px] px-5 pb-20 pt-8 sm:px-8 lg:px-10">
     {/* Navegación contextual */}
@@ -68,17 +115,26 @@ const ROL_UNIDAD_LABEL: Record<UnidadPlanta['rol_unidad'], string> = {
       class="mb-7 flex flex-wrap items-center justify-between gap-3 border-b border-rule pb-3 text-[13px] text-ink-muted"
     >
       <div class="flex flex-wrap items-center gap-3">
-        <a href="/empresas" class="font-medium text-ink transition-colors duration-150 hover:text-cobalt">
+        <a
+          href="/empresas"
+          class="font-medium text-ink transition-colors duration-150 hover:text-cobalt"
+        >
           ← Directorio de empresas
         </a>
         <span class="text-rule-strong/30">/</span>
         <span class="text-ink">{empresa.razon_social}</span>
       </div>
       <div class="flex items-center gap-4">
-        <a href="/#mapa" class="transition-colors duration-150 hover:text-cobalt">
+        <a
+          href="/#mapa"
+          class="transition-colors duration-150 hover:text-cobalt"
+        >
           Abrir mapa territorial 3D
         </a>
-        <a href="/comparar" class="transition-colors duration-150 hover:text-ink">
+        <a
+          href="/comparar"
+          class="transition-colors duration-150 hover:text-ink"
+        >
           Comparar cadenas
         </a>
       </div>
@@ -94,6 +150,9 @@ const ROL_UNIDAD_LABEL: Record<UnidadPlanta['rol_unidad'], string> = {
               <span class="border border-rule bg-stone-bg px-2.5 py-0.5 text-ink">
                 {CAPITAL_LABEL[empresa.tipo_capital]}
               </span>
+              <span class="border border-rule bg-stone-bg px-2.5 py-0.5 text-ink">
+                {ROL_SOCIETARIO_LABEL[empresa.rol_societario]}
+              </span>
               {empresa.cuit ? (
                 <span class="border border-ink/20 bg-stone-bg px-2.5 py-0.5 text-ink tabular-nums">
                   CUIT {empresa.cuit}
@@ -107,6 +166,17 @@ const ROL_UNIDAD_LABEL: Record<UnidadPlanta['rol_unidad'], string> = {
                 <span class="bg-cobalt px-2.5 py-0.5 text-white tabular-nums">
                   Operador multiprovincial · {provincias.length} provincias
                 </span>
+              )}
+              {empresaMatriz && (
+                <a
+                  href={`/empresas/${empresaMatriz.empresa_id}`}
+                  class="border border-cobalt/40 bg-stone-bg px-2.5 py-0.5 text-cobalt transition-colors duration-150 hover:bg-cobalt hover:text-white tabular-nums"
+                >
+                  Vinculada a {empresaMatriz.razon_social}
+                  {empresa.participacion_matriz_pct !== null
+                    ? ` (${empresa.participacion_matriz_pct.toLocaleString('es-AR')}%)`
+                    : ''} →
+                </a>
               )}
             </div>
 
@@ -144,27 +214,43 @@ const ROL_UNIDAD_LABEL: Record<UnidadPlanta['rol_unidad'], string> = {
         {/* Métricas de presencia nacional */}
         <dl class="mt-7 grid gap-5 border-t border-rule pt-6 sm:grid-cols-2 lg:grid-cols-4 tabular-nums">
           <div>
-            <dt class="text-[12.5px] text-ink-muted">Jurisdicciones con plantas</dt>
-            <dd class="mt-1 font-display text-[24px] font-medium text-ink">{provincias.length}</dd>
+            <dt class="text-[12.5px] text-ink-muted">
+              Jurisdicciones con plantas
+            </dt>
+            <dd class="mt-1 font-display text-[24px] font-medium text-ink">
+              {provincias.length}
+            </dd>
             <p class="mt-0.5 text-[12.5px] text-ink-muted">
-              {provincias.map((p) => p.nombre).join(' · ') || 'Argentina'}
+              {provincias.map((p) => p.nombre).join(" · ") || "Argentina"}
             </p>
           </div>
           <div>
-            <dt class="text-[12.5px] text-ink-muted">Complejos / plantas registradas</dt>
-            <dd class="mt-1 font-display text-[24px] font-medium text-cobalt">{plantas.length}</dd>
-            <p class="mt-0.5 text-[12.5px] text-ink-muted">Georreferenciadas en WGS84 + Georef</p>
+            <dt class="text-[12.5px] text-ink-muted">
+              Complejos / plantas registradas
+            </dt>
+            <dd class="mt-1 font-display text-[24px] font-medium text-cobalt">
+              {plantas.length}
+            </dd>
+            <p class="mt-0.5 text-[12.5px] text-ink-muted">
+              Georreferenciadas en WGS84 + Georef
+            </p>
           </div>
           <div>
             <dt class="text-[12.5px] text-ink-muted">Unidades de proceso</dt>
-            <dd class="mt-1 font-display text-[24px] font-medium text-emerald-react">{unidadesCount}</dd>
-            <p class="mt-0.5 text-[12.5px] text-ink-muted">Vínculos verificados planta ↔ proceso</p>
+            <dd class="mt-1 font-display text-[24px] font-medium text-emerald-react">
+              {unidadesCount}
+            </dd>
+            <p class="mt-0.5 text-[12.5px] text-ink-muted">
+              Vínculos verificados planta ↔ proceso
+            </p>
           </div>
           <div>
             <dt class="text-[12.5px] text-ink-muted">Cadenas industriales</dt>
-            <dd class="mt-1 font-display text-[24px] font-medium text-ink">{productos.length}</dd>
+            <dd class="mt-1 font-display text-[24px] font-medium text-ink">
+              {productos.length}
+            </dd>
             <p class="mt-0.5 text-[12.5px] text-ink-muted">
-              {productos.map((p) => p.nombre.split(' ')[0]).join(' · ')}
+              {productos.map((p) => p.nombre.split(" ")[0]).join(" · ")}
             </p>
           </div>
         </dl>
@@ -187,164 +273,361 @@ const ROL_UNIDAD_LABEL: Record<UnidadPlanta['rol_unidad'], string> = {
     </section>
 
     {/* Doble lectura: Línea completa nacional agrupada por provincia independiente */}
-    <section class="mt-12 space-y-6">
-      <div class="flex flex-wrap items-end justify-between gap-4 border-b border-rule pb-4">
-        <div>
-          <h2 class="font-display text-[22px] font-medium leading-[1.15] tracking-[-0.022em] text-ink">
-            Línea de producción nacional por provincia
-          </h2>
-          <p class="mt-1 text-[14px] text-ink-muted">
-            Cada bloque refleja únicamente el complejo y las unidades operativas radicadas en esa
-            jurisdicción, preservando la independencia territorial en el mapa 3D.
-          </p>
-        </div>
-        <div class="flex flex-wrap gap-2">
-          {productos.map((prod) => (
-            <a
-              href={`/productos/${prod.producto_id}`}
-              class="inline-flex items-center gap-1.5 border border-rule bg-stone-surface px-2.5 py-1 text-[12.5px] font-medium text-ink transition-colors duration-150 hover:border-ink hover:text-cobalt"
-            >
-              <span
-                class="flex h-4 w-4 items-center justify-center text-white"
-                style={`background-color: ${getCategoryAccent(prod.categoria)}`}
+    {complejosPorProvincia.length > 0 && (
+      <section class="mt-12 space-y-6">
+        <div class="flex flex-wrap items-end justify-between gap-4 border-b border-rule pb-4">
+          <div>
+            <h2 class="font-display text-[22px] font-medium leading-[1.15] tracking-[-0.022em] text-ink">
+              Línea de producción nacional por provincia
+            </h2>
+            <p class="mt-1 text-[14px] text-ink-muted">
+              Cada bloque refleja únicamente el complejo y las unidades operativas radicadas en esa
+              jurisdicción, preservando la independencia territorial en el mapa 3D.
+            </p>
+          </div>
+          <div class="flex flex-wrap gap-2">
+            {productos.map((prod) => (
+              <a
+                href={`/productos/${prod.producto_id}`}
+                class="inline-flex items-center gap-1.5 border border-rule bg-stone-surface px-2.5 py-1 text-[12.5px] font-medium text-ink transition-colors duration-150 hover:border-ink hover:text-cobalt"
               >
-                <ProductIcon iconId={prod.icono_id} size={11} />
-              </span>
-              <span>{prod.nombre}</span>
-            </a>
+                <span
+                  class="flex h-4 w-4 items-center justify-center text-white"
+                  style={`background-color: ${getCategoryAccent(prod.categoria)}`}
+                >
+                  <ProductIcon iconId={prod.icono_id} size={11} />
+                </span>
+                <span>{prod.nombre}</span>
+              </a>
+            ))}
+          </div>
+        </div>
+
+        <div class="space-y-6">
+          {complejosPorProvincia.map((grupo) => (
+            <article class="border border-rule bg-stone-surface">
+              <div class="flex flex-wrap items-center justify-between gap-3 border-b border-rule bg-stone-bg/70 px-6 py-4">
+                <div>
+                  <h3 class="font-display text-[18px] font-medium text-ink">
+                    {grupo.provincia.nombre}
+                  </h3>
+                  <p class="text-[13px] text-ink-muted tabular-nums">
+                    Región {grupo.provincia.region} · Georef {grupo.provincia.provincia_id} ({grupo.provincia.iso_3166_2}) ·{' '}
+                    {grupo.plantas.length} {grupo.plantas.length === 1 ? 'complejo' : 'complejos'} ·{' '}
+                    {grupo.unidadesCount} {grupo.unidadesCount === 1 ? 'unidad de proceso' : 'unidades de proceso'}
+                  </p>
+                </div>
+                <a
+                  href={`/?provincia=${grupo.provincia.provincia_id}#mapa`}
+                  class="bencho-press inline-flex items-center gap-1.5 border border-rule bg-stone-surface px-3 py-1.5 text-[12.5px] font-medium text-ink transition-colors duration-150 hover:border-ink hover:text-cobalt"
+                >
+                  <span>Ver {grupo.provincia.nombre} en mapa 3D →</span>
+                </a>
+              </div>
+
+              <div class="divide-y divide-rule">
+                {grupo.plantas.map((pl) => {
+                  const estado = ESTADO_META[pl.estado_operativo];
+                  const mapHref = pl.departamento
+                    ? `/?provincia=${pl.provincia.provincia_id}&departamento=${pl.departamento.departamento_id}#mapa`
+                    : `/?provincia=${pl.provincia.provincia_id}#mapa`;
+
+                  return (
+                    <div class="p-6">
+                      <div class="flex flex-wrap items-start justify-between gap-4">
+                        <div>
+                          <div class="flex flex-wrap items-center gap-2">
+                            <span class={`h-2 w-2 rounded-full ${estado.dot}`} />
+                            <span class="text-[12px] font-medium text-ink-muted">{estado.label}</span>
+                            <span class="text-rule-strong/30">·</span>
+                            <span class="text-[12.5px] text-ink-muted tabular-nums">
+                              {pl.localidad}
+                              {pl.departamento ? ` (${pl.departamento.nombre} · Georef ${pl.departamento.departamento_id})` : ''}
+                            </span>
+                          </div>
+                          <h4 class="mt-1 font-display text-[17px] font-medium text-ink">
+                            {pl.nombre}
+                          </h4>
+                          <p class="mt-1 text-[13px] text-ink-muted tabular-nums">
+                            Coordenadas WGS84: {pl.lat.toFixed(3)}, {pl.lon.toFixed(3)} · Capacidad
+                            declarada:{' '}
+                            <strong class="font-medium text-ink">
+                              {pl.capacidad.estado === 'dato'
+                                ? `${pl.capacidad.valor.toLocaleString('es-AR')} ${pl.capacidad.unidad}`
+                                : 'Sin datos públicos'}
+                            </strong>
+                          </p>
+                        </div>
+
+                        <div class="flex flex-wrap items-center gap-2">
+                          <a
+                            href={mapHref}
+                            class="bencho-press inline-flex items-center gap-1 border border-rule bg-stone-bg px-3 py-1.5 text-[12.5px] font-medium text-ink transition-colors duration-150 hover:border-ink hover:text-cobalt"
+                          >
+                            <span>Acercar en mapa 3D</span>
+                          </a>
+                          <a
+                            href={`/productos/${pl.producto.producto_id}`}
+                            class="bencho-press inline-flex items-center gap-1 bg-ink px-3 py-1.5 text-[12.5px] font-medium text-white transition-colors duration-150 hover:bg-cobalt"
+                          >
+                            <span>Ficha de cadena →</span>
+                          </a>
+                        </div>
+                      </div>
+
+                      {/* Unidades de proceso radicadas en esta planta */}
+                      {pl.unidades.length > 0 && (
+                        <div class="mt-5 overflow-x-auto border border-rule">
+                          <table class="w-full min-w-[640px] border-collapse text-left text-[13px]">
+                            <thead>
+                              <tr class="border-b border-rule bg-stone-bg text-[12px] font-medium text-ink-muted">
+                                <th class="px-4 py-2.5">Unidad operativa</th>
+                                <th class="px-4 py-2.5">Rol</th>
+                                <th class="px-4 py-2.5">Capacidad nominal</th>
+                                <th class="px-4 py-2.5">Proceso químico asociado</th>
+                                <th class="px-4 py-2.5 text-right">Ingeniería</th>
+                              </tr>
+                            </thead>
+                            <tbody class="divide-y divide-rule bg-stone-surface">
+                              {pl.unidades.map((u) => (
+                                <tr>
+                                  <td class="px-4 py-3 font-medium text-ink">
+                                    {u.nombre_unidad}
+                                    <p class="mt-0.5 text-[11.5px] font-normal text-ink-muted">
+                                      {u.procedencia.cita_ubicacion}
+                                    </p>
+                                  </td>
+                                  <td class="px-4 py-3 whitespace-nowrap text-ink-muted">
+                                    <span class="border border-rule bg-stone-bg px-2 py-0.5 text-[11.5px]">
+                                      {ROL_UNIDAD_LABEL[u.rol_unidad]}
+                                    </span>
+                                  </td>
+                                  <td class="px-4 py-3 whitespace-nowrap tabular-nums text-ink">
+                                    {u.capacidad.estado === 'dato'
+                                      ? `${u.capacidad.valor.toLocaleString('es-AR')} ${u.capacidad.unidad}`
+                                      : 'Sin datos públicos'}
+                                  </td>
+                                  <td class="px-4 py-3 text-ink-muted">
+                                    <span class="font-medium text-ink">{u.proceso.nombre}</span>
+                                  </td>
+                                  <td class="px-4 py-3 text-right whitespace-nowrap">
+                                    <a
+                                      href={`/productos/${u.producto.producto_id}?ruta=${u.proceso.proceso_id}#diagrama`}
+                                      class="font-medium text-cobalt hover:underline"
+                                    >
+                                      Ver PFD y 3D →
+                                    </a>
+                                  </td>
+                                </tr>
+                              ))}
+                            </tbody>
+                          </table>
+                        </div>
+                      )}
+                    </div>
+                  );
+                })}
+              </div>
+            </article>
           ))}
         </div>
-      </div>
+      </section>
+    )}
 
-      <div class="space-y-6">
-        {complejosPorProvincia.map((grupo) => (
-          <article class="border border-rule bg-stone-surface">
-            <div class="flex flex-wrap items-center justify-between gap-3 border-b border-rule bg-stone-bg/70 px-6 py-4">
-              <div>
-                <h3 class="font-display text-[18px] font-medium text-ink">
-                  {grupo.provincia.nombre}
-                </h3>
-                <p class="text-[13px] text-ink-muted tabular-nums">
-                  Región {grupo.provincia.region} · Georef {grupo.provincia.provincia_id} ({grupo.provincia.iso_3166_2}) ·{' '}
-                  {grupo.plantas.length} {grupo.plantas.length === 1 ? 'complejo' : 'complejos'} ·{' '}
-                  {grupo.unidadesCount} {grupo.unidadesCount === 1 ? 'unidad de proceso' : 'unidades de proceso'}
-                </p>
-              </div>
-              <a
-                href={`/?provincia=${grupo.provincia.provincia_id}#mapa`}
-                class="bencho-press inline-flex items-center gap-1.5 border border-rule bg-stone-surface px-3 py-1.5 text-[12.5px] font-medium text-ink transition-colors duration-150 hover:border-ink hover:text-cobalt"
-              >
-                <span>Ver {grupo.provincia.nombre} en mapa 3D →</span>
-              </a>
-            </div>
+    {/* Estructura societaria multi-CUIT */}
+    {sociedadesVinculadas.length > 0 && (
+      <section class="mt-12 space-y-5">
+        <div class="border-b border-rule pb-4">
+          <h2 class="font-display text-[22px] font-medium leading-[1.15] tracking-[-0.022em] text-ink">
+            Estructura societaria y CUITs vinculados ({sociedadesVinculadas.length})
+          </h2>
+          <p class="mt-1 text-[14px] text-ink-muted">
+            Sociedades jurídicas operadoras, energéticas, logísticas, de ingeniería y vehículos RIGI
+            con CUIT independiente verificados en BCRA y memorias auditadas.
+          </p>
+        </div>
 
-            <div class="divide-y divide-rule">
-              {grupo.plantas.map((pl) => {
-                const estado = ESTADO_META[pl.estado_operativo];
-                const mapHref = pl.departamento
-                  ? `/?provincia=${pl.provincia.provincia_id}&departamento=${pl.departamento.departamento_id}#mapa`
-                  : `/?provincia=${pl.provincia.provincia_id}#mapa`;
+        <div class="overflow-x-auto border border-rule bg-stone-surface">
+          <table class="w-full min-w-[680px] border-collapse text-left text-[13px]">
+            <thead>
+              <tr class="border-b border-rule bg-stone-bg text-[12px] font-medium text-ink-muted">
+                <th class="px-4 py-2.5">Sociedad jurídica</th>
+                <th class="px-4 py-2.5">CUIT oficial</th>
+                <th class="px-4 py-2.5">Rol societario</th>
+                <th class="px-4 py-2.5">Participación</th>
+                <th class="px-4 py-2.5 text-right">Ficha</th>
+              </tr>
+            </thead>
+            <tbody class="divide-y divide-rule">
+              {sociedadesVinculadas.map((filial) => (
+                <tr>
+                  <td class="px-4 py-3">
+                    <a
+                      href={`/empresas/${filial.empresa_id}`}
+                      class="font-medium text-ink transition-colors duration-150 hover:text-cobalt"
+                    >
+                      {filial.razon_social}
+                    </a>
+                    <p class="mt-0.5 text-[12px] text-ink-muted">{filial.hechos_verificables}</p>
+                  </td>
+                  <td class="px-4 py-3 whitespace-nowrap tabular-nums text-ink">
+                    {filial.cuit ? `CUIT ${filial.cuit}` : 'Sin datos públicos'}
+                  </td>
+                  <td class="px-4 py-3 whitespace-nowrap">
+                    <span class="border border-rule bg-stone-bg px-2 py-0.5 text-[11.5px] text-ink">
+                      {ROL_SOCIETARIO_LABEL[filial.rol_societario]}
+                    </span>
+                  </td>
+                  <td class="px-4 py-3 whitespace-nowrap tabular-nums text-ink">
+                    {filial.participacion_matriz_pct !== null
+                      ? `${filial.participacion_matriz_pct.toLocaleString('es-AR')}%`
+                      : 'Sin datos'}
+                  </td>
+                  <td class="px-4 py-3 text-right whitespace-nowrap">
+                    <a
+                      href={`/empresas/${filial.empresa_id}`}
+                      class="font-medium text-cobalt hover:underline"
+                    >
+                      Ver ficha →
+                    </a>
+                  </td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+      </section>
+    )}
 
-                return (
-                  <div class="p-6">
-                    <div class="flex flex-wrap items-start justify-between gap-4">
-                      <div>
-                        <div class="flex flex-wrap items-center gap-2">
-                          <span class={`h-2 w-2 rounded-full ${estado.dot}`} />
-                          <span class="text-[12px] font-medium text-ink-muted">{estado.label}</span>
-                          <span class="text-rule-strong/30">·</span>
-                          <span class="text-[12.5px] text-ink-muted tabular-nums">
-                            {pl.localidad}
-                            {pl.departamento ? ` (${pl.departamento.nombre} · Georef ${pl.departamento.departamento_id})` : ''}
-                          </span>
-                        </div>
-                        <h4 class="mt-1 font-display text-[17px] font-medium text-ink">
-                          {pl.nombre}
-                        </h4>
-                        <p class="mt-1 text-[13px] text-ink-muted tabular-nums">
-                          Coordenadas WGS84: {pl.lat.toFixed(3)}, {pl.lon.toFixed(3)} · Capacidad
-                          declarada:{' '}
-                          <strong class="font-medium text-ink">
-                            {pl.capacidad.estado === 'dato'
-                              ? `${pl.capacidad.valor.toLocaleString('es-AR')} ${pl.capacidad.unidad}`
-                              : 'Sin datos públicos'}
-                          </strong>
+    {/* Red de suministros y servicios B2B verificados */}
+    {(vinculosComoCliente.length > 0 || vinculosComoProveedor.length > 0) && (
+      <section class="mt-12 space-y-6">
+        <div class="border-b border-rule pb-4">
+          <h2 class="font-display text-[22px] font-medium leading-[1.15] tracking-[-0.022em] text-ink">
+            Red de suministros y servicios B2B verificados
+          </h2>
+          <p class="mt-1 text-[14px] text-ink-muted">
+            Vínculos proveedor-cliente registrados únicamente cuando constan explícitamente en
+            estados financieros auditados, presentaciones CNV/SEC o boletines oficiales.
+          </p>
+        </div>
+
+        {vinculosComoCliente.length > 0 && (
+          <div class="space-y-3">
+            <h3 class="font-display text-[17px] font-medium text-ink">
+              Proveedores verificados aguas arriba ({vinculosComoCliente.length})
+            </h3>
+            <div class="overflow-x-auto border border-rule bg-stone-surface">
+              <table class="w-full min-w-[760px] border-collapse text-left text-[13px]">
+                <thead>
+                  <tr class="border-b border-rule bg-stone-bg text-[12px] font-medium text-ink-muted">
+                    <th class="px-4 py-2.5">Proveedor</th>
+                    <th class="px-4 py-2.5">Tipo de vínculo</th>
+                    <th class="px-4 py-2.5">Insumo o servicio</th>
+                    <th class="px-4 py-2.5">Relación</th>
+                    <th class="px-4 py-2.5">Magnitud auditada</th>
+                  </tr>
+                </thead>
+                <tbody class="divide-y divide-rule">
+                  {vinculosComoCliente.map((v) => (
+                    <tr>
+                      <td class="px-4 py-3">
+                        <a
+                          href={`/empresas/${v.proveedor.empresa_id}`}
+                          class="font-medium text-cobalt hover:underline"
+                        >
+                          {v.proveedor.razon_social}
+                        </a>
+                        <p class="mt-0.5 text-[11.5px] text-ink-muted tabular-nums">
+                          {v.proveedor.cuit ? `CUIT ${v.proveedor.cuit}` : 'CUIT sin datos'}
                         </p>
-                      </div>
-
-                      <div class="flex flex-wrap items-center gap-2">
-                        <a
-                          href={mapHref}
-                          class="bencho-press inline-flex items-center gap-1 border border-rule bg-stone-bg px-3 py-1.5 text-[12.5px] font-medium text-ink transition-colors duration-150 hover:border-ink hover:text-cobalt"
-                        >
-                          <span>Acercar en mapa 3D</span>
-                        </a>
-                        <a
-                          href={`/productos/${pl.producto.producto_id}`}
-                          class="bencho-press inline-flex items-center gap-1 bg-ink px-3 py-1.5 text-[12.5px] font-medium text-white transition-colors duration-150 hover:bg-cobalt"
-                        >
-                          <span>Ficha de cadena →</span>
-                        </a>
-                      </div>
-                    </div>
-
-                    {/* Unidades de proceso radicadas en esta planta */}
-                    {pl.unidades.length > 0 && (
-                      <div class="mt-5 overflow-x-auto border border-rule">
-                        <table class="w-full min-w-[640px] border-collapse text-left text-[13px]">
-                          <thead>
-                            <tr class="border-b border-rule bg-stone-bg text-[12px] font-medium text-ink-muted">
-                              <th class="px-4 py-2.5">Unidad operativa</th>
-                              <th class="px-4 py-2.5">Rol</th>
-                              <th class="px-4 py-2.5">Capacidad nominal</th>
-                              <th class="px-4 py-2.5">Proceso químico asociado</th>
-                              <th class="px-4 py-2.5 text-right">Ingeniería</th>
-                            </tr>
-                          </thead>
-                          <tbody class="divide-y divide-rule bg-stone-surface">
-                            {pl.unidades.map((u) => (
-                              <tr>
-                                <td class="px-4 py-3 font-medium text-ink">
-                                  {u.nombre_unidad}
-                                  <p class="mt-0.5 text-[11.5px] font-normal text-ink-muted">
-                                    {u.procedencia.cita_ubicacion}
-                                  </p>
-                                </td>
-                                <td class="px-4 py-3 whitespace-nowrap text-ink-muted">
-                                  <span class="border border-rule bg-stone-bg px-2 py-0.5 text-[11.5px]">
-                                    {ROL_UNIDAD_LABEL[u.rol_unidad]}
-                                  </span>
-                                </td>
-                                <td class="px-4 py-3 whitespace-nowrap tabular-nums text-ink">
-                                  {u.capacidad.estado === 'dato'
-                                    ? `${u.capacidad.valor.toLocaleString('es-AR')} ${u.capacidad.unidad}`
-                                    : 'Sin datos públicos'}
-                                </td>
-                                <td class="px-4 py-3 text-ink-muted">
-                                  <span class="font-medium text-ink">{u.proceso.nombre}</span>
-                                </td>
-                                <td class="px-4 py-3 text-right whitespace-nowrap">
-                                  <a
-                                    href={`/productos/${u.producto.producto_id}?ruta=${u.proceso.proceso_id}#diagrama`}
-                                    class="font-medium text-cobalt hover:underline"
-                                  >
-                                    Ver PFD y 3D →
-                                  </a>
-                                </td>
-                              </tr>
-                            ))}
-                          </tbody>
-                        </table>
-                      </div>
-                    )}
-                  </div>
-                );
-              })}
+                      </td>
+                      <td class="px-4 py-3 whitespace-nowrap">
+                        <span class="border border-rule bg-stone-bg px-2 py-0.5 text-[11.5px] text-ink">
+                          {TIPO_VINCULO_LABEL[v.tipo_vinculo]}
+                        </span>
+                      </td>
+                      <td class="px-4 py-3 text-ink">
+                        <span>{v.insumo_o_servicio}</span>
+                        <p class="mt-0.5 text-[11.5px] text-ink-muted">
+                          {v.procedencia.cita_ubicacion}
+                        </p>
+                      </td>
+                      <td class="px-4 py-3 whitespace-nowrap text-ink-muted">
+                        {RELACION_SOC_LABEL[v.relacion_societaria]}
+                      </td>
+                      <td class="px-4 py-3 whitespace-nowrap tabular-nums font-medium text-ink">
+                        {v.volumen.estado === 'dato'
+                          ? `${v.volumen.valor.toLocaleString('es-AR')} ${v.volumen.unidad}`
+                          : 'Sin datos públicos'}
+                      </td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
             </div>
-          </article>
-        ))}
-      </div>
-    </section>
+          </div>
+        )}
+
+        {vinculosComoProveedor.length > 0 && (
+          <div class="space-y-3">
+            <h3 class="font-display text-[17px] font-medium text-ink">
+              Clientes y destinos verificados aguas abajo ({vinculosComoProveedor.length})
+            </h3>
+            <div class="overflow-x-auto border border-rule bg-stone-surface">
+              <table class="w-full min-w-[760px] border-collapse text-left text-[13px]">
+                <thead>
+                  <tr class="border-b border-rule bg-stone-bg text-[12px] font-medium text-ink-muted">
+                    <th class="px-4 py-2.5">Cliente / destino</th>
+                    <th class="px-4 py-2.5">Tipo de vínculo</th>
+                    <th class="px-4 py-2.5">Insumo o servicio</th>
+                    <th class="px-4 py-2.5">Relación</th>
+                    <th class="px-4 py-2.5">Magnitud auditada</th>
+                  </tr>
+                </thead>
+                <tbody class="divide-y divide-rule">
+                  {vinculosComoProveedor.map((v) => (
+                    <tr>
+                      <td class="px-4 py-3">
+                        <a
+                          href={`/empresas/${v.cliente.empresa_id}`}
+                          class="font-medium text-cobalt hover:underline"
+                        >
+                          {v.cliente.razon_social}
+                        </a>
+                        <p class="mt-0.5 text-[11.5px] text-ink-muted tabular-nums">
+                          {v.cliente.cuit ? `CUIT ${v.cliente.cuit}` : 'CUIT sin datos'}
+                          {v.plantaCliente ? ` · ${v.plantaCliente.nombre}` : ''}
+                        </p>
+                      </td>
+                      <td class="px-4 py-3 whitespace-nowrap">
+                        <span class="border border-rule bg-stone-bg px-2 py-0.5 text-[11.5px] text-ink">
+                          {TIPO_VINCULO_LABEL[v.tipo_vinculo]}
+                        </span>
+                      </td>
+                      <td class="px-4 py-3 text-ink">
+                        <span>{v.insumo_o_servicio}</span>
+                        <p class="mt-0.5 text-[11.5px] text-ink-muted">
+                          {v.procedencia.cita_ubicacion}
+                        </p>
+                      </td>
+                      <td class="px-4 py-3 whitespace-nowrap text-ink-muted">
+                        {RELACION_SOC_LABEL[v.relacion_societaria]}
+                      </td>
+                      <td class="px-4 py-3 whitespace-nowrap tabular-nums font-medium text-ink">
+                        {v.volumen.estado === 'dato'
+                          ? `${v.volumen.valor.toLocaleString('es-AR')} ${v.volumen.unidad}`
+                          : 'Sin datos públicos'}
+                      </td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
+          </div>
+        )}
+      </section>
+    )}
 
     {/* Trazabilidad documental con SHA-256 */}
     <section class="mt-14 border border-rule bg-stone-surface p-6">
@@ -352,8 +635,9 @@ const ROL_UNIDAD_LABEL: Record<UnidadPlanta['rol_unidad'], string> = {
         Fuentes primarias auditadas ({fuentesCitadas.length})
       </h2>
       <p class="mt-1 text-[13.5px] text-ink-muted">
-        Toda cifra publicada en esta ficha proviene de documentos primarios verificados con huella
-        SHA-256. Donde no existe publicación oficial auditada figura explícitamente sin datos.
+        Toda cifra publicada en esta ficha proviene de documentos primarios
+        verificados con huella SHA-256. Donde no existe publicación oficial
+        auditada figura explícitamente sin datos.
       </p>
 
       <ul class="mt-5 divide-y divide-rule text-[13px]">
@@ -372,8 +656,14 @@ const ROL_UNIDAD_LABEL: Record<UnidadPlanta['rol_unidad'], string> = {
                 {f.organismo} · Descarga {f.fecha_descarga}
               </span>
             </div>
-            <p class="mt-1 text-[12px] text-ink-muted tabular-nums" title={f.hash}>
-              Hash: <code class="bg-stone-subtle px-1.5 py-0.5 text-ink">{f.hash}</code>
+            <p
+              class="mt-1 text-[12px] text-ink-muted tabular-nums"
+              title={f.hash}
+            >
+              Hash:{" "}
+              <code class="bg-stone-subtle px-1.5 py-0.5 text-ink">
+                {f.hash}
+              </code>
             </p>
           </li>
         ))}

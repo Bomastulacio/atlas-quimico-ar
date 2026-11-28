@@ -19,6 +19,7 @@ import conexionesProcesoRaw from '@data/conexiones_proceso.json';
 import empresasRaw from '@data/empresas.json';
 import plantasRaw from '@data/plantas.json';
 import unidadesPlantaRaw from '@data/unidades_planta.json';
+import vinculosB2BRaw from '@data/vinculos_b2b.json';
 import produccionRaw from '@data/produccion.json';
 import comercioExteriorRaw from '@data/comercio_exterior.json';
 import mercadoRaw from '@data/mercado.json';
@@ -47,6 +48,7 @@ import {
   type ProductoZona,
   type Provincia,
   type UnidadPlanta,
+  type VinculoB2B,
 } from '@/schemas';
 
 let cachedDataset: AtlasDataset | null = null;
@@ -70,7 +72,11 @@ interface DatasetIndexes {
   plantasByDepartamento: Map<string, Planta[]>;
   plantasByProducto: Map<string, Planta[]>;
   plantasByEmpresa: Map<string, Planta[]>;
+  plantaById: Map<string, Planta>;
   unidadesByPlanta: Map<string, UnidadPlanta[]>;
+  filialesByMatriz: Map<string, Empresa[]>;
+  vinculosPorProveedor: Map<string, VinculoB2B[]>;
+  vinculosPorCliente: Map<string, VinculoB2B[]>;
   deptosByProvincia: Map<string, Departamento[]>;
   deptosConfiablesByProvincia: Map<string, Departamento[]>;
   produccionByProducto: Map<string, ProduccionRegistro[]>;
@@ -154,7 +160,9 @@ function loadIndexes(): DatasetIndexes {
   const plantasByDepartamento = new Map<string, Planta[]>();
   const plantasByProducto = new Map<string, Planta[]>();
   const plantasByEmpresa = new Map<string, Planta[]>();
+  const plantaById = new Map<string, Planta>();
   for (const pl of ds.plantas) {
+    plantaById.set(pl.planta_id, pl);
     pushToGroup(plantasByProvincia, pl.provincia_id, pl);
     if (pl.departamento_id) pushToGroup(plantasByDepartamento, pl.departamento_id, pl);
     pushToGroup(plantasByProducto, pl.producto_id, pl);
@@ -164,6 +172,23 @@ function loadIndexes(): DatasetIndexes {
   const unidadesByPlanta = new Map<string, UnidadPlanta[]>();
   for (const u of ds.unidades_planta) {
     pushToGroup(unidadesByPlanta, u.planta_id, u);
+  }
+
+  const filialesByMatriz = new Map<string, Empresa[]>();
+  for (const e of ds.empresas) {
+    if (e.empresa_matriz_id) {
+      pushToGroup(filialesByMatriz, e.empresa_matriz_id, e);
+    }
+  }
+  for (const list of filialesByMatriz.values()) {
+    list.sort((a, b) => a.razon_social.localeCompare(b.razon_social, 'es'));
+  }
+
+  const vinculosPorProveedor = new Map<string, VinculoB2B[]>();
+  const vinculosPorCliente = new Map<string, VinculoB2B[]>();
+  for (const v of ds.vinculos_b2b) {
+    pushToGroup(vinculosPorProveedor, v.proveedor_empresa_id, v);
+    pushToGroup(vinculosPorCliente, v.cliente_empresa_id, v);
   }
 
   const produccionByProducto = new Map<string, ProduccionRegistro[]>();
@@ -191,7 +216,11 @@ function loadIndexes(): DatasetIndexes {
     plantasByDepartamento,
     plantasByProducto,
     plantasByEmpresa,
+    plantaById,
     unidadesByPlanta,
+    filialesByMatriz,
+    vinculosPorProveedor,
+    vinculosPorCliente,
     deptosByProvincia,
     deptosConfiablesByProvincia,
     produccionByProducto,
@@ -243,6 +272,7 @@ function loadDataset(): AtlasDataset {
     empresas: empresasRaw,
     plantas: plantasRaw,
     unidades_planta: unidadesPlantaRaw,
+    vinculos_b2b: vinculosB2BRaw,
     produccion: produccionRaw,
     comercio_exterior: comercioExteriorRaw,
   });
@@ -731,13 +761,14 @@ export function getSearchIndex(): SearchIndexItem[] {
           .filter((n): n is string => Boolean(n))
       )
     );
+    const matriz = emp.empresa_matriz_id ? idx.empresaById.get(emp.empresa_matriz_id) : undefined;
     items.push({
       id: `empresa-${emp.empresa_id}`,
       kind: 'empresa',
       title: emp.razon_social,
-      subtitle: `${emp.cuit ? `CUIT ${emp.cuit} · ` : ''}Capital ${emp.tipo_capital} · ${empProvs.join(', ') || 'Argentina'}`,
+      subtitle: `${emp.cuit ? `CUIT ${emp.cuit} · ` : ''}Capital ${emp.tipo_capital} · ${empProvs.join(', ') || (matriz ? `Vinculada a ${matriz.razon_social}` : 'Argentina')}`,
       href: `/empresas/${emp.empresa_id}`,
-      keywords: `${emp.razon_social} ${emp.cuit ?? ''} ${emp.tipo_capital} ${emp.hechos_verificables} ${empProvs.join(' ')} ${empProds.join(' ')}`,
+      keywords: `${emp.razon_social} ${emp.cuit ?? ''} ${emp.rol_societario} ${matriz?.razon_social ?? ''} ${emp.tipo_capital} ${emp.hechos_verificables} ${empProvs.join(' ')} ${empProds.join(' ')}`,
     });
   }
 
@@ -852,6 +883,13 @@ export interface PlantaConContexto extends Planta {
   unidades: UnidadPlantaDetalle[];
 }
 
+export interface VinculoB2BDetalle extends VinculoB2B {
+  proveedor: Empresa;
+  cliente: Empresa;
+  producto: Producto | null;
+  plantaCliente: Planta | null;
+}
+
 export interface EmpresaConPlantas {
   empresa: Empresa;
   plantas: PlantaConContexto[];
@@ -859,6 +897,9 @@ export interface EmpresaConPlantas {
   provincias: Provincia[];
   unidadesCount: number;
   mercado: EmpresaMercado | null;
+  sociedadesVinculadasCount: number;
+  vinculosB2BCount: number;
+  empresaMatrizNombre: string | null;
 }
 
 export interface FichaEmpresaProvinciaGrupo {
@@ -872,6 +913,27 @@ export interface FichaEmpresa extends EmpresaConPlantas {
   complejosPorProvincia: FichaEmpresaProvinciaGrupo[];
   procesosUnicos: Proceso[];
   fuentesCitadas: Fuente[];
+  empresaMatriz: Empresa | null;
+  sociedadesVinculadas: Empresa[];
+  vinculosComoProveedor: VinculoB2BDetalle[];
+  vinculosComoCliente: VinculoB2BDetalle[];
+}
+
+export function getVinculosB2B(): VinculoB2B[] {
+  return loadDataset().vinculos_b2b;
+}
+
+function hydrateVinculoB2B(v: VinculoB2B, idx: DatasetIndexes): VinculoB2BDetalle | null {
+  const proveedor = idx.empresaById.get(v.proveedor_empresa_id);
+  const cliente = idx.empresaById.get(v.cliente_empresa_id);
+  if (!proveedor || !cliente) return null;
+  return {
+    ...v,
+    proveedor,
+    cliente,
+    producto: v.producto_id ? (idx.productoById.get(v.producto_id) ?? null) : null,
+    plantaCliente: v.planta_cliente_id ? (idx.plantaById.get(v.planta_cliente_id) ?? null) : null,
+  };
 }
 
 export function getEmpresasConPlantas(): EmpresaConPlantas[] {
@@ -920,6 +982,14 @@ export function getEmpresasConPlantas(): EmpresaConPlantas[] {
         }
       }
 
+      const sociedadesCount = (idx.filialesByMatriz.get(empresa.empresa_id) ?? []).length;
+      const vinculosCount =
+        (idx.vinculosPorProveedor.get(empresa.empresa_id) ?? []).length +
+        (idx.vinculosPorCliente.get(empresa.empresa_id) ?? []).length;
+      const matriz = empresa.empresa_matriz_id
+        ? (idx.empresaById.get(empresa.empresa_matriz_id) ?? null)
+        : null;
+
       return {
         empresa,
         plantas,
@@ -927,6 +997,9 @@ export function getEmpresasConPlantas(): EmpresaConPlantas[] {
         provincias,
         unidadesCount,
         mercado: mercadoMap.get(empresa.empresa_id) ?? null,
+        sociedadesVinculadasCount: sociedadesCount,
+        vinculosB2BCount: vinculosCount,
+        empresaMatrizNombre: matriz?.razon_social ?? null,
       };
     });
   return cachedEmpresasConPlantas;
@@ -987,6 +1060,22 @@ export function getFichaEmpresa(empresaId: string): FichaEmpresa | undefined {
   const complejosPorProvincia = [...byProv.values()].sort((a, b) =>
     a.provincia.nombre.localeCompare(b.provincia.nombre, 'es')
   );
+
+  const empresaMatriz = base.empresa.empresa_matriz_id
+    ? (idx.empresaById.get(base.empresa.empresa_matriz_id) ?? null)
+    : null;
+  const sociedadesVinculadas = idx.filialesByMatriz.get(empresaId) ?? [];
+
+  const vinculosComoProveedor = (idx.vinculosPorProveedor.get(empresaId) ?? [])
+    .map((v) => hydrateVinculoB2B(v, idx))
+    .filter((v): v is VinculoB2BDetalle => Boolean(v));
+  const vinculosComoCliente = (idx.vinculosPorCliente.get(empresaId) ?? [])
+    .map((v) => hydrateVinculoB2B(v, idx))
+    .filter((v): v is VinculoB2BDetalle => Boolean(v));
+
+  for (const v of vinculosComoProveedor) citedIds.add(v.procedencia.fuente_id);
+  for (const v of vinculosComoCliente) citedIds.add(v.procedencia.fuente_id);
+
   const fuentesCitadas = [...citedIds]
     .map((id) => idx.fuenteById.get(id))
     .filter((f): f is Fuente => Boolean(f));
@@ -996,6 +1085,10 @@ export function getFichaEmpresa(empresaId: string): FichaEmpresa | undefined {
     complejosPorProvincia,
     procesosUnicos,
     fuentesCitadas,
+    empresaMatriz,
+    sociedadesVinculadas,
+    vinculosComoProveedor,
+    vinculosComoCliente,
   };
   cachedFichasEmpresa.set(empresaId, ficha);
   return ficha;

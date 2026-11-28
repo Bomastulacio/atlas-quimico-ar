@@ -33,6 +33,7 @@ const TABS = [
   'empresas',
   'plantas',
   'unidades_planta',
+  'vinculos_b2b',
   'produccion',
   'comercio_exterior',
 ] as const;
@@ -132,7 +133,7 @@ async function main() {
     );
   }
 
-  console.log(`[supabase-to-json] Sincronizando 12 tablas desde ${supabaseUrl}...`);
+  console.log(`[supabase-to-json] Sincronizando ${TABS.length} tablas desde ${supabaseUrl}...`);
 
   const raw = {} as Record<TabName, DbRow[]>;
   await Promise.all(
@@ -273,6 +274,12 @@ async function main() {
     empresa_id: String(r.empresa_id),
     razon_social: String(r.razon_social),
     cuit: r.cuit ? String(r.cuit).trim() : null,
+    empresa_matriz_id: r.empresa_matriz_id ? String(r.empresa_matriz_id).trim() : null,
+    rol_societario: r.rol_societario ? String(r.rol_societario) : 'operadora_industrial',
+    participacion_matriz_pct:
+      r.participacion_matriz_pct !== null && r.participacion_matriz_pct !== undefined
+        ? Number(r.participacion_matriz_pct)
+        : null,
     tipo_capital: String(r.tipo_capital),
     sitio_web_oficial: r.sitio_web_oficial ? String(r.sitio_web_oficial) : null,
     hechos_verificables: String(r.hechos_verificables),
@@ -318,6 +325,28 @@ async function main() {
         r.capacidad_unidad,
         procedencia,
         `unidades_planta[${i}].capacidad`
+      ),
+      procedencia,
+    };
+  });
+
+  const vinculos_b2b = raw.vinculos_b2b.map((r, i) => {
+    const procedencia = resolveProvenance(r, fuentesMap, `vinculos_b2b[${i}]`);
+    return {
+      vinculo_id: String(r.vinculo_id),
+      proveedor_empresa_id: String(r.proveedor_empresa_id),
+      cliente_empresa_id: String(r.cliente_empresa_id),
+      tipo_vinculo: String(r.tipo_vinculo),
+      insumo_o_servicio: String(r.insumo_o_servicio),
+      producto_id: r.producto_id ? String(r.producto_id).trim() : null,
+      planta_cliente_id: r.planta_cliente_id ? String(r.planta_cliente_id).trim() : null,
+      relacion_societaria: String(r.relacion_societaria),
+      volumen: buildValorMedido(
+        r.volumen_valor,
+        r.volumen_estado,
+        r.volumen_unidad,
+        procedencia,
+        `vinculos_b2b[${i}].volumen`
       ),
       procedencia,
     };
@@ -383,6 +412,7 @@ async function main() {
     ...empresas.map((r) => r.procedencia.fuente_id),
     ...plantas.map((r) => r.procedencia.fuente_id),
     ...unidades_planta.map((r) => r.procedencia.fuente_id),
+    ...vinculos_b2b.map((r) => r.procedencia.fuente_id),
     ...produccion.map((r) => r.procedencia.fuente_id),
     ...comercio_exterior.map((r) => r.procedencia.fuente_id),
   ]);
@@ -402,6 +432,7 @@ async function main() {
     empresas,
     plantas,
     unidades_planta,
+    vinculos_b2b,
     produccion,
     comercio_exterior,
   };

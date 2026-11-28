@@ -179,17 +179,20 @@ describe('Capa única de acceso a datos (src/data)', () => {
 
   it('expone el directorio verificable de empresas con plantas, productos y trazabilidad (Etapa 8)', () => {
     const empresas = getEmpresasConPlantas();
-    expect(empresas).toHaveLength(29);
+    expect(empresas).toHaveLength(39);
+    const operadorasConPlanta = empresas.filter((item) => item.plantas.length > 0);
+    expect(operadorasConPlanta).toHaveLength(29);
     for (const item of empresas) {
-      expect(item.plantas.length).toBeGreaterThanOrEqual(1);
-      expect(item.productos.length).toBeGreaterThanOrEqual(1);
-      expect(item.provincias.length).toBeGreaterThanOrEqual(1);
+      if (item.plantas.length > 0) {
+        expect(item.productos.length).toBeGreaterThanOrEqual(1);
+        expect(item.provincias.length).toBeGreaterThanOrEqual(1);
+      }
       expect(item.empresa.procedencia.hash).toMatch(/^sha256:[a-f0-9]{64}$/);
       expect(item.empresa.procedencia.cita_ubicacion.length).toBeGreaterThan(5);
     }
 
     const searchEmpItems = getSearchIndex().filter((i) => i.kind === 'empresa');
-    expect(searchEmpItems).toHaveLength(29);
+    expect(searchEmpItems).toHaveLength(39);
   });
 
   it('consolida el indicador de cobertura territorial por región y las 24 jurisdicciones (Etapa 8)', () => {
@@ -197,7 +200,7 @@ describe('Capa única de acceso a datos (src/data)', () => {
     expect(cov.provincias).toHaveLength(24);
     expect(cov.totales.provinciasConDatos).toBe(24);
     expect(cov.totales.provinciasSinDatos).toBe(0);
-    expect(cov.totales.empresasVerificadas).toBe(29);
+    expect(cov.totales.empresasVerificadas).toBe(39);
     expect(cov.totales.plantasGeorreferenciadas).toBe(35);
     expect(cov.totales.plantasSinCapacidadPublica).toBeGreaterThanOrEqual(1);
 
@@ -338,12 +341,12 @@ describe('Capa única de acceso a datos (src/data)', () => {
     expect(ypf.fuentesCitadas.some((f) => f.fuente_id === 'ypf-sec-20f-2025')).toBe(true);
   });
 
-  it('valida 26 CUITs verificados con módulo 11, trazabilidad BCRA y 3 sin_datos legales', () => {
+  it('valida 36 CUITs verificados con módulo 11, trazabilidad BCRA y 3 sin_datos legales', () => {
     const empresas = getEmpresasConPlantas().map((e) => e.empresa);
     const conCuit = empresas.filter((e) => e.cuit !== null);
     const sinCuit = empresas.filter((e) => e.cuit === null).map((e) => e.empresa_id).sort();
 
-    expect(conCuit).toHaveLength(26);
+    expect(conCuit).toHaveLength(36);
     expect(sinCuit).toEqual([
       'grupo-san-francisco-sa',
       'polo-citricola-concordia',
@@ -366,5 +369,52 @@ describe('Capa única de acceso a datos (src/data)', () => {
 
     expect(getFichaEmpresa('molinos-agro-sa')?.empresa.cuit).toBe('30-71511877-3');
     expect(getFichaEmpresa('dow-pbbpolisur')?.empresa.cuit).toBe('30-56025419-5');
+  });
+
+  it('resuelve estructura societaria multi-CUIT y red B2B pública verificable (Etapa 12)', () => {
+    const rioTinto = getFichaEmpresa('rio-tinto-litio-ar')!;
+    expect(rioTinto.empresa.rol_societario).toBe('holding');
+    expect(rioTinto.sociedadesVinculadas.map((s) => s.empresa_id).sort()).toEqual([
+      'minera-del-altiplano-sa',
+      'rincon-mining-rigi',
+      'sales-de-jujuy-sa',
+    ]);
+
+    const aluar = getFichaEmpresa('aluar-saic')!;
+    expect(aluar.sociedadesVinculadas.map((s) => s.empresa_id).sort()).toEqual([
+      'hidroelectrica-futaleufu-sa',
+      'infa-sau',
+    ]);
+    const b2bFutaleufu = aluar.vinculosComoCliente.find(
+      (v) => v.vinculo_id === 'b2b-futaleufu-aluar-energia'
+    );
+    expect(b2bFutaleufu?.volumen.estado).toBe('dato');
+    expect(b2bFutaleufu?.volumen.valor).toBe(2716304);
+    expect(b2bFutaleufu?.volumen.unidad).toBe('MWh/año');
+
+    const ypf = getFichaEmpresa('ypf-sa')!;
+    expect(ypf.sociedadesVinculadas.map((s) => s.empresa_id).sort()).toEqual([
+      'compania-mega-sa',
+      'oldelval-sa',
+      'opessa-ypf',
+      'termap-sa',
+      'ypf-energia-electrica-sa',
+    ]);
+    expect(ypf.vinculosComoProveedor.some((v) => v.cliente_empresa_id === 'profertil-sa')).toBe(true);
+    expect(
+      ypf.vinculosComoCliente.map((v) => v.proveedor_empresa_id)
+    ).toEqual(expect.arrayContaining(['oldelval-sa', 'termap-sa', 'opessa-ypf']));
+
+    const profertil = getFichaEmpresa('profertil-sa')!;
+    expect(
+      profertil.vinculosComoCliente.map((v) => v.proveedor_empresa_id)
+    ).toEqual(expect.arrayContaining(['ypf-sa', 'ypf-energia-electrica-sa']));
+
+    const dow = getFichaEmpresa('dow-pbbpolisur')!;
+    expect(
+      dow.vinculosComoCliente.some(
+        (v) => v.vinculo_id === 'b2b-mega-dow-etano' && v.proveedor_empresa_id === 'compania-mega-sa'
+      )
+    ).toBe(true);
   });
 });

@@ -93,6 +93,7 @@ describe('Reglas de integridad y procedencia (Zod)', () => {
       empresas: [],
       plantas: [],
       unidades_planta: [],
+      vinculos_b2b: [],
       produccion: [],
       comercio_exterior: [],
     };

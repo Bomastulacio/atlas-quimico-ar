@@ -34,7 +34,7 @@ const provinciasData = getMapaProvinciasData();
 const departamentosData = getMapaDepartamentosData();
 const searchItems = getSearchIndex();
 const chainSummaries = getChainCardSummaries();
-const empresasConPlantas = getEmpresasConPlantas();
+const empresasConPlantas = getEmpresasConPlantas().filter((e) => e.plantas.length > 0);
 const cobertura = getCoberturaDetallada();
 const pctCobertura = Math.round(
   (cobertura.totales.provinciasConDatos / cobertura.totales.totalProvincias) * 100

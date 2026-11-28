@@ -38,6 +38,17 @@ const CAPITAL_LABEL: Record<Empresa['tipo_capital'], string> = {
   sin_datos: 'Sin datos de capital',
 };
 
+const ROL_SOCIETARIO_LABEL: Record<Empresa['rol_societario'], string> = {
+  operadora_industrial: 'Operadora industrial',
+  logistica_puerto: 'Logística y puertos',
+  energia_utilidades: 'Energía y utilidades',
+  comercializadora: 'Comercialización y red minorista',
+  ingenieria_servicios: 'Ingeniería y montajes',
+  vpu_rigi: 'VPU RIGI',
+  holding: 'Grupo / holding',
+  agrupamiento: 'Agrupamiento sectorial',
+};
+
 const ESTADO_PLANTA_META: Record<
   Planta['estado_operativo'],
   { label: string; dotClass: string }
@@ -63,6 +74,7 @@ export function EmpresasExplorer({
 }: EmpresasExplorerProps) {
   const [selectedProductId, setSelectedProductId] = useState<string | null>(null);
   const [selectedCapital, setSelectedCapital] = useState<Empresa['tipo_capital'] | 'todos'>('todos');
+  const [scopeFilter, setScopeFilter] = useState<'operadoras' | 'todas'>('operadoras');
   const [query, setQuery] = useState('');
 
   const {
@@ -91,6 +103,11 @@ export function EmpresasExplorer({
     return (['nacional', 'mixto', 'extranjero', 'estatal'] as const).filter((c) => set.has(c));
   }, [empresas]);
 
+  const operadorasCount = useMemo(
+    () => empresas.filter((e) => e.plantas.length > 0).length,
+    [empresas]
+  );
+
   const indexedEmpresas = useMemo(
     () =>
       empresas.map((item) => ({
@@ -100,6 +117,9 @@ export function EmpresasExplorer({
           [
             item.empresa.razon_social,
             item.empresa.cuit ?? '',
+            item.empresa.rol_societario,
+            ROL_SOCIETARIO_LABEL[item.empresa.rol_societario],
+            item.empresaMatrizNombre ?? '',
             item.empresa.hechos_verificables,
             ...item.plantas.map(
               (pl) =>
@@ -115,6 +135,9 @@ export function EmpresasExplorer({
     const q = normalizeText(query.trim());
     const out: EmpresaConPlantas[] = [];
     for (const entry of indexedEmpresas) {
+      if (scopeFilter === 'operadoras' && entry.item.plantas.length === 0) {
+        continue;
+      }
       if (selectedProductId !== null && !entry.productIds.has(selectedProductId)) {
         continue;
       }
@@ -127,14 +150,18 @@ export function EmpresasExplorer({
       out.push(entry.item);
     }
     return out;
-  }, [indexedEmpresas, selectedProductId, selectedCapital, query]);
+  }, [indexedEmpresas, scopeFilter, selectedProductId, selectedCapital, query]);
 
   const totalPlantasFiltradas = useMemo(
     () => filtered.reduce((acc, item) => acc + item.plantas.length, 0),
     [filtered]
   );
 
-  const hasFilters = selectedProductId !== null || selectedCapital !== 'todos' || query.trim() !== '';
+  const hasFilters =
+    scopeFilter !== 'operadoras' ||
+    selectedProductId !== null ||
+    selectedCapital !== 'todos' ||
+    query.trim() !== '';
 
   return (
     <MotionConfig reducedMotion="user">
@@ -282,45 +309,74 @@ export function EmpresasExplorer({
           </div>
 
           <div className="flex flex-wrap items-center justify-between gap-3 border-t border-rule pt-3.5 text-[13px]">
-            <div className="flex flex-wrap items-center gap-2">
-              <span className="text-ink-muted">Origen del capital:</span>
-              <button
-                type="button"
-                onClick={() => setSelectedCapital('todos')}
-                className={`cursor-pointer border px-2.5 py-1 font-medium transition-colors duration-150 ${
-                  selectedCapital === 'todos'
-                    ? 'border-ink bg-ink text-white'
-                    : 'border-rule bg-stone-bg text-ink hover:border-ink'
-                }`}
-              >
-                Todos
-              </button>
-              {availableCapitals.map((cap) => (
+            <div className="flex flex-wrap items-center gap-4">
+              <div className="flex flex-wrap items-center gap-1.5">
+                <span className="text-ink-muted">Alcance:</span>
                 <button
-                  key={cap}
                   type="button"
-                  onClick={() => setSelectedCapital((curr) => (curr === cap ? 'todos' : cap))}
-                  className={`cursor-pointer border px-2.5 py-1 font-medium transition-colors duration-150 ${
-                    selectedCapital === cap
+                  onClick={() => setScopeFilter('operadoras')}
+                  className={`cursor-pointer border px-2.5 py-1 font-medium transition-colors duration-150 tabular-nums ${
+                    scopeFilter === 'operadoras'
                       ? 'border-ink bg-ink text-white'
                       : 'border-rule bg-stone-bg text-ink hover:border-ink'
                   }`}
                 >
-                  {CAPITAL_LABEL[cap].replace('Capital ', '')}
+                  Operadoras con planta ({operadorasCount})
                 </button>
-              ))}
+                <button
+                  type="button"
+                  onClick={() => setScopeFilter('todas')}
+                  className={`cursor-pointer border px-2.5 py-1 font-medium transition-colors duration-150 tabular-nums ${
+                    scopeFilter === 'todas'
+                      ? 'border-ink bg-ink text-white'
+                      : 'border-rule bg-stone-bg text-ink hover:border-ink'
+                  }`}
+                >
+                  Todas + filiales multi-CUIT ({empresas.length})
+                </button>
+              </div>
+
+              <div className="flex flex-wrap items-center gap-2">
+                <span className="text-ink-muted">Capital:</span>
+                <button
+                  type="button"
+                  onClick={() => setSelectedCapital('todos')}
+                  className={`cursor-pointer border px-2.5 py-1 font-medium transition-colors duration-150 ${
+                    selectedCapital === 'todos'
+                      ? 'border-ink bg-ink text-white'
+                      : 'border-rule bg-stone-bg text-ink hover:border-ink'
+                  }`}
+                >
+                  Todos
+                </button>
+                {availableCapitals.map((cap) => (
+                  <button
+                    key={cap}
+                    type="button"
+                    onClick={() => setSelectedCapital((curr) => (curr === cap ? 'todos' : cap))}
+                    className={`cursor-pointer border px-2.5 py-1 font-medium transition-colors duration-150 ${
+                      selectedCapital === cap
+                        ? 'border-ink bg-ink text-white'
+                        : 'border-rule bg-stone-bg text-ink hover:border-ink'
+                    }`}
+                  >
+                    {CAPITAL_LABEL[cap].replace('Capital ', '')}
+                  </button>
+                ))}
+              </div>
             </div>
 
             <div className="flex items-center gap-3 tabular-nums text-ink-muted">
               <span>
                 Mostrando <strong className="font-medium text-ink">{filtered.length}</strong> de{' '}
-                {empresas.length} empresas ·{' '}
+                {empresas.length} sociedades ·{' '}
                 <strong className="font-medium text-ink">{totalPlantasFiltradas}</strong> plantas
               </span>
               {hasFilters && (
                 <button
                   type="button"
                   onClick={() => {
+                    setScopeFilter('operadoras');
                     setSelectedProductId(null);
                     setSelectedCapital('todos');
                     setQuery('');
@@ -369,7 +425,7 @@ export function EmpresasExplorer({
                             <p className="mt-1 text-[13px] text-ink-muted tabular-nums">
                               {CAPITAL_LABEL[empresa.tipo_capital]}
                               {empresa.cuit ? ` · CUIT ${empresa.cuit}` : ''} ·{' '}
-                              {empProvs.map((p) => p.nombre).join(', ')}
+                              {empProvs.map((p) => p.nombre).join(', ') || 'Sin planta fabril asignada'}
                             </p>
                           </div>
 
@@ -395,8 +451,34 @@ export function EmpresasExplorer({
                           </div>
                         </div>
 
-                        {/* Cadenas operadas */}
+                        {/* Rol societario, estructura multi-CUIT y cadenas operadas */}
                         <div className="mt-4 flex flex-wrap items-center gap-2">
+                          {empresa.rol_societario !== 'operadora_industrial' && (
+                            <span className="border border-rule bg-stone-bg px-2.5 py-1 text-[12px] font-medium text-ink">
+                              {ROL_SOCIETARIO_LABEL[empresa.rol_societario]}
+                            </span>
+                          )}
+                          {item.empresaMatrizNombre && (
+                            <a
+                              href={`/empresas/${empresa.empresa_matriz_id}`}
+                              className="border border-cobalt/40 bg-stone-bg px-2.5 py-1 text-[12px] font-medium text-cobalt hover:underline"
+                            >
+                              Vinculada a {item.empresaMatrizNombre}
+                              {empresa.participacion_matriz_pct !== null
+                                ? ` (${empresa.participacion_matriz_pct.toLocaleString('es-AR')}%)`
+                                : ''}
+                            </a>
+                          )}
+                          {item.sociedadesVinculadasCount > 0 && (
+                            <span className="border border-ink/20 bg-stone-subtle/70 px-2.5 py-1 text-[12px] font-medium text-ink tabular-nums">
+                              {item.sociedadesVinculadasCount} CUITs vinculados
+                            </span>
+                          )}
+                          {item.vinculosB2BCount > 0 && (
+                            <span className="border border-emerald-react/40 bg-stone-bg px-2.5 py-1 text-[12px] font-medium text-emerald-react tabular-nums">
+                              {item.vinculosB2BCount} {item.vinculosB2BCount === 1 ? 'vínculo B2B' : 'vínculos B2B'}
+                            </span>
+                          )}
                           {empProds.map((prod) => {
                             const accent = getCategoryAccent(prod.categoria);
                             return (
@@ -467,97 +549,133 @@ export function EmpresasExplorer({
                       </div>
                     </div>
 
-                    {/* Columna derecha: tabla/lista de plantas georreferenciadas */}
+                    {/* Columna derecha: tabla/lista de plantas georreferenciadas o rol societario multi-CUIT */}
                     <div className="p-6 lg:col-span-7">
-                      <div className="flex items-center justify-between gap-2 border-b border-rule pb-3">
-                        <div className="flex items-center gap-2 text-[14px] font-medium text-ink">
-                          <Building2 className="h-4 w-4 text-ink-muted" />
-                          <span>Plantas e instalaciones verificadas ({plantas.length})</span>
-                        </div>
-                        <span className="text-[13px] text-ink-muted">
-                          Click en ubicación para ver modelo 3D en mapa
-                        </span>
-                      </div>
-
-                      <div className="mt-4 divide-y divide-rule">
-                        {plantas.map((pl) => {
-                          const estadoMeta = ESTADO_PLANTA_META[pl.estado_operativo];
-                          const mapHref = pl.departamento
-                            ? `/?provincia=${pl.provincia.provincia_id}&departamento=${pl.departamento.departamento_id}#mapa`
-                            : `/?provincia=${pl.provincia.provincia_id}#mapa`;
-
-                          return (
-                            <div key={pl.planta_id} className="py-4 first:pt-0 last:pb-0">
-                              <div className="flex flex-wrap items-start justify-between gap-3">
-                                <div>
-                                  <h3 className="font-display text-[15px] font-medium leading-snug tracking-[-0.01em] text-ink">{pl.nombre}</h3>
-                                  <p className="mt-1 text-[13px] text-ink-muted tabular-nums">
-                                    {pl.localidad}
-                                    {pl.departamento ? `, Depto. ${pl.departamento.nombre}` : ''},{' '}
-                                    {pl.provincia.nombre} ({pl.lat.toFixed(3)}, {pl.lon.toFixed(3)})
-                                  </p>
-                                </div>
-
-                                <span className="inline-flex items-center gap-1.5 text-[13px] font-medium text-ink">
-                                  <span className={`h-2 w-2 rounded-full ${estadoMeta.dotClass}`} />
-                                  <span>{estadoMeta.label}</span>
-                                </span>
-                              </div>
-
-                              <dl className="mt-3 grid gap-3 bg-stone-bg p-3.5 text-[13px] sm:grid-cols-3 tabular-nums">
-                                <div>
-                                  <dt className="text-ink-muted">Cadena / producto</dt>
-                                  <dd className="mt-0.5 font-medium text-ink">
-                                    {pl.producto.nombre}
-                                  </dd>
-                                </div>
-                                <div>
-                                  <dt className="text-ink-muted">Capacidad declarada</dt>
-                                  <dd
-                                    className={`mt-0.5 font-medium ${
-                                      pl.capacidad.estado === 'dato'
-                                        ? 'text-cobalt'
-                                        : 'text-ink-muted'
-                                    }`}
-                                  >
-                                    {pl.capacidad.estado === 'dato'
-                                      ? `${pl.capacidad.valor.toLocaleString('es-AR')} ${pl.capacidad.unidad}`
-                                      : 'Sin datos'}
-                                  </dd>
-                                </div>
-                                <div>
-                                  <dt className="text-ink-muted">Año y verificación</dt>
-                                  <dd className="mt-0.5 font-medium text-ink">
-                                    {pl.procedencia.anio} · Confianza {pl.procedencia.confianza}
-                                  </dd>
-                                </div>
-                              </dl>
-
-                              <div className="mt-3 flex flex-wrap items-center justify-between gap-3 text-[13px]">
-                                <span className="text-ink-muted">
-                                  Cita: {pl.procedencia.cita_ubicacion}
-                                </span>
-                                <div className="flex items-center gap-4">
-                                  <a
-                                    href={mapHref}
-                                    className="inline-flex items-center gap-1 font-medium text-ink transition-colors duration-150 hover:text-cobalt"
-                                  >
-                                    <MapPin className="h-3.5 w-3.5" />
-                                    <span>Ver en mapa</span>
-                                  </a>
-                                  <a
-                                    href={`/productos/${pl.producto.producto_id}#diagrama`}
-                                    className="inline-flex items-center gap-1 font-medium text-cobalt hover:underline"
-                                  >
-                                    <span>Proceso</span>
-                                    <ArrowRight className="h-3.5 w-3.5" />
-                                  </a>
-                                </div>
-                              </div>
+                      {plantas.length > 0 ? (
+                        <>
+                          <div className="flex items-center justify-between gap-2 border-b border-rule pb-3">
+                            <div className="flex items-center gap-2 text-[14px] font-medium text-ink">
+                              <Building2 className="h-4 w-4 text-ink-muted" />
+                              <span>Plantas e instalaciones verificadas ({plantas.length})</span>
                             </div>
-                          );
-                        })}
-                      </div>
+                            <span className="text-[13px] text-ink-muted">
+                              Click en ubicación para ver modelo 3D en mapa
+                            </span>
+                          </div>
+
+                          <div className="mt-4 divide-y divide-rule">
+                            {plantas.map((pl) => {
+                              const estadoMeta = ESTADO_PLANTA_META[pl.estado_operativo];
+                              const mapHref = pl.departamento
+                                ? `/?provincia=${pl.provincia.provincia_id}&departamento=${pl.departamento.departamento_id}#mapa`
+                                : `/?provincia=${pl.provincia.provincia_id}#mapa`;
+
+                              return (
+                                <div key={pl.planta_id} className="py-4 first:pt-0 last:pb-0">
+                                  <div className="flex flex-wrap items-start justify-between gap-3">
+                                    <div>
+                                      <h3 className="font-display text-[15px] font-medium leading-snug tracking-[-0.01em] text-ink">{pl.nombre}</h3>
+                                      <p className="mt-1 text-[13px] text-ink-muted tabular-nums">
+                                        {pl.localidad}
+                                        {pl.departamento ? `, Depto. ${pl.departamento.nombre}` : ''},{' '}
+                                        {pl.provincia.nombre} ({pl.lat.toFixed(3)}, {pl.lon.toFixed(3)})
+                                      </p>
+                                    </div>
+
+                                    <span className="inline-flex items-center gap-1.5 text-[13px] font-medium text-ink">
+                                      <span className={`h-2 w-2 rounded-full ${estadoMeta.dotClass}`} />
+                                      <span>{estadoMeta.label}</span>
+                                    </span>
+                                  </div>
+
+                                  <dl className="mt-3 grid gap-3 bg-stone-bg p-3.5 text-[13px] sm:grid-cols-3 tabular-nums">
+                                    <div>
+                                      <dt className="text-ink-muted">Cadena / producto</dt>
+                                      <dd className="mt-0.5 font-medium text-ink">
+                                        {pl.producto.nombre}
+                                      </dd>
+                                    </div>
+                                    <div>
+                                      <dt className="text-ink-muted">Capacidad declarada</dt>
+                                      <dd
+                                        className={`mt-0.5 font-medium ${
+                                          pl.capacidad.estado === 'dato'
+                                            ? 'text-cobalt'
+                                            : 'text-ink-muted'
+                                        }`}
+                                      >
+                                        {pl.capacidad.estado === 'dato'
+                                          ? `${pl.capacidad.valor.toLocaleString('es-AR')} ${pl.capacidad.unidad}`
+                                          : 'Sin datos'}
+                                      </dd>
+                                    </div>
+                                    <div>
+                                      <dt className="text-ink-muted">Año y verificación</dt>
+                                      <dd className="mt-0.5 font-medium text-ink">
+                                        {pl.procedencia.anio} · Confianza {pl.procedencia.confianza}
+                                      </dd>
+                                    </div>
+                                  </dl>
+
+                                  <div className="mt-3 flex flex-wrap items-center justify-between gap-3 text-[13px]">
+                                    <span className="text-ink-muted">
+                                      Cita: {pl.procedencia.cita_ubicacion}
+                                    </span>
+                                    <div className="flex items-center gap-4">
+                                      <a
+                                        href={mapHref}
+                                        className="inline-flex items-center gap-1 font-medium text-ink transition-colors duration-150 hover:text-cobalt"
+                                      >
+                                        <MapPin className="h-3.5 w-3.5" />
+                                        <span>Ver en mapa</span>
+                                      </a>
+                                      <a
+                                        href={`/productos/${pl.producto.producto_id}#diagrama`}
+                                        className="inline-flex items-center gap-1 font-medium text-cobalt hover:underline"
+                                      >
+                                        <span>Proceso</span>
+                                        <ArrowRight className="h-3.5 w-3.5" />
+                                      </a>
+                                    </div>
+                                  </div>
+                                </div>
+                              );
+                            })}
+                          </div>
+                        </>
+                      ) : (
+                        <div className="flex h-full flex-col justify-between border border-rule bg-stone-bg p-5">
+                          <div>
+                            <p className="text-[12.5px] font-medium text-ink-muted">
+                              Sociedad vinculada / multi-CUIT sin planta química asignada en mapa
+                            </p>
+                            <h3 className="mt-1 font-display text-[16px] font-medium text-ink">
+                              {ROL_SOCIETARIO_LABEL[empresa.rol_societario]}
+                            </h3>
+                            <p className="mt-2 text-[13.5px] leading-relaxed text-ink-muted">
+                              Registra{' '}
+                              <strong className="font-medium text-ink tabular-nums">
+                                {item.vinculosB2BCount}
+                              </strong>{' '}
+                              {item.vinculosB2BCount === 1
+                                ? 'vínculo B2B público auditado'
+                                : 'vínculos B2B públicos auditados'}
+                              {item.empresaMatrizNombre
+                                ? ` bajo participación vinculada a ${item.empresaMatrizNombre}.`
+                                : '.'}
+                            </p>
+                          </div>
+                          <div className="mt-4 border-t border-rule pt-3">
+                            <a
+                              href={`/empresas/${empresa.empresa_id}`}
+                              className="inline-flex items-center gap-1.5 text-[13px] font-medium text-cobalt hover:underline"
+                            >
+                              <span>Ver red societaria y vínculos B2B</span>
+                              <ArrowRight className="h-3.5 w-3.5" />
+                            </a>
+                          </div>
+                        </div>
+                      )}
                     </div>
                   </div>
                 </article>
@@ -576,13 +694,14 @@ export function EmpresasExplorer({
             <button
               type="button"
               onClick={() => {
+                setScopeFilter('todas');
                 setSelectedProductId(null);
                 setSelectedCapital('todos');
                 setQuery('');
               }}
               className="mt-4 cursor-pointer bg-ink px-4 py-2 text-[13px] font-medium text-white transition-colors duration-150 hover:bg-cobalt"
             >
-              Ver todas las empresas ({empresas.length})
+              Ver todas las sociedades ({empresas.length})
             </button>
           </div>
         )}

@@ -173,10 +173,25 @@ export const CuitSchema = z
   .string()
   .regex(/^\d{2}-\d{8}-\d$/, 'El CUIT debe tener formato argentino XX-XXXXXXXX-X');
 
+export const RolSocietarioSchema = z.enum([
+  'operadora_industrial',
+  'logistica_puerto',
+  'energia_utilidades',
+  'comercializadora',
+  'ingenieria_servicios',
+  'vpu_rigi',
+  'holding',
+  'agrupamiento',
+]);
+export type RolSocietario = z.infer<typeof RolSocietarioSchema>;
+
 export const EmpresaSchema = z.object({
   empresa_id: SlugSchema,
   razon_social: z.string().min(1),
   cuit: CuitSchema.nullable().default(null),
+  empresa_matriz_id: SlugSchema.nullable().default(null),
+  rol_societario: RolSocietarioSchema.default('operadora_industrial'),
+  participacion_matriz_pct: z.number().gt(0).lte(100).nullable().default(null),
   tipo_capital: z.enum(['nacional', 'extranjero', 'mixto', 'estatal', 'sin_datos']),
   sitio_web_oficial: z.string().url().nullable(),
   hechos_verificables: z.string().min(10),
@@ -211,6 +226,32 @@ export const UnidadPlantaSchema = z.object({
   procedencia: ProvenanceSchema,
 });
 export type UnidadPlanta = z.infer<typeof UnidadPlantaSchema>;
+
+export const VinculoB2BSchema = z
+  .object({
+    vinculo_id: SlugSchema,
+    proveedor_empresa_id: SlugSchema,
+    cliente_empresa_id: SlugSchema,
+    tipo_vinculo: z.enum([
+      'suministro_insumo',
+      'energia_electrica',
+      'logistica_ducto',
+      'logistica_puerto',
+      'ingenieria_montaje',
+      'comercializacion_producto',
+    ]),
+    insumo_o_servicio: z.string().min(1),
+    producto_id: SlugSchema.nullable().default(null),
+    planta_cliente_id: SlugSchema.nullable().default(null),
+    relacion_societaria: z.enum(['controlada', 'vinculada_jv', 'tercero_independiente']),
+    volumen: ValorMedidoSchema,
+    procedencia: ProvenanceSchema,
+  })
+  .refine((v) => v.proveedor_empresa_id !== v.cliente_empresa_id, {
+    message: 'Un vínculo B2B no puede tener la misma empresa como proveedor y cliente',
+    path: ['cliente_empresa_id'],
+  });
+export type VinculoB2B = z.infer<typeof VinculoB2BSchema>;
 
 export const ProduccionRegistroSchema = z.object({
   registro_id: SlugSchema,
@@ -281,6 +322,7 @@ export const AtlasDatasetSchema = z.object({
   empresas: z.array(EmpresaSchema),
   plantas: z.array(PlantaSchema),
   unidades_planta: z.array(UnidadPlantaSchema).default([]),
+  vinculos_b2b: z.array(VinculoB2BSchema).default([]),
   produccion: z.array(ProduccionRegistroSchema),
   comercio_exterior: z.array(ComercioExteriorRegistroSchema),
 });
@@ -348,6 +390,8 @@ export function validateDatasetIntegrity(
   const plantaIds = checkUniqueIds(dataset.plantas, (r) => r.planta_id, 'plantas', errors);
   const unidadesPlanta = dataset.unidades_planta ?? [];
   checkUniqueIds(unidadesPlanta, (r) => r.unidad_id, 'unidades_planta', errors);
+  const vinculosB2B = dataset.vinculos_b2b ?? [];
+  checkUniqueIds(vinculosB2B, (r) => r.vinculo_id, 'vinculos_b2b', errors);
   checkUniqueIds(dataset.produccion, (r) => r.registro_id, 'produccion', errors);
   checkUniqueIds(dataset.comercio_exterior, (r) => r.registro_id, 'comercio_exterior', errors);
 
@@ -420,6 +464,13 @@ export function validateDatasetIntegrity(
   }
 
   for (const e of dataset.empresas) {
+    if (e.empresa_matriz_id) {
+      if (e.empresa_matriz_id === e.empresa_id) {
+        errors.push(`[empresas:${e.empresa_id}] empresa_matriz_id no puede apuntar a sí misma`);
+      } else if (!empresaIds.has(e.empresa_matriz_id)) {
+        errors.push(`[empresas:${e.empresa_id}] empresa_matriz_id inexistente: "${e.empresa_matriz_id}"`);
+      }
+    }
     checkFuente('empresas', e.empresa_id, e.procedencia.fuente_id);
   }
 
@@ -448,6 +499,22 @@ export function validateDatasetIntegrity(
       errors.push(`[unidades_planta:${u.unidad_id}] producto_id inexistente: "${u.producto_id}"`);
     }
     checkFuente('unidades_planta', u.unidad_id, u.procedencia.fuente_id);
+  }
+
+  for (const v of vinculosB2B) {
+    if (!empresaIds.has(v.proveedor_empresa_id)) {
+      errors.push(`[vinculos_b2b:${v.vinculo_id}] proveedor_empresa_id inexistente: "${v.proveedor_empresa_id}"`);
+    }
+    if (!empresaIds.has(v.cliente_empresa_id)) {
+      errors.push(`[vinculos_b2b:${v.vinculo_id}] cliente_empresa_id inexistente: "${v.cliente_empresa_id}"`);
+    }
+    if (v.producto_id && !productoIds.has(v.producto_id)) {
+      errors.push(`[vinculos_b2b:${v.vinculo_id}] producto_id inexistente: "${v.producto_id}"`);
+    }
+    if (v.planta_cliente_id && !plantaIds.has(v.planta_cliente_id)) {
+      errors.push(`[vinculos_b2b:${v.vinculo_id}] planta_cliente_id inexistente: "${v.planta_cliente_id}"`);
+    }
+    checkFuente('vinculos_b2b', v.vinculo_id, v.procedencia.fuente_id);
   }
 
   for (const pr of dataset.produccion) {
@@ -479,6 +546,7 @@ export function validateDatasetIntegrity(
       ...dataset.empresas.map((r) => ({ ctx: `empresas:${r.empresa_id}`, p: r.procedencia })),
       ...dataset.plantas.map((r) => ({ ctx: `plantas:${r.planta_id}`, p: r.procedencia })),
       ...unidadesPlanta.map((r) => ({ ctx: `unidades_planta:${r.unidad_id}`, p: r.procedencia })),
+      ...vinculosB2B.map((r) => ({ ctx: `vinculos_b2b:${r.vinculo_id}`, p: r.procedencia })),
       ...dataset.produccion.map((r) => ({ ctx: `produccion:${r.registro_id}`, p: r.procedencia })),
       ...dataset.comercio_exterior.map((r) => ({ ctx: `comercio_exterior:${r.registro_id}`, p: r.procedencia })),
     ];
