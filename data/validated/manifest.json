@@ -1,13 +1,13 @@
 {
   "version_esquema": "1.0.0",
-  "generado_en": "2026-11-27T20:38:50.094Z",
+  "generado_en": "2026-11-28T12:51:34.133Z",
   "origen": "supabase",
   "es_ejemplo": false,
   "nota": "Dataset oficial sincronizado íntegramente desde Supabase.",
   "tablas": {
     "fuentes": {
-      "registros": 117,
-      "hash": "sha256:56418cc65bb881fee434aaf7328c47d720c6eda86e0e33a0c93d1d4dc93548b2"
+      "registros": 127,
+      "hash": "sha256:4a0120155ca7d157b02a7235e1487589e23b7831cdaa5e23d4aa4f959d42208f"
     },
     "provincias": {
       "registros": 24,
@@ -38,8 +38,8 @@
       "hash": "sha256:b0edea84b1c150f71c428304338e22ef3d6b730c054891090aa9d1f13939e98a"
     },
     "empresas": {
-      "registros": 29,
-      "hash": "sha256:bc51dcb63dd5841ca6b179a9b1e543c0de0da9b27a1f5c8099e7ee62eee9d425"
+      "registros": 39,
+      "hash": "sha256:b7d87959440eb9cdfd4206d293bc59377c82b7b5b0532e5ea23df8f6875de1f8"
     },
     "plantas": {
       "registros": 35,
@@ -48,6 +48,10 @@
     "unidades_planta": {
       "registros": 40,
       "hash": "sha256:db9f765075bf25563a96fd1bcc8e5794f9613d0439ad30e18257e5eaf99a5233"
+    },
+    "vinculos_b2b": {
+      "registros": 9,
+      "hash": "sha256:8b13fbee81cb48e1a650c451f70dbd8a5e911aad40db6df5c023da66c6e919a7"
     },
     "produccion": {
       "registros": 59,

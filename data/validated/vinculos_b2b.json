@@ -1,0 +1,317 @@
+[
+  {
+    "vinculo_id": "b2b-futaleufu-aluar-energia",
+    "proveedor_empresa_id": "hidroelectrica-futaleufu-sa",
+    "cliente_empresa_id": "aluar-saic",
+    "tipo_vinculo": "energia_electrica",
+    "insumo_o_servicio": "Energía hidroeléctrica y potencia en bloque (Chubut)",
+    "producto_id": "aluminio",
+    "planta_cliente_id": "aluar-puerto-madryn",
+    "relacion_societaria": "controlada",
+    "volumen": {
+      "estado": "dato",
+      "valor": 2716304,
+      "unidad": "MWh/año",
+      "procedencia": {
+        "anio": 2025,
+        "fuente_id": "aluar-eeff-2025",
+        "fuente": "Memoria y Estados Financieros: 56° Ejercicio Económico (al 30/06/2025 y 30/06/2024)",
+        "url": "https://cdn.aluar.com.ar/assets/uploads/EEFF_Aluar_Ejercicio_2024_2025_4_T_7869bb3511.pdf",
+        "fecha_descarga": "2026-11-24",
+        "hash": "sha256:3ee6b54bf52a0a4e543e8be2d0c23d7399425b274971ae097867aee312233901",
+        "cita_ubicacion": "EEFF Aluar 2024/2025 pág. 4 (2.716.304 MWh bajo contrato con Hidroeléctrica Futaleufú S.A.), pág. 12 y pág. 100",
+        "confianza": "alta"
+      }
+    },
+    "procedencia": {
+      "anio": 2025,
+      "fuente_id": "aluar-eeff-2025",
+      "fuente": "Memoria y Estados Financieros: 56° Ejercicio Económico (al 30/06/2025 y 30/06/2024)",
+      "url": "https://cdn.aluar.com.ar/assets/uploads/EEFF_Aluar_Ejercicio_2024_2025_4_T_7869bb3511.pdf",
+      "fecha_descarga": "2026-11-24",
+      "hash": "sha256:3ee6b54bf52a0a4e543e8be2d0c23d7399425b274971ae097867aee312233901",
+      "cita_ubicacion": "EEFF Aluar 2024/2025 pág. 4 (2.716.304 MWh bajo contrato con Hidroeléctrica Futaleufú S.A.), pág. 12 y pág. 100",
+      "confianza": "alta"
+    }
+  },
+  {
+    "vinculo_id": "b2b-infa-aluar-ingenieria",
+    "proveedor_empresa_id": "infa-sau",
+    "cliente_empresa_id": "aluar-saic",
+    "tipo_vinculo": "ingenieria_montaje",
+    "insumo_o_servicio": "Ingeniería, construcciones y montajes industriales",
+    "producto_id": "aluminio",
+    "planta_cliente_id": "aluar-puerto-madryn",
+    "relacion_societaria": "controlada",
+    "volumen": {
+      "estado": "sin_datos",
+      "valor": null,
+      "unidad": null,
+      "procedencia": {
+        "anio": 2025,
+        "fuente_id": "aluar-eeff-2025",
+        "fuente": "Memoria y Estados Financieros: 56° Ejercicio Económico (al 30/06/2025 y 30/06/2024)",
+        "url": "https://cdn.aluar.com.ar/assets/uploads/EEFF_Aluar_Ejercicio_2024_2025_4_T_7869bb3511.pdf",
+        "fecha_descarga": "2026-11-24",
+        "hash": "sha256:3ee6b54bf52a0a4e543e8be2d0c23d7399425b274971ae097867aee312233901",
+        "cita_ubicacion": "EEFF Aluar 2024/2025 pág. 12, pág. 111 (100% controlada) y pág. 138 (operaciones con partes relacionadas)",
+        "confianza": "alta"
+      }
+    },
+    "procedencia": {
+      "anio": 2025,
+      "fuente_id": "aluar-eeff-2025",
+      "fuente": "Memoria y Estados Financieros: 56° Ejercicio Económico (al 30/06/2025 y 30/06/2024)",
+      "url": "https://cdn.aluar.com.ar/assets/uploads/EEFF_Aluar_Ejercicio_2024_2025_4_T_7869bb3511.pdf",
+      "fecha_descarga": "2026-11-24",
+      "hash": "sha256:3ee6b54bf52a0a4e543e8be2d0c23d7399425b274971ae097867aee312233901",
+      "cita_ubicacion": "EEFF Aluar 2024/2025 pág. 12, pág. 111 (100% controlada) y pág. 138 (operaciones con partes relacionadas)",
+      "confianza": "alta"
+    }
+  },
+  {
+    "vinculo_id": "b2b-ypf-profertil-gas",
+    "proveedor_empresa_id": "ypf-sa",
+    "cliente_empresa_id": "profertil-sa",
+    "tipo_vinculo": "suministro_insumo",
+    "insumo_o_servicio": "Gas natural de alimentación y combustible (compras de gas y servicios)",
+    "producto_id": "urea",
+    "planta_cliente_id": "profertil-ingeniero-white",
+    "relacion_societaria": "vinculada_jv",
+    "volumen": {
+      "estado": "dato",
+      "valor": 94823,
+      "unidad": "millones ARS/año (2025)",
+      "procedencia": {
+        "anio": 2025,
+        "fuente_id": "profertil-eecc-2025",
+        "fuente": "Memoria y Estados Financieros al 31 de diciembre de 2025 (Profertil S.A.)",
+        "url": "https://www.profertil.com.ar/wp-content/uploads/2021/04/EECC-31-12-25.pdf",
+        "fecha_descarga": "2026-11-24",
+        "hash": "sha256:d7bf53b4394beebd03259645c41196aaa27ce657ded8cfc71fc1f007f34843f3",
+        "cita_ubicacion": "EECC Profertil 31/12/2025 Nota 25.b pág. 79 (acuerdos de gas hasta 2027) y Nota 26 pág. 80 (compras de gas y servicios a YPF S.A. por ARS 94.823 M en 2025)",
+        "confianza": "alta"
+      }
+    },
+    "procedencia": {
+      "anio": 2025,
+      "fuente_id": "profertil-eecc-2025",
+      "fuente": "Memoria y Estados Financieros al 31 de diciembre de 2025 (Profertil S.A.)",
+      "url": "https://www.profertil.com.ar/wp-content/uploads/2021/04/EECC-31-12-25.pdf",
+      "fecha_descarga": "2026-11-24",
+      "hash": "sha256:d7bf53b4394beebd03259645c41196aaa27ce657ded8cfc71fc1f007f34843f3",
+      "cita_ubicacion": "EECC Profertil 31/12/2025 Nota 25.b pág. 79 (acuerdos de gas hasta 2027) y Nota 26 pág. 80 (compras de gas y servicios a YPF S.A. por ARS 94.823 M en 2025)",
+      "confianza": "alta"
+    }
+  },
+  {
+    "vinculo_id": "b2b-ypf-luz-profertil-energia",
+    "proveedor_empresa_id": "ypf-energia-electrica-sa",
+    "cliente_empresa_id": "profertil-sa",
+    "tipo_vinculo": "energia_electrica",
+    "insumo_o_servicio": "Energía eléctrica renovable (compras de energía eléctrica)",
+    "producto_id": "urea",
+    "planta_cliente_id": "profertil-ingeniero-white",
+    "relacion_societaria": "vinculada_jv",
+    "volumen": {
+      "estado": "dato",
+      "valor": 14630,
+      "unidad": "millones ARS/año (2025)",
+      "procedencia": {
+        "anio": 2025,
+        "fuente_id": "profertil-eecc-2025",
+        "fuente": "Memoria y Estados Financieros al 31 de diciembre de 2025 (Profertil S.A.)",
+        "url": "https://www.profertil.com.ar/wp-content/uploads/2021/04/EECC-31-12-25.pdf",
+        "fecha_descarga": "2026-11-24",
+        "hash": "sha256:d7bf53b4394beebd03259645c41196aaa27ce657ded8cfc71fc1f007f34843f3",
+        "cita_ubicacion": "EECC Profertil 31/12/2025 pág. 6 (100% energía renovable) y Nota 26 pág. 80 (compras de energía eléctrica a YPF Energía Eléctrica S.A. por ARS 14.630 M en 2025)",
+        "confianza": "alta"
+      }
+    },
+    "procedencia": {
+      "anio": 2025,
+      "fuente_id": "profertil-eecc-2025",
+      "fuente": "Memoria y Estados Financieros al 31 de diciembre de 2025 (Profertil S.A.)",
+      "url": "https://www.profertil.com.ar/wp-content/uploads/2021/04/EECC-31-12-25.pdf",
+      "fecha_descarga": "2026-11-24",
+      "hash": "sha256:d7bf53b4394beebd03259645c41196aaa27ce657ded8cfc71fc1f007f34843f3",
+      "cita_ubicacion": "EECC Profertil 31/12/2025 pág. 6 (100% energía renovable) y Nota 26 pág. 80 (compras de energía eléctrica a YPF Energía Eléctrica S.A. por ARS 14.630 M en 2025)",
+      "confianza": "alta"
+    }
+  },
+  {
+    "vinculo_id": "b2b-profertil-ypf-urea",
+    "proveedor_empresa_id": "profertil-sa",
+    "cliente_empresa_id": "ypf-sa",
+    "tipo_vinculo": "comercializacion_producto",
+    "insumo_o_servicio": "Urea granulada y servicios asociados",
+    "producto_id": "urea",
+    "planta_cliente_id": null,
+    "relacion_societaria": "vinculada_jv",
+    "volumen": {
+      "estado": "dato",
+      "valor": 129408,
+      "unidad": "millones ARS/año (2025)",
+      "procedencia": {
+        "anio": 2025,
+        "fuente_id": "profertil-eecc-2025",
+        "fuente": "Memoria y Estados Financieros al 31 de diciembre de 2025 (Profertil S.A.)",
+        "url": "https://www.profertil.com.ar/wp-content/uploads/2021/04/EECC-31-12-25.pdf",
+        "fecha_descarga": "2026-11-24",
+        "hash": "sha256:d7bf53b4394beebd03259645c41196aaa27ce657ded8cfc71fc1f007f34843f3",
+        "cita_ubicacion": "EECC Profertil 31/12/2025 Nota 26 pág. 80 (ventas de producto y servicios a YPF S.A. por ARS 129.408 M en 2025)",
+        "confianza": "alta"
+      }
+    },
+    "procedencia": {
+      "anio": 2025,
+      "fuente_id": "profertil-eecc-2025",
+      "fuente": "Memoria y Estados Financieros al 31 de diciembre de 2025 (Profertil S.A.)",
+      "url": "https://www.profertil.com.ar/wp-content/uploads/2021/04/EECC-31-12-25.pdf",
+      "fecha_descarga": "2026-11-24",
+      "hash": "sha256:d7bf53b4394beebd03259645c41196aaa27ce657ded8cfc71fc1f007f34843f3",
+      "cita_ubicacion": "EECC Profertil 31/12/2025 Nota 26 pág. 80 (ventas de producto y servicios a YPF S.A. por ARS 129.408 M en 2025)",
+      "confianza": "alta"
+    }
+  },
+  {
+    "vinculo_id": "b2b-oldelval-ypf-oleoducto",
+    "proveedor_empresa_id": "oldelval-sa",
+    "cliente_empresa_id": "ypf-sa",
+    "tipo_vinculo": "logistica_ducto",
+    "insumo_o_servicio": "Transporte de crudo por oleoducto troncal (Cuenca Neuquina a Puerto Rosales / La Plata)",
+    "producto_id": "petroquimica",
+    "planta_cliente_id": "ypf-cie-ensenada",
+    "relacion_societaria": "vinculada_jv",
+    "volumen": {
+      "estado": "sin_datos",
+      "valor": null,
+      "unidad": null,
+      "procedencia": {
+        "anio": 2025,
+        "fuente_id": "ypf-sec-20f-2025",
+        "fuente": "YPF Sociedad Anónima — Form 20-F Annual Report (Ejercicio finalizado el 31/12/2025)",
+        "url": "https://www.sec.gov/Archives/edgar/data/904851/000119312526126363/d95578d20f.htm",
+        "fecha_descarga": "2026-11-27",
+        "hash": "sha256:8d9d89011f05c6525bc48aaf98862cf3e985496b6622baddea112f1c020894ac",
+        "cita_ubicacion": "YPF Form 20-F FY2025 Item 4 (37% en Oldelval S.A., sistema troncal 540.940 boe/d hacia Refinería La Plata y exportación)",
+        "confianza": "alta"
+      }
+    },
+    "procedencia": {
+      "anio": 2025,
+      "fuente_id": "ypf-sec-20f-2025",
+      "fuente": "YPF Sociedad Anónima — Form 20-F Annual Report (Ejercicio finalizado el 31/12/2025)",
+      "url": "https://www.sec.gov/Archives/edgar/data/904851/000119312526126363/d95578d20f.htm",
+      "fecha_descarga": "2026-11-27",
+      "hash": "sha256:8d9d89011f05c6525bc48aaf98862cf3e985496b6622baddea112f1c020894ac",
+      "cita_ubicacion": "YPF Form 20-F FY2025 Item 4 (37% en Oldelval S.A., sistema troncal 540.940 boe/d hacia Refinería La Plata y exportación)",
+      "confianza": "alta"
+    }
+  },
+  {
+    "vinculo_id": "b2b-termap-ypf-terminal",
+    "proveedor_empresa_id": "termap-sa",
+    "cliente_empresa_id": "ypf-sa",
+    "tipo_vinculo": "logistica_puerto",
+    "insumo_o_servicio": "Almacenamiento y embarque marítimo de petróleo crudo en terminales patagónicas",
+    "producto_id": null,
+    "planta_cliente_id": null,
+    "relacion_societaria": "vinculada_jv",
+    "volumen": {
+      "estado": "sin_datos",
+      "valor": null,
+      "unidad": null,
+      "procedencia": {
+        "anio": 2025,
+        "fuente_id": "ypf-sec-20f-2025",
+        "fuente": "YPF Sociedad Anónima — Form 20-F Annual Report (Ejercicio finalizado el 31/12/2025)",
+        "url": "https://www.sec.gov/Archives/edgar/data/904851/000119312526126363/d95578d20f.htm",
+        "fecha_descarga": "2026-11-27",
+        "hash": "sha256:8d9d89011f05c6525bc48aaf98862cf3e985496b6622baddea112f1c020894ac",
+        "cita_ubicacion": "YPF Form 20-F FY2025 tabla de asociadas (Termap: Hydrocarbon transportation, 33,15% Associate)",
+        "confianza": "alta"
+      }
+    },
+    "procedencia": {
+      "anio": 2025,
+      "fuente_id": "ypf-sec-20f-2025",
+      "fuente": "YPF Sociedad Anónima — Form 20-F Annual Report (Ejercicio finalizado el 31/12/2025)",
+      "url": "https://www.sec.gov/Archives/edgar/data/904851/000119312526126363/d95578d20f.htm",
+      "fecha_descarga": "2026-11-27",
+      "hash": "sha256:8d9d89011f05c6525bc48aaf98862cf3e985496b6622baddea112f1c020894ac",
+      "cita_ubicacion": "YPF Form 20-F FY2025 tabla de asociadas (Termap: Hydrocarbon transportation, 33,15% Associate)",
+      "confianza": "alta"
+    }
+  },
+  {
+    "vinculo_id": "b2b-mega-dow-etano",
+    "proveedor_empresa_id": "compania-mega-sa",
+    "cliente_empresa_id": "dow-pbbpolisur",
+    "tipo_vinculo": "suministro_insumo",
+    "insumo_o_servicio": "Etano e hidrocarburos líquidos separados (Loma La Lata - fraccionamiento Bahía Blanca)",
+    "producto_id": "petroquimica",
+    "planta_cliente_id": "dow-polo-bahia-blanca",
+    "relacion_societaria": "vinculada_jv",
+    "volumen": {
+      "estado": "sin_datos",
+      "valor": null,
+      "unidad": null,
+      "procedencia": {
+        "anio": 2025,
+        "fuente_id": "ypf-sec-20f-2025",
+        "fuente": "YPF Sociedad Anónima — Form 20-F Annual Report (Ejercicio finalizado el 31/12/2025)",
+        "url": "https://www.sec.gov/Archives/edgar/data/904851/000119312526126363/d95578d20f.htm",
+        "fecha_descarga": "2026-11-27",
+        "hash": "sha256:8d9d89011f05c6525bc48aaf98862cf3e985496b6622baddea112f1c020894ac",
+        "cita_ubicacion": "YPF Form 20-F FY2025 Item 4 (Compañía Mega S.A.: 38% YPF, 34% Petrobras, 28% Dow Chemical; separación Loma La Lata, poliducto y fraccionamiento de etano/propano/butano en Bahía Blanca)",
+        "confianza": "alta"
+      }
+    },
+    "procedencia": {
+      "anio": 2025,
+      "fuente_id": "ypf-sec-20f-2025",
+      "fuente": "YPF Sociedad Anónima — Form 20-F Annual Report (Ejercicio finalizado el 31/12/2025)",
+      "url": "https://www.sec.gov/Archives/edgar/data/904851/000119312526126363/d95578d20f.htm",
+      "fecha_descarga": "2026-11-27",
+      "hash": "sha256:8d9d89011f05c6525bc48aaf98862cf3e985496b6622baddea112f1c020894ac",
+      "cita_ubicacion": "YPF Form 20-F FY2025 Item 4 (Compañía Mega S.A.: 38% YPF, 34% Petrobras, 28% Dow Chemical; separación Loma La Lata, poliducto y fraccionamiento de etano/propano/butano en Bahía Blanca)",
+      "confianza": "alta"
+    }
+  },
+  {
+    "vinculo_id": "b2b-opessa-ypf-distribucion",
+    "proveedor_empresa_id": "opessa-ypf",
+    "cliente_empresa_id": "ypf-sa",
+    "tipo_vinculo": "comercializacion_producto",
+    "insumo_o_servicio": "Operación de red minorista de 130 estaciones de servicio propias y tiendas Full",
+    "producto_id": null,
+    "planta_cliente_id": null,
+    "relacion_societaria": "controlada",
+    "volumen": {
+      "estado": "dato",
+      "valor": 130,
+      "unidad": "estaciones operadas",
+      "procedencia": {
+        "anio": 2025,
+        "fuente_id": "ypf-sec-20f-2025",
+        "fuente": "YPF Sociedad Anónima — Form 20-F Annual Report (Ejercicio finalizado el 31/12/2025)",
+        "url": "https://www.sec.gov/Archives/edgar/data/904851/000119312526126363/d95578d20f.htm",
+        "fecha_descarga": "2026-11-27",
+        "hash": "sha256:8d9d89011f05c6525bc48aaf98862cf3e985496b6622baddea112f1c020894ac",
+        "cita_ubicacion": "YPF Form 20-F FY2025 Item 4 (130 estaciones operadas por Operadora de Estaciones de Servicios S.A. OPESSA, subsidiaria 100% controlada)",
+        "confianza": "alta"
+      }
+    },
+    "procedencia": {
+      "anio": 2025,
+      "fuente_id": "ypf-sec-20f-2025",
+      "fuente": "YPF Sociedad Anónima — Form 20-F Annual Report (Ejercicio finalizado el 31/12/2025)",
+      "url": "https://www.sec.gov/Archives/edgar/data/904851/000119312526126363/d95578d20f.htm",
+      "fecha_descarga": "2026-11-27",
+      "hash": "sha256:8d9d89011f05c6525bc48aaf98862cf3e985496b6622baddea112f1c020894ac",
+      "cita_ubicacion": "YPF Form 20-F FY2025 Item 4 (130 estaciones operadas por Operadora de Estaciones de Servicios S.A. OPESSA, subsidiaria 100% controlada)",
+      "confianza": "alta"
+    }
+  }
+]

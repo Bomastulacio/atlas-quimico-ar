@@ -1285,5 +1285,115 @@
     "hash": "sha256:b56f88fa0acbcfdf7aa3678da2377033583a7b0d7aa1cc8c34afa10dc5cd76c3",
     "archivo_raw": null,
     "notas": "Verificación fiscal determinista en API oficial BCRA (HTTP 200, módulo-11 válido): denominacion=\"DRUETTA HNOS  SA S. A.\", CUIT 30-65543889-7."
+  },
+  {
+    "fuente_id": "bcra-cuit-hidroelectrica-futaleufu-sa",
+    "nombre": "Padrón fiscal BCRA Central de Deudores: HIDROELECTRICA FUTALEUFU S A (CUIT 33-68247580-9)",
+    "organismo": "Banco Central de la República Argentina (BCRA · API Central de Deudores / Padrón AFIP)",
+    "tipo": "oficial",
+    "url": "https://api.bcra.gob.ar/centraldedeudores/v1.0/Deudas/33682475809",
+    "fecha_descarga": "2026-11-28",
+    "hash": "sha256:76b4689bff2b235694a3f8c0987eeca23f0062a21dbd2d14092db975ed50e381",
+    "archivo_raw": null,
+    "notas": "Verificación fiscal determinista en API oficial BCRA (HTTP 200, módulo-11 válido): denominacion=\"HIDROELECTRICA FUTALEUFU S A\", CUIT 33-68247580-9."
+  },
+  {
+    "fuente_id": "bcra-cuit-infa-sau",
+    "nombre": "Padrón fiscal BCRA Central de Deudores: INFA INGENIERIA Y CONSTRUCCIONES S. A. U. (CUIT 30-63062533-1)",
+    "organismo": "Banco Central de la República Argentina (BCRA · API Central de Deudores / Padrón AFIP)",
+    "tipo": "oficial",
+    "url": "https://api.bcra.gob.ar/centraldedeudores/v1.0/Deudas/30630625331",
+    "fecha_descarga": "2026-11-28",
+    "hash": "sha256:e1c358269fa601c4aae0bbeaa75ce305ce4f0e44013b18693396dab22bedbd35",
+    "archivo_raw": null,
+    "notas": "Verificación fiscal determinista en API oficial BCRA (HTTP 200, módulo-11 válido): denominacion=\"INFA INGENIERIA Y CONSTRUCCIONES S. A. U.\", CUIT 30-63062533-1."
+  },
+  {
+    "fuente_id": "bcra-cuit-compania-mega-sa",
+    "nombre": "Padrón fiscal BCRA Central de Deudores: COMPAÑIA MEGA SOCIEDAD ANONIMA (CUIT 30-69613988-8)",
+    "organismo": "Banco Central de la República Argentina (BCRA · API Central de Deudores / Padrón AFIP)",
+    "tipo": "oficial",
+    "url": "https://api.bcra.gob.ar/centraldedeudores/v1.0/Deudas/30696139888",
+    "fecha_descarga": "2026-11-28",
+    "hash": "sha256:204b7c7a2ed027bda52cae85173602ec7dd08fa86a368d4126efe19a68a5b0b8",
+    "archivo_raw": null,
+    "notas": "Verificación fiscal determinista en API oficial BCRA (HTTP 200, módulo-11 válido): denominacion=\"COMPAÑIA MEGA SOCIEDAD ANONIMA\", CUIT 30-69613988-8."
+  },
+  {
+    "fuente_id": "bcra-cuit-ypf-energia-electrica-sa",
+    "nombre": "Padrón fiscal BCRA Central de Deudores: YPF ENERGIA ELECTRICA S.A. (CUIT 30-71412830-9)",
+    "organismo": "Banco Central de la República Argentina (BCRA · API Central de Deudores / Padrón AFIP)",
+    "tipo": "oficial",
+    "url": "https://api.bcra.gob.ar/centraldedeudores/v1.0/Deudas/30714128309",
+    "fecha_descarga": "2026-11-28",
+    "hash": "sha256:9e37f6a1d4e6ee653df254f2a9a35a2a5cea692d1a25f2409230e2deb6fb9219",
+    "archivo_raw": null,
+    "notas": "Verificación fiscal determinista en API oficial BCRA (HTTP 200, módulo-11 válido): denominacion=\"YPF ENERGIA ELECTRICA S.A.\", CUIT 30-71412830-9."
+  },
+  {
+    "fuente_id": "bcra-cuit-opessa-ypf",
+    "nombre": "Padrón fiscal BCRA Central de Deudores: OPERADORA DE ESTACIONES DE SERVICIOS SA (CUIT 30-67877449-5)",
+    "organismo": "Banco Central de la República Argentina (BCRA · API Central de Deudores / Padrón AFIP)",
+    "tipo": "oficial",
+    "url": "https://api.bcra.gob.ar/centraldedeudores/v1.0/Deudas/30678774495",
+    "fecha_descarga": "2026-11-28",
+    "hash": "sha256:ea1b92781b69d95630f2fb4201a6a1af806b3bba3793f2cbf7755a41ccbb04ae",
+    "archivo_raw": null,
+    "notas": "Verificación fiscal determinista en API oficial BCRA (HTTP 200, módulo-11 válido): denominacion=\"OPERADORA DE ESTACIONES DE SERVICIOS SA\", CUIT 30-67877449-5."
+  },
+  {
+    "fuente_id": "bcra-cuit-termap-sa",
+    "nombre": "Padrón fiscal BCRA Central de Deudores: TERMINALES MARITIMAS PATAGONICAS S A (CUIT 30-66191520-6)",
+    "organismo": "Banco Central de la República Argentina (BCRA · API Central de Deudores / Padrón AFIP)",
+    "tipo": "oficial",
+    "url": "https://api.bcra.gob.ar/centraldedeudores/v1.0/Deudas/30661915206",
+    "fecha_descarga": "2026-11-28",
+    "hash": "sha256:01384d3e90b7fecbd8f024c76513b2166cb7c697ae0c899f0c859ae859d84a11",
+    "archivo_raw": null,
+    "notas": "Verificación fiscal determinista en API oficial BCRA (HTTP 200, módulo-11 válido): denominacion=\"TERMINALES MARITIMAS PATAGONICAS S A\", CUIT 30-66191520-6."
+  },
+  {
+    "fuente_id": "bcra-cuit-oldelval-sa",
+    "nombre": "Padrón fiscal BCRA Central de Deudores: OLEODUCTOS DEL VALLE SOCIEDAD ANONIMA (CUIT 30-65884016-5)",
+    "organismo": "Banco Central de la República Argentina (BCRA · API Central de Deudores / Padrón AFIP)",
+    "tipo": "oficial",
+    "url": "https://api.bcra.gob.ar/centraldedeudores/v1.0/Deudas/30658840165",
+    "fecha_descarga": "2026-11-28",
+    "hash": "sha256:f85c401ed667492a8ad27e4599004523443b2f23b593a05af3bac5d96ddf659b",
+    "archivo_raw": null,
+    "notas": "Verificación fiscal determinista en API oficial BCRA (HTTP 200, módulo-11 válido): denominacion=\"OLEODUCTOS DEL VALLE SOCIEDAD ANONIMA\", CUIT 30-65884016-5."
+  },
+  {
+    "fuente_id": "bcra-cuit-minera-del-altiplano-sa",
+    "nombre": "Padrón fiscal BCRA Central de Deudores: MINERA DEL ALTIPLANO S. A. (CUIT 30-64279606-9)",
+    "organismo": "Banco Central de la República Argentina (BCRA · API Central de Deudores / Padrón AFIP)",
+    "tipo": "oficial",
+    "url": "https://api.bcra.gob.ar/centraldedeudores/v1.0/Deudas/30642796069",
+    "fecha_descarga": "2026-11-28",
+    "hash": "sha256:bf4a2e7e90a46f6d247e78f43b4d8ad9007a957d830e31268b3cf16a3dde1ea4",
+    "archivo_raw": null,
+    "notas": "Verificación fiscal determinista en API oficial BCRA (HTTP 200, módulo-11 válido): denominacion=\"MINERA DEL ALTIPLANO S. A.\", CUIT 30-64279606-9."
+  },
+  {
+    "fuente_id": "bcra-cuit-sales-de-jujuy-sa",
+    "nombre": "Padrón fiscal BCRA Central de Deudores: SALES DE JUJUY SOCIEDAD ANONIMA (CUIT 30-70977625-4)",
+    "organismo": "Banco Central de la República Argentina (BCRA · API Central de Deudores / Padrón AFIP)",
+    "tipo": "oficial",
+    "url": "https://api.bcra.gob.ar/centraldedeudores/v1.0/Deudas/30709776254",
+    "fecha_descarga": "2026-11-28",
+    "hash": "sha256:c15b78c4d996330bbdf5f98ccb5763e49d9c1aff4c9b6f5bda81eb866099f9f8",
+    "archivo_raw": null,
+    "notas": "Verificación fiscal determinista en API oficial BCRA (HTTP 200, módulo-11 válido): denominacion=\"SALES DE JUJUY SOCIEDAD ANONIMA\", CUIT 30-70977625-4."
+  },
+  {
+    "fuente_id": "bcra-cuit-rincon-mining-rigi",
+    "nombre": "Padrón fiscal BCRA Central de Deudores: RIGI - RINCON MINING PTY LIMITED (CUIT 30-71899954-1)",
+    "organismo": "Banco Central de la República Argentina (BCRA · API Central de Deudores / Padrón AFIP)",
+    "tipo": "oficial",
+    "url": "https://api.bcra.gob.ar/centraldedeudores/v1.0/Deudas/30718999541",
+    "fecha_descarga": "2026-11-28",
+    "hash": "sha256:e186aa3504022f7fb29a7bcad06fb518705404078f6d7c0e96f697f087ab91a3",
+    "archivo_raw": null,
+    "notas": "Verificación fiscal determinista en API oficial BCRA (HTTP 200, módulo-11 válido): denominacion=\"RIGI - RINCON MINING PTY LIMITED\", CUIT 30-71899954-1."
   }
 ]
